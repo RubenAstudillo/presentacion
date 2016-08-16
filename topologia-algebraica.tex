@@ -1,0 +1,48 @@
+\documentclass[letterpaper]{article}
+
+\usepackage[letterpaper]{geometry}
+\usepackage[log-declarations=false]{xparse}
+\usepackage[quiet]{fontspec}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{polyglossia}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,trees}
+
+\setdefaultlanguage{spanish}
+
+\begin{document}
+\title{Topologia algebraica}
+\author{Ruben Astudillo \\ 201021009-k}
+\date{\today}
+\maketitle
+
+\section{Prefacio}
+Topologia nos da un idioma para entender diferentes espacios a traves de
+propiedades como compacidad, cerrado/abierto y nociones de separabilidad.
+Siempre estudiando estos en visiones particulares, sin hacer enfasis
+en \emph{clasificar} diferentes espacios con respecto a sus propiedade invariantes
+topologias. Este deseo proviene del mundo de el algebra, en particular de
+teoria de grupos que habia logrado en el siglo XIX clasificar
+progresivamente grupos de diferentes ordenes modulo isomofismo.
+Resulta ser que el intento ``simple'' de clasificar espacios
+en base a nociones puramente topologicos resulta dificil pues por ejemplo
+nociones como compacidad no ayudan a distinguir fundamentalmente las
+diferencias entre por ejemplo \(\mathbb{R}^2\) y  \(\mathbb{R}^3\) pues las
+dimensiones son transparentes para muchos conceptos (siempre que sean finitos).
+
+Si en vez de tomar compacidad se toma la nocion de arco-conexidad,
+vemos que esta si respeta la dimension de los espacios, ya que los
+caminos estan coartados por el tipo agujeros del espacio; los cuales
+pueden tener distintas dimensiones. Resulta que las clases de
+equivalencia de las curvas con respecto a los distintos agujeros de los
+espacios muestra estructura de grupo, cuyas clasificaciones ya son
+estudiadas. De manera que podemos reutilizar el trabajo en invariantes
+algebraicas para entender nociones topologicas. En este trabajo nos
+enfocaremos en los grupos de espacios con respecto a agujeros simples
+(aquellos isomorfos a espacios uni-dimensionales) solo por la
+familiaridad. Pero todo el trabajo puede realizarse tambien para agujeros
+de dimensiones superiores.
+
+\end{document}

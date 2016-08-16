@@ -1,0 +1,59 @@
+\documentclass[xetex,mathserif,serif]{beamer}
+
+\usepackage[log-declarations=false]{xparse}
+\usepackage[quiet]{fontspec}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{polyglossia}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,trees}
+
+\setdefaultlanguage{spanish}
+
+\begin{document}
+
+  \begin{frame}
+    \begin{center}
+      Topologia Algebraica \\
+      Ruben Astudillo
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Motivacion}
+    % \framesubtitle{algo mas de informacion}
+
+    \begin{tikzpicture}
+      \def \a {2.8}
+      \def \b {1.5}
+      \def \PI {3.14159265359}
+      \draw (0,0) ellipse (3.2 and 1);
+      \draw[domain=\PI/4:3*\PI/4] plot ({\a*cos(\x r)},{\b*sin(\x r) -1});
+      \draw[domain=-0.1+5*\PI/4:0.1+7*\PI/4] plot ({\a*cos(\x r)},{\b*sin(\x r) +1.1});
+
+      \node[circle,shading=ball,minimum width=3cm] (ball) at (5.5,0) {};
+    \end{tikzpicture}
+
+    \begin{center}
+    ¿Como puedo decir que estos espacios no son homeomorfos?
+    \end{center}
+
+    \pause
+
+    \begin{center}
+    Fijandonos en la conexidad
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Idea}
+    \begin{itemize}
+    \item Fijarnos en la arco-conexidad
+    \item Definir clases de equivalencia entre curvas que se deformen
+      continuamente entre ellas
+    \item Ver estructura algebraica de estas clases
+    \end{itemize}
+  \end{frame}
+
+\end{document}
