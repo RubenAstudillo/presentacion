@@ -4,6 +4,7 @@
 \usepackage[log-declarations=false]{xparse}
 \usepackage[quiet]{fontspec}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{enumerate}
 \usepackage{polyglossia}
@@ -11,6 +12,12 @@
 \usetikzlibrary{arrows,shapes,trees}
 
 \setdefaultlanguage{spanish}
+
+\theoremstyle{definition}
+\newtheorem{definicion}{Definicion}
+
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}
 
 \begin{document}
 \title{Topologia algebraica}
@@ -27,7 +34,7 @@ topologias. Este deseo proviene del mundo de el algebra, en particular de
 teoria de grupos que habia logrado en el siglo XIX clasificar
 progresivamente grupos de diferentes ordenes modulo isomofismo.
 Resulta ser que el intento ``simple'' de clasificar espacios
-en base a nociones puramente topologicos resulta dificil pues por ejemplo
+en base a nociones puramente topologicas resulta dificil pues por ejemplo
 nociones como compacidad no ayudan a distinguir fundamentalmente las
 diferencias entre por ejemplo \(\mathbb{R}^2\) y  \(\mathbb{R}^3\) pues las
 dimensiones son transparentes para muchos conceptos (siempre que sean finitos).
@@ -44,5 +51,138 @@ enfocaremos en los grupos de espacios con respecto a agujeros simples
 (aquellos isomorfos a espacios uni-dimensionales) solo por la
 familiaridad. Pero todo el trabajo puede realizarse tambien para agujeros
 de dimensiones superiores.
+
+\section{Grupo fundamental}
+
+\subsection{Arcos y homotopias}
+Nuestros bloques base de construccion seran los arcos y las
+deformaciones continuas entre ellos llamadas \emph{homotopias}.
+
+\begin{definicion}[arco]
+  Un arco en el espacio \(X\) es una funcion continua \(f : I \to X \)
+  donde \(I = [0,1]\)
+\end{definicion}
+La definicion tradicional es ligeramente mas general cambiando que \(I\)
+sea un espacio de 1 dimension. Pero siempre podemos recuperar esta
+rescalando la distancia.
+
+\begin{definicion}[homotopia]
+  Dados dos arcos \(f,g : I \to X\), diremos que \(f\) es homotopico a
+  \(g\) si existe una funcion continua \(F : I \times I \to X \) tal que
+  \[ \begin{matrix}
+      F (x, 0) = f(x) & F (x, 1) = g(x)
+     \end{matrix}
+  \]
+  Donde \(F\) sera llamada una homotopia entre \(f\) y \(g\). La
+  existencia de dicha relacion entre dos funciones sera denotada por \(f
+  \simeq_{h} g\).
+\end{definicion}
+% todo(slack): hace curva girada en 90 grados y lineas. fijate que no sea
+% una arco homotopia
+% \begin{tikzpicture}
+%   \draw (2,0) to [out=0, in=-90] (2.5, 0.5) to [out=90, in=0] (2,1)
+%     to [out=180, in=-90] (1.5, 1.5) to [out=90, in=180] (2,2);
+% \end{tikzpicture}
+Podemos pensar en el segundo argumento de una homotopia como el grado de
+deformación entre dos funciones.
+Si tratamos con arcos \(f,g : I \to X\) que posean los mismos puntos
+iniciales y finales, es decir
+\[ \begin{matrix}
+    f(0) = g(0) = x_0  & & f(1) = g(1) = x_1
+   \end{matrix}
+\]
+podemos definir una relacion homotopica ligeramente mas fuerte
+\begin{definicion}[arco homotopia]
+  \(f,g : I \to X\) son \textbf{arco homotopicas} si tienen los mismos
+  puntos inicial \(x_0\) y final \(x_1\) y existe una homotopia entre
+  ellos tales que cumpla
+  \[
+    \begin{matrix}
+      F(s,0) = f(s) & F(s,1) = g(s) \\
+      F(0,t) = x_0  & F(1,t) = x_1
+    \end{matrix}
+  \]
+  La existencia de esta relacion entre dos funciones sera denotada por
+  \(f \simeq_{ah} g\)
+\end{definicion}
+% todo(slack) hacer algun dibujo de las homotopias entre las curvas
+Una vez definida esta relaciones, una pregunta natural es si estas definen
+una relacion de equivalencia, ya que nos gustaria identificar clases de
+curvas como elementos de alguna teoria algebraica. La respuesta es
+afirmativa para ambas relaciones (el punto de inicio y final no juegan
+papel), se mostrara para las homotopias.
+
+\begin{teorema}
+  \(\simeq_h\) es una relacion de equivalencia
+\end{teorema}
+\begin{proof}
+  Hemos de probar que esta relacion cumple la reflexividad, simetria y
+  transitividad. Sean \(f,g,h : I \to X\) tres arcos arbitrarios.
+
+  La reflexividad es directa pues la funcion \(F(x,t) = f(x)\) es una
+  deformacion continua de \(f\) a \(f\). Por tanto \(f \simeq_h f\)
+
+  La simetria se obtiene de invertir el grado de deformacion de la
+  homotopia original. Formalmente, dado \(f \simeq_h g\) tenemos una
+  homotopia entre estas \((x,t) \mapsto F(x,t)\). A partir de aqui
+  podemos definir
+  \[ (x,t) \mapsto \hat{F}(x,t) = F(x,1-t)\]
+  con \(\hat{F}\) una homotopia entre \(g\) y \(f\). Por tanto \(g
+  \simeq_h f\).
+
+  La transitividad se obtiene a partir de la idea de dividir \(I\) en dos
+  intervalos donde se deformen individualmente cada homotopia.
+  Formalmente dado \(f \simeq_h g\) y \(g \simeq_h h\) representas por
+  las homotopias \(F\) y \(G\) respectivamente, se define
+  \[ FG(x,t) = \begin{cases}
+                 F(x,2t) & t \in [0,\frac{1}{2}] \\
+                 G(x,2t - 1) & t \in [ \frac{1}{2} , 1]
+               \end{cases}
+  \]
+  Esta es una deformacion continua claramente en \((x,t) \in I \times [0,
+  \frac{1}{2}) \cup I \times (\frac{1}{2}, 1]\). La continuidad en \(I
+  \times \{\frac{1}{2}\}\) proviene de la consistencia en dicho punto de
+  ambas homotopias
+  \[ F(x,2 \cdot \frac{1}{2}) = g(x) = G(x, 2 \cdot \frac{1}{2} - 1)\]
+  lo que nos permite utilizar el lema del pegamiento para obtener la
+  continuidad de \(FG\). Obteniendo asi \(f \simeq_h h\).
+\end{proof}
+Existen algunas construciones clasicas de homotopias que son muy utiles
+como para no conocer. Dadas \(f,g : I \to X\), si existe un espacio
+convexo que contenga el recorrido de \(f\) y \(g\), se puede definir la
+homotopia de lineal recta entre estas
+\[ (x,t) \mapsto F(x,t) = (1-t) \cdot f(x) + t \cdot g(x) \]
+la cual es claramente continua pues es combinacion lineal de funciones continuas.
+%todo(slack): otro ejemplo de herramienta de construccion de homotopias
+
+Con estas definiciones ya podemos empezar a hablar de \([f],[g]\) clases
+de equivalencia de funciones bajo una relacion homotopica, aunque nuestro
+interes principal siempre sera en clases de funciones \emph{arco
+  homotopicas}. Recordemos que si un par de funciones \(f,g : I \to X\)
+cumplen que \(f(1) = g(0)\), podemos definir una funcion continua \(h: I \to X\)
+que cumpla \(h(0) = f(0),\ h(1) = g(1)\) a traves de
+\[ h(x) = \begin{cases}
+    f(2x) & x \in [0,\frac{1}{2}] \\
+    g(2x - 1) & x \in [\frac{1}{2} , 1]
+  \end{cases}
+\]
+donde \(h\) es denotado el producto \(f * g\). Esta construccion se puede
+reutilizar para clases \emph{arco}-homotopicas \([f],[g]\) que compartan
+punto final e inicial respectivamente para definir un producto de clases
+de equivalencia
+\[ [f] * [g] := [f * g]\]
+El cual esta bien definido gracias a la transtividad de \(\simeq_{ah}\)
+pues si \(f \simeq_{ah} f'\) a traves de \(F\) y \(g \simeq_{ah} g'\) a
+traves de \(G\)
+\[H(s,t) = \begin{cases}
+    F(2x,t) & x \in [0, \frac{1}{2}] \\
+    G(2x - 1, t) & x \in [\frac{1}{2} , 1]
+  \end{cases}
+\]
+\section{Cubrimientos pares}
+
+\section{Van Kampen}
+
+\section{Nociones categoricas}
 
 \end{document}

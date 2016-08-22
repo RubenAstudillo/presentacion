@@ -1,0 +1,5 @@
+* Introduccion
+se resume en dos frases: Definir una invariante topologica que me permita
+clasificar espacios como homeomorfos entre siempre
+
+Estudiar ademas las nociones categoricas de esta estructura.
