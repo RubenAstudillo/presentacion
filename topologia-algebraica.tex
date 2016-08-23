@@ -147,10 +147,11 @@ papel), se mostrara para las homotopias.
   lo que nos permite utilizar el lema del pegamiento para obtener la
   continuidad de \(FG\). Obteniendo asi \(f \simeq_h h\).
 \end{proof}
-Existen algunas construciones clasicas de homotopias que son muy utiles
-como para no conocer. Dadas \(f,g : I \to X\), si existe un espacio
-convexo que contenga el recorrido de \(f\) y \(g\), se puede definir la
-homotopia de lineal recta entre estas
+
+Existe una homotopia clasica que es muy util como para no conocer. Dadas
+\(f,g : I \to X\), si existe un espacio convexo que contenga el recorrido
+de \(f\) y \(g\), se puede definir la homotopia de lineal recta entre
+estas
 \[ (x,t) \mapsto F(x,t) = (1-t) \cdot f(x) + t \cdot g(x) \]
 la cual es claramente continua pues es combinacion lineal de funciones continuas.
 %todo(slack): otro ejemplo de herramienta de construccion de homotopias
@@ -158,27 +159,31 @@ la cual es claramente continua pues es combinacion lineal de funciones continuas
 Con estas definiciones ya podemos empezar a hablar de \([f],[g]\) clases
 de equivalencia de funciones bajo una relacion homotopica, aunque nuestro
 interes principal siempre sera en clases de funciones \emph{arco
-  homotopicas}. Recordemos que si un par de funciones \(f,g : I \to X\)
-cumplen que \(f(1) = g(0)\), podemos definir una funcion continua \(h: I \to X\)
-que cumpla \(h(0) = f(0),\ h(1) = g(1)\) a traves de
-\[ h(x) = \begin{cases}
+homotopicas}.
+
+Para dos arcos \(f,g : I \to X\) que compartan punto final e inicial
+(\(f(1) = g(0)\)), podemos definir una nocion de producto que corresponde
+a seguir el camino de \(f\) y luego de \(g\). En formulas se define \(f *
+g\) cuando \(f(1) = g(0)\) como
+\[ (f*g) (x) = \begin{cases}
     f(2x) & x \in [0,\frac{1}{2}] \\
     g(2x - 1) & x \in [\frac{1}{2} , 1]
   \end{cases}
 \]
-donde \(h\) es denotado el producto \(f * g\). Esta construccion se puede
-reutilizar para clases \emph{arco}-homotopicas \([f],[g]\) que compartan
-punto final e inicial respectivamente para definir un producto de clases
-de equivalencia
+la cual sigue siendo una funcion continua en virtud del lema del
+pegamiento. Esta construccion se puede reutilizar para clases
+\emph{arco}-homotopicas \([f],[g]\) que compartan punto final e inicial
+respectivamente para definir un producto de clases de equivalencia
 \[ [f] * [g] := [f * g]\]
-El cual esta bien definido gracias a la transtividad de \(\simeq_{ah}\)
-pues si \(f \simeq_{ah} f'\) a traves de \(F\) y \(g \simeq_{ah} g'\) a
-traves de \(G\)
+El cual esta bien definido pues si \(f \simeq_{ah} f'\) a traves de \(F\)
+y \(g \simeq_{ah} g'\) a traves de \(G\)
 \[H(s,t) = \begin{cases}
     F(2x,t) & x \in [0, \frac{1}{2}] \\
     G(2x - 1, t) & x \in [\frac{1}{2} , 1]
   \end{cases}
 \]
+Es la homotopia que relaciona a los elementos de \([f*g]\) la cual es
+continua en virtud otra vez del lema del pegamiento.
 \section{Cubrimientos pares}
 
 \section{Van Kampen}
