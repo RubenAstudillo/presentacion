@@ -28,18 +28,19 @@
 \section{Prefacio}
 Topologia nos da un idioma para entender diferentes espacios a traves de
 propiedades como compacidad, cerrado/abierto y nociones de separabilidad.
-Siempre estudiando estos en visiones particulares, sin hacer enfasis
-en \emph{clasificar} diferentes espacios con respecto a sus propiedade invariantes
-topologias. Este deseo proviene del mundo de el algebra, en particular de
-teoria de grupos que habia logrado en el siglo XIX clasificar
-progresivamente grupos de diferentes ordenes modulo isomofismo.
-Resulta ser que el intento ``simple'' de clasificar espacios
-en base a nociones puramente topologicas resulta dificil pues por ejemplo
+Siempre estudiando estos en visiones particulares, sin hacer enfasis en
+\emph{clasificar} diferentes espacios con respecto a sus propiedade
+invariantes topologias. Este deseo proviene del mundo de el algebra, en
+particular de teoria de grupos que habia logrado en el siglo XIX
+clasificar progresivamente grupos de diferentes ordenes modulo
+isomofismo. Resulta ser que el intento ``simple'' de clasificar espacios
+en base a nociones puramente topologicas es dificil pues por ejemplo
 nociones como compacidad no ayudan a distinguir fundamentalmente las
-diferencias entre por ejemplo \(\mathbb{R}^2\) y  \(\mathbb{R}^3\) pues las
-dimensiones son transparentes para muchos conceptos (siempre que sean finitos).
+diferencias entre por ejemplo \(\mathbb{R}^2\) y \(\mathbb{R}^3\) pues
+las dimensiones son transparentes para muchos conceptos (siempre que sean
+finitos).
 
-Si en vez de tomar compacidad se toma la nocion de arco-conexidad,
+Si en vez de tomar compacidad se considera la nocion de arco-conexidad,
 vemos que esta si respeta la dimension de los espacios, ya que los
 caminos estan coartados por el tipo agujeros del espacio; los cuales
 pueden tener distintas dimensiones. Resulta que las clases de
@@ -93,8 +94,8 @@ iniciales y finales, es decir
 \]
 podemos definir una relacion homotopica ligeramente mas fuerte
 \begin{definicion}[arco homotopia]
-  \(f,g : I \to X\) son \textbf{arco homotopicas} si tienen los mismos
-  puntos inicial \(x_0\) y final \(x_1\) y existe una homotopia entre
+  \(f,g : I \to X\) son \textbf{arco homotopicas} entre si, si tienen los mismos
+  puntos inicial y final \(x_0, x_1\) respectivamente y existe una homotopia entre
   ellos tales que cumpla
   \[
     \begin{matrix}
@@ -120,7 +121,7 @@ papel), se mostrara para las homotopias.
   transitividad. Sean \(f,g,h : I \to X\) tres arcos arbitrarios.
 
   La reflexividad es directa pues la funcion \(F(x,t) = f(x)\) es una
-  deformacion continua de \(f\) a \(f\). Por tanto \(f \simeq_h f\)
+  deformacion continua de \(f\) a \(f\). Por tanto \(f \simeq_h f\).
 
   La simetria se obtiene de invertir el grado de deformacion de la
   homotopia original. Formalmente, dado \(f \simeq_h g\) tenemos una
@@ -130,10 +131,10 @@ papel), se mostrara para las homotopias.
   con \(\hat{F}\) una homotopia entre \(g\) y \(f\). Por tanto \(g
   \simeq_h f\).
 
-  La transitividad se obtiene a partir de la idea de dividir \(I\) en dos
-  intervalos donde se deformen individualmente cada homotopia.
-  Formalmente dado \(f \simeq_h g\) y \(g \simeq_h h\) representas por
-  las homotopias \(F\) y \(G\) respectivamente, se define
+  La transitividad se obtiene a partir de de dividir \(I\) en dos
+  intervalos donde se deformen individualmente cada homotopia al doble
+  del grado. Formalmente dado \(f \simeq_h g\) y \(g \simeq_h h\)
+  representadas por las homotopias \(F\) y \(G\) respectivamente, se define
   \[ FG(x,t) = \begin{cases}
                  F(x,2t) & t \in [0,\frac{1}{2}] \\
                  G(x,2t - 1) & t \in [ \frac{1}{2} , 1]
@@ -148,42 +149,73 @@ papel), se mostrara para las homotopias.
   continuidad de \(FG\). Obteniendo asi \(f \simeq_h h\).
 \end{proof}
 
-Existe una homotopia clasica que es muy util como para no conocer. Dadas
+Un ejemplo clasico de una homotopia es la homotopia de linea recta. Dadas
 \(f,g : I \to X\), si existe un espacio convexo que contenga el recorrido
-de \(f\) y \(g\), se puede definir la homotopia de lineal recta entre
-estas
+de \(f\) y \(g\), esta homotopia se define por
 \[ (x,t) \mapsto F(x,t) = (1-t) \cdot f(x) + t \cdot g(x) \]
 la cual es claramente continua pues es combinacion lineal de funciones continuas.
 %todo(slack): otro ejemplo de herramienta de construccion de homotopias
 
-Con estas definiciones ya podemos empezar a hablar de \([f],[g]\) clases
-de equivalencia de funciones bajo una relacion homotopica, aunque nuestro
-interes principal siempre sera en clases de funciones \emph{arco
-homotopicas}.
+Con estas definiciones ya podemos empezar a hablar de \([f]\) clases
+de equivalencia de funciones bajo una relacion homotopica
+\[ [f] = \{ g : I \to X \mid f \simeq_{ah} g \} \]
+Notar que la construccion es valida para las dos relaciones aunque por
+nuestra meta de construir el grupo fundamental nos interesa
+principalmente la relacion arco homotopica (tema a ser tratado mas adelante).
 
-Para dos arcos \(f,g : I \to X\) que compartan punto final e inicial
-(\(f(1) = g(0)\)), podemos definir una nocion de producto que corresponde
-a seguir el camino de \(f\) y luego de \(g\). En formulas se define \(f *
-g\) cuando \(f(1) = g(0)\) como
-\[ (f*g) (x) = \begin{cases}
-    f(2x) & x \in [0,\frac{1}{2}] \\
-    g(2x - 1) & x \in [\frac{1}{2} , 1]
+\subsection{Grupoide de arcos}
+Si tenemos dos arcos continuos \(f,g\) tales que el punto final de \(f\)
+sea el punto inicial de \(g\) nos da la idea de que podemos construir un
+camino continuo que recorra \(f\) y luego recorra \(g\). Esta idea es
+conocida formalmente como el producto de dos arcos.
+
+\begin{definicion}[Producto de arcos]
+Para dos arcos \(f,g : I \to X\) tales que
+\(f(1) = g(0)\), se define el producto \(f * g \)
+\[ (f*g) (s) = \begin{cases}
+    f(2s) & s \in [0,\frac{1}{2}] \\
+    g(2s - 1) & s \in [\frac{1}{2} , 1]
   \end{cases}
 \]
 la cual sigue siendo una funcion continua en virtud del lema del
-pegamiento. Esta construccion se puede reutilizar para clases
+pegamiento.
+\end{definicion}
+
+Esta construccion se puede reutilizar para clases
 \emph{arco}-homotopicas \([f],[g]\) que compartan punto final e inicial
 respectivamente para definir un producto de clases de equivalencia
 \[ [f] * [g] := [f * g]\]
-El cual esta bien definido pues si \(f \simeq_{ah} f'\) a traves de \(F\)
-y \(g \simeq_{ah} g'\) a traves de \(G\)
+El cual esta bien definido pues si \(f \simeq_{ah} f'\), \(g \simeq_{ah}
+g'\) a traves de \(F, G\) respectivamente
 \[H(s,t) = \begin{cases}
-    F(2x,t) & x \in [0, \frac{1}{2}] \\
-    G(2x - 1, t) & x \in [\frac{1}{2} , 1]
+    F(2s,t) & s \in [0, \frac{1}{2}] \\
+    G(2s - 1, t) & s \in [\frac{1}{2} , 1]
   \end{cases}
 \]
-Es la homotopia que relaciona a los elementos de \([f*g]\) la cual es
-continua en virtud otra vez del lema del pegamiento.
+Es la homotopia que relaciona a los arcos que sean homotopicos a
+\(f*g\). Esta ademas es continua en virtud otra vez del lema del pegamiento.
+
+Con esta operacion binaria, una pregunta a hacerse es si tiene
+\((X/\simeq_{ah} , *)\) posee
+estructura de grupoide. Esto equivale a cumplir 3 propiedades
+\begin{enumerate}
+\item \textbf{Asociatividad} Si \([f] * ([g] * [h])\) esta definido entonces
+  tambien lo debe estar \(([f] * [g]) * [h]\) y deben de ser iguales.
+\item \textbf{Identidades izquierda y derecha} Para todo \([f]\) con
+  \(x_0, x_1\) puntos inicial y final respectivamente, debe de
+existir elementos \([e_{x_0}], [e_{x_1}]\) tales que
+\[ \begin{matrix}
+    [f] * [e_{x_1}] = [f] & & [e_{x_0}] * [f] = [f]
+  \end{matrix}
+\]
+\item \textbf{Inverso} Para todo \([f]\) clase de arcos con \(x_0, x_1\)
+  puntos inicial y final respectivamente debe de existir un elemento
+  \([\bar{f}]\) que cumpla
+\[ \begin{matrix}
+    [f] * [\bar{f}] = [e_{x_0}] & & [\bar{f}] * [f] = [e_{x_1}]
+  \end{matrix}
+\]
+\end{enumerate}
 \section{Cubrimientos pares}
 
 \section{Van Kampen}
