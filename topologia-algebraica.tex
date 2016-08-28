@@ -19,6 +19,12 @@
 \theoremstyle{plain}
 \newtheorem{teorema}{Teorema}
 
+\theoremstyle{plain}
+\newtheorem{lema}{Lema}
+
+\theoremstyle{remark}
+\newtheorem{anotacion}{Anotacion}
+
 \begin{document}
 \title{Topologia algebraica}
 \author{Ruben Astudillo \\ 201021009-k}
@@ -127,7 +133,10 @@ papel), se mostrara para las homotopias.
   homotopia original. Formalmente, dado \(f \simeq_h g\) tenemos una
   homotopia entre estas \((x,t) \mapsto F(x,t)\). A partir de aqui
   podemos definir
-  \[ (x,t) \mapsto \hat{F}(x,t) = F(x,1-t)\]
+  \begin{equation}
+    \label{eq:homotopy-simetry}
+    (x,t) \mapsto \hat{F}(x,t) = F(x,1-t)
+  \end{equation}
   con \(\hat{F}\) una homotopia entre \(g\) y \(f\). Por tanto \(g
   \simeq_h f\).
 
@@ -203,23 +212,82 @@ estructura de grupoide. Esto equivale a cumplir 3 propiedades
   tambien lo debe estar \(([f] * [g]) * [h]\) y deben de ser iguales.
 \item \textbf{Identidades izquierda y derecha} Para todo \([f]\) con
   \(x_0, x_1\) puntos inicial y final respectivamente, debe de
-existir elementos \([e_{x_0}], [e_{x_1}]\) tales que
+existir elementos \([k_{0}], [k_{1}]\) tales que
 \[ \begin{matrix}
-    [f] * [e_{x_1}] = [f] & & [e_{x_0}] * [f] = [f]
+    [f] * [k_{1}] = [f] & & [k_{0}] * [f] = [f]
   \end{matrix}
 \]
 \item \textbf{Inverso} Para todo \([f]\) clase de arcos con \(x_0, x_1\)
   puntos inicial y final respectivamente debe de existir un elemento
   \([\bar{f}]\) que cumpla
 \[ \begin{matrix}
-    [f] * [\bar{f}] = [e_{x_0}] & & [\bar{f}] * [f] = [e_{x_1}]
+    [f] * [\bar{f}] = k_{x_0} & & [\bar{f}] * [f] = k_{x_1}
   \end{matrix}
 \]
 \end{enumerate}
+Para probar esto necesitamos primero definir a nuestros candidatos de
+\(k_{x_1}, k_{x_2}, \bar{f}\) ademas de algunas variables auxiliares,
+iniciando por los mapeos constantes e identidad en \(I\)
+\[ \begin{matrix}
+     e_0 : & I \to I & e_0(t) := 0 \\
+     e_1 : & I \to I & e_1(t) := 1 \\
+     i :   & I \to I & i(t) := t
+   \end{matrix}
+   \]
+Para todo arco \(f : I \to X \), el elemento \(\bar{f} : I \to X \) esta
+definido (en el espiritu de \eqref{eq:homotopy-simetry}) por
+\[ \bar{f} (s) := f (1 - s) \]
+Para todo \(x \in X \) se define la curva constante
+\begin{align*}
+  k_x : &I \to X \\
+        &t \mapsto x
+\end{align*}
+Con esto podemos afrontar la demostración
+\begin{proof}
+  Se procedera \(2 \to 3 \to 1\) con lemas en medio. Sea \(f : I \to X\)
+el representante de \([f]\). sean \(x_0, x_1\) los puntos inicial y final
+de \(f\) respectivamente.
+
+\begin{itemize}
+\item[(2)] Puesto que \(i,e_1\) son arcos en \(I\), \(i * e_1\) es
+  tambien un arco (continuo) en \(I\); mas aun, por estar tanto las
+imágenes de \(i * e_1\) y de \(i\) en \(I\) se tiene la homotopia de la
+linea recta entre estos, puesto que \(I\) es convexo, es decir \(i
+\simeq_{ah} i * e_1\). Se desprende de esto ultimo que \( [i] = [i *
+e_1]\).
+
+Notese que \(\forall a,b : I \to I,\ f \circ (a * b) = (f \circ a) * (f
+\circ b) \) ya que
+\[ f \circ (a*b) (s) =
+  \begin{cases}
+    f (a(2s)) & s \in [0,\frac{1}{2}] \\
+    f (b(2s - 1)) & s \in [\frac{1}{2} , 1]
+  \end{cases}
+   = (f \circ a) * (f \circ b)\]
+recordando ademas que la composición de funciones continuas es continuas.
+Luego esto nos permite afirmar en especifico que
+\[ f \circ (i * e_1) \simeq_{ah} (f \circ i) * (f \circ e_1) \]
+en virtud de la composición de \(f\) con la homotopia de linea recta
+entre \(i * e_1 \) y \(i\). Obteniendo asi que
+\[ [f \circ (i * e_1)] = [(f \circ i) * (f \circ e_1)] \]
+pero al reducir las composición obtenemos
+\[
+  \begin{matrix}
+    f \circ i = f & f \circ e_1 = k_{x_1} & f \circ (i * e_1) = f *
+    k_{x_{1}} \\
+  \end{matrix}
+\]
+\[ \implies [f] * [k_{x_1}] := [f * k_{x_1}] = [f \circ (i * e_1)] = [ f
+  \circ i] = [f] \]
+probando (2).
+\end{itemize}
+\end{proof}
+
 \section{Cubrimientos pares}
 
 \section{Van Kampen}
 
 \section{Nociones categoricas}
-
+encontre una construccion de suspensiones topologicas, al parecer me
+sirver para hacer una adjuncion entre estos los espacios loop
 \end{document}
