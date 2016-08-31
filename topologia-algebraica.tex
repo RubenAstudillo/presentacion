@@ -32,32 +32,38 @@
 \maketitle
 
 \section{Prefacio}
-Topologia nos da un idioma para entender diferentes espacios a traves de
-propiedades como compacidad, cerrado/abierto y nociones de separabilidad.
-Siempre estudiando estos en visiones particulares, sin hacer enfasis en
-\emph{clasificar} diferentes espacios con respecto a sus propiedade
-invariantes topologias. Este deseo proviene del mundo de el algebra, en
-particular de teoria de grupos que habia logrado en el siglo XIX
-clasificar progresivamente grupos de diferentes ordenes modulo
-isomofismo. Resulta ser que el intento ``simple'' de clasificar espacios
-en base a nociones puramente topologicas es dificil pues por ejemplo
-nociones como compacidad no ayudan a distinguir fundamentalmente las
-diferencias entre por ejemplo \(\mathbb{R}^2\) y \(\mathbb{R}^3\) pues
-las dimensiones son transparentes para muchos conceptos (siempre que sean
-finitos).
+Topología nos da un idioma para entender propiedades de diferentes
+espacios a través de nociones como compacidad, cerrado/abierto y
+diferentes tipos
+de separabilidad. Gran parte de estas propiedades tienen un carácter
+local, es decir no son propiedades que definan al espacio total si no mas
+bien por subparte. En el siglo XIX el mundo del álgebra, en
+particular la teoría de grupos había intentado y logrado clasificar
+progresivamente grupos de diferentes ordenes modulo isomorfismo. Habían
+logrado esto a través de llamadas invariantes algebraicas, las cuales
+eran preservadas a través de los isomorfismo de grupos. En topología se
+deseaba hacer un tratamiento parecido, por lo cual necesitaban una
+invariante topológica que nos permitiera clasificar espacios. La elección
+de esta invariante no necesariamente nos da teorías útiles, pues puede
+ser muy general y no distinguir en propiedades que se consideran
+importantes. Uno puede tomar como ejemplo que si nuestra propiedad es
+la compacidad, esta no hace un buen papel en distinguir entre
+\(\mathbb{R}^2\) y \(\mathbb{R}^3\).
 
-Si en vez de tomar compacidad se considera la nocion de arco-conexidad,
-vemos que esta si respeta la dimension de los espacios, ya que los
-caminos estan coartados por el tipo agujeros del espacio; los cuales
-pueden tener distintas dimensiones. Resulta que las clases de
-equivalencia de las curvas con respecto a los distintos agujeros de los
-espacios muestra estructura de grupo, cuyas clasificaciones ya son
-estudiadas. De manera que podemos reutilizar el trabajo en invariantes
-algebraicas para entender nociones topologicas. En este trabajo nos
-enfocaremos en los grupos de espacios con respecto a agujeros simples
-(aquellos isomorfos a espacios uni-dimensionales) solo por la
-familiaridad. Pero todo el trabajo puede realizarse tambien para agujeros
-de dimensiones superiores.
+Si hemos de tomar una propiedad como invariante topológica sobre la cual
+construir una teoría, esta no debe ser local. Idealmente nos gustaría
+construir sobre alguna propiedad del espacio que fuera característica de
+todo el espacio, algo en general notoriamente difícil. Resulta que si nos
+reducimos a espacios arco-conexos podemos construir una respuesta a través
+de los grupos fundamentales. Esta característica es construida sobre
+clases de equivalencias de caminos cerrados quienes puedan deformarse
+entre si y permiten reificar información de los ``agujeros'' del espacio.
+Resulta que la elección de esta respuesta tiene la consecuencia feliz de
+tener estructura de grupo subyacente, por lo que nos permite reutilizar
+el trabajo ya realizado en el mundo del álgebra para nuestro beneficio.
+Mas aun, la construcción en si da cabida a interpretaciones de
+teoría de categorías, por lo que sirve de buena introducción a un
+lenguaje mas general.
 
 \section{Grupo fundamental}
 
