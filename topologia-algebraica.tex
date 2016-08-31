@@ -181,7 +181,7 @@ principalmente la relacion arco homotopica (tema a ser tratado mas adelante).
 \subsection{Grupoide de arcos}
 Si tenemos dos arcos continuos \(f,g\) tales que el punto final de \(f\)
 sea el punto inicial de \(g\) nos da la idea de que podemos construir un
-camino continuo que recorra \(f\) y luego recorra \(g\). Esta idea es
+camino continuo que recorra \(f\) luego recorriendo \(g\). Esta idea es
 conocida formalmente como el producto de dos arcos.
 
 \begin{definicion}[Producto de arcos]
@@ -227,17 +227,18 @@ existir elementos \([k_{0}], [k_{1}]\) tales que
   puntos inicial y final respectivamente debe de existir un elemento
   \([\bar{f}]\) que cumpla
 \[ \begin{matrix}
-    [f] * [\bar{f}] = k_{x_0} & & [\bar{f}] * [f] = k_{x_1}
+    [f] * [\bar{f}] = [k_{x_0}] & & [\bar{f}] * [f] = [k_{x_1}]
   \end{matrix}
 \]
 \end{enumerate}
 Para probar esto necesitamos primero definir a nuestros candidatos de
-\(k_{x_1}, k_{x_2}, \bar{f}\) ademas de algunas variables auxiliares,
+\(k_{x_1}, k_{x_2}, \bar{f}\) ademas de algunas funciones auxiliares,
 iniciando por los mapeos constantes e identidad en \(I\)
 \[ \begin{matrix}
      e_0 : & I \to I & e_0(t) := 0 \\
      e_1 : & I \to I & e_1(t) := 1 \\
-     i :   & I \to I & i(t) := t
+     i :   & I \to I & i(t) := t \\
+     \bar{i} : & I \to I & i(t) := 1 - t
    \end{matrix}
    \]
 Para todo arco \(f : I \to X \), el elemento \(\bar{f} : I \to X \) esta
@@ -250,33 +251,35 @@ Para todo \(x \in X \) se define la curva constante
 \end{align*}
 Con esto podemos afrontar la demostración
 \begin{proof}
-  Se procedera \(2 \to 3 \to 1\) con lemas en medio. Sea \(f : I \to X\)
-el representante de \([f]\). sean \(x_0, x_1\) los puntos inicial y final
-de \(f\) respectivamente.
+Se procedera \(2 \to 3 \to 1\) con lemas en medio. Sea \(f : I \to X\) el
+representante de \([f]\). sean \(x_0, x_1\) los puntos inicial y final de
+\(f\) respectivamente.
 
-\begin{itemize}
-\item[(2)] Puesto que \(i,e_1\) son arcos en \(I\), \(i * e_1\) es
-  tambien un arco (continuo) en \(I\); mas aun, por estar tanto las
-imágenes de \(i * e_1\) y de \(i\) en \(I\) se tiene la homotopia de la
-linea recta entre estos, puesto que \(I\) es convexo, es decir \(i
-\simeq_{ah} i * e_1\). Se desprende de esto ultimo que \( [i] = [i *
-e_1]\).
-
-Notese que \(\forall a,b : I \to I,\ f \circ (a * b) = (f \circ a) * (f
-\circ b) \) ya que
-\[ f \circ (a*b) (s) =
-  \begin{cases}
-    f (a(2s)) & s \in [0,\frac{1}{2}] \\
-    f (b(2s - 1)) & s \in [\frac{1}{2} , 1]
-  \end{cases}
-   = (f \circ a) * (f \circ b)\]
-recordando ademas que la composición de funciones continuas es continuas.
+\paragraph{(2).} Dados \(i,e_1\) arcos en \(I\) definidos anteriormente,
+es claro que \(i * e_1\) es tambien un arco (continuo) en \(I\); mas aun,
+ya que \(I\) es convexo se tiene \(i * e_1 \simeq_{ah} i\) con la
+homotopia de la linea recta entre estos. Se desprende de esto ultimo que
+\( [i] = [i * e_1]\). Para continuar necesitamos el siguiente lema
+\begin{lema}[Distributividad de la composicion sobre producto.]
+\label{lema:dist-composicion-producto}
+\[\forall a,b : I \to I,\ f \circ (a * b) = (f \circ a) * (f \circ b) \]
+\end{lema}
+\begin{proof}
+  \[ f \circ (a*b) (s) =
+    \begin{cases}
+      f (a(2s)) & s \in [0,\frac{1}{2}] \\
+      f (b(2s - 1)) & s \in [\frac{1}{2} , 1]
+    \end{cases}
+    = (f \circ a) * (f \circ b)
+  \]
+\end{proof}
+Recordemos ademas que la composición de funciones continuas es continua.
 Luego esto nos permite afirmar en especifico que
-\[ f \circ (i * e_1) \simeq_{ah} (f \circ i) * (f \circ e_1) \]
-en virtud de la composición de \(f\) con la homotopia de linea recta
-entre \(i * e_1 \) y \(i\). Obteniendo asi que
-\[ [f \circ (i * e_1)] = [(f \circ i) * (f \circ e_1)] \]
-pero al reducir las composición obtenemos
+\[ f \circ (i * e_1) \simeq_{ah} (f \circ i) * (f \circ e_1) \] en virtud
+de la composición de \(f\) con la homotopia de linea recta entre \(i *
+e_1 \) y \(i\). Obteniendo asi que
+\[ [f \circ (i * e_1)] = [(f \circ i) * (f \circ e_1)] \] pero al reducir
+las composición obtenemos
 \[
   \begin{matrix}
     f \circ i = f & f \circ e_1 = k_{x_1} & f \circ (i * e_1) = f *
@@ -286,8 +289,52 @@ pero al reducir las composición obtenemos
 \[ \implies [f] * [k_{x_1}] := [f * k_{x_1}] = [f \circ (i * e_1)] = [ f
   \circ i] = [f] \]
 probando (2).
-\end{itemize}
+
+\paragraph{(3).} De manera similar a la pregunta anterior, notar que \(i,
+\bar{i}\) definidos anteriormente cumplen
+\[ i * \bar{i} \simeq_{ah} e_0 \]
+por la homotopia de linea recta en el espacio \(I\) que es convexo.
+Utilizando el lemma \eqref{lema:dist-composicion-producto} tenemos que
+\[ f * \bar{f} = f \circ (i * \bar{i}) \simeq_{ah} f \circ e_0 =
+  k_{x_0} \]
+\[ \implies [f] * [\bar{f}] = [k_{x_0}] \]
+De manera analoga se prueba la inversa por la izquierda.
+
+\paragraph{(1).}
+% todo(slack)
 \end{proof}
+
+\subsection{Grupo fundamental}
+Sobre nuestros arcos tenemos una estructura de grupoide porque no siempre
+podemos hacer coincidir los puntos inicial y final. Si nos fijaramos en
+un solo punto \(x_0 \in X\) tal que todas los arcos \(f : I \to X\)
+cumplieran que
+\[ f(0) = x_0 = f (1) \]
+Entonces las propiedades que demostramos anteriormente nos dirian que el
+espacio \((X / \simeq_{ah}, *)\) es un grupo. Una pregunta natural ha
+hacerse es si la eleccion de punto influye en el tipo de grupo que se
+obtiene en \((X / \simeq_{ah}, *)\). En general la respuesta es
+afirmativa, lo cual complica nuestra tarea puesto que queremos definir
+una invariante topologica que dependa del espacio total. Pero podemos
+recuperar nuestro objetivo si nos restringimos a espacios \(X\) que sean
+arco-conexos.
+\begin{definicion}[arco-conexidad]
+  Diremos que el espacio \(X\) es \emph{arco conexo} si para todo par de
+  puntos \(x,y \in X\) existe un arco continuo \(f : I \to X\) tal que
+  cumpla
+  \[ f(0) = x \qquad f(1) = y \]
+\end{definicion}
+Para estos espacios, denotamos a \((X / \simeq_{ah}, *)\) como
+\(\pi_1(X,x_0)\) y le llamaremos \textbf{grupo fundamental} de \(X\) con
+respecto a \(x_0\). Es claro que la importancia del punto \(x_0\) es poca
+considerando la arco-conexidad. Puesto que si tengo \([f] \in
+\pi_1(X,x_0)\) y \(\alpha : I \to X\) un arco entre \(x_0\) y \(x_1\),
+existe un camino \([\hat{\alpha} * f * \alpha] \in \pi_1(X,x_1)\), es
+decir un isomorfismo.
+% La razon de porque aun guardamos a \(x_0\) como
+% informacion del grupo es que a priori los isomorfismos entre \(\pi_1 (X,
+% x_0)\) y \(\pi_1 (X, x_1)\) pueden depender del arco \(\alpha\) elegido,
+% de los cuales ningun
 
 \section{Cubrimientos pares}
 
