@@ -1,0 +1,125 @@
+\subsection{Grupoide de arcos}
+Si tenemos dos arcos continuos \(f,g\) tales que el punto final de \(f\)
+sea el punto inicial de \(g\) nos da la idea de que podemos construir un
+camino continuo que recorra \(f\) luego recorriendo \(g\). Esta idea es
+conocida formalmente como el producto de dos arcos.
+
+\begin{definicion}[Producto de arcos]
+Para dos arcos \(f,g : I \to X\) tales que
+\(f(1) = g(0)\), se define el producto \(f * g \)
+\[ (f*g) (s) = \begin{cases}
+    f(2s) & s \in [0,\frac{1}{2}] \\
+    g(2s - 1) & s \in [\frac{1}{2} , 1]
+  \end{cases}
+\]
+la cual sigue siendo una funcion continua en virtud del lema del
+pegamiento.
+\end{definicion}
+
+Esta construccion se puede reutilizar para clases
+\emph{arco}-homotopicas \([f],[g]\) que compartan punto final e inicial
+respectivamente para definir un producto de clases de equivalencia
+\[ [f] * [g] := [f * g]\]
+El cual esta bien definido pues si \(f \simeq_{ah} f'\), \(g \simeq_{ah}
+g'\) a traves de \(F, G\) respectivamente
+\[H(s,t) = \begin{cases}
+    F(2s,t) & s \in [0, \frac{1}{2}] \\
+    G(2s - 1, t) & s \in [\frac{1}{2} , 1]
+  \end{cases}
+\]
+Es la homotopia que relaciona a los arcos que sean homotopicos a
+\(f*g\). Esta ademas es continua en virtud otra vez del lema del pegamiento.
+
+Con esta operacion binaria, una pregunta a hacerse es si tiene
+\((X/\simeq_{ah} , *)\) posee
+estructura de grupoide. Esto equivale a cumplir 3 propiedades
+\begin{enumerate}
+\item \textbf{Asociatividad} Si \([f] * ([g] * [h])\) esta definido entonces
+  tambien lo debe estar \(([f] * [g]) * [h]\) y deben de ser iguales.
+\item \textbf{Identidades izquierda y derecha} Para todo \([f]\) con
+  \(x_0, x_1\) puntos inicial y final respectivamente, debe de
+existir elementos \([k_{0}], [k_{1}]\) tales que
+\[ \begin{matrix}
+    [f] * [k_{1}] = [f] & & [k_{0}] * [f] = [f]
+  \end{matrix}
+\]
+\item \textbf{Inverso} Para todo \([f]\) clase de arcos con \(x_0, x_1\)
+  puntos inicial y final respectivamente debe de existir un elemento
+  \([\bar{f}]\) que cumpla
+\[ \begin{matrix}
+    [f] * [\bar{f}] = [k_{x_0}] & & [\bar{f}] * [f] = [k_{x_1}]
+  \end{matrix}
+\]
+\end{enumerate}
+Para probar esto necesitamos primero definir a nuestros candidatos de
+\(k_{x_1}, k_{x_2}, \bar{f}\) ademas de algunas funciones auxiliares,
+iniciando por los mapeos constantes e identidad en \(I\)
+\[ \begin{matrix}
+     e_0 : & I \to I & e_0(t) := 0 \\
+     e_1 : & I \to I & e_1(t) := 1 \\
+     i :   & I \to I & i(t) := t \\
+     \bar{i} : & I \to I & i(t) := 1 - t
+   \end{matrix}
+   \]
+Para todo arco \(f : I \to X \), el elemento \(\bar{f} : I \to X \) esta
+definido (en el espiritu de \eqref{eq:homotopy-simetry}) por
+\[ \bar{f} (s) := f (1 - s) \]
+Para todo \(x \in X \) se define la curva constante
+\begin{align*}
+  k_x : &I \to X \\
+        &t \mapsto x
+\end{align*}
+Con esto podemos afrontar la demostración
+\begin{proof}
+Se procedera \(2 \to 3 \to 1\) con lemas en medio. Sea \(f : I \to X\) el
+representante de \([f]\). sean \(x_0, x_1\) los puntos inicial y final de
+\(f\) respectivamente.
+
+\paragraph{(2).} Dados \(i,e_1\) arcos en \(I\) definidos anteriormente,
+es claro que \(i * e_1\) es tambien un arco (continuo) en \(I\); mas aun,
+ya que \(I\) es convexo se tiene \(i * e_1 \simeq_{ah} i\) con la
+homotopia de la linea recta entre estos. Se desprende de esto ultimo que
+\( [i] = [i * e_1]\). Para continuar necesitamos el siguiente lema
+\begin{lema}[Distributividad de la composicion sobre producto.]
+\label{lema:dist-composicion-producto}
+\[\forall a,b : I \to I,\ f \circ (a * b) = (f \circ a) * (f \circ b) \]
+\end{lema}
+\begin{proof}
+  \[ f \circ (a*b) (s) =
+    \begin{cases}
+      f (a(2s)) & s \in [0,\frac{1}{2}] \\
+      f (b(2s - 1)) & s \in [\frac{1}{2} , 1]
+    \end{cases}
+    = (f \circ a) * (f \circ b)
+  \]
+\end{proof}
+Recordemos ademas que la composición de funciones continuas es continua.
+Luego esto nos permite afirmar en especifico que
+\[ f \circ (i * e_1) \simeq_{ah} (f \circ i) * (f \circ e_1) \] en virtud
+de la composición de \(f\) con la homotopia de linea recta entre \(i *
+e_1 \) y \(i\). Obteniendo asi que
+\[ [f \circ (i * e_1)] = [(f \circ i) * (f \circ e_1)] \] pero al reducir
+las composición obtenemos
+\[
+  \begin{matrix}
+    f \circ i = f & f \circ e_1 = k_{x_1} & f \circ (i * e_1) = f *
+    k_{x_{1}} \\
+  \end{matrix}
+\]
+\[ \implies [f] * [k_{x_1}] := [f * k_{x_1}] = [f \circ (i * e_1)] = [ f
+  \circ i] = [f] \]
+probando (2).
+
+\paragraph{(3).} De manera similar a la pregunta anterior, notar que \(i,
+\bar{i}\) definidos anteriormente cumplen
+\[ i * \bar{i} \simeq_{ah} e_0 \]
+por la homotopia de linea recta en el espacio \(I\) que es convexo.
+Utilizando el lemma \eqref{lema:dist-composicion-producto} tenemos que
+\[ f * \bar{f} = f \circ (i * \bar{i}) \simeq_{ah} f \circ e_0 =
+  k_{x_0} \]
+\[ \implies [f] * [\bar{f}] = [k_{x_0}] \]
+De manera analoga se prueba la inversa por la izquierda.
+
+\paragraph{(1).}
+% todo(slack)
+\end{proof}

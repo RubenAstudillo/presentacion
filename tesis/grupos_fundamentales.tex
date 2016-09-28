@@ -1,0 +1,41 @@
+\section{Grupo fundamental}
+
+\input{./arco_homotopias.tex}
+\input{./grupoide_arcos.tex}
+
+\subsection{Grupo fundamental}
+Sobre nuestros arcos tenemos una estructura de grupoide porque no siempre
+podemos hacer coincidir los puntos inicial y final. Si nos fijaramos en
+un solo punto \(x_0 \in X\) tal que todas los arcos \(f : I \to X\)
+cumplieran que
+\[ f(0) = x_0 = f (1) \]
+Entonces las propiedades que demostramos anteriormente nos dirian que el
+espacio \((X / \simeq_{ah}, *)\) es un grupo. Una pregunta natural ha
+hacerse es si la eleccion de punto influye en el tipo de grupo que se
+obtiene en \((X / \simeq_{ah}, *)\). En general la respuesta es
+afirmativa, lo cual complica nuestra tarea puesto que queremos definir
+una invariante topologica que dependa del espacio total. Pero podemos
+recuperar nuestro objetivo si nos restringimos a espacios \(X\) que sean
+arco-conexos.
+\begin{definicion}[arco-conexidad]
+  Diremos que el espacio \(X\) es \emph{arco conexo} si para todo par de
+  puntos \(x,y \in X\) existe un arco continuo \(f : I \to X\) tal que
+  cumpla
+  \[ f(0) = x \qquad f(1) = y \]
+\end{definicion}
+Para estos espacios, denotamos a \((X / \simeq_{ah}, *)\) como
+\((\pi_1(X,x_0), *)\) y le llamaremos \textbf{grupo fundamental} de \(X\) con
+respecto a \(x_0\). Es claro que la importancia del punto \(x_0\) es poca
+considerando la arco-conexidad. Puesto que si tengo \([f] \in
+\pi_1(X,x_0)\) y \(\alpha : I \to X\) un arco entre \(x_0\) y \(x_1\),
+existe un camino \([\hat{\alpha} * f * \alpha] \in \pi_1(X,x_1)\), es
+decir un isomorfismo entre \(\pi_1 (X, x_0)\) y \(\pi_1 (X, x_1)\). Aun
+asi es conveniente reificar los puntos bases de los grupo puesto que no
+necesariamente existe un camino canonico entre ellos.
+% La razon de porque aun guardamos a \(x_0\) como
+% informacion del grupo es que a priori los isomorfismos entre \(\pi_1 (X,
+% x_0)\) y \(\pi_1 (X, x_1)\) pueden depender del arco \(\alpha\) elegido,
+% de los cuales ningun
+
+%todo(slack): ejemplo de R^2 sin el punto
+%todo(slack): ver la discucion de la propiedades functoriales (talvez?)
