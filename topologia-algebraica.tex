@@ -32,7 +32,7 @@
 \maketitle
 
 \section{Prefacio}
-Topología nos da un idioma para entender propiedades de diferentes
+Topología nos da un lenguaje para entender propiedades de diferentes
 espacios a través de nociones como compacidad, cerrado/abierto y
 diferentes tipos
 de separabilidad. Gran parte de estas propiedades tienen un carácter
@@ -325,19 +325,25 @@ arco-conexos.
   \[ f(0) = x \qquad f(1) = y \]
 \end{definicion}
 Para estos espacios, denotamos a \((X / \simeq_{ah}, *)\) como
-\(\pi_1(X,x_0)\) y le llamaremos \textbf{grupo fundamental} de \(X\) con
+\((\pi_1(X,x_0), *)\) y le llamaremos \textbf{grupo fundamental} de \(X\) con
 respecto a \(x_0\). Es claro que la importancia del punto \(x_0\) es poca
 considerando la arco-conexidad. Puesto que si tengo \([f] \in
 \pi_1(X,x_0)\) y \(\alpha : I \to X\) un arco entre \(x_0\) y \(x_1\),
 existe un camino \([\hat{\alpha} * f * \alpha] \in \pi_1(X,x_1)\), es
-decir un isomorfismo.
+decir un isomorfismo entre \(\pi_1 (X, x_0)\) y \(\pi_1 (X, x_1)\). Aun
+asi es conveniente reificar los puntos bases de los grupo puesto que no
+necesariamente existe un camino canonico entre ellos.
 % La razon de porque aun guardamos a \(x_0\) como
 % informacion del grupo es que a priori los isomorfismos entre \(\pi_1 (X,
 % x_0)\) y \(\pi_1 (X, x_1)\) pueden depender del arco \(\alpha\) elegido,
 % de los cuales ningun
 
+%todo(slack): ejemplo de R^2 sin el punto
+%todo(slack): ver la discucion de la propiedades functoriales (talvez?)
 \section{Cubrimientos pares}
-
+El ejemplo visto hasta ahora es realmente simple, para los espacios mas
+generales necesitamos herramientas mas fuertes. Una de ellas son los
+cubrimientos pares, quienes a traves de homeomorfismos locales
 \section{Van Kampen}
 
 \section{Nociones categoricas}
