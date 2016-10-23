@@ -20,7 +20,7 @@ Esta construccion se puede reutilizar para clases
 \emph{arco}-homotopicas \([f],[g]\) que compartan punto final e inicial
 respectivamente para definir un producto de clases de equivalencia
 \[ [f] * [g] := [f * g]\]
-El cual esta bien definido pues si \(f \simeq_{ah} f'\), \(g \simeq_{ah}
+El cual esta bien definido pues si \(f \simeq f'\), \(g \simeq
 g'\) a traves de \(F, G\) respectivamente
 \[H(s,t) = \begin{cases}
     F(2s,t) & s \in [0, \frac{1}{2}] \\
@@ -30,30 +30,30 @@ g'\) a traves de \(F, G\) respectivamente
 Es la homotopia que relaciona a los arcos que sean homotopicos a
 \(f*g\). Esta ademas es continua en virtud otra vez del lema del pegamiento.
 
-Con esta operacion binaria, una pregunta a hacerse es si tiene
-\((X/\simeq_{ah} , *)\) posee
-estructura de grupoide. Esto equivale a cumplir 3 propiedades
+Con esta operacion binaria, una pregunta a hacerse es si \((X/\simeq ,
+*)\) tiene posee estructura de grupoide, esto equivale a cumplir 3
+propiedades
 \begin{enumerate}
 \item \textbf{Asociatividad} Si \([f] * ([g] * [h])\) esta definido entonces
-  tambien lo debe estar \(([f] * [g]) * [h]\) y deben de ser iguales.
+  tambien lo debe estar \(([f] * [g]) * [h]\) y deben coincidir.
 \item \textbf{Identidades izquierda y derecha} Para todo \([f]\) con
   \(x_0, x_1\) puntos inicial y final respectivamente, debe de
-existir elementos \([k_{0}], [k_{1}]\) tales que
+existir elementos \([k_{x_0}], [k_{x_1}]\) tales que
 \[ \begin{matrix}
-    [f] * [k_{1}] = [f] & & [k_{0}] * [f] = [f]
+    [f] * [k_{x_1}] = [f] & & [k_{x_0}] * [f] = [f]
   \end{matrix}
 \]
 \item \textbf{Inverso} Para todo \([f]\) clase de arcos con \(x_0, x_1\)
   puntos inicial y final respectivamente debe de existir un elemento
-  \([\bar{f}]\) que cumpla
+  \([f^{-1}]\) que cumpla
 \[ \begin{matrix}
-    [f] * [\bar{f}] = [k_{x_0}] & & [\bar{f}] * [f] = [k_{x_1}]
+    [f] * [f^{-1}] = [k_{x_0}] & & [f^{-1}] * [f] = [k_{x_1}]
   \end{matrix}
 \]
 \end{enumerate}
 Para probar esto necesitamos primero definir a nuestros candidatos de
-\(k_{x_1}, k_{x_2}, \bar{f}\) ademas de algunas funciones auxiliares,
-iniciando por los mapeos constantes e identidad en \(I\)
+\(k_{x_0}, k_{x_1}, f^{-1}\) ademas de algunas funciones auxiliares,
+iniciando por los mapeos constantes e identidad en \(I \to I\)
 \[ \begin{matrix}
      e_0 : & I \to I & e_0(t) := 0 \\
      e_1 : & I \to I & e_1(t) := 1 \\
@@ -61,10 +61,11 @@ iniciando por los mapeos constantes e identidad en \(I\)
      \bar{i} : & I \to I & i(t) := 1 - t
    \end{matrix}
    \]
-Para todo arco \(f : I \to X \), el elemento \(\bar{f} : I \to X \) esta
+Para todo arco \(f : I \to X \), el elemento \(f^{-1} : I \to X \) esta
 definido (en el espiritu de \eqref{eq:homotopy-simetry}) por
-\[ \bar{f} (s) := f (1 - s) \]
-Para todo \(x \in X \) se define la curva constante
+\[ f^{-1} (s) := f (1 - s) \]
+Para todo \(x \in X \) se define la curva constante\footnote{\(k\) por
+\emph{konst}}
 \begin{align*}
   k_x : &I \to X \\
         &t \mapsto x
@@ -77,12 +78,13 @@ representante de \([f]\). sean \(x_0, x_1\) los puntos inicial y final de
 
 \paragraph{(2).} Dados \(i,e_1\) arcos en \(I\) definidos anteriormente,
 es claro que \(i * e_1\) es tambien un arco (continuo) en \(I\); mas aun,
-ya que \(I\) es convexo se tiene \(i * e_1 \simeq_{ah} i\) con la
-homotopia de la linea recta entre estos. Se desprende de esto ultimo que
-\( [i] = [i * e_1]\). Para continuar necesitamos el siguiente lema
+ya que \(I = [0,1]\) es convexo, se tiene \(i * e_1 \simeq i\) con la
+homotopia de la linea recta entre estos. Sobre estas composiciones,
+tenemos el siguiente lema
 \begin{lema}[Distributividad de la composicion sobre producto.]
 \label{lema:dist-composicion-producto}
-\[\forall a,b : I \to I,\ f \circ (a * b) = (f \circ a) * (f \circ b) \]
+\[\forall a,b : I \to I,\ \forall f : I \to X,\ f \circ (a * b) = (f
+\circ a) * (f \circ b) \]
 \end{lema}
 \begin{proof}
   \[ f \circ (a*b) (s) =
@@ -90,16 +92,15 @@ homotopia de la linea recta entre estos. Se desprende de esto ultimo que
       f (a(2s)) & s \in [0,\frac{1}{2}] \\
       f (b(2s - 1)) & s \in [\frac{1}{2} , 1]
     \end{cases}
-    = (f \circ a) * (f \circ b)
+    = (f \circ a) * (f \circ b) (s)
   \]
 \end{proof}
-Recordemos ademas que la composición de funciones continuas es continua.
-Luego esto nos permite afirmar en especifico que
-\[ f \circ (i * e_1) \simeq_{ah} (f \circ i) * (f \circ e_1) \] en virtud
-de la composición de \(f\) con la homotopia de linea recta entre \(i *
-e_1 \) y \(i\). Obteniendo asi que
-\[ [f \circ (i * e_1)] = [(f \circ i) * (f \circ e_1)] \] pero al reducir
-las composición obtenemos
+\noindent Recordemos ademas que la composición de funciones continuas es
+continua, luego esto nos permite afirmar en especifico que \( f \circ (i
+* e_1) \simeq (f \circ i) * (f \circ e_1) \) en virtud de la composición
+de \(f\) con la homotopia de linea recta entre \(i * e_1 \) y \(i\). Por
+tanto \( [f \circ (i * e_1)] = [f \circ i] \), pero al reducir las
+composiciones obtenemos
 \[
   \begin{matrix}
     f \circ i = f & f \circ e_1 = k_{x_1} & f \circ (i * e_1) = f *
@@ -107,19 +108,49 @@ las composición obtenemos
   \end{matrix}
 \]
 \[ \implies [f] * [k_{x_1}] := [f * k_{x_1}] = [f \circ (i * e_1)] = [ f
-  \circ i] = [f] \]
-probando (2).
+\circ i ] = [f] \]
+obteniendo asi que \([k_{x_1}]\) es la identidad por la derecha. Podemos
+hacer un proceso analogo para \([k_{x_0}]\) como identidad por la
+izquierda, asi probando (2).
 
 \paragraph{(3).} De manera similar a la pregunta anterior, notar que \(i,
 \bar{i}\) definidos anteriormente cumplen
-\[ i * \bar{i} \simeq_{ah} e_0 \]
+\[ i * \bar{i} \simeq e_0 \]
 por la homotopia de linea recta en el espacio \(I\) que es convexo.
 Utilizando el lemma \eqref{lema:dist-composicion-producto} tenemos que
-\[ f * \bar{f} = f \circ (i * \bar{i}) \simeq_{ah} f \circ e_0 =
-  k_{x_0} \]
-\[ \implies [f] * [\bar{f}] = [k_{x_0}] \]
+\[ [f * f^{-1}] = [f \circ (i * \bar{i})] = [f \circ e_0] = [k_{x_0}] \]
+\[ \implies [f] * [f^{-1}] = [k_{x_0}] \]
 De manera analoga se prueba la inversa por la izquierda.
 
 \paragraph{(1).}
-% todo(slack)
+Por definicion, tenemos que las diferentes asociaciones nos resultan en
+diferentes representates de clase
+\[
+  \begin{matrix}
+    (f * g) * h \, (t) =
+    \begin{cases}
+      f (4t), & t \in [0, \frac 1 4] \\
+      g (4t - 1), & t \in [\frac 1 4, \frac 1 2] \\
+      h (2t - 1), & t \in [\frac 1 2, 1] \\
+    \end{cases} &
+    f * (g * h) \, (t) =
+    \begin{cases}
+      f (2t), & t \in [0, \frac 1 2] \\
+      g (4t - 2), & t \in [\frac 1 2, \frac 3 4] \\
+      h (4t - 3), & t \in [\frac 3 4, 1] \\
+    \end{cases}
+  \end{matrix}
+\]
+Sea \(T : I \to I\) definida por
+\[ T (t) :=
+  \begin{cases}
+    2t & t \in [1 , \frac 1 4] \\
+    t + \frac 1 4 & t \in [\frac 1 4, \frac 1 2] \\
+    \frac t 2 + \frac 1 2 & t \in [\frac 1 2, 1]
+  \end{cases}
+\]
+\(T\) es una funcion continua por el lema del pegamiento. Por ser \(I\)
+un dominio convexo, se tiene que \(i \simeq T\), luego
+\[ [(f * g) * h] = [\big( (f * g) * h \big) \circ i] = [\big( (f * g) *
+  h \big) \circ T ] = [f * (g * h)] \]
 \end{proof}
