@@ -31,38 +31,168 @@ significa ser isomorfo entre grupos
   \[ e \text{ identidad en } G \implies F(e) \text { identidad en } G' \]
 \end{definicion}
 
-\paragraph{Ejemplo \(\mathbb{R}^2 - \{(1,1)\}\).} Este espacio es
-relativamente sencillo de visualizar, haremos un argumento intuitivo para
-ver su grupo fundamental. Sea \(f : I \to \mathbb{R}^2 - \{(1,1)\}\) un
-camino arbitrario
+\subsubsection{Ejemplo \(\mathbb{R}^2 - \{(1,1)\}\).}
+Como ejemplo utilizaremos este espacio relativamente sencillo de
+visualizar. Para ver su grupo fundamental hemos de caracterizar todas la
+curvas cerradas que inicien en un punto arbitrario, que denotaremos por
+\(x_0\). Sea \(f : I \to \mathbb{R}^2 - \{(1,1)\}\) un camino
+arbitrario, con dicho punto inicial, tendremos dos grandes alternatives
+para ver sus isometrias.
+\begin{figure}{h}
+  \caption{\(R^2\) sin el punto \((1,1)\)}
+  \centering
+  \includegraphics[scale=0.5]{./imagenes/R2-sin-un-punto.png}
+  \label{fig:R2-sin-punto}
+\end{figure}
+\begin{itemize}
+\item La curva denotada por \(f\) puede ser contenida en un subconjunto
+  convexo de \(R^2 - \{(1,1)\}\). De esta manera, la curva pertence a la
+  homotopia de la linea bajo la funcion
+  \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) x_0\]
+  Por lo tanto en este caso, \(f \in [e_{x_0}]\).
+\item La curva \(f\) no puede ser contenida en un subconjunto convexo de
+  \(R^2 - \{ (1,1)\}\). Esto solo puede suceder si la curva \(f\)
+  encerrara al punto \(x_0\), de manera que la relacion \(\lambda x +
+  (1 - \lambda) y\) no fuera valida para algunos \(\lambda, x, y\). Por
+  tanto \(f \not \in [e_{x_0}]\), asi que denotaremos a la clase de
+  equivalencia a la que pertenece como \([\mathtt{F}^1]\) (mas adelante
+  mostraremos esta isometria explicitamente).
+\item La curva \(f\) encierra a \(x_0\) \(2\) veces. Dado que cada vez
+  que lo encierra, esa curva (hasta ese momento) es isometrica a
+  \([\mathtt F ^1]\), tenemos que \(f\) es isometrica a \( [\mathtt F
+  ^1] * [\mathtt F ^1] =: [\mathtt F ^2]\). Esto se puede generalizar
+  para todos los naturales.
+\end{itemize}
+Asi intuitivamente vemos que para este tenemos las clase de
+equivalencias \([e_{x_0}], [\mathtt F ^1], [\mathtt F ^2], \dots \) con
+la propiedades algebraicas
+\[ [e_{x_0}] * [\mathtt F ^n] = [\mathtt F ^n] * [e_{x_0}]\]
+\[ [\mathtt F ^m]  * [\mathtt F ^n] = [\mathtt F ^{n + m}]\]
+En efecto, estos elementos son bajo isomorfismo de grupo equivalentes a
+el grupo \((\mathbb{Z}, +)\). Por tanto diremos que este es el grupo
+fundamental de \(R^2 - \{(1,1)\}\).
 
-%% old
-Una pregunta natural ha
-hacerse es si la eleccion de punto influye en el tipo de grupo que se
-obtiene en \((X / \simeq_{ah}, *)\). En general la respuesta es
-afirmativa, lo cual complica nuestra tarea puesto que queremos definir
-una invariante topologica que dependa del espacio total. Pero podemos
-recuperar nuestro objetivo si nos restringimos a espacios \(X\) que sean
-arco-conexos.
-\begin{definicion}[Arco-conexidad]
-  Diremos que el espacio \(X\) es \emph{arco conexo} si para todo par de
-  puntos \(x,y \in X\) existe un arco continuo \(f : I \to X\) tal que
-  cumpla
-  \[ f(0) = x \qquad f(1) = y \]
-\end{definicion}
-Para estos espacios, denotamos a \((X / \simeq_{ah}, *)\) como
-\((\pi_1(X,x_0), *)\) y le llamaremos \textbf{grupo fundamental} de \(X\) con
-respecto a \(x_0\). Es claro que la importancia del punto \(x_0\) es poca
-considerando la arco-conexidad. Puesto que si tengo \([f] \in
-\pi_1(X,x_0)\) y \(\alpha : I \to X\) un arco entre \(x_0\) y \(x_1\),
-existe un camino \([\hat{\alpha} * f * \alpha] \in \pi_1(X,x_1)\), es
-decir un isomorfismo entre \(\pi_1 (X, x_0)\) y \(\pi_1 (X, x_1)\). Aun
-asi es conveniente reificar los puntos bases de los grupo puesto que no
-necesariamente existe un camino canonico entre ellos.
-% La razon de porque aun guardamos a \(x_0\) como
-% informacion del grupo es que a priori los isomorfismos entre \(\pi_1 (X,
-% x_0)\) y \(\pi_1 (X, x_1)\) pueden depender del arco \(\alpha\) elegido,
-% de los cuales ningun
+\subsection{Importancia punto de origen}
+En el ejemplo anterior se vio que el punto \(x_0 = (1,1)\) la verdad no
+jugaba ningun papel importante, su unica mision era identificar el
+origen de los caminos. En espacios como el anterior, la importancia de
+la eleccion se ve reducida puesto que este es arco-conexo, en estos
+espacio \(\forall a,b \in X\), con \(X\) un espacio topologico a
+estudiar, existe un camino \(\alpha : I \to X\) tal que \(\alpha (0) =
+a,\ \alpha (1) = b\). Si nuestro espacio \(X\) no fuera arco-conexo,
+caemos en la disyuntiva de elegir un punto apropiado que
+``suficientemente'' represente al espacio, en la definicion de su grupo
+fundamental. Dada que la motivacion de definir en primer lugar el grupo
+fundamental provenia de establecer una \emph{invariante} topologica,
+hace dudar que la parametrizacion en cuanto a punto base del grupo
+fundamental indique que procedemos por buen camino
+%todo(slack): buscar papers de grupo fundamental de conjuntos conexos y
+%no arco conexos
 
-%todo(slack): ejemplo de R^2 sin el punto
-%todo(slack): ver la discucion de la propiedades functoriales (talvez?)
+Aun en espacios arco-conexos seguimos declarando el punto base con
+respecto al cual derivamos su grupo fundamental. Para ver con mas
+claridad porque, primero debemos probar que en efecto, en espacios
+arco-conexos el punto base no afecta al grupo fundamental.
+\begin{teorema}
+  Sea \(x_0 , x_1 \in X\) puntos de un espacio arco conexo, sean \(\pi
+  (X, x_0), \pi (X, x_1)\) dos grupos fundamentales de \(X\)
+  parametrizados por estos puntos, entonces estos dos grupos son isomofimos
+\end{teorema}
+\begin{proof}
+  Por ser \(X\) arco-conexo, existe \(\alpha : I \to X\) camino
+  continuo, tal que \(\alpha (0) = x_0,\ \alpha (1) = x_1\). Se define
+  la funcion
+  \begin{align*}
+    F : \pi (X, x_0) &\to \pi (X, x_1) \\
+    [g] &\mapsto [ \alpha^{-1} * g * \alpha ]
+  \end{align*}
+  Esta funcion, esta bien definida puesto que \(\forall g \in \pi (X,
+  x_0), \alpha^{-1} * g * \alpha \) es continua (en virtud de \(*\)) y
+  \[ \alpha^{-1} (t) = \alpha (1 - t)\]
+  \[(\alpha^{-1} * g * \alpha) (0) = \alpha (1 - 0) = x_1 = \alpha (1) =
+    (\alpha^{-1} * g * \alpha) (1)\]
+
+  \paragraph{\(F\) es homomorfismo.} Para esto, se procede por
+  definicion. Por un lado, al mapear la identidad de \(e_{x_0} \in \pi
+  (X, x_0) \), tenemos por reduccion
+  \begin{align*}
+    F ([e_{x_0}]) &= [\alpha^{-1} * e_{x_0} * \alpha] \\
+                 &= [\alpha^{-1}] * [e_{x_0} * \alpha] \\
+                 &= [\alpha^{-1}] * [\alpha] \\
+                 &= [\alpha^{-1} * \alpha] \\
+                 &= [e_{x_1}] \\
+  \end{align*}
+  Por otro lado, si \(u,v \in \pi (X, x_0) \), tenemos la siguiente
+  reduccion del producto
+  \begin{align*}
+    F ([u] * [v]) &= [\alpha^{-1} * u * v * \alpha] \\
+    &= [\alpha^{-1} * u * e_{x_1} * v * \alpha] \\
+    &= [\alpha^{-1} * u * \alpha * \alpha^{1} * v * \alpha] \\
+    &= [\alpha^{-1} * u * \alpha ] * [ \alpha^{1} * v * \alpha] \\
+    &= F (u) * F (v) \\
+  \end{align*}
+
+  \paragraph{\(F\) es inyectiva y sobreyectiva.} La inyectividad es
+  clara, pues si \([u],[v] \in \pi (X, x_0),\ [u] \not \simeq_{ah} [v]
+  \implies [\alpha^{1}] * [u] * [\alpha] \not \simeq_{ah} [\alpha^{-1}] * [v]
+  * [\alpha]\). Para ver la sobreyectividad, notemos que \(\forall [k] \in
+  \pi (X, x_1) \), siempre existe \( [\alpha * k * \alpha^{-1}]\) tal
+  que
+  \[ F ([\alpha * k * \alpha^{-1}]) = [\alpha^{-1} * \alpha * k *
+    \alpha^{-1} * \alpha] = [k]\]
+  Por tanto \(F\) es un isomorfismo de grupos.
+\end{proof}
+En el la prueba anterior, la existencia del camino \(\alpha\)
+parametrizaba que tipo de isomorfismo \(F\) que construiamos, es decir
+nuestro \(F\) enrealidad era \(F_{\alpha}\). Dependiendo de la eleccion
+de punto bases, la existencia de unico o multiples caminos entre ellos
+es un tema a considerar, puesto que existe un caracterizacion de \(\pi
+(X, x_0) \) como grupo abeliano, que depende de estos isomorfismos.
+\begin{teorema}
+  Sean \(x_0, x_1 \in X\) puntos en un espacio arco-conexo. El grupo
+  \(\pi (X, x_0) \) es abeliano si y solo si \(\forall \alpha, \beta\)
+  caminos (distintos) entre \(x_0\) y \(x_1\) se cumple que \(F_\alpha =
+  F_\beta\), con \(F_{\xi} ([f]) = [\xi^{-1} * f * \xi] \)
+\end{teorema}
+\begin{proof}
+  Procedemos por la implicacion original. Dado que \(\pi (X, x_0)\) es
+  abeliano, esto significa que \(\forall [f],[g] \in \pi (X, x_0),\ [f]
+  * [g] = [g] * [f]\). Sean \(\alpha, \beta\) caminos entre \(x_0,x_1\)
+  fijos pero arbitrarios, para mostrar que \(F_\alpha = F_\beta\),
+  debemos mostrar que para todo argumento, los resultados coinciden. Sea
+  \([f] \in \pi (X, x_0) \) un argumento fijo pero arbitrario, por
+  definicion de \(F_\alpha, F_\beta\) se cumple la siguientes reducciones
+  \[
+    \begin{matrix}
+      F_\alpha ([f]) = [\alpha^{-1}] * [f] * [\alpha] = [f] *
+          [\alpha^{-1}] * [\alpha] = [f] * [e_{x_1}] = [f] \\
+      F_\beta ([f]) = [\beta^{-1}] * [f] * [\beta] = [f] *
+          [\beta^{-1}] * [\beta] = [f] * [e_{x_1}] = [f] \\
+    \end{matrix}
+  \]
+  probando asi lo buscado.
+
+  En el converso, sean \([f],[g] \in \pi (X, x_0) \) fijos pero
+  arbitrarios, dado que \(\alpha\) es camino entre \(x_0\) e \(x_1\), se
+  tiene que \(f * \alpha\) tambien es camino entre estos. Por hipotesis,
+  tenemos en particular para estos caminos, que se cumple la relacion
+  \begin{align*}
+    F_{f * \alpha} (g) &= F_{\alpha} (g) \\
+    [(f * \alpha)^{-1} * g * (f * \alpha) ] &= [\alpha^{-1} * g * \alpha] \\
+    [\alpha^{-1} * f^{-1} * g * f * \alpha ] &= [\alpha^{-1} * g * \alpha] \\
+    [\alpha^{-1}] * [f^{-1}] * [g] * [f] * [\alpha] &= [\alpha^{-1}] *
+        [g] * [\alpha] \\
+    [f^{-1}] * [g] * [f] &= [g] \\
+    [g] * [f] &= [f] * [g], \qquad \forall [f],[g] \in \pi (X, x_0) \\
+  \end{align*}
+\end{proof}
+En resumen si sabemos que \(\pi (X, x_0)\) es abeliano, esto equivale a
+decir que \(\forall \alpha,\beta\) caminos entre \(x_0, x_1\), se tiene
+que existe un \emph{unico} isomorfismo entre \(\pi (X,x_0) \) y \( \pi
+(X,x_1)\), pues \(F_\alpha = F_\beta\). Anteriormente, teniamos la
+existencia de posiblemente multiples isomorfismos entre \(\pi (X, x_0)
+\) y \(\pi (X, x_1) \). Si no podemos parametrizar los isomorfismos
+entre distintos puntos bases de un grupo fundamental, perdemos esta
+caractizacion de grupo fundamental abeliano, pues perdemos la capacidad
+de contar cuantos isomorfismos existen.
+% todo(slack): ver la discucion de la propiedades functoriales (talvez?)
