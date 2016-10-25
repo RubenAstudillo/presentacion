@@ -5,7 +5,7 @@ Sea \(p : \tilde{X} \to X\) una funcion continua sobreyectiva. El abierto \(U
 \(\{V_\alpha\}_{\alpha \in \Lambda},\ \Lambda \subseteq \mathbb N\) tal que
 \[ p^{-1} (U) = \bigcup_{\alpha \in \Lambda} V_\alpha \]
 Donde \(\{V_\alpha\}\) es una familia disjunta de abiertos, tal que
-\(\forall \alpha \in \Lambda, p \mid_{\alpha}\) es biyecctivo en \(U\).
+\(\forall \alpha \in \Lambda, p \mid_{\alpha}\) es homeomofo sobre \(U\).
 
 Si para todo \(x \in X\) existe dicha vecindad \(U\) que cumpla lo
 anterior, se dira que \(\tilde{X}\) es un \textbf{espacio cubrimiento} de \(X\)
@@ -74,17 +74,17 @@ Ver que la definicion es mucho mas general que lo que pediamos al
 diagrama. Usualmente \(W = [0,1]\) pues estudiaremos los caminos sobre
 \(X\). Veremos a continuacion teoremas de como se reflejan los caminos
 y las homotopias en el espacio cubrimiento de \(X\).
-\begin{teorema}
-  Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde x _0)
-  = x_0 \), para algun \(\tilde x _0 \in \tilde X\). Para cualquier
-  camino \(f : [0,1] \to X\) que comience en \(x_0\), tiene un
-  unico camino levantamiento \(\tilde f\) en \(\tilde X\) que comienza
-  en \(\tilde x _0\).
+\begin{teorema}\label{thm:lifting-theorem}
+  Sea \(p : \tilde X \to X\) un cubrimiento par y \(x_0 \in X\). Fijemos
+  algun \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) = x_0 \).
+  Para cualquier camino \(f : [0,1] \to X\) que comience en \(x_0\), existe
+  un unico camino levantamiento \(\tilde f : [0,1] \to \tilde X\) tal que
+  \(\tilde f (0) = \tilde x _0\)
 \end{teorema}
 \begin{proof}
   Para todo punto de \(X\), existe una vecindad \(U_x\) que es
   cubierta parmente, por tanto \(\bigcup_{x \in X} U_x\) es cubrimiento
-  de \(X\). Por otro lado, tenemos que \( [0,1] \subset p^{-1}
+  de \(X\). Por otro lado, tenemos que \( [0,1] \subset f^{-1}
   (\bigcup_{x \in X} U_x)\). Por el Teorema
   \ref{thm:lebesgue-number-lema}, podemos elegir \(s_0,\dotsc,s_n\) tal
   que \(f([s_i, s_{i+1}])\) este contenido en algun \(U_x\). Definiremos
@@ -104,10 +104,124 @@ y las homotopias en el espacio cubrimiento de \(X\).
   \end{equation}
   El cual es continuo en \([s_i, s_{i+1}]\) en virtud del lema del pegamiento.
 
-  Para ver la unicidad, se probara inductivamente y por contradiccion.
-  Supongamos que existe otro \(\tilde{\tilde f}\) levantamiento par de
-  \(f\) que tambien comienza en \(x_0\), ie \(\tilde{\tilde f} (0) =
-  \tilde x _0 = \tilde f (0)\). Supongamos que que \(\forall s \in [0,
-  s_i],\ \tilde{\tilde f} (s) = \tilde f (s)\), dado que \(\tilde f\)
-  esta definida por \eqref{eq:tilde-f-inductiva}
+  Para ver la unicidad, se probara inductivamente. Supongamos que existe
+  otro \(\tilde{\tilde f}\) levantamiento par de \(f\) que tambien
+  comienza en \(x_0\), ie \(\tilde{\tilde f} (0) = \tilde x _0 = \tilde f
+  (0)\). Supongamos que que \(\forall s \in [0, s_i],\ \tilde{\tilde f}
+  (s) = \tilde f (s)\), dado que \(\tilde f\) esta definida por
+  \eqref{eq:tilde-f-inductiva}, \(\tilde {\tilde f}\) debe ser
+  eventualmente diferente a la definicion \eqref{eq:tilde-f-inductiva},
+  pero
+  \[\tilde {\tilde f} (s_i) = \tilde f (s_i) \in V_0\]
+  con \([s_i, s_{i+1}]\) conexo y la familia \(\{V_\alpha\}\)
+  es disjunta, obliga\footnote{funciones continuas mapean conjuntos
+    conexos a conexos} a que \(\tilde {\tilde f} [s_i, s_{i+1}] \subset
+  V_0\). Dado que es un levantamiento, debe de cumplirse que
+  \[\forall s \in [s_i, s_{i+1}],\ (p \mid_{V_0}) \circ \tilde {\tilde
+      f} (s) = f(s)\]
+  Pero dado que \((p \mid_{V_0})\) es un homemorfismo, esto ocurre
+  solamente en un punto \(\tilde x \in \tilde X\) especifico para cada
+  \(s\), el cual es
+  \[ \tilde x = (p \mid_{V_0})^{-1} (f(s))\]
+  que es precisamente la definicion de \(\tilde f\), por tanto se obliga
+  a que \( \tilde {\tilde f} = \tilde f\)
+\end{proof}
+\begin{corolario}
+  Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde x _0)
+  = x_0 \) para algun \(\tilde x _0 \in \tilde X\). Para cualquier
+  funcion continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\), tiene una
+  unica funcion levantamiento continua \(\tilde F : I \times I \to \tilde X\) tal
+  que \(\tilde F (0,0) = \tilde x_0\)
+\end{corolario}
+\begin{proof}
+  Lo unico diferente con el teorema \ref{thm:lifting-theorem} es que
+  tomamos \(I \times I\) que sigue siendo compacto. Podemos aplicar el
+  teorema anterior primero definiendo \(\tilde F\) en \(0 \times I\) y
+  luego en \(I \times 0\), luego escogiendo subdivisiones de \(I \times
+  I\)
+  \[ s_0 < s_1 < \dotsc < s_m \]
+  \[ t_0 < t_1 < \dotsc < t_n \]
+  construidos de manera analoga al teorema anterior. Luego podemos
+  definir \(\tilde F\) inductivamente ``por filas'' y luego ``por
+  columnas'', ya que aun mantenemos la invariante de preservar punto en
+  comun entre rectangulos \([s_{i-1}, s_i] \times [t_{i-1}, t_i]\).
+\end{proof}
+\begin{definicion}
+  Sea \(p : \tilde X \to X\) un cubrimiento par; sea \(x_0 \in X\).
+  Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
+  x_0\). Dado un elemento \([f] \in \pi (X, x_0)\), sea \(\tilde f\) el
+  levantamiento de \(f\) a un camino en \(\tilde X\) que comienza en
+  \(\tilde x _0\). Definamos \(\phi ([f]) = \tilde f (1)\) del \(\tilde
+  f\) asociado a \(f\) anteriormente. Entonces \(\phi\) es bien definido
+  como mapeo de conjunto
+  \[ \phi : \pi (X, x_0) \to p^{-1} (x_0)\]
+  llamando a \(\phi\) el \textbf{correspondiente levantamiento} derivado
+  del mapeo cubrimiento par \(p\).
+\end{definicion}
+La definicion anterior intuitivamente ``desenrolla'' los ciclos del
+grupo fundamental \(\pi (X,x_0)\) y ve donde terminan vistos sobre
+\(\tilde X\).
+\begin{teorema}
+  Sea \(p : \tilde X \to X\) un cubrimiento par, sea \(p (\tilde x _0) =
+  x_0\). Si \(\tilde X\) es arco-conexo entonces el correspondiente
+  levantamiento \(\phi : \pi (X, x _0) \to p^{-1} (x)\) es sobreyectivo.
+  Mas aun, si \(\tilde X\) es simplemente conexo, este es biyectivo.
+\end{teorema}
+Usualmente queremos que \(p^{-1} (x)\) no sea simplemente un conjunto,
+queremos poder dotarle de estructura de grupo. En caso de \(\tilde X\)
+ser arco-conexo, lo que estamos haciendo realmente es estudiar un
+subgrupo de \(X\) a traves de \(p^{-1}(x_0) \subseteq \tilde X\).
+\begin{proof}
+  Demostracion estandar de sobreyectividad en caso de ser \(\tilde X\)
+  arco-conexo. Para \(\tilde x _1 \in p^{-1} (x_0)\) arbitrario, existe
+  \(\tilde f\) camino entre \(\tilde x _0 \) a \(\tilde x _1\).
+  Denotamos \(f := p \circ \tilde f\), el cual es un camino \(f : I \to
+  X\) que cumple \(\phi ([f]) = \tilde x _1\) por definicion.
+
+  En caso de ser \(\tilde X\) simplemente-conexo, veremos solo la
+  inyectividad. Sean \([f],[g] \in \pi (X, x_0)\) tales que \(\phi([f])
+  = \phi([g])\), mostraremos que \([f] = [g]\). Sean \(\tilde f, \tilde
+  g : I \to \tilde X\) los levantamientos respectivos que comienzan en
+  \(\tilde x _0\). Dado que \(\phi([f]) = \tilde f (1) = \tilde g (1) =
+  \phi([g])\) y la simple-conexidad de \(\tilde X\), existe \(\tilde F :
+  I \times I \to \tilde X\) homotopia \(\tilde f, \tilde g\). Luego \(p
+  \circ \tilde F : I \times I \to X \) es una homotopia entre \(f, g\),
+  por tanto \([f] = [g]\)
+\end{proof}
+Ahora podemos plantearnos un ejemplo clasico, ver el grupo fundamental
+de \(S^1\). Utilizaremos el teorema anterior para proponer un
+cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda ser
+preservar la estructura de grupo para ser estudiado bajo ese lente.
+\begin{teorema}
+  \(\forall x_0 \in S^1,\ \big( \pi (S^1,x_0), * \big)\) es isomorfo a
+  \((\mathbb Z, +)\)
+\end{teorema}
+\begin{proof}
+  Dado que \(S^1\) es arco-conexo, basta probar que este teorema es
+  cierto para algun \(x_0\) en \(S^1\). Sea \(p : \mathbb R \to S^1,\
+  p(t) := (\cos 2 \pi t, \sin 2 \pi t)\) el cual es fue visto anteriormente
+  que es un cubrimiento par. Sea \(\tilde x _0 = 0\) y \( p(\tilde x _0) =
+  (1,0) =: x_0 \in S^1\). Por ser \(\mathbb R\) simplemente conexo, se
+  tiene que el levantamiento correspondiente \(\phi : \pi (S^1, x_0) \to
+  p^{-1} (x_0)\) es biyectivo, donde
+  \[ p^{-1} (1,0) = \bigcup_{n \in \mathbb Z} n = \mathbb Z \]
+
+  Para probar que ademas es homomorfismo, se toman \([f], [g] \in \pi
+  (S^1, x_0)\) arbitrarios y \(\tilde f, \tilde g\) sus correspondientes
+  levantamientos tales que \(n := \tilde f (1) = \phi ([f]),\ m :=
+  \tilde g (1) = \phi ([g])\). Se define el camino
+  \begin{align*}
+    \tilde{\tilde g} : I &\longrightarrow \mathbb R \\
+    s &\longmapsto n + \tilde g (s)
+  \end{align*}
+  Puesto que \(p(n + x) = p(x)\) por periodicidad, se cumple que
+  \[ p \circ \tilde{\tilde g} (x) = p (n + \tilde g (x)) = p (\tilde g
+    (x)) = g (x) \]
+  Por tanto \(\tilde{\tilde g}\) es el levantamiento de \(g\) para
+  \(\tilde x_0 = n\) (en vez de \(\tilde x_0 = 0\)). Luego el producto
+  \(\tilde f * \tilde{\tilde g}\) esta bien definido pues \(\tilde f (1)
+  = n = \tilde{\tilde g} (0)\) y es el levantamiento de \(f * g\). Por
+  definicion
+  \[ \phi ([f] * [g]) = \tilde{\tilde g} (1) = n + m = \phi ([f]) + \phi ([g]) \]
+  Por lo que \(\phi\) es un homo-morfismo de grupos.
 \end{proof}
