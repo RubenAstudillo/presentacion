@@ -13,6 +13,8 @@
 
 \setdefaultlanguage{spanish}
 
+\newcommand{\vank}{\emph{Seifert-van Kampen}}
+
 \theoremstyle{definition}
 \newtheorem{definicion}{Definicion}
 
@@ -34,15 +36,26 @@
 \input{./prefacio.tex}
 \input{./grupos_fundamentales.tex}
 
-%% todo(migrar)
-\section{Cubrimientos pares}
-El ejemplo visto hasta ahora es realmente simple, para los espacios mas
-generales necesitamos herramientas mas fuertes. Una de ellas son los
-cubrimientos pares, quienes a traves de homeomorfismos locales
-\section{Van Kampen}
+\section{Calculo de grupos fundamentales}
+Hasta ahora solo hemos dado una vision intuitiva de quienes son los
+grupos fundamentales para un espacio puntuado \((X,x_0)\), nuestra meta
+obtener herramientas que nos permita
+\begin{itemize}
+\item Obtener grupos \(\pi (X, x_0)\) de \((X,x_0)\) simples.
+\item Calcular grupos fundamentales de espacio mas complejos que tengan
+  estructura de producto o cociente.
+\end{itemize}
+Nuestras dos grandes herramientas para esto son los \emph{cubrimientos
+  pares} y el teorema de \vank , el primero nos
+permite calcular \(\pi (X, x_0)\) para espacios que localmente luzcan
+como productos, el segundo nos permite tratar con espacios que a grandes
+rasgos correspondan a una \emph{wedge sum} de espacio topologicos. Estas
+nociones bajo el lenguaje de categorias pueden verse como duales en un
+sentido muy estricto que exploraremos. Ademas los enfoques que utilizan
+para encontrar soluciones son realmente distintos; en cubrimientos pares,
+la intuicion geometrica nos hace proponer el candidato a solucion,
+mientras que en \vank el tratamiento es realmente analitico.
 
-%% todo(migrar)
-\section{Nociones categoricas}
-encontre una construccion de suspensiones topologicas, al parecer me
-sirver para hacer una adjuncion entre estos los espacios loop
+\input{./cubrimientos_pares.tex}
+
 \end{document}
