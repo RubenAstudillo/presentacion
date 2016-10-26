@@ -24,17 +24,18 @@ S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
 Donde estas familias de conjuntos son disjuntos y restringidos a cada
 uno se tiene la inyectividad requerida.
 
-A priori el cubrimientos par es irrespectivo de los caminos que tengamos
+A priori el cubrimientos par es independiente de los caminos que tengamos
 en \(X\), queremos ver si podemos reflejar la informacion importante de
-estos en \(\tilde{X}\).
+los caminos en \(\tilde{X}\).
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.5]{./imagenes/lifting-path-diagrama.png}
 \end{figure}
 Para esto construiremos \(\tilde f : I \to \tilde X\) el cual cumpla \(p
-\circ \tilde f = f \), veremos tambien que bajo hipotesis sensatas, este
-\(\tilde f\) es unico y refleja informacion homotopica. Para esto
-necesitamos desarrollar algunos teoremas previos.
+\circ \tilde f = f \), donde \(\tilde f\) sera nuestro representante en
+el espacio cubrimientos de estos caminos. Veremos tambien que bajo
+hipotesis sensatas, este \(\tilde f\) es unico y refleja informacion
+homotopica. Para esto necesitamos desarrollar algunos teoremas previos.
 \begin{lema}[Numero de Lebesgue] \label{thm:lebesgue-number-lema}
   Sea \(\mathcal A\) un cubrimiento del espacio metrico \((X,d)\). Si
   \(X\) es compacto, entonces existe \(\delta > 0\) tal que para todo
@@ -47,8 +48,8 @@ necesitamos desarrollar algunos teoremas previos.
   existe una coleccion \(\{A_1,\dotsc,A_n\} \subset \mathcal A\) que
   cubre a \(X\), definamos a los conjuntos \(C_i = X - A_i,\ \forall i
   \in [1,n]\) y a la funcion \(f : X \to \mathbb R\) definida por
-  \[ f(x) = \frac 1 n \sum_{i=1}^{n} d(x, C_i) \]
-  ie la distancia promedio de \(x\) a \(C_i\). Notemos que \(\forall x,\
+  \[ f(x) := \frac 1 n \sum_{i=1}^{n} d(x, C_i) \]
+  i.e. la distancia promedio de \(x\) a \(C_i\). Notemos que \(\forall x,\
   f(x) > 0\), pues para \(x \in A_i \subseteq X\), por ser \(A_i\) un
   abierto, existe \(\epsilon > 0\) tal que \(B(x,\epsilon) \subset A_i\)
   y por tanto \(d(x, C_i) \geq \epsilon\) que implica  \( f(x) \geq \frac
@@ -58,10 +59,10 @@ necesitamos desarrollar algunos teoremas previos.
   por lo tanto alcanza un minimo; a este le denotaremos como nuestro
   \(\delta\). Probaremos que este cumple el requerimiento, sea \(B
   \subset X\) subconjunto abierto de diametro menor que \(\delta\), sea
-  \(x \in B\) arbitrario, el cual tiene tiene una vencindad contenida en
+  \(x \in B\) arbitrario, el cual tiene tiene una vecindad contenida en
   \(B\) de diametro menor a \(\delta\). Dado que
-  \[\delta \leq f(x) \leq d(x, C_m)
-      \qquad d(x, C_m) = \max_{i \in [1,n]} d(x, C_i)\]
+  \[\delta \leq f(x) \leq d(x, C_m) \qquad
+      d(x, C_m) := \max_{i \in [1,n]} d(x, C_i)\]
   Esto nos dice que dado \(\delta \leq d(x, C_m)\), existe una vecindad
   de al menos diametro \(\delta\) que contiene a \(x\) en \(X - C_m = A_m\).
 \end{proof}
@@ -82,56 +83,57 @@ y las homotopias en el espacio cubrimiento de \(X\).
   \(\tilde f (0) = \tilde x _0\)
 \end{teorema}
 \begin{proof}
-  Para todo punto de \(X\), existe una vecindad \(U_x\) que es
-  cubierta parmente, por tanto \(\bigcup_{x \in X} U_x\) es cubrimiento
-  de \(X\). Por otro lado, tenemos que \( [0,1] \subset f^{-1}
-  (\bigcup_{x \in X} U_x)\). Por el Teorema
-  \ref{thm:lebesgue-number-lema}, podemos elegir \(s_0,\dotsc,s_n\) tal
-  que \(f([s_i, s_{i+1}])\) este contenido en algun \(U_x\). Definiremos
-  \(\tilde f\) inductivamente.
+  Para todo punto de \(x \in X\), existe una vecindad \(U_x\) que es
+  cubierta parmente, por tanto \(\bigcup_{x \in X} U_x\) es cubrimiento de
+  \(X\). Por otro lado, tenemos que \( [0,1] \subset f^{-1} (\bigcup_{x
+  \in X} U_x)\); por el Teorema \ref{thm:lebesgue-number-lema}, podemos
+  elegir \(s_0,\dotsc,s_n \in [0,1]\) tal que \(f([s_i, s_{i+1}])\) este contenido
+  en algun \(U_x\). Definiremos \(\tilde f\) inductivamente.
 
   Primero declaremos \(\tilde f (0) = \tilde x _0\). Luego, suponiendo
-  que \(\tilde f (s)\) esta definido para \(0 \leq s \leq s_i\), se
+  que \(\tilde f (s)\) esta definido para \(s \in [0, s_i]\), se
   define a \(\tilde f \) en \([s_i, s_{i+1}]\) de la siguiente forma.
-  Dado que \(f ([s_i, s_{i+1}]) \subseteq U_x\) para algun \(x\) con
-  \(U_x\) cubierto parmente por \(p\), denotemos a
-  \(\{V_\alpha\}_{\alpha \in \Lambda} = p^{-1} (U_x)\). Debe de existir
-  algun \(\alpha\) tal que \(\tilde f (s_i) \in V_\alpha\), a este le
-  denotaremos \(V_0\). Dado que \(p \mid_{V_0}\) es un homeomorfismo,
-  definimos a \(\tilde f (s)\) en \([s_i, s_{i+1}]\) por
+  Dado que para algun \(x \in X\),
+  \[f ([s_i, s_{i+1}]) \subseteq U_x \quad \land \quad \exists
+    \{V_\alpha\}_{\alpha \in \Lambda},\ \bigcup_{\alpha \in \Lambda}
+    V_\alpha = p^{-1} (U_x)\]
+  debe de existir \(\alpha \in \Lambda\) tal que \(\tilde f (s_i) \in
+  V_\alpha\); a este, le denotaremos \(V_0\). Dado que \(p \mid_{V_0}\) es un
+  homeomorfismo, definimos a \(\tilde f (s)\) en \([s_i, s_{i+1}]\) por
   \begin{equation}
   \tilde f (s) = (p \mid _{V_0})^{-1} (f(s))\label{eq:tilde-f-inductiva}
   \end{equation}
-  El cual es continuo en \([s_i, s_{i+1}]\) en virtud del lema del pegamiento.
+  El cual es continuo en \([s_i, s_{i+1}]\) en virtud del lema del
+  pegamiento y bien definido por ser \((p \mid _{V_0})^{-1} \) homeomorfismo.
 
   Para ver la unicidad, se probara inductivamente. Supongamos que existe
-  otro \(\tilde{\tilde f}\) levantamiento par de \(f\) que tambien
-  comienza en \(x_0\), ie \(\tilde{\tilde f} (0) = \tilde x _0 = \tilde f
-  (0)\). Supongamos que que \(\forall s \in [0, s_i],\ \tilde{\tilde f}
+  otro \(\hat{f}\) levantamiento par de \(f\) que tambien
+  comienza en \(x_0\), ie \(\hat{f} (0) = \tilde x _0 = \tilde f
+  (0)\). Supongamos que que \(\forall s \in [0, s_i],\ \hat{f}
   (s) = \tilde f (s)\), dado que \(\tilde f\) esta definida por
-  \eqref{eq:tilde-f-inductiva}, \(\tilde {\tilde f}\) debe ser
+  \eqref{eq:tilde-f-inductiva}, \(\hat f\) debe ser
   eventualmente diferente a la definicion \eqref{eq:tilde-f-inductiva},
   pero
-  \[\tilde {\tilde f} (s_i) = \tilde f (s_i) \in V_0\]
+  \[\hat f (s_i) = \tilde f (s_i) \in V_0\]
   con \([s_i, s_{i+1}]\) conexo y la familia \(\{V_\alpha\}\)
-  es disjunta, obliga\footnote{funciones continuas mapean conjuntos
-    conexos a conexos} a que \(\tilde {\tilde f} [s_i, s_{i+1}] \subset
+  es disjunta, obliga\footnote{Funciones continuas mapean conjuntos
+    conexos a conexos} a que \(\hat f [s_i, s_{i+1}] \subset
   V_0\). Dado que es un levantamiento, debe de cumplirse que
-  \[\forall s \in [s_i, s_{i+1}],\ (p \mid_{V_0}) \circ \tilde {\tilde
-      f} (s) = f(s)\]
-  Pero dado que \((p \mid_{V_0})\) es un homemorfismo, esto ocurre
-  solamente en un punto \(\tilde x \in \tilde X\) especifico para cada
-  \(s\), el cual es
-  \[ \tilde x = (p \mid_{V_0})^{-1} (f(s))\]
-  que es precisamente la definicion de \(\tilde f\), por tanto se obliga
-  a que \( \tilde {\tilde f} = \tilde f\)
+  \[\forall s \in [s_i, s_{i+1}],\ p \circ \hat f \, (s) =
+    f(s) = p \circ \tilde f \, (s) \]
+  \[ \iff p ( \hat f (s)) = p ((p \mid_{V_0})^{-1} (f (s)))\]
+  \[ \implies \hat f (s) = (p \mid_{V_0})^{-1} (f (s)), \quad \forall s
+      \in [s_i, s_{i+1}]\]
+  siendo esta la unica posible definicion, pues de haber otra,
+  contradeceria que \((p \mid_{V_0})\) es un homeomorfismo (mapeo
+  unico), por tanto se obliga a que \( \hat f = \tilde f\)
 \end{proof}
 \begin{corolario}
   Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde x _0)
   = x_0 \) para algun \(\tilde x _0 \in \tilde X\). Para cualquier
   funcion continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\), tiene una
-  unica funcion levantamiento continua \(\tilde F : I \times I \to \tilde X\) tal
-  que \(\tilde F (0,0) = \tilde x_0\)
+  unica funcion levantamiento continua \(\tilde F : I \times I \to
+  \tilde X\) que cumpla \(\tilde F (0,0) = \tilde x_0\)
 \end{corolario}
 \begin{proof}
   Lo unico diferente con el teorema \ref{thm:lifting-theorem} es que
@@ -150,12 +152,12 @@ y las homotopias en el espacio cubrimiento de \(X\).
   Sea \(p : \tilde X \to X\) un cubrimiento par; sea \(x_0 \in X\).
   Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
   x_0\). Dado un elemento \([f] \in \pi (X, x_0)\), sea \(\tilde f\) el
-  levantamiento de \(f\) a un camino en \(\tilde X\) que comienza en
-  \(\tilde x _0\). Definamos \(\phi ([f]) = \tilde f (1)\) del \(\tilde
-  f\) asociado a \(f\) anteriormente. Entonces \(\phi\) es bien definido
-  como mapeo de conjunto
-  \[ \phi : \pi (X, x_0) \to p^{-1} (x_0)\]
-  llamando a \(\phi\) el \textbf{correspondiente levantamiento} derivado
+  levantamiento (unico) de \(f\) a un camino en \(\tilde X\) que
+  comienza en \(\tilde x _0\). Definamos \(\phi ([f]) = \tilde f (1)\) del
+  \(\tilde f\) asociado a \(f\) anteriormente. Entonces \(\phi\) es bien
+  definido como mapeo de conjunto
+  \[ \phi : \pi (X, x_0) \longrightarrow p^{-1} (x_0)\]
+  llamando a \(\phi\) el \textbf{correspondiente levantamiento derivado}
   del mapeo cubrimiento par \(p\).
 \end{definicion}
 La definicion anterior intuitivamente ``desenrolla'' los ciclos del
@@ -174,9 +176,10 @@ subgrupo de \(X\) a traves de \(p^{-1}(x_0) \subseteq \tilde X\).
 \begin{proof}
   Demostracion estandar de sobreyectividad en caso de ser \(\tilde X\)
   arco-conexo. Para \(\tilde x _1 \in p^{-1} (x_0)\) arbitrario, existe
-  \(\tilde f\) camino entre \(\tilde x _0 \) a \(\tilde x _1\).
-  Denotamos \(f := p \circ \tilde f\), el cual es un camino \(f : I \to
-  X\) que cumple \(\phi ([f]) = \tilde x _1\) por definicion.
+  \(\tilde f\) camino entre \(\tilde x _0 \) a \(\tilde x _1\) por
+  arco-conexidad. Definimos \(f := p \circ \tilde f\), el cual es un
+  camino \(f : I \to X\) que cumple \(\phi ([f]) = \tilde x _1\) por
+  definicion.
 
   En caso de ser \(\tilde X\) simplemente-conexo, veremos solo la
   inyectividad. Sean \([f],[g] \in \pi (X, x_0)\) tales que \(\phi([f])
@@ -190,7 +193,7 @@ subgrupo de \(X\) a traves de \(p^{-1}(x_0) \subseteq \tilde X\).
 \end{proof}
 Ahora podemos plantearnos un ejemplo clasico, ver el grupo fundamental
 de \(S^1\). Utilizaremos el teorema anterior para proponer un
-cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda ser
+cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
 preservar la estructura de grupo para ser estudiado bajo ese lente.
 \begin{teorema}
   \(\forall x_0 \in S^1,\ \big( \pi (S^1,x_0), * \big)\) es isomorfo a
@@ -204,7 +207,8 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
   (1,0) =: x_0 \in S^1\). Por ser \(\mathbb R\) simplemente conexo, se
   tiene que el levantamiento correspondiente \(\phi : \pi (S^1, x_0) \to
   p^{-1} (x_0)\) es biyectivo, donde
-  \[ p^{-1} (1,0) = \bigcup_{n \in \mathbb Z} n = \mathbb Z \]
+  \[ p^{-1} (1,0) = \{t \in \mathbb R \mid (\cos 2 \pi t, \sin 2 \pi t)
+    = (1, 0) \} = \mathbb Z \]
 
   Para probar que ademas es homomorfismo, se toman \([f], [g] \in \pi
   (S^1, x_0)\) arbitrarios y \(\tilde f, \tilde g\) sus correspondientes
@@ -224,4 +228,37 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
   definicion
   \[ \phi ([f] * [g]) = \tilde{\tilde g} (1) = n + m = \phi ([f]) + \phi ([g]) \]
   Por lo que \(\phi\) es un homo-morfismo de grupos.
+\end{proof}
+
+\paragraph{Cubrimiento \(p_n : S^1 \to S^1\).} Para testear la intuicion
+de que el espacio cubrimiento refleja en el caso comun un subgrupo del
+espacio topologico, tomemos el caso
+\begin{align*}
+  p_n : S^1 &\longrightarrow S^1 \\
+  z &\longmapsto z^n
+\end{align*}
+Este
+
+\begin{teorema}
+  Sea \(p : \tilde X _1 \to X_1,\ p' : \tilde X _2 \to X_2 \) dos
+  cubrimientos pares, entonces
+  \[ p_1 \times p_2 : \tilde X _1 \times \tilde X _2 \to X_1 \times X_2 \]
+  Es un cubrimiento par.
+\end{teorema}
+\begin{proof}
+  Para todo \(x_1 \in X_1,\ x_2 \in X_2\), existen \(U_1, U_2\)
+  vecindades pares respectivamente tales que son cubiertas por \(p_1,
+  p_2\). Denotemos a \(\{V_\alpha^{(1)}\}, \{V_\beta^{(2)}\}\) familias
+  de conjuntos tales que
+  \[
+    \begin{matrix}
+      \bigcup_{\alpha} V_\alpha^{(1)} = p_1^{-1} (U_1) &
+      \bigcup_{\alpha} V_\alpha^{(2)} = p_2^{-1} (U_2)
+    \end{matrix}
+  \]
+  \[ \bigcup_{\alpha, \beta} V_\alpha^{(1)} \times V_\beta^{(2)} = (p_1
+    \times p_2)^{-1} (U_1 \times U_2)\]
+  Donde la restriccion a un \(V_{\bar{\alpha}}^{(1)} \times
+  V_{\bar{\beta}}^{(2)}\) arbitrario en \(p_1 \times p_2\) obtiene un
+  homeomorfismo en virtud de las componentes.
 \end{proof}
