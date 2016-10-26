@@ -6,7 +6,6 @@ Sea \(p : \tilde{X} \to X\) una funcion continua sobreyectiva. El abierto \(U
 \[ p^{-1} (U) = \bigcup_{\alpha \in \Lambda} V_\alpha \]
 Donde \(\{V_\alpha\}\) es una familia disjunta de abiertos, tal que
 \(\forall \alpha \in \Lambda, p \mid_{\alpha}\) es homeomofo sobre \(U\).
-
 Si para todo \(x \in X\) existe dicha vecindad \(U\) que cumpla lo
 anterior, se dira que \(\tilde{X}\) es un \textbf{espacio cubrimiento} de \(X\)
 y que \(p\) es un \textbf{cubrimiento par}.
@@ -230,15 +229,27 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
   Por lo que \(\phi\) es un homo-morfismo de grupos.
 \end{proof}
 
-\paragraph{Cubrimiento \(p_n : S^1 \to S^1\).} Para testear la intuicion
+\paragraph{Ejemplo: Cubrimiento \(p_n : S^1 \to S^1\).} Para testear la intuicion
 de que el espacio cubrimiento refleja en el caso comun un subgrupo del
 espacio topologico, tomemos el caso
 \begin{align*}
   p_n : S^1 &\longrightarrow S^1 \\
   z &\longmapsto z^n
 \end{align*}
-Este
-
+Para este, nuestro conjunto \(p^{-1} (x_0)\), con \(x_0 = (1,0)\) se
+obtiene mediante la reduccion
+\begin{align*}
+  p^{-1} (1,0)
+    &= \{ z \in S^1 \mid z^n = (1,0)\} \\
+    &= \{z \in S^1 \mid (\cos 2 \pi n t, \sin 2 \pi n t) = (1,0) :
+           t \in [0,1] \} \\
+    &= \{(\cos 2 \pi t, \sin 2 \pi t) \in S^1 \mid
+           t \in \{0, \frac 1 n , \dotsc , \frac {n-1} n \} \}
+\end{align*}
+\[ \therefore p^{-1}(1,0) \simeq \mathbb Z / n \mathbb Z \]
+Ademas bajo el mismo tratamiento utilizado anteriormente en \(\pi (S^1,
+x_0) = \mathbb Z\) para \(\phi\), este es un homo-morfismo. Esto muestra
+que la eleccion de \(p\) afecta que subgrupo de \(\pi (S^1, x_0)\) estudiaremos.
 \begin{teorema}
   Sea \(p : \tilde X _1 \to X_1,\ p' : \tilde X _2 \to X_2 \) dos
   cubrimientos pares, entonces
@@ -262,3 +273,8 @@ Este
   V_{\bar{\beta}}^{(2)}\) arbitrario en \(p_1 \times p_2\) obtiene un
   homeomorfismo en virtud de las componentes.
 \end{proof}
+
+\paragraph{Ejemplo Toro en \(R^4\).} Dado que podemos caracterizar al
+toro \(T^1\) como \(S^1 \times S^1\), el teorema anterior nos dice que
+\((\pi (T^1, b), *) = (\pi (S^1, b) \times \pi (S^1, b), *) = (\mathbb Z
+\times \mathbb Z, +) \)
