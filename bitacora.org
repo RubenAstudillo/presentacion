@@ -1,0 +1,102 @@
+* Cubrimientos pares
+** teoremas importantes de homeomorfismo
+Recuerda que un homeomorfismo es una aplicacion \(p : X \to Y\)
+biyectiva donde tanto \(p\) como \(p^{-1}\) son continuas. Para mas
+enfasis es decir que son bi-continuas.
+
+El teorema importante del homeomorfismo que vas a utilizar en
+cubrimientos pares te permite decir algo teniendo solo \(p : X \to Y\)
+continua, biyectiva pero *sin* decir que \(p^{-1}\) es continua
+
+**** Teorema del homeomorfismo topologico
+\(p : X \to Y\) continua y biyectiva. Si \(X\) es compacto y \(Y\) es
+hausdoff entonces \(p\) es un homeomorfismo.
+
+Basado en pagina 167. esta propiedad equivale a mostrar que \(p\) es un
+mapeo abierto, lo cual a su vez equivale a mostrar que es un mapeo
+cerrado.
+
+Toma un \(A \subset X\) cerrado. Como \(X\) es compacto, \(A\) es
+compacto. Asi \(f (A)\) es compacto. En espacio hausdorff como \(Y\),
+compacidad implica cerrado, luego \(f (A)\) es cerrado.
+
+**** red-herring: teorema del mapeo abierto funcional
+Sean \(X,Y\) espacios banach. Si \(p : X \to Y\) es una biyeccion,
+lineal, acotada (continua) entonces \(p\) es un homeomorfismo
+
+Lo clave aqui es la estructura banach de \(X,Y\). La cual en topologia
+general es muy fuerte. No se utiliza este teorema en nada
+
+** Cubrimiento par de \(S^1\)
+En munkres 337, en parte de la demostracion, empieza a hablar sobre los
+\(\bar{V}_n\) en vez de los \(V_n\). Tiene que hacer esto, porque si
+bien tiene una biyeccion con \(p\), no sabe nada de la continuidad de la
+inversa. Para esto necesita aplicar el [[Teorema del homeomorfismo topologico][Teorema del homeomorfismo
+topologico]] por lo que se construye el cerrado \(\bar{V}_n\). Se sabe
+previamente que \(S^1\) es hausdorff.
+
+Podria agregarse al teorema que esta utilizando el lema del pegamiento
+para hacer que las uniones de cualquier conjunto (que se pueden
+descomponer en esas 4 familias) se vuelvan a juntar "bien".
+
+* lifting paths
+Idea: Supongamos que conocer una estructura de grupo para un espacio
+\(X\) y queremos saber el grupo fundamental del espacio \(Y\). Si
+podemos mostrar que hay una bijeccion entre \(X,Y\), podriamos intentar
+computar el grupo fundamental por achunte. Esto falla porque para hacer
+el homomorfismo *pre-suponemos* la estructura de grupo que le queremos
+dotar a \(Y\), en vez de derivar esta.
+
+Pero la idea de obtener el grupo fundamental de \(Y\) visto a travez de
+\(X\) como el unico grupo admisible de este (o un subgrupo normal de el)
+sigue siendo una buena idea. Lo que hace es en vez de mostrar que una
+invariante algebraica se preserva, mostramos que los arcos cerrados, que
+dan cabida a la invariante topologica que es el grupo fundamental, sean
+preservados. De esta manera, si \(X\) es suficientemente simple como
+para admitir un unico grupo fundamental, entonces este debe de
+corresponder con el de \(Y\).
+
+Para esto no necesitamos una biyeccion entre espacios, solo una
+sobreyeccion continua
+
+** teorema 54.2 (lifting homotopia)
+La gracia esta en el conjunto \(C = A \cap (I_{i_o} \times J_{j_o})\).
+Este lado inferior izquierdo, me determina cual de las slices
+\(V_\alpha\) tomar y por tanto me determina como formar \(\bar F \) en
+dicho conjunto
+
+** homomorfismo entre \(S^1\) y \(\mathbb Z\)
+para mostrar que \(\phi ([f] * [g]) = \phi ([f]) + \phi ([g]) \) debo de
+indentificar quien es el lifting de
+- lifting \( [f*g]\) es \(\bar{f * g}\)
+- lifting de \(f\) es \(\bar f\)
+- lifting de \(g\) es \(\bar g\)
+Por cierto, el lifting \(\bar{f * g}\) *no* es necesariamente
+\(\bar{f} * \bar{g}\). Es mas, este ultimo no hace ni sentido con la
+operacion \(*\), pues puede ser que
+\[ \bar{f}(1) \neq e_0 = \bar{g}(0) \]
+esta ultima igualdad por definicion de \(\phi = \phi_{e_0}\), para algun
+\(e_0 \in p^{-1}(\{b_0\})\) fijo. De hecho, este es el ejercicio 3 de la
+seccion 54.
+
+* importancia probar la identidad teoremas 58.2
+Se utiliza mucho decir que si \(r_{*} \circ j_{*}\) es la identidad,
+entonces \(r_{*}\) sobreyectiva y \(j_{*}\) inyectiva. intenta
+plantearte una demostracion por contradiccion y veras que es cierto.
+
+Por eso en el teorema 58.2, prueba que
+- \(r \circ j : S^1 \to S^1\) es la identidad, por tanto \(r_{*} \circ j_{*}\)
+  es la identidad implicando que \(j_{*}\) es inyectivo.
+- \(j \circ r : R^2 - {0} \to R^2 - {0}\) es homotopico a la identidad
+  (ademas de conservar un punto en la homotopia). Por el lema anterior
+  eso nos dice que \(j_{*} \circ r_{*}\) *es* la identidad (igualdad
+  clases de equivalencia). Por tanto obliga a que \(j_{*}\) sea
+  sobreyectivo.
+* lema 58.4
+el objetivo \( [\alpha] * [k \circ f] = [h \circ f] * [\alpha]\), una
+vez planteado, puede proceder con la siguiente idea. Trabaja sobre la
+homotopia que tienes ya entre \(k\) e \(h\) y re-escribe todos los
+sujetos anteriores en terminos de argumentos especificos a esa
+homotopia. Se tienen nuevos objetos, plantealos como argumentos
+especiales de una funcion \(F\) y luego al final nota que \( I \times
+I\) es convexo y por tanto tienes la homotopia que buscas.
