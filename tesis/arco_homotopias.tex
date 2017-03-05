@@ -3,15 +3,15 @@ Para la construccion de nuestra invariante, debemos de familiarizarnos
 con los arcos y las deformaciones continuas entre ellos llamadas
 \emph{homotopias}.
 
-\begin{definicion}[arco]
+\begin{definicion}[Arco]
   Un arco en el espacio \(X\) es una funcion continua \(f : I \to X \)
   donde \(I = [0,1]\)
 \end{definicion}
 La definicion tradicional es ligeramente mas general cambiando que \(I\)
-sea un espacio de 1 dimension, pero siempre podemos recuperar esta
-definicion rescalando la distancia.
+sea un subconjunto convexo acotado de un espacio unidimensional, pero
+siempre podemos recuperar esta definicion rescalando la distancia.
 
-\begin{definicion}[homotopia]
+\begin{definicion}[Homotopia]
   Dados dos arcos \(f,g : I \to X\), diremos que \(f\) es homotopico a
   \(g\) si existe una funcion continua \(F : I \times I \to X \) tal que
   \[ \begin{matrix}
@@ -20,23 +20,24 @@ definicion rescalando la distancia.
   \]
   Donde \(F\) sera llamada una homotopia entre \(f\) y \(g\). La
   existencia de dicha relacion entre dos funciones sera denotada por \(f
-  \stackrel{.}{\simeq} g\).
+  \homRelAlt g\).
 \end{definicion}
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.5]{./imagenes/homotopia-entre-funciones.png}
-  \caption{caracterizacion homotopia (haha)}
+  \caption{caracterizacion homotopia}
   \label{fig:homotopia-entre-funciones}
 \end{figure}
 Podemos pensar en el segundo argumento de una homotopia como el grado de
 deformación entre dos funciones.
 Si tratamos con arcos \(f,g : I \to X\) que posean los mismos puntos
 iniciales y finales, es decir \(f(0) = g(0) = x_0, \; f(1) = g(1) =
-x_1 \) podemos definir una relacion homotopica ligeramente mas fuerte
-\begin{definicion}[arco homotopia]
-  \(f,g : I \to X\) son \textbf{arco homotopicas} entre si, si tienen los mismos
+x_1 \) podemos definir una relacion homotopica ligeramente mas fuerte.
+
+\begin{definicion}[Arco homotopia]
+  \(f,g : I \to X\) son \emph{arco homotopicas} entre sí, si tienen los mismos
   puntos inicial y final \(x_0, x_1\) respectivamente y existe una homotopia entre
-  ellos tales que cumpla
+  ellos tal que cumpla
   \[
     \begin{matrix}
       F(s,0) = f(s) & F(s,1) = g(s) \\
@@ -44,7 +45,7 @@ x_1 \) podemos definir una relacion homotopica ligeramente mas fuerte
     \end{matrix}
   \]
   La existencia de esta relacion entre dos funciones sera denotada por
-  \(f \simeq g\)
+  \(f \simeq g\).
 \end{definicion}
 % todo(slack) hacer algun dibujo de las homotopias entre las curvas
 Una vez definida estas relaciones, una pregunta natural es si estas definen
@@ -54,15 +55,15 @@ afirmativa para ambas relaciones (el punto de inicio y final no juegan
 papel), se mostrara para las homotopias.
 
 \begin{teorema}
-  \(\stackrel{.}{\simeq}\) es una relacion de equivalencia
+  \(\homRelAlt\) es una relacion de equivalencia
 \end{teorema}
 \begin{proof}
   Hemos de probar que esta relacion cumple la reflexividad, simetria y
   transitividad. Sean \(f,g,h : I \to X\) tres arcos arbitrarios.
   \begin{itemize}
   \item La reflexividad es directa pues la funcion \(F(x,t) = f(x)\) es
-    una deformacion continua de \(f\) a \(f\). Por tanto \(f
-    \stackrel{.}{\simeq} f\).
+    una deformacion continua de \(f\) a \(f\), por tanto \(f \homRelAlt
+    f\).
 
   \item La simetria se obtiene de invertir el grado de deformacion de la
     homotopia original. Formalmente, dado \(f \stackrel{.}{\simeq} g\)
@@ -70,7 +71,7 @@ papel), se mostrara para las homotopias.
     de aqui podemos definir
     \begin{equation}
       \label{eq:homotopy-simetry}
-      (x,t) \mapsto \hat{F}(x,t) = F(x,1-t)
+      (x,t) \mapsto \hat{F}(x,t) := F(x,1-t)
     \end{equation}
     con \(\hat{F}\) una homotopia entre \(g\) y \(f\). Por tanto \(g
     \stackrel{.}{\simeq} f\).
@@ -96,8 +97,9 @@ papel), se mostrara para las homotopias.
   \end{itemize}
 \end{proof}
 
-Una homotopia usual que veremos repetidamente es la llamada homotopia de
-linea recta.
+En analisis real, es comun trabajar con conjuntos convexos, en arcos
+sobre estos, veremos una homotopia usual repetidamente que es llamada
+homotopia de linea recta.
 \begin{definicion}\label{def:homotopia-linea}
   Sean \(f,g : I \to X\) dos arcos arbitrarios. Si \(f(I),g(I) \subset
   \mathcal C\), subconjunto convexo de \(X\), entonces
@@ -111,4 +113,5 @@ de equivalencia de funciones bajo una relacion homotopica
 \[ [f] = \{ g : I \to X \mid f \stackrel{.}{\simeq} g \} \]
 Notar que la construccion es valida para las dos relaciones aunque por
 nuestra meta de construir el grupo fundamental nos interesa
-principalmente la relacion arco homotopica (tema a ser tratado mas adelante).
+principalmente la relacion arco homotopica, por razones a estudiar mas
+adelante.

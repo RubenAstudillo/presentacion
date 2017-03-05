@@ -1,5 +1,7 @@
 \section{Grupo fundamental}
 
+{
+\newcommand{\homRelAlt}{\stackrel{.}{\simeq}}
 \input{./arco_homotopias.tex}
 \input{./grupoide_arcos.tex}
 
@@ -18,11 +20,11 @@ espacio \((X / \simeq, *)\) es un grupo algebraico.
   junto con el producto de caminos \((*)\) forman el llamado
   \textbf{grupo fundamental} \((\pi_1(X,x_0), (*))\)
 \end{definicion}
-\noindent Nuestro interes es mostrar que para un espacio dado, su grupo
+
+Nuestro interes es mostrar que para un espacio dado, su grupo
 fundamental es una invariante topologica. Esto quiere decir que dado dos
-espacios puntuados \((X,x_0)\) e \((Y,y_0)\) homeomorfos, esto es, que
-existe un isomorfismos continuo entre ellos, debe de existir un
-respectivo isomorfismo de grupos entre \(\pi_1(X,x_0)\) y
+espacios puntuados \((X,x_0)\) e \((Y,y_0)\) homeomorfos, debe de
+existir un respectivo isomorfismo de grupos entre \(\pi_1(X,x_0)\) y
 \(\pi_1(Y,y_0)\). Para esto debemos recordar que un isomorfo entre
 grupos es un homomorfismo, inyectivo y sobreyectivo.
 \begin{definicion}
@@ -37,7 +39,7 @@ Como ejemplo utilizaremos este espacio relativamente sencillo de
 visualizar. Para ver su grupo fundamental hemos de caracterizar todas la
 curvas cerradas que inicien en un punto arbitrario, que denotaremos por
 \(x_0\). Sea \(f : I \to \mathbb{R}^2 - \{(1,1)\}\) un camino
-arbitrario, con dicho punto inicial, tendremos tres grandes alternatives
+arbitrario, con dicho punto inicial, tendremos tres grandes alternativas
 para de sus isometrias.
 \begin{figure}{h}
   \caption{\(R^2\) sin el punto \((1,1)\)}
@@ -46,7 +48,7 @@ para de sus isometrias.
   \label{fig:R2-sin-punto}
 \end{figure}
 \begin{itemize}
-\item La curva denotada por \(f\) puede ser contenida en un subconjunto
+\item La curva denotada por \(f\) puede estar contenida en un subconjunto
   convexo de \(R^2 - \{(1,1)\}\). De esta manera, la curva pertence a la
   homotopia de la linea bajo la funcion
   \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) e_{x_0} (t)\]
@@ -56,10 +58,9 @@ para de sus isometrias.
   encerrara al punto \(x_0\), de manera que la relacion \(\lambda x +
   (1 - \lambda) y\) no seria valida para algunos \(\lambda, x, y\). Por
   tanto \(f \not \in [e_{x_0}]\), asi que denotaremos a la clase de
-  equivalencia a la que pertenece como \([\mathtt{F}^1]\) (mas adelante
-  mostraremos esta isometria explicitamente).
+  equivalencia a la que pertenesca como \([\mathtt{F}^1]\).
 \item La curva \(f\) encierra a \(x_0\) \(2\) veces. Dado que cada vez
-  que lo encierra, esa curva (hasta ese momento) es isometrica a
+  que lo encierra, esa curva (hasta ese momento) es homotopica a
   \([\mathtt F ^1]\), tenemos que \(f\) es isometrica a \( [\mathtt F
   ^1] * [\mathtt F ^1] =: [\mathtt F ^2]\). Esto se puede generalizar
   para todos los naturales.
@@ -73,8 +74,14 @@ En efecto, estos elementos son bajo isomorfismo de grupo equivalentes a
 el grupo \((\mathbb{Z}, +)\). Por tanto diremos que este es el grupo
 fundamental de \(R^2 - \{(1,1)\}\).
 
+\paragraph{} Cabe notar que esta no es una demostracion formal, no se ha demostrado
+que estas son todas alternativas posibles de curvas, de lo cual depende
+todo nuestro argumento. Mas adelante daremos una demostracion formal de
+que esta intuicion es la correcta, pero por ahora sirve como marco
+conceptual del objeto que estamos estudiando.
+
 \subsection{Importancia punto de origen}
-En el ejemplo anterior se vio que el punto \(x_0 = (1,1)\) la verdad no
+En el ejemplo anterior se vio que el punto \(x_0\) la verdad no
 jugaba ningun papel importante, su unica mision era identificar el
 origen de los caminos. En espacios como el anterior, la importancia de
 la eleccion se ve reducida puesto que este es arco-conexo, en estos
@@ -173,7 +180,7 @@ la cantidad de estos isomorfismos.
     [\beta^{-1}] * [\beta * \alpha^{-1}] * [f] * [\alpha * \beta^{-1}]
     * [\beta] \]
   Donde \(\alpha * \beta^{-1} \in \pi (X, x_0) \), por lo tanto podemos
-  aplicar conmutatividad con \(f\) obteniendo la expresion
+  aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la expresion
   \[ [\beta^{-1}] * [\beta * \alpha^{-1}] * [\alpha * \beta^{-1}] * [f]
     * [\beta] = [\beta^{-1}] * [f] * [\beta] = F_\beta ([f]) \]
   probando asi lo buscado.
@@ -214,8 +221,8 @@ existe un homeomorfismo (isomorfismo continuo)
 \end{align*}
 entonces existira un isomorfismo de grupos
 \[ h_{*} : \pi (X, x_0) \to \pi (Y, y_0) \]
-El candidato a \(h_{*}\) se define como \(h_{*} ([f]) = [h \circ f] \),
-lo cual probaremos en el siguiente teorema
+El candidato a \(h_{*}\) se define como \(h_{*} ([f]) \coloneqq [h \circ
+f] \), lo cual probaremos en el siguiente teorema
 \begin{teorema}
 \(h_{*} : \pi (X, x_0) \to \pi (Y, y_0)\) es un isomorfismo de grupos
 \end{teorema}
@@ -242,13 +249,28 @@ lo cual probaremos en el siguiente teorema
   \end{itemize}
 \end{proof}
 
-Sabiendo que el grupo fundamental es una invariante sin duda es util
-desde un punto de vista algebraico, pero la idea de poder reflejar
+Saber que el grupo fundamental es una invariante sin duda es util
+desde un punto de vista topologico, pero la idea de poder reflejar
 estructura algebraica entre dos representaciones de un objeto y que esta
-se preserve bajo morfismos tambien ha tomado vuelvo. En efecto,
-historicamente, los grupos fundamentales dieron inicio al estudio de
-teoria de categorias. En particular, acabamos de construir nuestro
-primer \emph{functor} entre categorias.
+se preserve bajo morfismos es util en su propia ley. En efecto, la
+teoria que estudia este fenomenos es llamada teoria de categorias y
+historicamente los grupos fundamentales dieron inicio al estudio de
+estas.
+\begin{definicion}
+  Una categoria \(\mathcal C\) consiste una tripleta \((O, M,
+  (\circ))\), donde
+  \begin{itemize}
+    \item \(O\) corresponde a una clase\footnote{Clase en el sentido de
+        teoria de conjuntos NBG, aunque tambien son admisibles conjuntos
+        de ZFC} de objetos.
+    \item \(M\) corresponde a una clase de morfismos
+      entre elementos de \(O\), tal que en particular \(\forall o \in O,\
+      \exists \mathcal i _o : O \to O\).
+    \item \((\circ)\) es una operacion composicion entre morfismos
+      asociativa y que cuya identidad para cada objeto \(o\) corresponde al
+      morfismo \(\mathcal i _o\).
+  \end{itemize}
+\end{definicion}
 \begin{definicion}
   Sean \(\mathscr{C} , \mathscr D\) dos categorias arbitrarias, un
   functor \(F : \mathscr C \to \mathscr D\) es un mapeo tal que
@@ -260,7 +282,7 @@ primer \emph{functor} entre categorias.
     F(f) : F(X) \to F(Y) \). Mas aun, \(F (\mathbf{Id}_X) = \mathbf{Id}_{F(X)}\)
   \end{itemize}
 \end{definicion}
-Aqui, nuestra \(\mathscr C = \mathscr{Top.}\), la categoria de
+Aqui, nuestra \(\mathscr C = \mathscr{Top_{*}}\), la categoria de
 topologias puntuadas y \(\mathscr D = \mathscr{Grp}\), la categoria de
 grupos algebraicos. \(X,Y\) serian espacio topologicos particulares, el
 morfismo \(f : X \to Y\) seria el homeomorfismo entre espacios
@@ -268,3 +290,4 @@ topologicos puntuados y \(F(f) = f_{*} : F(X) \to F(Y)\) seria nuestro
 homomorfismo inducido por \(f\), el cual mapearia \(F(X) = \pi (X,
 x_0)\) a \(F(Y) = \pi (Y, y_0) \).
 % todo(slack): ver la discucion de la propiedades functoriales (talvez?)
+}

@@ -1,13 +1,13 @@
 \subsection{Grupoide de arcos}
 Si tenemos dos arcos continuos \(f,g\) tales que el punto final de \(f\)
-sea el punto inicial de \(g\) nos da la idea de que podemos construir un
-camino continuo que recorra \(f\) luego recorriendo \(g\). Esta idea es
-conocida formalmente como el producto de dos arcos.
+sea el punto inicial de \(g\) podemos construir un camino continuo que
+recorra \(f\) luego recorriendo \(g\). Esta idea es conocida formalmente
+como el producto de dos arcos.
 
 \begin{definicion}[Producto de arcos]
 Para dos arcos \(f,g : I \to X\) tales que
 \(f(1) = g(0)\), se define el producto \(f * g \)
-\[ (f*g) (s) = \begin{cases}
+\[ (f*g) (s) \coloneqq \begin{cases}
     f(2s) & s \in [0,\frac{1}{2}] \\
     g(2s - 1) & s \in [\frac{1}{2} , 1]
   \end{cases}
@@ -19,10 +19,11 @@ pegamiento.
 Esta construccion se puede reutilizar para clases
 \emph{arco}-homotopicas \([f],[g]\) que compartan punto final e inicial
 respectivamente para definir un producto de clases de equivalencia
-\[ [f] * [g] := [f * g]\]
-El cual esta bien definido pues si \(f \simeq f'\), \(g \simeq
-g'\) a traves de \(F, G\) respectivamente
-\[H(s,t) = \begin{cases}
+\[ [f] * [g] \coloneqq [f * g]\]
+El cual esta bien definido pues si \(f \simeq f' ,\ g \simeq
+g'\) a traves de las homotopias \(F, G\) respectivamente, entonces
+\[
+  H(s,t) = \begin{cases}
     F(2s,t) & s \in [0, \frac{1}{2}] \\
     G(2s - 1, t) & s \in [\frac{1}{2} , 1]
   \end{cases}
@@ -30,12 +31,12 @@ g'\) a traves de \(F, G\) respectivamente
 Es la homotopia que relaciona a los arcos que sean homotopicos a
 \(f*g\). Esta ademas es continua en virtud otra vez del lema del pegamiento.
 
-Con esta operacion binaria, una pregunta a hacerse es si \((X/\simeq ,
-*)\) tiene posee estructura de grupoide, esto equivale a cumplir 3
-propiedades
+\paragraph{} Con esta operacion binaria, una pregunta a hacerse es si
+\((\mathcal C (I , X)/\simeq , (*))\) tiene posee estructura de
+grupoide, esto equivale a cumplir 3 propiedades
 \begin{enumerate}
 \item \textbf{Asociatividad} Si \([f] * ([g] * [h])\) esta definido entonces
-  tambien lo debe estar \(([f] * [g]) * [h]\) y deben coincidir.
+  tambien lo debe estar \(([f] * [g]) * [h]\) y ademas deben coincidir.
 \item \textbf{Identidades izquierda y derecha} Para todo \([f]\) con
   \(x_0, x_1\) puntos inicial y final respectivamente, debe de
 existir elementos \([k_{x_0}], [k_{x_1}]\) tales que
@@ -55,33 +56,39 @@ Para probar esto necesitamos primero definir a nuestros candidatos de
 \(k_{x_0}, k_{x_1}, f^{-1}\) ademas de algunas funciones auxiliares,
 iniciando por los mapeos constantes e identidad en \(I \to I\)
 \[ \begin{matrix}
-     e_0 : & I \to I & e_0(t) := 0 \\
-     e_1 : & I \to I & e_1(t) := 1 \\
-     i :   & I \to I & i(t) := t \\
-     \bar{i} : & I \to I & i(t) := 1 - t
+     e_0 : & I \to I & e_0(t) \coloneqq 0 \\
+     e_1 : & I \to I & e_1(t) \coloneqq 1 \\
+     i :   & I \to I & i(t) \coloneqq t \\
+     \bar{i} : & I \to I & i(t) \coloneqq 1 - t
    \end{matrix}
    \]
-Para todo arco \(f : I \to X \), el elemento \(f^{-1} : I \to X \) esta
+Ademas, para todo arco \(f : I \to X \), el elemento \(f^{-1} : I \to X \) esta
 definido (en el espiritu de \eqref{eq:homotopy-simetry}) por
-\[ f^{-1} (s) := f (1 - s) \]
-Para todo \(x \in X \) se define la curva constante\footnote{\(k\) por
-\emph{konst}}
+\[ f^{-1} (s) \coloneqq f (1 - s) \]
+Por ultimo, para todo \(x \in X \) se define la curva
+constante\footnote{\(k\) por \emph{konst}}
 \begin{align*}
   k_x : &I \to X \\
         &t \mapsto x
 \end{align*}
 Con esto podemos afrontar la demostración
 \begin{proof}
-Se procedera \(2 \to 3 \to 1\) con lemas en medio. Sea \(f : I \to X\) el
-representante de \([f]\). sean \(x_0, x_1\) los puntos inicial y final de
-\(f\) respectivamente.
+Se procedera en orden \(2 \to 3 \to 1\) con lemas en medio. Sea \(f : I
+\to X\) el representante de la clase \([f]\). sean \(x_0, x_1\) los
+puntos inicial y final de \(f\) respectivamente.
 
 \paragraph{(2).} Dados \(i,e_1\) arcos en \(I\) definidos anteriormente,
 es claro que \(i * e_1\) es tambien un arco (continuo) en \(I\); mas aun,
 ya que \(I = [0,1]\) es convexo, se tiene \(i * e_1 \simeq i\) con la
-homotopia de la linea recta entre estos. Sobre estas composiciones,
-tenemos el siguiente lema
-\begin{lema}[Distributividad de la composicion sobre producto.]
+homotopia de la linea recta entre estos denotada por \(C\).
+
+Tambien conocemos que la composición de funciones continuas es
+continua, de lo cual podemos decir que dada una homotopia \(H : I \times
+I \to I\) la composicion \( f \circ H : I \times I \to X\) es una homotopia.
+
+Por otro lado, necesitamos conocer como se comporta la composicion con
+respecto a nuestro producto \((*)\), para esto tenemos el siguiente lema
+\begin{lema}[Distributividad de la composicion sobre producto]
 \label{lema:dist-composicion-producto}
 \[\forall a,b : I \to I,\ \forall f : I \to X,\ f \circ (a * b) = (f
 \circ a) * (f \circ b) \]
@@ -95,21 +102,31 @@ tenemos el siguiente lema
     = (f \circ a) * (f \circ b) (s)
   \]
 \end{proof}
-\noindent Recordemos ademas que la composición de funciones continuas es
-continua, luego esto nos permite afirmar en especifico que \( f \circ (i
-* e_1) \simeq (f \circ i) * (f \circ e_1) \) en virtud de la composición
-de \(f\) con la homotopia de linea recta entre \(i * e_1 \) y \(i\). Por
-tanto \( [f \circ (i * e_1)] = [f \circ i] \), pero al reducir las
-composiciones obtenemos
+
+Luego esto nos permite afirmar en especifico que
+\[ f \circ i \simeq f \circ (i * e_1) = (f \circ i) * (f \circ e_1) \]
+en virtud de la homotopia
+\[ f \circ C : I \times I \to X \]
+Por tanto
+\begin{equation}\label{eq:homequiv2.1}
+[f \circ i] = [f \circ (i * e_1)] = [(f \circ i) * (f \circ e_1)]
+\end{equation}
+Si tomamos este ultimo termino, sabemos que por definicion
+\begin{equation}\label{eq:homequiv2.2}
+[(f \circ i) * (f \circ e_1)] = [(f \circ i)] * [(f \circ e_1)]
+\end{equation}
+y es claro tambien que
 \[
   \begin{matrix}
-    f \circ i = f & f \circ e_1 = k_{x_1} & f \circ (i * e_1) = f *
-    k_{x_{1}} \\
+    f \circ i = f & f \circ e_1 = k_{x_1} \\
   \end{matrix}
 \]
-\[ \implies [f] * [k_{x_1}] := [f * k_{x_1}] = [f \circ (i * e_1)] = [ f
-\circ i ] = [f] \]
-obteniendo asi que \([k_{x_1}]\) es la identidad por la derecha. Podemos
+\begin{equation}\label{eq:homequiv2.3}
+[(f \circ i)] * [(f \circ e_1)] = [f] * [k_{x_1}]
+\end{equation}
+juntando
+\eqref{eq:homequiv2.1},\eqref{eq:homequiv2.2},\eqref{eq:homequiv2.3} nos
+muestra que \([k_{x_1}]\) es la identidad por la derecha. Podemos
 hacer un proceso analogo para \([k_{x_0}]\) como identidad por la
 izquierda, asi probando (2).
 
