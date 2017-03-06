@@ -6,7 +6,7 @@ si existe \(\{V_\alpha\}_{\alpha \in \Lambda},\ \Lambda \subseteq
 \mathbb N\) tal que
 \[ p^{-1} (U) = \bigcup_{\alpha \in \Lambda} V_\alpha \]
 Donde \(\{V_\alpha\}\) es una familia disjunta de abiertos, tal que
-\(\forall \alpha \in \Lambda, p \mid_{\alpha}\) es homeomofo sobre \(U\).
+\(\forall \alpha \in \Lambda,\ p \mid_{\alpha}\) es homeomorfo sobre \(U\).
 Si para todo \(x \in X\) existe dicha vecindad \(U\) que cumpla lo
 anterior, se dira que \(\tilde{X}\) es un \textbf{espacio cubrimiento}
 de \(X\) y que \(p\) es un \textbf{cubrimiento par}.
@@ -26,16 +26,17 @@ uno se tiene la inyectividad requerida.
 
 A priori el cubrimientos par es independiente de los caminos que tengamos
 en \(X\), queremos ver si podemos reflejar la informacion importante de
-los caminos en \(\tilde{X}\).
+los caminos de \(X\) sobre \(\tilde{X}\).
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.5]{./imagenes/lifting-path-diagrama.png}
 \end{figure}
-Para esto construiremos \(\tilde f : I \to \tilde X\) el cual cumpla \(p
-\circ \tilde f = f \), donde \(\tilde f\) sera nuestro representante en
-el espacio cubrimientos de estos caminos. Veremos tambien que bajo
-hipotesis sensatas, este \(\tilde f\) es unico y refleja informacion
-homotopica. Para esto necesitamos desarrollar algunos teoremas previos.
+Es decir, para todo arco \(f : I \to X\), construiremos \(\tilde f : I
+\to \tilde X\) el cual cumpla \(p \circ \tilde f = f \), donde \(\tilde
+f\) sera nuestro representante en el espacio cubrimientos de estos
+caminos. Veremos tambien que bajo hipotesis sensatas, este \(\tilde f\)
+es unico y refleja informacion homotopica. Para esto necesitamos
+desarrollar algunos teoremas previos.
 \begin{lema}[Numero de Lebesgue] \label{thm:lebesgue-number-lema}
   Sea \(\mathcal A\) un cubrimiento del espacio metrico \((X,d)\). Si
   \(X\) es compacto, entonces existe \(\delta > 0\) tal que para todo
@@ -49,20 +50,22 @@ homotopica. Para esto necesitamos desarrollar algunos teoremas previos.
   cubre a \(X\), definamos a los conjuntos \(C_i = X - A_i,\ \forall i
   \in [1,n]\) y a la funcion \(f : X \to \mathbb R\) definida por
   \[ f(x) := \frac 1 n \sum_{i=1}^{n} d(x, C_i) \]
-  i.e. la distancia promedio de \(x\) a \(C_i\). Notemos que \(\forall x,\
-  f(x) > 0\), pues para \(x \in A_i \subseteq X\), por ser \(A_i\) un
-  abierto, existe \(\epsilon > 0\) tal que \(B(x,\epsilon) \subset A_i\)
-  y por tanto \(d(x, C_i) \geq \epsilon\) que implica  \( f(x) \geq \frac
-  \epsilon n > 0\).
+  i.e. la distancia promedio de \(x\) a \(C_i\). Notemos que \(\forall x
+  \in X,\ f(x) > 0\), pues para \(x \in A_i \subseteq X\), por ser
+  \(A_i\) un abierto, existe \(\epsilon > 0\) tal que \(B(x,\epsilon)
+  \subset A_i\) y por tanto \(d(x, C_i) \geq \epsilon\) que implica \(
+  f(x) \geq \frac \epsilon n > 0\).
 
-  Por otro lado \(f\) es una funcion continua sobre \(X\), un compacto,
-  por lo tanto alcanza un minimo; a este le denotaremos como nuestro
-  \(\delta\). Probaremos que este cumple el requerimiento, sea \(B
+  Por otro lado \(f\) es una funcion continua sobre \(X\) un espacio
+  compacto, por lo tanto alcanza un minimo; a este le denotaremos como
+  nuestro \(\min_X f \coloneqq \delta \).
+
+  Probaremos que este \(\delta\) cumple el requerimiento, sea \(B
   \subset X\) subconjunto abierto de diametro menor que \(\delta\), sea
-  \(x \in B\) arbitrario, el cual tiene tiene una vecindad contenida en
-  \(B\) de diametro menor a \(\delta\). Dado que
-  \[\delta \leq f(x) \leq d(x, C_m) \qquad
-      d(x, C_m) := \max_{i \in [1,n]} d(x, C_i)\]
+  \(x \in B\) arbitrario. Definamos escojamos el conjunto \(C_m\) como
+  \[ C_m := \max_{i \in [1,n]} d(x, C_i) \]
+  Dado que
+  \[\delta \leq f(x) \leq d(x, C_m) \]
   Esto nos dice que dado \(\delta \leq d(x, C_m)\), existe una vecindad
   de al menos diametro \(\delta\) que contiene a \(x\) en \(X - C_m = A_m\).
 \end{proof}
@@ -98,8 +101,9 @@ y las homotopias en el espacio cubrimiento de \(X\).
     \{V_\alpha\}_{\alpha \in \Lambda},\ \bigcup_{\alpha \in \Lambda}
     V_\alpha = p^{-1} (U_x)\]
   debe de existir \(\alpha \in \Lambda\) tal que \(\tilde f (s_i) \in
-  V_\alpha\); a este, le denotaremos \(V_0\). Dado que \(p \mid_{V_0}\) es un
-  homeomorfismo, definimos a \(\tilde f (s)\) en \([s_i, s_{i+1}]\) por
+  V_\alpha\) previamente definido; a este, le denotaremos \(V_0\). Dado
+  que \(p \mid_{V_0}\) es un homeomorfismo, definimos a \(\tilde f (s)\)
+  en \([s_i, s_{i+1}]\) por
   \begin{equation}
   \tilde f (s) = (p \mid _{V_0})^{-1} (f(s))\label{eq:tilde-f-inductiva}
   \end{equation}
@@ -128,6 +132,8 @@ y las homotopias en el espacio cubrimiento de \(X\).
   contradeceria que \((p \mid_{V_0})\) es un homeomorfismo (mapeo
   unico), por tanto se obliga a que \( \hat f = \tilde f\)
 \end{proof}
+Mas aun, podemos no solo levantar las curvas sobre \(X\) a \(\tilde X\),
+si no tambien preservar las homotopias de \(X\) en \(\tilde X\).
 \begin{corolario}
   Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde x _0)
   = x_0 \) para algun \(\tilde x _0 \in \tilde X\). Para cualquier
@@ -138,18 +144,59 @@ y las homotopias en el espacio cubrimiento de \(X\).
 \begin{proof}
   Lo unico diferente con el teorema \ref{thm:lifting-theorem} es que
   tomamos \(I \times I\) que sigue siendo compacto. Podemos aplicar el
-  teorema anterior primero definiendo \(\tilde F\) en \(0 \times I\) y
-  luego en \(I \times 0\), luego escogiendo subdivisiones de \(I \times
-  I\)
+  teorema anterior primero definiendo \(\tilde F\) en \(0 \times I\),
+  luego en \(I \times 0\) y escogiendo subdivisiones de \(I \times I\)
   \[ s_0 < s_1 < \dotsc < s_m \]
   \[ t_0 < t_1 < \dotsc < t_n \]
-  construidos de manera analoga al teorema anterior. Luego podemos
-  definir \(\tilde F\) inductivamente ``por filas'' y luego ``por
-  columnas'', ya que aun mantenemos la invariante de preservar punto en
-  comun entre rectangulos \([s_{i-1}, s_i] \times [t_{i-1}, t_i]\).
+  Tales que \(F ([s_i , s_{i+1}] \times [t_j \times t_{j+1}])\) este
+  contenido en un conjunto cubierto parmente en \(X\), esto utilizando
+  el lema de Lebesgue al igual que en la demostracion anterior.
+
+  Luego definimos inductivamente \(\tilde F\) sobre \([s_i, s_{i+1}]
+  \times [t_j , t_{j+1}]\) siempre y cuando \(\tilde F\) ya este
+  definida sobre las lineas
+  \[ L := [s_i , s_{i+1}] \times \{t_j\}\]
+  \[ H := \{s_i\} \times [t_j , t_{j+1}] \]
+  que son los bordes inferior y izquierdos del rectangulo.
+
+  Tomamos el conjunto \(U\) par que contiene a la imagen
+  \[ F([s_i , s_{i+1}] \times [t_j , t_{j+1}]) \subseteq U \subset X \]
+  Por su paridad, podemos tomar la pre-imagen de \(p\) en \(U\) como
+  \[ p^{-1}(U) = \bigcup_{\alpha \in \Alpha} V_\alpha\]
+  Donde la familia \(\{V_\alpha\}\) es disjunta.
+
+  Dado que \( \{(s_i, t_j)\} = L \cap H\) y que \( (s_i , t_j) \) ya
+  esta definido bajo \(\tilde F\), existe un unico \(V_0 \in
+  \{V_\alpha\}\) que contiene a \(F (s_i, t_j)\). Pero notando que
+  \(\{V_\alpha\}\) son disjuntos y que \(L,H\) son conexos, obliga a que
+  \[ \tilde F (H) \subset V_0 \quad \tilde F (L) \subset V_0 \]
+  Luego podemos definir \(\tilde F\) sobre el resto de \([s_i,
+    s_{i+1}] \times [t_j , t_{j+1}]\) notando que \(p \mid_{V_0}\) es
+  un homeomorfismo entre \(V_0\) y \(U\) y por tanto
+  \[ \forall (a,b) \in [s_i, s_{i+1}] \times [t_j , t_{j+1}],
+    \ \tilde F (a,b) := p^{-1} \mid_{V_0} (F(a,b)) \]
+  Esta cumple la regla \( F = p \circ \tilde F\) y es continua en virtud
+  del lema del pegamiento. Notando finalmente que ahora los conjuntos
+  \[ L := [s_i , s_{i+1}] \times \{t_{j+1}\}\]
+  \[ H := \{s_{i+1}\} \times [t_j , t_{j+1}] \]
+  Estan definidos en \(\tilde F\) y pueden ser utilizados para seguir
+  definiendola inductivamente sobre \(I \times I\).
 \end{proof}
+
+Ahora es mas clara la forma de computar grupos fundamentales con
+cubrimientos pares. Si tuvieramos de partida un isomorfismo de grupos
+entre los espacios \(\pi (\tilde X)\) y \(\pi (X)\), tendriamos que
+presuponer la estructura del grupo en \(\pi (\tilde X)\). La alternativa
+presentada muestra que los cubrimientos pares, preservan los arcos y
+homotopias de \(X\) en \(\tilde X\) y si es el espacio \(\tilde X\) es
+suficientemente simple como para admitir un calculo simple de su grupo
+fundamental, entonces podemos saber que el grupo de \(X\) es un subgrupo
+normal del grupo de \(\tilde X\).
+
+Para un calculo mas explicito necesitamos denotar los puntos finales
+obtenidos en \(\tilde X\).
 \begin{definicion}
-  Sea \(p : \tilde X \to X\) un cubrimiento par; sea \(x_0 \in X\).
+  Sea \(p : \tilde X \to X\) un cubrimiento par y sea \(x_0 \in X\).
   Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
   x_0\). Dado un elemento \([f] \in \pi (X, x_0)\), sea \(\tilde f\) el
   levantamiento (unico) de \(f\) a un camino en \(\tilde X\) que
@@ -166,8 +213,9 @@ grupo fundamental \(\pi (X,x_0)\) y ve donde terminan vistos sobre
 \begin{teorema}
   Sea \(p : \tilde X \to X\) un cubrimiento par, sea \(p (\tilde x _0) =
   x_0\). Si \(\tilde X\) es arco-conexo entonces el correspondiente
-  levantamiento \(\phi : \pi (X, x _0) \to p^{-1} (x)\) es sobreyectivo.
-  Mas aun, si \(\tilde X\) es simplemente conexo, este es biyectivo.
+  levantamiento \(\phi : \pi (X, x _0) \to p^{-1} (x_0)\) es
+  sobreyectivo. Mas aun, si \(\tilde X\) es simplemente conexo, este es
+  biyectivo.
 \end{teorema}
 Usualmente queremos que \(p^{-1} (x)\) no sea simplemente un conjunto,
 queremos poder dotarle de estructura de grupo. En caso de \(\tilde X\)
@@ -209,11 +257,14 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
   p^{-1} (x_0)\) es biyectivo, donde
   \[ p^{-1} (1,0) = \{t \in \mathbb R \mid (\cos 2 \pi t, \sin 2 \pi t)
     = (1, 0) \} = \mathbb Z \]
+  Notamos ademas que de sobre todo \(\mathbb Z\) existe unicamente el
+  grupo bajo la adicion, este sera nuestro grupo de partida.
 
-  Para probar que ademas es homomorfismo, se toman \([f], [g] \in \pi
+  Para probar que es homomorfismo, se toman \([f], [g] \in \pi
   (S^1, x_0)\) arbitrarios y \(\tilde f, \tilde g\) sus correspondientes
   levantamientos tales que \(n := \tilde f (1) = \phi ([f]),\ m :=
-  \tilde g (1) = \phi ([g])\). Se define el camino
+  \tilde g (1) = \phi ([g])\). Ahora queremos encontrar quien es el
+  levantamiento de \([f] * [g]\), para esto se define el camino
   \begin{align*}
     \tilde{\tilde g} : I &\longrightarrow \mathbb R \\
     s &\longmapsto n + \tilde g (s)
@@ -224,10 +275,16 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
   Por tanto \(\tilde{\tilde g}\) es el levantamiento de \(g\) para
   \(\tilde x_0 = n\) (en vez de \(\tilde x_0 = 0\)). Luego el producto
   \(\tilde f * \tilde{\tilde g}\) esta bien definido pues \(\tilde f (1)
-  = n = \tilde{\tilde g} (0)\) y es el levantamiento de \(f * g\). Por
-  definicion
-  \[ \phi ([f] * [g]) = \tilde{\tilde g} (1) = n + m = \phi ([f]) + \phi ([g]) \]
-  Por lo que \(\phi\) es un homo-morfismo de grupos.
+  = n = \tilde{\tilde g} (0)\) y se afirma que este es el levantamiento
+  de \(f * g\) pues por calculo
+  \[ p \circ (\tilde f * \tilde{\tilde g}) =
+     ((p \circ \tilde f) * (p \circ \tilde{\tilde g})) =
+     (f * g)
+  \]
+  Por ultimo calculamos
+  \[ \phi ([f] * [g]) = \tilde{\tilde g} (1) = n + m = \phi ([f]) + \phi
+  ([g]) \]
+  Por lo que \(\phi\) es un homomorfismo de grupos.
 \end{proof}
 
 \paragraph{Ejemplo: Cubrimiento \(p_n : S^1 \to S^1\).} Para testear la intuicion
@@ -274,6 +331,12 @@ que la eleccion de \(p\) afecta que subgrupo de \(\pi (S^1, x_0)\) estudiaremos.
   V_{\bar{\beta}}^{(2)}\) arbitrario en \(p_1 \times p_2\) obtiene un
   homeomorfismo en virtud de las componentes.
 \end{proof}
+
+Esto es una extension del resultado que ya conociamos sobre el functor
+entre \(\mathbf{HoTop}_{*}\) y \(\mathbf{Grp}\) en cuanto a preservacion
+del producto. Esto no dice que el ``calculo'' de grupos fundamentales
+tambien puede derivarse del conocimiento del productor de cubrimientos
+pares.
 
 \paragraph{Ejemplo Toro en \(R^4\).} Dado que podemos caracterizar al
 toro \(T^1\) como \(S^1 \times S^1\), el teorema anterior nos dice que
