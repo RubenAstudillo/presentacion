@@ -1,0 +1,31 @@
+\section*{Categoria de homotopias}
+En la seccion anterior, se termino dando una definicion de categoria con
+\(\mathscr{Top}_*\) y el functor \(_{{*}} : \mathscr{Top} \to
+\mathscr{Grp}\). Los morfismos en \(\mathscr{Top}_*\) correspondian a
+homeomorfismos entre espacios topologicos, los cuales inducian bajo
+\(_{(*)}\) isomorfismos de grupos, pero hay espacios que a pesar de no
+ser homeomorfos entre ellos poseen el mismo grupo fundamental y para
+estos el functor entre \(\mathscr{Top}_* \to \mathscr{Grp}\) es ciego a
+su estructura. Esto es insatsifactorio desde pensando en la meta
+original de clasificar diferentes espacio topologicos y nos hace pensar
+en que talvez la nocion de homeomorfismo es mucho pedir entre los
+espacios.
+
+Entre las nociones mas populares entre aquellas mas debiles que un
+homeomorfismo se encuentra las \emph{equivalencias homotopicas}. Su
+popularidad se debe a que corresponden a los morfismos en una nueva
+estructura categorica denotada por \(\mathscr{HoTop}_*\) y que contiene
+como sub-categoria a \(Top_*\), es decir todo homeomorfismo da espacio a
+una equivalencia homotopica. La motivacion de su construccion es natural
+a partir del estudio de retracciones, las cuales estudiaremos y iremos
+generalizando debidamente.
+
+\subsection*{Retracciones}
+Las retracciones poseen buenas propiedades para establecer inclusion de
+grupos fundamentales
+\begin{definicion}
+  Sea \(X\) un espacio topologico. \(A \subset X\) es una retraccion de
+  \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
+  \[ r \mid_{A} (x) = (x) \]
+  En tal caso \(r\) es llamada la aplicacion retraccion de \(X\) en \(A\).
+\end{definicion}
