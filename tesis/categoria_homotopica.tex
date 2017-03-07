@@ -6,7 +6,7 @@ homeomorfismos entre espacios topologicos, los cuales inducian bajo
 \(_{(*)}\) isomorfismos de grupos, pero hay espacios que a pesar de no
 ser homeomorfos entre ellos poseen el mismo grupo fundamental y para
 estos el functor entre \(\mathscr{Top}_* \to \mathscr{Grp}\) es ciego a
-su estructura. Esto es insatsifactorio desde pensando en la meta
+su estructura. Esto es insatisfactorio pensando en la meta
 original de clasificar diferentes espacio topologicos y nos hace pensar
 en que talvez la nocion de homeomorfismo es mucho pedir entre los
 espacios.
@@ -21,11 +21,117 @@ a partir del estudio de retracciones, las cuales estudiaremos y iremos
 generalizando debidamente.
 
 \subsection*{Retracciones}
-Las retracciones poseen buenas propiedades para establecer inclusion de
-grupos fundamentales
+Iniciaremos estudiando un pequeño lema tecnico con respecto a la
+composicion y la funcion identidad.
+\begin{lema} \label{thm:comp-identidad}
+  Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones continuas. Si \( g
+  \circ f = Id : X \to X \), entonces \(f\) es inyectiva y \(g\) es
+  sobreyectiva.
+\end{lema}
+\begin{proof}
+  Se argumenta por contradiccion. Supongamos que \(f\) no es inyectiva o
+  que \(g\) no es sobreyectiva. Tomando el primer caso para \(f\) se
+  tiene que existen \(x_1 , x_2 \in X,\ x_1 \neq x_2\) que cumplen
+  \[ f (x_1) = f(x_2) \]
+  Dado que \(g\) es una funcion, debe de cumplirse
+  \[ g (f (x_1)) = g (f(x_2)) \]
+  \[ x_1 = x_2 \]
+  Lo cual es una contradiccion.
+
+  Por otro lado, suponiendo que \(g\) no es sobreyectiva, deberia de
+  existir \(x \in X\) tal que no exista \( y \in Y\) que \(g (y) = x\).
+  Pero por hipotesis, el elemento \(f(x) \in Y\) es tal que \(g (f (x))
+  = x\). Mostrando asi que \(g\) es en efecto sobreyectiva.
+\end{proof}
+Con esto en mente, podemos pasar directamente a la definicion de retracion.
 \begin{definicion}
   Sea \(X\) un espacio topologico. \(A \subset X\) es una retraccion de
   \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
-  \[ r \mid_{A} (x) = (x) \]
+  \[ r \mid_{A} (x) = x \]
   En tal caso \(r\) es llamada la aplicacion retraccion de \(X\) en \(A\).
 \end{definicion}
+Adicionalmente podemos definir trivialmente una inclusion \(j : A \to
+X\). Con estas functiones tenemos el siguiente teorema
+\begin{teorema}
+Si \(A \subset X\) es una retraccion, entonces la inclusion \(j : A \to
+X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
+\to \pi(X,a)\) inyectivo.
+\end{teorema}
+\begin{proof}
+  La composicion \(r \circ j : A \to A\) es la funcion identidad de
+  \(A\), por el lema \ref{thm:comp-identidad}, sabemos que \(j\) debe de
+  ser inyectivo. Su homorfismo inducido
+  \[ (r \circ j)_{*} = r_{*} \circ j_{*} \]
+  es el homorfismo identidad entre \(\pi(A,a) \to \pi(A,a)\). Otra vez
+  por el lema \ref{thm:comp-identidad}, esto implica que \(r_{*}\) es una
+  sobreyeccion y que \(j_{*}\) es inyectiva.
+\end{proof}
+La retraccion entonces nos da un embedimiento del grupo fundamental de
+\( A \) en \(X\). Ya podemos ver un poco de la consecuencias de este
+resultado, por ejemplo diciendonos gracias a su contrapositivo que no
+existe una retracion de \(B^2\) en \(S^1\), ya que si lo hubiera, la
+inclusion \(j : S^1 \to B^2\) seria inyectiva, pero el grupo fundamental
+de \(B^2\) es trivial y el de \(S^1\) no lo es (corresponde a \((\mathbb
+Z, (+))\)). Esto ultimo es un resultado que veremos mas adelante mediante
+espacios cubrimientos.
+
+Entre retracciones que son conocidas, estan \(\mathbb R ^2 - \{0\}\) en
+\(S^1\) mediante la funcion \(r (x) = x / \lVert x \rVert \). Lo que nos
+dice por el resultado anterior que \(j_{*} : \pi (S^1, a) \to \pi
+(\mathbb R ^2 - \{0\}, a)\) es inyectiva. Si mediante algun resultado
+pudieramos probar que \(j_{*}\) es ademas sobreyectiva tendriamos listo
+nuestro isomorfismo de grupo. Esto es posible de construir pero para eso
+necesitamos algunos resultados tecnicos.
+
+\begin{lema}
+  Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuous. Si \(h\) y
+  \(k\) son homotopicos y si la imgen de \(x_0\) bajo este permanece
+  fija en \(y_0\) durante la homotopia, entonces \(h_*\) e \(k_*\) son iguales.
+\end{lema}
+\begin{proof}
+  Queremos mostrar que \(\forall [f] \in \pi (X,x_0)\), se cumple que
+  \(h_* ([f]) = k_* ([f])\). Esto equivale a mostrar que
+  \[ [h \circ f] = [k \circ f] \]
+  Es decir, debemos de encontrar una homotopia entre \((h \circ f)\) e \(
+  (k \circ f)\).
+
+  Para esto, usamos la homotopia \(H : X \times I \to Y \) entre \(h\) y
+  \(k\). Notando que \(f : I \to X\) podemos construir una homotopia \(M
+  : I \times I \to Y \) pre-componiendo como
+  \[ (z, t) \mapsto H \circ (f(z), t) \]
+  La cual es una homotopia entre \((h \circ f)\) e \((k \circ f)\) y que
+  cumple \( \forall t \in I,\ M (0, t) = y_0\). Por tanto \(h_* = k_*\).
+\end{proof}
+\begin{lema}
+  Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f_*
+  \circ g_*\) es homotopico a la identidad \( Id : Y \to Y\), entonces
+  \(f_*\) es sobreyectivo e \(g_*\) es inyectivo.
+\end{lema}
+\begin{proof}
+  Se procede de manera analoga a \ref{thm:comp-identidad}. Supongamos
+  que \(g_*\) no es inyectiva, es decir existen \([a],[b] \in \pi
+  (Y,y_0), [a] \neq [b]\) tales que
+  \[ g_* ([a]) = g_* ([b]) \]
+  Dado que \(f_*\) es una funcion y por tanto solo depende sus
+  argumentos, aplicando a ambos lados \(f_*\)
+  \[ f_* (g_* ([a])) = f_* (g_* ([b])) \]
+  \[ [a] = [b] \]
+  Lo cual es una contradiccion con la suposicion inicial.
+
+  De manera analoga, para mostrar que \(f_*\) es sobreyectiva,
+  supongamos que existe \([c] \in \pi (Y, y_0)\) tal que no existe \([d]
+  \in \pi (X,x_0)\) tal que \(g_* ([d]) = [c]\). Pero por cumplirse que
+  \( f_* \circ g_* = Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\), sabemos que
+  existe \(g_* ([c])\) que cumple dicha relacion, por tanto \(f_*\) es
+  sobreyectiva.
+\end{proof}
+Esta es exactamente la misma demostracion que \ref{thm:comp-identidad},
+pero haciendo enfasis lo que significa ser inyectivo o sobreyectivo en
+clases de equivalencias. Resulta que ya tenemos todos los resultados
+necesarios para expandir el resultado de la retraccion \(\mathbb R ^2 -
+\{0\}\) en \(S^1\).
+
+\begin{teorema}
+  El inclusion homomorfica \(j_* : \pi (S^1, a) \to \pi \mathbb R ^2 -
+  \{0\}\) es un isomorfismo de grupos fundamentales.
+\end{teorema}
