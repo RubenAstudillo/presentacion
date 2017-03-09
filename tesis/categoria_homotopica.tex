@@ -201,7 +201,7 @@ podemos aplicar el lema \ref{lem:homotopic-inducing} pues no podemos
 cumplir una de las hipotesis. Resulta que esto es subsanable utilizando
 el siguiente lema tecnico.
 
-\begin{lema}
+\begin{lema} \label{lem:equiv-hom-lift}
   Sean \(h,k : X \to Y\) mapeos continuos, sea \(h (x_0) = y_0,\ k(x_0)
   = y_1\). Si \(h\) y \(k\) son homotopicos mediante \(H : X \times I
   \to Y\), entonces existe un arco \(\alpha\) en \(Y\) de \(y_0\) a
@@ -224,10 +224,10 @@ pero no definicion en la demostracion de el teorema \ref{not:alpha-hat}.
   \[ f_1(t) := (f(t), 1) \quad H \circ f_1 = k \circ f \]
   \[ c(t) := (x_0, t) \quad H \circ c = \alpha \]
 
-  De igual re-definiremos las tres nuevas curvas anteriores en terminos
-  de \(F : I \times I \to X \times I\) dada por la ecuacion \(F(s,t) =
-  (f(s),t)\). Para esto debemos considerar los cuatro bordes de \(I
-  \times I\).
+  De igual manera re-definiremos las tres nuevas curvas en terminos de
+  \(F : I \times I \to X \times I\) dada por la ecuacion \(F(s,t) =
+  (f(s),t)\). Para esto debemos considerar los cuatro bordes de
+  \(I \times I\).
   \[ \beta_0(s) = (s, 0) \quad \beta_1(s) = (s, 1)\]
   \[ \gamma_0(t) = (0, t) \quad \gamma_1(t) = (1, t)\]
   Mostrandose las siguientes igualdades
@@ -244,4 +244,79 @@ pero no definicion en la demostracion de el teorema \ref{not:alpha-hat}.
   \[ (H \circ f_0) * (H \circ c) = (h \circ f) * \alpha \]
   \[ (H \circ c) * (H \circ f_1) = \alpha * (k \circ f) \]
   Obteniendo asi la homotopia buscada.
+\end{proof}
+
+La importancia de encontrar dicho arco \(\alpha : I \to Y\) entre los
+dos levantamientos proviene del siguiente lema.
+\begin{lema} \label{lem:hat-alpha-iso}
+\(\hat \alpha : \pi (Y, y_0) \to \pi (Y, y_1)\) es un isomorfismo de
+grupos fundamentales.
+\end{lema}
+\begin{proof}
+  Por definicion \(\hat \alpha\) es claramente un homomorfismo. Para ver
+  que es inyectiva, supongamos que tomamos \([f],[g] \pi (Y, y_0),\ [f]
+  \neq [g]\) tal que se cumple \(\hat \alpha ([f]) = \hat \alpha
+  ([g])\). Esto implicaria por reduccion que
+  \[ [\alpha^{-1}] * [f] * [\alpha] = [\alpha^{-1}] * [g] * [\alpha] \]
+  \[ [f] * [\alpha] = [g] * [\alpha] \]
+  \[ [f] = [g] \]
+  Lo cual es una contradiccion
+
+  Para ver la sobreyectividad, para todo elemento \([h]
+  \in \pi (Y,y_0)\) existe \( [\alpha] * [h] * [\alpha^{-1}] \in \pi
+  (Y,y_0)\) tal que
+  \[ \hat \alpha ([\alpha] * [h] * [\alpha^{-1}]) = [h]\]
+\end{proof}
+Con esto es mente, es facil ver que se tiene el siguiente corolario
+\begin{corolario}
+  Sean \(h,k : X \to Y\) homotopicamente continuas tales que \(h (x_0) =
+  y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva o sobreyectiva o
+  trivial, entonces \(k_*\) tambien lo es.
+\end{corolario}
+\begin{proof}
+  Dado que por el lema \ref{lem:equiv-hom-lift} tenemos la siguiente
+  ecuacion entre levantamientos
+  \[ k_* = \hat \alpha \circ h_* \]
+  Por el lema \ref{lem:hat-alpha-iso} sabemos que \(\hat \alpha\) es
+  biyectivo. Por tanto la composicion de \(h_*\) inyectiva con \(\hat
+  \alpha\) bijectiva es inyectiva. De igual manera para sobreyectividad y
+  la trivialidad.
+\end{proof}
+Con esto podemos al fin plantear que todo par de espacios en el mismo
+tipo homotopico poseen el mismo grupo fundamental. Esto gracias a que
+podemos evitar la condicion de punto fijo en el lema
+\ref{lem:homotopic-inducing} gracias a la biyeccion de \(\hat \alpha\).
+
+\begin{teorema}
+  Sean \(f : X \to Y\) continua y \(f (x_0) = y_0\). Si \(f\) es una
+  homotopia equivalencia con \(g : Y \to X\), entonces
+  \[ f_* : \pi (X, x_0) \to \pi (Y, y_0)\]
+  es un isomorfismo.
+\end{teorema}
+\begin{proof}
+  Fijemos los puntos \(x_1 = g(y_0)\) y \(y_1 = f(x_1)\). Vease que dado
+  los diferentes puntos bases se tienen dos homomorfismos inducidos de
+  \(f\) con distintos puntos relativos \[f_{x_0} : \pi (X, x_0) \to \pi
+  (Y, y_0)\] \[f_{x_1} : \pi (X, x_1) \to \pi (Y, y_1)\].
+
+  Por hipotesis, \(g \circ f : (X, x_0) \to (X, x_1)\) es homotopico a
+  la funcion identidad \(Id : X \to X\). Luego por el lema
+  \ref{lem:equiv-hom-lift} se tiene que
+  \begin{equation} \label{eq:alpha-f-g}
+  g_* \circ (f_{x_0})_* = (g \circ f)_* = \hat \alpha \circ (Id_X)_*
+    = \hat \alpha
+  \end{equation}
+  Por tanto \(g_* \circ (f_{x_0})_*\) es un isomorfismo y esto obliga a
+  que \(g_*\) sea sobreyectivo.
+
+  De igual manera, aplicando el analisis anterior a \(f \circ g : \pi
+  (Y, y_0) \to (Y, y_1)\) homotopico a la identidad de \(Y\), se
+  obtiene que \((f_{x_1})_* \circ g_*\) es un isomorfismo y por tanto
+  \(g_*\) es inyectivo tambien.
+
+  Conociendo la biyectividad de \(g_*\), nos permite pre-componer por su
+  inversa \((g_*)^{-1}\) en la ecuacion \eqref{eq:alpha-f-g}, obteniendo
+  \[ (f_{x_0})_* = (g_*)^{-1} \circ \hat \alpha\]
+  luego, la composicion de biyeccion es biyeccion y por tanto
+  \((f_{x_0})_*\) es un isomorfismo de grupos fundamentales.
 \end{proof}
