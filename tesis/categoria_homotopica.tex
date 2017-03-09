@@ -83,11 +83,14 @@ pudieramos probar que \(j_{*}\) es ademas sobreyectiva tendriamos listo
 nuestro isomorfismo de grupo. Esto es posible de construir pero para eso
 necesitamos algunos resultados tecnicos.
 
-\begin{lema}
+\begin{lema} \label{lem:homotopic-inducing}
   Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuous. Si \(h\) y
-  \(k\) son homotopicos y si la imgen de \(x_0\) bajo este permanece
+  \(k\) son homotopicos y si la imagen de \(x_0\) bajo este permanece
   fija en \(y_0\) durante la homotopia, entonces \(h_*\) e \(k_*\) son iguales.
 \end{lema}
+% TODO: hay que ser mas preciso porque debemos mantener la homotopia
+% fija en un punto. Hay que hacer enfasis en el grupo fundamental
+% basandose en lo fijo de dicho punto.
 \begin{proof}
   Queremos mostrar que \(\forall [f] \in \pi (X,x_0)\), se cumple que
   \(h_* ([f]) = k_* ([f])\). Esto equivale a mostrar que
@@ -102,29 +105,38 @@ necesitamos algunos resultados tecnicos.
   La cual es una homotopia entre \((h \circ f)\) e \((k \circ f)\) y que
   cumple \( \forall t \in I,\ M (0, t) = y_0\). Por tanto \(h_* = k_*\).
 \end{proof}
-\begin{lema}
-  Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f_*
-  \circ g_*\) es homotopico a la identidad \( Id : Y \to Y\), entonces
-  \(f_*\) es sobreyectivo e \(g_*\) es inyectivo.
-\end{lema}
+\begin{teorema} \label{thm:comp-identidad-homotopia}
+  Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f
+  \circ g\) es homotopico a la identidad \( Id : Y \to Y\) y existe
+  \(y_0 \in Y\) tal que \( f \circ g (y_0) = y_0 \) entonces
+  \(f_*\) es sobreyectivo y \(g_*\) es inyectivo.
+\end{teorema}
 \begin{proof}
-  Se procede de manera analoga al teorema \ref{thm:comp-identidad}.
-  Supongamos que \(g_*\) no es inyectiva, es decir existen \([a],[b] \in
-  \pi (Y,y_0), [a] \neq [b]\) tales que
-  \[ g_* ([a]) = g_* ([b]) \]
-  Dado que \(f_*\) es una funcion y por tanto solo depende sus
-  argumentos, aplicando a ambos lados \(f_*\)
-  \[ f_* (g_* ([a])) = f_* (g_* ([b])) \]
-  \[ [a] = [b] \]
-  Lo cual es una contradiccion con la suposicion inicial.
-
-  De manera analoga, para mostrar que \(f_*\) es sobreyectiva,
-  supongamos que existe \([c] \in \pi (Y, y_0)\) tal que no existe \([d]
-  \in \pi (X,x_0)\) tal que \(g_* ([d]) = [c]\). Pero por cumplirse que
-  \( f_* \circ g_* = Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\), sabemos que
-  existe \(g_* ([c])\) que cumple dicha relacion, por tanto \(f_*\) es
-  sobreyectiva.
+  Aplicando el lema \ref{lem:homotopic-inducing} sobre \(f \circ g \) y
+  \( Id : Y \to Y\), se obtiene la igualdad
+  \[ (f \circ g)_{*} = f_* \circ g_* = Id_* \]
+  Donde \(Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\). Luego aplicando el lema
+  \ref{thm:comp-identidad} obtenemos que \(f_*\) es sobreyectiva y que
+  \(g_*\) es inyectiva.
 \end{proof}
+% \begin{proof}
+%   Se procede de manera analoga al teorema \ref{thm:comp-identidad}.
+%   Supongamos que \(g_*\) no es inyectiva, es decir existen \([a],[b] \in
+%   \pi (Y,y_0), [a] \neq [b]\) tales que
+%   \[ g_* ([a]) = g_* ([b]) \]
+%   Dado que \(f_*\) es una funcion y por tanto solo depende sus
+%   argumentos, aplicando a ambos lados \(f_*\)
+%   \[ f_* (g_* ([a])) = f_* (g_* ([b])) \]
+%   \[ [a] = [b] \]
+%   Lo cual es una contradiccion con la suposicion inicial.
+
+%   De manera analoga, para mostrar que \(f_*\) es sobreyectiva,
+%   supongamos que existe \([c] \in \pi (Y, y_0)\) tal que no existe \([d]
+%   \in \pi (X,x_0)\) tal que \(g_* ([d]) = [c]\). Pero por cumplirse que
+%   \( f_* \circ g_* = Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\), sabemos que
+%   existe \(g_* ([c])\) que cumple dicha relacion, por tanto \(f_*\) es
+%   sobreyectiva.
+% \end{proof}
 Esta es exactamente la misma demostracion que en el teorema
 \ref{thm:comp-identidad}, pero haciendo enfasis lo que significa ser
 inyectivo o sobreyectivo en clases de equivalencias. Resulta que ya
@@ -132,6 +144,104 @@ tenemos todos los resultados necesarios para expandir el resultado de la
 retraccion \(\mathbb R ^2 - \{0\}\) en \(S^1\).
 
 \begin{teorema}
-  El inclusion homomorfica \(j_* : \pi (S^1, a) \to \pi (\mathbb R ^2 -
-  \{0\})\) es un isomorfismo de grupos fundamentales.
+  La inclusion homomorfica \(j_* : \pi (S^1, a) \to \pi (\mathbb R ^2 -
+  \{0\}, a)\) es un isomorfismo de grupos fundamentales.
 \end{teorema}
+\begin{proof}
+  Ya habiamos dicho anteriormente que \( j_* : \pi (S^1, a) \to \pi
+  (\mathbb R ^2 - \{0\}, a)\) es inyectiva como homomorfismo de grupos
+  fundamentales, puesto la existencia de la retraccion
+  \begin{align*}
+    r : \mathbb R ^2 - \{0\} &\to S^1 \\
+    x &\mapsto \frac x {\lVert x \rVert}
+  \end{align*}
+  implica por teorema \ref{thm:comp-identidad} la inyectividad.
+
+  Para probar la sobreyectividad de \(j_*\), tomemos la composicion
+  \[ j \circ r : \mathbb R ^2 - \{0\} \to \mathbb R ^2 - \{0\} \]
+  Esta composicion \emph{no} es la identidad de \(\mathbb R ^2 - \{0\}
+  \) pero es homotopica a esta mediante la homotopia de linea recta
+  \[ H(x,t) := t \cdot x + (1 - t) \cdot \frac x {\lVert x \rVert} \]
+  Esta homotopia deja fijo al punto \((1,0)\), luego tenemos las
+  hipotesis del teorema \ref{thm:comp-identidad-homotopia} y obtenemos
+  que \(j_*\) es ademas sobreyectiva. Concluimos que \(j_*\) es un
+  isomorfismo de grupos fundamentales.
+\end{proof}
+
+Ahora que ya conocemos el esquema de trabajo, podemos generalizar para
+espacios que no necesariamente sean retracciones entre si, pero que
+posean un par de funciones cuyas composiciones sean homotopicas a la
+identidad correspondiente.
+\begin{definicion}
+  Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
+  que \( g \circ f : X \to X \) es homotopico al mapeo identidad de
+  \(X\) y \( f \circ g : Y \to Y \) es homotopico al mapeo identidad de
+  \(Y\). Entonces \(f\) y \(g\) son llamadas \emph{equivalencias
+  homotopicas} y cada una es una \emph{inversa homotopica} de la otra.
+  Si dos espacio poseen un par de equivalencias homotopicas entre ellos,
+  se dicen que ambos espacios son del mismo \emph{tipo homotopico}.
+\end{definicion}
+Podemos ver que en el caso anterior, la retraccion y la inclusion
+correspondian a par de equivalencias homotopicas. Podria pensarse que la
+existencia de un par de equivalencias homotopicas entre espacios seria
+suficiente para afirmar que poseen el mismo grupo fundamental, esto es
+cierto en medida que se sea cuidadoso con los puntos de partida. Este
+problema no se manifestaba en retracciones porque el punto de partida se
+mantenia fijo en la inclusion. Para ver como afecta, seremos mas
+especificos con la notacion de levantamiento : Un levantamiento de \(f :
+X \to Y\) con respecto a \(x_0\) corresponde a la funcion
+\[ (f_{x_0}) : \pi (X , x_0) \to \pi (Y, y_0)\]
+Donde \(f(x_0) = y_0\). Ahora, supongamos que tenemos dos espacio \(X,
+Y\) junto con una equivalencias homotopicas
+\[ f : X \to Y \quad g : Y \to X \]
+Por hipotesis tenemos que \(g \circ f \simeq Id : X \to X\), pero eso
+\textbf{no} nos asegura la existencia de un punto \(x_0 \in X\) que sea
+fijo bajo la homotopia entre \( g \circ f\) y \(Id\). Por tanto no
+podemos aplicar el lema \ref{lem:homotopic-inducing} pues no podemos
+cumplir una de las hipotesis. Resulta que esto es subsanable utilizando
+el siguiente lema tecnico.
+
+\begin{lema}
+  Sean \(h,k : X \to Y\) mapeos continuos, sea \(h (x_0) = y_0,\ k(x_0)
+  = y_1\). Si \(h\) y \(k\) son homotopicos mediante \(H : X \times I
+  \to Y\), entonces existe un arco \(\alpha\) en \(Y\) de \(y_0\) a
+  \(y_1\) tal que \(k_* = \hat \alpha \circ h_* \). Mas aun, este arco
+  esta dado por la ecuacion \(\alpha (t) = H (x_0, t)\).
+\end{lema}
+\noindent Aqui se utilizara la notacion \(\hat \alpha\) que se utilizo
+pero no definicion en la demostracion de el teorema \ref{not:alpha-hat}.
+\begin{proof}
+  Hemos de probar que \(\forall [f] \in \pi (X, x_0)\) se cumple que
+  \[ k_* ([f]) = \hat \alpha \circ h_* ([f]) \]
+  \[ [k \circ f] = [ \alpha^{-1} ] *  [h \circ f] * [\alpha] \]
+  \[ [ \alpha ] * [k \circ f] =  [h \circ f] * [\alpha] \]
+  Es decir, hemos de construir una homotopia entre estos dos
+  representantes de clase. Sea \(H : X \times I \to Y\) la homotopia
+  entre \(h\) y \(k\) dada por hipotesis, entonces podemos reescribir
+  las funciones de la ultima ecuacion definiendo nuevas curvas sobre \(I
+  \times I\)
+  \[ f_0(t) := (f(t), 0) \quad H \circ f_0 = h \circ f \]
+  \[ f_1(t) := (f(t), 1) \quad H \circ f_1 = k \circ f \]
+  \[ c(t) := (x_0, t) \quad H \circ c = \alpha \]
+
+  De igual re-definiremos las tres nuevas curvas anteriores en terminos
+  de \(F : I \times I \to X \times I\) dada por la ecuacion \(F(s,t) =
+  (f(s),t)\). Para esto debemos considerar los cuatro bordes de \(I
+  \times I\).
+  \[ \beta_0(s) = (s, 0) \quad \beta_1(s) = (s, 1)\]
+  \[ \gamma_0(t) = (0, t) \quad \gamma_1(t) = (1, t)\]
+  Mostrandose las siguientes igualdades
+  \[ F \circ \beta_0 = f_0 \quad F \circ \beta_1 = f_1\]
+  \[ F \circ \gamma_0 = c = F \circ \gamma_1 \]
+
+  Notese que los caminos \(\beta_0 * \gamma_1\) y \(\gamma_0 * \beta_1\)
+  son los caminos inferior derecho y izquierdo superior del cuadrilatero
+  \(I \times I\). Dada la convexidad de este espacio, existe una
+  homotopia denotada por \(G : I \times I \to I \times I \). Luego por
+  composicion \(F \circ G\) es una homotopia entre \(f_0 * c\) y \(c *
+  f_1\). Para finalizar vemos que la composicion \(H \circ F \circ G\)
+  es una homotopia en \(Y\)
+  \[ (H \circ f_0) * (H \circ c) = (h \circ f) * \alpha \]
+  \[ (H \circ c) * (H \circ f_1) = \alpha * (k \circ f) \]
+  Obteniendo asi la homotopia buscada.
+\end{proof}

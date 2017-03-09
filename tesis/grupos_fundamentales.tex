@@ -101,7 +101,7 @@ Aun en espacios arco-conexos seguimos declarando el punto base con
 respecto al cual derivamos su grupo fundamental. Para ver con mas
 claridad el por que, primero debemos probar que en efecto, en espacios
 arco-conexos el punto base no afecta al grupo fundamental.
-\begin{teorema}
+\begin{teorema} \label{not:alpha-hat}
   Sea \(x_0 , x_1 \in X\) puntos de un espacio arco conexo, sean \(\pi
   (X, x_0), \pi (X, x_1)\) dos grupos fundamentales de \(X\)
   parametrizados por estos puntos, entonces estos dos grupos son isomorfos
@@ -111,7 +111,7 @@ arco-conexos el punto base no afecta al grupo fundamental.
   continuo, tal que \(\alpha (0) = x_0,\ \alpha (1) = x_1\). Se define
   la funcion
   \begin{align*}
-    F : \pi (X, x_0) &\to \pi (X, x_1) \\
+    \hat \alpha : \pi (X, x_0) &\to \pi (X, x_1) \\
     [g] &\mapsto [ \alpha^{-1} * g * \alpha ]
   \end{align*}
   Esta funcion, esta bien definida puesto que \(\forall g \in \pi (X,
@@ -121,11 +121,12 @@ arco-conexos el punto base no afecta al grupo fundamental.
   \[\big(\alpha^{-1} * g * \alpha \big) (0) = \alpha (1 - 0) = x_1 = \alpha (1) =
     \big(\alpha^{-1} * g * \alpha \big) (1)\]
 
-  \paragraph{\(F\) es homomorfismo.} Para esto, se procede por
+  \paragraph{\(\hat \alpha\) es homomorfismo.} Para esto, se procede por
   definicion. Por un lado, al mapear la identidad de \(e_{x_0} \in \pi
   (X, x_0) \), tenemos por reduccion
   \begin{align*}
-    F ([e_{x_0}]) &= [\alpha^{-1} * e_{x_0} * \alpha] \\
+    \hat \alpha ([e_{x_0}])
+                 &= [\alpha^{-1} * e_{x_0} * \alpha] \\
                  &= [\alpha^{-1}] * [e_{x_0} * \alpha] \\
                  &= [\alpha^{-1}] * [\alpha] \\
                  &= [\alpha^{-1} * \alpha] \\
@@ -134,22 +135,22 @@ arco-conexos el punto base no afecta al grupo fundamental.
   Por otro lado, si \(u,v \in \pi (X, x_0) \), tenemos la siguiente
   reduccion del producto
   \begin{align*}
-    F ([u] * [v]) &= [\alpha^{-1} * u * v * \alpha] \\
+    \hat \alpha ([u] * [v]) &= [\alpha^{-1} * u * v * \alpha] \\
     &= [\alpha^{-1} * u * e_{x_0} * v * \alpha] \\
     &= [\alpha^{-1} * u * \alpha * \alpha^{1} * v * \alpha] \\
     &= [\alpha^{-1} * u * \alpha ] * [ \alpha^{1} * v * \alpha] \\
-    &= F (u) * F (v) \\
+    &= \hat \alpha (u) * \hat \alpha (v) \\
   \end{align*}
 
-  \paragraph{\(F\) es inyectiva y sobreyectiva.} La inyectividad es
+  \paragraph{\(\hat \alpha\) es inyectiva y sobreyectiva.} La inyectividad es
   clara, pues si \([u],[v] \in \pi (X, x_0),\ [u] \not \simeq [v]
   \implies [\alpha^{1}] * [u] * [\alpha] \not \simeq [\alpha^{-1}] * [v]
   * [\alpha]\). Para ver la sobreyectividad, notemos que \(\forall [k] \in
   \pi (X, x_1) \), siempre existe \( [\alpha * k * \alpha^{-1}]\) tal
   que
-  \[ F ([\alpha * k * \alpha^{-1}]) = [\alpha^{-1} * \alpha * k *
+  \[ \hat \alpha ([\alpha * k * \alpha^{-1}]) = [\alpha^{-1} * \alpha * k *
     \alpha^{-1} * \alpha] = [k]\]
-  Por tanto \(F\) es un isomorfismo de grupos.
+  Por tanto \(\hat \alpha\) es un isomorfismo de grupos.
 \end{proof}
 En el la prueba anterior, la existencia del camino \(\alpha\)
 parametrizaba que tipo de isomorfismo \(F\) que construiamos, es decir
