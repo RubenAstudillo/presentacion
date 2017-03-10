@@ -3,33 +3,30 @@ En la seccion anterior, se termino dando una definicion de categoria con
 \(\mathscr{Top}_*\) y el functor \(_{{*}} : \mathscr{Top} \to
 \mathscr{Grp}\). Los morfismos en \(\mathscr{Top}_*\) correspondian a
 homeomorfismos entre espacios topologicos, los cuales inducian bajo
-\(_{(*)}\) isomorfismos de grupos, pero hay espacios que a pesar de no
+\(_{(*)}\) isomorfismos de grupos. Pero hay espacios que a pesar de no
 ser homeomorfos entre ellos poseen el mismo grupo fundamental y para
 estos el functor entre \(\mathscr{Top}_* \to \mathscr{Grp}\) es ciego a
 su estructura. Esto es insatisfactorio pensando en la meta
 original de clasificar diferentes espacio topologicos y nos hace pensar
-en que talvez la nocion de homeomorfismo es mucho pedir entre los
-espacios.
+en que talvez la nocion de homeomorfismo es mucho mas fuerte que lo que
+necesitamos.
 
-Entre las nociones mas populares entre aquellas mas debiles que un
-homeomorfismo se encuentra las \emph{equivalencias homotopicas}. Su
-popularidad se debe a que corresponden a los morfismos en una nueva
-estructura categorica denotada por \(\mathscr{HoTop}_*\) y que contiene
-como sub-categoria a \(Top_*\), es decir todo homeomorfismo da espacio a
-una equivalencia homotopica. La motivacion de su construccion es natural
-a partir del estudio de retracciones, las cuales estudiaremos y iremos
-generalizando debidamente.
+Entre las nociones alternativas mas populares se encuentra las
+\emph{equivalencias homotopicas}. Su popularidad se debe a que son mas
+debiles que un homeomorfismo y que corresponden a los morfismos en una
+nueva estructura categorica denotada por \(\mathscr{HoTop}_*\), la cual
+contiene como sub-categoria a \(Top_*\). La motivacion de su
+construccion es natural a partir del estudio de retracciones, las cuales
+estudiaremos y iremos generalizando debidamente.
 
 \subsection{Retracciones}
 Iniciaremos estudiando un pequeño lema tecnico con respecto a la
 composicion y la funcion identidad.
 \begin{lema} \label{thm:comp-identidad}
   Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones continuas. Si \( g
-  \circ f = Id : X \to X \), entonces \(f\) es inyectiva y \(g\) es
-  sobreyectiva.
+  \circ f = h : X \to X \), con \(h\) una biyeccion, entonces \(f\) es
+  inyectiva y \(g\) es sobreyectiva.
 \end{lema}
-% TODO: tal vez deberia de probarlo para todo \(\alpha\) biyeccion en
-% vez de solo la identidad.
 \begin{proof}
   Se argumenta por contradiccion. Supongamos que \(f\) no es inyectiva o
   que \(g\) no es sobreyectiva. Tomando el primer caso para \(f\) se
@@ -37,13 +34,14 @@ composicion y la funcion identidad.
   \[ f (x_1) = f(x_2) \]
   Dado que \(g\) es una funcion, debe de cumplirse
   \[ g (f (x_1)) = g (f(x_2)) \]
-  \[ x_1 = x_2 \]
-  Lo cual es una contradiccion.
+  \[ h (x_1) = h(x_2) \]
+  Lo cual es una contradiccion con la biyectividad de \(h\).
 
   Por otro lado, suponiendo que \(g\) no es sobreyectiva, deberia de
   existir \(x \in X\) tal que no exista \( y \in Y\) que \(g (y) = x\).
-  Pero por hipotesis, el elemento \(f(x) \in Y\) es tal que \(g (f (x))
-  = x\). Mostrando asi que \(g\) es en efecto sobreyectiva.
+  Pero por hipotesis, el elemento \(f(h^{-1}(x)) \in Y\) es tal que \(g
+  (f (h^{-1}(x))) = x\). Mostrando asi que \(g\) es en efecto
+  sobreyectiva.
 \end{proof}
 Con esto en mente, podemos pasar directamente a la definicion de retracion.
 \begin{definicion}
