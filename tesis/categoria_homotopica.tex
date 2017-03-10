@@ -22,7 +22,7 @@ estudiaremos y iremos generalizando debidamente.
 \subsection{Retracciones}
 Iniciaremos estudiando un pequeño lema tecnico con respecto a la
 composicion y la funcion identidad.
-\begin{lema} \label{thm:comp-identidad}
+\begin{lema}
   Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones continuas. Si \( g
   \circ f = h : X \to X \), con \(h\) una biyeccion, entonces \(f\) es
   inyectiva y \(g\) es sobreyectiva.
@@ -43,7 +43,13 @@ composicion y la funcion identidad.
   (f (h^{-1}(x))) = x\). Mostrando asi que \(g\) es en efecto
   sobreyectiva.
 \end{proof}
-Con esto en mente, podemos pasar directamente a la definicion de retracion.
+\begin{corolario} \label{thm:comp-identidad}
+  Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones continuas. Si \( g
+  \circ f = Id : X \to X \), entonces \(f\) es inyectiva y \(g\) es
+sobreyectiva.
+\end{corolario}
+\noindent Con esto en mente, podemos pasar directamente a la definicion
+de retracion.
 \begin{definicion}
   Sea \(X\) un espacio topologico. \(A \subset X\) es una retraccion de
   \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
@@ -59,12 +65,12 @@ X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
 \end{teorema}
 \begin{proof}
   La composicion \(r \circ j : A \to A\) es la funcion identidad de
-  \(A\), por el lema \ref{thm:comp-identidad}, sabemos que \(j\) debe de
-  ser inyectivo. Su homorfismo inducido
+  \(A\), por el corolario \ref{thm:comp-identidad}, sabemos que \(j\)
+  debe de ser inyectivo. Su homorfismo inducido
   \[ (r \circ j)_{*} = r_{*} \circ j_{*} \]
   es el homorfismo identidad entre \(\pi(A,a) \to \pi(A,a)\). Otra vez
-  por el lema \ref{thm:comp-identidad}, esto implica que \(r_{*}\) es una
-  sobreyeccion y que \(j_{*}\) es inyectiva.
+  por el corolario \ref{thm:comp-identidad}, esto implica que \(r_{*}\)
+  es una sobreyeccion y que \(j_{*}\) es inyectiva.
 \end{proof}
 La retraccion entonces nos da un embedimiento del grupo fundamental de
 \( A \) en \(X\). Ya podemos ver un poco de la consecuencias de este
