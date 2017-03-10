@@ -323,3 +323,24 @@ podemos evitar la condicion de punto fijo en el lema
   luego, la composicion de biyeccion es biyeccion y por tanto
   \((f_{x_0})_*\) es un isomorfismo de grupos fundamentales.
 \end{proof}
+
+\subsection{La categoria \(\mathscr{HoTop}_*\)}
+\begin{definicion}
+  La categoria \(\mathscr{HoTop}_*\) corresponde a una tripleta
+  \((\mathbf{O},\mathbf M, \circ)\) donde
+  \begin{itemize}
+  \item \(\mathbf O\) corresponde a espacio topologicos puntuados de la
+    forma \((X, x_0)\).
+  \item \(\mathbf M\) corresponde a un conjunto
+    \[ M = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\ (X,x_0),(Y,y_0) \in
+      \mathbf O \}\]
+    de clases equivalencias homotopicas entre funciones continuas
+  \item \((\circ)\) corresponde a la composicion de clases de
+    equivalencias tal que si \([f] , [g] \in \mathbf O \) tal que
+    \[ f : (X,x_0) \to (Y, y_0)\]
+    \[ g : (Y, y_0) \to (Z, z_0)\]
+    entonces \([g] \circ [f]\) es una clase de equivalencia de \((X,
+    x_0) \to (Z, z_0)\)
+  \end{itemize}
+
+\end{definicion}
