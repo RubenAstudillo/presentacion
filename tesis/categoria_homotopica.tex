@@ -4,11 +4,11 @@ En la seccion anterior, se termino dando una definicion de categoria con
 \mathscr{Grp}\). Los morfismos en \(\mathscr{Top}_*\) correspondian a
 homeomorfismos entre espacios topologicos, los cuales inducian bajo
 \(_{(*)}\) isomorfismos de grupos. Pero hay espacios que a pesar de no
-ser homeomorfos entre ellos poseen el mismo grupo fundamental y para
-estos el functor entre \(\mathscr{Top}_* \to \mathscr{Grp}\) es ciego a
-su estructura. Esto es insatisfactorio pensando en la meta
-original de clasificar diferentes espacio topologicos y nos hace pensar
-en que talvez la nocion de homeomorfismo es mucho mas fuerte que lo que
+ser homeomorfos poseen el mismo grupo fundamental y para estos el
+functor entre \(\mathscr{Top}_* \to \mathscr{Grp}\) es ciego a su
+estructura. Esto es insatisfactorio pensando en la meta original de
+clasificar diferentes espacio topologicos y nos hace pensar en que
+talvez la nocion de homeomorfismo es mucho mas fuerte de lo que
 necesitamos.
 
 Entre las nociones alternativas mas populares se encuentra las
@@ -73,20 +73,20 @@ X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
   es una sobreyeccion y que \(j_{*}\) es inyectiva.
 \end{proof}
 La retraccion entonces nos da un embedimiento del grupo fundamental de
-\( A \) en \(X\). Ya podemos ver un poco de la consecuencias de este
+\( A \) en \(X\). Ya podemos ver un poco de las consecuencias de este
 resultado, por ejemplo diciendonos gracias a su contrapositivo que no
 existe una retracion de \(B^2\) en \(S^1\), ya que si lo hubiera, la
 inclusion \(j : S^1 \to B^2\) seria inyectiva, pero el grupo fundamental
 de \(B^2\) es trivial y el de \(S^1\) no lo es (corresponde a \((\mathbb
-Z, (+))\)). Esto ultimo es un resultado que veremos mas adelante mediante
-espacios cubrimientos.
+Z, +)\)). Esto ultimo es un resultado que veremos mas adelante
+mediante espacios cubrimientos.
 
 Entre retracciones que son conocidas, estan \(\mathbb R ^2 - \{0\}\) en
 \(S^1\) mediante la funcion \(r (x) = x / \lVert x \rVert \). Lo que nos
-dice por el resultado anterior que \(j_{*} : \pi (S^1, a) \to \pi
-(\mathbb R ^2 - \{0\}, a)\) es inyectiva. Si mediante algun resultado
-pudieramos probar que \(j_{*}\) es ademas sobreyectiva tendriamos listo
-nuestro isomorfismo de grupo. Esto es posible de construir pero para eso
+dice por el teorema anterior que \(j_{*} : \pi (S^1, a) \to \pi (\mathbb
+R ^2 - \{0\}, a)\) es inyectiva. Si mediante algun resultado pudieramos
+probar que \(j_{*}\) es ademas sobreyectiva tendriamos listo nuestro
+isomorfismo de grupo. Esto es posible de construir pero para eso
 necesitamos algunos resultados tecnicos.
 
 \begin{lema} \label{lem:homotopic-inducing}
@@ -108,22 +108,25 @@ necesitamos algunos resultados tecnicos.
   \(k\). Notando que \(f : I \to X\) podemos construir una homotopia \(M
   : I \times I \to Y \) pre-componiendo como
   \[ (z, t) \mapsto H \circ (f(z), t) \]
-  La cual es una homotopia entre \((h \circ f)\) e \((k \circ f)\) y que
-  cumple \( \forall t \in I,\ M (0, t) = y_0\). Por tanto \(h_* = k_*\).
+  La cual es una homotopia entre \((h \circ f)\) e \((k \circ f)\)
+
+  La importancia de que se cumpla que \( \forall t \in I,\ M (0, t) =
+  y_0\) es para decir que los espacios de llegada son los mismos
+  espacios puntuados \((Y,y_0)\). Por tanto \(h_* = k_*\).
 \end{proof}
 \begin{teorema} \label{thm:comp-identidad-homotopia}
   Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f
   \circ g\) es homotopico a la identidad \( Id : Y \to Y\) y existe
-  \(y_0 \in Y\) tal que \( f \circ g (y_0) = y_0 \) entonces
+  \(y_0 \in Y\) tal que \( (f \circ g ) (y_0) = y_0 \) entonces
   \(f_*\) es sobreyectivo y \(g_*\) es inyectivo.
 \end{teorema}
 \begin{proof}
   Aplicando el lema \ref{lem:homotopic-inducing} sobre \(f \circ g \) y
   \( Id : Y \to Y\), se obtiene la igualdad
   \[ (f \circ g)_{*} = f_* \circ g_* = Id_* \]
-  Donde \(Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\). Luego aplicando el lema
-  \ref{thm:comp-identidad} obtenemos que \(f_*\) es sobreyectiva y que
-  \(g_*\) es inyectiva.
+  Donde \(Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\). Luego aplicando el corolario
+  \ref{thm:comp-identidad} sobre esta ecuacion obtenemos que \(f_*\) es
+  sobreyectiva y que \(g_*\) es inyectiva.
 \end{proof}
 % \begin{proof}
 %   Se procede de manera analoga al teorema \ref{thm:comp-identidad}.
@@ -150,8 +153,9 @@ tenemos todos los resultados necesarios para expandir el resultado de la
 retraccion \(\mathbb R ^2 - \{0\}\) en \(S^1\).
 
 \begin{teorema}
-  La inclusion homomorfica \(j_* : \pi (S^1, a) \to \pi (\mathbb R ^2 -
-  \{0\}, a)\) es un isomorfismo de grupos fundamentales.
+  Para todo \(a \in S^1\), la inclusion homomorfica \(j_* : \pi (S^1, a)
+  \to \pi (\mathbb R ^2 - \{0\}, a)\) es un isomorfismo de grupos
+  fundamentales.
 \end{teorema}
 \begin{proof}
   Ya habiamos dicho anteriormente que \( j_* : \pi (S^1, a) \to \pi
@@ -161,7 +165,7 @@ retraccion \(\mathbb R ^2 - \{0\}\) en \(S^1\).
     r : \mathbb R ^2 - \{0\} &\to S^1 \\
     x &\mapsto \frac x {\lVert x \rVert}
   \end{align*}
-  implica por teorema \ref{thm:comp-identidad} la inyectividad.
+  implica por corolario \ref{thm:comp-identidad} la inyectividad.
 
   Para probar la sobreyectividad de \(j_*\), tomemos la composicion
   \[ j \circ r : \mathbb R ^2 - \{0\} \to \mathbb R ^2 - \{0\} \]
@@ -185,7 +189,7 @@ identidad correspondiente.
   \(X\) y \( f \circ g : Y \to Y \) es homotopico al mapeo identidad de
   \(Y\). Entonces \(f\) y \(g\) son llamadas \emph{equivalencias
   homotopicas} y cada una es una \emph{inversa homotopica} de la otra.
-  Si dos espacio poseen un par de equivalencias homotopicas entre ellos,
+  Si dos espacios poseen un par de equivalencias homotopicas entre ellos,
   se dicen que ambos espacios son del mismo \emph{tipo homotopico}.
 \end{definicion}
 Podemos ver que en el caso anterior, la retraccion y la inclusion
@@ -194,12 +198,9 @@ existencia de un par de equivalencias homotopicas entre espacios seria
 suficiente para afirmar que poseen el mismo grupo fundamental, esto es
 cierto en medida que se sea cuidadoso con los puntos de partida. Este
 problema no se manifestaba en retracciones porque el punto de partida se
-mantenia fijo en la inclusion. Para ver como afecta, seremos mas
-especificos con la notacion de levantamiento : Un levantamiento de \(f :
-X \to Y\) con respecto a \(x_0\) corresponde a la funcion
-\[ (f_{x_0}) : \pi (X , x_0) \to \pi (Y, y_0)\]
-Donde \(f(x_0) = y_0\). Ahora, supongamos que tenemos dos espacio \(X,
-Y\) junto con una equivalencias homotopicas
+mantenia fijo en la inclusion. Para ver el problema mas claro,
+supongamos que tenemos dos espacios \(X, Y\) junto con un par
+equivalencias homotopicas
 \[ f : X \to Y \quad g : Y \to X \]
 Por hipotesis tenemos que \(g \circ f \simeq Id : X \to X\), pero eso
 \textbf{no} nos asegura la existencia de un punto \(x_0 \in X\) que sea
@@ -244,10 +245,10 @@ pero no definicion en la demostracion de el teorema \ref{not:alpha-hat}.
   Notese que los caminos \(\beta_0 * \gamma_1\) y \(\gamma_0 * \beta_1\)
   son los caminos inferior derecho y izquierdo superior del cuadrilatero
   \(I \times I\). Dada la convexidad de este espacio, existe una
-  homotopia denotada por \(G : I \times I \to I \times I \). Luego por
-  composicion \(F \circ G\) es una homotopia entre \(f_0 * c\) y \(c *
-  f_1\). Para finalizar vemos que la composicion \(H \circ F \circ G\)
-  es una homotopia en \(Y\)
+  homotopia denotada por \(G : I \times I \to I \times I \) entre ellos.
+  Luego por composicion \(F \circ G\) es una homotopia entre \(f_0 * c\) y
+  \(c * f_1\) y la composicion \(H \circ F \circ G\) es una homotopia en
+  \(Y\) tal que
   \[ (H \circ f_0) * (H \circ c) = (h \circ f) * \alpha \]
   \[ (H \circ c) * (H \circ f_1) = \alpha * (k \circ f) \]
   Obteniendo asi la homotopia buscada.
@@ -261,8 +262,8 @@ grupos fundamentales.
 \end{lema}
 \begin{proof}
   Por definicion \(\hat \alpha\) es claramente un homomorfismo. Para ver
-  que es inyectiva, supongamos que tomamos \([f],[g] \pi (Y, y_0),\ [f]
-  \neq [g]\) tal que se cumple \(\hat \alpha ([f]) = \hat \alpha
+  que es inyectiva, supongamos que tomamos \([f],[g] \in \pi (Y, y_0),\
+  [f] \neq [g]\) tal que se cumple \(\hat \alpha ([f]) = \hat \alpha
   ([g])\). Esto implicaria por reduccion que
   \[ [\alpha^{-1}] * [f] * [\alpha] = [\alpha^{-1}] * [g] * [\alpha] \]
   \[ [f] * [\alpha] = [g] * [\alpha] \]
@@ -300,11 +301,16 @@ podemos evitar la condicion de punto fijo en el lema
   \[ f_* : \pi (X, x_0) \to \pi (Y, y_0)\]
   es un isomorfismo.
 \end{teorema}
+Para este teorema, es necesario que seamos un poco mas especificos con la
+notacion de levantamientos. Un levantamiento de \(f :
+X \to Y\) con respecto a \(x_0\) corresponde a la funcion
+\[ (f_{x_0})_{*} : \pi (X , x_0) \to \pi (Y, y_0)\]
+donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
 \begin{proof}
   Fijemos los puntos \(x_1 = g(y_0)\) y \(y_1 = f(x_1)\). Vease que dado
   los diferentes puntos bases se tienen dos homomorfismos inducidos de
-  \(f\) con distintos puntos relativos \[f_{x_0} : \pi (X, x_0) \to \pi
-  (Y, y_0)\] \[f_{x_1} : \pi (X, x_1) \to \pi (Y, y_1)\].
+  \(f\) con distintos puntos relativos \[(f_{x_0})_* : \pi (X, x_0) \to \pi
+  (Y, y_0)\] \[(f_{x_1})_* : \pi (X, x_1) \to \pi (Y, y_1)\].
 
   Por hipotesis, \(g \circ f : (X, x_0) \to (X, x_1)\) es homotopico a
   la funcion identidad \(Id : X \to X\). Luego por el lema
