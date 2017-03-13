@@ -258,20 +258,22 @@ teoria que estudia este fenomenos es llamada teoria de categorias y
 historicamente los grupos fundamentales dieron inicio al estudio de
 estas.
 \begin{definicion}
-  Una categoria \(\mathcal C\) consiste una tripleta \((O, M,
-  (\circ))\), donde
+  Una categoria \(\mathcal C\) consiste una tripleta \(( \mathbf O,
+  \mathbf M, (\circ))\), donde
   \begin{itemize}
-    \item \(O\) corresponde a una clase\footnote{Clase en el sentido de
+    \item \(\mathbf O\) corresponde a una clase\footnote{Clase en el sentido de
         teoria de conjuntos NBG, aunque tambien son admisibles conjuntos
         de ZFC} de objetos.
-    \item \(M\) corresponde a una clase de morfismos
-      entre elementos de \(O\), tal que en particular \(\forall o \in O,\
-      \exists \mathcal i _o : O \to O\).
+    \item \(\mathbf M\) corresponde a una clase de morfismos
+      entre elementos de \(\mathbf O\), tal que en particular \(\forall
+      O \in \mathbf O,\ \exists \mathcal i _o : O \to O\).
     \item \((\circ)\) es una operacion composicion entre morfismos
       asociativa y que cuya identidad para cada objeto \(o\) corresponde al
       morfismo \(\mathcal i _o\).
   \end{itemize}
 \end{definicion}
+De la segunda propiedad se extiende que el morfismo identidad es unico
+para cada \(O \in \mathbf O\).
 \begin{definicion}
   Sean \(\mathscr{C} , \mathscr D\) dos categorias arbitrarias, un
   functor \(F : \mathscr C \to \mathscr D\) es un mapeo tal que

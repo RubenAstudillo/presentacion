@@ -352,5 +352,119 @@ donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
     entonces \([g] \circ [f]\) es una clase de equivalencia de \((X,
     x_0) \to (Z, z_0)\)
   \end{itemize}
-
 \end{definicion}
+Esta categoria es diferente a \(\mathscr{Top}_*\) en cuanto a sus
+morfismos, pero es posible incrustar mediante un functor
+\begin{align*}
+  F : \mathscr{Top}_* &\to \mathscr{HoTop}_* \\
+      f &\mapsto [f]
+\end{align*}
+en particular, dado que los morfismos de  \(\mathscr{Top}_*\) son
+homeomorfismos, estos son trivialmente equivalencias homotopicas,
+dandonos \emph{equivalencias categoricas} (presencia de inversas) en
+en  \(\mathscr{HoTop}_*\).
+
+Algo diferente en esta construccion es la presencia de clases de
+equivalencias entre funciones. Esto tiene que ver con el requerimiento
+de unicidad sobre el morfismo identidad. Esto tiene la consecuencia
+feliz de simplificar la visualizacion de esta categoria como diagrama.
+
+Esta estructura nos ayudara a deducir grupos fundamentales de espacios
+complejos en base a espacios mas simples. Una de las herramientas para
+esto sera el estudio de los productos y co-productos categoricos.
+
+\begin{definicion}
+  Sea \(P , X , Y \in \mathbf O\) objetos arbitrarios de un categoria
+  tal que existen \(\pi_x : P \to X,\ \pi_y : P \to Y\) morfismos en
+  \(\mathbf M\). Si para todo objeto \(M \in \mathbf O\) tal que posea
+  morfimos \( f : M \to X,\ g : M \to Y\) existe un morfismo \(\theta :
+  M \to P\) tal que
+  \[ f = \pi_x \circ \theta \quad g = \pi_y \circ \theta \]
+  Entonces \(P\) es un producto de \(X\) e \(Y\).
+\end{definicion}
+Analogamente, un co-producto es un producto con todas las ``flechas'' en
+sentido opuesto.
+\begin{definicion}
+  Sea \(C , X , Y \in \mathbf O\) objetos arbitrarios de un categoria
+  tal que existen \(\phi_x : X \to C,\ \phi_y : Y \to C\) morfismos en
+  \(\mathbf M\). Si para todo objeto \(M \in \mathbf O\) tal que posea
+  morfimos \( f : X \to C,\ g : Y \to C\) existe un morfismo \(\theta :
+  C \to M\) tal que
+  \[ f = \theta \circ \phi_x \quad g = \theta \circ \phi_y \]
+  Entonces \(C\) es un co-producto de \(X\) e \(Y\).
+\end{definicion}
+% TODO: considerar incluir diagramas conmutativos
+Intuitivamente, pensamos que el producto categorico en
+\(\mathscr{HoTop}_*\) deberia sea el producto cartesiano de espacios.
+Esto es correcto notanto que \(\forall (X,x_0) , (Y, y_0) \in \mathbf O
+\), el espacio \((X \times Y, (x_0, y_0))\) posee los morfismos
+(continuos) \(\pi_x : X \times Y \to X \) e \(\pi_y : X \times Y \to Y
+\) proyecciones por coordenadas, ademas de una forma de completar el
+diagrama conmutativo.
+
+Pero existe otra operacion no tan conocida que puede cumplir el papel
+del co-producto solo en espacio puntuados, conocida como la \emph{wedge-sum}
+\begin{definicion}
+  Sean \((X, x_0),(Y, y_0)\) does espacios topologicos puntuados. El
+  espacio cuociente de la union disjunta de \(X\) e \(Y\) con la
+  identificacion de punto base \(x_0 \sim y_0\)
+  \[ X \vee Y = (X \sqcup Y) / \sim \]
+  es conocida como la \emph{Wedge sum} entre \(X\) e \(Y\).
+\end{definicion}
+La union disjunta de una familia \(\{X_i\}_{i \in \Lambda}\) corresponde
+al conjunto
+\[ \bigsqcup_{i \in \Lambda} X_i = \{ (x, i) \mid x \in X_i \} \]
+es decir, una union donde se marca el conjunto de procedencia en los
+elementos. Con esto, es facil ver que dados \(X, Y\) espacios topologicos
+puntuados, los morfismos
+\[ \phi_x (x) = [(x,0)] \quad \phi_y (y) = [(y,1)] \]
+son las inyecciones del co-producto y cumplen tambien las propiedades
+universales.
+
+La presencia de estas operaciones, vuelven a la categoria
+\(\mathscr{HoTop}_*\) cartesiana y co-cartesiana. Mas aun, podemos
+construir equivalencias homotopicas para \(X \times Y,\ X \vee Y\)
+siempre y cuando conozcamos equivalencias para \(X\) e \(Y\) mediante
+las propiedades universales del (co)-producto.
+
+\begin{teorema}
+  Propiedades de producto y co-producto
+  % tuve que poner esta linea porque no podia utilizar newline
+  \begin{itemize}
+    \item Sean \(A, X, Y\) espacio topologicos. Si \(f_0 \sim f_1 : A \to
+      X\) y \(g_0 \sim g_1 : A \to Y\), entonces \((f_0 , g_0) \sim (f_1
+      , g_1): A \to X \times Y\)
+    \item Sean \(B, X, Y\) espacio topologicos. Si \(f_0 \sim f_1 : X \to
+      B\) y \(g_0 \sim g_1 : Y \to B\), entonces \(\{f_0 , g_0\} \sim
+      \{f_1 , g_1\} : X \vee Y \to B\)
+  \end{itemize}
+\end{teorema}
+\begin{proof}
+Comenzando por el producto, sea \(F : A \times I \to X\) la homotopia
+entre \(f_0 , f_1\) y sea \(G : A \times I \to Y\)
+correspondientemente con \(g_0, g_1\), entonces la homotopia
+\begin{align*}
+  FG : A \times I &\to X \times Y \\
+       (a, t) &\mapsto (F(x,t) , G(x,t))
+\end{align*}
+Es una homotopia entre \((f_0 , g_0)\) y \((f_1 , g_1)\).
+
+Analogamente para el co-producto. Sea \(F : X \times I \to B\) y \(G : Y
+\times I \to B\) las homotopias correspondientes a \(f_0 , f_1\) y \(g_0
+, g_1\). Podemos construir la homotopia
+\begin{align*}
+  FG : X \vee Y \times I &\to B \\
+  \big((a,i) , t \big) &\mapsto
+                \begin{cases}
+                  F(a,t) & i = 0 \\
+                  G(a,t) & i = 1 \\
+                \end{cases}
+\end{align*}
+obteniendo asi el resultado deseado.
+\end{proof}
+
+Estos teoremas seran invaluables al momento de calcular grupos
+fundamentales, pues por ejemplo el teorema de \vank opera directamente
+sobre co-producto para dar a conocer el grupo fundamental y los
+cubrimientos pares respetan la estructura del producto. Resultados que
+veremos a continuacion.
