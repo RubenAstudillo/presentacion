@@ -1,7 +1,7 @@
 \subsection{Teorema de \vank}
-El teorema de \vank nos permite calcular el grupo fundamental de un
-espacio que luzca como una \emph{wedge sum} de espacios puntuados
-
+Para union de espacio topologicos, si la interseccion de estos es
+arco-conexa (simplemente conexa), nos da a entender que cualquier arco
+puede ser descompuesto en producto de arcos de cada espacio base.
 \begin{teorema}
   Sea \(X = U \cup V\), donde \(U,V\) son conjuntos abiertos de \(X\).
   Supongamos que \(U \cap V\) es arco-conexo y que \(x_0 \in U \cap V\).
@@ -59,3 +59,9 @@ espacio que luzca como una \emph{wedge sum} de espacios puntuados
   contenida en \(U\) o en \(V\). Por simple calculo se ve que
   \[ [g_1] * ... * [g_n] = [f_1] * ... * [f_n] = [f] \]
 \end{proof}
+
+En un espacio \((X, x_0) = (U \vee V, x_0)\) se cumple por la union
+disjunta que el unico punto en comun de \(U\) y \(V\) es \(x_0\) (y eso
+solo por la identificacion de la equivalencia). Los espacios singletons
+son trivialmente arco-conexos, lo cual nos permite aplicar el teorema
+anterior para calcular grupos fundamentales de estos.
