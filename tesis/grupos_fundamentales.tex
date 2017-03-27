@@ -34,13 +34,13 @@ grupos es un homomorfismo, inyectivo y sobreyectivo.
   \[ e \text{ es identidad de } G \implies F(e) \text { es identidad de } G' \]
 \end{definicion}
 
-\subsubsection{Ejemplo \(\mathbb{R}^2 - \{(1,1)\}\).}
-Como ejemplo utilizaremos este espacio relativamente sencillo de
-visualizar. Para ver su grupo fundamental hemos de caracterizar todas la
-curvas cerradas que inicien en un punto arbitrario, que denotaremos por
-\(x_0\). Sea \(f : I \to \mathbb{R}^2 - \{(1,1)\}\) un camino
-arbitrario, con dicho punto inicial, tendremos tres grandes alternativas
-para de sus isometrias.
+\subsubsection{Ejemplo intuitivo de \(\mathbb{R}^2 - \{(1,1)\}\).}
+Para mostrar la intuición detrás de la definición, utilizaremos como
+ejemplo un espacio relativamente sencillo de visualizar. hemos de
+caracterizar todas la curvas cerradas que inicien en un punto
+arbitrario, que denotaremos por \(x_0\). Sea \(f : I \to \mathbb{R}^2 -
+\{(1,1)\}\) un camino arbitrario, con dicho punto inicial, tendremos
+tres grandes alternativas para de su clasificación.
 \begin{figure}{h}
   \caption{\(R^2\) sin el punto \((1,1)\)}
   \centering
@@ -49,23 +49,23 @@ para de sus isometrias.
 \end{figure}
 \begin{itemize}
 \item La curva denotada por \(f\) puede estar contenida en un subconjunto
-  convexo de \(R^2 - \{(1,1)\}\). De esta manera, la curva pertence a la
-  homotopia de la linea bajo la funcion
+  convexo de \(R^2 - \{(1,1)\}\). De esta manera, la curva pertenece a la
+  homotopia de la linea bajo la función
   \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) e_{x_0} (t)\]
   Por lo tanto en este caso, \(f \in [e_{x_0}]\).
 \item La curva \(f\) no puede ser contenida en un subconjunto convexo de
   \(R^2 - \{ (1,1)\}\). Esto solo puede suceder si la curva \(f\)
-  encerrara al punto \(x_0\), de manera que la relacion \(\lambda x +
+  encerrara al punto \(x_0\), de manera que la relación \(\lambda x +
   (1 - \lambda) y\) no seria valida para algunos \(\lambda, x, y\). Por
-  tanto \(f \not \in [e_{x_0}]\), asi que denotaremos a la clase de
-  equivalencia a la que pertenesca como \([\mathtt{F}^1]\).
+  tanto \(f \not \in [e_{x_0}]\), así que denotaremos a la clase de
+  equivalencia a la que pertenezca como \([\mathtt{F}^1]\).
 \item La curva \(f\) encierra a \(x_0\) \(2\) veces. Dado que cada vez
   que lo encierra, esa curva (hasta ese momento) es homotopica a
   \([\mathtt F ^1]\), tenemos que \(f\) es isometrica a \( [\mathtt F
   ^1] * [\mathtt F ^1] =: [\mathtt F ^2]\). Esto se puede generalizar
   para todos los naturales.
 \end{itemize}
-Asi intuitivamente vemos que para este tenemos las clase de
+Así intuitivamente vemos que para este tenemos las clase de
 equivalencias \([e_{x_0}], [\mathtt F ^1], [\mathtt F ^2], \dots \) con
 la propiedades algebraicas
 \[ [e_{x_0}] * [\mathtt F ^n] = [\mathtt F ^n] * [e_{x_0}]\]
@@ -74,10 +74,10 @@ En efecto, estos elementos son bajo isomorfismo de grupo equivalentes a
 el grupo \((\mathbb{Z}, +)\). Por tanto diremos que este es el grupo
 fundamental de \(R^2 - \{(1,1)\}\).
 
-\paragraph{} Cabe notar que esta no es una demostracion formal, no se ha demostrado
+\paragraph{} Cabe notar que esta no es una demostración formal, no se ha demostrado
 que estas son todas alternativas posibles de curvas, de lo cual depende
-todo nuestro argumento. Mas adelante daremos una demostracion formal de
-que esta intuicion es la correcta, pero por ahora sirve como marco
+todo nuestro argumento. Mas adelante daremos una demostración formal de
+que esta intuición es la correcta, pero por ahora sirve como marco
 conceptual del objeto que estamos estudiando.
 
 \subsection{Importancia punto de origen}
@@ -224,7 +224,7 @@ entonces existira un isomorfismo de grupos
 \[ h_{*} : \pi (X, x_0) \to \pi (Y, y_0) \]
 El candidato a \(h_{*}\) se define como \(h_{*} ([f]) \coloneqq [h \circ
 f] \), lo cual probaremos en el siguiente teorema
-\begin{teorema}
+\begin{teorema} \label{thm:homoemorfismo-isomorfismo}
 \(h_{*} : \pi (X, x_0) \to \pi (Y, y_0)\) es un isomorfismo de grupos
 \end{teorema}
 \begin{proof}
