@@ -334,6 +334,41 @@ donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
   \((f_{x_0})_*\) es un isomorfismo de grupos fundamentales.
 \end{proof}
 
+Con estos resultados podemos ver el siguiente ejemplo
+\begin{corolario}
+  Sea \(M\) la banda de \emph{Mobius} finita definida por la identificacion
+  \[ M := [0,1] \times [0,1] / \sim \quad (0,y) \sim (1, 1 - y) \]
+  Este espacio posee el mismo grupo fundamental de \(S^1\)
+\end{corolario}
+\begin{proof}
+  %%TODO: diagama de M
+  Podemos pensar en la banda de \emph{Mobius} como un cuadrado con los
+  lados izquierdos y derechos identificados en sentido inverso.
+  Definimos la ``banda central'' de este como el conjunto
+  \[ D := [0,1] \times \{\frac 1 2\} / (0, 1 / 2) \sim (1,1 / 2) \]
+  (esta identificacion equivale a la de \(M\) para \(y = 1/2\)). Podemos
+  definir la siguiente retraccion e inclusion
+  \[
+    \begin{matrix}
+      r : M \to D & j : D \to M \\
+      [(x,y)] \mapsto [(x, 1/2)] & x \mapsto x
+    \end{matrix}
+  \]
+  Hemos de probar que \(j \circ r\) es homotopico a la identidad \(Id
+  : M \to M\). Definamos la homotopia
+  \[ F : M \times I \to M \]
+  \[ ([(x,y)], t) \mapsto [(x, \frac t 2 + (1-t) y)] \]
+  La cual es claramente continua y cumple que \( F(.,0) = Id,\ F(.,1) =
+  j \circ r\). Luego por teoremas anterior, el grupo fundamental de
+  \(M\) es igual al de \(D\).
+
+  La pregunta ahora es ver quien es el grupo fundamental de \(D\).
+  Podemos ver que este conjunto es una recta con los dos extremos
+  identificados, lo cual luce similar a \(S^1\). Estos espacios son
+  homeomorfos mediantes la aplicacion \[[(x, 1/2)] \mapsto \exp (2 \pi
+  x)\], mostrando asi el resultado deseado.
+
+\end{proof}
 \subsection{La categoria \(\mathscr{HoTop}_*\)}
 \begin{definicion}
   La categoria \(\mathscr{HoTop}_*\) corresponde a una tripleta
