@@ -100,3 +100,9 @@ sujetos anteriores en terminos de argumentos especificos a esa
 homotopia. Se tienen nuevos objetos, plantealos como argumentos
 especiales de una funcion \(F\) y luego al final nota que \( I \times
 I\) es convexo y por tanto tienes la homotopia que buscas.
+* ejemplos a incluir
+** Plano proyectivo
+** toro
+** botella de klein
+Tal vez tengo que extender a vankampen, pensar como presentarlo como una
+consecuiencia del 1 teorema del isomorfismo.
