@@ -58,7 +58,7 @@ de retracion.
 \end{definicion}
 Adicionalmente podemos definir trivialmente una inclusion \(j : A \to
 X\). Con estas functiones tenemos el siguiente teorema
-\begin{teorema}
+\begin{teorema} \label{thm:retraccion-inclusion}
 Si \(A \subset X\) es una retraccion, entonces la inclusion \(j : A \to
 X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
 \to \pi(X,a)\) inyectivo.
@@ -79,7 +79,33 @@ existe una retracion de \(B^2\) en \(S^1\), ya que si lo hubiera, la
 inclusion \(j : S^1 \to B^2\) seria inyectiva, pero el grupo fundamental
 de \(B^2\) es trivial y el de \(S^1\) no lo es (corresponde a \((\mathbb
 Z, +)\)). Esto ultimo es un resultado que veremos mas adelante
-mediante espacios cubrimientos.
+mediante espacios cubrimientos. Esta ultima afirmacion, nos permite
+completar lo afirmado en cuanto al grupo fundamental de \(\mathbb R ^2 -
+\{(1,1)\}\).
+
+\begin{corolario}
+  Para todo \(\vec a \in \mathbb R ^2\), el grupo fundamental de \(\mathbb R ^2 - \{\vec a\}\) es \((\mathbb Z, +)\).
+\end{corolario}
+\begin{proof}
+Dado que para todo \(\vec a \in \mathbb R ^2 \), siempre existe
+el homoemorfismo
+\[ f_a : \mathbb R ^2 - \{\vec a\} \to \mathbb R ^2 - \{\vec 0\} \]
+\[ \vec x \mapsto \vec x - \vec a \]
+gracias a este, podemos estudiar el grupo fundamental de \(\mathbb R ^2
+- \{\vec 0\}\) sin perdida de generalidad mediante el teorema
+\ref{thm:homoemorfismo-isomorfismo}.
+
+Para este, podemos construir la siguiente retraccion a \(S^1\)
+\[ r : \mathbb R ^2 - \{\vec 0\} \to S^1 \]
+\[ x \mapsto \frac x {\lVert x \rVert} \]
+Esta cumple la condicionn de continuidad trivialmente y dado que todo
+elemento de \(S^1\) posee norma \(1\), para estos corresponde a la
+identidad, como es requerido para una retraccion. Luego, por teorema
+\ref{thm:retraccion-inclusion} tenemos que
+\[ j_* : \pi (S^1 , y_0) \to \pi (\mathbb R ^2 - \{\vec a\}, x_0) \]
+es una inyeccion de grupos fundamentales
+
+\end{proof}
 
 Entre retracciones que son conocidas, estan \(\mathbb R ^2 - \{0\}\) en
 \(S^1\) mediante la funcion \(r (x) = x / \lVert x \rVert \). Lo que nos
