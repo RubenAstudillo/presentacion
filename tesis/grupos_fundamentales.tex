@@ -275,39 +275,38 @@ teoría que estudia este fenómenos es llamada teoría de categorías y
 históricamente los grupos fundamentales dieron inicio al estudio de
 estas.
 \begin{definicion}
-  Una categoria \(\mathcal C\) consiste una tripleta \(( \mathbf O,
+  Una categoría \(\mathcal C\) consiste una tripleta \(( \mathbf O,
   \mathbf M, (\circ))\), donde
   \begin{itemize}
     \item \(\mathbf O\) corresponde a una clase\footnote{Clase en el sentido de
-        teoria de conjuntos NBG, aunque tambien son admisibles conjuntos
-        de ZFC} de objetos.
+        teoría de conjuntos Neumann–Bernays–Gödel} de objetos.
     \item \(\mathbf M\) corresponde a una clase de morfismos
       entre elementos de \(\mathbf O\), tal que en particular \(\forall
       O \in \mathbf O,\ \exists \mathcal i _o : O \to O\).
-    \item \((\circ)\) es una operacion composicion entre morfismos
+    \item \((\circ)\) es una operación composición entre morfismos
       asociativa y que cuya identidad para cada objeto \(o\) corresponde al
-      morfismo \(\mathcal i _o\).
+      morfismos \(\mathcal i _o\).
   \end{itemize}
 \end{definicion}
-De la segunda propiedad se extiende que el morfismo identidad es unico
+De la segunda propiedad se extiende que el morfismos identidad es único
 para cada \(O \in \mathbf O\).
 \begin{definicion}
-  Sean \(\mathscr{C} , \mathscr D\) dos categorias arbitrarias, un
+  Sean \(\mathscr{C} , \mathscr D\) dos categorías arbitrarias, un
   functor \(F : \mathscr C \to \mathscr D\) es un mapeo tal que
   \begin{itemize}
   \item \(\forall X \in \mathbf{Obj}(\mathscr C)\) objeto de \(\mathscr
     C\), \( F(X) \in \mathbf{Obj} (\mathscr D)\)
-  \item  \(\forall f : X \to Y\) morfismo de \(X,Y \in \mathbf{Obj}
+  \item  \(\forall f : X \to Y\) morfismos de \(X,Y \in \mathbf{Obj}
     (\mathscr C),\ f \in \mathbf{Mor} (\mathscr C)\), se tiene que \(
     F(f) : F(X) \to F(Y) \). Mas aun, \(F (\mathbf{Id}_X) = \mathbf{Id}_{F(X)}\)
   \end{itemize}
 \end{definicion}
-Aqui, nuestra \(\mathscr C = \mathscr{Top_{*}}\), la categoria de
-topologias puntuadas y \(\mathscr D = \mathscr{Grp}\), la categoria de
-grupos algebraicos. \(X,Y\) serian espacio topologicos particulares, el
+Aquí, nuestra \(\mathscr C = \mathscr{Top_{*}}\), la categoría de
+espacio topológicos puntuados y \(\mathscr D = \mathscr{Grp}\), la categoría de
+grupos algebraicos. \(X,Y\) serian espacio topológicos particulares, el
 morfismo \(f : X \to Y\) seria el homeomorfismo entre espacios
-topologicos puntuados y \(F(f) = f_{*} : F(X) \to F(Y)\) seria nuestro
-homomorfismo inducido por \(f\), el cual mapearia \(F(X) = \pi (X,
+topológicos puntuados y \(F(f) = f_{*} : F(X) \to F(Y)\) seria nuestro
+homomorfismo inducido por \(f\), el cual mapearía \(F(X) = \pi (X,
 x_0)\) a \(F(Y) = \pi (Y, y_0) \).
 % todo(slack): ver la discucion de la propiedades functoriales (talvez?)
 }
