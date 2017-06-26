@@ -154,7 +154,7 @@ arco-conexos el grupo fundamental no depende del punto de partida.
 
   \paragraph{\(\hat \alpha\) es inyectiva y sobreyectiva.} La inyectividad es
   clara, pues si \([u],[v] \in \pi (X, x_0),\ [u] \not \simeq [v]
-  \implies [\alpha^{1}] * [u] * [\alpha] \not \simeq [\alpha^{-1}] * [v]
+  \implies [\alpha^{-1}] * [u] * [\alpha] \not \simeq [\alpha^{-1}] * [v]
   * [\alpha]\). Para ver la sobreyectividad, notemos que \(\forall [k] \in
   \pi (X, x_1) \), siempre existe \( [\alpha * k * \alpha^{-1}]\) tal
   que
@@ -162,11 +162,11 @@ arco-conexos el grupo fundamental no depende del punto de partida.
     \alpha^{-1} * \alpha] = [k]\]
   Por tanto \(\hat \alpha\) es un isomorfismo de grupos.
 \end{proof}
-En el la prueba anterior, la existencia del camino \(\alpha\)
-parametrizaba que tipo de isomorfismo \(F\) que construiamos, es decir
-nuestro \(F\) enrealidad era \(F_{\alpha}\). La eleccion de punto bases
-\(x_0, x_1\), nos permite hablar de la existencia de unico o multiples
-isomorfimos entre grupos fundamentales \(\pi (X, x_0), \pi (X, x_1) \),
+En la prueba anterior, la existencia del camino \(\alpha\)
+parametrizaba que tipo de isomorfismo \(\hat \alpha\) construimos.
+La eleccion de punto bases
+\(x_0, x_1\) nos permite hablar de la existencia de unico o multiples
+isomorfimos entre grupos fundamentales \(\pi (X, x_0), \pi (X, x_1) \)
 dependientes de la cantidad de caminos entre \(x_0\) y \(x_1\) que
 existan. Esto es un tema importante a considerar, puesto que existe un
 caracterizacion de \(\pi (X, x_0) \) como grupo abeliano, que depende de
@@ -178,11 +178,11 @@ la cantidad de estos isomorfismos.
   F_\beta\), con \(F_{\xi} ([f]) = [\xi^{-1} * f * \xi] \)
 \end{teorema}
 \begin{proof}
-  Procedemos por la implicacion original. Dado que \(\pi (X, x_0)\) es
+  Primero, dado que \(\pi (X, x_0)\) es
   abeliano, esto significa que \(\forall [f],[g] \in \pi (X, x_0),\ [f]
   * [g] = [g] * [f]\). Sean \(\alpha, \beta\) caminos entre \(x_0,x_1\)
-  fijos pero arbitrarios, para mostrar que \(F_\alpha = F_\beta\),
-  debemos mostrar que para todo argumento, los resultados coinciden. Sea
+  fijos pero arbitrarios. Para mostrar que \(F_\alpha = F_\beta\),
+  debemos mostrar que para todo argumento los resultados coinciden. Sea
   \([f] \in \pi (X, x_0) \) un argumento fijo pero arbitrario. Dado que
   \(\alpha * \beta^{-1} * \beta \simeq \alpha \), se tiene que
   \(F_\alpha = F _{\alpha * \beta^{-1} * \beta}\), luego por definicion
@@ -190,17 +190,17 @@ la cantidad de estos isomorfismos.
   \[ F_\alpha ([f]) = F_{\alpha * \beta^{-1} * \beta} ([f]) =
     [\beta^{-1}] * [\beta * \alpha^{-1}] * [f] * [\alpha * \beta^{-1}]
     * [\beta] \]
-  Donde \(\alpha * \beta^{-1} \in \pi (X, x_0) \), por lo tanto podemos
+  Donde \([\alpha * \beta^{-1}] \in \pi (X, x_0) \), por lo tanto podemos
   aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la expresion
   \[ [\beta^{-1}] * [\beta * \alpha^{-1}] * [\alpha * \beta^{-1}] * [f]
     * [\beta] = [\beta^{-1}] * [f] * [\beta] = F_\beta ([f]) \]
   probando asi lo buscado.
 
   En el converso, sean \([f],[g] \in \pi (X, x_0) \) fijos pero
-  arbitrarios, dado que \(\alpha\) es camino entre \(x_0\) e \(x_1\), se
-  tiene que \(f * \alpha\) tambien es camino entre \(x_0\) e \(x_1\).
-Por hipotesis, tenemos en particular para estos caminos, que se cumple
-la relacion
+  arbitrarios, dado que \(\alpha\) es camino entre \(x_0\) y \(x_1\), se
+  tiene que \(f * \alpha\) tambien es camino entre \(x_0\) y \(x_1\).
+  Por hipotesis, tenemos en particular para estos caminos, que se cumple
+  la relacion
   \begin{align*}
     F_{f * \alpha} ([g]) &= F_{\alpha} ([g]) \\
     [(f * \alpha)^{-1} * g * (f * \alpha) ] &= [\alpha^{-1} * g * \alpha] \\
@@ -210,7 +210,14 @@ la relacion
     [f^{-1}] * [g] * [f] &= [g] \\
     [g] * [f] &= [f] * [g], \qquad \forall [f],[g] \in \pi (X, x_0) \\
   \end{align*}
+
+  \begin{acotacion}
+    Aqui se esta utilizando la notacion \( [\alpha]\) para clase de
+    equivalencias no necesariamente pertenecientes al grupo fundamental
+    \(\pi (X, x_0)\).
+  \end{acotacion}
 \end{proof}
+
 En resumen si sabemos que \(\pi (X, x_0)\) es abeliano, esto equivale a
 decir que \(\forall \alpha,\beta\) caminos entre \(x_0, x_1\), se tiene
 que existe un \emph{unico} isomorfismo entre \(\pi (X,x_0) \) y \( \pi
