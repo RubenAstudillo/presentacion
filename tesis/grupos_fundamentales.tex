@@ -31,8 +31,12 @@ grupos es un homomorfismo, inyectivo y sobreyectivo.
   Sean \((G,(*)), (G', (\cdot))\) dos grupos algebraicos. \(F : G \to
   G'\) es un homomorfismo entre grupos si y solo si
   \[ \forall x,y \in G,\ F (x * y) = F(x) \cdot F(y)\]
-  \[ e \text{ es identidad de } G \implies F(e) \text { es identidad de } G' \]
 \end{definicion}
+% Mariela me dijo que esto es un corolario, no se si si quiera es
+% necesario.
+\begin{corolario}
+  \[ e \text{ es identidad de } G \implies F(e) \text { es identidad de } G' \]
+\end{corolario}
 
 \subsubsection{Ejemplo intuitivo de \(\mathbb{R}^2 - \{(1,1)\}\).}
 Para mostrar la intuición detrás de la definición, utilizaremos como
@@ -44,15 +48,16 @@ tres grandes alternativas para de su clasificación.
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.5]{./imagenes/R2-punto.png}
-  \caption{\(R^2\) sin el punto \((1,1)\)}
+  \caption{\(R^2\) sin el punto \((1,1)\) en negro. Origen en rojo. }
   \label{fig:R2-sin-punto}
 \end{figure}
 \begin{itemize}
 \item La curva denotada por \(f\) puede estar contenida en un subconjunto
   convexo de \(R^2 - \{(1,1)\}\). De esta manera, la curva pertenece a la
-  homotopía de la linea bajo la función
-  \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) e_{x_0} (t)\]
-  Por lo tanto en este caso, \(f \in [e_{x_0}]\).
+  homotopía de la linea recta dada por la definicion
+  \ref{def:homotopia-linea} bajo la función
+  \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) k_{x_0} (t)\]
+  Por lo tanto en este caso, \(f \in [k_{x_0}]\).
 \item La curva \(f\) no puede ser contenida en un subconjunto convexo de
   \(R^2 - \{ (1,1)\}\). Esto solo puede suceder si la curva \(f\)
   encerrara al punto \(x_0\), de manera que la relación \(\lambda x +
