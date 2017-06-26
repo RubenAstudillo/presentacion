@@ -87,16 +87,17 @@ y las homotopias en el espacio cubrimiento de \(X\).
 \end{teorema}
 \begin{proof}
   Para todo punto de \(x \in X\), existe una vecindad \(U_x\) que es
-  cubierta parmente, por tanto \(\bigcup_{x \in X} U_x\) es cubrimiento de
-  \(X\). Por otro lado, tenemos que \( [0,1] \subset f^{-1} (\bigcup_{x
+  cubierta, por tanto \( X \subseteq \bigcup_{x \in X} U_x\) para cada
+  \(U_x\) correspondiente.
+  Por otro lado, tenemos que \( [0,1] \subset f^{-1} (\bigcup_{x
   \in X} U_x)\); por el Teorema \ref{thm:lebesgue-number-lema}, podemos
   elegir \(s_0,\dotsc,s_n \in [0,1]\) tal que \(f([s_i, s_{i+1}])\) este contenido
-  en algun \(U_x\). Definiremos \(\tilde f\) inductivamente.
+  en algún \(U_x\). Definiremos \(\tilde f\) inductivamente.
 
   Primero declaremos \(\tilde f (0) = \tilde x _0\). Luego, suponiendo
   que \(\tilde f (s)\) esta definido para \(s \in [0, s_i]\), se
   define a \(\tilde f \) en \([s_i, s_{i+1}]\) de la siguiente forma.
-  Dado que para algun \(x \in X\),
+  Dado que para algún \(x \in X\),
   \[f ([s_i, s_{i+1}]) \subseteq U_x \quad \land \quad \exists
     \{V_\alpha\}_{\alpha \in \Lambda},\ \bigcup_{\alpha \in \Lambda}
     V_\alpha = p^{-1} (U_x)\]
@@ -111,12 +112,12 @@ y las homotopias en el espacio cubrimiento de \(X\).
   pegamiento y bien definido por ser \((p \mid _{V_0})^{-1} \) homeomorfismo.
 
   Para ver la unicidad, se probara inductivamente. Supongamos que existe
-  otro \(\hat{f}\) levantamiento par de \(f\) que tambien
+  otro \(\hat{f}\) levantamiento par de \(f\) que también
   comienza en \(x_0\), ie \(\hat{f} (0) = \tilde x _0 = \tilde f
   (0)\). Supongamos que que \(\forall s \in [0, s_i],\ \hat{f}
   (s) = \tilde f (s)\), dado que \(\tilde f\) esta definida por
   \eqref{eq:tilde-f-inductiva}, \(\hat f\) debe ser
-  eventualmente diferente a la definicion \eqref{eq:tilde-f-inductiva},
+  eventualmente diferente a la definición \eqref{eq:tilde-f-inductiva},
   pero
   \[\hat f (s_i) = \tilde f (s_i) \in V_0\]
   con \([s_i, s_{i+1}]\) conexo y la familia \(\{V_\alpha\}\)
@@ -128,17 +129,18 @@ y las homotopias en el espacio cubrimiento de \(X\).
   \[ \iff p ( \hat f (s)) = p ((p \mid_{V_0})^{-1} (f (s)))\]
   \[ \implies \hat f (s) = (p \mid_{V_0})^{-1} (f (s)), \quad \forall s
       \in [s_i, s_{i+1}]\]
-  siendo esta la unica posible definicion, pues de haber otra,
-  contradeceria que \((p \mid_{V_0})\) es un homeomorfismo (mapeo
-  unico), por tanto se obliga a que \( \hat f = \tilde f\)
+  siendo esta la única posible definición, pues de haber otra,
+  se tendria una contradiccion en decir que \((p \mid_{V_0})\) es un
+  homeomorfismo (mapeo único), por tanto se obliga a que \( \hat f =
+\tilde f\)
 \end{proof}
 Mas aun, podemos no solo levantar las curvas sobre \(X\) a \(\tilde X\),
-si no tambien preservar las homotopias de \(X\) en \(\tilde X\).
+si no también preservar las homotopias de \(X\) en \(\tilde X\).
 \begin{corolario}
   Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde x _0)
-  = x_0 \) para algun \(\tilde x _0 \in \tilde X\). Para cualquier
-  funcion continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\), tiene una
-  unica funcion levantamiento continua \(\tilde F : I \times I \to
+  = x_0 \) para algún \(\tilde x _0 \in \tilde X\). Para cualquier
+  función continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\), tiene una
+  única función levantamiento continua \(\tilde F : I \times I \to
   \tilde X\) que cumpla \(\tilde F (0,0) = \tilde x_0\)
 \end{corolario}
 \begin{proof}
