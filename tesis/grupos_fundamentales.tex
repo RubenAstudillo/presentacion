@@ -218,26 +218,26 @@ la cantidad de estos isomorfismos.
   \end{acotacion}
 \end{proof}
 
-En resumen si sabemos que \(\pi (X, x_0)\) es abeliano, esto equivale a
+En resumen si sabemos que \(\pi (X, x_0)\) es \emph{Abeliano}, esto equivale a
 decir que \(\forall \alpha,\beta\) caminos entre \(x_0, x_1\), se tiene
-que existe un \emph{unico} isomorfismo entre \(\pi (X,x_0) \) y \( \pi
-(X,x_1)\), pues \(F_\alpha = F_\beta\). Anteriormente, teniamos la
-existencia de posiblemente multiples isomorfismos entre \(\pi (X, x_0)
+que existe un \emph{único} isomorfismo entre \(\pi (X,x_0) \) y \( \pi
+(X,x_1)\), pues \(F_\alpha = F_\beta\). Anteriormente, teníamos la
+existencia de posiblemente múltiples isomorfismos entre \(\pi (X, x_0)
 \) y \(\pi (X, x_1) \). Si no podemos parametrizar los isomorfismos
 entre distintos puntos bases de un grupo fundamental, perdemos esta
-caractizacion de grupo fundamental abeliano, pues perdemos la capacidad
+caracterización de grupo fundamental Abeliano, pues perdemos la capacidad
 de contar cuantos isomorfismos existen.
 
-\subsection{Invariante topologica}
+\subsection{Invariante topológica}
 Nuestra meta original era mostrar que los grupos fundamentales son una
-invariante topologica de un espacio, es decir, dados \(X,Y\) dos
-espacios topologicos (puntuados) tales que \(x_0 \in X,\ y_0 \in Y\), si
-existe un homeomorfismo (isomorfismo continuo)
+invariante topológica de un espacio, es decir, dados \(X,Y\) dos
+espacios topológicos (puntuados) tales que \(x_0 \in X,\ y_0 \in Y\), si
+existe un homeomorfismo (funcion biyectiva continua con inversa continua)
 \begin{align*}
   h : (X, x_0) &\to (Y, y_0) \\
   x_0 &\mapsto h(x_0) = y_0
 \end{align*}
-entonces existira un isomorfismo de grupos
+entonces existirá un isomorfismo de grupos
 \[ h_{*} : \pi (X, x_0) \to \pi (Y, y_0) \]
 El candidato a \(h_{*}\) se define como \(h_{*} ([f]) \coloneqq [h \circ
 f] \), lo cual probaremos en el siguiente teorema
@@ -252,27 +252,27 @@ f] \), lo cual probaremos en el siguiente teorema
     claro que si \([f] \in \pi (X, x_0) \) entonces \( [h \circ f] \in
     \pi (Y, y_0)\).
 
-  \item Que es un homomorfismo se ve por definicion, puesto que se cumplen
+  \item Que es un homomorfismo se ve por definición, puesto que se cumplen
     las siguientes ecuaciones
     \[ h_{*} ([e_{x_0}]) = [h \circ e_{x_0}] = [e_{y_0}]\]
     Del lema \ref{lema:dist-composicion-producto} sabemos
     \[ h_{*} ([f * g]) = [h \circ (f * g)] = [(h \circ f) * (h \circ g)]
       = h_{*} ([f]) * h_{*} ([g])\]
 
-  \item Para la inyectividad, nos basamos en que \(h\) ya es un
+  \item Para la inactividad, nos basamos en que \(h\) ya es un
     homeomorfismo, por tanto \( h \circ f = h \circ g \implies f = g \).
     De igual manera para la sobreyectividad, dado que \(h^{-1} : (Y,y_0)
-    \to (X, x_0)\) tambien es un homeomorfismo, para todo \([u] \in \pi
+    \to (X, x_0)\) también es un homeomorfismo, para todo \([u] \in \pi
     (Y, y_0) \) se tiene que \(h_{*} ([h^{-1} \circ u]) = [u]\).
   \end{itemize}
 \end{proof}
 
-Saber que el grupo fundamental es una invariante sin duda es util
-desde un punto de vista topologico, pero la idea de poder reflejar
+Saber que el grupo fundamental es una invariante sin duda es útil
+desde un punto de vista topológico, pero la idea de poder reflejar
 estructura algebraica entre dos representaciones de un objeto y que esta
-se preserve bajo morfismos es util en su propia ley. En efecto, la
-teoria que estudia este fenomenos es llamada teoria de categorias y
-historicamente los grupos fundamentales dieron inicio al estudio de
+se preserve bajo morfismos es útil en su propia ley. En efecto, la
+teoría que estudia este fenómenos es llamada teoría de categorías y
+históricamente los grupos fundamentales dieron inicio al estudio de
 estas.
 \begin{definicion}
   Una categoria \(\mathcal C\) consiste una tripleta \(( \mathbf O,
