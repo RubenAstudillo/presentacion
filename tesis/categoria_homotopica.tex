@@ -180,7 +180,7 @@ tenemos todos los resultados necesarios para expandir el resultado de la
 retracción \(\mathbb R ^2 - \{0\}\) en \(S^1\).
 
 \begin{teorema}
-  Para todo \(a \in S^1\), la inclusión homomorfica \(j_* : \pi (S^1, a)
+  Para todo \(a \in S^1\), el monomorfismo \(j_* : \pi (S^1, a)
   \to \pi (\mathbb R ^2 - \{0\}, a)\) es un isomorfismo de grupos
   fundamentales.
 \end{teorema}
@@ -198,11 +198,23 @@ retracción \(\mathbb R ^2 - \{0\}\) en \(S^1\).
   \[ j \circ r : \mathbb R ^2 - \{0\} \to \mathbb R ^2 - \{0\} \]
   Esta composición \emph{no} es la identidad de \(\mathbb R ^2 - \{0\}
   \) pero es homotopica a esta mediante la homotopía de linea recta
-  \[ H(x,t) := t \cdot x + (1 - t) \cdot \frac x {\lVert x \rVert} \]
-  Esta homotopía deja fijo al punto \((1,0)\), luego tenemos las
-  hipótesis del teorema \ref{thm:comp-identidad-homotopia} y obtenemos
-  que \(j_*\) es además sobreyectiva. Concluimos que \(j_*\) es un
-  isomorfismo de grupos fundamentales.
+  \[
+    H(x,t) := t \cdot x + (1 - t) \cdot \frac x {\lVert x \rVert}
+  \]
+  En esta ocasion, no tenemos la hipotesis de recorrido convexo sobre
+  la identidad y \(j \circ r\) pues estos son \(\mathbb R ^2 - \{\vec 0\}\) y
+  \(B[0,1] - \{\vec 0\}\) respectivamente. Aun asi esta homotopia es
+  continua solo por ser combinacion convexa de funciones continua. Nos
+  falta mostrar que tiene el recorrido correcto, mostrando que \(\vec
+  0\) no pertenece a este. Notamos que para todo \(\vec x \in
+  X\), se tiene que \(\vec x \) y \( \vec x / \lVert x \rVert\) estan en
+  el mismo cuadrante y por tanto no existe combinacion convexa que resulte
+  en \(\vec 0\). Mostramos asi que es una homotopia valida.
+
+  Notamos tambien que esta homotopía deja fijo al punto \((1,0)\), luego
+  tenemos las hipótesis del teorema \ref{thm:comp-identidad-homotopia} y
+  obtenemos que \(j_*\) es además sobreyectiva. Concluimos que \(j_*\) es
+  un isomorfismo de grupos fundamentales.
 \end{proof}
 
 \subsection{Tipos homotopicos}
