@@ -38,17 +38,17 @@ caminos. Veremos también que bajo ciertas hipótesis, este \(\tilde f\)
 es único y refleja información homotopica. Para esto necesitamos
 desarrollar algunos teoremas previos.
 \begin{lema}[Numero de Lebesgue] \label{thm:lebesgue-number-lema}
-  Sea \(\mathcal A\) un cubrimiento del espacio metrico \((X,d)\). Si
+  Sea \(\mathcal A\) un cubrimiento del espacio métrico \((X,d)\). Si
   \(X\) es compacto, entonces existe \(\delta > 0\) tal que para todo
-  subconjunto de \(X\) teniendo diametro menor que \(\delta\), existe un
-  elemento de \(\mathcal A\) conteniendolo.
+  subconjunto de \(X\) teniendo diámetro menor que \(\delta\), existe un
+  elemento de \(\mathcal A\) conteniéndolo.
 \end{lema}
 \begin{proof}
   Supongamos que \(X \not \in \mathcal A\), pues si no trivialmente el
   teorema se cumple \(\forall \delta > 0\). Por compacidad de \(X\)
-  existe una coleccion \(\{A_1,\dotsc,A_n\} \subset \mathcal A\) que
+  existe una colección \(\{A_1,\dotsc,A_n\} \subset \mathcal A\) que
   cubre a \(X\), definamos a los conjuntos \(C_i = X - A_i,\ \forall i
-  \in [1,n]\) y a la funcion \(f : X \to \mathbb R\) definida por
+  \in [1,n]\) y a la función \(f : X \to \mathbb R\) definida por
   \[ f(x) := \frac 1 n \sum_{i=1}^{n} d(x, C_i) \]
   i.e. la distancia promedio de \(x\) a \(C_i\). Notemos que \(\forall x
   \in X,\ f(x) > 0\), pues para \(x \in A_i \subseteq X\), por ser
@@ -56,33 +56,33 @@ desarrollar algunos teoremas previos.
   \subset A_i\) y por tanto \(d(x, C_i) \geq \epsilon\) que implica \(
   f(x) \geq \frac \epsilon n > 0\).
 
-  Por otro lado \(f\) es una funcion continua sobre \(X\) un espacio
-  compacto, por lo tanto alcanza un minimo; a este le denotaremos como
+  Por otro lado \(f\) es una función continua sobre \(X\) un espacio
+  compacto, por lo tanto alcanza un mínimo; a este le denotaremos como
   nuestro \(\min_X f \coloneqq \delta \).
 
   Probaremos que este \(\delta\) cumple el requerimiento, sea \(B
-  \subset X\) subconjunto abierto de diametro menor que \(\delta\), sea
+  \subset X\) subconjunto abierto de diámetro menor que \(\delta\), sea
   \(x \in B\) arbitrario. Definamos escojamos el conjunto \(C_m\) como
   \[ C_m := \max_{i \in [1,n]} d(x, C_i) \]
   Dado que
   \[\delta \leq f(x) \leq d(x, C_m) \]
   Esto nos dice que dado \(\delta \leq d(x, C_m)\), existe una vecindad
-  de al menos diametro \(\delta\) que contiene a \(x\) en \(X - C_m = A_m\).
+  de al menos diámetro \(\delta\) que contiene a \(x\) en \(X - C_m = A_m\).
 \end{proof}
 \begin{definicion}[Levantamiento de \(f\)]
   Sea \(p : \tilde X \to X\) un mapeo. Si \(f : W \to X\) es un mapeo
-  continuo, un levantamiento de \(f\) es una funcion \(\tilde f : W \to
+  continuo, un levantamiento de \(f\) es una función \(\tilde f : W \to
   \tilde X\) tal que \(p \circ \tilde f = f\).
 \end{definicion}
-Ver que la definicion es mucho mas general que lo que pediamos al
+Ver que la definición es mucho mas general que lo que pedíamos al
 diagrama. Usualmente \(W = [0,1]\) pues estudiaremos los caminos sobre
-\(X\). Veremos a continuacion teoremas de como se reflejan los caminos
+\(X\). Veremos a continuación teoremas de como se reflejan los caminos
 y las homotopias en el espacio cubrimiento de \(X\).
 \begin{teorema}\label{thm:lifting-theorem}
-  Sea \(p : \tilde X \to X\) un cubrimiento par y \(x_0 \in X\). Fijemos
-  algun \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) = x_0 \).
+  Sea \(p : \tilde X \to X\) un cubrimiento y \(x_0 \in X\). Fijemos
+  algún \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) = x_0 \).
   Para cualquier camino \(f : [0,1] \to X\) que comience en \(x_0\), existe
-  un unico camino levantamiento \(\tilde f : [0,1] \to \tilde X\) tal que
+  un único camino levantamiento \(\tilde f : [0,1] \to \tilde X\) tal que
   \(\tilde f (0) = \tilde x _0\)
 \end{teorema}
 \begin{proof}
