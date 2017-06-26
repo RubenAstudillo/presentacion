@@ -237,47 +237,47 @@ existencia de un par de equivalencias homotopicas entre espacios seria
 suficiente para afirmar que poseen el mismo grupo fundamental, esto es
 cierto en medida que se sea cuidadoso con los puntos de partida. Este
 problema no se manifestaba en retracciones porque el punto de partida se
-mantenia fijo en la inclusion. Para ver el problema mas claro,
+mantenía fijo en la inclusión. Para ver el problema mas claro,
 supongamos que tenemos dos espacios \(X, Y\) junto con un par
 equivalencias homotopicas
 \[ f : X \to Y \quad g : Y \to X \]
-Por hipotesis tenemos que \(g \circ f \simeq Id : X \to X\), pero eso
+Por hipótesis tenemos que \(g \circ f \simeq Id : X \to X\), pero eso
 \textbf{no} nos asegura la existencia de un punto \(x_0 \in X\) que sea
-fijo bajo la homotopia entre \( g \circ f\) y \(Id\). Por tanto no
+fijo bajo la homotopía entre \( g \circ f\) y \(Id\). Por tanto no
 podemos aplicar el lema \ref{lem:homotopic-inducing} pues no podemos
-cumplir una de las hipotesis. Resulta que esto es subsanable utilizando
-el siguiente lema tecnico.
+cumplir una de las hipótesis. Resulta que esto es subsanable utilizando
+el siguiente lema técnico.
 
 \begin{lema} \label{lem:equiv-hom-lift}
   Sean \(h,k : X \to Y\) mapeos continuos, sea \(h (x_0) = y_0,\ k(x_0)
   = y_1\). Si \(h\) y \(k\) son homotopicos mediante \(H : X \times I
   \to Y\), entonces existe un arco \(\alpha\) en \(Y\) de \(y_0\) a
   \(y_1\) tal que \(k_* = \hat \alpha \circ h_* \). Mas aun, este arco
-  esta dado por la ecuacion \(\alpha (t) = H (x_0, t)\).
+  esta dado por la ecuación \(\alpha (t) = H (x_0, t)\).
 \end{lema}
-\noindent Aqui se utilizara la notacion \(\hat \alpha\) que se utilizo
-pero no definicion en la demostracion de el teorema \ref{not:alpha-hat}.
+\noindent Aquí se utilizara la notación \(\hat \alpha\) que se utilizo
+pero no definición en la demostración de el teorema \ref{not:alpha-hat}.
 \begin{proof}
   Hemos de probar que \(\forall [f] \in \pi (X, x_0)\) se cumple que
   \[ k_* ([f]) = \hat \alpha \circ h_* ([f]) \]
   \[ [k \circ f] = [ \alpha^{-1} ] *  [h \circ f] * [\alpha] \]
   \[ [ \alpha ] * [k \circ f] =  [h \circ f] * [\alpha] \]
-  Es decir, hemos de construir una homotopia entre estos dos
-  representantes de clase. Sea \(H : X \times I \to Y\) la homotopia
-  entre \(h\) y \(k\) dada por hipotesis, entonces podemos reescribir
-  las funciones de la ultima ecuacion definiendo nuevas curvas sobre \(I
+  Es decir, hemos de construir una homotopía entre estos dos
+  representantes de clase. Sea \(H : X \times I \to Y\) la homotopía
+  entre \(h\) y \(k\) dada por hipótesis, entonces podemos reescribir
+  las funciones de la ultima ecuación definiendo nuevas curvas sobre \(I
   \times I\)
   \[ f_0(t) := (f(t), 0) \quad H \circ f_0 = h \circ f \]
   \[ f_1(t) := (f(t), 1) \quad H \circ f_1 = k \circ f \]
   \[ c(t) := (x_0, t) \quad H \circ c = \alpha \]
 
-  De igual manera re-definiremos las tres nuevas curvas en terminos de
-  \(F : I \times I \to X \times I\) dada por la ecuacion \(F(s,t) =
+  De igual manera re-definiremos las tres nuevas curvas en términos de
+  \(F : I \times I \to X \times I\) dada por la ecuación \(F(s,t) =
   (f(s),t)\). Para esto debemos considerar los cuatro bordes de
   \(I \times I\).
   \[ \beta_0(s) = (s, 0) \quad \beta_1(s) = (s, 1)\]
   \[ \gamma_0(t) = (0, t) \quad \gamma_1(t) = (1, t)\]
-  Mostrandose las siguientes igualdades
+  Mostrándose las siguientes igualdades
   \[ F \circ \beta_0 = f_0 \quad F \circ \beta_1 = f_1\]
   \[ F \circ \gamma_0 = c = F \circ \gamma_1 \]
 
