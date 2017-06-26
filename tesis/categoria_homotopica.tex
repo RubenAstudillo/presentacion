@@ -254,9 +254,9 @@ el siguiente lema técnico.
   \to Y\), entonces existe un arco \(\alpha\) en \(Y\) de \(y_0\) a
   \(y_1\) tal que
   \[k_* = \hat \alpha \circ h_* \]
-  \[ \hat \alpha \left( [g] \right) := [\alpha^{-1}] * [g] * [\alpha] \]
-  Mas aun, este arco esta dado por la ecuación \(\alpha (t) = H (x_0,
-  t)\).
+  con \(\hat \alpha\) el conjugado de \(\alpha\) dado por la definicion
+  \ref{def:conjugada}. Mas aun, este arco esta dado por la ecuación
+  \(\alpha (t) = H (x_0, t)\).
 \end{lema}
 \begin{proof}
   Hemos de probar que \(\forall [f] \in \pi (X, x_0)\) se cumple que
@@ -296,6 +296,7 @@ el siguiente lema técnico.
 
 La importancia de encontrar dicho arco \(\alpha : I \to Y\) entre los
 dos levantamientos proviene del siguiente lema.
+%% todo(slack): revisar si este lema es necesario en vista del teorema 2.
 \begin{lema} \label{lem:hat-alpha-iso}
 \(\hat \alpha : \pi (Y, y_0) \to \pi (Y, y_1)\) es un isomorfismo de
 grupos fundamentales.
@@ -354,7 +355,8 @@ donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
 
   Por hipotesis, \(g \circ f : (X, x_0) \to (X, x_1)\) es homotopico a
   la funcion identidad \(Id : X \to X\). Luego por el lema
-  \ref{lem:equiv-hom-lift} se tiene que
+  \ref{lem:equiv-hom-lift} se tiene la existencia de un \(\hat alpha\)
+  tal que cumpla la ecuacion
   \begin{equation} \label{eq:alpha-f-g}
   g_* \circ (f_{x_0})_* = (g \circ f)_* = \hat \alpha \circ (Id_X)_*
     = \hat \alpha
