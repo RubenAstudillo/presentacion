@@ -64,7 +64,7 @@ X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
 \to \pi(X,a)\) inyectivo.
 \end{teorema}
 \begin{proof}
-  La composicion \(r \circ j : A \to A\) es la funcion identidad de
+  La composición \(r \circ j : A \to A\) es la función identidad de
   \(A\), por el corolario \ref{thm:comp-identidad}, sabemos que \(j\)
   debe de ser inyectivo. Su homorfismo inducido
   \[ (r \circ j)_{*} = r_{*} \circ j_{*} \]
@@ -72,14 +72,14 @@ X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
   por el corolario \ref{thm:comp-identidad}, esto implica que \(r_{*}\)
   es una sobreyeccion y que \(j_{*}\) es inyectiva.
 \end{proof}
-La retraccion entonces nos da un embedimiento del grupo fundamental de
+La retracción entonces nos da un embedimiento del grupo fundamental de
 \( A \) en \(X\). Ya podemos ver un poco de las consecuencias de este
-resultado, por ejemplo diciendonos gracias a su contrapositivo que no
-existe una retracion de \(B^2\) en \(S^1\), ya que si lo hubiera, la
-inclusion \(j : S^1 \to B^2\) seria inyectiva, pero el grupo fundamental
+resultado, por ejemplo diciéndonos gracias a su contra-positivo que no
+existe una retracción de \(B^2\) en \(S^1\), ya que si lo hubiera, la
+inclusión \(j : S^1 \to B^2\) seria inyectiva, pero el grupo fundamental
 de \(B^2\) es trivial y el de \(S^1\) no lo es (corresponde a \((\mathbb
 Z, +)\)). Esto ultimo es un resultado que veremos mas adelante
-mediante espacios cubrimientos. Esta ultima afirmacion, nos permite
+mediante espacios cubrimientos. Esta ultima afirmación, nos permite
 completar lo afirmado en cuanto al grupo fundamental de \(\mathbb R ^2 -
 \{(1,1)\}\).
 
@@ -95,30 +95,30 @@ gracias a este, podemos estudiar el grupo fundamental de \(\mathbb R ^2
 - \{\vec 0\}\) sin perdida de generalidad mediante el teorema
 \ref{thm:homoemorfismo-isomorfismo}.
 
-Para este, podemos construir la siguiente retraccion a \(S^1\)
+Para este, podemos construir la siguiente retracción a \(S^1\)
 \[ r : \mathbb R ^2 - \{\vec 0\} \to S^1 \]
 \[ x \mapsto \frac x {\lVert x \rVert} \]
-Esta cumple la condicionn de continuidad trivialmente y dado que todo
+Esta cumple la condición de continuidad trivialmente y dado que todo
 elemento de \(S^1\) posee norma \(1\), para estos corresponde a la
-identidad, como es requerido para una retraccion. Luego, por teorema
+identidad, como es requerido para una retracción. Luego, por teorema
 \ref{thm:retraccion-inclusion} tenemos que
 \[ j_* : \pi (S^1 , y_0) \to \pi (\mathbb R ^2 - \{\vec a\}, x_0) \]
-es una inyeccion de grupos fundamentales
+es una inyección de grupos fundamentales
 
 \end{proof}
 
-Entre retracciones que son conocidas, estan \(\mathbb R ^2 - \{0\}\) en
-\(S^1\) mediante la funcion \(r (x) = x / \lVert x \rVert \). Lo que nos
+Entre retracciones que son conocidas, están \(\mathbb R ^2 - \{0\}\) en
+\(S^1\) mediante la función \(r (x) = x / \lVert x \rVert \). Lo que nos
 dice por el teorema anterior que \(j_{*} : \pi (S^1, a) \to \pi (\mathbb
-R ^2 - \{0\}, a)\) es inyectiva. Si mediante algun resultado pudieramos
-probar que \(j_{*}\) es ademas sobreyectiva tendriamos listo nuestro
+R ^2 - \{0\}, a)\) es inyectiva. Si mediante algún resultado pudiéramos
+probar que \(j_{*}\) es además sobreyectiva tendríamos listo nuestro
 isomorfismo de grupo. Esto es posible de construir pero para eso
-necesitamos algunos resultados tecnicos.
+necesitamos algunos resultados técnicos.
 
 \begin{lema} \label{lem:homotopic-inducing}
-  Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuous. Si \(h\) y
+  Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuos. Si \(h\) y
   \(k\) son homotopicos y si la imagen de \(x_0\) bajo este permanece
-  fija en \(y_0\) durante la homotopia, entonces \(h_*\) e \(k_*\) son iguales.
+  fija en \(y_0\) durante la homotopía, entonces \(h_*\) e \(k_*\) son iguales.
 \end{lema}
 % TODO: hay que ser mas preciso porque debemos mantener la homotopia
 % fija en un punto. Hay que hacer enfasis en el grupo fundamental
@@ -127,14 +127,14 @@ necesitamos algunos resultados tecnicos.
   Queremos mostrar que \(\forall [f] \in \pi (X,x_0)\), se cumple que
   \(h_* ([f]) = k_* ([f])\). Esto equivale a mostrar que
   \[ [h \circ f] = [k \circ f] \]
-  Es decir, debemos de encontrar una homotopia entre \((h \circ f)\) e \(
+  Es decir, debemos de encontrar una homotopía entre \((h \circ f)\) e \(
   (k \circ f)\).
 
-  Para esto, usamos la homotopia \(H : X \times I \to Y \) entre \(h\) y
-  \(k\). Notando que \(f : I \to X\) podemos construir una homotopia \(M
+  Para esto, usamos la homotopía \(H : X \times I \to Y \) entre \(h\) y
+  \(k\). Notando que \(f : I \to X\) podemos construir una homotopía \(M
   : I \times I \to Y \) pre-componiendo como
   \[ (z, t) \mapsto H \circ (f(z), t) \]
-  La cual es una homotopia entre \((h \circ f)\) e \((k \circ f)\)
+  La cual es una homotopía entre \((h \circ f)\) e \((k \circ f)\)
 
   La importancia de que se cumpla que \( \forall t \in I,\ M (0, t) =
   y_0\) es para decir que los espacios de llegada son los mismos
@@ -144,14 +144,14 @@ necesitamos algunos resultados tecnicos.
   Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f
   \circ g\) es homotopico a la identidad \( Id : Y \to Y\) y existe
   \(y_0 \in Y\) tal que \( (f \circ g ) (y_0) = y_0 \) entonces
-  \(f_*\) es sobreyectivo y \(g_*\) es inyectivo.
+  \(f_*\) es sobreyectiva y \(g_*\) es inyectivo.
 \end{teorema}
 \begin{proof}
   Aplicando el lema \ref{lem:homotopic-inducing} sobre \(f \circ g \) y
   \( Id : Y \to Y\), se obtiene la igualdad
   \[ (f \circ g)_{*} = f_* \circ g_* = Id_* \]
   Donde \(Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\). Luego aplicando el corolario
-  \ref{thm:comp-identidad} sobre esta ecuacion obtenemos que \(f_*\) es
+  \ref{thm:comp-identidad} sobre esta ecuación obtenemos que \(f_*\) es
   sobreyectiva y que \(g_*\) es inyectiva.
 \end{proof}
 % \begin{proof}
