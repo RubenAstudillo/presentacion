@@ -110,7 +110,18 @@ fundamental indique que procedemos por buen camino
 Aun en espacios arco-conexos seguimos declarando el punto base con
 respecto al cual derivamos su grupo fundamental. Para ver con mas
 claridad el por que, primero debemos probar que en efecto, en espacios
-arco-conexos el grupo fundamental no depende del punto de partida.
+arco-conexos el grupo fundamental no depende del punto de partida. En
+este resultado, nos sera muy util el concepto de conjugacion de un
+camino.
+\begin{definicion}[Conjugado de un camino] \label{def:conjugada}
+  Sea \(\alpha : I \to X\) un camino en \(X\) tal que \(\alpha (0) =
+  x_0,\ \alpha(1) = x_1\). La funcion definida por
+  \begin{align*}
+    \hat \alpha : \pi (X, x_0) &\longrightarrow \pi (X, x_1) \\
+    [g] &\longmapsto [ \alpha^{-1} * g * \alpha ]
+  \end{align*}
+  es llamada la conjugada de \(\alpha\).
+\end{definicion}
 \begin{teorema} \label{not:alpha-hat}
   Sea \(x_0 , x_1 \in X\) puntos de un espacio arco conexo, sean \(\pi
   (X, x_0), \pi (X, x_1)\) dos grupos fundamentales de \(X\)
@@ -119,11 +130,7 @@ arco-conexos el grupo fundamental no depende del punto de partida.
 \begin{proof}
   Por ser \(X\) arco-conexo, existe \(\alpha : I \to X\) camino
   continuo, tal que \(\alpha (0) = x_0,\ \alpha (1) = x_1\). Se define
-  la funcion
-  \begin{align*}
-    \hat \alpha : \pi (X, x_0) &\to \pi (X, x_1) \\
-    [g] &\mapsto [ \alpha^{-1} * g * \alpha ]
-  \end{align*}
+  la funcion conjugada de \(\alpha\) por \(\hat \alpha\)
   Esta funcion, esta bien definida puesto que \(\forall g \in \pi (X,
   x_0),\ \alpha^{-1} * g * \alpha \) es continua (en virtud de \(*\)).
   Sea entonces por definicion y reduccion se tiene
