@@ -523,35 +523,48 @@ las propiedades universales del (co)-producto.
   Propiedades de producto y co-producto
   % tuve que poner esta linea porque no podia utilizar newline
   \begin{itemize}
-    \item Sean \(A, X, Y\) espacio topológicos. Si \(f_0 \sim f_1 : A \to
-      X\) y \(g_0 \sim g_1 : A \to Y\), entonces \((f_0 , g_0) \sim (f_1
-      , g_1): A \to X \times Y\)
-    \item Sean \(B, X, Y\) espacio topológicos. Si \(f_0 \sim f_1 : X \to
-      B\) y \(g_0 \sim g_1 : Y \to B\), entonces \(\{f_0 , g_0\} \sim
-      \{f_1 , g_1\} : X \vee Y \to B\)
+    \item Sean \((A,a_0), (X,x_0), (Y,y_0)\) espacio topológicos
+      puntuados. Para todo \(f_0, f_1 : (A,a_0) \to (X,x_0)\) y \(g_0,
+      g_1 : (A, a_0) \to (Y,y_0)\) tales que \(f_0 \sim f_1 \) y \(g_0
+      \sim g_1 \), existen \( (f_0, g_0), (f_1, g_1) : (A,a_0) \to (X,x_0)
+      \times (Y,y_0)\) tales que \((f_0 , g_0) \sim (f_1 , g_1) \)
+    \item Sean \((B,b_0), (X,x_0), (Y,y_0)\) espacio topológicos
+      puntuados. Para todo \(f_0, f_1 : (X,x_0) \to (B,b_0) \) y \(g_0,
+      g_1 : (Y, y_0) \to (B,b_0)\) tales que \(f_0 \sim f_1 \) y \(g_0
+      \sim g_1 \), existen \( \{f_0, g_0\}, \{f_1, g_1\} : (X \vee
+      Y,\{x_0,y_0\}) \to (B,b_0) \) tales que \(\{f_0 , g_0\} \sim \{f_1 ,
+      g_1\} \)
   \end{itemize}
 \end{teorema}
 \begin{proof}
-Comenzando por el producto, sea \(F : A \times I \to X\) la homotopía
-entre \(f_0 , f_1\) y sea \(G : A \times I \to Y\)
+Comenzando por el producto, sea \(F : (A,a_0) \times I \to (X,x_0)\) la homotopía
+entre \(f_0 , f_1\) y sea \(G : (A,a_0) \times I \to (Y,y_0)\)
 correspondientemente con \(g_0, g_1\), entonces la homotopía
 \begin{align*}
-  FG : A \times I &\to X \times Y \\
+  FG : (A,a_0) \times I &\to \left( X \times Y , (x_0, y_0) \right) \\
        (a, t) &\mapsto (F(x,t) , G(x,t))
 \end{align*}
 Es una homotopía entre \((f_0 , g_0)\) y \((f_1 , g_1)\).
 
-Análogamente para el co-producto. Sea \(F : X \times I \to B\) y \(G : Y
-\times I \to B\) las homotopias correspondientes a \(f_0 , f_1\) y \(g_0
-, g_1\). Podemos construir la homotopía
+Análogamente para el co-producto. Sea \(F : (X,x_0) \times I \to
+(B,b_0)\) y \(G : (Y,y_0) \times I \to (B,b_0)\) las homotopias
+correspondientes a \(f_0 , f_1\) y \(g_0
+, g_1\). Si identificamos \(x_0 \sim y_0\), podemos construir la homotopía
 \begin{align*}
-  FG : X \vee Y \times I &\to B \\
+  FG : \left( X \vee Y , x_0 \right) \times I &\to (B, b_0) \\
   \big((a,i) , t \big) &\mapsto
                 \begin{cases}
-                  F(a,t) & i = 0 \\
-                  G(a,t) & i = 1 \\
+                  F(a,t), & i = 0 \\
+                  G(a,t), & i = 1 \\
                 \end{cases}
 \end{align*}
+la cual es claramente continua en \(\phi_x(X), \phi_y(Y) \subset X \vee
+Y\). Ademas de estar bien definida en \(x_0 \sim y_0\) pues por
+propiedades de homotopias
+\[
+  \forall t \in I,\ FG \left( (x_0,0) , t \right) = F (x_0, t) = b_0 =
+  G(y_0, t) = FG \left( (y_0,1), t \right)
+\]
 obteniendo así el resultado deseado.
 \end{proof}
 
