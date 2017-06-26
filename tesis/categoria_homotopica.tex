@@ -283,15 +283,15 @@ el siguiente lema técnico.
   \[ F \circ \gamma_0 = c = F \circ \gamma_1 \]
 
   Notese que los caminos \(\beta_0 * \gamma_1\) y \(\gamma_0 * \beta_1\)
-  son los caminos inferior derecho y izquierdo superior del cuadrilatero
+  son los caminos inferior derecho y izquierdo superior del cuadrilátero
   \(I \times I\). Dada la convexidad de este espacio, existe una
-  homotopia denotada por \(G : I \times I \to I \times I \) entre ellos.
-  Luego por composicion \(F \circ G\) es una homotopia entre \(f_0 * c\) y
-  \(c * f_1\) y la composicion \(H \circ F \circ G\) es una homotopia en
+  homotopía denotada por \(G : I \times I \to I \times I \) entre ellos.
+  Luego por composición \(F \circ G\) es una homotopía entre \(f_0 * c\) y
+  \(c * f_1\) y la composición \(H \circ F \circ G\) es una homotopía en
   \(Y\) tal que
   \[ (H \circ f_0) * (H \circ c) = (h \circ f) * \alpha \]
   \[ (H \circ c) * (H \circ f_1) = \alpha * (k \circ f) \]
-  Obteniendo asi la homotopia buscada.
+  Obteniendo así la homotopía buscada.
 \end{proof}
 
 La importancia de encontrar dicho arco \(\alpha : I \to Y\) entre los
@@ -301,38 +301,38 @@ dos levantamientos proviene del siguiente lema.
 grupos fundamentales.
 \end{lema}
 \begin{proof}
-  Por definicion \(\hat \alpha\) es claramente un homomorfismo. Para ver
+  Por definición \(\hat \alpha\) es claramente un homomorfismo. Para ver
   que es inyectiva, supongamos que tomamos \([f],[g] \in \pi (Y, y_0),\
   [f] \neq [g]\) tal que se cumple \(\hat \alpha ([f]) = \hat \alpha
-  ([g])\). Esto implicaria por reduccion que
+  ([g])\). Esto implicaría por reducción que
   \[ [\alpha^{-1}] * [f] * [\alpha] = [\alpha^{-1}] * [g] * [\alpha] \]
   \[ [f] * [\alpha] = [g] * [\alpha] \]
   \[ [f] = [g] \]
-  Lo cual es una contradiccion
+  Lo cual es una contradicción
 
   Para ver la sobreyectividad, para todo elemento \([h]
   \in \pi (Y,y_0)\) existe \( [\alpha] * [h] * [\alpha^{-1}] \in \pi
   (Y,y_0)\) tal que
   \[ \hat \alpha ([\alpha] * [h] * [\alpha^{-1}]) = [h]\]
 \end{proof}
-Con esto es mente, es facil ver que se tiene el siguiente corolario
+Con esto es mente, es fácil ver que se tiene el siguiente corolario
 \begin{corolario}
   Sean \(h,k : X \to Y\) homotopicamente continuas tales que \(h (x_0) =
   y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva o sobreyectiva o
-  trivial, entonces \(k_*\) tambien lo es.
+  trivial, entonces \(k_*\) también lo es.
 \end{corolario}
 \begin{proof}
   Dado que por el lema \ref{lem:equiv-hom-lift} tenemos la siguiente
-  ecuacion entre levantamientos
+  ecuación entre levantamientos
   \[ k_* = \hat \alpha \circ h_* \]
   Por el lema \ref{lem:hat-alpha-iso} sabemos que \(\hat \alpha\) es
-  biyectivo. Por tanto la composicion de \(h_*\) inyectiva con \(\hat
-  \alpha\) bijectiva es inyectiva. De igual manera para sobreyectividad y
+  biyectivo. Por tanto la composición de \(h_*\) inyectiva con \(\hat
+  \alpha\) biyectiva es inyectiva. De igual manera para sobreyectividad y
   la trivialidad.
 \end{proof}
 Con esto podemos al fin plantear que todo par de espacios en el mismo
 tipo homotopico poseen el mismo grupo fundamental. Esto gracias a que
-podemos evitar la condicion de punto fijo en el lema
+podemos evitar la condición de punto fijo en el lema
 \ref{lem:homotopic-inducing} gracias a la biyeccion de \(\hat \alpha\).
 
 \begin{teorema}
