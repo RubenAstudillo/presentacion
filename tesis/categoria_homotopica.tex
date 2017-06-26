@@ -20,27 +20,27 @@ construcción es natural a partir del estudio de retracciones, las cuales
 estudiaremos y iremos generalizando debidamente.
 
 \subsection{Retracciones}
-Iniciaremos estudiando un pequeño lema tecnico con respecto a la
-composicion y la funcion identidad.
+Iniciaremos estudiando un pequeño lema técnico con respecto a la
+composición y la función identidad.
 \begin{lema}
   Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones. Si \( g \circ f =
   h : X \to X \), con \(h\) una biyeccion, entonces \(f\) es inyectiva y
   \(g\) es sobreyectiva.
 \end{lema}
 \begin{proof}
-  Se argumenta por contradiccion. Supongamos que \(f\) no es inyectiva o
+  Se argumenta por contradicción. Supongamos que \(f\) no es inyectiva o
   que \(g\) no es sobreyectiva. Tomando el primer caso para \(f\) se
   tiene que existen \(x_1 , x_2 \in X,\ x_1 \neq x_2\) que cumplen
   \[ f (x_1) = f(x_2) \]
-  Dado que \(g\) es una funcion, debe de cumplirse
+  Dado que \(g\) es una función, debe de cumplirse
   \[ g (f (x_1)) = g (f(x_2)) \]
   \[ h (x_1) = h(x_2) \]
-  Lo cual es una contradiccion con la biyectividad de \(h\).
+  Lo cual es una contradicción con la biyectividad de \(h\).
 
-  Por otro lado, suponiendo que \(g\) no es sobreyectiva, deberia de
+  Por otro lado, suponiendo que \(g\) no es sobreyectiva, debería de
   existir \(x \in X\) tal que no exista \( y \in Y\) que \(g (y) = x\).
-  Pero por hipotesis, el elemento \(f(h^{-1}(x)) \in Y\) es tal que \(g
-  (f (h^{-1}(x))) = x\). Mostrando asi que \(g\) es en efecto
+  Pero por hipótesis, el elemento \(f(h^{-1}(x)) \in Y\) es tal que \(g
+  (f (h^{-1}(x))) = x\). Mostrando así que \(g\) es en efecto
   sobreyectiva.
 \end{proof}
 \begin{corolario} \label{thm:comp-identidad}
@@ -48,18 +48,18 @@ composicion y la funcion identidad.
   \circ f = Id : X \to X \), entonces \(f\) es inyectiva y \(g\) es
 sobreyectiva.
 \end{corolario}
-\noindent Con esto en mente, podemos pasar directamente a la definicion
-de retracion.
+\noindent Con esto en mente, podemos pasar directamente a la definición
+de retracción.
 \begin{definicion}
-  Sea \(X\) un espacio topologico. \(A \subset X\) es una retraccion de
+  Sea \(X\) un espacio topológico. \(A \subset X\) es una retracción de
   \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
   \[ r \mid_{A} (x) = x \]
-  En tal caso \(r\) es llamada la aplicacion retraccion de \(X\) en \(A\).
+  En tal caso \(r\) es llamada la aplicación retracción de \(X\) en \(A\).
 \end{definicion}
-Adicionalmente podemos definir trivialmente una inclusion \(j : A \to
-X\). Con estas functiones tenemos el siguiente teorema
+Adicionalmente podemos definir trivialmente una inclusión \(j : A \to
+X\). Con estas funciones tenemos el siguiente teorema
 \begin{teorema} \label{thm:retraccion-inclusion}
-Si \(A \subset X\) es una retraccion, entonces la inclusion \(j : A \to
+Si \(A \subset X\) es una retracción, entonces la inclusión \(j : A \to
 X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
 \to \pi(X,a)\) inyectivo.
 \end{teorema}
