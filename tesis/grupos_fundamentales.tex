@@ -110,7 +110,7 @@ fundamental indique que procedemos por buen camino
 Aun en espacios arco-conexos seguimos declarando el punto base con
 respecto al cual derivamos su grupo fundamental. Para ver con mas
 claridad el por que, primero debemos probar que en efecto, en espacios
-arco-conexos el punto base no afecta al grupo fundamental.
+arco-conexos el grupo fundamental no depende del punto de partida.
 \begin{teorema} \label{not:alpha-hat}
   Sea \(x_0 , x_1 \in X\) puntos de un espacio arco conexo, sean \(\pi
   (X, x_0), \pi (X, x_1)\) dos grupos fundamentales de \(X\)
@@ -126,29 +126,29 @@ arco-conexos el punto base no afecta al grupo fundamental.
   \end{align*}
   Esta funcion, esta bien definida puesto que \(\forall g \in \pi (X,
   x_0),\ \alpha^{-1} * g * \alpha \) es continua (en virtud de \(*\)).
-  Sea entonces por definicion y reduccion
+  Sea entonces por definicion y reduccion se tiene
   \[ \alpha^{-1} (t) = \alpha (1 - t)\]
   \[\big(\alpha^{-1} * g * \alpha \big) (0) = \alpha (1 - 0) = x_1 = \alpha (1) =
     \big(\alpha^{-1} * g * \alpha \big) (1)\]
 
   \paragraph{\(\hat \alpha\) es homomorfismo.} Para esto, se procede por
-  definicion. Por un lado, al mapear la identidad de \(e_{x_0} \in \pi
+  definicion. Por un lado, al mapear la identidad de \(k_{x_0} \in \pi
   (X, x_0) \), tenemos por reduccion
   \begin{align*}
-    \hat \alpha ([e_{x_0}])
-                 &= [\alpha^{-1} * e_{x_0} * \alpha] \\
-                 &= [\alpha^{-1}] * [e_{x_0} * \alpha] \\
+    \hat \alpha ([k_{x_0}])
+                 &= [\alpha^{-1} * k_{x_0} * \alpha] \\
+                 &= [\alpha^{-1}] * [k_{x_0} * \alpha] \\
                  &= [\alpha^{-1}] * [\alpha] \\
                  &= [\alpha^{-1} * \alpha] \\
-                 &= [e_{x_1}] \\
+                 &= [k_{x_1}] \\
   \end{align*}
   Por otro lado, si \(u,v \in \pi (X, x_0) \), tenemos la siguiente
   reduccion del producto
   \begin{align*}
     \hat \alpha ([u] * [v]) &= [\alpha^{-1} * u * v * \alpha] \\
-    &= [\alpha^{-1} * u * e_{x_0} * v * \alpha] \\
-    &= [\alpha^{-1} * u * \alpha * \alpha^{1} * v * \alpha] \\
-    &= [\alpha^{-1} * u * \alpha ] * [ \alpha^{1} * v * \alpha] \\
+    &= [\alpha^{-1} * u * k_{x_0} * v * \alpha] \\
+    &= [\alpha^{-1} * u * \alpha * \alpha^{-1} * v * \alpha] \\
+    &= [\alpha^{-1} * u * \alpha ] * [ \alpha^{-1} * v * \alpha] \\
     &= \hat \alpha (u) * \hat \alpha (v) \\
   \end{align*}
 
