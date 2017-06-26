@@ -414,7 +414,7 @@ Con estos resultados podemos ver el siguiente ejemplo
 \subsection{La categoria \(\mathscr{HoTop}_*\)}
 \begin{definicion}
   La categoria \(\mathscr{HoTop}_*\) corresponde a una tripleta
-  \((\mathbf{O},\mathbf M, \circ)\) donde
+  \((\mathbf{O},\mathbf M, (*))\) donde
   \begin{itemize}
   \item \(\mathbf O\) corresponde a espacio topologicos puntuados de la
     forma \((X, x_0)\).
@@ -422,21 +422,36 @@ Con estos resultados podemos ver el siguiente ejemplo
     \[ M = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\ (X,x_0),(Y,y_0) \in
       \mathbf O \}\]
     de clases equivalencias homotopicas entre funciones continuas
-  \item \((\circ)\) corresponde a la composición de clases de
-    equivalencias tal que si \([f] , [g] \in \mathbf O \) tal que
+  \item \((*)\) corresponde a la composición de clases de
+    equivalencias tal que si \([f] , [g] \in \mathbf M \) con
     \[ f : (X,x_0) \to (Y, y_0)\]
     \[ g : (Y, y_0) \to (Z, z_0)\]
-    entonces \([g] \circ [f]\) es una clase de equivalencia de \((X,
-    x_0) \to (Z, z_0)\)
+    entonces \([g] * [f] := [ g * f ] \) es una clase de equivalencia de
+    \((X, x_0) \to (Z, z_0)\)
   \end{itemize}
 \end{definicion}
 Esta categoría es diferente a \(\mathscr{Top}_*\) en cuanto a sus
-morfismos, pero es posible incrustar mediante un functor
+morfismos, pero es posible incrustar mediante la siguiente funcion
 \begin{align*}
-  F : \mathscr{Top}_* &\to \mathscr{HoTop}_* \\
-      f &\mapsto [f]
+  F : \mathscr{Top}_* &\longrightarrow \mathscr{HoTop}_* \\
+      \left( X , x_0 \right) &\longmapsto \left( X , x_0 \right), \quad \left( X, x_0 \right) \in \mathbf O \left( \mathscr{Top}_* \right) \\
+      f &\longmapsto [f], \quad f \in \mathbf M \left( \mathscr{Top}_* \right)
 \end{align*}
-en particular, dado que los morfismos de  \(\mathscr{Top}_*\) son
+pues esta preserva la composicion de categoria de origen en la de
+llegada. Ya que \(\forall f,g \in \mathbf M (\mathscr{Top}_*)\) tal que
+\(f \circ g \in \mathbf M (\mathscr{Top}_*)\)
+\[ F(f * g) = [f * g] = [f] * [g] = F(f) * F(g) \]
+En particular, hemos definido un functor entre categorias
+\begin{definicion}[Functor]
+  Un functor \(F\) entre las categorias \( \left( O_{\mathcal C} ,
+    \mathcal C , (\circ) \right) \) y \(\left( O_{\mathcal D} , \mathcal
+      D , (\star) \right)\)
+  es una funcion tal que \(\forall f,g \in \mathcal C \) tal que \( f
+  \circ g \in \mathcal C\) se cumple que
+  \[ F(f \circ g) = F(f) \star F(g) \]
+\end{definicion}
+
+En particular, dado que los morfismos de  \(\mathscr{Top}_*\) son
 homeomorfismos, estos son trivialmente equivalencias homotopicas,
 dándonos \emph{equivalencias categóricas} (presencia de inversas) en
 en  \(\mathscr{HoTop}_*\).
@@ -472,14 +487,14 @@ sentido opuesto.
 \end{definicion}
 % TODO: considerar incluir diagramas conmutativos
 Intuitivamente, pensamos que el producto categórico en
-\(\mathscr{HoTop}_*\) debería sea el producto cartesiano de espacios.
+\(\mathscr{HoTop}_*\) debería ser el producto cartesiano de espacios.
 Esto es correcto notanto que \(\forall (X,x_0) , (Y, y_0) \in \mathbf O
 \), el espacio \((X \times Y, (x_0, y_0))\) posee los morfismos
 (continuos) \(\pi_x : X \times Y \to X \) e \(\pi_y : X \times Y \to Y
 \) proyecciones por coordenadas, además de una forma de completar el
 diagrama conmutativo.
 
-Pero existe otra operación no tan conocida que puede cumplir el papel
+Por otro lado existe una operación no tan conocida que puede cumplir el papel
 del co-producto solo en espacio puntuados, conocida como la \emph{wedge-sum}
 \begin{definicion}
   Sean \((X, x_0),(Y, y_0)\) does espacios topologicos puntuados. El
