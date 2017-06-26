@@ -222,7 +222,7 @@ Ahora que ya conocemos el esquema de trabajo, podemos generalizar para
 espacios que no necesariamente sean retracciones entre si, pero que
 posean un par de funciones cuyas composiciones sean homotopicas a la
 identidad correspondiente.
-\begin{definicion}
+\begin{definicion}[Equivalencias homotopicas]
   Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
   que \( g \circ f : X \to X \) es homotopico al mapeo identidad de
   \(X\) y \( f \circ g : Y \to Y \) es homotopico al mapeo identidad de
@@ -317,9 +317,9 @@ grupos fundamentales.
 \end{proof}
 Con esto es mente, es fácil ver que se tiene el siguiente corolario
 \begin{corolario}
-  Sean \(h,k : X \to Y\) homotopicamente continuas tales que \(h (x_0) =
-  y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva o sobreyectiva o
-  trivial, entonces \(k_*\) también lo es.
+  Sean \(h,k : X \to Y\) dos funciones relacionadas homotopicamente
+  tales que \(h (x_0) = y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva
+  o sobreyectiva o trivial, entonces \(k_*\) también lo es.
 \end{corolario}
 \begin{proof}
   Dado que por el lema \ref{lem:equiv-hom-lift} tenemos la siguiente
@@ -327,8 +327,8 @@ Con esto es mente, es fácil ver que se tiene el siguiente corolario
   \[ k_* = \hat \alpha \circ h_* \]
   Por el lema \ref{lem:hat-alpha-iso} sabemos que \(\hat \alpha\) es
   biyectivo. Por tanto la composición de \(h_*\) inyectiva con \(\hat
-  \alpha\) biyectiva es inyectiva. De igual manera para sobreyectividad y
-  la trivialidad.
+  \alpha\) biyectiva es inyectiva. De igual manera para la
+  sobreyectividad.
 \end{proof}
 Con esto podemos al fin plantear que todo par de espacios en el mismo
 tipo homotopico poseen el mismo grupo fundamental. Esto gracias a que
@@ -336,10 +336,10 @@ podemos evitar la condición de punto fijo en el lema
 \ref{lem:homotopic-inducing} gracias a la biyeccion de \(\hat \alpha\).
 
 \begin{teorema}
-  Sean \(f : X \to Y\) continua y \(f (x_0) = y_0\). Si \(f\) es una
-  homotopia equivalencia con \(g : Y \to X\), entonces
+  Sean \(f : X \to Y\) continua y \(f (x_0) = y_0\). Si existe \(g : Y
+  \to X\) tal que \(f\) y \(g\) son una equivalencia homotopica, entonces
   \[ f_* : \pi (X, x_0) \to \pi (Y, y_0)\]
-  es un isomorfismo.
+  es un isomorfismo de grupos fundamentales.
 \end{teorema}
 Para este teorema, es necesario que seamos un poco mas especificos con la
 notacion de levantamientos. Un levantamiento de \(f :
