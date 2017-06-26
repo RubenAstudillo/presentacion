@@ -497,23 +497,23 @@ diagrama conmutativo.
 Por otro lado existe una operación no tan conocida que puede cumplir el papel
 del co-producto solo en espacio puntuados, conocida como la \emph{wedge-sum}
 \begin{definicion}
-  Sean \((X, x_0),(Y, y_0)\) does espacios topologicos puntuados. El
-  espacio cuociente de la union disjunta de \(X\) e \(Y\) con la
-  identificacion de punto base \(x_0 \sim y_0\)
+  Sean \((X, x_0),(Y, y_0)\) dos espacios topológicos puntuados. El
+  espacio cociente de la unión disjunta de \(X\) e \(Y\) con la
+  identificación de punto base \(x_0 \sim y_0\)
   \[ X \vee Y = (X \sqcup Y) / \sim \]
   es conocida como la \emph{Wedge sum} entre \(X\) e \(Y\).
 \end{definicion}
-La union disjunta de una familia \(\{X_i\}_{i \in \Lambda}\) corresponde
+La unión disjunta de una familia \(\{X_i\}_{i \in \Lambda}\) corresponde
 al conjunto
 \[ \bigsqcup_{i \in \Lambda} X_i = \{ (x, i) \mid x \in X_i \} \]
-es decir, una union donde se marca el conjunto de procedencia en los
-elementos. Con esto, es facil ver que dados \(X, Y\) espacios topologicos
+es decir, una unión donde se marca el conjunto de procedencia en los
+elementos. Con esto, es fácil ver que dados \(X, Y\) espacios topológicos
 puntuados, los morfismos
 \[ \phi_x (x) = [(x,0)] \quad \phi_y (y) = [(y,1)] \]
-son las inyecciones del co-producto y cumplen tambien las propiedades
+son las inyecciones del co-producto y cumplen también las propiedades
 universales.
 
-La presencia de estas operaciones, vuelven a la categoria
+La presencia de estas operaciones, vuelven a la categoría
 \(\mathscr{HoTop}_*\) cartesiana y co-cartesiana. Mas aun, podemos
 construir equivalencias homotopicas para \(X \times Y,\ X \vee Y\)
 siempre y cuando conozcamos equivalencias para \(X\) e \(Y\) mediante
@@ -523,27 +523,27 @@ las propiedades universales del (co)-producto.
   Propiedades de producto y co-producto
   % tuve que poner esta linea porque no podia utilizar newline
   \begin{itemize}
-    \item Sean \(A, X, Y\) espacio topologicos. Si \(f_0 \sim f_1 : A \to
+    \item Sean \(A, X, Y\) espacio topológicos. Si \(f_0 \sim f_1 : A \to
       X\) y \(g_0 \sim g_1 : A \to Y\), entonces \((f_0 , g_0) \sim (f_1
       , g_1): A \to X \times Y\)
-    \item Sean \(B, X, Y\) espacio topologicos. Si \(f_0 \sim f_1 : X \to
+    \item Sean \(B, X, Y\) espacio topológicos. Si \(f_0 \sim f_1 : X \to
       B\) y \(g_0 \sim g_1 : Y \to B\), entonces \(\{f_0 , g_0\} \sim
       \{f_1 , g_1\} : X \vee Y \to B\)
   \end{itemize}
 \end{teorema}
 \begin{proof}
-Comenzando por el producto, sea \(F : A \times I \to X\) la homotopia
+Comenzando por el producto, sea \(F : A \times I \to X\) la homotopía
 entre \(f_0 , f_1\) y sea \(G : A \times I \to Y\)
-correspondientemente con \(g_0, g_1\), entonces la homotopia
+correspondientemente con \(g_0, g_1\), entonces la homotopía
 \begin{align*}
   FG : A \times I &\to X \times Y \\
        (a, t) &\mapsto (F(x,t) , G(x,t))
 \end{align*}
-Es una homotopia entre \((f_0 , g_0)\) y \((f_1 , g_1)\).
+Es una homotopía entre \((f_0 , g_0)\) y \((f_1 , g_1)\).
 
-Analogamente para el co-producto. Sea \(F : X \times I \to B\) y \(G : Y
+Análogamente para el co-producto. Sea \(F : X \times I \to B\) y \(G : Y
 \times I \to B\) las homotopias correspondientes a \(f_0 , f_1\) y \(g_0
-, g_1\). Podemos construir la homotopia
+, g_1\). Podemos construir la homotopía
 \begin{align*}
   FG : X \vee Y \times I &\to B \\
   \big((a,i) , t \big) &\mapsto
@@ -552,15 +552,15 @@ Analogamente para el co-producto. Sea \(F : X \times I \to B\) y \(G : Y
                   G(a,t) & i = 1 \\
                 \end{cases}
 \end{align*}
-obteniendo asi el resultado deseado.
+obteniendo así el resultado deseado.
 \end{proof}
 
-\paragraph{Toro.} Dado que en topologia este espacio es definido como
+\paragraph{Toro.} Dado que en topología este espacio es definido como
 \(S^1 \times S^1\), el teorema anterior nos dice que su grupo
 fundamental debe de corresponder a \(\mathbb Z \times \mathbb Z\),
 independiente del punto de origen por ser arco-conexo.
 
-Pero aparte de este sencillo ejemplo, nos gustaria conocer teoremas mas
+Pero aparte de este sencillo ejemplo, nos gustaría conocer teoremas mas
 generales que nos respeten la estructura del (co)-producto para
-simplificar calculos de grupos fundamentales, esto sera el enfoque de la
-siguiente seccion.
+simplificar cálculos de grupos fundamentales, esto sera el enfoque de la
+siguiente sección.
