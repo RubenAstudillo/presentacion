@@ -1,18 +1,18 @@
-\subsection{Cubrimientos pares}
+\subsection{Cubrimientos}
 \begin{definicion}
-Sea \(p : \tilde{X} \to X\) una funcion continua sobreyectiva. El
-abierto \(U \subseteq X\) se dice \textbf{parmente cubierto} por \(p\)
+Sea \(p : \tilde{X} \to X\) una función continua sobreyectiva. El
+abierto \(U \subseteq X\) se dice \textbf{cubierto} por \(p\)
 si existe \(\{V_\alpha\}_{\alpha \in \Lambda},\ \Lambda \subseteq
 \mathbb N\) tal que
 \[ p^{-1} (U) = \bigcup_{\alpha \in \Lambda} V_\alpha \]
 Donde \(\{V_\alpha\}\) es una familia disjunta de abiertos, tal que
 \(\forall \alpha \in \Lambda,\ p \mid_{\alpha}\) es homeomorfo sobre \(U\).
 Si para todo \(x \in X\) existe dicha vecindad \(U\) que cumpla lo
-anterior, se dira que \(\tilde{X}\) es un \textbf{espacio cubrimiento}
-de \(X\) y que \(p\) es un \textbf{cubrimiento par}.
+anterior, se dirá que \(\tilde{X}\) es un \textbf{espacio cubrimiento}
+de \(X\) y el par \((p,\tilde X)\) denota el cubrimiento para \(X\).
 \end{definicion}
 
-Un ejemplo simple de espacio cubrimiento y cubrimiento par es \(p :
+Un ejemplo simple de cubrimiento para \(S^1\) es \(p :
 \mathbb R \to S^1,\ p(t) := e^{2 \pi \imath t}\). Este es claramente
 sobreyectivo y continuo, escogiendo dos abiertos ejemplares como \(U =
 S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
@@ -22,10 +22,10 @@ S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
     2 )
 \]
 Donde estas familias de conjuntos son disjuntos y restringidos a cada
-uno se tiene la inyectividad requerida.
+uno se tiene la inactividad requerida.
 
-A priori el cubrimientos par es independiente de los caminos que tengamos
-en \(X\), queremos ver si podemos reflejar la informacion importante de
+A priori el cubrimientos es independiente de los caminos que tengamos
+en \(X\), queremos ver si podemos reflejar la información importante de
 los caminos de \(X\) sobre \(\tilde{X}\).
 \begin{figure}[h]
   \centering
@@ -34,8 +34,8 @@ los caminos de \(X\) sobre \(\tilde{X}\).
 Es decir, para todo arco \(f : I \to X\), construiremos \(\tilde f : I
 \to \tilde X\) el cual cumpla \(p \circ \tilde f = f \), donde \(\tilde
 f\) sera nuestro representante en el espacio cubrimientos de estos
-caminos. Veremos tambien que bajo hipotesis sensatas, este \(\tilde f\)
-es unico y refleja informacion homotopica. Para esto necesitamos
+caminos. Veremos también que bajo ciertas hipótesis, este \(\tilde f\)
+es único y refleja información homotopica. Para esto necesitamos
 desarrollar algunos teoremas previos.
 \begin{lema}[Numero de Lebesgue] \label{thm:lebesgue-number-lema}
   Sea \(\mathcal A\) un cubrimiento del espacio metrico \((X,d)\). Si
