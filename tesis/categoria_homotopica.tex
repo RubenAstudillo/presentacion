@@ -252,11 +252,12 @@ el siguiente lema técnico.
   Sean \(h,k : X \to Y\) mapeos continuos, sea \(h (x_0) = y_0,\ k(x_0)
   = y_1\). Si \(h\) y \(k\) son homotopicos mediante \(H : X \times I
   \to Y\), entonces existe un arco \(\alpha\) en \(Y\) de \(y_0\) a
-  \(y_1\) tal que \(k_* = \hat \alpha \circ h_* \). Mas aun, este arco
-  esta dado por la ecuación \(\alpha (t) = H (x_0, t)\).
+  \(y_1\) tal que
+  \[k_* = \hat \alpha \circ h_* \]
+  \[ \hat \alpha \left( [g] \right) := [\alpha^{-1}] * [g] * [\alpha] \]
+  Mas aun, este arco esta dado por la ecuación \(\alpha (t) = H (x_0,
+  t)\).
 \end{lema}
-\noindent Aquí se utilizara la notación \(\hat \alpha\) que se utilizo
-pero no definición en la demostración de el teorema \ref{not:alpha-hat}.
 \begin{proof}
   Hemos de probar que \(\forall [f] \in \pi (X, x_0)\) se cumple que
   \[ k_* ([f]) = \hat \alpha \circ h_* ([f]) \]
