@@ -143,23 +143,24 @@ si no también preservar las homotopias de \(X\) en \(\tilde X\).
   única función levantamiento continua \(\tilde F : I \times I \to
   \tilde X\) que cumpla \(\tilde F (0,0) = \tilde x_0\)
 \end{corolario}
+% Pagina 24 quitar referencias a la palabra par
 \begin{proof}
-  Lo unico diferente con el teorema \ref{thm:lifting-theorem} es que
+  Lo único diferente con el teorema \ref{thm:lifting-theorem} es que
   tomamos \(I \times I\) que sigue siendo compacto. Podemos aplicar el
   teorema anterior primero definiendo \(\tilde F\) en \(0 \times I\),
   luego en \(I \times 0\) y escogiendo subdivisiones de \(I \times I\)
   \[ s_0 < s_1 < \dotsc < s_m \]
   \[ t_0 < t_1 < \dotsc < t_n \]
   Tales que \(F ([s_i , s_{i+1}] \times [t_j \times t_{j+1}])\) este
-  contenido en un conjunto cubierto parmente en \(X\), esto utilizando
-  el lema de Lebesgue al igual que en la demostracion anterior.
+  contenido en un conjunto cubierto en \(X\), esto utilizando
+  el lema de Lebesgue al igual que en la demostración anterior.
 
   Luego definimos inductivamente \(\tilde F\) sobre \([s_i, s_{i+1}]
   \times [t_j , t_{j+1}]\) siempre y cuando \(\tilde F\) ya este
   definida sobre las lineas
   \[ L := [s_i , s_{i+1}] \times \{t_j\}\]
   \[ H := \{s_i\} \times [t_j , t_{j+1}] \]
-  que son los bordes inferior y izquierdos del rectangulo.
+  que son los bordes inferior y izquierdos del rectángulo.
 
   Tomamos el conjunto \(U\) par que contiene a la imagen
   \[ F([s_i , s_{i+1}] \times [t_j , t_{j+1}]) \subseteq U \subset X \]
@@ -168,7 +169,7 @@ si no también preservar las homotopias de \(X\) en \(\tilde X\).
   Donde la familia \(\{V_\alpha\}\) es disjunta.
 
   Dado que \( \{(s_i, t_j)\} = L \cap H\) y que \( (s_i , t_j) \) ya
-  esta definido bajo \(\tilde F\), existe un unico \(V_0 \in
+  esta definido bajo \(\tilde F\), existe un único \(V_0 \in
   \{V_\alpha\}\) que contiene a \(F (s_i, t_j)\). Pero notando que
   \(\{V_\alpha\}\) son disjuntos y que \(L,H\) son conexos, obliga a que
   \[ \tilde F (H) \subset V_0 \quad \tilde F (L) \subset V_0 \]
@@ -181,8 +182,9 @@ si no también preservar las homotopias de \(X\) en \(\tilde X\).
   del lema del pegamiento. Notando finalmente que ahora los conjuntos
   \[ L := [s_i , s_{i+1}] \times \{t_{j+1}\}\]
   \[ H := \{s_{i+1}\} \times [t_j , t_{j+1}] \]
-  Estan definidos en \(\tilde F\) y pueden ser utilizados para seguir
-  definiendola inductivamente sobre \(I \times I\).
+  Están definidos en \(\tilde F\) y pueden ser utilizados para seguir
+  definiéndola inductivamente sobre \(I \times I\).
+%fin pagina 24
 \end{proof}
 
 Ahora es mas clara la forma de computar grupos fundamentales con
