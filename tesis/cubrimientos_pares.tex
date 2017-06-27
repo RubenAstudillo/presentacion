@@ -187,11 +187,11 @@ si no también preservar las homotopias de \(X\) en \(\tilde X\).
 %fin pagina 24
 \end{proof}
 
-Ahora es mas clara la forma de computar grupos fundamentales con
-cubrimientos pares. Si tuviéramos de partida un isomorfismo de grupos
+Ahora es mas clara la forma de calcular grupos fundamentales usando
+cubrimiento. Si tuviéramos de partida un isomorfismo de grupos
 entre los espacios \(\pi (\tilde X)\) y \(\pi (X)\), tendríamos que
 presuponer la estructura del grupo en \(\pi (\tilde X)\). La alternativa
-presentada muestra que los cubrimientos pares, preservan los arcos y
+presentada muestra que los cubrimientos, preservan los arcos y
 homotopias de \(X\) en \(\tilde X\) y si es el espacio \(\tilde X\) es
 suficientemente simple como para admitir un calculo simple de su grupo
 fundamental, entonces podemos saber que el grupo de \(X\) es un subgrupo
@@ -199,8 +199,8 @@ normal del grupo de \(\tilde X\).
 
 Para un calculo mas explicito necesitamos denotar los puntos finales
 obtenidos en \(\tilde X\).
-\begin{definicion}
-  Sea \(p : \tilde X \to X\) un cubrimiento par y sea \(x_0 \in X\).
+\begin{definicion}[Levantamiento derivado]
+  Sea \(p : \tilde X \to X\) un cubrimiento y sea \(x_0 \in X\).
   Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
   x_0\). Dado un elemento \([f] \in \pi (X, x_0)\), sea \(\tilde f\) el
   levantamiento (único) de \(f\) a un camino en \(\tilde X\) que
@@ -208,14 +208,14 @@ obtenidos en \(\tilde X\).
   \(\tilde f\) asociado a \(f\) anteriormente. Entonces \(\phi\) es bien
   definido como mapeo de conjunto
   \[ \phi : \pi (X, x_0) \longrightarrow p^{-1} (x_0)\]
-  llamando a \(\phi\) el \textbf{correspondiente levantamiento derivado}
-  del mapeo cubrimiento par \(p\).
+  llamando a \(\phi\) el \textbf{correspondiente levantamiento
+  derivado}\footnote{Corresponding lifting path} del cubrimiento \(p\).
 \end{definicion}
 La definición anterior intuitivamente ``desenrolla'' los ciclos del
 grupo fundamental \(\pi (X,x_0)\) y ve donde terminan vistos sobre
 \(\tilde X\).
 \begin{teorema}
-  Sea \(p : \tilde X \to X\) un cubrimiento par, sea \(p (\tilde x _0) =
+  Sea \(p : \tilde X \to X\) un cubrimiento tal que \(p (\tilde x _0) =
   x_0\). Si \(\tilde X\) es arco-conexo entonces el correspondiente
   levantamiento \(\phi : \pi (X, x _0) \to p^{-1} (x_0)\) es
   sobreyectivo. Mas aun, si \(\tilde X\) es simplemente conexo, este es
@@ -224,7 +224,8 @@ grupo fundamental \(\pi (X,x_0)\) y ve donde terminan vistos sobre
 Usualmente queremos que \(p^{-1} (x)\) no sea simplemente un conjunto,
 queremos poder dotarle de estructura de grupo. En caso de \(\tilde X\)
 ser arco-conexo, lo que estamos haciendo realmente es estudiar un
-subgrupo de \(X\) a través de \(p^{-1}(x_0) \subseteq \tilde X\).
+subgrupo de \(\pi \left( X, x_0 \right)\) a través de \(p^{-1}(x_0)
+\subseteq \tilde X\).
 \begin{proof}
   Demostración estándar de sobreyectividad en caso de ser \(\tilde X\)
   arco-conexo. Para \(\tilde x _1 \in p^{-1} (x_0)\) arbitrario, existe
