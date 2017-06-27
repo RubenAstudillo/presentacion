@@ -1,12 +1,12 @@
 \subsection{Teorema de \vank}
-Para union de espacio topologicos, si la interseccion de estos es
+Para unión de espacio topológicos, si la intersección de estos es
 arco-conexa (simplemente conexa), nos da a entender que cualquier arco
 puede ser descompuesto en producto de arcos de cada espacio base.
 \begin{teorema}
   Sea \(X = U \cup V\), donde \(U,V\) son conjuntos abiertos de \(X\).
   Supongamos que \(U \cap V\) es arco-conexo y que \(x_0 \in U \cap V\).
   Sea \(i\) y \(j\) las inclusiones de \(U\) y \(V\) en \(X\)
-  respectivamente. Entonces las imagenes de los homomorfismos inducidos
+  respectivamente. Entonces las imágenes de los homomorfismos inducidos
   \[ i_* : \pi (U, x_0) \to \pi (X, x_0) \quad j_* : \pi (V, x_0) \to
   \pi (X, x_0) \]
   generan a \(\pi (X,x_0)\)
@@ -18,32 +18,32 @@ puede ser descompuesto en producto de arcos de cada espacio base.
   donde cada \(g_i\) es un arco en \(X\) basado en \(x_0\) que esta
   contenido completamente en \(U\) o en \(V\).
 
-  Para esto, mostramos que existe una subdivision de \(I\) dada por
+  Para esto, mostramos que existe una subdivisión de \(I\) dada por
   \(a_0 < a_1 < ... < a_n \) tal que \(f(a_i) \in U \cap V\) y que \(
   f([a_i , a_{i+1}]) \) es subconjunto contenido solo en \(U\) o en
   \(V\).
 
-  Por lema \ref{thm:lebesgue-number-lema} (numero de Lebesgue),
-  existe una subdivision de \(I\) dada por \(b_1 < ... < b_n\) tal que
+  Por lema \ref{thm:lebesgue-number-lema} (numero de Besugo),
+  existe una subdivisión de \(I\) dada por \(b_1 < ... < b_n\) tal que
   \(f ([b_i , b_{i+1}])\) pertenece completamente a \(U\) o \(V\) para
   todo \(i \in [1,n]\). Si para para todo \(i\) se cumpliera que
   \(f(b_i) \in U \cap V\) hemos terminado. En caso contrario, de existir
   \(i\) tal que \(f(b_i) \not \in U \cap V\) esto implica que
   \[ f(b_i) \in U \ \veebar \ f(b_i) \in V \]
-  Tomando s.p.d.g la primera alternativa, implicaria que
+  Tomando s.p.d.g la primera alternativa, implicaría que
   \[ f(b_i) \in U \implies f([b_{i-1}, b_{i}]) \subset U \ \land \ f([b_i,
     b_{i+1}]) \subset U \]
-  Analogamente si \(f(b_i) \in V\). Podemos olvidar entonces el valor
-  \(b_i\) de la subdivision y revisar si \(f(b_{i+1}) \in U \cap V\),
+  Análogamente si \(f(b_i) \in V\). Podemos olvidar entonces el valor
+  \(b_i\) de la subdivisión y revisar si \(f(b_{i+1}) \in U \cap V\),
   repitiendo este proceso una cantidad finita de veces hasta satisfacer
-  la condicion.
+  la condición.
 
   Ahora se prueba el teorema en si. Dado \(f\) y \(a_0 < ... < a_n\)
-  subdivision anterior, definamos las funciones
+  subdivisión anterior, definamos las funciones
   \[ l_i : [0,1] \to [a_{i-1}, a_{i}] \]
   \[ f_i = f \circ l_i \]
   Es claro que \(\forall i \in [1, n], \ f_i (I) \) esta contenida en
-  \(U\) o en \(V\). Tambien es claro por simple calculo que se cumple
+  \(U\) o en \(V\). También es claro por simple calculo que se cumple
   que
   \[ [f] = [f_1] * [f_2] * ... * [f_n] \]
   Pero estos \(\{f_i\}\) no son arcos cerrados basados en \(x_0\) de
@@ -52,16 +52,16 @@ puede ser descompuesto en producto de arcos de cada espacio base.
   para todo \(i \in [1 , n]\) existe
   \[ \alpha_i : I \to U \cap V \]
   \[ \alpha_i (0) = x_0 \quad \alpha_i (1) = f(a_i) \]
-  arcos continuos, fijando ademas \(\alpha_0 \equiv x_0 \equiv \alpha_n
+  arcos continuos, fijando además \(\alpha_0 \equiv x_0 \equiv \alpha_n
   \). Estos nos permiten construir los arcos
   \[ g_i = \alpha_{i-1} * f_i * \alpha_i^{-1} \]
-  los cuales si estan basados en \(x_0\), y cuya imagen sigue estando
+  los cuales si están basados en \(x_0\), y cuya imagen sigue estando
   contenida en \(U\) o en \(V\). Por simple calculo se ve que
   \[ [g_1] * ... * [g_n] = [f_1] * ... * [f_n] = [f] \]
 \end{proof}
 
-En un espacio \((X, x_0) = (U \vee V, x_0)\) se cumple por la union
-disjunta que el unico punto en comun de \(U\) y \(V\) es \(x_0\) (y eso
-solo por la identificacion de la equivalencia). Los espacios singletons
+En un espacio \((X, x_0) = (U \vee V, x_0)\) se cumple por la unión
+disjunta que el único punto en común de \(U\) y \(V\) es \(x_0\) (y eso
+solo por la identificación de la equivalencia). Los espacios singletons
 son trivialmente arco-conexos, lo cual nos permite aplicar el teorema
 anterior para calcular grupos fundamentales de estos.

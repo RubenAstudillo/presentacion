@@ -1,46 +1,46 @@
-\section{Categoria de homotopias}
-En la seccion anterior, se termino dando una definicion de categoria con
+\section{Categoría de homotopias}
+En la sección anterior, se termino dando una definición de categoría con
 \(\mathscr{Top}_*\) y el functor \(_{{*}} : \mathscr{Top} \to
-\mathscr{Grp}\). Los morfismos en \(\mathscr{Top}_*\) correspondian a
-homeomorfismos entre espacios topologicos, los cuales inducian bajo
+\mathscr{Grp}\). Los morfismos en \(\mathscr{Top}_*\) correspondían a
+homeomorfismos entre espacios topológicos, los cuales inducían bajo
 \(_{(*)}\) isomorfismos de grupos. Pero hay espacios que a pesar de no
 ser homeomorfos poseen el mismo grupo fundamental y para estos el
 functor entre \(\mathscr{Top}_* \to \mathscr{Grp}\) es ciego a su
 estructura. Esto es insatisfactorio pensando en la meta original de
-clasificar diferentes espacio topologicos y nos hace pensar en que
-talvez la nocion de homeomorfismo es mucho mas fuerte de lo que
+clasificar diferentes espacio topológicos y nos hace pensar en que
+tal vez la noción de homeomorfismos es mucho mas fuerte de lo que
 necesitamos.
 
 Entre las nociones alternativas mas populares se encuentra las
 \emph{equivalencias homotopicas}. Su popularidad se debe a que son mas
-debiles que un homeomorfismo y que corresponden a los morfismos en una
-nueva estructura categorica denotada por \(\mathscr{HoTop}_*\), la cual
-contiene como sub-categoria a \(Top_*\). La motivacion de su
-construccion es natural a partir del estudio de retracciones, las cuales
+débiles que un homeomorfismo y que corresponden a los morfismos en una
+nueva estructura categórica denotada por \(\mathscr{HoTop}_*\), la cual
+contiene como sub-categoría a \(Top_*\). La motivación de su
+construcción es natural a partir del estudio de retracciones, las cuales
 estudiaremos y iremos generalizando debidamente.
 
 \subsection{Retracciones}
-Iniciaremos estudiando un pequeño lema tecnico con respecto a la
-composicion y la funcion identidad.
+Iniciaremos estudiando un pequeño lema técnico con respecto a la
+composición y la función identidad.
 \begin{lema}
   Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones. Si \( g \circ f =
   h : X \to X \), con \(h\) una biyeccion, entonces \(f\) es inyectiva y
   \(g\) es sobreyectiva.
 \end{lema}
 \begin{proof}
-  Se argumenta por contradiccion. Supongamos que \(f\) no es inyectiva o
+  Se argumenta por contradicción. Supongamos que \(f\) no es inyectiva o
   que \(g\) no es sobreyectiva. Tomando el primer caso para \(f\) se
   tiene que existen \(x_1 , x_2 \in X,\ x_1 \neq x_2\) que cumplen
   \[ f (x_1) = f(x_2) \]
-  Dado que \(g\) es una funcion, debe de cumplirse
+  Dado que \(g\) es una función, debe de cumplirse
   \[ g (f (x_1)) = g (f(x_2)) \]
   \[ h (x_1) = h(x_2) \]
-  Lo cual es una contradiccion con la biyectividad de \(h\).
+  Lo cual es una contradicción con la biyectividad de \(h\).
 
-  Por otro lado, suponiendo que \(g\) no es sobreyectiva, deberia de
+  Por otro lado, suponiendo que \(g\) no es sobreyectiva, debería de
   existir \(x \in X\) tal que no exista \( y \in Y\) que \(g (y) = x\).
-  Pero por hipotesis, el elemento \(f(h^{-1}(x)) \in Y\) es tal que \(g
-  (f (h^{-1}(x))) = x\). Mostrando asi que \(g\) es en efecto
+  Pero por hipótesis, el elemento \(f(h^{-1}(x)) \in Y\) es tal que \(g
+  (f (h^{-1}(x))) = x\). Mostrando así que \(g\) es en efecto
   sobreyectiva.
 \end{proof}
 \begin{corolario} \label{thm:comp-identidad}
@@ -48,23 +48,23 @@ composicion y la funcion identidad.
   \circ f = Id : X \to X \), entonces \(f\) es inyectiva y \(g\) es
 sobreyectiva.
 \end{corolario}
-\noindent Con esto en mente, podemos pasar directamente a la definicion
-de retracion.
+\noindent Con esto en mente, podemos pasar directamente a la definición
+de retracción.
 \begin{definicion}
-  Sea \(X\) un espacio topologico. \(A \subset X\) es una retraccion de
+  Sea \(X\) un espacio topológico. \(A \subset X\) es una retracción de
   \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
   \[ r \mid_{A} (x) = x \]
-  En tal caso \(r\) es llamada la aplicacion retraccion de \(X\) en \(A\).
+  En tal caso \(r\) es llamada la aplicación retracción de \(X\) en \(A\).
 \end{definicion}
-Adicionalmente podemos definir trivialmente una inclusion \(j : A \to
-X\). Con estas functiones tenemos el siguiente teorema
+Adicionalmente podemos definir trivialmente una inclusión \(j : A \to
+X\). Con estas funciones tenemos el siguiente teorema
 \begin{teorema} \label{thm:retraccion-inclusion}
-Si \(A \subset X\) es una retraccion, entonces la inclusion \(j : A \to
+Si \(A \subset X\) es una retracción, entonces la inclusión \(j : A \to
 X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
 \to \pi(X,a)\) inyectivo.
 \end{teorema}
 \begin{proof}
-  La composicion \(r \circ j : A \to A\) es la funcion identidad de
+  La composición \(r \circ j : A \to A\) es la función identidad de
   \(A\), por el corolario \ref{thm:comp-identidad}, sabemos que \(j\)
   debe de ser inyectivo. Su homorfismo inducido
   \[ (r \circ j)_{*} = r_{*} \circ j_{*} \]
@@ -72,14 +72,15 @@ X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
   por el corolario \ref{thm:comp-identidad}, esto implica que \(r_{*}\)
   es una sobreyeccion y que \(j_{*}\) es inyectiva.
 \end{proof}
-La retraccion entonces nos da un embedimiento del grupo fundamental de
+La retracción entonces nos da un embedimiento, es decir un homomorfismo
+hacia su imagen, del grupo fundamental de
 \( A \) en \(X\). Ya podemos ver un poco de las consecuencias de este
-resultado, por ejemplo diciendonos gracias a su contrapositivo que no
-existe una retracion de \(B^2\) en \(S^1\), ya que si lo hubiera, la
-inclusion \(j : S^1 \to B^2\) seria inyectiva, pero el grupo fundamental
+resultado, por ejemplo diciéndonos gracias a su contra-positivo que no
+existe una retracción de \(B^2\) en \(S^1\), ya que si lo hubiera, la
+inclusión \(j : S^1 \to B^2\) seria inyectiva, pero el grupo fundamental
 de \(B^2\) es trivial y el de \(S^1\) no lo es (corresponde a \((\mathbb
 Z, +)\)). Esto ultimo es un resultado que veremos mas adelante
-mediante espacios cubrimientos. Esta ultima afirmacion, nos permite
+mediante espacios cubrimientos. Esta ultima afirmación, nos permite
 completar lo afirmado en cuanto al grupo fundamental de \(\mathbb R ^2 -
 \{(1,1)\}\).
 
@@ -95,30 +96,30 @@ gracias a este, podemos estudiar el grupo fundamental de \(\mathbb R ^2
 - \{\vec 0\}\) sin perdida de generalidad mediante el teorema
 \ref{thm:homoemorfismo-isomorfismo}.
 
-Para este, podemos construir la siguiente retraccion a \(S^1\)
+Para este, podemos construir la siguiente retracción a \(S^1\)
 \[ r : \mathbb R ^2 - \{\vec 0\} \to S^1 \]
 \[ x \mapsto \frac x {\lVert x \rVert} \]
-Esta cumple la condicionn de continuidad trivialmente y dado que todo
+Esta cumple la condición de continuidad trivialmente y dado que todo
 elemento de \(S^1\) posee norma \(1\), para estos corresponde a la
-identidad, como es requerido para una retraccion. Luego, por teorema
+identidad, como es requerido para una retracción. Luego, por teorema
 \ref{thm:retraccion-inclusion} tenemos que
 \[ j_* : \pi (S^1 , y_0) \to \pi (\mathbb R ^2 - \{\vec a\}, x_0) \]
-es una inyeccion de grupos fundamentales
+es una inyección de grupos fundamentales
 
 \end{proof}
 
-Entre retracciones que son conocidas, estan \(\mathbb R ^2 - \{0\}\) en
-\(S^1\) mediante la funcion \(r (x) = x / \lVert x \rVert \). Lo que nos
+Entre retracciones que son conocidas, están \(\mathbb R ^2 - \{0\}\) en
+\(S^1\) mediante la función \(r (x) = x / \lVert x \rVert \). Lo que nos
 dice por el teorema anterior que \(j_{*} : \pi (S^1, a) \to \pi (\mathbb
-R ^2 - \{0\}, a)\) es inyectiva. Si mediante algun resultado pudieramos
-probar que \(j_{*}\) es ademas sobreyectiva tendriamos listo nuestro
+R ^2 - \{0\}, a)\) es inyectiva. Si mediante algún resultado pudiéramos
+probar que \(j_{*}\) es además sobreyectiva tendríamos listo nuestro
 isomorfismo de grupo. Esto es posible de construir pero para eso
-necesitamos algunos resultados tecnicos.
+necesitamos algunos resultados técnicos.
 
 \begin{lema} \label{lem:homotopic-inducing}
-  Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuous. Si \(h\) y
+  Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuos. Si \(h\) y
   \(k\) son homotopicos y si la imagen de \(x_0\) bajo este permanece
-  fija en \(y_0\) durante la homotopia, entonces \(h_*\) e \(k_*\) son iguales.
+  fija en \(y_0\) durante la homotopía, entonces \(h_*\) e \(k_*\) son iguales.
 \end{lema}
 % TODO: hay que ser mas preciso porque debemos mantener la homotopia
 % fija en un punto. Hay que hacer enfasis en el grupo fundamental
@@ -127,14 +128,14 @@ necesitamos algunos resultados tecnicos.
   Queremos mostrar que \(\forall [f] \in \pi (X,x_0)\), se cumple que
   \(h_* ([f]) = k_* ([f])\). Esto equivale a mostrar que
   \[ [h \circ f] = [k \circ f] \]
-  Es decir, debemos de encontrar una homotopia entre \((h \circ f)\) e \(
+  Es decir, debemos de encontrar una homotopía entre \((h \circ f)\) e \(
   (k \circ f)\).
 
-  Para esto, usamos la homotopia \(H : X \times I \to Y \) entre \(h\) y
-  \(k\). Notando que \(f : I \to X\) podemos construir una homotopia \(M
+  Para esto, usamos la homotopía \(H : X \times I \to Y \) entre \(h\) y
+  \(k\). Notando que \(f : I \to X\) podemos construir una homotopía \(M
   : I \times I \to Y \) pre-componiendo como
   \[ (z, t) \mapsto H \circ (f(z), t) \]
-  La cual es una homotopia entre \((h \circ f)\) e \((k \circ f)\)
+  La cual es una homotopía entre \((h \circ f)\) e \((k \circ f)\)
 
   La importancia de que se cumpla que \( \forall t \in I,\ M (0, t) =
   y_0\) es para decir que los espacios de llegada son los mismos
@@ -144,14 +145,14 @@ necesitamos algunos resultados tecnicos.
   Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f
   \circ g\) es homotopico a la identidad \( Id : Y \to Y\) y existe
   \(y_0 \in Y\) tal que \( (f \circ g ) (y_0) = y_0 \) entonces
-  \(f_*\) es sobreyectivo y \(g_*\) es inyectivo.
+  \(f_*\) es sobreyectiva y \(g_*\) es inyectivo.
 \end{teorema}
 \begin{proof}
   Aplicando el lema \ref{lem:homotopic-inducing} sobre \(f \circ g \) y
   \( Id : Y \to Y\), se obtiene la igualdad
   \[ (f \circ g)_{*} = f_* \circ g_* = Id_* \]
   Donde \(Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\). Luego aplicando el corolario
-  \ref{thm:comp-identidad} sobre esta ecuacion obtenemos que \(f_*\) es
+  \ref{thm:comp-identidad} sobre esta ecuación obtenemos que \(f_*\) es
   sobreyectiva y que \(g_*\) es inyectiva.
 \end{proof}
 % \begin{proof}
@@ -172,36 +173,48 @@ necesitamos algunos resultados tecnicos.
 %   existe \(g_* ([c])\) que cumple dicha relacion, por tanto \(f_*\) es
 %   sobreyectiva.
 % \end{proof}
-Esta es exactamente la misma demostracion que en el teorema
-\ref{thm:comp-identidad}, pero haciendo enfasis lo que significa ser
+Esta es exactamente la misma demostración que en el teorema
+\ref{thm:comp-identidad}, pero haciendo énfasis lo que significa ser
 inyectivo o sobreyectivo en clases de equivalencias. Resulta que ya
 tenemos todos los resultados necesarios para expandir el resultado de la
-retraccion \(\mathbb R ^2 - \{0\}\) en \(S^1\).
+retracción \(\mathbb R ^2 - \{0\}\) en \(S^1\).
 
 \begin{teorema}
-  Para todo \(a \in S^1\), la inclusion homomorfica \(j_* : \pi (S^1, a)
+  Para todo \(a \in S^1\), el monomorfismo \(j_* : \pi (S^1, a)
   \to \pi (\mathbb R ^2 - \{0\}, a)\) es un isomorfismo de grupos
   fundamentales.
 \end{teorema}
 \begin{proof}
-  Ya habiamos dicho anteriormente que \( j_* : \pi (S^1, a) \to \pi
+  Ya habíamos dicho anteriormente que \( j_* : \pi (S^1, a) \to \pi
   (\mathbb R ^2 - \{0\}, a)\) es inyectiva como homomorfismo de grupos
-  fundamentales, puesto la existencia de la retraccion
+  fundamentales, puesto la existencia de la retracción
   \begin{align*}
     r : \mathbb R ^2 - \{0\} &\to S^1 \\
     x &\mapsto \frac x {\lVert x \rVert}
   \end{align*}
   implica por corolario \ref{thm:comp-identidad} la inyectividad.
 
-  Para probar la sobreyectividad de \(j_*\), tomemos la composicion
+  Para probar la sobreyectividad de \(j_*\), tomemos la composición
   \[ j \circ r : \mathbb R ^2 - \{0\} \to \mathbb R ^2 - \{0\} \]
-  Esta composicion \emph{no} es la identidad de \(\mathbb R ^2 - \{0\}
-  \) pero es homotopica a esta mediante la homotopia de linea recta
-  \[ H(x,t) := t \cdot x + (1 - t) \cdot \frac x {\lVert x \rVert} \]
-  Esta homotopia deja fijo al punto \((1,0)\), luego tenemos las
-  hipotesis del teorema \ref{thm:comp-identidad-homotopia} y obtenemos
-  que \(j_*\) es ademas sobreyectiva. Concluimos que \(j_*\) es un
-  isomorfismo de grupos fundamentales.
+  Esta composición \emph{no} es la identidad de \(\mathbb R ^2 - \{0\}
+  \) pero es homotopica a esta mediante la homotopía de linea recta
+  \[
+    H(x,t) := t \cdot x + (1 - t) \cdot \frac x {\lVert x \rVert}
+  \]
+  En esta ocasion, no tenemos la hipotesis de recorrido convexo sobre
+  la identidad y \(j \circ r\) pues estos son \(\mathbb R ^2 - \{\vec 0\}\) y
+  \(B[0,1] - \{\vec 0\}\) respectivamente. Aun asi esta homotopia es
+  continua solo por ser combinacion convexa de funciones continua. Nos
+  falta mostrar que tiene el recorrido correcto, mostrando que \(\vec
+  0\) no pertenece a este. Notamos que para todo \(\vec x \in
+  X\), se tiene que \(\vec x \) y \( \vec x / \lVert x \rVert\) estan en
+  el mismo cuadrante y por tanto no existe combinacion convexa que resulte
+  en \(\vec 0\). Mostramos asi que es una homotopia valida.
+
+  Notamos tambien que esta homotopía deja fijo al punto \((1,0)\), luego
+  tenemos las hipótesis del teorema \ref{thm:comp-identidad-homotopia} y
+  obtenemos que \(j_*\) es además sobreyectiva. Concluimos que \(j_*\) es
+  un isomorfismo de grupos fundamentales.
 \end{proof}
 
 \subsection{Tipos homotopicos}
@@ -209,7 +222,7 @@ Ahora que ya conocemos el esquema de trabajo, podemos generalizar para
 espacios que no necesariamente sean retracciones entre si, pero que
 posean un par de funciones cuyas composiciones sean homotopicas a la
 identidad correspondiente.
-\begin{definicion}
+\begin{definicion}[Equivalencias homotopicas]
   Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
   que \( g \circ f : X \to X \) es homotopico al mapeo identidad de
   \(X\) y \( f \circ g : Y \to Y \) es homotopico al mapeo identidad de
@@ -218,114 +231,116 @@ identidad correspondiente.
   Si dos espacios poseen un par de equivalencias homotopicas entre ellos,
   se dicen que ambos espacios son del mismo \emph{tipo homotopico}.
 \end{definicion}
-Podemos ver que en el caso anterior, la retraccion y la inclusion
-correspondian a par de equivalencias homotopicas. Podria pensarse que la
+Podemos ver que en el caso anterior, la retracción y la inclusión
+correspondían a par de equivalencias homotopicas. Podría pensarse que la
 existencia de un par de equivalencias homotopicas entre espacios seria
 suficiente para afirmar que poseen el mismo grupo fundamental, esto es
 cierto en medida que se sea cuidadoso con los puntos de partida. Este
 problema no se manifestaba en retracciones porque el punto de partida se
-mantenia fijo en la inclusion. Para ver el problema mas claro,
+mantenía fijo en la inclusión. Para ver el problema mas claro,
 supongamos que tenemos dos espacios \(X, Y\) junto con un par
 equivalencias homotopicas
 \[ f : X \to Y \quad g : Y \to X \]
-Por hipotesis tenemos que \(g \circ f \simeq Id : X \to X\), pero eso
+Por hipótesis tenemos que \(g \circ f \simeq Id : X \to X\), pero eso
 \textbf{no} nos asegura la existencia de un punto \(x_0 \in X\) que sea
-fijo bajo la homotopia entre \( g \circ f\) y \(Id\). Por tanto no
+fijo bajo la homotopía entre \( g \circ f\) y \(Id\). Por tanto no
 podemos aplicar el lema \ref{lem:homotopic-inducing} pues no podemos
-cumplir una de las hipotesis. Resulta que esto es subsanable utilizando
-el siguiente lema tecnico.
+cumplir una de las hipótesis. Resulta que esto es subsanable utilizando
+el siguiente lema técnico.
 
 \begin{lema} \label{lem:equiv-hom-lift}
   Sean \(h,k : X \to Y\) mapeos continuos, sea \(h (x_0) = y_0,\ k(x_0)
   = y_1\). Si \(h\) y \(k\) son homotopicos mediante \(H : X \times I
   \to Y\), entonces existe un arco \(\alpha\) en \(Y\) de \(y_0\) a
-  \(y_1\) tal que \(k_* = \hat \alpha \circ h_* \). Mas aun, este arco
-  esta dado por la ecuacion \(\alpha (t) = H (x_0, t)\).
+  \(y_1\) tal que
+  \[k_* = \hat \alpha \circ h_* \]
+  con \(\hat \alpha\) el conjugado de \(\alpha\) dado por la definicion
+  \ref{def:conjugada}. Mas aun, este arco esta dado por la ecuación
+  \(\alpha (t) = H (x_0, t)\).
 \end{lema}
-\noindent Aqui se utilizara la notacion \(\hat \alpha\) que se utilizo
-pero no definicion en la demostracion de el teorema \ref{not:alpha-hat}.
 \begin{proof}
   Hemos de probar que \(\forall [f] \in \pi (X, x_0)\) se cumple que
   \[ k_* ([f]) = \hat \alpha \circ h_* ([f]) \]
   \[ [k \circ f] = [ \alpha^{-1} ] *  [h \circ f] * [\alpha] \]
   \[ [ \alpha ] * [k \circ f] =  [h \circ f] * [\alpha] \]
-  Es decir, hemos de construir una homotopia entre estos dos
-  representantes de clase. Sea \(H : X \times I \to Y\) la homotopia
-  entre \(h\) y \(k\) dada por hipotesis, entonces podemos reescribir
-  las funciones de la ultima ecuacion definiendo nuevas curvas sobre \(I
+  Es decir, hemos de construir una homotopía entre estos dos
+  representantes de clase. Sea \(H : X \times I \to Y\) la homotopía
+  entre \(h\) y \(k\) dada por hipótesis, entonces podemos reescribir
+  las funciones de la ultima ecuación definiendo nuevas curvas sobre \(I
   \times I\)
   \[ f_0(t) := (f(t), 0) \quad H \circ f_0 = h \circ f \]
   \[ f_1(t) := (f(t), 1) \quad H \circ f_1 = k \circ f \]
   \[ c(t) := (x_0, t) \quad H \circ c = \alpha \]
 
-  De igual manera re-definiremos las tres nuevas curvas en terminos de
-  \(F : I \times I \to X \times I\) dada por la ecuacion \(F(s,t) =
+  De igual manera re-definiremos las tres nuevas curvas en términos de
+  \(F : I \times I \to X \times I\) dada por la ecuación \(F(s,t) =
   (f(s),t)\). Para esto debemos considerar los cuatro bordes de
   \(I \times I\).
   \[ \beta_0(s) = (s, 0) \quad \beta_1(s) = (s, 1)\]
   \[ \gamma_0(t) = (0, t) \quad \gamma_1(t) = (1, t)\]
-  Mostrandose las siguientes igualdades
+  Mostrándose las siguientes igualdades
   \[ F \circ \beta_0 = f_0 \quad F \circ \beta_1 = f_1\]
   \[ F \circ \gamma_0 = c = F \circ \gamma_1 \]
 
   Notese que los caminos \(\beta_0 * \gamma_1\) y \(\gamma_0 * \beta_1\)
-  son los caminos inferior derecho y izquierdo superior del cuadrilatero
+  son los caminos inferior derecho y izquierdo superior del cuadrilátero
   \(I \times I\). Dada la convexidad de este espacio, existe una
-  homotopia denotada por \(G : I \times I \to I \times I \) entre ellos.
-  Luego por composicion \(F \circ G\) es una homotopia entre \(f_0 * c\) y
-  \(c * f_1\) y la composicion \(H \circ F \circ G\) es una homotopia en
+  homotopía denotada por \(G : I \times I \to I \times I \) entre ellos.
+  Luego por composición \(F \circ G\) es una homotopía entre \(f_0 * c\) y
+  \(c * f_1\) y la composición \(H \circ F \circ G\) es una homotopía en
   \(Y\) tal que
   \[ (H \circ f_0) * (H \circ c) = (h \circ f) * \alpha \]
   \[ (H \circ c) * (H \circ f_1) = \alpha * (k \circ f) \]
-  Obteniendo asi la homotopia buscada.
+  Obteniendo así la homotopía buscada.
 \end{proof}
 
 La importancia de encontrar dicho arco \(\alpha : I \to Y\) entre los
 dos levantamientos proviene del siguiente lema.
+%% todo(slack): revisar si este lema es necesario en vista del teorema 2.
 \begin{lema} \label{lem:hat-alpha-iso}
 \(\hat \alpha : \pi (Y, y_0) \to \pi (Y, y_1)\) es un isomorfismo de
 grupos fundamentales.
 \end{lema}
 \begin{proof}
-  Por definicion \(\hat \alpha\) es claramente un homomorfismo. Para ver
+  Por definición \(\hat \alpha\) es claramente un homomorfismo. Para ver
   que es inyectiva, supongamos que tomamos \([f],[g] \in \pi (Y, y_0),\
   [f] \neq [g]\) tal que se cumple \(\hat \alpha ([f]) = \hat \alpha
-  ([g])\). Esto implicaria por reduccion que
+  ([g])\). Esto implicaría por reducción que
   \[ [\alpha^{-1}] * [f] * [\alpha] = [\alpha^{-1}] * [g] * [\alpha] \]
   \[ [f] * [\alpha] = [g] * [\alpha] \]
   \[ [f] = [g] \]
-  Lo cual es una contradiccion
+  Lo cual es una contradicción
 
   Para ver la sobreyectividad, para todo elemento \([h]
   \in \pi (Y,y_0)\) existe \( [\alpha] * [h] * [\alpha^{-1}] \in \pi
   (Y,y_0)\) tal que
   \[ \hat \alpha ([\alpha] * [h] * [\alpha^{-1}]) = [h]\]
 \end{proof}
-Con esto es mente, es facil ver que se tiene el siguiente corolario
+Con esto es mente, es fácil ver que se tiene el siguiente corolario
 \begin{corolario}
-  Sean \(h,k : X \to Y\) homotopicamente continuas tales que \(h (x_0) =
-  y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva o sobreyectiva o
-  trivial, entonces \(k_*\) tambien lo es.
+  Sean \(h,k : X \to Y\) dos funciones relacionadas homotopicamente
+  tales que \(h (x_0) = y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva
+  o sobreyectiva o trivial, entonces \(k_*\) también lo es.
 \end{corolario}
 \begin{proof}
   Dado que por el lema \ref{lem:equiv-hom-lift} tenemos la siguiente
-  ecuacion entre levantamientos
+  ecuación entre levantamientos
   \[ k_* = \hat \alpha \circ h_* \]
   Por el lema \ref{lem:hat-alpha-iso} sabemos que \(\hat \alpha\) es
-  biyectivo. Por tanto la composicion de \(h_*\) inyectiva con \(\hat
-  \alpha\) bijectiva es inyectiva. De igual manera para sobreyectividad y
-  la trivialidad.
+  biyectivo. Por tanto la composición de \(h_*\) inyectiva con \(\hat
+  \alpha\) biyectiva es inyectiva. De igual manera para la
+  sobreyectividad.
 \end{proof}
 Con esto podemos al fin plantear que todo par de espacios en el mismo
 tipo homotopico poseen el mismo grupo fundamental. Esto gracias a que
-podemos evitar la condicion de punto fijo en el lema
+podemos evitar la condición de punto fijo en el lema
 \ref{lem:homotopic-inducing} gracias a la biyeccion de \(\hat \alpha\).
 
 \begin{teorema}
-  Sean \(f : X \to Y\) continua y \(f (x_0) = y_0\). Si \(f\) es una
-  homotopia equivalencia con \(g : Y \to X\), entonces
+  Sean \(f : X \to Y\) continua y \(f (x_0) = y_0\). Si existe \(g : Y
+  \to X\) tal que \(f\) y \(g\) son una equivalencia homotopica, entonces
   \[ f_* : \pi (X, x_0) \to \pi (Y, y_0)\]
-  es un isomorfismo.
+  es un isomorfismo de grupos fundamentales.
 \end{teorema}
 Para este teorema, es necesario que seamos un poco mas especificos con la
 notacion de levantamientos. Un levantamiento de \(f :
@@ -340,7 +355,8 @@ donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
 
   Por hipotesis, \(g \circ f : (X, x_0) \to (X, x_1)\) es homotopico a
   la funcion identidad \(Id : X \to X\). Luego por el lema
-  \ref{lem:equiv-hom-lift} se tiene que
+  \ref{lem:equiv-hom-lift} se tiene la existencia de un \(\hat alpha\)
+  tal que cumpla la ecuacion
   \begin{equation} \label{eq:alpha-f-g}
   g_* \circ (f_{x_0})_* = (g \circ f)_* = \hat \alpha \circ (Id_X)_*
     = \hat \alpha
@@ -398,7 +414,7 @@ Con estos resultados podemos ver el siguiente ejemplo
 \subsection{La categoria \(\mathscr{HoTop}_*\)}
 \begin{definicion}
   La categoria \(\mathscr{HoTop}_*\) corresponde a una tripleta
-  \((\mathbf{O},\mathbf M, \circ)\) donde
+  \((\mathbf{O},\mathbf M, (*))\) donde
   \begin{itemize}
   \item \(\mathbf O\) corresponde a espacio topologicos puntuados de la
     forma \((X, x_0)\).
@@ -406,83 +422,98 @@ Con estos resultados podemos ver el siguiente ejemplo
     \[ M = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\ (X,x_0),(Y,y_0) \in
       \mathbf O \}\]
     de clases equivalencias homotopicas entre funciones continuas
-  \item \((\circ)\) corresponde a la composicion de clases de
-    equivalencias tal que si \([f] , [g] \in \mathbf O \) tal que
+  \item \((*)\) corresponde a la composición de clases de
+    equivalencias tal que si \([f] , [g] \in \mathbf M \) con
     \[ f : (X,x_0) \to (Y, y_0)\]
     \[ g : (Y, y_0) \to (Z, z_0)\]
-    entonces \([g] \circ [f]\) es una clase de equivalencia de \((X,
-    x_0) \to (Z, z_0)\)
+    entonces \([g] * [f] := [ g * f ] \) es una clase de equivalencia de
+    \((X, x_0) \to (Z, z_0)\)
   \end{itemize}
 \end{definicion}
-Esta categoria es diferente a \(\mathscr{Top}_*\) en cuanto a sus
-morfismos, pero es posible incrustar mediante un functor
+Esta categoría es diferente a \(\mathscr{Top}_*\) en cuanto a sus
+morfismos, pero es posible incrustar mediante la siguiente funcion
 \begin{align*}
-  F : \mathscr{Top}_* &\to \mathscr{HoTop}_* \\
-      f &\mapsto [f]
+  F : \mathscr{Top}_* &\longrightarrow \mathscr{HoTop}_* \\
+      \left( X , x_0 \right) &\longmapsto \left( X , x_0 \right), \quad \left( X, x_0 \right) \in \mathbf O \left( \mathscr{Top}_* \right) \\
+      f &\longmapsto [f], \quad f \in \mathbf M \left( \mathscr{Top}_* \right)
 \end{align*}
-en particular, dado que los morfismos de  \(\mathscr{Top}_*\) son
+pues esta preserva la composicion de categoria de origen en la de
+llegada. Ya que \(\forall f,g \in \mathbf M (\mathscr{Top}_*)\) tal que
+\(f \circ g \in \mathbf M (\mathscr{Top}_*)\)
+\[ F(f * g) = [f * g] = [f] * [g] = F(f) * F(g) \]
+En particular, hemos definido un functor entre categorias
+\begin{definicion}[Functor]
+  Un functor \(F\) entre las categorias \( \left( O_{\mathcal C} ,
+    \mathcal C , (\circ) \right) \) y \(\left( O_{\mathcal D} , \mathcal
+      D , (\star) \right)\)
+  es una funcion tal que \(\forall f,g \in \mathcal C \) tal que \( f
+  \circ g \in \mathcal C\) se cumple que
+  \[ F(f \circ g) = F(f) \star F(g) \]
+\end{definicion}
+
+En particular, dado que los morfismos de  \(\mathscr{Top}_*\) son
 homeomorfismos, estos son trivialmente equivalencias homotopicas,
-dandonos \emph{equivalencias categoricas} (presencia de inversas) en
+dándonos \emph{equivalencias categóricas} (presencia de inversas) en
 en  \(\mathscr{HoTop}_*\).
 
-Algo diferente en esta construccion es la presencia de clases de
+Algo diferente en esta construcción es la presencia de clases de
 equivalencias entre funciones. Esto tiene que ver con el requerimiento
-de unicidad sobre el morfismo identidad. Esto tiene la consecuencia
-feliz de simplificar la visualizacion de esta categoria como diagrama.
+de unicidad sobre el morfismos identidad. Esto tiene la consecuencia
+feliz de simplificar la visualización de esta categoría como diagrama.
 
 Esta estructura nos ayudara a deducir grupos fundamentales de espacios
 complejos en base a espacios mas simples. Una de las herramientas para
-esto sera el estudio de los productos y co-productos categoricos.
+esto sera el estudio de los productos y co-productos categóricos.
 
 \begin{definicion}
-  Sea \(P , X , Y \in \mathbf O\) objetos arbitrarios de un categoria
+  Sea \(P , X , Y \in \mathbf O\) objetos arbitrarios de un categoría
   tal que existen \(\pi_x : P \to X,\ \pi_y : P \to Y\) morfismos en
   \(\mathbf M\). Si para todo objeto \(M \in \mathbf O\) tal que posea
-  morfimos \( f : M \to X,\ g : M \to Y\) existe un morfismo \(\theta :
+  morfismos \( f : M \to X,\ g : M \to Y\) existe un morfismo \(\theta :
   M \to P\) tal que
   \[ f = \pi_x \circ \theta \quad g = \pi_y \circ \theta \]
   Entonces \(P\) es un producto de \(X\) e \(Y\).
 \end{definicion}
-Analogamente, un co-producto es un producto con todas las ``flechas'' en
+Análogamente, un co-producto es un producto con todas las ``flechas'' en
 sentido opuesto.
 \begin{definicion}
-  Sea \(C , X , Y \in \mathbf O\) objetos arbitrarios de un categoria
+  Sea \(C , X , Y \in \mathbf O\) objetos arbitrarios de un categoría
   tal que existen \(\phi_x : X \to C,\ \phi_y : Y \to C\) morfismos en
   \(\mathbf M\). Si para todo objeto \(M \in \mathbf O\) tal que posea
-  morfimos \( f : X \to C,\ g : Y \to C\) existe un morfismo \(\theta :
+  morfismos \( f : X \to C,\ g : Y \to C\) existe un morfismo \(\theta :
   C \to M\) tal que
   \[ f = \theta \circ \phi_x \quad g = \theta \circ \phi_y \]
   Entonces \(C\) es un co-producto de \(X\) e \(Y\).
 \end{definicion}
 % TODO: considerar incluir diagramas conmutativos
-Intuitivamente, pensamos que el producto categorico en
-\(\mathscr{HoTop}_*\) deberia sea el producto cartesiano de espacios.
+Intuitivamente, pensamos que el producto categórico en
+\(\mathscr{HoTop}_*\) debería ser el producto cartesiano de espacios.
 Esto es correcto notanto que \(\forall (X,x_0) , (Y, y_0) \in \mathbf O
 \), el espacio \((X \times Y, (x_0, y_0))\) posee los morfismos
 (continuos) \(\pi_x : X \times Y \to X \) e \(\pi_y : X \times Y \to Y
-\) proyecciones por coordenadas, ademas de una forma de completar el
+\) proyecciones por coordenadas, además de una forma de completar el
 diagrama conmutativo.
 
-Pero existe otra operacion no tan conocida que puede cumplir el papel
+Por otro lado existe una operación no tan conocida que puede cumplir el papel
 del co-producto solo en espacio puntuados, conocida como la \emph{wedge-sum}
 \begin{definicion}
-  Sean \((X, x_0),(Y, y_0)\) does espacios topologicos puntuados. El
-  espacio cuociente de la union disjunta de \(X\) e \(Y\) con la
-  identificacion de punto base \(x_0 \sim y_0\)
+  Sean \((X, x_0),(Y, y_0)\) dos espacios topológicos puntuados. El
+  espacio cociente de la unión disjunta de \(X\) e \(Y\) con la
+  identificación de punto base \(x_0 \sim y_0\)
   \[ X \vee Y = (X \sqcup Y) / \sim \]
   es conocida como la \emph{Wedge sum} entre \(X\) e \(Y\).
 \end{definicion}
-La union disjunta de una familia \(\{X_i\}_{i \in \Lambda}\) corresponde
+La unión disjunta de una familia \(\{X_i\}_{i \in \Lambda}\) corresponde
 al conjunto
 \[ \bigsqcup_{i \in \Lambda} X_i = \{ (x, i) \mid x \in X_i \} \]
-es decir, una union donde se marca el conjunto de procedencia en los
-elementos. Con esto, es facil ver que dados \(X, Y\) espacios topologicos
+es decir, una unión donde se marca el conjunto de procedencia en los
+elementos. Con esto, es fácil ver que dados \(X, Y\) espacios topológicos
 puntuados, los morfismos
 \[ \phi_x (x) = [(x,0)] \quad \phi_y (y) = [(y,1)] \]
-son las inyecciones del co-producto y cumplen tambien las propiedades
+son las inyecciones del co-producto y cumplen también las propiedades
 universales.
 
-La presencia de estas operaciones, vuelven a la categoria
+La presencia de estas operaciones, vuelven a la categoría
 \(\mathscr{HoTop}_*\) cartesiana y co-cartesiana. Mas aun, podemos
 construir equivalencias homotopicas para \(X \times Y,\ X \vee Y\)
 siempre y cuando conozcamos equivalencias para \(X\) e \(Y\) mediante
@@ -492,44 +523,57 @@ las propiedades universales del (co)-producto.
   Propiedades de producto y co-producto
   % tuve que poner esta linea porque no podia utilizar newline
   \begin{itemize}
-    \item Sean \(A, X, Y\) espacio topologicos. Si \(f_0 \sim f_1 : A \to
-      X\) y \(g_0 \sim g_1 : A \to Y\), entonces \((f_0 , g_0) \sim (f_1
-      , g_1): A \to X \times Y\)
-    \item Sean \(B, X, Y\) espacio topologicos. Si \(f_0 \sim f_1 : X \to
-      B\) y \(g_0 \sim g_1 : Y \to B\), entonces \(\{f_0 , g_0\} \sim
-      \{f_1 , g_1\} : X \vee Y \to B\)
+    \item Sean \((A,a_0), (X,x_0), (Y,y_0)\) espacio topológicos
+      puntuados. Para todo \(f_0, f_1 : (A,a_0) \to (X,x_0)\) y \(g_0,
+      g_1 : (A, a_0) \to (Y,y_0)\) tales que \(f_0 \sim f_1 \) y \(g_0
+      \sim g_1 \), existen \( (f_0, g_0), (f_1, g_1) : (A,a_0) \to (X,x_0)
+      \times (Y,y_0)\) tales que \((f_0 , g_0) \sim (f_1 , g_1) \)
+    \item Sean \((B,b_0), (X,x_0), (Y,y_0)\) espacio topológicos
+      puntuados. Para todo \(f_0, f_1 : (X,x_0) \to (B,b_0) \) y \(g_0,
+      g_1 : (Y, y_0) \to (B,b_0)\) tales que \(f_0 \sim f_1 \) y \(g_0
+      \sim g_1 \), existen \( \{f_0, g_0\}, \{f_1, g_1\} : (X \vee
+      Y,\{x_0,y_0\}) \to (B,b_0) \) tales que \(\{f_0 , g_0\} \sim \{f_1 ,
+      g_1\} \)
   \end{itemize}
 \end{teorema}
 \begin{proof}
-Comenzando por el producto, sea \(F : A \times I \to X\) la homotopia
-entre \(f_0 , f_1\) y sea \(G : A \times I \to Y\)
-correspondientemente con \(g_0, g_1\), entonces la homotopia
+Comenzando por el producto, sea \(F : (A,a_0) \times I \to (X,x_0)\) la homotopía
+entre \(f_0 , f_1\) y sea \(G : (A,a_0) \times I \to (Y,y_0)\)
+correspondientemente con \(g_0, g_1\), entonces la homotopía
 \begin{align*}
-  FG : A \times I &\to X \times Y \\
+  FG : (A,a_0) \times I &\to \left( X \times Y , (x_0, y_0) \right) \\
        (a, t) &\mapsto (F(x,t) , G(x,t))
 \end{align*}
-Es una homotopia entre \((f_0 , g_0)\) y \((f_1 , g_1)\).
+Es una homotopía entre \((f_0 , g_0)\) y \((f_1 , g_1)\).
 
-Analogamente para el co-producto. Sea \(F : X \times I \to B\) y \(G : Y
-\times I \to B\) las homotopias correspondientes a \(f_0 , f_1\) y \(g_0
-, g_1\). Podemos construir la homotopia
+Análogamente para el co-producto. Sea \(F : (X,x_0) \times I \to
+(B,b_0)\) y \(G : (Y,y_0) \times I \to (B,b_0)\) las homotopias
+correspondientes a \(f_0 , f_1\) y \(g_0
+, g_1\). Si identificamos \(x_0 \sim y_0\), podemos construir la homotopía
 \begin{align*}
-  FG : X \vee Y \times I &\to B \\
+  FG : \left( X \vee Y , x_0 \right) \times I &\to (B, b_0) \\
   \big((a,i) , t \big) &\mapsto
                 \begin{cases}
-                  F(a,t) & i = 0 \\
-                  G(a,t) & i = 1 \\
+                  F(a,t), & i = 0 \\
+                  G(a,t), & i = 1 \\
                 \end{cases}
 \end{align*}
-obteniendo asi el resultado deseado.
+la cual es claramente continua en \(\phi_x(X), \phi_y(Y) \subset X \vee
+Y\). Ademas de estar bien definida en \(x_0 \sim y_0\) pues por
+propiedades de homotopias
+\[
+  \forall t \in I,\ FG \left( (x_0,0) , t \right) = F (x_0, t) = b_0 =
+  G(y_0, t) = FG \left( (y_0,1), t \right)
+\]
+obteniendo así el resultado deseado.
 \end{proof}
 
-\paragraph{Toro.} Dado que en topologia este espacio es definido como
+\paragraph{Toro.} Dado que en topología este espacio es definido como
 \(S^1 \times S^1\), el teorema anterior nos dice que su grupo
 fundamental debe de corresponder a \(\mathbb Z \times \mathbb Z\),
 independiente del punto de origen por ser arco-conexo.
 
-Pero aparte de este sencillo ejemplo, nos gustaria conocer teoremas mas
+Pero aparte de este sencillo ejemplo, nos gustaría conocer teoremas mas
 generales que nos respeten la estructura del (co)-producto para
-simplificar calculos de grupos fundamentales, esto sera el enfoque de la
-siguiente seccion.
+simplificar cálculos de grupos fundamentales, esto sera el enfoque de la
+siguiente sección.

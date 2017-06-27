@@ -31,8 +31,8 @@ g'\) a traves de las homotopias \(F, G\) respectivamente, entonces
 Es la homotopia que relaciona a los arcos que sean homotopicos a
 \(f*g\). Esta ademas es continua en virtud otra vez del lema del pegamiento.
 
-\paragraph{} Con esta operacion binaria, una pregunta a hacerse es si
-\((\mathcal C (I , X)/\simeq , (*))\) tiene posee estructura de
+\paragraph{} Con esta operacion binaria, una pregunta natural es si
+\((\mathcal C (I , X)/\simeq , (*))\) tiene estructura de
 grupoide, esto equivale a cumplir 3 propiedades
 \begin{enumerate}
 \item \textbf{Asociatividad} Si \([f] * ([g] * [h])\) esta definido entonces
@@ -66,30 +66,33 @@ Ademas, para todo arco \(f : I \to X \), el elemento \(f^{-1} : I \to X \) esta
 definido (en el espiritu de \eqref{eq:homotopy-simetry}) por
 \[ f^{-1} (s) \coloneqq f (1 - s) \]
 Por ultimo, para todo \(x \in X \) se define la curva
-constante\footnote{\(k\) por \emph{konst}}
+constante
 \begin{align*}
   k_x : &I \to X \\
         &t \mapsto x
 \end{align*}
 Con esto podemos afrontar la demostración
 \begin{proof}
-Se procedera en orden \(2 \to 3 \to 1\) con lemas en medio. Sea \(f : I
+En el orden de las demostraciones, se procedera en mostrando las
+identidades izquierdas y derechas (2), luego la existencia del inverso
+(3) y se finaliza con la asociatividad (1). Ademas se probaran lemas
+intermedios en cada item de ser necesario. Sea \(f : I
 \to X\) el representante de la clase \([f]\). sean \(x_0, x_1\) los
 puntos inicial y final de \(f\) respectivamente.
 
 \paragraph{(2).} Dados \(i,e_1\) arcos en \(I\) definidos anteriormente,
-es claro que \(i * e_1\) es tambien un arco (continuo) en \(I\); mas aun,
+es claro que \(i * e_1\) es también un arco (continuo) en \(I\); mas aun,
 ya que \(I = [0,1]\) es convexo, se tiene \(i * e_1 \simeq i\) con la
 homotopia de la linea recta entre estos denotada por \(C\).
 
-Tambien conocemos que la composición de funciones continuas es
+También conocemos que la composición de funciones continuas es
 continua, de lo cual podemos decir que dada una homotopia \(H : I \times
-I \to I\) la composicion \( f \circ H : I \times I \to X\) es una homotopia.
+I \to I\) la composición \( f \circ H : I \times I \to X\) es una homotopia.
 
-Por otro lado, necesitamos conocer como se comporta la composicion con
+Por otro lado, necesitamos conocer como se comporta la composición con
 respecto a nuestro producto \((*)\), para esto tenemos el siguiente lema
 \begin{lema}[Distributividad de la composicion sobre producto]
-\label{lema:dist-composicion-producto}
+\label{lema:dist-composición-producto}
 \[\forall a,b : I \to I,\ \forall f : I \to X,\ f \circ (a * b) = (f
 \circ a) * (f \circ b) \]
 \end{lema}
@@ -111,11 +114,11 @@ Por tanto
 \begin{equation}\label{eq:homequiv2.1}
 [f \circ i] = [f \circ (i * e_1)] = [(f \circ i) * (f \circ e_1)]
 \end{equation}
-Si tomamos este ultimo termino, sabemos que por definicion
+Si tomamos este ultimo termino, sabemos que por definición
 \begin{equation}\label{eq:homequiv2.2}
 [(f \circ i) * (f \circ e_1)] = [(f \circ i)] * [(f \circ e_1)]
 \end{equation}
-y es claro tambien que
+y es claro también que
 \[
   \begin{matrix}
     f \circ i = f & f \circ e_1 = k_{x_1} \\
@@ -127,21 +130,21 @@ y es claro tambien que
 juntando
 \eqref{eq:homequiv2.1},\eqref{eq:homequiv2.2},\eqref{eq:homequiv2.3} nos
 muestra que \([k_{x_1}]\) es la identidad por la derecha. Podemos
-hacer un proceso analogo para \([k_{x_0}]\) como identidad por la
-izquierda, asi probando (2).
+hacer un proceso análogo para \([k_{x_0}]\) como identidad por la
+izquierda, así probando (2).
 
 \paragraph{(3).} De manera similar a la pregunta anterior, notar que \(i,
 \bar{i}\) definidos anteriormente cumplen
 \[ i * \bar{i} \simeq e_0 \]
 por la homotopia de linea recta en el espacio \(I\) que es convexo.
-Utilizando el lemma \eqref{lema:dist-composicion-producto} tenemos que
+Utilizando el lema \eqref{lema:dist-composición-producto} tenemos que
 \[ [f * f^{-1}] = [f \circ (i * \bar{i})] = [f \circ e_0] = [k_{x_0}] \]
 \[ \implies [f] * [f^{-1}] = [k_{x_0}] \]
-De manera analoga se prueba la inversa por la izquierda.
+De manera análoga se prueba la inversa por la izquierda.
 
 \paragraph{(1).}
-Por definicion, tenemos que las diferentes asociaciones nos resultan en
-diferentes representates de clase
+Por definición, tenemos que las diferentes asociaciones nos resultan en
+diferentes representantes de clase
 \[
   \begin{matrix}
     (f * g) * h \, (t) =
@@ -166,7 +169,7 @@ Sea \(T : I \to I\) definida por
     \frac t 2 + \frac 1 2 & t \in [\frac 1 2, 1]
   \end{cases}
 \]
-\(T\) es una funcion continua por el lema del pegamiento. Por ser \(I\)
+\(T\) es una función continua por el lema del pegamiento. Por ser \(I\)
 un dominio convexo, se tiene que \(i \simeq T\), luego
 \[ [(f * g) * h] = [\big( (f * g) * h \big) \circ i] = [\big( (f * g) *
   h \big) \circ T ] = [f * (g * h)] \]

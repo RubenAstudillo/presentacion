@@ -31,7 +31,7 @@
 \newtheorem{lema}{Lema}
 
 \theoremstyle{remark}
-\newtheorem{anotacion}{Anotacion}
+\newtheorem*{acotacion}{Acotacion}
 
 \begin{document}
 \title{Topologia algebraica}
@@ -45,25 +45,35 @@
 \input{./categoria_homotopica.tex}
 
 \section{Calculo de grupos fundamentales}
-Hasta ahora solo hemos dado una vision intuitiva de quienes son los
+Hasta ahora solo hemos dado una visión intuitiva de quienes son los
 grupos fundamentales para un espacio puntuado \((X,x_0)\), nuestra meta
 obtener herramientas que nos permita
 \begin{itemize}
-\item Obtener grupos \(\pi (X, x_0)\) de \((X,x_0)\) simples.
-\item Calcular grupos fundamentales de espacio mas complejos que tengan
-  estructura de producto o cociente.
+\item Calcular \(\pi (X, x_0)\) en algunos casos de \((X,x_0)\) simples.
+\item Dar herramientas para calcular grupos fundamentales de espacios
+  topológicos producto y cociente.
 \end{itemize}
-Nuestras dos grandes herramientas para esto son los \emph{cubrimientos
-  pares} y el teorema de \vank , el primero nos
-permite calcular \(\pi (X, x_0)\) para espacios que localmente luzcan
-como productos, el segundo nos permite tratar con espacios que a grandes
-rasgos correspondan a una \emph{wedge sum} de espacio topologicos.
-Ademas los enfoques que utilizan para encontrar soluciones son realmente
-distintos; en cubrimientos pares, la intuicion geometrica nos hace
-proponer el candidato a solucion, mientras que en \vank el tratamiento
-es realmente analitico.
+Nuestras dos grandes herramientas para esto son el estudio de los
+\emph{cubrimientos} y el teorema de \vank , el primero nos permite
+calcular \(\pi (X, x_0)\) para espacios que localmente luzcan como
+productos, el segundo nos permite tratar con espacios que a grandes
+rasgos correspondan a una \emph{wedge sum} de espacio topológicos.
+Además los enfoques que utilizan para encontrar soluciones son realmente
+distintos; para cubrimientos, la intuición geométrica nos hace
+proponer el candidato a solución, mientras que en \vank el tratamiento
+es realmente analítico.
 
 \input{./cubrimientos_pares.tex}
 \input{./vankampen.tex}
 
+\begin{thebibliography}{9}
+
+\bibitem{munkres}
+  James R. Munkres,
+  \emph{Topology},
+  Prentice Hall, Upper Saddle River,
+  2nd edition,
+  2000.
+
+\end{thebibliography}
 \end{document}
