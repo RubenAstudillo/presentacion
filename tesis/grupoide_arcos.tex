@@ -1,10 +1,10 @@
 \subsection{Grupoide de arcos}
 Si tenemos dos arcos continuos \(f,g\) tales que el punto final de \(f\)
-sea el punto inicial de \(g\) podemos construir un camino continuo que
-recorra \(f\) luego recorriendo \(g\). Esta idea es conocida formalmente
-como el producto de dos arcos.
+sea el punto inicial de \(g\), podemos construir un arco continuo que
+recorra \(f\) y luego recorra \(g\). Esta idea es formalizada como
+el producto de dos arcos.
 
-\begin{definicion}[Producto de arcos]
+\begin{definicion}[Producto de arcos] \label{def:prod-arcos}
 Para dos arcos \(f,g : I \to X\) tales que
 \(f(1) = g(0)\), se define el producto \(f * g \)
 \[ (f*g) (s) \coloneqq \begin{cases}
@@ -12,24 +12,41 @@ Para dos arcos \(f,g : I \to X\) tales que
     g(2s - 1) & s \in [\frac{1}{2} , 1]
   \end{cases}
 \]
-la cual sigue siendo una funcion continua en virtud del lema del
-pegamiento.
+la cual sigue siendo una funcion continua en virtud del \emph{lema del
+pegamiento}.
 \end{definicion}
 
 Esta construccion se puede reutilizar para clases
 \emph{arco}-homotopicas \([f],[g]\) que compartan punto final e inicial
-respectivamente para definir un producto de clases de equivalencia
-\[ [f] * [g] \coloneqq [f * g]\]
-El cual esta bien definido pues si \(f \simeq f' ,\ g \simeq
-g'\) a traves de las homotopías \(F, G\) respectivamente, entonces
-\[
-  H(s,t) = \begin{cases}
-    F(2s,t) & s \in [0, \frac{1}{2}] \\
-    G(2s - 1, t) & s \in [\frac{1}{2} , 1]
-  \end{cases}
-\]
-Es la homotopía que relaciona a los arcos que sean homotopicos a
-\(f*g\). Esta ademas es continua en virtud otra vez del lema del pegamiento.
+respectivamente.
+\begin{definicion}[Producto de clases Arco-homotopicas]
+  Sean \([f],[g]\) dos clases arco-homotópicas tales que \( f(1) =
+  g(0)\). Se define el producto de clases \([f] * [g]\) por la ecuación
+  \[ [f] * [g] \coloneqq [f * g] \]
+  con el segundo producto \(f * g\) siendo el producto de arcos de la
+  definición \ref{def:prod-arcos}.
+\end{definicion}
+\begin{acotacion}
+  Este producto esta bien definido como clase homotopica. Esto se ve
+  porque la única manera en que este no lo estuviera es si existieran las
+  relaciones \(\hat f \simeq f\) y \(\hat g \simeq g\) con \(f(1) = g(0)\)
+  que cumplieran que \(\hat f * \hat g \not \in [f * g]\). Esto no ocurre,
+  pues por definición existen homotopías \(F,G\) respectivas para \(\hat f
+  \simeq f\) y \(\hat g \simeq g\) que cumplen
+  \begin{equation}
+  F(1,t) = G(0,r) , \quad \forall t,r \in [0,1] \label{eq:hom-same-point}
+  \end{equation}
+  y por tanto, podemos definir una nueva homotopía de \(\hat f * \hat
+  g \simeq f * g\) por
+  \[
+    H(s,t) = \begin{cases}
+      F(2s,t) & s \in [0, \frac{1}{2}] \\
+      G(2s - 1, t) & s \in [\frac{1}{2} , 1]
+    \end{cases}
+  \]
+  la cual es bien definida en virtud de \eqref{eq:hom-same-point} y
+  continua por el \emph{lema del pegamiento}.
+\end{acotacion}
 
 \paragraph{} Con esta operacion binaria, una pregunta natural es si
 \((\mathcal C (I , X)/\simeq , (*))\) tiene estructura de
