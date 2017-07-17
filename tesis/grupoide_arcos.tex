@@ -21,14 +21,14 @@ Esta construccion se puede reutilizar para clases
 respectivamente para definir un producto de clases de equivalencia
 \[ [f] * [g] \coloneqq [f * g]\]
 El cual esta bien definido pues si \(f \simeq f' ,\ g \simeq
-g'\) a traves de las homotopias \(F, G\) respectivamente, entonces
+g'\) a traves de las homotopías \(F, G\) respectivamente, entonces
 \[
   H(s,t) = \begin{cases}
     F(2s,t) & s \in [0, \frac{1}{2}] \\
     G(2s - 1, t) & s \in [\frac{1}{2} , 1]
   \end{cases}
 \]
-Es la homotopia que relaciona a los arcos que sean homotopicos a
+Es la homotopía que relaciona a los arcos que sean homotopicos a
 \(f*g\). Esta ademas es continua en virtud otra vez del lema del pegamiento.
 
 \paragraph{} Con esta operacion binaria, una pregunta natural es si
@@ -83,11 +83,11 @@ puntos inicial y final de \(f\) respectivamente.
 \paragraph{(2).} Dados \(i,e_1\) arcos en \(I\) definidos anteriormente,
 es claro que \(i * e_1\) es también un arco (continuo) en \(I\); mas aun,
 ya que \(I = [0,1]\) es convexo, se tiene \(i * e_1 \simeq i\) con la
-homotopia de la linea recta entre estos denotada por \(C\).
+homotopía de la linea recta entre estos denotada por \(C\).
 
 También conocemos que la composición de funciones continuas es
-continua, de lo cual podemos decir que dada una homotopia \(H : I \times
-I \to I\) la composición \( f \circ H : I \times I \to X\) es una homotopia.
+continua, de lo cual podemos decir que dada una homotopía \(H : I \times
+I \to I\) la composición \( f \circ H : I \times I \to X\) es una homotopía.
 
 Por otro lado, necesitamos conocer como se comporta la composición con
 respecto a nuestro producto \((*)\), para esto tenemos el siguiente lema
@@ -108,7 +108,7 @@ respecto a nuestro producto \((*)\), para esto tenemos el siguiente lema
 
 Luego esto nos permite afirmar en especifico que
 \[ f \circ i \simeq f \circ (i * e_1) = (f \circ i) * (f \circ e_1) \]
-en virtud de la homotopia
+en virtud de la homotopía
 \[ f \circ C : I \times I \to X \]
 Por tanto
 \begin{equation}\label{eq:homequiv2.1}
@@ -136,7 +136,7 @@ izquierda, así probando (2).
 \paragraph{(3).} De manera similar a la pregunta anterior, notar que \(i,
 \bar{i}\) definidos anteriormente cumplen
 \[ i * \bar{i} \simeq e_0 \]
-por la homotopia de linea recta en el espacio \(I\) que es convexo.
+por la homotopía de linea recta en el espacio \(I\) que es convexo.
 Utilizando el lema \eqref{lema:dist-composición-producto} tenemos que
 \[ [f * f^{-1}] = [f \circ (i * \bar{i})] = [f \circ e_0] = [k_{x_0}] \]
 \[ \implies [f] * [f^{-1}] = [k_{x_0}] \]
