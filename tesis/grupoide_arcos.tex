@@ -52,34 +52,42 @@ respectivamente.
 \((\mathcal C (I , X)/_\simeq , (*))\), esta es la clase de los arcos
 sobre un espacio topológico \(X\), tiene estructura de grupoide. Esto
 equivale a cumplir las siguientes 3 propiedades
-\begin{enumerate}
-\item \textbf{Asociatividad} Si \([f] * ([g] * [h])\) esta definido entonces
+\begin{description}
+\item[1. Asociatividad:] Si \([f] * ([g] * [h])\) esta definido entonces
   tambien lo debe estar \(([f] * [g]) * [h]\) y ademas deben coincidir.
-\item \textbf{Identidades izquierda y derecha} Para todo \([f]\) con
+\item[2. Identidades izquierda y derecha:] Para todo \([f]\) con
   \(x_0, x_1\) puntos inicial y final respectivamente, debe de
 existir elementos \([k_{x_0}], [k_{x_1}]\) tales que
 \[ \begin{matrix}
     [f] * [k_{x_1}] = [f] & & [k_{x_0}] * [f] = [f]
   \end{matrix}
 \]
-\item \textbf{Inverso} Para todo \([f]\) clase de arcos con \(x_0, x_1\)
+\item[3. Inverso:] Para todo \([f]\) clase de arcos con \(x_0, x_1\)
   puntos inicial y final respectivamente debe de existir un elemento
   \([f^{-1}]\) que cumpla
 \[ \begin{matrix}
     [f] * [f^{-1}] = [k_{x_0}] & & [f^{-1}] * [f] = [k_{x_1}]
   \end{matrix}
 \]
-\end{enumerate}
+\end{description}
 Para probar esto necesitamos primero definir a nuestros candidatos de
-\(k_{x_0}, k_{x_1}, f^{-1}\) ademas de algunas funciones auxiliares,
-iniciando por los mapeos constantes e identidad en \(I \to I\)
-\[ \begin{matrix}
-     e_0 : & I \to I & e_0(t) \coloneqq 0 \\
-     e_1 : & I \to I & e_1(t) \coloneqq 1 \\
-     i :   & I \to I & i(t) \coloneqq t \\
-     \bar{i} : & I \to I & i(t) \coloneqq 1 - t
+\(k_{x_0}, k_{x_1}, f^{-1}\) ademas de algunas funciones auxiliares.
+Iniciando por los mapeos constantes e identidad en \(I \to I\)
+\[
+  \begin{matrix}
+     e_0 :     & I \to I; \\
+     e_1 :     & I \to I; \\
+     i :       & I \to I; \\
+     \bar{i} : & I \to I;
    \end{matrix}
-   \]
+   \quad
+   \begin{matrix}
+      e_0(t) &\coloneqq &0 \\
+      e_1(t) &\coloneqq &1 \\
+      i(t)   &\coloneqq &t   \\
+      i(t)   &\coloneqq &1 - t
+   \end{matrix}
+\]
 Ademas, para todo arco \(f : I \to X \), el elemento \(f^{-1} : I \to X \) esta
 definido (en el espiritu de \eqref{eq:homotopy-simetry}) por
 \[ f^{-1} (s) \coloneqq f (1 - s) \]
