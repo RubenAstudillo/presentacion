@@ -7,3 +7,5 @@
 *.snm
 *.out
 _region_.tex
+*.fdb_latexmk
+*.fls
