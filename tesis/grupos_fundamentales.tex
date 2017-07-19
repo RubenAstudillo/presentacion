@@ -106,7 +106,7 @@ espacio \(\forall a,b \in X\), con \(X\) un espacio topológico a
 estudiar, existe un camino \(\alpha : I \to X\) tal que \(\alpha (0) =
 a,\ \alpha (1) = b\). Si nuestro espacio \(X\) no fuera arco-conexo,
 caemos en la disyuntiva de elegir un punto apropiado que represente
-``suficientemente'' al espacio, en la definicion de su grupo.
+``suficientemente'' al espacio, en la definicion de su grupo
 fundamental. Dada que la motivacion de definir en primer lugar el grupo
 fundamental provenia de establecer una \emph{invariante} topologica,
 hace dudar que la parametrizacion en cuanto a punto base del grupo
@@ -137,17 +137,17 @@ camino.
 \begin{proof}
   Por ser \(X\) arco-conexo, existe \(\alpha : I \to X\) camino
   continuo, tal que \(\alpha (0) = x_0,\ \alpha (1) = x_1\). Se define
-  la funcion conjugada de \(\alpha\) por \(\hat \alpha\)
+  la funcion conjugada de \(\alpha\) por \(\hat \alpha\).
   Esta funcion, esta bien definida puesto que \(\forall g \in \pi (X,
   x_0),\ \alpha^{-1} * g * \alpha \) es continua (en virtud de \(*\)).
-  Sea entonces por definicion y reduccion se tiene
+  Por definicion y reduccion se tiene
   \[ \alpha^{-1} (t) = \alpha (1 - t)\]
   \[\big(\alpha^{-1} * g * \alpha \big) (0) = \alpha (1 - 0) = x_1 = \alpha (1) =
     \big(\alpha^{-1} * g * \alpha \big) (1)\]
 
-  \paragraph{\(\hat \alpha\) es homomorfismo.} Para esto, se procede por
+  \paragraph{\(\hat \alpha\) es homomorfismo:} Se procede por
   definicion. Por un lado, al mapear la identidad de \(k_{x_0} \in \pi
-  (X, x_0) \), tenemos por reduccion
+  (X, x_0) \), tenemos por simple calculo las siguientes igualdades
   \begin{align*}
     \hat \alpha ([k_{x_0}])
                  &= [\alpha^{-1} * k_{x_0} * \alpha] \\
@@ -178,45 +178,47 @@ camino.
 \end{proof}
 En la prueba anterior, la existencia del camino \(\alpha\)
 parametrizaba que tipo de isomorfismo \(\hat \alpha\) construimos.
-La eleccion de punto bases
-\(x_0, x_1\) nos permite hablar de la existencia de unico o multiples
-isomorfimos entre grupos fundamentales \(\pi (X, x_0), \pi (X, x_1) \)
+La elección de punto bases
+\(x_0, x_1\) nos permite hablar de la existencia de único o múltiples
+isomorfismos entre grupos fundamentales \(\pi (X, x_0), \pi (X, x_1) \)
 dependientes de la cantidad de caminos entre \(x_0\) y \(x_1\) que
 existan. Esto es un tema importante a considerar, puesto que existe un
-caracterizacion de \(\pi (X, x_0) \) como grupo abeliano, que depende de
+caracterización de \(\pi (X, x_0) \) como grupo \emph{Abeliano}, que depende de
 la cantidad de estos isomorfismos.
 \begin{teorema}
   Sean \(x_0, x_1 \in X\) puntos en un espacio arco-conexo. El grupo
   \(\pi (X, x_0) \) es abeliano si y solo si \(\forall \alpha, \beta\)
-  caminos (distintos) entre \(x_0\) y \(x_1\), se cumple que \(F_\alpha =
-  F_\beta\), con \(F_{\xi} ([f]) = [\xi^{-1} * f * \xi] \)
+  caminos (distintos) entre \(x_0\) y \(x_1\), se cumple que \(\hat \alpha \equiv
+  \hat \beta\), con \(\hat \alpha, \hat \beta\) los conjugados de los
+  caminos respectivos.
 \end{teorema}
 \begin{proof}
   Primero, dado que \(\pi (X, x_0)\) es
   abeliano, esto significa que \(\forall [f],[g] \in \pi (X, x_0),\ [f]
   * [g] = [g] * [f]\). Sean \(\alpha, \beta\) caminos entre \(x_0,x_1\)
-  fijos pero arbitrarios. Para mostrar que \(F_\alpha = F_\beta\),
-  debemos mostrar que para todo argumento los resultados coinciden. Sea
+  fijos pero arbitrarios. Para mostrar que \( \hat \alpha = \hat \beta\),
+  debemos mostrar que para todo argumento estas funciones coinciden. Sea
   \([f] \in \pi (X, x_0) \) un argumento fijo pero arbitrario. Dado que
   \(\alpha * \beta^{-1} * \beta \simeq \alpha \), se tiene que
-  \(F_\alpha = F _{\alpha * \beta^{-1} * \beta}\), luego por definicion
+  \( \hat \alpha = \widehat{(\alpha * \beta^{-1} * \beta)}\), luego por definición
   se cumplen la siguientes reducciones
-  \[ F_\alpha ([f]) = F_{\alpha * \beta^{-1} * \beta} ([f]) =
+  \[ \hat \alpha ([f]) = \widehat{(\alpha * \beta^{-1} * \beta)} ([f]) =
     [\beta^{-1}] * [\beta * \alpha^{-1}] * [f] * [\alpha * \beta^{-1}]
     * [\beta] \]
   Donde \([\alpha * \beta^{-1}] \in \pi (X, x_0) \), por lo tanto podemos
-  aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la expresion
+  aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la
+  siguiente expresión
   \[ [\beta^{-1}] * [\beta * \alpha^{-1}] * [\alpha * \beta^{-1}] * [f]
-    * [\beta] = [\beta^{-1}] * [f] * [\beta] = F_\beta ([f]) \]
-  probando asi lo buscado.
+    * [\beta] = [\beta^{-1}] * [f] * [\beta] = \hat \beta ([f]) \]
+  probando así lo buscado.
 
   En el converso, sean \([f],[g] \in \pi (X, x_0) \) fijos pero
-  arbitrarios, dado que \(\alpha\) es camino entre \(x_0\) y \(x_1\), se
-  tiene que \(f * \alpha\) tambien es camino entre \(x_0\) y \(x_1\).
-  Por hipotesis, tenemos en particular para estos caminos, que se cumple
-  la relacion
+  arbitrarios. Dado que \(\alpha\) es camino entre \(x_0\) y \(x_1\), se
+  tiene que \(f * \alpha\) también es camino entre \(x_0\) y \(x_1\).
+  Por hipótesis, tenemos en particular para estos caminos, que se cumple
+  la relación
   \begin{align*}
-    F_{f * \alpha} ([g]) &= F_{\alpha} ([g]) \\
+    \widehat{\left( f * \alpha \right)} ([g]) &= \hat{\alpha} ([g]) \\
     [(f * \alpha)^{-1} * g * (f * \alpha) ] &= [\alpha^{-1} * g * \alpha] \\
     [\alpha^{-1} * f^{-1} * g * f * \alpha ] &= [\alpha^{-1} * g * \alpha] \\
     [\alpha^{-1}] * [f^{-1}] * [g] * [f] * [\alpha] &= [\alpha^{-1}] *
@@ -226,7 +228,7 @@ la cantidad de estos isomorfismos.
   \end{align*}
 
   \begin{acotacion}
-    Aqui se esta utilizando la notacion \( [\alpha]\) para clase de
+    Aquí se esta utilizando la notación \( [\alpha]\) para clase de
     equivalencias no necesariamente pertenecientes al grupo fundamental
     \(\pi (X, x_0)\).
   \end{acotacion}
@@ -235,7 +237,7 @@ la cantidad de estos isomorfismos.
 En resumen si sabemos que \(\pi (X, x_0)\) es \emph{Abeliano}, esto equivale a
 decir que \(\forall \alpha,\beta\) caminos entre \(x_0, x_1\), se tiene
 que existe un \emph{único} isomorfismo entre \(\pi (X,x_0) \) y \( \pi
-(X,x_1)\), pues \(F_\alpha = F_\beta\). Anteriormente, teníamos la
+(X,x_1)\), pues \(\hat \alpha = \hat \beta\). Anteriormente, teníamos la
 existencia de posiblemente múltiples isomorfismos entre \(\pi (X, x_0)
 \) y \(\pi (X, x_1) \). Si no podemos parametrizar los isomorfismos
 entre distintos puntos bases de un grupo fundamental, perdemos esta
