@@ -108,7 +108,7 @@ intermedios en cada item de ser necesario. Sea \(f : I
 \to X\) el representante de la clase \([f]\). sean \(x_0, x_1\) los
 puntos inicial y final de \(f\) respectivamente.
 
-\subparagraph{Identidades izquierda y derechas:} Sea \([f]\) una clase
+\subparagraph{2. Identidades izquierda y derechas:} Sea \([f]\) una clase
 homotopica con \(x_0, x_1\) puntos inicial y final de \(f\)
 respectivamente. Probaremos primero que \([k_{x_1}]\) es la identidad
 por la derecha. Esto equivale a mostrar que la ecuacion
@@ -177,16 +177,19 @@ muestra que \([k_{x_1}]\) es la identidad por la derecha. Podemos
 hacer un proceso análogo para \([k_{x_0}]\) como identidad por la
 izquierda, así probando (2).
 
-\paragraph{(3).} De manera similar a la pregunta anterior, notar que \(i,
-\bar{i}\) definidos anteriormente cumplen
+\subparagraph{3. Inverso:} De manera similar al ítem anterior,
+notar que \(i, \bar{i}\) definidos anteriormente cumplen la relación
+arco-homotópica
 \[ i * \bar{i} \simeq e_0 \]
 por la homotopía de linea recta en el espacio \(I\) que es convexo.
-Utilizando el lema \eqref{lema:dist-composición-producto} tenemos que
+Utilizando el lema \ref{lema:dist-composición-producto} de
+\emph{distributividad del composición sobre el producto}, tenemos las
+siguientes igualdades
 \[ [f * f^{-1}] = [f \circ (i * \bar{i})] = [f \circ e_0] = [k_{x_0}] \]
 \[ \implies [f] * [f^{-1}] = [k_{x_0}] \]
 De manera análoga se prueba la inversa por la izquierda.
 
-\paragraph{(1).}
+\subparagraph{1. Asociatividad:}
 Por definición, tenemos que las diferentes asociaciones nos resultan en
 diferentes representantes de clase
 \[
