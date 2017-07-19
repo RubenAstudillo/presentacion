@@ -12,16 +12,17 @@ definiremos estos conceptos a adecuadamente.
 \input{./grupoide_arcos.tex}
 
 \subsection{Grupo fundamental}
-Sobre nuestros arcos tenemos una estructura de grupoide porque no siempre
-podemos hacer coincidir los puntos inicial y final. Si nos fijáramos en
-un solo punto \(x_0 \in X\) tal que todas los arcos \(f : I \to X\)
-cumplieran que
+Sobre nuestros arcos tenemos una estructura de grupoide y no de grupo
+porque no siempre podemos hacer coincidir los puntos inicial y final de
+las diferentes clases de arcos. Si nos fijáramos en un solo punto \(x_0
+\in X\) tal que todas los arcos \(f : I \to X\) cumplieran que la igualdad
 \[ f(0) = x_0 = f (1) \]
 Entonces las propiedades que demostramos anteriormente nos dirían que el
-espacio \((X / \simeq, *)\) es un grupo algebraico.
+espacio \((\mathcal C \left( I , X \right) / _\simeq , \left( *
+\right))\) es un grupo algebraico.
 \begin{definicion}[Grupo fundamental]
   Sea \(X\) un espacio topológico y \(x_0 \in X\) un punto. La colección
-  \[ \pi_1 (X,x_0) = \{ [f] \mid f : I \to X, f \text{ continua}\}\]
+  \[ \pi_1 (X,x_0) = \{ [f] \mid f : I \to X,\ f \text{ continua}\}\]
   \[ [f] := \{ g : I \to X \mid f \simeq g\}\]
   junto con el producto de caminos \((*)\) forman el llamado
   \textbf{grupo fundamental} \((\pi_1(X,x_0), (*))\)
@@ -44,9 +45,9 @@ grupos es un homomorfismo, inyectivo y sobreyectivo.
   \[ e \text{ es identidad de } G \implies F(e) \text { es identidad de } G' \]
 \end{corolario}
 
-\subsubsection{Ejemplo intuitivo de \(\mathbb{R}^2 - \{(1,1)\}\).}
+\subsubsection{Ejemplo intuitivo de grupo fundamental: \(\mathbb{R}^2 - \{(1,1)\}\).}
 Para mostrar la intuición detrás de la definición, utilizaremos como
-ejemplo un espacio relativamente sencillo de visualizar. hemos de
+ejemplo un espacio relativamente sencillo de visualizar. Hemos de
 caracterizar todas la curvas cerradas que inicien en un punto
 arbitrario, que denotaremos por \(x_0\). Sea \(f : I \to \mathbb{R}^2 -
 \{(1,1)\}\) un camino arbitrario, con dicho punto inicial, tendremos
@@ -60,19 +61,19 @@ tres grandes alternativas para de su clasificación.
 \begin{itemize}
 \item La curva denotada por \(f\) puede estar contenida en un subconjunto
   convexo de \(R^2 - \{(1,1)\}\). De esta manera, la curva pertenece a la
-  homotopía de la linea recta dada por la definicion
+  homotopía de la linea recta dada por la definición
   \ref{def:homotopia-linea} bajo la función
   \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) k_{x_0} (t)\]
   Por lo tanto en este caso, \(f \in [k_{x_0}]\).
 \item La curva \(f\) no puede ser contenida en un subconjunto convexo de
   \(R^2 - \{ (1,1)\}\). Esto solo puede suceder si la curva \(f\)
-  encerrara al punto \(x_0\), de manera que la relación \(\lambda x +
+  encerrara al punto \((1,1)\), de manera que la relación \(\lambda x +
   (1 - \lambda) y\) no seria valida para algunos \(\lambda, x, y\). Por
   tanto \(f \not \in [k_{x_0}]\), así que denotaremos a la clase de
   equivalencia a la que pertenezca como \([\mathtt{F}^1]\).
-\item La curva \(f\) encierra a \(x_0\) \(2\) veces. Podemos definir dos
+\item La curva \(f\) encierra a \((1,1)\) \(2\) veces. Podemos definir dos
   caminos \(g_1, g_2\) tales que \(f = g_1 * g_2\) (modulo re-escalamiento
-  en parámetros) y que \(g_1, g_2 \in \mathtt F ^1\). Esto no diría que
+  en parámetros) y que \(g_1, g_2 \in \mathtt [F ^1]\). Esto nos diría que
   \( f \in [\mathtt F ^1] * [\mathtt F ^1] =: [\mathtt F ^2]\). Este
   procedimiento puede generalizar para todos los naturales.
 % \item La curva \(f\) encierra a \(x_0\) \(2\) veces. Dado que cada vez
@@ -90,7 +91,7 @@ En efecto, estos elementos son bajo isomorfismo de grupo equivalentes a
 el grupo \((\mathbb{Z}, +)\). Por tanto diremos que este es el grupo
 fundamental de \(R^2 - \{(1,1)\}\).
 
-\paragraph{} Cabe notar que esta no es una demostración formal, no se ha demostrado
+Cabe notar que esta no es una demostración formal, no se ha demostrado
 que estas son todas alternativas posibles de curvas, de lo cual depende
 todo nuestro argumento. Mas adelante daremos una demostración formal de
 que esta intuición es la correcta, pero por ahora sirve como marco
