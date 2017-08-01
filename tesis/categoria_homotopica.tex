@@ -12,16 +12,18 @@ tal vez la noción de homeomorfismos es mucho mas fuerte de lo que
 necesitamos.
 
 Entre las nociones alternativas mas populares se encuentra las
-\emph{equivalencias homotopicas}. Su popularidad se debe a que son mas
+\emph{equivalencias homotópicas}. Su popularidad se debe a que son mas
 débiles que un homeomorfismo y que corresponden a los morfismos en una
 nueva estructura categórica denotada por \(\mathscr{HoTop}_*\), la cual
 contiene como sub-categoría a \(Top_*\). La motivación de su
-construcción es natural a partir del estudio de retracciones, las cuales
-estudiaremos y iremos generalizando debidamente.
+construcción es natural a partir del estudio de retracciones, el cual
+iniciaremos ahora e iremos generalizando debidamente.
 
 \subsection{Retracciones}
-Iniciaremos estudiando un pequeño lema técnico con respecto a la
-composición y la función identidad.
+Previo al estudio tal de las retracción, iniciaremos estudiando un
+pequeño lema técnico con respecto a la composición y la función
+identidad, ya que este aparecerá repetidamente a lo largo de esta
+subseccion.
 \begin{lema}
   Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones. Si \( g \circ f =
   h : X \to X \), con \(h\) una biyeccion, entonces \(f\) es inyectiva y
@@ -29,12 +31,12 @@ composición y la función identidad.
 \end{lema}
 \begin{proof}
   Se argumenta por contradicción. Supongamos que \(f\) no es inyectiva o
-  que \(g\) no es sobreyectiva. Tomando el primer caso para \(f\) se
+  que \(g\) no es sobreyectiva. Tomando el primer caso para \(f\), se
   tiene que existen \(x_1 , x_2 \in X,\ x_1 \neq x_2\) que cumplen
   \[ f (x_1) = f(x_2) \]
-  Dado que \(g\) es una función, debe de cumplirse
+  Dado que \(g\) es una función, debe de cumplirse que esta mantiene la igualdad
   \[ g (f (x_1)) = g (f(x_2)) \]
-  \[ h (x_1) = h(x_2) \]
+  \[ \iff h (x_1) = h(x_2) \]
   Lo cual es una contradicción con la biyectividad de \(h\).
 
   Por otro lado, suponiendo que \(g\) no es sobreyectiva, debería de
@@ -44,28 +46,44 @@ composición y la función identidad.
   sobreyectiva.
 \end{proof}
 \begin{corolario} \label{thm:comp-identidad}
-  Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones continuas. Si \( g
-  \circ f = Id : X \to X \), entonces \(f\) es inyectiva y \(g\) es
-sobreyectiva.
+  Sea \(f : X \to Y\) e \(g : Y \to X\) dos funciones. Si \( g \circ f =
+  Id : X \to X \), entonces \(f\) es inyectiva y \(g\) es sobreyectiva.
 \end{corolario}
-\noindent Con esto en mente, podemos pasar directamente a la definición
+\noindent Ahora procederemos directamente a la definición
 de retracción.
-\begin{definicion}
-  Sea \(X\) un espacio topológico. \(A \subset X\) es una retracción de
-  \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
+\begin{definicion}[Retraccion]
+  Sea \(X\) un espacio topológico. El conjunto \(A \subset X\) es una
+  retracción de \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
   \[ r \mid_{A} (x) = x \]
-  En tal caso \(r\) es llamada la aplicación retracción de \(X\) en \(A\).
+  con \(r \mid_{A}\) siendo la restriccion de \(r\) al dominio \(A\). En
+  caso de cumplirse esto, \(r\) es llamada la aplicación retracción de
+  \(X\) en \(A\).
 \end{definicion}
-Adicionalmente podemos definir trivialmente una inclusión \(j : A \to
-X\). Con estas funciones tenemos el siguiente teorema
+\noindent El nombre de aplicación retracción es intuitivo al ver que es
+un mapeo a un subconjunto de un espacio. Toda aplicación retracción
+tiene un \emph{dual} que identifica los elementos de un subconjunto con
+ellos mismos en el espacio ambiente. Dicha función es llamada aplicación
+inclusión; definida formalmente:
+\begin{definicion}[Aplicación inclusión]
+  Sea \(X\) un espacio topológico y \(A \subset X\) un subconjunto
+  arbitrario. La función
+  \begin{align*}
+     j : A &\longrightarrow X \\
+     a &\longmapsto a
+  \end{align*}
+  es llamada la aplicación inclusión de \(A\) en \(X\).
+\end{definicion}
+\noindent Las aplicaciones retracción y la inclusión para algún cierta
+retracción \(A \subset X\) relacionan los grupos fundamentales de un
+espacio \(X\) con el de \(A\) mediante el siguiente teorema.
 \begin{teorema} \label{thm:retraccion-inclusion}
-Si \(A \subset X\) es una retracción, entonces la inclusión \(j : A \to
-X\) induce un homomorfismo de grupos fundamentales \(j_{*} : \pi(A, a)
-\to \pi(X,a)\) inyectivo.
+Si \(A \subset X\) es una retracción, entonces la aplicación inclusión
+\(j : A \to X\) induce un homomorfismo de grupos fundamentales \(j_{*} :
+\pi(A, a) \to \pi(X,a)\) inyectivo para todo \(a \in A\).
 \end{teorema}
 \begin{proof}
   La composición \(r \circ j : A \to A\) es la función identidad de
-  \(A\), por el corolario \ref{thm:comp-identidad}, sabemos que \(j\)
+  \(A\). Por el corolario \ref{thm:comp-identidad}, sabemos que \(j\)
   debe de ser inyectivo. Su homorfismo inducido
   \[ (r \circ j)_{*} = r_{*} \circ j_{*} \]
   es el homorfismo identidad entre \(\pi(A,a) \to \pi(A,a)\). Otra vez
