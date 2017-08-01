@@ -34,7 +34,7 @@ espacios puntuados \((X,x_0)\) e \((Y,y_0)\) homeomorfos, debe de
 existir un respectivo isomorfismo de grupos entre \(\pi_1(X,x_0)\) y
 \(\pi_1(Y,y_0)\). Para esto debemos recordar que un isomorfo entre
 grupos es un homomorfismo, inyectivo y sobreyectivo.
-\begin{definicion}
+\begin{definicion}[Homomorfismo] \label{def:homomorfismo}
   Sean \((G,(*)), (G'', (\cdot))\) dos grupos algebraicos. \(F : G \to
   G'\) es un homomorfismo entre grupos si y solo si
   \[ \forall x,y \in G,\ F (x * y) = F(x) \cdot F(y)\]
@@ -245,44 +245,74 @@ caracterización de grupo fundamental Abeliano, pues perdemos la capacidad
 de contar cuantos isomorfismos existen.
 
 \subsection{Invariante topológica}
-Nuestra meta original era mostrar que los grupos fundamentales son una
-invariante topológica de un espacio, es decir dados \(X,Y\) dos
-espacios topológicos (puntuados) tales que \(x_0 \in X,\ y_0 \in Y\), si
-existe un homeomorfismo (función biyectiva continua con inversa continua)
+Nuestra meta original era mostrar que el grupo fundamental es una
+invariante topológica de un espacio. Esto es que dados dos
+espacios topológicos \(X,Y\) tales que \(x_0 \in X,\ y_0 \in Y\), si
+existe un homeomorfismo (función biyectiva continua con inversa
+continua)
 \begin{align*}
   h : (X, x_0) &\longrightarrow (Y, y_0) \\
   x_0 &\longmapsto h(x_0) = y_0
 \end{align*}
-entonces existirá un isomorfismo de grupos
+entre \((X, x_0)\) y \((Y, y_0)\) entonces existirá un isomorfismo de
+grupos
 \[ h_{*} : \pi (X, x_0) \longrightarrow \pi (Y, y_0) \]
-El candidato a \(h_{*}\) se define como \(h_{*} ([f]) \coloneqq [h \circ
-f] \), lo cual probaremos en el siguiente teorema
-\begin{teorema} \label{thm:homoemorfismo-isomorfismo}
-\(h_{*} : \pi (X, x_0) \to \pi (Y, y_0)\) es un isomorfismo de grupos
+entre \(\pi (X, x_0)\) y \(\pi (Y, y_0)\). Existe una manera natural de
+construir dicho isomoformismo mediante la definición de cierto
+homomorfismo, al cual mostraremos a continuación
+\begin{definicion}[Homomorfismo inducido]
+  Sea \(h : (X, x_0) \longrightarrow (Y, y_0)\) un morfismo de
+  espacios topológicos puntuados. La función
+  \begin{align*}
+    h_* : \pi (X, x_0) &\longrightarrow \pi (Y, y_0) \\
+    [f] &\longmapsto [h \circ f]
+  \end{align*}
+  es denominada el homomorfismo inducido por \(h\) entre \(\pi (X,
+  x_0)\) y \(\pi (Y, y_0)\).
+\end{definicion}
+\begin{teorema}
+  Para \(h : (X, x_0) \to (Y, y_0)\) un morfimos entre espacios
+  puntuados, \(h_* : \pi (X, x_0) \to \pi (Y, y_0)\) es un homomorfismo
 \end{teorema}
 \begin{proof}
-  Hemos de probar que este bien definida, sea un homomorfismo, sea
-  inyectiva y sobreyectiva.
-  \begin{itemize}
-  \item Dado que \(h(x_0) = y_0\), es
-    claro que si \([f] \in \pi (X, x_0) \) entonces \( [h \circ f] \in
-    \pi (Y, y_0)\).
-
-  \item Que es un homomorfismo se ve por definición, puesto que se cumplen
-    las siguientes ecuaciones
-    \[ h_{*} ([e_{x_0}]) = [h \circ e_{x_0}] = [e_{y_0}]\]
-    Del lema \ref{lema:dist-composición-producto} de composición sobre
-    el producto obtenemos las siguientes igualdades
-    \[ h_{*} ([f * g]) = [h \circ (f * g)] = [(h \circ f) * (h \circ g)]
-      = h_{*} ([f]) * h_{*} ([g])\]
-    obteniendo lo buscado.
-
+  Este homomorfismo esta claramente bien definido, pues sabiendo que \(h
+  (x_0) = y_0\) y que \([f] \in \pi (X, x_0)\) se tiene que \(h_* ([f]) =
+  [h \circ f] \in \pi (Y, y_0)\). Nos falta probar de que cumple la
+  ecuación de un homomorfismo dadas por la definición
+  \ref{def:homomorfismo}. Esto se ve por definición, puesto que se cumplen
+  las siguientes ecuaciones
+  \[ h_{*} ([e_{x_0}]) = [h \circ e_{x_0}] = [e_{y_0}]\]
+  Además, por el lema \ref{lema:dist-composición-producto} de composición
+  sobre el producto, obtenemos las siguientes igualdades
+  \[ h_{*} ([f * g]) = [h \circ (f * g)] = [(h \circ f) * (h \circ g)]
+    = h_{*} ([f]) * h_{*} ([g])\]
+  obteniendo así lo buscado.
+\end{proof}
+Si sabemos que \(h\) es además un homeomorfismo, tenemos el siguiente
+teorema
+\begin{teorema} \label{thm:homoemorfismo-isomorfismo}
+Si \(h : (X, x_0) \to (Y,y_0)\) es un homeomorfismo, entonces \(h_{*} :
+\pi (X, x_0) \to \pi (Y, y_0)\) es un isomorfismo de grupos.
+\end{teorema}
+\begin{proof}
+Por el teorema anterior, solo hemos de probar que si \(h\) un
+homeomorfismo entonces \(h_*\) es inyectivo y sobreyectivo.
+\begin{itemize}
   \item Para la inyectividad, nos basamos en que \(h\) ya es un
-    homeomorfismo, por tanto \( h \circ f = h \circ g \implies f = g \).
-    De igual manera para la sobreyectividad, dado que \(h^{-1} : (Y,y_0)
-    \to (X, x_0)\) también es un homeomorfismo, para todo \([u] \in \pi
-    (Y, y_0) \) se tiene que \(h_{*} ([h^{-1} \circ u]) = [u]\).
-  \end{itemize}
+  homeomorfismo. Sea \([f], [g] \in \pi (X, x_0)\) tales que \(h_* ([f])
+  = h_* ([g])\), por definición esto es equivalente a la siguiente
+  ecuaciones
+  \begin{align*}
+    &~ [h \circ f] = [h \circ g] \\
+    &\iff h \circ f \simeq h \circ g \\
+    &\iff f \simeq g \quad (h \text{ biyectiva}) \\
+    &\iff [f] = [g]
+  \end{align*}
+
+  \item Para la sobreyectividad, dado que \(h^{-1} :
+  (Y,y_0) \to (X, x_0)\) también es un homeomorfismo, para todo \([u] \in
+  \pi (Y, y_0) \) se tiene que \(h_{*} ([h^{-1} \circ u]) = [u]\).
+\end{itemize}
 \end{proof}
 
 Saber que el grupo fundamental es una invariante sin duda es útil
