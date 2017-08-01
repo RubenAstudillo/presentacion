@@ -83,12 +83,14 @@ Si \(A \subset X\) es una retracción, entonces la aplicación inclusión
 \end{teorema}
 \begin{proof}
   La composición \(r \circ j : A \to A\) es la función identidad de
-  \(A\). Por el corolario \ref{thm:comp-identidad}, sabemos que \(j\)
-  debe de ser inyectivo. Su homorfismo inducido
-  \[ (r \circ j)_{*} = r_{*} \circ j_{*} \]
-  es el homorfismo identidad entre \(\pi(A,a) \to \pi(A,a)\). Otra vez
-  por el corolario \ref{thm:comp-identidad}, esto implica que \(r_{*}\)
-  es una sobreyeccion y que \(j_{*}\) es inyectiva.
+  \(A\). Tenemos las siguientes igualdades
+  \begin{gather*}
+    r \circ j \equiv Id \\
+    \implies (r \circ j)_* \equiv Id_* \\
+    \iff r_* \circ j_* \equiv Id_*
+  \end{gather*}
+  Por el corolario \ref{thm:comp-identidad}, esto implica que \(r_{*}\)
+  es sobreyectiva y que \(j_{*}\) es inyectiva.
 \end{proof}
 La retracción entonces nos da un embedimiento, es decir un homomorfismo
 hacia su imagen, del grupo fundamental de
