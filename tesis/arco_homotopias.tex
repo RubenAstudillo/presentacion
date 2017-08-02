@@ -33,14 +33,14 @@ Si tratamos con arcos \(f,g : I \to X\) que posean los mismos puntos
 iniciales y finales, es decir \(f(0) = g(0) = x_0, \; f(1) = g(1) =
 x_1 \) podemos definir una relación homotópica ligeramente mas fuerte.
 
-\begin{definicion}[Arco homotopía]
+\begin{definicion}[Arco homotopía] \label{def:arco-homotopia}
   \(f,g : I \to X\) son \emph{arco homotópicas} entre sí, si tienen los mismos
   puntos inicial y final \(x_0, x_1\) respectivamente y existe una homotopía entre
   ellos tal que cumpla
   \[
     \begin{matrix}
-      F(s,0) = f(s), & F(s,1) = g(s) \\
-      F(0,t) = x_0,  & F(1,t) = x_1
+      F(s,0) = f(s), & F(s,1) = g(s) & ~ \\
+      F(0,t) = x_0,  & F(1,t) = x_1, & \forall t \in I
     \end{matrix}
   \]
   La existencia de esta relación entre dos funciones sera denotada por

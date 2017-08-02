@@ -153,8 +153,8 @@ técnicos previos.
 
 \begin{lema} \label{lem:homotopic-inducing}
   Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuos. Si \(h\) y
-  \(k\) son homotopicos y si la imagen de \(x_0\) bajo este permanece
-  fija en \(y_0\) durante la homotopía, entonces \(h_*\) e \(k_*\) son iguales.
+  \(k\) son homotopicos y si la imagen de \(x_0\) bajo esta homotopia permanece
+  fija en \(y_0\), entonces \(h_*\) e \(k_*\) son iguales.
 \end{lema}
 % TODO: hay que ser mas preciso porque debemos mantener la homotopía
 % fija en un punto. Hay que hacer enfasis en el grupo fundamental
@@ -163,18 +163,22 @@ técnicos previos.
   Queremos mostrar que \(\forall [f] \in \pi (X,x_0)\), se cumple que
   \(h_* ([f]) = k_* ([f])\). Esto equivale a mostrar que
   \[ [h \circ f] = [k \circ f] \]
-  Es decir, debemos de encontrar una homotopía entre \((h \circ f)\) e \(
-  (k \circ f)\).
+  Es decir, debemos de encontrar una arco homotopía entre \((h \circ
+  f)\) e \( (k \circ f)\).
 
-  Para esto, usamos la homotopía \(H : X \times I \to Y \) entre \(h\) y
-  \(k\). Notando que \(f : I \to X\) podemos construir una homotopía \(M
-  : I \times I \to Y \) pre-componiendo como
-  \[ (z, t) \mapsto H \circ (f(z), t) \]
+  Para esto, usamos la homotopía entre \(h\) y \(k\) dada por la hipótesis
+  \[H : X \times I \to Y \]
+  Además, notamos que el representante de clase \(f\) es una función \(f
+  : I \to X\) . Con ella, podemos construir una homotopía \(M : I \times I
+  \to Y \) pre-componiendo como
+  \[ M(z, t) \coloneqq H \circ (f(z), t) \]
   La cual es una homotopía entre \((h \circ f)\) e \((k \circ f)\)
 
-  La importancia de que se cumpla que \( \forall t \in I,\ M (0, t) =
-  y_0\) es para decir que los espacios de llegada son los mismos
-  espacios puntuados \((Y,y_0)\). Por tanto \(h_* = k_*\).
+  La importancia de que se cumpla que \( \forall t \in I,\ M (x_0, t) =
+  y_0\) es para que cumpla la segunda ecuación de la definición
+  \ref{def:arco-homotopia} de arco homotopía. Es decir
+  \[ \forall t \in I ,\ M(0,t) = H \left( f (0), t \right) = H (x_0, t)
+    = y_0 = H \left( f(1) , t \right) = M (1, t) \]
 \end{proof}
 \begin{teorema} \label{thm:comp-identidad-homotopia}
   Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f
