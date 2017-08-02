@@ -92,49 +92,64 @@ Si \(A \subset X\) es una retracción, entonces la aplicación inclusión
   Por el corolario \ref{thm:comp-identidad}, esto implica que \(r_{*}\)
   es sobreyectiva y que \(j_{*}\) es inyectiva.
 \end{proof}
-La retracción entonces nos da un embedimiento, es decir un homomorfismo
-hacia su imagen, del grupo fundamental de
-\( A \) en \(X\). Ya podemos ver un poco de las consecuencias de este
-resultado, por ejemplo diciéndonos gracias a su contra-positivo que no
-existe una retracción de \(B^2\) en \(S^1\), ya que si lo hubiera, la
-inclusión \(j : S^1 \to B^2\) seria inyectiva, pero el grupo fundamental
-de \(B^2\) es trivial y el de \(S^1\) no lo es (corresponde a \((\mathbb
-Z, +)\)). Esto ultimo es un resultado que veremos mas adelante
-mediante espacios cubrimientos. Esta ultima afirmación, nos permite
-completar lo afirmado en cuanto al grupo fundamental de \(\mathbb R ^2 -
-\{(1,1)\}\).
+La existencia de una retracción nos da un embedimiento del grupo fundamental de
+\( A \) en \(X\) mediante la aplicación inclusión. Ya podemos ver un
+poco de las consecuencias de este resultado, por ejemplo diciéndonos
+gracias a su contra-positivo que no existe una retracción de \(B^2\) en
+\(S^1\).
+\begin{gather*}
+  S^1 := \{ (x,y) \in \Re^2 \mid x^2 + y^2 = 1 \} \\
+  B^2 := \{ (x,y) \in \Re^2 \mid x^2 + y^2 \leq 1 \} \\
+\end{gather*}
+Ya que si lo hubiera, el homomorfismo inducido por la inclusión \(j_* :
+\pi (S^1, a) \to \pi (B^2, a)\) para todo \(a \in S^1\) seria
+inyectiva, pero el grupo fundamental de \(B^2\) es trivial (es un
+conjunto convexo) y el de \(S^1\) no lo es (corresponde a \((\mathbb Z,
++)\)); esto ultimo es un resultado que veremos mas adelante mediante
+espacios cubrimientos.
 
+El teorema \ref{thm:retraccion-inclusion} tambien nos permite demostrar
+parte lo que habíamos mostrado intuitivamente en la sección
+\ref{ex:R2-11} respecto el grupo fundamental de \(\Re ^2 - \{(1,1)\}\).
 \begin{corolario}
-  Para todo \(\vec a \in \mathbb R ^2\), el grupo fundamental de \(\mathbb R ^2 - \{\vec a\}\) es \((\mathbb Z, +)\).
+  Para todo \(\vec a \in \Re ^2\), el grupo fundamental de \(\Re ^2
+\backslash \{\vec a\}\) contiene a un subgrupo isomorfo a \((\mathbb Z, +)\).
 \end{corolario}
 \begin{proof}
-Dado que para todo \(\vec a \in \mathbb R ^2 \), siempre existe
-el homoemorfismo
-\[ f_a : \mathbb R ^2 - \{\vec a\} \to \mathbb R ^2 - \{\vec 0\} \]
-\[ \vec x \mapsto \vec x - \vec a \]
-gracias a este, podemos estudiar el grupo fundamental de \(\mathbb R ^2
-- \{\vec 0\}\) sin perdida de generalidad mediante el teorema
+Dado que para todo \(\vec a \in \Re ^2 \), siempre existe
+el homeomorfismo
+\begin{align*}
+   f_a : \Re^2 \backslash \{\vec a\} &\longrightarrow \Re ^2 \backslash
+      \{\vec 0\} \\
+   \vec x &\longmapsto \vec x - \vec a
+\end{align*}
+Por tanto podemos estudiar el grupo fundamental de \(\Re ^2 - \{\vec
+0\}\) sin perdida de generalidad mediante el teorema
 \ref{thm:homoemorfismo-isomorfismo}.
 
-Para este, podemos construir la siguiente retracción a \(S^1\)
-\[ r : \mathbb R ^2 - \{\vec 0\} \to S^1 \]
-\[ x \mapsto \frac x {\lVert x \rVert} \]
+Para este, podemos construir la siguiente aplicación retracción a
+\(S^1\)
+\begin{align*}
+   r : \Re ^2 \backslash \{\vec 0\} &\longrightarrow S^1 \\
+   x &\longmapsto \frac x {\lVert x \rVert}
+\end{align*}
 Esta cumple la condición de continuidad trivialmente y dado que todo
-elemento de \(S^1\) posee norma \(1\), para estos corresponde a la
-identidad, como es requerido para una retracción. Luego, por teorema
-\ref{thm:retraccion-inclusion} tenemos que
-\[ j_* : \pi (S^1 , y_0) \to \pi (\mathbb R ^2 - \{\vec a\}, x_0) \]
-es una inyección de grupos fundamentales
-
+elemento de \(S^1\) posee norma \(1\), para estos es la identidad
+como es requerido para una retracción. Luego, por teorema
+\ref{thm:retraccion-inclusion} tenemos la existencia un homomorfismo
+inducido
+\[ j_* : \pi (S^1 , y_0) \to \pi (\Re ^2 \backslash \{\vec a\}, y_0) \]
+inyectivo de grupos fundamentales para todo \(y_0 \in S^1 \). El
+grupo fundamental de \(\left( \pi (S^1, y_0) , * \right) \) es \( (\mathbb Z, +)\)
+por el teorema \ref{thm:grupo-S1} a presentarse posteriormente.
+Mostramos asi que hay un subgrupo de \(\left( \pi (S^1, y_0), * \right)
+\) isomorfo a \((Z,+)\).
 \end{proof}
 
-Entre retracciones que son conocidas, están \(\mathbb R ^2 - \{0\}\) en
-\(S^1\) mediante la función \(r (x) = x / \lVert x \rVert \). Lo que nos
-dice por el teorema anterior que \(j_{*} : \pi (S^1, a) \to \pi (\mathbb
-R ^2 - \{0\}, a)\) es inyectiva. Si mediante algún resultado pudiéramos
-probar que \(j_{*}\) es además sobreyectiva tendríamos listo nuestro
-isomorfismo de grupo. Esto es posible de construir pero para eso
-necesitamos algunos resultados técnicos.
+Si mediante algún resultado pudiéramos probar que \(j_{*}\) es además
+sobreyectiva tendríamos listo nuestro isomorfismo de grupos. Esto es
+posible de construir, pero para eso necesitamos algunos resultados
+técnicos previos.
 
 \begin{lema} \label{lem:homotopic-inducing}
   Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuos. Si \(h\) y
@@ -197,32 +212,32 @@ Esta es exactamente la misma demostración que en el teorema
 \ref{thm:comp-identidad}, pero haciendo énfasis lo que significa ser
 inyectivo o sobreyectivo en clases de equivalencias. Resulta que ya
 tenemos todos los resultados necesarios para expandir el resultado de la
-retracción \(\mathbb R ^2 - \{0\}\) en \(S^1\).
+retracción \(\Re ^2 - \{0\}\) en \(S^1\).
 
 \begin{teorema}
   Para todo \(a \in S^1\), el monomorfismo \(j_* : \pi (S^1, a)
-  \to \pi (\mathbb R ^2 - \{0\}, a)\) es un isomorfismo de grupos
+  \to \pi (\Re ^2 - \{0\}, a)\) es un isomorfismo de grupos
   fundamentales.
 \end{teorema}
 \begin{proof}
   Ya habíamos dicho anteriormente que \( j_* : \pi (S^1, a) \to \pi
-  (\mathbb R ^2 - \{0\}, a)\) es inyectiva como homomorfismo de grupos
+  (\Re ^2 - \{0\}, a)\) es inyectiva como homomorfismo de grupos
   fundamentales, puesto la existencia de la retracción
   \begin{align*}
-    r : \mathbb R ^2 - \{0\} &\to S^1 \\
+    r : \Re ^2 - \{0\} &\to S^1 \\
     x &\mapsto \frac x {\lVert x \rVert}
   \end{align*}
   implica por corolario \ref{thm:comp-identidad} la inyectividad.
 
   Para probar la sobreyectividad de \(j_*\), tomemos la composición
-  \[ j \circ r : \mathbb R ^2 - \{0\} \to \mathbb R ^2 - \{0\} \]
-  Esta composición \emph{no} es la identidad de \(\mathbb R ^2 - \{0\}
+  \[ j \circ r : \Re ^2 - \{0\} \to \Re ^2 - \{0\} \]
+  Esta composición \emph{no} es la identidad de \(\Re ^2 - \{0\}
   \) pero es homotopica a esta mediante la homotopía de linea recta
   \[
     H(x,t) := t \cdot x + (1 - t) \cdot \frac x {\lVert x \rVert}
   \]
   En esta ocasion, no tenemos la hipotesis de recorrido convexo sobre
-  la identidad y \(j \circ r\) pues estos son \(\mathbb R ^2 - \{\vec 0\}\) y
+  la identidad y \(j \circ r\) pues estos son \(\Re ^2 - \{\vec 0\}\) y
   \(B[0,1] - \{\vec 0\}\) respectivamente. Aun asi esta homotopía es
   continua solo por ser combinacion convexa de funciones continua. Nos
   falta mostrar que tiene el recorrido correcto, mostrando que \(\vec
