@@ -378,31 +378,34 @@ X \to Y\) con respecto a \(x_0\) corresponde a la función
 \[ (f_{x_0})_{*} : \pi (X , x_0) \to \pi (Y, y_0)\]
 donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
 \begin{proof}
-  Fijemos los puntos \(x_1 = g(y_0)\) y \(y_1 = f(x_1)\). Vease que dado
+  Fijemos los puntos \(x_1 = g(y_0)\) y \(y_1 = f(x_1)\). Véase que dado
   los diferentes puntos bases se tienen dos homomorfismos inducidos de
-  \(f\) con distintos puntos relativos \[(f_{x_0})_* : \pi (X, x_0) \to \pi
-  (Y, y_0)\] \[(f_{x_1})_* : \pi (X, x_1) \to \pi (Y, y_1)\].
+  \(f\) con distintos puntos relativos
+  \[(f_{x_0})_* : \pi (X, x_0) \to \pi (Y, y_0)\]
+  \[(f_{x_1})_* : \pi (X, x_1) \to \pi (Y, y_1)\].
+  Además fijaremos que la identificación de \(g_*\) corresponda a
+  \[ g_* : \pi (Y, y_0) \to (X, x_1) \]
 
-  Por hipotesis, \(g \circ f : (X, x_0) \to (X, x_1)\) es homotopico a
-  la funcion identidad \(Id : X \to X\). Luego por el lema
+  Por hipótesis, \(g \circ f : (X, x_0) \to (X, x_1)\) es homotópico a
+  la función identidad \(Id : X \to X\). Luego por el lema
   \ref{lem:equiv-hom-lift} se tiene la existencia de un \(\hat \alpha\)
-  tal que cumpla la ecuacion
+  tal que cumpla la ecuación
   \begin{equation} \label{eq:alpha-f-g}
   g_* \circ (f_{x_0})_* = (g \circ f)_* = \hat \alpha \circ (Id_X)_*
     = \hat \alpha
   \end{equation}
   Por tanto \(g_* \circ (f_{x_0})_*\) es un isomorfismo y esto obliga a
-  que \(g_*\) sea sobreyectivo.
+  que \(g_*\) sea sobreyectiva.
 
-  De igual manera, aplicando el analisis anterior a \(f \circ g : \pi
-  (Y, y_0) \to (Y, y_1)\) homotopico a la identidad de \(Y\), se
+  De igual manera, aplicando el análisis anterior a \(f \circ g : \pi
+  (Y, y_0) \to (Y, y_1)\) homotópico a la identidad de \(Y\), se
   obtiene que \((f_{x_1})_* \circ g_*\) es un isomorfismo y por tanto
-  \(g_*\) es inyectivo tambien.
+  \(g_*\) es inyectivo también.
 
   Conociendo la biyectividad de \(g_*\), nos permite pre-componer por su
-  inversa \((g_*)^{-1}\) en la ecuacion \eqref{eq:alpha-f-g}, obteniendo
+  inversa \((g_*)^{-1}\) en la ecuación \eqref{eq:alpha-f-g}, obteniendo
   \[ (f_{x_0})_* = (g_*)^{-1} \circ \hat \alpha\]
-  luego, la composicion de biyeccion es biyeccion y por tanto
+  luego, la composición de biyeccion es biyeccion y por tanto
   \((f_{x_0})_*\) es un isomorfismo de grupos fundamentales.
 \end{proof}
 
