@@ -110,8 +110,9 @@ espacios cubrimientos.
 
 El teorema \ref{thm:retraccion-inclusion} tambien nos permite demostrar
 parte lo que habíamos mostrado intuitivamente en la sección
-\ref{ex:R2-11} respecto el grupo fundamental de \(\Re ^2 - \{(1,1)\}\).
-\begin{corolario}
+\ref{ex:R2-11} respecto el grupo fundamental de \(\Re ^2 \backslash
+\{(1,1)\}\).
+\begin{corolario} \label{cor:retraccion-R2-S1-inyectivo}
   Para todo \(\vec a \in \Re ^2\), el grupo fundamental de \(\Re ^2
 \backslash \{\vec a\}\) contiene a un subgrupo isomorfo a \((\mathbb Z, +)\).
 \end{corolario}
@@ -182,41 +183,26 @@ técnicos previos.
 \end{proof}
 \begin{teorema} \label{thm:comp-identidad-homotopia}
   Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f
-  \circ g\) es homotopico a la identidad \( Id : Y \to Y\) y existe
-  \(y_0 \in Y\) tal que \( (f \circ g ) (y_0) = y_0 \) entonces
+  \circ g\) es homotopico a la identidad \( \mathrm{Id} : Y \to Y\) y
+  existe \(y_0 \in Y\) tal que \( (f \circ g ) (y_0) = y_0 \) entonces
   \(f_*\) es sobreyectiva y \(g_*\) es inyectivo.
 \end{teorema}
 \begin{proof}
-  Aplicando el lema \ref{lem:homotopic-inducing} sobre \(f \circ g \) y
-  \( Id : Y \to Y\), se obtiene la igualdad
-  \[ (f \circ g)_{*} = f_* \circ g_* = Id_* \]
-  Donde \(Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\). Luego aplicando el corolario
-  \ref{thm:comp-identidad} sobre esta ecuación obtenemos que \(f_*\) es
-  sobreyectiva y que \(g_*\) es inyectiva.
+  Siendo \(y_0 \in Y\) el punto fijo entre la homotopía de \(f \circ g\)
+  y \(\mathrm{Id}\), podemos aplicar sobre estos el lema
+  \ref{lem:homotopic-inducing}. Obtenemos así la igualdad
+  \[ (f \circ g)_{*} = f_* \circ g_* = \mathrm{Id}_* \]
+  Con \(\mathrm{Id}_* : \pi (Y, y_0) \to \pi (Y, y_0)\). Luego
+  aplicando el corolario \ref{thm:comp-identidad} sobre esta ecuación
+  obtenemos que \(f_*\) es sobreyectiva y que \(g_*\) es inyectiva.
 \end{proof}
-% \begin{proof}
-%   Se procede de manera analoga al teorema \ref{thm:comp-identidad}.
-%   Supongamos que \(g_*\) no es inyectiva, es decir existen \([a],[b] \in
-%   \pi (Y,y_0), [a] \neq [b]\) tales que
-%   \[ g_* ([a]) = g_* ([b]) \]
-%   Dado que \(f_*\) es una funcion y por tanto solo depende sus
-%   argumentos, aplicando a ambos lados \(f_*\)
-%   \[ f_* (g_* ([a])) = f_* (g_* ([b])) \]
-%   \[ [a] = [b] \]
-%   Lo cual es una contradiccion con la suposicion inicial.
 
-%   De manera analoga, para mostrar que \(f_*\) es sobreyectiva,
-%   supongamos que existe \([c] \in \pi (Y, y_0)\) tal que no existe \([d]
-%   \in \pi (X,x_0)\) tal que \(g_* ([d]) = [c]\). Pero por cumplirse que
-%   \( f_* \circ g_* = Id_* : \pi (Y, y_0) \to \pi (Y, y_0)\), sabemos que
-%   existe \(g_* ([c])\) que cumple dicha relacion, por tanto \(f_*\) es
-%   sobreyectiva.
-% \end{proof}
 Esta es exactamente la misma demostración que en el teorema
 \ref{thm:comp-identidad}, pero haciendo énfasis lo que significa ser
 inyectivo o sobreyectivo en clases de equivalencias. Resulta que ya
-tenemos todos los resultados necesarios para expandir el resultado de la
-retracción \(\Re ^2 - \{0\}\) en \(S^1\).
+tenemos todos los resultados necesarios para expandir el resultado del
+corolario \ref{cor:retraccion-R2-S1-inyectivo} sobre la
+retracción \(\Re ^2 \backslash \{0\}\) en \(S^1\).
 
 \begin{teorema}
   Para todo \(a \in S^1\), el monomorfismo \(j_* : \pi (S^1, a)
@@ -224,33 +210,38 @@ retracción \(\Re ^2 - \{0\}\) en \(S^1\).
   fundamentales.
 \end{teorema}
 \begin{proof}
-  Ya habíamos dicho anteriormente que \( j_* : \pi (S^1, a) \to \pi
+  Ya habíamos dicho anteriormente en el corolario
+  \ref{cor:retraccion-R2-S1-inyectivo} que \( j_* : \pi (S^1, a) \to \pi
   (\Re ^2 - \{0\}, a)\) es inyectiva como homomorfismo de grupos
   fundamentales, puesto la existencia de la retracción
   \begin{align*}
-    r : \Re ^2 - \{0\} &\to S^1 \\
-    x &\mapsto \frac x {\lVert x \rVert}
+    r : \Re ^2 \backslash \{0\} &\longrightarrow S^1 \\
+    x &\longmapsto \frac x {\lVert x \rVert}
   \end{align*}
-  implica por corolario \ref{thm:comp-identidad} la inyectividad.
+  implica por corolario \ref{thm:comp-identidad} la inyectividad de
+  \(j_*\).
 
   Para probar la sobreyectividad de \(j_*\), tomemos la composición
-  \[ j \circ r : \Re ^2 - \{0\} \to \Re ^2 - \{0\} \]
-  Esta composición \emph{no} es la identidad de \(\Re ^2 - \{0\}
-  \) pero es homotopica a esta mediante la homotopía de linea recta
+  \[ j \circ r : \Re ^2 \backslash \{0\} \longrightarrow \Re ^2
+      \backslash \{0\} \]
+    Esta composición \emph{no} es la identidad de \(\Re ^2 \backslash \{0\}
+  \) pero es homotópica a esta mediante la homotopía de linea recta
   \[
     H(x,t) := t \cdot x + (1 - t) \cdot \frac x {\lVert x \rVert}
   \]
-  En esta ocasion, no tenemos la hipotesis de recorrido convexo sobre
-  la identidad y \(j \circ r\) pues estos son \(\Re ^2 - \{\vec 0\}\) y
-  \(B[0,1] - \{\vec 0\}\) respectivamente. Aun asi esta homotopía es
-  continua solo por ser combinacion convexa de funciones continua. Nos
-  falta mostrar que tiene el recorrido correcto, mostrando que \(\vec
-  0\) no pertenece a este. Notamos que para todo \(\vec x \in
-  X\), se tiene que \(\vec x \) y \( \vec x / \lVert x \rVert\) estan en
-  el mismo cuadrante y por tanto no existe combinacion convexa que resulte
-  en \(\vec 0\). Mostramos asi que es una homotopía valida.
+  Debemos de mostrar que es una homotopía valida en cuanto no cae fuera
+  del recorrido. En esta ocasión, no tenemos la hipótesis de recorrido
+  convexo sobre la identidad y \(j \circ r\) pues estos son \(\Re ^2
+  \backslash \{\vec 0\}\) y \(B[0,1] \backslash \{\vec 0\}\)
+  respectivamente. Aun así, esta homotopía es continua solo por ser
+  combinación lineal de funciones continuas. Para ver que tiene el
+  recorrido correcto, mostraremos \(\vec 0\) no pertenece a la imagen de
+  \(H\). Notamos que para todo \(\vec x \in \Re ^2 \backslash \{\vec
+  0\}\), se tiene que \(\vec x \) y \( \vec x / \lVert x \rVert\) están en
+  el mismo cuadrante y por tanto no existe combinación convexa que resulte
+  en \(\vec 0\).
 
-  Notamos tambien que esta homotopía deja fijo al punto \((1,0)\), luego
+  Notamos también que esta homotopía deja fijo al punto \((1,0)\), luego
   tenemos las hipótesis del teorema \ref{thm:comp-identidad-homotopia} y
   obtenemos que \(j_*\) es además sobreyectiva. Concluimos que \(j_*\) es
   un isomorfismo de grupos fundamentales.
@@ -259,7 +250,7 @@ retracción \(\Re ^2 - \{0\}\) en \(S^1\).
 \subsection{Tipos homotopicos}
 Ahora que ya conocemos el esquema de trabajo, podemos generalizar para
 espacios que no necesariamente sean retracciones entre si, pero que
-posean un par de funciones cuyas composiciones sean homotopicas a la
+posean un par de funciones cuyas composiciones sean homotópicas a la
 identidad correspondiente.
 \begin{definicion}[Equivalencias homotopicas]
   Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
