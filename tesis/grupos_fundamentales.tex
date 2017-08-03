@@ -340,17 +340,25 @@ estas.
 De la segunda propiedad se extiende que el morfismos identidad es único
 para cada \(O \in \mathbf {Obj}\).
 \begin{definicion}
-  Sean \(\mathscr{C} , \mathscr D\) dos categorías arbitrarias. Un
+  Sean \(\left(  \mathscr{C} , (\circ) \right), \left(\mathscr D ,
+    (\star) \right) \) dos categorías con sus respectivos operadores composicion. Un
   functor \(F : \mathscr C \to \mathscr D\) es un mapeo tal que cumple
   las siguientes propiedades
   \begin{itemize}
   \item \(\forall X \in \mathbf{Obj}(\mathscr C)\) objeto de \(\mathscr
     C\), \( F(X) \in \mathbf{Obj} (\mathscr D)\)
-  \item  \(\forall f : X \to Y\) morfismos de \(X,Y \in \mathbf{Obj}
+  \item  \(\forall f \in \mathbf{Obf} (\mathcal C)\) morfismos de \(X,Y \in \mathbf{Obj}
     (\mathscr C),\ f \in \mathbf{Mor} (\mathscr C)\), se tiene que \(
     F(f) : F(X) \to F(Y) \). Mas aun, \(F (\mathbf{Id}_X) = \mathbf{Id}_{F(X)}\)
   \end{itemize}
 \end{definicion}
+\begin{acotacion}
+  Un functor \(F\) entre las categorias \(\mathcal C\) y \( \mathcal D\)
+  debe cumplir que para todo \(f,g \in \mathbf {Obj} \left( \mathcal C
+  \right) \) tal que \( f \circ g \in \mathbf{Obj} \left( \mathcal C
+  \right)\) se cumple que
+  \[ F(f \circ g) = F(f) \star F(g) \]
+\end{acotacion}
 % TODO: imagen de functor mapeando
 Es decir, un functor es una función entre categorías que preserva la
 estructura de morfismos en la categoría inicial en la estructuras de

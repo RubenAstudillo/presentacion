@@ -447,16 +447,16 @@ Con estos resultados podemos ver el siguiente ejemplo
 \subsection{La categoria \(\mathscr{HoTop}_*\)}
 \begin{definicion}
   La categoria \(\mathscr{HoTop}_*\) corresponde a una tripleta
-  \((\mathbf{O},\mathbf M, (*))\) donde
+  \((\mathbf{Obj},\mathbf {Mor}, (*))\) donde
   \begin{itemize}
-  \item \(\mathbf O\) corresponde a espacio topologicos puntuados de la
+  \item \(\mathbf {Obj}\) corresponde a espacio topologicos puntuados de la
     forma \((X, x_0)\).
-  \item \(\mathbf M\) corresponde a un conjunto
-    \[ M = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\ (X,x_0),(Y,y_0) \in
-      \mathbf O \}\]
+  \item \(\mathbf {Mor}\) corresponde a un conjunto
+    \[ \mathbf{Mor} = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\
+      (X,x_0),(Y,y_0) \in \mathbf {Obj} \}\]
     de clases equivalencias homotopicas entre funciones continuas
   \item \((*)\) corresponde a la composición de clases de
-    equivalencias tal que si \([f] , [g] \in \mathbf M \) con
+    equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
     \[ f : (X,x_0) \to (Y, y_0)\]
     \[ g : (Y, y_0) \to (Z, z_0)\]
     entonces \([g] * [f] := [ g * f ] \) es una clase de equivalencia de
@@ -464,25 +464,25 @@ Con estos resultados podemos ver el siguiente ejemplo
   \end{itemize}
 \end{definicion}
 Esta categoría es diferente a \(\mathscr{Top}_*\) en cuanto a sus
-morfismos, pero es posible incrustar mediante la siguiente funcion
+morfismos, pero es posible incrustar mediante el siguiente functor
 \begin{align*}
-  F : \mathscr{Top}_* &\longrightarrow \mathscr{HoTop}_* \\
-      \left( X , x_0 \right) &\longmapsto \left( X , x_0 \right), \quad \left( X, x_0 \right) \in \mathbf O \left( \mathscr{Top}_* \right) \\
-      f &\longmapsto [f], \quad f \in \mathbf M \left( \mathscr{Top}_* \right)
+  G : \mathscr{Top}_* &\longrightarrow \mathscr{HoTop}_* \\
+      \left( X , x_0 \right) &\longmapsto \left( X , x_0 \right), \quad \left( X, x_0 \right) \in \mathbf {Obj} \left( \mathscr{Top}_* \right) \\
+      f &\longmapsto [f], \quad f \in \mathbf {Mor} \left( \mathscr{Top}_* \right)
 \end{align*}
 pues esta preserva la composicion de categoria de origen en la de
-llegada. Ya que \(\forall f,g \in \mathbf M (\mathscr{Top}_*)\) tal que
-\(f \circ g \in \mathbf M (\mathscr{Top}_*)\)
+llegada. Ya que \(\forall f,g \in \mathbf {Mor} (\mathscr{Top}_*)\) tal que
+\(f \circ g \in \mathbf {Mor} (\mathscr{Top}_*)\)
 \[ F(f * g) = [f * g] = [f] * [g] = F(f) * F(g) \]
 En particular, hemos definido un functor entre categorias
-\begin{definicion}[Functor]
-  Un functor \(F\) entre las categorias \( \left( O_{\mathcal C} ,
-    \mathcal C , (\circ) \right) \) y \(\left( O_{\mathcal D} , \mathcal
-      D , (\star) \right)\)
-  es una funcion tal que \(\forall f,g \in \mathcal C \) tal que \( f
-  \circ g \in \mathcal C\) se cumple que
-  \[ F(f \circ g) = F(f) \star F(g) \]
-\end{definicion}
+% \begin{definicion}[Functor]
+%   Un functor \(F\) entre las categorias \( \left( O_{\mathcal C} ,
+%     \mathcal C , (\circ) \right) \) y \(\left( O_{\mathcal D} , \mathcal
+%       D , (\star) \right)\)
+%   es una funcion tal que \(\forall f,g \in \mathcal C \) tal que \( f
+%   \circ g \in \mathcal C\) se cumple que
+%   \[ F(f \circ g) = F(f) \star F(g) \]
+% \end{definicion}
 
 En particular, dado que los morfismos de  \(\mathscr{Top}_*\) son
 homeomorfismos, estos son trivialmente equivalencias homotopicas,
