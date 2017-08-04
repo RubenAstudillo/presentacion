@@ -1,9 +1,9 @@
 \section{Categoría de homotopías}
 En la sección anterior, se termino dando una definición de categoría con
-\(\mathscr{Top}_*\) y el functor \(_{{*}} : \mathscr{Top} \to
+\(\mathscr{Top}_*\) y el functor \(F : \mathscr{Top} \to
 \mathscr{Grp}\). Los morfismos en \(\mathscr{Top}_*\) correspondían a
 homeomorfismos entre espacios topológicos, los cuales inducían bajo
-\(_{(*)}\) isomorfismos de grupos. Pero hay espacios que a pesar de no
+\(F\) isomorfismos de grupos. Pero hay espacios que a pesar de no
 ser homeomorfos poseen el mismo grupo fundamental y para estos el
 functor entre \(\mathscr{Top}_* \to \mathscr{Grp}\) es ciego a su
 estructura. Esto es insatisfactorio pensando en la meta original de
@@ -15,9 +15,10 @@ Entre las nociones alternativas mas populares se encuentra las
 \emph{equivalencias homotópicas}. Su popularidad se debe a que son mas
 débiles que un homeomorfismo y que corresponden a los morfismos en una
 nueva estructura categórica denotada por \(\mathscr{HoTop}_*\), la cual
-contiene como sub-categoría a \(Top_*\). La motivación de su
-construcción es natural a partir del estudio de retracciones, el cual
-iniciaremos ahora e iremos generalizando debidamente.
+contiene como sub-categoría a \(\mathscr{Top}_*\) (modulo functor). La
+motivación de su construcción es natural a partir del estudio de
+retracciones, el cual iniciaremos ahora e iremos generalizando
+debidamente.
 
 \subsection{Retracciones}
 Previo al estudio tal de las retracción, iniciaremos estudiando un
@@ -252,7 +253,7 @@ Ahora que ya conocemos el esquema de trabajo, podemos generalizar para
 espacios que no necesariamente sean retracciones entre si, pero que
 posean un par de funciones cuyas composiciones sean homotópicas a la
 identidad correspondiente.
-\begin{definicion}[Equivalencias homotopicas]
+\begin{definicion}[Equivalencias homotopicas] \label{def:equivalencias-hom}
   Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
   que \( g \circ f : X \to X \) es homotopico al mapeo identidad de
   \(X\) y \( f \circ g : Y \to Y \) es homotopico al mapeo identidad de
@@ -410,7 +411,7 @@ donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
 \end{proof}
 
 Con estos resultados podemos ver el siguiente ejemplo
-\begin{corolario}
+\begin{corolario} \label{ex:mobius}
   Sea \(M\) la banda de \emph{Mobius} finita definida por la identificacion
   \[ M := [0,1] \times [0,1] / \sim, \quad (0,y) \sim (1, 1 - y) \]
   Este espacio posee el mismo grupo fundamental de \(S^1\)
@@ -447,89 +448,91 @@ Con estos resultados podemos ver el siguiente ejemplo
 \subsection{La categoria \(\mathscr{HoTop}_*\)}
 \begin{definicion}
   La categoria \(\mathscr{HoTop}_*\) corresponde a una tripleta
-  \((\mathbf{O},\mathbf M, (*))\) donde
+  \((\mathbf{Obj},\mathbf {Mor}, (\hat \circ))\) donde
   \begin{itemize}
-  \item \(\mathbf O\) corresponde a espacio topologicos puntuados de la
+  \item \(\mathbf {Obj}\) corresponde a espacio topologicos puntuados de la
     forma \((X, x_0)\).
-  \item \(\mathbf M\) corresponde a un conjunto
-    \[ M = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\ (X,x_0),(Y,y_0) \in
-      \mathbf O \}\]
+  \item \(\mathbf {Mor}\) corresponde a un conjunto
+    \[ \mathbf{Mor} = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\
+      (X,x_0),(Y,y_0) \in \mathbf {Obj} \}\]
     de clases equivalencias homotopicas entre funciones continuas
-  \item \((*)\) corresponde a la composición de clases de
-    equivalencias tal que si \([f] , [g] \in \mathbf M \) con
+  \item \((\hat \circ)\) corresponde a la composición de clases de
+    equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
     \[ f : (X,x_0) \to (Y, y_0)\]
     \[ g : (Y, y_0) \to (Z, z_0)\]
-    entonces \([g] * [f] := [ g * f ] \) es una clase de equivalencia de
-    funciones \((X, x_0) \to (Z, z_0)\)
+    entonces \([g] \hat \circ [f] := [ g \circ f ] \) es una clase de
+    equivalencia de funciones \((X, x_0) \to (Z, z_0)\)
   \end{itemize}
 \end{definicion}
-Esta categoría es diferente a \(\mathscr{Top}_*\) en cuanto a sus
-morfismos, pero es posible incrustar mediante la siguiente funcion
+Esta categoría tiene los mismos objetos que \(\mathscr{Top}_*\), pero es
+diferente en sus morfismos y operador composicion. Es posible ver a
+\(\mathscr{Top}_*\) representada por una sub-categoria\footnote{Mismos
+objetos pero un subconjunto de los morfismos} de \(\mathscr{HoTop}_*\)
+mediante el siguiente functor
 \begin{align*}
-  F : \mathscr{Top}_* &\longrightarrow \mathscr{HoTop}_* \\
-      \left( X , x_0 \right) &\longmapsto \left( X , x_0 \right), \quad \left( X, x_0 \right) \in \mathbf O \left( \mathscr{Top}_* \right) \\
-      f &\longmapsto [f], \quad f \in \mathbf M \left( \mathscr{Top}_* \right)
+  G : \mathscr{Top}_* &\longrightarrow \mathscr{HoTop}_* \\
+  \left( X , x_0 \right) &\longmapsto \left( X , x_0 \right), \quad
+     \left( X, x_0 \right) \in \mathbf {Obj} \left( \mathscr{Top}_* \right) \\
+  f &\longmapsto [f], \quad f \in \mathbf {Mor} \left( \mathscr{Top}_* \right)
 \end{align*}
 pues esta preserva la composicion de categoria de origen en la de
-llegada. Ya que \(\forall f,g \in \mathbf M (\mathscr{Top}_*)\) tal que
-\(f \circ g \in \mathbf M (\mathscr{Top}_*)\)
-\[ F(f * g) = [f * g] = [f] * [g] = F(f) * F(g) \]
-En particular, hemos definido un functor entre categorias
-\begin{definicion}[Functor]
-  Un functor \(F\) entre las categorias \( \left( O_{\mathcal C} ,
-    \mathcal C , (\circ) \right) \) y \(\left( O_{\mathcal D} , \mathcal
-      D , (\star) \right)\)
-  es una funcion tal que \(\forall f,g \in \mathcal C \) tal que \( f
-  \circ g \in \mathcal C\) se cumple que
-  \[ F(f \circ g) = F(f) \star F(g) \]
-\end{definicion}
+llegada. Ya que por definicion \(\forall f,g \in \mathbf {Mor}
+(\mathscr{Top}_*)\) tal que \(f \circ g \in \mathbf {Mor}
+(\mathscr{Top}_*)\)
+\[ F(f \circ g) = [f \circ g] = [f] * [g] = F(f) * F(g) \]
 
-En particular, dado que los morfismos de  \(\mathscr{Top}_*\) son
-homeomorfismos, estos son trivialmente equivalencias homotopicas,
-dándonos \emph{equivalencias categóricas} (presencia de inversas) en
-en  \(\mathscr{HoTop}_*\).
+En \(\mathscr{Top}_*\), todos los morfismos era homeomorfismos. Esto nos
+daba una categoría donde estaban claramente delimitados los espacios
+topológicos que tendrían el mismo grupo fundamental. Pero era posible
+que hubieran dos familias de objetos disjuntas en \(\mathscr{Top}_*\)
+que tuvieran el mismo grupo fundamental. En \(\mathscr{HoTop}_*\) los
+espacios homeomorfos tienen trivialmente un par de equivalencias
+homotópicas, pero hay estrictamente mas morfismos en esta categoría,
+pues como vimos en el ejemplo \ref{ex:mobius}, a pesar de la banda de
+Mobius y \(S^1\) no son homeomorfos (de hecho la banda de Mobius es
+homeomorfa a un cociente de \(S^1 \times [-1, 1]\)) poseen el mismo
+grupo fundamental. Por tanto las familias de objetos disjuntas con el
+mismo grupo fundamental son mas raras en \(\mathscr{HoTop}_*\).
 
-Algo diferente en esta construcción es la presencia de clases de
-equivalencias entre funciones. Esto tiene que ver con el requerimiento
-de unicidad sobre el morfismos identidad. Esto tiene la consecuencia
-feliz de simplificar la visualización de esta categoría como diagrama.
+La estructura categórica nos ayudara a deducir grupos fundamentales de
+espacios complejos en base a espacios mas simples. Una de las
+herramientas para esto sera el estudio de los productos y co-productos
+categóricos.
 
-Esta estructura nos ayudara a deducir grupos fundamentales de espacios
-complejos en base a espacios mas simples. Una de las herramientas para
-esto sera el estudio de los productos y co-productos categóricos.
-
-\begin{definicion}
-  Sea \(P , X , Y \in \mathbf O\) objetos arbitrarios de un categoría
-  tal que existen \(\pi_x : P \to X,\ \pi_y : P \to Y\) morfismos en
-  \(\mathbf M\). Si para todo objeto \(M \in \mathbf O\) tal que posea
-  morfismos \( f : M \to X,\ g : M \to Y\) existe un morfismo \(\theta :
-  M \to P\) tal que
-  \[ f = \pi_x \circ \theta \quad g = \pi_y \circ \theta \]
-  Entonces \(P\) es un producto de \(X\) e \(Y\).
+\begin{definicion}[Producto]
+  Sea \(P , X , Y \in \mathbf {Obj}\) objetos arbitrarios de un categoría
+  tal que existan \(\pi_x : P \to X,\ \pi_y : P \to Y\) dos morfismos en
+  \(\mathbf {Mor}\). Si para todo objeto \(M \in \mathbf {Obj}\) que
+  posea morfismos \( f : M \to X,\ g : M \to Y\), existe un morfismo
+  \(\theta : M \to P\) en \(\mathbf{Mor}\) tal que se cumplen las
+  siguientes ecuaciones
+  \[ f = \pi_x \circ \theta, \quad g = \pi_y \circ \theta \]
+  entonces \(P\) es un producto de \(X\) e \(Y\).
 \end{definicion}
 Análogamente, un co-producto es un producto con todas las ``flechas'' en
 sentido opuesto.
-\begin{definicion}
-  Sea \(C , X , Y \in \mathbf O\) objetos arbitrarios de un categoría
+\begin{definicion}[Coproducto]
+  Sea \(C , X , Y \in \mathbf {Obj}\) objetos arbitrarios de una categoría
   tal que existen \(\phi_x : X \to C,\ \phi_y : Y \to C\) morfismos en
-  \(\mathbf M\). Si para todo objeto \(M \in \mathbf O\) tal que posea
-  morfismos \( f : X \to C,\ g : Y \to C\) existe un morfismo \(\theta :
-  C \to M\) tal que
-  \[ f = \theta \circ \phi_x \quad g = \theta \circ \phi_y \]
-  Entonces \(C\) es un co-producto de \(X\) e \(Y\).
+  \(\mathbf {Mor}\). Si para todo objeto \(M \in \mathbf {Obj}\) tal que posea
+  morfismos \( f : X \to C,\ g : Y \to C\) en \(\mathbf{Mor}\) existe un
+  morfismo \(\theta : C \to M\) en \(\mathbf{Mor}\) tal que se cumplan
+  las siguientes ecuaciones
+  \[ f = \theta \circ \phi_x, \quad g = \theta \circ \phi_y \]
+  entonces \(C\) es un co-producto de \(X\) e \(Y\).
 \end{definicion}
 % TODO: considerar incluir diagramas conmutativos
 Intuitivamente, pensamos que el producto categórico en
 \(\mathscr{HoTop}_*\) debería ser el producto cartesiano de espacios.
-Esto es correcto notanto que \(\forall (X,x_0) , (Y, y_0) \in \mathbf O
-\), el espacio \((X \times Y, (x_0, y_0))\) posee los morfismos
+Esto es correcto notanto que \(\forall (X,x_0) , (Y, y_0) \in \mathbf
+{Obj} \), el espacio \((X \times Y, (x_0, y_0))\) posee los morfismos
 (continuos) \(\pi_x : X \times Y \to X \) e \(\pi_y : X \times Y \to Y
 \) proyecciones por coordenadas, además de una forma de completar el
 diagrama conmutativo.
 
 Por otro lado existe una operación no tan conocida que puede cumplir el papel
 del co-producto solo en espacio puntuados, conocida como la \emph{wedge-sum}
-\begin{definicion}
+\begin{definicion}[Wedge-sum]
   Sean \((X, x_0),(Y, y_0)\) dos espacios topológicos puntuados. El
   espacio cociente de la unión disjunta de \(X\) e \(Y\) con la
   identificación de punto base \(x_0 \sim y_0\)

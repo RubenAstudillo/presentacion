@@ -324,39 +324,59 @@ teoría que estudia este fenómenos es llamada teoría de categorías y
 históricamente los grupos fundamentales dieron inicio al estudio de
 estas.
 \begin{definicion}
-  Una categoría \(\mathcal C\) consiste una tripleta \(( \mathbf O,
-  \mathbf M, (\circ))\), donde
+  Una categoría \(\mathcal C\) consiste una tripleta \(( \mathbf {Obj},
+  \mathbf {Mor}, (\circ))\), donde
   \begin{itemize}
-    \item \(\mathbf O\) corresponde a una clase\footnote{Clase en el sentido de
-        teoría de conjuntos Neumann–Bernays–Gödel} de objetos.
-    \item \(\mathbf M\) corresponde a una clase de morfismos
-      entre elementos de \(\mathbf O\), tal que en particular \(\forall
-      O \in \mathbf O,\ \exists \mathcal i _o : O \to O\).
+    \item \(\mathbf {Obj}\) corresponde a una clase\footnote{Clase en el
+      sentido de teoría de conjuntos Neumann–Bernays–Gödel} de objetos.
+    \item \(\mathbf {Mor}\) corresponde a una clase de morfismos entre
+      elementos de \(\mathbf {Obj}\), tal que para todo \(A \in
+      \mathbf {Obj}\) existe un unico morfismo identidad \( \mathcal i
+      _A : A \to A, \ i_A \in \mathbf{Obj}\).
     \item \((\circ)\) es una operación composición entre morfismos
-      asociativa y que cuya identidad para cada objeto \(o\) corresponde al
-      morfismos \(\mathcal i _o\).
+      asociativa .
   \end{itemize}
 \end{definicion}
-De la segunda propiedad se extiende que el morfismos identidad es único
-para cada \(O \in \mathbf O\).
 \begin{definicion}
-  Sean \(\mathscr{C} , \mathscr D\) dos categorías arbitrarias. Un
-  functor \(F : \mathscr C \to \mathscr D\) es un mapeo tal que cumple
-  las siguientes propiedades
+  Sean \(\left( \mathscr{C} , (\circ) \right), \left(\mathscr D ,
+  (\star) \right) \) dos categorías con sus respectivos operadores
+  composicion. Un functor \(F : \mathscr C \to \mathscr D\) es un mapeo
+  tal que cumple las siguientes propiedades
   \begin{itemize}
-  \item \(\forall X \in \mathbf{Obj}(\mathscr C)\) objeto de \(\mathscr
-    C\), \( F(X) \in \mathbf{Obj} (\mathscr D)\)
-  \item  \(\forall f : X \to Y\) morfismos de \(X,Y \in \mathbf{Obj}
-    (\mathscr C),\ f \in \mathbf{Mor} (\mathscr C)\), se tiene que \(
-    F(f) : F(X) \to F(Y) \). Mas aun, \(F (\mathbf{Id}_X) = \mathbf{Id}_{F(X)}\)
+  \item \(\forall X \in \mathbf{Obj}(\mathscr C),\ F(X) \in \mathbf{Obj} (\mathscr D)\)
+  \item \(\forall f \in \mathbf{Mor} (\mathcal C)\) morfismo de \(X,Y
+    \in \mathbf{Obj} (\mathcal C)\) , se
+    debe cumplir que \(F (f)\) tenga la siguiente forma
+    \[ F(f) : F(X) \to F(Y),\ F(f) \in \mathbf{Mor}
+      (\mathcal D) \]
+    Mas aun, el morfismo identidad \(i_A\) para \(A \in
+    \mathbf{Obj} (\mathcal C)\) debe cumplir la ecuacion \(F (i_A) =
+    i_{F(A)}\)
+  \item Si \(f,g \in \mathbf{Mor}(\mathcal C)\) son morfismos tales que
+    \(f \circ g \in \mathbf{Mor} (\mathcal C)\), entonces
+    \[ F(f \circ g) = F(f) \star F(g) \]
   \end{itemize}
 \end{definicion}
-Aquí, nuestra \(\mathscr C \) correspondería a \( \mathscr{Top_{*}}\),
-la categoría de espacio topológicos puntuados y \(\mathscr D \) a \(
-\mathscr{Grp}\), la categoría de grupos algebraicos. \(X,Y\) serian
-espacio topológicos particulares, el morfismo \(f : X \to Y\) seria el
-homeomorfismo entre espacios topológicos puntuados y \(F(f) = f_{*} :
-F(X) \to F(Y)\) seria nuestro homomorfismo inducido por \(f\), el cual
-mapearía \(F(X) = \pi (X, x_0)\) a \(F(Y) = \pi (Y, y_0) \).
-% todo(slack): ver la discucion de la propiedades functoriales (talvez?)
+% TODO: imagen de functor mapeando
+Es decir, un functor es una función entre categorías que preserva la
+estructura de morfismos en la categoría inicial en la estructuras de
+morfismos en la categoría de llegada. Nosotros hemos ya construido
+nuestro primer functor, donde nuestras categorías inicial y de llegada son
+\[ \mathcal C = \mathscr{Top}_* ,  \quad \mathcal D
+  = \mathscr{Grp} \]
+con \(\mathscr{Grp}\) la categoría de grupos y homomorfismo entre
+grupos con composicion usual. Para especificar formalmente nuestro
+functor \(F\), debemos especificar tanto el mapeo de los elementos como
+el de los morfismos. Estos están dados por las siguientes ecuaciones
+\begin{align*}
+  F : \mathscr{Top}_* &\longrightarrow \mathscr{Grp} \\
+  \forall (A, a_0) \in \mathbf{Obj} \left( \mathscr{Top}_* \right),\
+    &F(A) \coloneqq \pi (A, a_0) \\
+  \forall f \in \mathbf{Mor} \left( \mathscr{Top}_* \right),\ &F(f) \coloneqq
+    f_*
+\end{align*}
+Viendo que todos los morfismos de \(\mathscr{Top}_*\) eran homeomorfismos
+y por tanto gracias al teorema \ref{thm:homoemorfismo-isomorfismo} los
+morfismos en la categoría de llegada bajo este functor no son solamente
+homomorfismo de grupos si no isomorfismos de grupos.
 }
