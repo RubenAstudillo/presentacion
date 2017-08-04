@@ -1,5 +1,5 @@
 \subsection{Cubrimientos}
-\begin{definicion}
+\begin{definicion} \label{def:cubierta}
 Sea \(p : \tilde{X} \to X\) una función continua sobreyectiva. El
 abierto \(U \subseteq X\) se dice \textbf{cubierto} por \(p\)
 si existe \(\{V_\alpha\}_{\alpha \in \Lambda},\ \Lambda \subseteq
@@ -24,7 +24,7 @@ S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
 Donde estas familias de conjuntos son disjuntos y restringidos a cada
 uno se tiene la inyectividad requerida.
 
-A priori el cubrimientos es independiente de los caminos que tengamos
+A priori el cubrimiento es independiente de los caminos que tengamos
 en \(X\), queremos ver si podemos reflejar la información importante de
 los caminos de \(X\) sobre \(\tilde{X}\).
 \begin{figure}[h]
@@ -48,7 +48,7 @@ desarrollar algunos teoremas previos.
   teorema se cumple \(\forall \delta > 0\). Por compacidad de \(X\)
   existe una colección \(\{A_1,\dotsc,A_n\} \subset \mathcal A\) que
   cubre a \(X\), definamos a los conjuntos \(C_i = X - A_i,\ \forall i
-  \in [1,n]\) y a la función \(f : X \to \mathbb R\) definida por
+  \in [1,n]\) y a la función \(f : X \to \Re\) definida por
   \[ f(x) := \frac 1 n \sum_{i=1}^{n} d(x, C_i) \]
   i.e. la distancia promedio de \(x\) a \(C_i\). Notemos que \(\forall x
   \in X,\ f(x) > 0\), pues para \(x \in A_i \subseteq X\), por ser
@@ -60,9 +60,9 @@ desarrollar algunos teoremas previos.
   compacto, por lo tanto alcanza un mínimo; a este le denotaremos como
   nuestro \(\min_X f \coloneqq \delta \).
 
-  Probaremos que este \(\delta\) cumple el requerimiento, sea \(B
+  Probaremos que este \(\delta\) cumple el requerimiento. Sea \(B
   \subset X\) subconjunto abierto de diámetro menor que \(\delta\), sea
-  \(x \in B\) arbitrario. Definamos escojamos el conjunto \(C_m\) como
+  \(x \in B\) arbitrario. Escojamos el conjunto \(C_m\) como
   \[ C_m := \max_{i \in [1,n]} d(x, C_i) \]
   Dado que
   \[\delta \leq f(x) \leq d(x, C_m) \]
@@ -78,7 +78,7 @@ Ver que la definición es mucho mas general que lo que pedíamos al
 diagrama. Usualmente \(W = [0,1]\) pues estudiaremos los caminos sobre
 \(X\). Veremos a continuación teoremas de como se reflejan los caminos
 y las homotopías en el espacio cubrimiento de \(X\).
-\begin{teorema}\label{thm:lifting-theorem}
+\begin{teorema}[Levantamiento homotopico] \label{thm:lifting-theorem}
   Sea \(p : \tilde X \to X\) un cubrimiento y \(x_0 \in X\). Fijemos
   algún \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) = x_0 \).
   Para cualquier camino \(f : [0,1] \to X\) que comience en \(x_0\), existe
@@ -86,30 +86,38 @@ y las homotopías en el espacio cubrimiento de \(X\).
   \(\tilde f (0) = \tilde x _0\)
 \end{teorema}
 \begin{proof}
-  Para todo punto de \(x \in X\), existe una vecindad \(U_x\) que es
-  cubierta, por tanto \( X \subseteq \bigcup_{x \in X} U_x\) para cada
-  \(U_x\) correspondiente.
-  Por otro lado, tenemos que \( [0,1] \subset f^{-1} (\bigcup_{x
-  \in X} U_x)\); por el Teorema \ref{thm:lebesgue-number-lema}, podemos
-  elegir \(s_0,\dotsc,s_n \in [0,1]\) tal que \(f([s_i, s_{i+1}])\) este contenido
-  en algún \(U_x\). Definiremos \(\tilde f\) inductivamente.
+  Para todo punto de \(x \in X\), existe una vecindad de este \(U_x\)
+  que es cubierta (definicion \ref{cubierta}). Por tanto
+  \[ X \subseteq \bigcup_{x \in X} U_x\]
+  con \(U_x\) siendo las vecindades cubiertas para cada \(x\). De lo
+  anterior, se obtiene la siguiente inclusion
+  \[ [0,1] = f^{-1} \left( X \right) \subseteq f^{-1} \left( \bigcup_{x
+    \in X} U_x \right) \]
+  Por el Teorema \ref{thm:lebesgue-number-lema}, podemos elegir
+  \(s_0,\dotsc,s_n \in [0,1]\) tal que para todo \(i \in \{0,1 \dotsc,
+  n-1\}\), exista \(U_x\) tal que
+  \[f \left( [s_i, s_{i+1}] \right) \subset U_x \]
+  Con esto, definiremos \(\tilde f\) inductivamente.
 
   Primero declaremos \(\tilde f (0) = \tilde x _0\). Luego, suponiendo
   que \(\tilde f (s)\) esta definido para \(s \in [0, s_i]\), se
   define a \(\tilde f \) en \([s_i, s_{i+1}]\) de la siguiente forma.
   Dado que para algún \(x \in X\),
-  \[f ([s_i, s_{i+1}]) \subseteq U_x \quad \land \quad \exists
-    \{V_\alpha\}_{\alpha \in \Lambda},\ \bigcup_{\alpha \in \Lambda}
-    V_\alpha = p^{-1} (U_x)\]
+  \[
+    f \left( [s_i, s_{i+1}] \right) \subseteq U_x \quad \land \quad
+    \exists \{V_\alpha\}_{\alpha \in \Lambda},\ \bigcup_{\alpha \in \Lambda}
+    V_\alpha = p^{-1} (U_x)
+  \]
   debe de existir \(\alpha \in \Lambda\) tal que \(\tilde f (s_i) \in
-  V_\alpha\) previamente definido; a este, le denotaremos \(V_0\). Dado
-  que \(p \mid_{V_0}\) es un homeomorfismo, definimos a \(\tilde f (s)\)
-  en \([s_i, s_{i+1}]\) por
-  \begin{equation}
-  \tilde f (s) = (p \mid _{V_0})^{-1} (f(s))\label{eq:tilde-f-inductiva}
+  V_\alpha\) previamente definido; a este conjunto le denotaremos
+  \(V_0\). Dado que \(p \mid_{V_0}\) es un homeomorfismo, definimos a
+  \(\tilde f (s)\) en \([s_i, s_{i+1}]\) por
+  \begin{equation} \label{eq:tilde-f-inductiva}
+    \tilde f (s) = \left( p \mid _{V_0} \right)^{-1} \left( f(s) \right)
   \end{equation}
-  El cual es continuo en \([s_i, s_{i+1}]\) en virtud del lema del
-  pegamiento y bien definido por ser \((p \mid _{V_0})^{-1} \) homeomorfismo.
+  El cual es continuo en \([0, s_i] \cup [s_i, s_{i+1}]\) en virtud del
+  lema del pegamiento y bien definido por ser \( p \mid _{V_0} \)
+  homeomorfismo.
 
   Para ver la unicidad, se probara inductivamente. Supongamos que existe
   otro \(\hat{f}\) levantamiento par de \(f\) que también
@@ -122,17 +130,19 @@ y las homotopías en el espacio cubrimiento de \(X\).
   \[\hat f (s_i) = \tilde f (s_i) \in V_0\]
   con \([s_i, s_{i+1}]\) conexo y la familia \(\{V_\alpha\}\)
   es disjunta, obliga\footnote{Funciones continuas mapean conjuntos
-    conexos a conexos} a que \(\hat f [s_i, s_{i+1}] \subset
-  V_0\). Dado que es un levantamiento, debe de cumplirse que
+    conexos a conexos} a que
+  \[ \hat f \left( [s_i, s_{i+1}] \right) \subset V_0 \]
+  Dado que es un levantamiento, debe de cumplirse que
   \[\forall s \in [s_i, s_{i+1}],\ p \circ \hat f \, (s) =
     f(s) = p \circ \tilde f \, (s) \]
-  \[ \iff p ( \hat f (s)) = p ((p \mid_{V_0})^{-1} (f (s)))\]
+  \[ \iff p \left( \hat f (s) \right) = p \left( \left( p \mid_{V_0}
+      \right) ^{-1} \left( f (s) \right) \right)\]
   \[ \implies \hat f (s) = (p \mid_{V_0})^{-1} (f (s)), \quad \forall s
       \in [s_i, s_{i+1}]\]
   siendo esta la única posible definición, pues de haber otra,
   se tendria una contradiccion en decir que \((p \mid_{V_0})\) es un
   homeomorfismo (mapeo único), por tanto se obliga a que \( \hat f =
-\tilde f\)
+  \tilde f\)
 \end{proof}
 Mas aun, podemos no solo levantar las curvas sobre \(X\) a \(\tilde X\),
 si no también preservar las homotopías de \(X\) en \(\tilde X\).
@@ -151,7 +161,7 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
   luego en \(I \times 0\) y escogiendo subdivisiones de \(I \times I\)
   \[ s_0 < s_1 < \dotsc < s_m \]
   \[ t_0 < t_1 < \dotsc < t_n \]
-  Tales que \(F ([s_i , s_{i+1}] \times [t_j \times t_{j+1}])\) este
+  tales que \(F ([s_i , s_{i+1}] \times [t_j \times t_{j+1}])\) este
   contenido en un conjunto cubierto en \(X\), esto utilizando
   el lema de Lebesgue al igual que en la demostración anterior.
 
@@ -172,12 +182,12 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
   esta definido bajo \(\tilde F\), existe un único \(V_0 \in
   \{V_\alpha\}\) que contiene a \(F (s_i, t_j)\). Pero notando que
   \(\{V_\alpha\}\) son disjuntos y que \(L,H\) son conexos, obliga a que
-  \[ \tilde F (H) \subset V_0 \quad \tilde F (L) \subset V_0 \]
+  \[ \tilde F (H) \subset V_0, \quad \tilde F (L) \subset V_0 \]
   Luego podemos definir \(\tilde F\) sobre el resto de \([s_i,
     s_{i+1}] \times [t_j , t_{j+1}]\) notando que \(p \mid_{V_0}\) es
   un homeomorfismo entre \(V_0\) y \(U\) y por tanto
   \[ \forall (a,b) \in [s_i, s_{i+1}] \times [t_j , t_{j+1}],
-    \ \tilde F (a,b) := p^{-1} \mid_{V_0} (F(a,b)) \]
+    \ \tilde F (a,b) := p^{-1} \mid_{V_0} \left( F(a,b) \right) \]
   Esta cumple la regla \( F = p \circ \tilde F\) y es continua en virtud
   del lema del pegamiento. Notando finalmente que ahora los conjuntos
   \[ L := [s_i , s_{i+1}] \times \{t_{j+1}\}\]
