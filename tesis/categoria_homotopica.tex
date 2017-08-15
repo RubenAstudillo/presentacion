@@ -608,27 +608,34 @@ El teorema anterior nos una forma trivial de conocer grupos
 fundamentales si los espacios a estudiar pueden reducirse a una
 estructura producto o co-producto. Un ejemplo sencillo es el siguiente:
 
-\paragraph{Toro :} Una presentacion del torus \(T\) es como espacio cuociente
-de \([0,1]^2\). Se identifican los puntos
-\begin{gather*}
-  (0,t) \sim (1,t), \quad t \in [0,1] \\
-  (t,0) \sim (t,1), \quad t \in [0,1]
-\end{gather*}
-Existe un homeomorfismos entre el toro y el espacio \(S^1 \times S^1\) dado
-por la siguiente función \(f\):
-\begin{align*}
-  f : T &\longrightarrow S^1 \times S^1 \\
-  (a,b) &\longmapsto \left( \left( \cos (2 \pi a) , \sin (2 \pi a) \right), \left( \cos (2 \pi b) , \sin (2 \pi b) \right) \right)
-\end{align*}
-la cual es biyectiva, continua y independiente respecto al
-representante de clase de los elementos identificados del toro. Luego
-pensamos en el toro como el espacio producto \(S^1 \times S^1\). Por el
-teorema \ref{thm:prop-prod}
-\[
-  \pi \left( T \right) = \pi \left( S^1 \times S^1 \right) = \pi (S^1)
-  \times \pi (S^1)
-\]
-omitiendo el punto de origen puesto que este es un espacio arco-conexo.
+\begin{ejemplo}[Toro] \label{ej:toro-presentacion}
+  Una presentacion del torus \(T\) es como espacio cuociente de
+  \([0,1]^2\).
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/toro.png}
+  \end{figure}
+  Se identifican los puntos
+  \begin{gather*}
+    (0,t) \sim (1,t), \quad t \in [0,1] \\
+    (t,0) \sim (t,1), \quad t \in [0,1]
+  \end{gather*}
+  Existe un homeomorfismos entre el toro y el espacio \(S^1 \times S^1\)
+  dado por la siguiente función \(f\):
+  \begin{align*}
+    f : T &\longrightarrow S^1 \times S^1 \\
+    (a,b) &\longmapsto \left( \left( \cos (2 \pi a) , \sin (2 \pi a) \right), \left( \cos (2 \pi b) , \sin (2 \pi b) \right) \right)
+  \end{align*}
+  la cual es biyectiva, continua y independiente respecto al
+  representante de clase de los elementos identificados del toro. Luego
+  pensamos en el toro como el espacio producto \(S^1 \times S^1\). Por
+  el teorema \ref{thm:prop-prod}
+  \[
+    \pi \left( T \right) = \pi \left( S^1 \times S^1 \right) = \pi (S^1)
+    \times \pi (S^1)
+  \]
+  omitiendo el punto de origen puesto que este es un espacio
+  arco-conexo.
+\end{ejemplo}
 
 Pero aparte de este sencillo ejemplo, nos gustaría conocer teoremas mas
 generales que nos respeten la estructura del (co)-producto para
