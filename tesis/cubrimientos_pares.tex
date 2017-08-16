@@ -13,9 +13,46 @@ homeomorfa sobre \(U\). Si para todo \(x \in X\) existe una vecindad
 el cubrimiento para \(X\).
 \end{definicion}
 
-Un ejemplo simple de cubrimiento para \(S^1\) es \(p :
-\mathbb R \to S^1,\ p(t) := e^{2 \pi \imath t}\). Este es claramente
-sobreyectivo y continuo, escogiendo dos abiertos ejemplares como \(U =
+\begin{ejemplo}[Cubrimiento de \(S^1\) por \( \begin{bmatrix} 0, 10
+\pi \end{bmatrix}\)]
+  Pensamos en \(S^1\) como el intervalo \([0, 2 \pi]\) enrollado sobre
+  si mismo. Podemos imaginar un cubrimiento de este como cualquier
+  intervalo que de al menos una vuelta completa a \([0, 2 \pi]\).
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/spring.png}
+  \end{figure}
+  Ciertamente el intervalo \([0, 10 \pi]\) cumple el requisito, con el
+  cubrimiento dado por
+  \begin{align*}
+    p : [0, 10 \pi] &\longrightarrow S^1 \\
+    t &\longmapsto \mathrm e ^{\imath (t \text{ mod } 2\pi)}
+  \end{align*}
+  El diagrama anterior da una idea de la forma de general los espacios
+  cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
+  \(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del
+  diagrama. El conjunto dado por \(p^{-1} (x_0)\) es conocido como una
+  \emph{fibra} de \(x_0\). Una invariante interesante de este es que la
+  cardinalidad de cualquier fibra es la misma para todo los puntos.
+\end{ejemplo}
+
+\begin{ejemplo}[Cubrimiento de toro]
+  En el ejemplo \ref{ej:toro-presentacion} se trabajo con la
+  presentación de toro como espacio cociente de \([0,1]^2\). Siguiendo
+  la idea del ejemplo anterior, podemos obtener un cubrimiento de esta
+  presentación mediante el siguiente diagrama.
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/toro-cubrimiento.png}
+  \end{figure}
+\end{ejemplo}
+
+\begin{ejemplo}[Cubrimiento: \(\Re\) sobre \(S^1\)]
+Para \(S^1\) el mapeo
+\begin{align*}
+  p : \Re &\longrightarrow S^1 \\
+  t &\longmapsto e^{2 \pi \imath t}
+\end{align*}
+es claramente
+sobreyectivo y continuo. Escogiendo dos abiertos ejemplares como \(U =
 S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
 \[
     p^{-1} (U) = \bigcup_{n \in \mathbb Z} (n, n+1)
@@ -24,6 +61,7 @@ S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
 \]
 Donde estas familias de conjuntos son disjuntos y restringidos a cada
 uno se tiene la inyectividad requerida.
+\end{ejemplo}
 
 A priori el cubrimiento es independiente de los caminos que tengamos
 en \(X\), queremos ver si podemos reflejar la información importante de
