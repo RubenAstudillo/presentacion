@@ -35,22 +35,33 @@ el cubrimiento para \(X\).
   cardinalidad de cualquier fibra es la misma para todo los puntos.
 \end{ejemplo}
 
-% \paragraph{Ejemplo de cubrimiento: \(\Re\) sobre \(S^1\)}
-% Para \(S^1\) el mapeo
-% \begin{align*}
-%   p : \Re &\longrightarrow S^1 \\
-%   t &\longmapsto e^{2 \pi \imath t}
-% \end{align*}
-% es claramente
-% sobreyectivo y continuo. Escogiendo dos abiertos ejemplares como \(U =
-% S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
-% \[
-%     p^{-1} (U) = \bigcup_{n \in \mathbb Z} (n, n+1)
-%     \qquad p^{-1} (V) = \bigcup_{n \in \mathbb Z} (n - \frac 1 2, n + \frac 1
-%     2 )
-% \]
-% Donde estas familias de conjuntos son disjuntos y restringidos a cada
-% uno se tiene la inyectividad requerida.
+\begin{ejemplo}[Cubrimiento de toro]
+  En el ejemplo \ref{ej:toro-presentacion} se trabajo con la
+  presentación de toro como espacio cociente de \([0,1]^2\). Siguiendo
+  la idea del ejemplo anterior, podemos obtener un cubrimiento de esta
+  presentación mediante el siguiente diagrama.
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/toro-cubrimiento.png}
+  \end{figure}
+\end{ejemplo}
+
+\begin{ejemplo}[Cubrimiento: \(\Re\) sobre \(S^1\)]
+Para \(S^1\) el mapeo
+\begin{align*}
+  p : \Re &\longrightarrow S^1 \\
+  t &\longmapsto e^{2 \pi \imath t}
+\end{align*}
+es claramente
+sobreyectivo y continuo. Escogiendo dos abiertos ejemplares como \(U =
+S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
+\[
+    p^{-1} (U) = \bigcup_{n \in \mathbb Z} (n, n+1)
+    \qquad p^{-1} (V) = \bigcup_{n \in \mathbb Z} (n - \frac 1 2, n + \frac 1
+    2 )
+\]
+Donde estas familias de conjuntos son disjuntos y restringidos a cada
+uno se tiene la inyectividad requerida.
+\end{ejemplo}
 
 A priori el cubrimiento es independiente de los caminos que tengamos
 en \(X\), queremos ver si podemos reflejar la información importante de
