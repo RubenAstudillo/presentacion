@@ -14,17 +14,18 @@ el cubrimiento para \(X\).
 \end{definicion}
 
 \begin{ejemplo}[Cubrimiento de \(S^1\) por \( \begin{bmatrix} 0, 10
-\pi \end{bmatrix}\)]
+\pi \end{bmatrix} \) con \( 0 \sim 10 \pi \)]
   Pensamos en \(S^1\) como el intervalo \([0, 2 \pi]\) enrollado sobre
-  si mismo. Podemos imaginar un cubrimiento de este como cualquier
-  intervalo que de al menos una vuelta completa a \([0, 2 \pi]\).
+  si mismo mediante la identificacion \(0 \sim 2 \pi\). Podemos imaginar
+  un cubrimiento de este como cualquier intervalo con los extremos
+  identificados que de al menos una vuelta completa a \([0, 2 \pi]\).
   \begin{figure}[h]
     \centering \includegraphics[scale=0.5]{./imagenes/spring.png}
   \end{figure}
-  Ciertamente el intervalo \([0, 10 \pi]\) cumple el requisito, con el
-  cubrimiento dado por
+  Ciertamente el intervalo \([0, 10 \pi]\) con \(0 \sim 10 \pi\) cumple
+  el requisito, con el cubrimiento dado por
   \begin{align*}
-    p : [0, 10 \pi] &\longrightarrow S^1 \\
+    p : [0, 10 \pi] / (0 \sim 10\pi ) &\longrightarrow S^1 \\
     t &\longmapsto \mathrm e ^{\imath (t \text{ mod } 2\pi)}
   \end{align*}
   El diagrama anterior da una idea de la forma de general los espacios
@@ -32,7 +33,7 @@ el cubrimiento para \(X\).
   \(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del
   diagrama. El conjunto dado por \(p^{-1} (x_0)\) es conocido como una
   \emph{fibra} de \(x_0\). Una invariante interesante de este es que la
-  cardinalidad de cualquier fibra es la misma para todo los puntos.
+  cardinalidad de cualquier fibra es la misma para todos los puntos.
 \end{ejemplo}
 
 \begin{ejemplo}[Cubrimiento de toro]
