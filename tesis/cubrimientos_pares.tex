@@ -14,26 +14,31 @@ el cubrimiento para \(X\).
 \end{definicion}
 
 \begin{ejemplo}[Cubrimiento de \(S^1\) por \( \begin{bmatrix} 0, 10
-\pi \end{bmatrix}\)]
+\pi \end{bmatrix} \) con \( 0 \sim 10 \pi \)] \label{ej:10pi}
   Pensamos en \(S^1\) como el intervalo \([0, 2 \pi]\) enrollado sobre
-  si mismo. Podemos imaginar un cubrimiento de este como cualquier
-  intervalo que de al menos una vuelta completa a \([0, 2 \pi]\).
+  si mismo mediante la identificacion \(0 \sim 2 \pi\). Podemos imaginar
+  un cubrimiento de este como cualquier intervalo con los extremos
+  identificados que de al menos una vuelta completa a \([0, 2 \pi]\).
   \begin{figure}[h]
     \centering \includegraphics[scale=0.5]{./imagenes/spring.png}
   \end{figure}
-  Ciertamente el intervalo \([0, 10 \pi]\) cumple el requisito, con el
-  cubrimiento dado por
+  Ciertamente el intervalo \([0, 10 \pi]\) con \(0 \sim 10 \pi\) cumple
+  el requisito, con el cubrimiento dado por
   \begin{align*}
-    p : [0, 10 \pi] &\longrightarrow S^1 \\
-    t &\longmapsto \mathrm e ^{\imath (t \text{ mod } 2\pi)}
+    p : [0, 10 \pi] / _{(0 \sim 10\pi )} &\longrightarrow [0, 2 \pi] / _{(0 \sim 2\pi )} \\
+    t &\longmapsto \mathrm t \mod 2 \pi
   \end{align*}
-  El diagrama anterior da una idea de la forma de general los espacios
-  cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
-  \(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del
-  diagrama. El conjunto dado por \(p^{-1} (x_0)\) es conocido como una
-  \emph{fibra} de \(x_0\). Una invariante interesante de este es que la
-  cardinalidad de cualquier fibra es la misma para todo los puntos.
 \end{ejemplo}
+El diagrama anterior da una idea de la forma de general los espacios
+cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
+\(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del diagrama, se
+tiene la siguiente definicion auxiliad
+\begin{definicion}[Fibra]
+El conjunto discreto dado por \(p^{-1} (x_0)\) es conocido como una
+\emph{fibra} de \(x_0\).
+\end{definicion}
+\noindent Una invariante interesante de este es que la cardinalidad de
+cualquier fibra es la misma para todos los puntos.
 
 \begin{ejemplo}[Cubrimiento de toro]
   En el ejemplo \ref{ej:toro-presentacion} se trabajo con la
@@ -117,7 +122,7 @@ Ver que la definición es mucho mas general que lo que pedíamos al
 diagrama. Usualmente \(W = [0,1]\) pues estudiaremos los caminos sobre
 \(X\). Veremos a continuación teoremas de como se reflejan los caminos
 y las homotopías en el espacio cubrimiento de \(X\).
-\begin{teorema}[Levantamiento homotopico] \label{thm:lifting-theorem}
+\begin{teorema}[Levantamiento de caminos] \label{thm:lifting-theorem}
   Sea \(p : \tilde X \to X\) un cubrimiento y \(x_0 \in X\). Fijemos
   algún \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) = x_0 \).
   Para cualquier camino \(f : [0,1] \to X\) que comience en \(x_0\), existe
@@ -185,7 +190,7 @@ y las homotopías en el espacio cubrimiento de \(X\).
 \end{proof}
 Mas aun, podemos no solo levantar las curvas sobre \(X\) a \(\tilde X\),
 si no también preservar las homotopías de \(X\) en \(\tilde X\).
-\begin{corolario}
+\begin{corolario}[Levantamiento homotopico] \label{thm:levantamiento-homotopico}
   Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde x _0)
   = x_0 \) para algún \(\tilde x _0 \in \tilde X\). Para cualquier
   función continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\), tiene una
@@ -236,6 +241,110 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
 %fin pagina 24
 \end{proof}
 
+Retrocedamos un poco para pensar que es lo que tenemos hasta el momento.
+Para un cubrimiento \(p : \tilde X \to X\), siempre es valida la
+construcción de la definición \ref{def:homomorfismo-inducido} de un
+hilomorfismo inducido \(p_* : \pi \left( \tilde X , \tilde x _0 \right)
+\to \left( X , x_0 \right)\) con \(p (\tilde x_0) = x_0\). Pero a priori
+esto no nos da ninguna relación entre contención entre los grupos. Pero
+cuando \(p\) es un cubrimiento, tenemos que \(p_*\) es inyectiva por el
+siguiente teorema.
+
+\begin{teorema}[Inyectividad de homomorfimos inducido por cubrimientos]
+  Sea \(\left( \tilde X, \tilde x_0 \right), \left( X, x_0 \right)\)
+  dos espacios topológicos puntuados. Si \(p : \left( \tilde X, \tilde x_0
+  \right) \to \left( X, x_0 \right)\) un cubrimiento entre estos,
+  entonces el homomorfismo inducido
+  \[ p_* : \pi \left( \tilde X, \tilde x_0 \right) \longrightarrow \pi
+    \left( X, x_0 \right)\]
+  es inyectivo.
+\end{teorema}
+\begin{proof}
+  Que el homomorfismo \(p_*\) sea inyectivo equivale a que su
+  kernel sea únicamente la identidad. Para esto
+mostraremos que todo elemento \([\tilde f] \in \pi
+(\tilde X , \tilde x_0)\) tal que \(p_* ([\tilde f]) = [k_{x _0}]\) con \([k_{ x _0}]\)
+la identidad de \(\pi (X, x_0)\), esta obligado a cumplir \([\tilde f] =
+[k_{\tilde x _0}]\) donde \([k_{\tilde x _0}]\) es la identidad de \(\pi (\tilde X ,
+\tilde x _0)\).
+
+Sea \([\tilde f] \in \pi (\tilde X, \tilde x _0)\) un elemento
+arbitrario tal que
+\[p_* ([\tilde f]) = [p \circ \tilde f] = [k_{ x _0}]\]
+Esto equivale a decir que existe una homotopía \(H\) entre \(p_* \circ
+f\) y \(k_{x _0}\). Por el corolario \ref{thm:levantamiento-homotopico} podemos
+levantar esta homotopía \(H\) en \((X, x_0)\) a una homotopía
+levantamiento \(\tilde H\) en \((\tilde X , \tilde x _0)\). Esta es un
+levantamiento homotópico, por tanto cumple la ecuaciones
+\[ p \circ \tilde H = H, \quad H (t, 0) = p \circ \tilde f, \quad H (t,
+  1) = k_{x _0} \]
+por lo que \(\tilde H\) es una homotopía entre los levantamientos de \(p
+\circ \tilde f\) y \(k_{x _0}\). Por el teorema \ref{thm:lifting-theorem},
+sabemos que estos levantamientos son únicos. También sabemos por simple
+calculo que
+\[ p \circ k_{\tilde x _0} (t) = p \left( \tilde x_0 \right) = x_0 =
+  k_{x_0} (t) ,\quad \forall t \in [0,1] \]
+por lo que \(k_{\tilde x _0}\) es el levantamiento de \(k_{x_0}\).
+Además de ya conocer que \(\tilde f\) es el levantamiento de \(p \circ
+\tilde f\). Por tanto \(\tilde H\) es una homotopía entre \(\tilde f\) y
+\(k_{\tilde x _0}\) ie
+\[[\tilde f] = [k_{\tilde x_0}]\]
+obteniendo así que el kernel de \(p_*\) es trivial.
+\end{proof}
+
+Hemos mostrado que para un cubrimiento \(p : (\tilde X, \tilde x _0) \to
+(X , x_0)\), se tiene que
+\[ \pi (\tilde X, \tilde x_0) \simeq p_* \left( \pi (\tilde X, \tilde x_0)\right) \]
+donde \(p_* \left( (\tilde X, \tilde x_0) \right)\) es un subgrupo de
+\(\pi (X, x_0)\). Con esto podemos revisar algunos ejemplos anteriores.
+\begin{ejemplo}[Ejemplo \ref{ej:10pi} continuado]
+  En el ejemplo anterior se había definido \(p : [0 , 10 \pi] /_{0 \sim
+    10\pi} \to [0, 2\pi] /_{0 \sim 2\pi}\).
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/spring.png}
+  \end{figure}
+  Consideremos a \(x_0 \in [0, 2\pi] /_{0 \sim 2\pi}\) un punto base. El
+  homomorfimos inducido para \(p\) corresponde a la función
+  \begin{align*}
+    p_* : \pi \left( [0, 2\pi] /_{0 \sim 2\pi} , x_0 \right) &\longrightarrow \left( [0, 10\pi] /_{0 \sim 10\pi}, x_0 \right) \\
+    [f] &\longmapsto [p \circ f]
+  \end{align*}
+  Según el diagrama, el claro ver que ambos grupos solo admiten una
+  curva no trivial en ellos. Llamaremos
+  \begin{gather*}
+    [\gamma] \in \pi \left( [0, 10\pi] /_{0 \sim 10\pi}, x_0 \right),\
+    \gamma (t) := 10 \pi t \\
+    [\alpha] \in \pi \left( [0, 2\pi] /_{0 \sim 2\pi}, x_0 \right), \
+    \alpha (t) := 2 \pi t
+  \end{gather*}
+  a estas. Calculando la imagen de \([\gamma]\) bajo \(p_*\) se obtienen
+  las siguiente ecuaciones
+  \begin{equation*}
+    p_* \left( [\gamma] \right) = [p \circ \gamma]
+  \end{equation*}
+  donde
+  \[
+    p \circ \gamma (t) = 10 \pi t \mod 2 \pi = \alpha^5
+  \]
+  luego, reemplazando en la ecuación anterior
+  \begin{equation*}
+    p_* \left( [\gamma] \right) = [p \circ \gamma] = [\alpha^5] =
+    [\alpha]^5
+  \end{equation*}
+  Dado que \(p_*\) es un homomorfismo, es claro que \(p_* \left(
+  [\gamma]^n \right) = [\alpha]^{5n}\). Conociendo que \(\pi \left(
+  [0,2\pi] /_{0 \sim 2\pi} , x_0 \right)\) es \((\mathbb Z, +)\) es claro
+  ver que \(p_* \left( \pi \left( [0, 10\pi] , x_0 \right) \right)\) es
+  \(5 \mathbb Z \subset \mathbb Z\).
+\end{ejemplo}
+
+Una pregunta ha hacerse es si tenemos esta implicación
+en sentido contrario, si todo subgrupo de \(\pi(X, x_0)\) le corresponde
+un cubrimiento el cual cumpla esta relación. La respuesta es afirmativa.
+La demostración no es nuestro enfoque, pero se invita a los interesados
+en revisar el teorema 1.3.6 de Hatcher \cite{Hatcher}.
+
+% eliminar?
 Ahora es mas clara la forma de calcular grupos fundamentales usando
 cubrimiento. Si tuviéramos de partida un isomorfismo de grupos
 entre los espacios \(\pi (\tilde X)\) y \(\pi (X)\), tendríamos que
