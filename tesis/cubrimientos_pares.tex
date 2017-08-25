@@ -14,7 +14,7 @@ el cubrimiento para \(X\).
 \end{definicion}
 
 \begin{ejemplo}[Cubrimiento de \(S^1\) por \( \begin{bmatrix} 0, 10
-\pi \end{bmatrix} \) con \( 0 \sim 10 \pi \)]
+\pi \end{bmatrix} \) con \( 0 \sim 10 \pi \)] \label{ej:10pi}
   Pensamos en \(S^1\) como el intervalo \([0, 2 \pi]\) enrollado sobre
   si mismo mediante la identificacion \(0 \sim 2 \pi\). Podemos imaginar
   un cubrimiento de este como cualquier intervalo con los extremos
@@ -296,7 +296,49 @@ Hemos mostrado que para un cubrimiento \(p : (\tilde X, \tilde x _0) \to
 (X , x_0)\), se tiene que
 \[ \pi (\tilde X, \tilde x_0) \simeq p_* \left( \pi (\tilde X, \tilde x_0)\right) \]
 donde \(p_* \left( (\tilde X, \tilde x_0) \right)\) es un subgrupo de
-\(\pi (X, x_0)\). Una pregunta ha hacerse es si tenemos esta implicación
+\(\pi (X, x_0)\). Con esto podemos revisar algunos ejemplos anteriores.
+\begin{ejemplo}[Ejemplo \ref{ej:10pi} continuado]
+  En el ejemplo anterior se había definido \(p : [0 , 10 \pi] /_{0 \sim
+    10\pi} \to [0, 2\pi] /_{0 \sim 2\pi}\).
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/spring.png}
+  \end{figure}
+  Consideremos a \(x_0 \in [0, 2\pi] /_{0 \sim 2\pi}\) un punto base. El
+  homomorfimos inducido para \(p\) corresponde a la función
+  \begin{align*}
+    p_* : \pi \left( [0, 2\pi] /_{0 \sim 2\pi} , x_0 \right) &\longrightarrow \left( [0, 10\pi] /_{0 \sim 10\pi}, x_0 \right) \\
+    [f] &\longmapsto [p \circ f]
+  \end{align*}
+  Según el diagrama, el claro ver que ambos grupos solo admiten una
+  curva no trivial en ellos. Llamaremos
+  \begin{gather*}
+    [\gamma] \in \pi \left( [0, 10\pi] /_{0 \sim 10\pi}, x_0 \right),\
+    \gamma (t) := 10 \pi t \\
+    [\alpha] \in \pi \left( [0, 2\pi] /_{0 \sim 2\pi}, x_0 \right), \
+    \alpha (t) := 2 \pi t
+  \end{gather*}
+  a estas. Calculando la imagen de \([\gamma]\) bajo \(p_*\) se obtienen
+  las siguiente ecuaciones
+  \begin{equation*}
+    p_* \left( [\gamma] \right) = [p \circ \gamma]
+  \end{equation*}
+  donde
+  \[
+    p \circ \gamma (t) = 10 \pi t \mod 2 \pi = \alpha^5
+  \]
+  luego, reemplazando en la ecuación anterior
+  \begin{equation*}
+    p_* \left( [\gamma] \right) = [p \circ \gamma] = [\alpha^5] =
+    [\alpha]^5
+  \end{equation*}
+  Dado que \(p_*\) es un homomorfismo, es claro que \(p_* \left(
+  [\gamma]^n \right) = [\alpha]^{5n}\). Conociendo que \(\pi \left(
+  [0,2\pi] /_{0 \sim 2\pi} , x_0 \right)\) es \((\mathbb Z, +)\) es claro
+  ver que \(p_* \left( \pi \left( [0, 10\pi] , x_0 \right) \right)\) es
+  \(5 \mathbb Z \subset \mathbb Z\).
+\end{ejemplo}
+
+Una pregunta ha hacerse es si tenemos esta implicación
 en sentido contrario, si todo subgrupo de \(\pi(X, x_0)\) le corresponde
 un cubrimiento el cual cumpla esta relación. La respuesta es afirmativa.
 La demostración no es nuestro enfoque, pero se invita a los interesados
