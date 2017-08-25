@@ -1,4 +1,10 @@
 \section{Grupo fundamental}
+Hemos de caracterizar diferentes espacios topológicos definiendo una
+nueva propiedad llamada ``grupo fundamental''. Esta sera una invariante
+del espacio bajo morfismos adecuados (a discutir mas adelante). Por
+mientras hemos de enfocarnos que esta propiedad dependerá de la noción
+de arcos admisibles en un espacio topológico. A continuacion,
+definiremos estos conceptos a adecuadamente.
 
 {
 \newcommand{\homRelAlt}{\stackrel{.}{\simeq}}
@@ -6,16 +12,17 @@
 \input{./grupoide_arcos.tex}
 
 \subsection{Grupo fundamental}
-Sobre nuestros arcos tenemos una estructura de grupoide porque no siempre
-podemos hacer coincidir los puntos inicial y final. Si nos fijáramos en
-un solo punto \(x_0 \in X\) tal que todas los arcos \(f : I \to X\)
-cumplieran que
+Sobre nuestros arcos tenemos una estructura de grupoide y no de grupo
+porque no siempre podemos hacer coincidir los puntos inicial y final de
+las diferentes clases de arcos. Si nos fijáramos en un solo punto \(x_0
+\in X\) tal que todas los arcos \(f : I \to X\) cumplieran que la igualdad
 \[ f(0) = x_0 = f (1) \]
 Entonces las propiedades que demostramos anteriormente nos dirían que el
-espacio \((X / \simeq, *)\) es un grupo algebraico.
+espacio \((\mathcal C \left( I , X \right) / _\simeq , \left( *
+\right))\) es un grupo algebraico.
 \begin{definicion}[Grupo fundamental]
   Sea \(X\) un espacio topológico y \(x_0 \in X\) un punto. La colección
-  \[ \pi_1 (X,x_0) = \{ [f] \mid f : I \to X, f \text{ continua}\}\]
+  \[ \pi_1 (X,x_0) = \{ [f] \mid f : I \to X,\ f \text{ continua}\}\]
   \[ [f] := \{ g : I \to X \mid f \simeq g\}\]
   junto con el producto de caminos \((*)\) forman el llamado
   \textbf{grupo fundamental} \((\pi_1(X,x_0), (*))\)
@@ -27,8 +34,8 @@ espacios puntuados \((X,x_0)\) e \((Y,y_0)\) homeomorfos, debe de
 existir un respectivo isomorfismo de grupos entre \(\pi_1(X,x_0)\) y
 \(\pi_1(Y,y_0)\). Para esto debemos recordar que un isomorfo entre
 grupos es un homomorfismo, inyectivo y sobreyectivo.
-\begin{definicion}
-  Sean \((G,(*)), (G', (\cdot))\) dos grupos algebraicos. \(F : G \to
+\begin{definicion}[Homomorfismo] \label{def:homomorfismo}
+  Sean \((G,(*)), (G'', (\cdot))\) dos grupos algebraicos. \(F : G \to
   G'\) es un homomorfismo entre grupos si y solo si
   \[ \forall x,y \in G,\ F (x * y) = F(x) \cdot F(y)\]
 \end{definicion}
@@ -38,9 +45,10 @@ grupos es un homomorfismo, inyectivo y sobreyectivo.
   \[ e \text{ es identidad de } G \implies F(e) \text { es identidad de } G' \]
 \end{corolario}
 
-\subsubsection{Ejemplo intuitivo de \(\mathbb{R}^2 - \{(1,1)\}\).}
+\subsubsection{Ejemplo intuitivo de grupo fundamental: \(\mathbb{R}^2 \backslash
+  \{(1,1)\}\).} \label{ex:R2-11}
 Para mostrar la intuición detrás de la definición, utilizaremos como
-ejemplo un espacio relativamente sencillo de visualizar. hemos de
+ejemplo un espacio relativamente sencillo de visualizar. Hemos de
 caracterizar todas la curvas cerradas que inicien en un punto
 arbitrario, que denotaremos por \(x_0\). Sea \(f : I \to \mathbb{R}^2 -
 \{(1,1)\}\) un camino arbitrario, con dicho punto inicial, tendremos
@@ -54,19 +62,19 @@ tres grandes alternativas para de su clasificación.
 \begin{itemize}
 \item La curva denotada por \(f\) puede estar contenida en un subconjunto
   convexo de \(R^2 - \{(1,1)\}\). De esta manera, la curva pertenece a la
-  homotopía de la linea recta dada por la definicion
+  homotopía de la linea recta dada por la definición
   \ref{def:homotopia-linea} bajo la función
   \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) k_{x_0} (t)\]
   Por lo tanto en este caso, \(f \in [k_{x_0}]\).
 \item La curva \(f\) no puede ser contenida en un subconjunto convexo de
   \(R^2 - \{ (1,1)\}\). Esto solo puede suceder si la curva \(f\)
-  encerrara al punto \(x_0\), de manera que la relación \(\lambda x +
+  encerrara al punto \((1,1)\), de manera que la relación \(\lambda x +
   (1 - \lambda) y\) no seria valida para algunos \(\lambda, x, y\). Por
   tanto \(f \not \in [k_{x_0}]\), así que denotaremos a la clase de
   equivalencia a la que pertenezca como \([\mathtt{F}^1]\).
-\item La curva \(f\) encierra a \(x_0\) \(2\) veces. Podemos definir dos
+\item La curva \(f\) encierra a \((1,1)\) \(2\) veces. Podemos definir dos
   caminos \(g_1, g_2\) tales que \(f = g_1 * g_2\) (modulo re-escalamiento
-  en parámetros) y que \(g_1, g_2 \in \mathtt F ^1\). Esto no diría que
+  en parámetros) y que \(g_1, g_2 \in \mathtt [F ^1]\). Esto nos diría que
   \( f \in [\mathtt F ^1] * [\mathtt F ^1] =: [\mathtt F ^2]\). Este
   procedimiento puede generalizar para todos los naturales.
 % \item La curva \(f\) encierra a \(x_0\) \(2\) veces. Dado que cada vez
@@ -84,7 +92,7 @@ En efecto, estos elementos son bajo isomorfismo de grupo equivalentes a
 el grupo \((\mathbb{Z}, +)\). Por tanto diremos que este es el grupo
 fundamental de \(R^2 - \{(1,1)\}\).
 
-\paragraph{} Cabe notar que esta no es una demostración formal, no se ha demostrado
+Cabe notar que esta no es una demostración formal, no se ha demostrado
 que estas son todas alternativas posibles de curvas, de lo cual depende
 todo nuestro argumento. Mas adelante daremos una demostración formal de
 que esta intuición es la correcta, pero por ahora sirve como marco
@@ -99,7 +107,7 @@ espacio \(\forall a,b \in X\), con \(X\) un espacio topológico a
 estudiar, existe un camino \(\alpha : I \to X\) tal que \(\alpha (0) =
 a,\ \alpha (1) = b\). Si nuestro espacio \(X\) no fuera arco-conexo,
 caemos en la disyuntiva de elegir un punto apropiado que represente
-``suficientemente'' al espacio, en la definicion de su grupo.
+``suficientemente'' al espacio, en la definicion de su grupo
 fundamental. Dada que la motivacion de definir en primer lugar el grupo
 fundamental provenia de establecer una \emph{invariante} topologica,
 hace dudar que la parametrizacion en cuanto a punto base del grupo
@@ -130,17 +138,17 @@ camino.
 \begin{proof}
   Por ser \(X\) arco-conexo, existe \(\alpha : I \to X\) camino
   continuo, tal que \(\alpha (0) = x_0,\ \alpha (1) = x_1\). Se define
-  la funcion conjugada de \(\alpha\) por \(\hat \alpha\)
+  la funcion conjugada de \(\alpha\) por \(\hat \alpha\).
   Esta funcion, esta bien definida puesto que \(\forall g \in \pi (X,
   x_0),\ \alpha^{-1} * g * \alpha \) es continua (en virtud de \(*\)).
-  Sea entonces por definicion y reduccion se tiene
+  Por definicion y reduccion se tiene
   \[ \alpha^{-1} (t) = \alpha (1 - t)\]
   \[\big(\alpha^{-1} * g * \alpha \big) (0) = \alpha (1 - 0) = x_1 = \alpha (1) =
     \big(\alpha^{-1} * g * \alpha \big) (1)\]
 
-  \paragraph{\(\hat \alpha\) es homomorfismo.} Para esto, se procede por
+  \paragraph{\(\hat \alpha\) es homomorfismo:} Se procede por
   definicion. Por un lado, al mapear la identidad de \(k_{x_0} \in \pi
-  (X, x_0) \), tenemos por reduccion
+  (X, x_0) \), tenemos por simple calculo las siguientes igualdades
   \begin{align*}
     \hat \alpha ([k_{x_0}])
                  &= [\alpha^{-1} * k_{x_0} * \alpha] \\
@@ -171,45 +179,47 @@ camino.
 \end{proof}
 En la prueba anterior, la existencia del camino \(\alpha\)
 parametrizaba que tipo de isomorfismo \(\hat \alpha\) construimos.
-La eleccion de punto bases
-\(x_0, x_1\) nos permite hablar de la existencia de unico o multiples
-isomorfimos entre grupos fundamentales \(\pi (X, x_0), \pi (X, x_1) \)
+La elección de punto bases
+\(x_0, x_1\) nos permite hablar de la existencia de único o múltiples
+isomorfismos entre grupos fundamentales \(\pi (X, x_0), \pi (X, x_1) \)
 dependientes de la cantidad de caminos entre \(x_0\) y \(x_1\) que
 existan. Esto es un tema importante a considerar, puesto que existe un
-caracterizacion de \(\pi (X, x_0) \) como grupo abeliano, que depende de
+caracterización de \(\pi (X, x_0) \) como grupo \emph{Abeliano}, que depende de
 la cantidad de estos isomorfismos.
 \begin{teorema}
   Sean \(x_0, x_1 \in X\) puntos en un espacio arco-conexo. El grupo
   \(\pi (X, x_0) \) es abeliano si y solo si \(\forall \alpha, \beta\)
-  caminos (distintos) entre \(x_0\) y \(x_1\), se cumple que \(F_\alpha =
-  F_\beta\), con \(F_{\xi} ([f]) = [\xi^{-1} * f * \xi] \)
+  caminos (distintos) entre \(x_0\) y \(x_1\), se cumple que \(\hat \alpha \equiv
+  \hat \beta\), con \(\hat \alpha, \hat \beta\) los conjugados de los
+  caminos respectivos.
 \end{teorema}
 \begin{proof}
   Primero, dado que \(\pi (X, x_0)\) es
   abeliano, esto significa que \(\forall [f],[g] \in \pi (X, x_0),\ [f]
   * [g] = [g] * [f]\). Sean \(\alpha, \beta\) caminos entre \(x_0,x_1\)
-  fijos pero arbitrarios. Para mostrar que \(F_\alpha = F_\beta\),
-  debemos mostrar que para todo argumento los resultados coinciden. Sea
+  fijos pero arbitrarios. Para mostrar que \( \hat \alpha = \hat \beta\),
+  debemos mostrar que para todo argumento estas funciones coinciden. Sea
   \([f] \in \pi (X, x_0) \) un argumento fijo pero arbitrario. Dado que
   \(\alpha * \beta^{-1} * \beta \simeq \alpha \), se tiene que
-  \(F_\alpha = F _{\alpha * \beta^{-1} * \beta}\), luego por definicion
+  \( \hat \alpha = \widehat{(\alpha * \beta^{-1} * \beta)}\), luego por definición
   se cumplen la siguientes reducciones
-  \[ F_\alpha ([f]) = F_{\alpha * \beta^{-1} * \beta} ([f]) =
+  \[ \hat \alpha ([f]) = \widehat{(\alpha * \beta^{-1} * \beta)} ([f]) =
     [\beta^{-1}] * [\beta * \alpha^{-1}] * [f] * [\alpha * \beta^{-1}]
     * [\beta] \]
   Donde \([\alpha * \beta^{-1}] \in \pi (X, x_0) \), por lo tanto podemos
-  aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la expresion
+  aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la
+  siguiente expresión
   \[ [\beta^{-1}] * [\beta * \alpha^{-1}] * [\alpha * \beta^{-1}] * [f]
-    * [\beta] = [\beta^{-1}] * [f] * [\beta] = F_\beta ([f]) \]
-  probando asi lo buscado.
+    * [\beta] = [\beta^{-1}] * [f] * [\beta] = \hat \beta ([f]) \]
+  probando así lo buscado.
 
   En el converso, sean \([f],[g] \in \pi (X, x_0) \) fijos pero
-  arbitrarios, dado que \(\alpha\) es camino entre \(x_0\) y \(x_1\), se
-  tiene que \(f * \alpha\) tambien es camino entre \(x_0\) y \(x_1\).
-  Por hipotesis, tenemos en particular para estos caminos, que se cumple
-  la relacion
+  arbitrarios. Dado que \(\alpha\) es camino entre \(x_0\) y \(x_1\), se
+  tiene que \(f * \alpha\) también es camino entre \(x_0\) y \(x_1\).
+  Por hipótesis, tenemos en particular para estos caminos, que se cumple
+  la relación
   \begin{align*}
-    F_{f * \alpha} ([g]) &= F_{\alpha} ([g]) \\
+    \widehat{\left( f * \alpha \right)} ([g]) &= \hat{\alpha} ([g]) \\
     [(f * \alpha)^{-1} * g * (f * \alpha) ] &= [\alpha^{-1} * g * \alpha] \\
     [\alpha^{-1} * f^{-1} * g * f * \alpha ] &= [\alpha^{-1} * g * \alpha] \\
     [\alpha^{-1}] * [f^{-1}] * [g] * [f] * [\alpha] &= [\alpha^{-1}] *
@@ -219,7 +229,7 @@ la cantidad de estos isomorfismos.
   \end{align*}
 
   \begin{acotacion}
-    Aqui se esta utilizando la notacion \( [\alpha]\) para clase de
+    Aquí se esta utilizando la notación \( [\alpha]\) para clase de
     equivalencias no necesariamente pertenecientes al grupo fundamental
     \(\pi (X, x_0)\).
   \end{acotacion}
@@ -228,7 +238,7 @@ la cantidad de estos isomorfismos.
 En resumen si sabemos que \(\pi (X, x_0)\) es \emph{Abeliano}, esto equivale a
 decir que \(\forall \alpha,\beta\) caminos entre \(x_0, x_1\), se tiene
 que existe un \emph{único} isomorfismo entre \(\pi (X,x_0) \) y \( \pi
-(X,x_1)\), pues \(F_\alpha = F_\beta\). Anteriormente, teníamos la
+(X,x_1)\), pues \(\hat \alpha = \hat \beta\). Anteriormente, teníamos la
 existencia de posiblemente múltiples isomorfismos entre \(\pi (X, x_0)
 \) y \(\pi (X, x_1) \). Si no podemos parametrizar los isomorfismos
 entre distintos puntos bases de un grupo fundamental, perdemos esta
@@ -236,42 +246,74 @@ caracterización de grupo fundamental Abeliano, pues perdemos la capacidad
 de contar cuantos isomorfismos existen.
 
 \subsection{Invariante topológica}
-Nuestra meta original era mostrar que los grupos fundamentales son una
-invariante topológica de un espacio, es decir, dados \(X,Y\) dos
-espacios topológicos (puntuados) tales que \(x_0 \in X,\ y_0 \in Y\), si
-existe un homeomorfismo (funcion biyectiva continua con inversa continua)
+Nuestra meta original era mostrar que el grupo fundamental es una
+invariante topológica de un espacio. Esto es que dados dos
+espacios topológicos \(X,Y\) tales que \(x_0 \in X,\ y_0 \in Y\), si
+existe un homeomorfismo (función biyectiva continua con inversa
+continua)
 \begin{align*}
-  h : (X, x_0) &\to (Y, y_0) \\
-  x_0 &\mapsto h(x_0) = y_0
+  h : (X, x_0) &\longrightarrow (Y, y_0) \\
+  x_0 &\longmapsto h(x_0) = y_0
 \end{align*}
-entonces existirá un isomorfismo de grupos
-\[ h_{*} : \pi (X, x_0) \to \pi (Y, y_0) \]
-El candidato a \(h_{*}\) se define como \(h_{*} ([f]) \coloneqq [h \circ
-f] \), lo cual probaremos en el siguiente teorema
-\begin{teorema} \label{thm:homoemorfismo-isomorfismo}
-\(h_{*} : \pi (X, x_0) \to \pi (Y, y_0)\) es un isomorfismo de grupos
+entre \((X, x_0)\) y \((Y, y_0)\) entonces existirá un isomorfismo de
+grupos
+\[ h_{*} : \pi (X, x_0) \longrightarrow \pi (Y, y_0) \]
+entre \(\pi (X, x_0)\) y \(\pi (Y, y_0)\). Existe una manera natural de
+construir dicho isomoformismo mediante la definición de cierto
+homomorfismo, al cual mostraremos a continuación
+\begin{definicion}[Homomorfismo inducido] \label{def:homomorfismo-inducido}
+  Sea \(h : (X, x_0) \longrightarrow (Y, y_0)\) un morfismo de
+  espacios topológicos puntuados. La función
+  \begin{align*}
+    h_* : \pi (X, x_0) &\longrightarrow \pi (Y, y_0) \\
+    [f] &\longmapsto [h \circ f]
+  \end{align*}
+  es denominada el homomorfismo inducido por \(h\) entre \(\pi (X,
+  x_0)\) y \(\pi (Y, y_0)\).
+\end{definicion}
+\begin{teorema}
+  Para \(h : (X, x_0) \to (Y, y_0)\) un morfimos entre espacios
+  puntuados, \(h_* : \pi (X, x_0) \to \pi (Y, y_0)\) es un homomorfismo
 \end{teorema}
 \begin{proof}
-  Hemos de probar que este bien definida, sea un homomorfismo, sea
-  inyectiva y sobreyectiva.
-  \begin{itemize}
-  \item Dado que \(h(x_0) = y_0\), es
-    claro que si \([f] \in \pi (X, x_0) \) entonces \( [h \circ f] \in
-    \pi (Y, y_0)\).
+  Este homomorfismo esta claramente bien definido, pues sabiendo que \(h
+  (x_0) = y_0\) y que \([f] \in \pi (X, x_0)\) se tiene que \(h_* ([f]) =
+  [h \circ f] \in \pi (Y, y_0)\). Nos falta probar de que cumple la
+  ecuación de un homomorfismo dadas por la definición
+  \ref{def:homomorfismo}. Esto se ve por definición, puesto que se cumplen
+  las siguientes ecuaciones
+  \[ h_{*} ([e_{x_0}]) = [h \circ e_{x_0}] = [e_{y_0}]\]
+  Además, por el lema \ref{lema:dist-composición-producto} de composición
+  sobre el producto, obtenemos las siguientes igualdades
+  \[ h_{*} ([f * g]) = [h \circ (f * g)] = [(h \circ f) * (h \circ g)]
+    = h_{*} ([f]) * h_{*} ([g])\]
+  obteniendo así lo buscado.
+\end{proof}
+Si sabemos que \(h\) es además un homeomorfismo, tenemos el siguiente
+teorema
+\begin{teorema} \label{thm:homoemorfismo-isomorfismo}
+Si \(h : (X, x_0) \to (Y,y_0)\) es un homeomorfismo, entonces \(h_{*} :
+\pi (X, x_0) \to \pi (Y, y_0)\) es un isomorfismo de grupos.
+\end{teorema}
+\begin{proof}
+Por el teorema anterior, solo hemos de probar que si \(h\) un
+homeomorfismo entonces \(h_*\) es inyectivo y sobreyectivo.
+\begin{itemize}
+  \item Para la inyectividad, nos basamos en que \(h\) ya es un
+  homeomorfismo. Sea \([f], [g] \in \pi (X, x_0)\) tales que \(h_* ([f])
+  = h_* ([g])\), por definición esto es equivalente a la siguiente
+  ecuaciones
+  \begin{align*}
+    &~ [h \circ f] = [h \circ g] \\
+    &\iff h \circ f \simeq h \circ g \\
+    &\iff f \simeq g \quad (h \text{ biyectiva}) \\
+    &\iff [f] = [g]
+  \end{align*}
 
-  \item Que es un homomorfismo se ve por definición, puesto que se cumplen
-    las siguientes ecuaciones
-    \[ h_{*} ([e_{x_0}]) = [h \circ e_{x_0}] = [e_{y_0}]\]
-    Del lema \ref{lema:dist-composicion-producto} sabemos
-    \[ h_{*} ([f * g]) = [h \circ (f * g)] = [(h \circ f) * (h \circ g)]
-      = h_{*} ([f]) * h_{*} ([g])\]
-
-  \item Para la inactividad, nos basamos en que \(h\) ya es un
-    homeomorfismo, por tanto \( h \circ f = h \circ g \implies f = g \).
-    De igual manera para la sobreyectividad, dado que \(h^{-1} : (Y,y_0)
-    \to (X, x_0)\) también es un homeomorfismo, para todo \([u] \in \pi
-    (Y, y_0) \) se tiene que \(h_{*} ([h^{-1} \circ u]) = [u]\).
-  \end{itemize}
+  \item Para la sobreyectividad, dado que \(h^{-1} :
+  (Y,y_0) \to (X, x_0)\) también es un homeomorfismo, para todo \([u] \in
+  \pi (Y, y_0) \) se tiene que \(h_{*} ([h^{-1} \circ u]) = [u]\).
+\end{itemize}
 \end{proof}
 
 Saber que el grupo fundamental es una invariante sin duda es útil
@@ -282,38 +324,59 @@ teoría que estudia este fenómenos es llamada teoría de categorías y
 históricamente los grupos fundamentales dieron inicio al estudio de
 estas.
 \begin{definicion}
-  Una categoría \(\mathcal C\) consiste una tripleta \(( \mathbf O,
-  \mathbf M, (\circ))\), donde
+  Una categoría \(\mathcal C\) consiste una tripleta \(( \mathbf {Obj},
+  \mathbf {Mor}, (\circ))\), donde
   \begin{itemize}
-    \item \(\mathbf O\) corresponde a una clase\footnote{Clase en el sentido de
-        teoría de conjuntos Neumann–Bernays–Gödel} de objetos.
-    \item \(\mathbf M\) corresponde a una clase de morfismos
-      entre elementos de \(\mathbf O\), tal que en particular \(\forall
-      O \in \mathbf O,\ \exists \mathcal i _o : O \to O\).
+    \item \(\mathbf {Obj}\) corresponde a una clase\footnote{Clase en el
+      sentido de teoría de conjuntos Neumann–Bernays–Gödel} de objetos.
+    \item \(\mathbf {Mor}\) corresponde a una clase de morfismos entre
+      elementos de \(\mathbf {Obj}\), tal que para todo \(A \in
+      \mathbf {Obj}\) existe un unico morfismo identidad \( \mathcal i
+      _A : A \to A, \ i_A \in \mathbf{Obj}\).
     \item \((\circ)\) es una operación composición entre morfismos
-      asociativa y que cuya identidad para cada objeto \(o\) corresponde al
-      morfismos \(\mathcal i _o\).
+      asociativa .
   \end{itemize}
 \end{definicion}
-De la segunda propiedad se extiende que el morfismos identidad es único
-para cada \(O \in \mathbf O\).
 \begin{definicion}
-  Sean \(\mathscr{C} , \mathscr D\) dos categorías arbitrarias, un
-  functor \(F : \mathscr C \to \mathscr D\) es un mapeo tal que
+  Sean \(\left( \mathscr{C} , (\circ) \right), \left(\mathscr D ,
+  (\star) \right) \) dos categorías con sus respectivos operadores
+  composicion. Un functor \(F : \mathscr C \to \mathscr D\) es un mapeo
+  tal que cumple las siguientes propiedades
   \begin{itemize}
-  \item \(\forall X \in \mathbf{Obj}(\mathscr C)\) objeto de \(\mathscr
-    C\), \( F(X) \in \mathbf{Obj} (\mathscr D)\)
-  \item  \(\forall f : X \to Y\) morfismos de \(X,Y \in \mathbf{Obj}
-    (\mathscr C),\ f \in \mathbf{Mor} (\mathscr C)\), se tiene que \(
-    F(f) : F(X) \to F(Y) \). Mas aun, \(F (\mathbf{Id}_X) = \mathbf{Id}_{F(X)}\)
+  \item \(\forall X \in \mathbf{Obj}(\mathscr C),\ F(X) \in \mathbf{Obj} (\mathscr D)\)
+  \item \(\forall f \in \mathbf{Mor} (\mathcal C)\) morfismo de \(X,Y
+    \in \mathbf{Obj} (\mathcal C)\) , se
+    debe cumplir que \(F (f)\) tenga la siguiente forma
+    \[ F(f) : F(X) \to F(Y),\ F(f) \in \mathbf{Mor}
+      (\mathcal D) \]
+    Mas aun, el morfismo identidad \(i_A\) para \(A \in
+    \mathbf{Obj} (\mathcal C)\) debe cumplir la ecuacion \(F (i_A) =
+    i_{F(A)}\)
+  \item Si \(f,g \in \mathbf{Mor}(\mathcal C)\) son morfismos tales que
+    \(f \circ g \in \mathbf{Mor} (\mathcal C)\), entonces
+    \[ F(f \circ g) = F(f) \star F(g) \]
   \end{itemize}
 \end{definicion}
-Aquí, nuestra \(\mathscr C = \mathscr{Top_{*}}\), la categoría de
-espacio topológicos puntuados y \(\mathscr D = \mathscr{Grp}\), la categoría de
-grupos algebraicos. \(X,Y\) serian espacio topológicos particulares, el
-morfismo \(f : X \to Y\) seria el homeomorfismo entre espacios
-topológicos puntuados y \(F(f) = f_{*} : F(X) \to F(Y)\) seria nuestro
-homomorfismo inducido por \(f\), el cual mapearía \(F(X) = \pi (X,
-x_0)\) a \(F(Y) = \pi (Y, y_0) \).
-% todo(slack): ver la discucion de la propiedades functoriales (talvez?)
+% TODO: imagen de functor mapeando
+Es decir, un functor es una función entre categorías que preserva la
+estructura de morfismos en la categoría inicial en la estructuras de
+morfismos en la categoría de llegada. Nosotros hemos ya construido
+nuestro primer functor, donde nuestras categorías inicial y de llegada son
+\[ \mathcal C = \mathscr{Top}_* ,  \quad \mathcal D
+  = \mathscr{Grp} \]
+con \(\mathscr{Grp}\) la categoría de grupos y homomorfismo entre
+grupos con composicion usual. Para especificar formalmente nuestro
+functor \(F\), debemos especificar tanto el mapeo de los elementos como
+el de los morfismos. Estos están dados por las siguientes ecuaciones
+\begin{align*}
+  F : \mathscr{Top}_* &\longrightarrow \mathscr{Grp} \\
+  \forall (A, a_0) \in \mathbf{Obj} \left( \mathscr{Top}_* \right),\
+    &F(A) \coloneqq \pi (A, a_0) \\
+  \forall f \in \mathbf{Mor} \left( \mathscr{Top}_* \right),\ &F(f) \coloneqq
+    f_*
+\end{align*}
+Viendo que todos los morfismos de \(\mathscr{Top}_*\) eran homeomorfismos
+y por tanto gracias al teorema \ref{thm:homoemorfismo-isomorfismo} los
+morfismos en la categoría de llegada bajo este functor no son solamente
+homomorfismo de grupos si no isomorfismos de grupos.
 }

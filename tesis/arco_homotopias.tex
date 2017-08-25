@@ -1,24 +1,20 @@
 \subsection{Arcos y homotopías}
-Para la construcción de nuestra invariante, debemos de familiarizarnos
-con los arcos y las deformaciones continuas entre ellos llamadas
-\emph{homotopías}.
-
-\begin{definicion}[arco]
-  un arco en el espacio \(x\) es una función continua \(f : i \to x \)
-  donde \(i = [0,1]\)
+\begin{definicion}[Arco]
+  Un arco en el espacio \(X\) es una función continua \(f : I \to X \)
+  donde \(I = [0,1]\)
 \end{definicion}
 %% mariela: q1 ¿todo espacio 1-dimensional es homeomorfo a [0,1]?
 %% no dije exactamente eso, un subconjunto convexo y acotado si lo es ,
 %% pero debo de preguntar que se refiere
-la definición tradicional es ligeramente mas general cambiando que \(I\)
+La definición tradicional es ligeramente mas general, cambiando que \(I\)
 sea un subconjunto convexo acotado de un espacio unidimensional, pero
 siempre podemos recuperar esta definición rescalando la distancia.
 
-\begin{definicion}[Homotopia]
+\begin{definicion}[Homotopía]
   Dados dos arcos \(f,g : I \to X\), diremos que \(f\) es homotópico a
   \(g\) si existe una función continua \(F : I \times I \to X \) tal que
   \[ \begin{matrix}
-      F (x, 0) = f(x) & F (x, 1) = g(x)
+      F (x, 0) = f(x), & F (x, 1) = g(x)
      \end{matrix}
   \]
   Donde \(F\) sera llamada una homotopía entre \(f\) y \(g\). La
@@ -37,20 +33,20 @@ Si tratamos con arcos \(f,g : I \to X\) que posean los mismos puntos
 iniciales y finales, es decir \(f(0) = g(0) = x_0, \; f(1) = g(1) =
 x_1 \) podemos definir una relación homotópica ligeramente mas fuerte.
 
-\begin{definicion}[Arco homotopia]
+\begin{definicion}[Arco homotopía] \label{def:arco-homotopia}
   \(f,g : I \to X\) son \emph{arco homotópicas} entre sí, si tienen los mismos
   puntos inicial y final \(x_0, x_1\) respectivamente y existe una homotopía entre
   ellos tal que cumpla
   \[
     \begin{matrix}
-      F(s,0) = f(s), & F(s,1) = g(s) \\
-      F(0,t) = x_0,  & F(1,t) = x_1
+      F(s,0) = f(s), & F(s,1) = g(s) & ~ \\
+      F(0,t) = x_0,  & F(1,t) = x_1, & \forall t \in I
     \end{matrix}
   \]
   La existencia de esta relación entre dos funciones sera denotada por
   \(f \simeq g\).
 \end{definicion}
-% todo(slack) hacer algun dibujo de las homotopias entre las curvas
+% todo(slack) hacer algun dibujo de las homotopías entre las curvas
 Una vez definida estas relaciones, una pregunta natural es si estas definen
 una relación de equivalencia, ya que nos gustaría identificar clases de
 curvas como elementos de alguna teoría algebraica. La respuesta es
@@ -70,7 +66,7 @@ es una relación de equivalencia.
 
   \item La simetría se obtiene de invertir el sentido de deformación de la
     homotopía original. Formalmente, dado \(f \stackrel{.}{\simeq} g\)
-    tenemos una homotopía entre estas \((x,t) \mapsto F(x,t)\). A partir
+    tenemos una homotopía \((x,t) \mapsto F(x,t)\) entre estas. A partir
     de aquí podemos definir
     \begin{equation}
       \label{eq:homotopy-simetry}
@@ -79,7 +75,7 @@ es una relación de equivalencia.
     con \(\hat{F}\) una homotopía entre \(g\) y \(f\). Por tanto \(g
     \stackrel{.}{\simeq} f\).
 
-  \item La transitividad se obtiene a partir de de dividir \(I\) en dos
+  \item La transitividad se obtiene a partir de parametrizar \(I\) en dos
     intervalos donde se deformen individualmente cada homotopía al doble
     del grado. Formalmente dado \(f \stackrel{.}{\simeq} g\) y \(g
     \stackrel{.}{\simeq} h\) representadas por las homotopías \(F\) y
@@ -111,15 +107,17 @@ homotopía de linea recta.
 \end{definicion}
 \begin{acotacion}
   En la definición anterior, la continuidad de \(F\) se obtiene de ser
-  una combinación convexa de funciones continuas \(f\) y \(g\). De que
-  sea una combinación convexa se obtiene la importancia de que existe un
-  conjunto \(\mathcal C \subset X\) que contenga a las imágenes.
+  una combinación convexa de funciones continuas \(f\) y \(g\). Por ser
+  una combinación convexa, se requiere pedir la existencia de un conjunto
+  \(\mathcal C \subset X\) que contenga a las imágenes de dichas
+  funciones. Pues de no ser así, podríamos obtener que la imagen no este
+  definida en el espacio topológico.
 \end{acotacion}
 
-Con estas definiciones ya podemos empezar a hablar de \([f]\) clases
+Con estas definiciones ya podemos empezar a hablar de clases
 de equivalencia de funciones bajo una relación homotópica
 \[ [f] = \{ g : I \to X \mid f \stackrel{.}{\simeq} g \} \]
-Notar que la construcción es valida para las dos relaciones aunque por
-nuestra meta de construir el grupo fundamental nos interesa
+Notar que la construcción anterior es valida para las dos relaciones,
+aunque por nuestra meta de construir el grupo fundamental nos interesa
 principalmente la relación arco homotópica, por razones a estudiar mas
 adelante.

@@ -1,20 +1,63 @@
 \subsection{Cubrimientos}
-\begin{definicion}
+\begin{definicion} \label{def:cubierta}
 Sea \(p : \tilde{X} \to X\) una función continua sobreyectiva. El
 abierto \(U \subseteq X\) se dice \textbf{cubierto} por \(p\)
 si existe \(\{V_\alpha\}_{\alpha \in \Lambda},\ \Lambda \subseteq
 \mathbb N\) tal que
 \[ p^{-1} (U) = \bigcup_{\alpha \in \Lambda} V_\alpha \]
 Donde \(\{V_\alpha\}\) es una familia disjunta de abiertos, tal que
-\(\forall \alpha \in \Lambda,\ p \mid_{\alpha}\) es homeomorfo sobre \(U\).
-Si para todo \(x \in X\) existe dicha vecindad \(U\) que cumpla lo
-anterior, se dirá que \(\tilde{X}\) es un \textbf{espacio cubrimiento}
-de \(X\) y el par \((p,\tilde X)\) denota el cubrimiento para \(X\).
+\(\forall \alpha \in \Lambda\) la restriccion \( p \mid_{\alpha}\) es
+homeomorfa sobre \(U\). Si para todo \(x \in X\) existe una vecindad
+\(U\) que cumpla lo anterior, se dirá que \(\tilde{X}\) es un
+\textbf{espacio cubrimiento} de \(X\) y el par \((p,\tilde X)\) denota
+el cubrimiento para \(X\).
 \end{definicion}
 
-Un ejemplo simple de cubrimiento para \(S^1\) es \(p :
-\mathbb R \to S^1,\ p(t) := e^{2 \pi \imath t}\). Este es claramente
-sobreyectivo y continuo, escogiendo dos abiertos ejemplares como \(U =
+\begin{ejemplo}[Cubrimiento de \(S^1\) por \( \begin{bmatrix} 0, 10
+\pi \end{bmatrix} \) con \( 0 \sim 10 \pi \)] \label{ej:10pi}
+  Pensamos en \(S^1\) como el intervalo \([0, 2 \pi]\) enrollado sobre
+  si mismo mediante la identificacion \(0 \sim 2 \pi\). Podemos imaginar
+  un cubrimiento de este como cualquier intervalo con los extremos
+  identificados que de al menos una vuelta completa a \([0, 2 \pi]\).
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/spring.png}
+  \end{figure}
+  Ciertamente el intervalo \([0, 10 \pi]\) con \(0 \sim 10 \pi\) cumple
+  el requisito, con el cubrimiento dado por
+  \begin{align*}
+    p : [0, 10 \pi] / _{(0 \sim 10\pi )} &\longrightarrow [0, 2 \pi] / _{(0 \sim 2\pi )} \\
+    t &\longmapsto \mathrm t \mod 2 \pi
+  \end{align*}
+\end{ejemplo}
+El diagrama anterior da una idea de la forma de general los espacios
+cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
+\(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del diagrama, se
+tiene la siguiente definicion auxiliad
+\begin{definicion}[Fibra]
+El conjunto discreto dado por \(p^{-1} (x_0)\) es conocido como una
+\emph{fibra} de \(x_0\).
+\end{definicion}
+\noindent Una invariante interesante de este es que la cardinalidad de
+cualquier fibra es la misma para todos los puntos.
+
+\begin{ejemplo}[Cubrimiento de toro]
+  En el ejemplo \ref{ej:toro-presentacion} se trabajo con la
+  presentación de toro como espacio cociente de \([0,1]^2\). Siguiendo
+  la idea del ejemplo anterior, podemos obtener un cubrimiento de esta
+  presentación mediante el siguiente diagrama.
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/toro-cubrimiento.png}
+  \end{figure}
+\end{ejemplo}
+
+\begin{ejemplo}[Cubrimiento: \(\Re\) sobre \(S^1\)]
+Para \(S^1\) el mapeo
+\begin{align*}
+  p : \Re &\longrightarrow S^1 \\
+  t &\longmapsto e^{2 \pi \imath t}
+\end{align*}
+es claramente
+sobreyectivo y continuo. Escogiendo dos abiertos ejemplares como \(U =
 S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
 \[
     p^{-1} (U) = \bigcup_{n \in \mathbb Z} (n, n+1)
@@ -22,19 +65,20 @@ S^1 - \{(1,0)\}\) y \(V = S^1 - \{(-1,0)\}\), es claro que
     2 )
 \]
 Donde estas familias de conjuntos son disjuntos y restringidos a cada
-uno se tiene la inactividad requerida.
+uno se tiene la inyectividad requerida.
+\end{ejemplo}
 
-A priori el cubrimientos es independiente de los caminos que tengamos
+A priori el cubrimiento es independiente de los caminos que tengamos
 en \(X\), queremos ver si podemos reflejar la información importante de
-los caminos de \(X\) sobre \(\tilde{X}\).
+los caminos de \(X\) sobre \(\tilde{X}\);
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.3]{./imagenes/lifting-path.png}
 \end{figure}
-Es decir, para todo arco \(f : I \to X\), construiremos \(\tilde f : I
+es decir, para todo arco \(f : I \to X\), construiremos \(\tilde f : I
 \to \tilde X\) el cual cumpla \(p \circ \tilde f = f \), donde \(\tilde
-f\) sera nuestro representante en el espacio cubrimientos de estos
-caminos. Veremos también que bajo ciertas hipótesis, este \(\tilde f\)
+f\) sera nuestro representante en el espacio cubrimiento de este
+camino. Veremos también que bajo ciertas hipótesis, este \(\tilde f\)
 es único y refleja información homotopica. Para esto necesitamos
 desarrollar algunos teoremas previos.
 \begin{lema}[Numero de Lebesgue] \label{thm:lebesgue-number-lema}
@@ -48,7 +92,7 @@ desarrollar algunos teoremas previos.
   teorema se cumple \(\forall \delta > 0\). Por compacidad de \(X\)
   existe una colección \(\{A_1,\dotsc,A_n\} \subset \mathcal A\) que
   cubre a \(X\), definamos a los conjuntos \(C_i = X - A_i,\ \forall i
-  \in [1,n]\) y a la función \(f : X \to \mathbb R\) definida por
+  \in [1,n]\) y a la función \(f : X \to \Re\) definida por
   \[ f(x) := \frac 1 n \sum_{i=1}^{n} d(x, C_i) \]
   i.e. la distancia promedio de \(x\) a \(C_i\). Notemos que \(\forall x
   \in X,\ f(x) > 0\), pues para \(x \in A_i \subseteq X\), por ser
@@ -60,9 +104,9 @@ desarrollar algunos teoremas previos.
   compacto, por lo tanto alcanza un mínimo; a este le denotaremos como
   nuestro \(\min_X f \coloneqq \delta \).
 
-  Probaremos que este \(\delta\) cumple el requerimiento, sea \(B
+  Probaremos que este \(\delta\) cumple el requerimiento. Sea \(B
   \subset X\) subconjunto abierto de diámetro menor que \(\delta\), sea
-  \(x \in B\) arbitrario. Definamos escojamos el conjunto \(C_m\) como
+  \(x \in B\) arbitrario. Escojamos el conjunto \(C_m\) como
   \[ C_m := \max_{i \in [1,n]} d(x, C_i) \]
   Dado que
   \[\delta \leq f(x) \leq d(x, C_m) \]
@@ -77,8 +121,8 @@ desarrollar algunos teoremas previos.
 Ver que la definición es mucho mas general que lo que pedíamos al
 diagrama. Usualmente \(W = [0,1]\) pues estudiaremos los caminos sobre
 \(X\). Veremos a continuación teoremas de como se reflejan los caminos
-y las homotopias en el espacio cubrimiento de \(X\).
-\begin{teorema}\label{thm:lifting-theorem}
+y las homotopías en el espacio cubrimiento de \(X\).
+\begin{teorema}[Levantamiento de caminos] \label{thm:lifting-theorem}
   Sea \(p : \tilde X \to X\) un cubrimiento y \(x_0 \in X\). Fijemos
   algún \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) = x_0 \).
   Para cualquier camino \(f : [0,1] \to X\) que comience en \(x_0\), existe
@@ -86,30 +130,38 @@ y las homotopias en el espacio cubrimiento de \(X\).
   \(\tilde f (0) = \tilde x _0\)
 \end{teorema}
 \begin{proof}
-  Para todo punto de \(x \in X\), existe una vecindad \(U_x\) que es
-  cubierta, por tanto \( X \subseteq \bigcup_{x \in X} U_x\) para cada
-  \(U_x\) correspondiente.
-  Por otro lado, tenemos que \( [0,1] \subset f^{-1} (\bigcup_{x
-  \in X} U_x)\); por el Teorema \ref{thm:lebesgue-number-lema}, podemos
-  elegir \(s_0,\dotsc,s_n \in [0,1]\) tal que \(f([s_i, s_{i+1}])\) este contenido
-  en algún \(U_x\). Definiremos \(\tilde f\) inductivamente.
+  Para todo punto de \(x \in X\), existe una vecindad de este \(U_x\)
+  que es cubierta (definicion \ref{def:cubierta}). Por tanto
+  \[ X \subseteq \bigcup_{x \in X} U_x\]
+  con \(U_x\) siendo las vecindades cubiertas para cada \(x\). De lo
+  anterior, se obtiene la siguiente inclusion
+  \[ [0,1] = f^{-1} \left( X \right) \subseteq f^{-1} \left( \bigcup_{x
+    \in X} U_x \right) \]
+  Por el Teorema \ref{thm:lebesgue-number-lema}, podemos elegir
+  \(s_0,\dotsc,s_n \in [0,1]\) tal que para todo \(i \in \{0,1 \dotsc,
+  n-1\}\), exista \(U_x\) tal que
+  \[f \left( [s_i, s_{i+1}] \right) \subset U_x \]
+  Con esto, definiremos \(\tilde f\) inductivamente.
 
   Primero declaremos \(\tilde f (0) = \tilde x _0\). Luego, suponiendo
   que \(\tilde f (s)\) esta definido para \(s \in [0, s_i]\), se
   define a \(\tilde f \) en \([s_i, s_{i+1}]\) de la siguiente forma.
   Dado que para algún \(x \in X\),
-  \[f ([s_i, s_{i+1}]) \subseteq U_x \quad \land \quad \exists
-    \{V_\alpha\}_{\alpha \in \Lambda},\ \bigcup_{\alpha \in \Lambda}
-    V_\alpha = p^{-1} (U_x)\]
+  \[
+    f \left( [s_i, s_{i+1}] \right) \subseteq U_x \quad \land \quad
+    \exists \{V_\alpha\}_{\alpha \in \Lambda},\ \bigcup_{\alpha \in \Lambda}
+    V_\alpha = p^{-1} (U_x)
+  \]
   debe de existir \(\alpha \in \Lambda\) tal que \(\tilde f (s_i) \in
-  V_\alpha\) previamente definido; a este, le denotaremos \(V_0\). Dado
-  que \(p \mid_{V_0}\) es un homeomorfismo, definimos a \(\tilde f (s)\)
-  en \([s_i, s_{i+1}]\) por
-  \begin{equation}
-  \tilde f (s) = (p \mid _{V_0})^{-1} (f(s))\label{eq:tilde-f-inductiva}
+  V_\alpha\) previamente definido; a este conjunto le denotaremos
+  \(V_0\). Dado que \(p \mid_{V_0}\) es un homeomorfismo, definimos a
+  \(\tilde f (s)\) en \([s_i, s_{i+1}]\) por
+  \begin{equation} \label{eq:tilde-f-inductiva}
+    \tilde f (s) = \left( p \mid _{V_0} \right)^{-1} \left( f(s) \right)
   \end{equation}
-  El cual es continuo en \([s_i, s_{i+1}]\) en virtud del lema del
-  pegamiento y bien definido por ser \((p \mid _{V_0})^{-1} \) homeomorfismo.
+  El cual es continuo en \([0, s_i] \cup [s_i, s_{i+1}]\) en virtud del
+  lema del pegamiento y bien definido por ser \( p \mid _{V_0} \)
+  homeomorfismo.
 
   Para ver la unicidad, se probara inductivamente. Supongamos que existe
   otro \(\hat{f}\) levantamiento par de \(f\) que también
@@ -122,21 +174,23 @@ y las homotopias en el espacio cubrimiento de \(X\).
   \[\hat f (s_i) = \tilde f (s_i) \in V_0\]
   con \([s_i, s_{i+1}]\) conexo y la familia \(\{V_\alpha\}\)
   es disjunta, obliga\footnote{Funciones continuas mapean conjuntos
-    conexos a conexos} a que \(\hat f [s_i, s_{i+1}] \subset
-  V_0\). Dado que es un levantamiento, debe de cumplirse que
+    conexos a conexos} a que
+  \[ \hat f \left( [s_i, s_{i+1}] \right) \subset V_0 \]
+  Dado que es un levantamiento, debe de cumplirse que
   \[\forall s \in [s_i, s_{i+1}],\ p \circ \hat f \, (s) =
     f(s) = p \circ \tilde f \, (s) \]
-  \[ \iff p ( \hat f (s)) = p ((p \mid_{V_0})^{-1} (f (s)))\]
+  \[ \iff p \left( \hat f (s) \right) = p \left( \left( p \mid_{V_0}
+      \right) ^{-1} \left( f (s) \right) \right)\]
   \[ \implies \hat f (s) = (p \mid_{V_0})^{-1} (f (s)), \quad \forall s
       \in [s_i, s_{i+1}]\]
   siendo esta la única posible definición, pues de haber otra,
   se tendria una contradiccion en decir que \((p \mid_{V_0})\) es un
   homeomorfismo (mapeo único), por tanto se obliga a que \( \hat f =
-\tilde f\)
+  \tilde f\)
 \end{proof}
 Mas aun, podemos no solo levantar las curvas sobre \(X\) a \(\tilde X\),
-si no también preservar las homotopias de \(X\) en \(\tilde X\).
-\begin{corolario}
+si no también preservar las homotopías de \(X\) en \(\tilde X\).
+\begin{corolario}[Levantamiento homotopico] \label{thm:levantamiento-homotopico}
   Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde x _0)
   = x_0 \) para algún \(\tilde x _0 \in \tilde X\). Para cualquier
   función continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\), tiene una
@@ -151,7 +205,7 @@ si no también preservar las homotopias de \(X\) en \(\tilde X\).
   luego en \(I \times 0\) y escogiendo subdivisiones de \(I \times I\)
   \[ s_0 < s_1 < \dotsc < s_m \]
   \[ t_0 < t_1 < \dotsc < t_n \]
-  Tales que \(F ([s_i , s_{i+1}] \times [t_j \times t_{j+1}])\) este
+  tales que \(F ([s_i , s_{i+1}] \times [t_j \times t_{j+1}])\) este
   contenido en un conjunto cubierto en \(X\), esto utilizando
   el lema de Lebesgue al igual que en la demostración anterior.
 
@@ -172,12 +226,12 @@ si no también preservar las homotopias de \(X\) en \(\tilde X\).
   esta definido bajo \(\tilde F\), existe un único \(V_0 \in
   \{V_\alpha\}\) que contiene a \(F (s_i, t_j)\). Pero notando que
   \(\{V_\alpha\}\) son disjuntos y que \(L,H\) son conexos, obliga a que
-  \[ \tilde F (H) \subset V_0 \quad \tilde F (L) \subset V_0 \]
+  \[ \tilde F (H) \subset V_0, \quad \tilde F (L) \subset V_0 \]
   Luego podemos definir \(\tilde F\) sobre el resto de \([s_i,
     s_{i+1}] \times [t_j , t_{j+1}]\) notando que \(p \mid_{V_0}\) es
   un homeomorfismo entre \(V_0\) y \(U\) y por tanto
   \[ \forall (a,b) \in [s_i, s_{i+1}] \times [t_j , t_{j+1}],
-    \ \tilde F (a,b) := p^{-1} \mid_{V_0} (F(a,b)) \]
+    \ \tilde F (a,b) := p^{-1} \mid_{V_0} \left( F(a,b) \right) \]
   Esta cumple la regla \( F = p \circ \tilde F\) y es continua en virtud
   del lema del pegamiento. Notando finalmente que ahora los conjuntos
   \[ L := [s_i , s_{i+1}] \times \{t_{j+1}\}\]
@@ -187,12 +241,116 @@ si no también preservar las homotopias de \(X\) en \(\tilde X\).
 %fin pagina 24
 \end{proof}
 
+Retrocedamos un poco para pensar que es lo que tenemos hasta el momento.
+Para un cubrimiento \(p : \tilde X \to X\), siempre es valida la
+construcción de la definición \ref{def:homomorfismo-inducido} de un
+hilomorfismo inducido \(p_* : \pi \left( \tilde X , \tilde x _0 \right)
+\to \left( X , x_0 \right)\) con \(p (\tilde x_0) = x_0\). Pero a priori
+esto no nos da ninguna relación entre contención entre los grupos. Pero
+cuando \(p\) es un cubrimiento, tenemos que \(p_*\) es inyectiva por el
+siguiente teorema.
+
+\begin{teorema}[Inyectividad de homomorfimos inducido por cubrimientos]
+  Sea \(\left( \tilde X, \tilde x_0 \right), \left( X, x_0 \right)\)
+  dos espacios topológicos puntuados. Si \(p : \left( \tilde X, \tilde x_0
+  \right) \to \left( X, x_0 \right)\) un cubrimiento entre estos,
+  entonces el homomorfismo inducido
+  \[ p_* : \pi \left( \tilde X, \tilde x_0 \right) \longrightarrow \pi
+    \left( X, x_0 \right)\]
+  es inyectivo.
+\end{teorema}
+\begin{proof}
+  Que el homomorfismo \(p_*\) sea inyectivo equivale a que su
+  kernel sea únicamente la identidad. Para esto
+mostraremos que todo elemento \([\tilde f] \in \pi
+(\tilde X , \tilde x_0)\) tal que \(p_* ([\tilde f]) = [k_{x _0}]\) con \([k_{ x _0}]\)
+la identidad de \(\pi (X, x_0)\), esta obligado a cumplir \([\tilde f] =
+[k_{\tilde x _0}]\) donde \([k_{\tilde x _0}]\) es la identidad de \(\pi (\tilde X ,
+\tilde x _0)\).
+
+Sea \([\tilde f] \in \pi (\tilde X, \tilde x _0)\) un elemento
+arbitrario tal que
+\[p_* ([\tilde f]) = [p \circ \tilde f] = [k_{ x _0}]\]
+Esto equivale a decir que existe una homotopía \(H\) entre \(p_* \circ
+f\) y \(k_{x _0}\). Por el corolario \ref{thm:levantamiento-homotopico} podemos
+levantar esta homotopía \(H\) en \((X, x_0)\) a una homotopía
+levantamiento \(\tilde H\) en \((\tilde X , \tilde x _0)\). Esta es un
+levantamiento homotópico, por tanto cumple la ecuaciones
+\[ p \circ \tilde H = H, \quad H (t, 0) = p \circ \tilde f, \quad H (t,
+  1) = k_{x _0} \]
+por lo que \(\tilde H\) es una homotopía entre los levantamientos de \(p
+\circ \tilde f\) y \(k_{x _0}\). Por el teorema \ref{thm:lifting-theorem},
+sabemos que estos levantamientos son únicos. También sabemos por simple
+calculo que
+\[ p \circ k_{\tilde x _0} (t) = p \left( \tilde x_0 \right) = x_0 =
+  k_{x_0} (t) ,\quad \forall t \in [0,1] \]
+por lo que \(k_{\tilde x _0}\) es el levantamiento de \(k_{x_0}\).
+Además de ya conocer que \(\tilde f\) es el levantamiento de \(p \circ
+\tilde f\). Por tanto \(\tilde H\) es una homotopía entre \(\tilde f\) y
+\(k_{\tilde x _0}\) ie
+\[[\tilde f] = [k_{\tilde x_0}]\]
+obteniendo así que el kernel de \(p_*\) es trivial.
+\end{proof}
+
+Hemos mostrado que para un cubrimiento \(p : (\tilde X, \tilde x _0) \to
+(X , x_0)\), se tiene que
+\[ \pi (\tilde X, \tilde x_0) \simeq p_* \left( \pi (\tilde X, \tilde x_0)\right) \]
+donde \(p_* \left( (\tilde X, \tilde x_0) \right)\) es un subgrupo de
+\(\pi (X, x_0)\). Con esto podemos revisar algunos ejemplos anteriores.
+\begin{ejemplo}[Ejemplo \ref{ej:10pi} continuado]
+  En el ejemplo anterior se había definido \(p : [0 , 10 \pi] /_{0 \sim
+    10\pi} \to [0, 2\pi] /_{0 \sim 2\pi}\).
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/spring.png}
+  \end{figure}
+  Consideremos a \(x_0 \in [0, 2\pi] /_{0 \sim 2\pi}\) un punto base. El
+  homomorfimos inducido para \(p\) corresponde a la función
+  \begin{align*}
+    p_* : \pi \left( [0, 2\pi] /_{0 \sim 2\pi} , x_0 \right) &\longrightarrow \left( [0, 10\pi] /_{0 \sim 10\pi}, x_0 \right) \\
+    [f] &\longmapsto [p \circ f]
+  \end{align*}
+  Según el diagrama, el claro ver que ambos grupos solo admiten una
+  curva no trivial en ellos. Llamaremos
+  \begin{gather*}
+    [\gamma] \in \pi \left( [0, 10\pi] /_{0 \sim 10\pi}, x_0 \right),\
+    \gamma (t) := 10 \pi t \\
+    [\alpha] \in \pi \left( [0, 2\pi] /_{0 \sim 2\pi}, x_0 \right), \
+    \alpha (t) := 2 \pi t
+  \end{gather*}
+  a estas. Calculando la imagen de \([\gamma]\) bajo \(p_*\) se obtienen
+  las siguiente ecuaciones
+  \begin{equation*}
+    p_* \left( [\gamma] \right) = [p \circ \gamma]
+  \end{equation*}
+  donde
+  \[
+    p \circ \gamma (t) = 10 \pi t \mod 2 \pi = \alpha^5
+  \]
+  luego, reemplazando en la ecuación anterior
+  \begin{equation*}
+    p_* \left( [\gamma] \right) = [p \circ \gamma] = [\alpha^5] =
+    [\alpha]^5
+  \end{equation*}
+  Dado que \(p_*\) es un homomorfismo, es claro que \(p_* \left(
+  [\gamma]^n \right) = [\alpha]^{5n}\). Conociendo que \(\pi \left(
+  [0,2\pi] /_{0 \sim 2\pi} , x_0 \right)\) es \((\mathbb Z, +)\) es claro
+  ver que \(p_* \left( \pi \left( [0, 10\pi] , x_0 \right) \right)\) es
+  \(5 \mathbb Z \subset \mathbb Z\).
+\end{ejemplo}
+
+Una pregunta ha hacerse es si tenemos esta implicación
+en sentido contrario, si todo subgrupo de \(\pi(X, x_0)\) le corresponde
+un cubrimiento el cual cumpla esta relación. La respuesta es afirmativa.
+La demostración no es nuestro enfoque, pero se invita a los interesados
+en revisar el teorema 1.3.6 de Hatcher \cite{Hatcher}.
+
+% eliminar?
 Ahora es mas clara la forma de calcular grupos fundamentales usando
 cubrimiento. Si tuviéramos de partida un isomorfismo de grupos
 entre los espacios \(\pi (\tilde X)\) y \(\pi (X)\), tendríamos que
 presuponer la estructura del grupo en \(\pi (\tilde X)\). La alternativa
 presentada muestra que los cubrimientos, preservan los arcos y
-homotopias de \(X\) en \(\tilde X\) y si es el espacio \(\tilde X\) es
+homotopías de \(X\) en \(\tilde X\) y si es el espacio \(\tilde X\) es
 suficientemente simple como para admitir un calculo simple de su grupo
 fundamental, entonces podemos saber que el grupo de \(X\) es un subgrupo
 normal del grupo de \(\tilde X\).
@@ -248,7 +406,7 @@ Ahora podemos plantearnos un ejemplo clásico, ver el grupo fundamental
 de \(S^1\). Utilizaremos el teorema anterior para proponer un
 cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
 preservar la estructura de grupo para ser estudiado bajo ese lente.
-\begin{teorema}
+\begin{teorema} \label{thm:grupo-S1}
   \(\forall x_0 \in S^1,\ \big( \pi (S^1,x_0), * \big)\) es isomorfo a
   \((\mathbb Z, +)\)
 \end{teorema}

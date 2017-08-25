@@ -1,2 +1,2 @@
 all:
-	latexmk -xelatex main.tex
+	latexmk -xelatex tesis.tex
