@@ -25,16 +25,20 @@ el cubrimiento para \(X\).
   Ciertamente el intervalo \([0, 10 \pi]\) con \(0 \sim 10 \pi\) cumple
   el requisito, con el cubrimiento dado por
   \begin{align*}
-    p : [0, 10 \pi] / (0 \sim 10\pi ) &\longrightarrow S^1 \\
-    t &\longmapsto \mathrm e ^{\imath (t \text{ mod } 2\pi)}
+    p : [0, 10 \pi] / _{(0 \sim 10\pi )} &\longrightarrow [0, 2 \pi] / _{(0 \sim 2\pi )} \\
+    t &\longmapsto \mathrm t \mod 2 \pi
   \end{align*}
-  El diagrama anterior da una idea de la forma de general los espacios
-  cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
-  \(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del
-  diagrama. El conjunto dado por \(p^{-1} (x_0)\) es conocido como una
-  \emph{fibra} de \(x_0\). Una invariante interesante de este es que la
-  cardinalidad de cualquier fibra es la misma para todos los puntos.
 \end{ejemplo}
+El diagrama anterior da una idea de la forma de general los espacios
+cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
+\(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del diagrama, se
+tiene la siguiente definicion auxiliad
+\begin{definicion}[Fibra]
+El conjunto discreto dado por \(p^{-1} (x_0)\) es conocido como una
+\emph{fibra} de \(x_0\).
+\end{definicion}
+\noindent Una invariante interesante de este es que la cardinalidad de
+cualquier fibra es la misma para todos los puntos.
 
 \begin{ejemplo}[Cubrimiento de toro]
   En el ejemplo \ref{ej:toro-presentacion} se trabajo con la
