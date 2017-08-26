@@ -256,6 +256,7 @@ cuando \(p\) es un cubrimiento, tenemos que \(p_*\) es inyectiva por el
 siguiente teorema.
 
 \begin{teorema}[Inyectividad de homomorfimos inducido por cubrimientos]
+  \label{thm:inyec-covering}
   Sea \(\left( \tilde X, \tilde x_0 \right), \left( X, x_0 \right)\)
   dos espacios topológicos puntuados. Si \(p : \left( \tilde X, \tilde x_0
   \right) \to \left( X, x_0 \right)\) un cubrimiento entre estos,
@@ -344,25 +345,28 @@ donde \(p_* \left( (\tilde X, \tilde x_0) \right)\) es un subgrupo de
   \(\mathbb Z\).
 \end{ejemplo}
 
-Una pregunta ha hacerse es si tenemos esta implicación
-en sentido contrario, si todo subgrupo de \(\pi(X, x_0)\) le corresponde
-un cubrimiento el cual cumpla esta relación. La respuesta es afirmativa.
-La demostración no es nuestro enfoque, pero se invita a los interesados
-en revisar el teorema 1.3.6 de Hatcher \cite{Hatcher}.
+Una pregunta ha hacerse sobre el teorema \ref{thm:inyec-covering} es si
+tenemos esta implicación en sentido contrario, esto es, si todo subgrupo
+de \(\pi(X, x_0)\) le corresponde un cubrimiento el cual cumpla esta
+relación. La respuesta es afirmativa. La demostración no es nuestro
+enfoque, pero se invita a los interesados en revisar el teorema 1.3.6 de
+Hatcher \cite{Hatcher}.
 
-% eliminar?
-Ahora es mas clara la forma de calcular grupos fundamentales usando
-cubrimiento. Si tuviéramos de partida un isomorfismo de grupos
-entre los espacios \(\pi (\tilde X)\) y \(\pi (X)\), tendríamos que
-presuponer la estructura del grupo en \(\pi (\tilde X)\). La alternativa
-presentada muestra que los cubrimientos, preservan los arcos y
-homotopías de \(X\) en \(\tilde X\) y si es el espacio \(\tilde X\) es
-suficientemente simple como para admitir un calculo simple de su grupo
-fundamental, entonces podemos saber que el grupo de \(X\) es un subgrupo
-normal del grupo de \(\tilde X\).
+Es mas claro la forma de calcular grupos fundamentales usando
+cubrimientos. Si estudiamos las imágenes de distintos cubrimientos en el
+espacio base, los distintos subgrupos nos darán una idea de
+quien debe ser el grupo fundamental del espacio base, pues este debe de
+ser compatible con todos los distintos subgrupos generados mediante
+cubrimientos. Sin embargo, esta técnica no nos asegura determinar el
+grupo del espacio base \(\pi (X, x_0)\) pues nos falta la
+sobreyectividad. Buscar condiciones para garantizar esta propiedad es
+infructuoso en termino de teoremas. Se adopta otro enfoque en general,
+el de estudiar las acciones del grupo \(\pi \left( X, x_0 \right)\)
+sobre la fibra \(p^{-1} \left( x_0 \right)\), el cual probaremos que
+bajo condiciones sensatas sobre el cubrimiento \(p\) y el espacio
+cubrimiento \(\left( \tilde X, \tilde x _0 \right)\), es isomorfo a \(\pi
+(X, x_0)\). Necesitamos algunas definiciones para esto
 
-Para un calculo mas explicito necesitamos denotar los puntos finales
-obtenidos en \(\tilde X\).
 \begin{definicion}[Levantamiento derivado]
   Sea \(p : \tilde X \to X\) un cubrimiento y sea \(x_0 \in X\).
   Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
@@ -375,9 +379,31 @@ obtenidos en \(\tilde X\).
   llamando a \(\phi\) el \textbf{correspondiente levantamiento
   derivado}\footnote{Corresponding lifting path} del cubrimiento \(p\).
 \end{definicion}
-La definición anterior intuitivamente ``desenrolla'' los ciclos del
-grupo fundamental \(\pi (X,x_0)\) y ve donde terminan vistos sobre
-\(\tilde X\).
+\begin{acotacion}
+  Este mapeo no depende del representante de clase \([f] \in \pi \left(
+    X, x_0 \right)\) pues las homotopías tiene fijos los extremos.
+\end{acotacion}
+Una idea geométrica de lo que sucede en los arcos del espacio base
+\(\left(X, x_o \right)\) al levantarse mediante el teorema
+\ref{thm:lifting-theorem} al espacio cubrimiento \(\left( \tilde X ,
+\tilde x _0 \right)\) es que transforma arcos con el mismo punto inicial
+y final a arcos donde esto no es necesario. Es decir es posible que
+``desenrolle'' los arcos al levantarse. Sin embargo para cumplir la
+propiedad de los levantamiento, el punto final de este tiene que
+pertenecer al conjunto \(p^{-1} \left( \{x_0\} \right)\), es decir la
+fibra de \(x_0\). De hecho podemos enfocarnos puramente en el punto al
+que permuta el punto final y podríamos determinar totalmente al arco en
+la base al que corresponde bajo hipótesis adecuadas. Esto se vera en la
+siguiente definición y teorema.
+\begin{definicion}[Simplemente conexo]
+  Un espacio topológico \(X\) es simplemente conexo si su grupo
+  fundamental es trivial.
+\end{definicion}
+\begin{acotacion}
+  Para un espacio simplemente conexo, para cualquier par de arcos
+  existe una homotopía entre ellos (la composición de sus dos homotopías
+  al arco identidad \(k_{x_0}\)).
+\end{acotacion}
 \begin{teorema}
   Sea \(p : \tilde X \to X\) un cubrimiento tal que \(p (\tilde x _0) =
   x_0\). Si \(\tilde X\) es arco-conexo entonces el correspondiente
@@ -385,11 +411,12 @@ grupo fundamental \(\pi (X,x_0)\) y ve donde terminan vistos sobre
   sobreyectivo. Mas aun, si \(\tilde X\) es simplemente conexo, este es
   biyectivo.
 \end{teorema}
-Usualmente queremos que \(p^{-1} (x)\) no sea simplemente un conjunto,
-queremos poder dotarle de estructura de grupo. En caso de \(\tilde X\)
-ser arco-conexo, lo que estamos haciendo realmente es estudiar un
-subgrupo de \(\pi \left( X, x_0 \right)\) a través de \(p^{-1}(x_0)
-\subseteq \tilde X\).
+% no es cierto creo
+% Usualmente queremos que \(p^{-1} (x)\) no sea simplemente un conjunto,
+% queremos poder dotarle de estructura de grupo. En caso de \(\tilde X\)
+% ser arco-conexo, lo que estamos haciendo realmente es estudiar un
+% subgrupo de \(\pi \left( X, x_0 \right)\) a través de \(p^{-1}(x_0)
+% \subseteq \tilde X\).
 \begin{proof}
   Demostración estándar de sobreyectividad en caso de ser \(\tilde X\)
   arco-conexo. Para \(\tilde x _1 \in p^{-1} (x_0)\) arbitrario, existe
