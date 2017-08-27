@@ -194,6 +194,15 @@ intuitiva y aparece como paso intermedio de la demostración general.
   contenida en \(U\) o en \(V\). Por simple calculo se ve que
   \[ [g_1] * ... * [g_n] = [f_1] * ... * [f_n] = [f] \]
 \end{proof}
+\begin{corolario}\label{cor:sobre-van}
+  El homomorfismo \(\Phi : \pi (U, x_0) * \pi (V, x_0) \to \pi (X,
+  x_0)\) es sobreyectivo.
+\end{corolario}
+Uno puede generalizar el teorema anterior para una cantidad arbitraria
+de conjuntos \(A_\alpha\) tal que \(X = \bigcup A_\alpha\). La
+demostración es la misma, solo tal vez un poco mas difícil de
+visualizar. Lo importante de este teorema es el corolario, el cual
+utilizaremos en su forma generalizada para probar el teorema general.
 
 \begin{teorema}[Teorema \vank ]
   Sea \((X, x_0)\) un espacio puntuado tal que exista una familia de
@@ -203,16 +212,21 @@ intuitiva y aparece como paso intermedio de la demostración general.
   intersección \(A_\alpha \cap A_\beta\) es arco-conexa, entonces el
   homomorfismo
   \[ \Phi : *_\alpha \pi (A_\alpha, x_0) \to \pi (X, x_0) \]
-  es sobreyectiva. Mas aun, si cada intersección \(A_\alpha \cap A_\beta
+  es sobreyectivo. Mas aun, si cada intersección \(A_\alpha \cap A_\beta
   \cap A_\gamma\) es arco-conexa, entonces el kernel de \(\Phi\) es un
   subgrupo normal \(N\) de la forma
   \[
-    N := \{ i_{\alpha \beta} (\omega) * i_{\beta \alpha} (\omega)^{-1}
-    \mid \omega \in \pi \left( A_\alpha \cap A_\beta, x_0 \right)\}
+    N := \langle \{ i_{\alpha \beta} (\omega) * i_{\beta \alpha} (\omega)^{-1}
+    \mid \omega \in \pi \left( A_\alpha \cap A_\beta, x_0 \right)\} \rangle
   \]
   y por tanto \(\Phi\) induce un isomorfismo \(\pi (X, x_0) \simeq
   *_\alpha \pi (A_\alpha, x_0) / N \)
 \end{teorema}
+\begin{proof}
+  En el corolario \ref{cor:sobre-van} ya fue probado que \(\Phi :
+  *_\alpha A_\alpha \to \pi (X, x_0)\) es sobreyectivo. Solo nos falta
+  caracterizar al kernel de \(\Phi\).
+\end{proof}
 % En un espacio \((X, x_0) = (U \vee V, x_0)\) se cumple por la unión
 % disjunta que el único punto en común de \(U\) y \(V\) es \(x_0\) (y eso
 % solo por la identificación de la equivalencia). Los espacios singletons
