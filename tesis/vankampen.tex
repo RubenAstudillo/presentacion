@@ -59,7 +59,7 @@ por completitud
   Nosotros seguiremos una vía alternativa dada por \emph{Hatcher} en
   \cite{Hatcher}[sec 1.2] de estudiar la cada posible juxtaposicion como
   una función en el espacio de permutaciones. Sea \(W\) el conjunto de
-  cadenas reducidas de \(*_\alpha G_\alpha\) con la palabra vacía
+  cadenas reducidas de \(*_\alpha G_\alpha\) con la cadena vacía
   incluida. Para cada \(g \in G_\alpha\) se define una función asociada
   \(L _g : W \to W\) dada por la ecuación
   \[ L_g \left( g_1 g_2 \dots g_m \right) = g g_1 g_2 \dots g_m \]
@@ -105,18 +105,45 @@ por completitud
   L_{w_3}\)tampoco lo seria, lo cual es una contradicción con la
   asociatividad de la composición en \(P(W)\).
 \end{proof}
-El producto libre aparecerá en la versión mas general del teorema de
-\vank . Previo a esto, es útil trabajar con una versión reducida del
+
+Aquí se utilizo implícitamente un propiedad básica del producto libre
+\(*_\alpha G_\alpha\), que si tengo una colección de homomorfismos
+\[ \phi_\alpha : G_\alpha \to H \]
+con \(H\) un grupo, existe una extensión única
+\[ \phi : *_\alpha G_\alpha \to H \]
+tal que sigue siendo homomorfismo. En particular, la ecuación que la
+define para \(g_1 g_2 \dots g_n \in *_\alpha G_\alpha\) arbitrario es la siguiente
+\[
+  \phi \left( g_1 g_2 \dots g_n \right) := \phi_{\alpha_1} (g_1)
+  \phi_{\alpha_2} (g_2) \dots \phi_{\alpha_n} (g_n)
+\]
+Para probar que es única, basta notar reducir la cadena no afecta la
+imagen bajo \(\phi\) y que esta debe seguir siendo un homomorfismo.
+
+El marco de trabajo de \vank sera el siguiente diagrama conmutativo,
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{./imagenes/van.png}
+\end{figure}
+donde \( H = \pi (U, x_0) * \pi (V, x_0)\) el producto libre, \(i_1,
+i_2, j_1, j_2\) son los homomorfismos inducidos (sin la notación \(i_*\)
+por simplicidad) de las inclusiones correspondientes, \(\Phi_1, \Phi_2\)
+son las inclusiones en el grupo libre tomando todo \(\gamma \in \pi (U,
+x_0)\) y ver la correspondiente cadena \(\gamma \in H\) y \(\Phi :
+\pi(U, x_0) * \pi (V, x_0) \to \pi (X, x_0)\) la extensión de los
+homomorfismo \(\Phi_1, \Phi_2\) descrita en el párrafo anterior.
+
+Previo al teorema general, es útil trabajar con una versión reducida del
 teorema de \vank por dos razones: es una versión geométricamente
 intuitiva y aparece como paso intermedio de la demostración general.
 
 \begin{teorema} \label{thm:vank-especifico}
   Sea \(X = U \cup V\), donde \(U,V\) son conjuntos abiertos de \(X\).
   Supongamos que \(U \cap V\) es arco-conexo y que \(x_0 \in U \cap V\).
-  Sea \(i\) y \(j\) las inclusiones de \(U\) y \(V\) en \(X\)
+  Sea \(j_1\) y \(j_2\) las inclusiones de \(U\) y \(V\) en \(X\)
   respectivamente. Entonces las imágenes de los homomorfismos inducidos
-  \[ i_* : \pi (U, x_0) \to \pi (X, x_0) \quad j_* : \pi (V, x_0) \to
-  \pi (X, x_0) \]
+  \[ j_{1,*} : \pi (U, x_0) \to \pi (X, x_0) \quad j_{2,*} : \pi
+  (V, x_0) \to \pi (X, x_0) \]
   generan a \(\pi (X,x_0)\)
 \end{teorema}
 \begin{proof}
@@ -176,7 +203,7 @@ intuitiva y aparece como paso intermedio de la demostración general.
   intersección \(A_\alpha \cap A_\beta\) es arco-conexa, entonces el
   homomorfismo
   \[ \Phi : *_\alpha \pi (A_\alpha, x_0) \to \pi (X, x_0) \]
-  es sobreyectiva. Mas aun, si cada interseccion \(A_\alpha \cap A_\beta
+  es sobreyectiva. Mas aun, si cada intersección \(A_\alpha \cap A_\beta
   \cap A_\gamma\) es arco-conexa, entonces el kernel de \(\Phi\) es un
   subgrupo normal \(N\) de la forma
   \[
