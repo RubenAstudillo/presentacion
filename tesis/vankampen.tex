@@ -213,19 +213,87 @@ utilizaremos en su forma generalizada para probar el teorema general.
   homomorfismo
   \[ \Phi : *_\alpha \pi (A_\alpha, x_0) \to \pi (X, x_0) \]
   es sobreyectivo. Mas aun, si cada intersección \(A_\alpha \cap A_\beta
-  \cap A_\gamma\) es arco-conexa, entonces el kernel de \(\Phi\) es un
-  subgrupo normal \(N\) de la forma
+  \cap A_\gamma,\ \alpha, \beta, \gamma \in \tau\) es arco-conexa,
+  entonces el kernel de \(\Phi\) es un subgrupo normal \(N\) de la forma
   \[
-    N := \langle \{ i_{\alpha \beta} (\omega) * i_{\beta \alpha} (\omega)^{-1}
-    \mid \omega \in \pi \left( A_\alpha \cap A_\beta, x_0 \right)\} \rangle
+    N := N \left( \{ i_{\alpha \beta} (\omega) * i_{\beta \alpha} (\omega)^{-1}
+    \mid \omega \in \pi \left( A_\alpha \cap A_\beta, x_0 \right),\
+    \forall \alpha ,\beta \in \tau \} \right)
   \]
-  y por tanto \(\Phi\) induce un isomorfismo \(\pi (X, x_0) \simeq
-  *_\alpha \pi (A_\alpha, x_0) / N \)
+  es decir el subgrupo normal generado por estos elementos y por tanto
+  \(\Phi\) induce un isomorfismo \(\pi (X, x_0) \simeq *_\alpha \pi
+  (A_\alpha, x_0) / N \)
 \end{teorema}
+Antes de la demostración hablaremos un poco del conjunto \(N\). Las
+funciones \(i_{\alpha \beta}, i_{\beta, \alpha}\) corresponden a los
+homomorfismos inducidos por la inclusión
+\begin{gather*}
+  i_{\alpha \beta} : \pi (A_\alpha \cap A_\beta , x_0 ) \longrightarrow \pi (A_\alpha, x_0) \\
+  i_{\beta \alpha} : \pi (A_\alpha \cap A_\beta , x_0 ) \longrightarrow \pi (A_\beta, x_0)
+\end{gather*}
+que pierden su notación \(\hat i\) por simplicidad. Notar que dado que
+para \(\omega \in \pi (A_\alpha \cap A_\beta , x_0)\) arbitrario
+\[ i_{\alpha \beta} (\omega) * i_{\beta \alpha}^{-1} (\omega) \in N
+  \implies i_{\alpha \beta} (\omega) \cdot N = i_{\beta
+\alpha}^{-1} (\omega) \cdot N \]
+con \(i_{\beta \alpha}^{-1} (\omega) \cdot N\) un elemento de \(*_\alpha
+\pi (A_\alpha , x_0) / N\). Tambien vease que dado el producto en los
+grupos cocientes, para \(\omega_1 \omega_2 \) una cadena en \(*_\alpha
+A_\alpha\)
+\[ (\omega_1 \omega_2) N = (\omega_1 N) (\omega_2 N) \]
+como elemento del cociente \(*_\alpha A_\alpha / N\). Esto nos permite
+modificar puntos finales o iniciales de \(\omega_1, \omega_2\) para
+obligar que estos sean elementos de \(\pi (A_1, x_0), \pi (A_2, x_0)\)
+respectivamente mediantes operaciones con elementos de \(N\). Por otro
+lado, notese que
+\[ N \subseteq \text{kernel} \ \Phi \]
+pues \(N\) es el menor subgrupo normal de \(*_\alpha A_\alpha\) y los
+elementos base de este pertenecen al kernel de \(\Phi\) pues estos son
+de la forma
+\[ i_{\alpha \beta} (\omega) \ i_{\beta \alpha}^{-1} (\omega) ,
+  \alpha,\beta \in \tau,\ \omega \in \pi(A_\alpha \cap A_\beta , x_0)\]
+y sabiendo como es \(\Phi\) como homomorfismo
+\begin{align*}
+  \Phi &\left( i_{\alpha \beta} (\omega) \ i_{\beta \alpha}^{-1} (\omega) \right) \\
+       &= \hat {j_\alpha} \left(  i_{\alpha \beta} (\omega) \right) * \hat {j_\beta} \left( i_{\beta \alpha}^{-1} (\omega) \right) \\
+       &= \hat {j_\alpha} \left(  i_{\alpha \beta} (\omega) \right) * \hat {j_\beta} \left( i_{\beta \alpha} (\omega) \right)^{-1} \\
+       &= w * w^{-1} = e
+\end{align*}
+Con esto
+declarado, podemos proceder a la demostración.
 \begin{proof}
   En el corolario \ref{cor:sobre-van} ya fue probado que \(\Phi :
   *_\alpha A_\alpha \to \pi (X, x_0)\) es sobreyectivo. Solo nos falta
-  caracterizar al kernel de \(\Phi\).
+  caracterizar al kernel de \(\Phi\). Por el tercer teorema del
+  isomorfismo
+  % debo buscar libro de referencia
+  si el mapeo inducido por \(\Phi\) a \(*_\alpha A_\alpha / N \to \pi (X,
+  x_0)\) es inyectivo y \(N \subseteq \text{kernel} \Phi\) entonces \(N =
+  \text{kernel} \, \Phi\). Luego podemos aplicar el primer teorema del
+  isomorfismo sobre \(\Phi\) para obtener el resultado ya que tenemos
+  caracterizado su kernel.
+
+  Sea \([f] \in \pi (X, x_0)\) un elemento arbitrario. Por la
+  sobreyectividad de \(\Phi\) sabemos que existe al menos una cadena
+  cuya imagen sea \([f]\). Supongamos ahora que existan dos cadenas en
+  \(*_\alpha \pi (A_a, x_0)\)
+  \begin{gather*}
+    h := [h_1][h_2]\dotsc [h_k] \\
+    g := [g _1][g _2]\dotsc [g _l]
+  \end{gather*}
+  cuya imagenes bajo \(\Phi\) sean \([f]\). Se probara que se tiene la
+  igualdad como elemento de \(*_a \pi (A_\alpha) / N\), ie
+  \[ h \cdot N = g\cdot N\]
+  \[ \iff ([h_1]\cdot N) ([h_2] \cdot N) \dotsc ([h_k] \cdot N) = ([g _1] \cdot
+    N) ([g _2] \cdot N) \dotsc ([g _l] \cdot N) \]
+  Para comenzar, notemos que las cadenas \(h,g\) al ser vistas como
+  union de caminos (ie como imagen por \(\Phi\)) cumplen
+  \[ [h_1] * [h_2] * \dotsc * [h_k] = [f] = [g _1] * [g _2] * \dotsc * [g _l] \]
+  por lo tanto
+  \[ h_1 * h_2 * \dotsc * h_k \, \dot \sim \, g _1 * g _2 * \dotsc *
+    g _l \]
+  es decir, existe una homotopia (en \((X,x_0)\)) entre ellas. Denotemos
+  a \(F : I \times I \to X\) como dicha homotopia.
 \end{proof}
 % En un espacio \((X, x_0) = (U \vee V, x_0)\) se cumple por la unión
 % disjunta que el único punto en común de \(U\) y \(V\) es \(x_0\) (y eso
