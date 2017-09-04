@@ -293,7 +293,40 @@ declarado, podemos proceder a la demostración.
   \[ h_1 * h_2 * \dotsc * h_k \, \dot \sim \, g _1 * g _2 * \dotsc *
     g _l \]
   es decir, existe una homotopia (en \((X,x_0)\)) entre ellas. Denotemos
-  a \(F : I \times I \to X\) como dicha homotopia.
+  a \(F : I \times I \to X\) como dicha homotopia. El conjunto \(I
+  \times I\) puede sub-dividirse en una serie de intervalos
+  \[ 0 = s_0 < s_1 < ... < s_m = 1 \]
+  \[ 0 = t_0 < t_1 < ... < t_n = 1 \]
+  por el lema \ref{thm:lebesgue-number-lema} del numero de Lebesgue.
+  Este proceso es análogo a lo que se hizo en el caso particular de
+  \vank en el teorema \ref{thm:vank-especifico}. Estos intervalos tiene
+  la propiedad que
+  \[ \forall (i,j) \in \{1 \dotsc m-1 \} \times \{1 \dotsc n - 1\},
+    \exists ! \alpha \in \tau,\ F \left( [s_i, s_{i+1}] \times [t_j,
+    t_{j+1}] \right) \subseteq A_\alpha \]
+  Podemos enumerar los rectángulos generados por estos intervalos como
+  \(R_k\) con \(k \in \{1 \dotsc n\cdot m\}\) de izquierda a derecha y
+  de abajo hacia arriba. Dada la propiedad anterior, también podemos
+  identificar como \( A_k\) a los conjuntos tales que \(F \left( R_k
+  \right) \subseteq A_k \). Mas aun, podemos modificar ligeramente estos
+  valores de \(\{s_i\}, \{t_j\}\) tales que los rectángulos \(R_k\) tengan
+  vértices a lo mas en la intersección de tres conjuntos de
+  \(\{A_\alpha\}\).
+  % dibujo del cuadrilatero
+
+  La curva \(\gamma_0 (t) := (t, 0)\) se mueve por el lado inferior de
+  \(I \times I\) y cumple que \(F \circ \gamma_0 = h \). Análogamente
+  existe una curva \(\gamma_{nm} := (t,1)\) que se mueve por el lado
+  superior de \(I \times I\) y que cumple \(F \circ \gamma_{nm} = g\).
+  Consideremos a las curvas \(\gamma_k\) como aquellas que separen a los
+  rectángulos \(R_1 \dots R_k\) del resto y que vayan del borde
+  izquierdo al borde derecho. Iremos modificando las cadenas que generan
+  \(g\) y \(h\) a través de operaciones con elementos de \(N\) de manera
+  de ir moviéndonos a las cadenas que generen \(F \circ \gamma_{k}\) a
+  \(F \circ \gamma_{k+1}\) hasta eventualmente llegar a \(F \circ
+  \gamma_{nm} = g\). Con esto se habrá probado que \(g\) e \(h\)
+  pertenecen a la misma clase lateral en \(*_\alpha \pi (A_a) / N\).
+  Para esto hacemos el paso inductivo.
 \end{proof}
 % En un espacio \((X, x_0) = (U \vee V, x_0)\) se cumple por la unión
 % disjunta que el único punto en común de \(U\) y \(V\) es \(x_0\) (y eso
