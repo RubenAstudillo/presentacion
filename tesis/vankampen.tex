@@ -231,12 +231,12 @@ homomorfismos inducidos por la inclusión
   i_{\alpha \beta} : \pi (A_\alpha \cap A_\beta , x_0 ) \longrightarrow \pi (A_\alpha, x_0) \\
   i_{\beta \alpha} : \pi (A_\alpha \cap A_\beta , x_0 ) \longrightarrow \pi (A_\beta, x_0)
 \end{gather*}
-que pierden su notación \(\hat i\) por simplicidad. Notar que dado que
+que pierden su notación \(i_*\) por simplicidad. Notar que dado que
 para \(\omega \in \pi (A_\alpha \cap A_\beta , x_0)\) arbitrario
 \[ i_{\alpha \beta} (\omega) * i_{\beta \alpha}^{-1} (\omega) \in N
   \implies i_{\alpha \beta} (\omega) \cdot N = i_{\beta
-\alpha}^{-1} (\omega) \cdot N \]
-con \(i_{\beta \alpha}^{-1} (\omega) \cdot N\) un elemento de \(*_\alpha
+\alpha} (\omega) \cdot N \]
+con \(i_{\beta \alpha} (\omega) \cdot N\) un elemento de \(*_\alpha
 \pi (A_\alpha , x_0) / N\). Tambien vease que dado el producto en los
 grupos cocientes, para \(\omega_1 \omega_2 \) una cadena en \(*_\alpha
 A_\alpha\)
@@ -255,8 +255,8 @@ de la forma
 y sabiendo como es \(\Phi\) como homomorfismo
 \begin{align*}
   \Phi &\left( i_{\alpha \beta} (\omega) \ i_{\beta \alpha}^{-1} (\omega) \right) \\
-       &= \hat {j_\alpha} \left(  i_{\alpha \beta} (\omega) \right) * \hat {j_\beta} \left( i_{\beta \alpha}^{-1} (\omega) \right) \\
-       &= \hat {j_\alpha} \left(  i_{\alpha \beta} (\omega) \right) * \hat {j_\beta} \left( i_{\beta \alpha} (\omega) \right)^{-1} \\
+       &= j_{\alpha,*} \left(  i_{\alpha \beta} (\omega) \right) * j_{\beta,*} \left( i_{\beta \alpha}^{-1} (\omega) \right) \\
+       &= j_{\alpha,*} \left(  i_{\alpha \beta} (\omega) \right) * j_{\beta,*} \left( i_{\beta \alpha} (\omega) \right)^{-1} \\
        &= w * w^{-1} = e
 \end{align*}
 Con esto
@@ -268,7 +268,7 @@ declarado, podemos proceder a la demostración.
   isomorfismo
   % debo buscar libro de referencia
   si el mapeo inducido por \(\Phi\) a \(*_\alpha A_\alpha / N \to \pi (X,
-  x_0)\) es inyectivo y \(N \subseteq \text{kernel} \Phi\) entonces \(N =
+  x_0)\) es inyectivo y \(N \subseteq \text{kernel}\, \Phi\) entonces \(N =
   \text{kernel} \, \Phi\). Luego podemos aplicar el primer teorema del
   isomorfismo sobre \(\Phi\) para obtener el resultado ya que tenemos
   caracterizado su kernel.
@@ -287,7 +287,7 @@ declarado, podemos proceder a la demostración.
   \[ \iff ([h_1]\cdot N) ([h_2] \cdot N) \dotsc ([h_k] \cdot N) = ([g _1] \cdot
     N) ([g _2] \cdot N) \dotsc ([g _l] \cdot N) \]
   Para comenzar, notemos que las cadenas \(h,g\) al ser vistas como
-  union de caminos (ie como imagen por \(\Phi\)) cumplen
+  union de caminos (ie como imagen bajo \(\Phi\)) cumplen
   \[ [h_1] * [h_2] * \dotsc * [h_k] = [f] = [g _1] * [g _2] * \dotsc * [g _l] \]
   por lo tanto
   \[ h_1 * h_2 * \dotsc * h_k \, \dot \sim \, g _1 * g _2 * \dotsc *
