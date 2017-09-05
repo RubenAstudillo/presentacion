@@ -287,34 +287,79 @@ declarado, podemos proceder a la demostración.
   isomorfismo sobre \(\Phi\) para obtener el resultado ya que tenemos
   caracterizado su kernel.
 
-  Sea \([f] \in \pi (X, x_0)\) un elemento arbitrario. Por la
-  sobreyectividad de \(\Phi\) sabemos que existe al menos una cadena
-  cuya imagen sea \([f]\). Supongamos ahora que existan dos cadenas en
+  Sea \([f] \in \pi (X, x_0)\) un elemento arbitrario. Definamos una
+  factorizacion de esta como una cadena \([f_1][f_2] ... [f_k] \in
+  *_\alpha \pi (A_\alpha, x_0)\) donde
+  \begin{enumerate}
+  \item Cada \(f_i\) es un camino cerrado en \(A_i\) con punto base \(x_0\)
+  \item \(f\) es homotópico a \(f_1 * f_2 * ... * f_k\)
+  \end{enumerate}
+  Por la sobreyectividad de \(\Phi\) sabemos que existe al menos una
+  factorizacion de \([f]\).
+  Consideramos que dos factorizaciones son equivalentes si están
+  relacionadas por las siguientes dos operaciones o sus inversas:
+  \begin{enumerate}
+  \item Combinar dos términos adyacentes \([f_i][f_{i+1}]\) a un solo
+    termino \([f_i * f_{i+1}]\) si \([f_i],[f_{i+1}] \in \pi
+    (A_\alpha)\)
+  \item Considerar el termino \([f_i] \in \pi (A_\alpha)\) como
+    perteneciente a \(\pi (A_\beta)\) si \(f_i\) es un arco cerrado en
+    \(A_\alpha \cap A_\beta\)
+  \end{enumerate}
+  El primer ``movimiento'' no modifica elementos en \(*_\alpha
+  A_\alpha\) pues esta regla es precisamente parte de la noción
+  de reducción en el producto libre. El segundo movimiento mantiene al
+  elemento de la cadena en la misma clase lateral de \(*_\alpha \pi
+  (A_\alpha) / N\) pues si \([f_i] \in \pi (A_\alpha \cap A_\beta)\),
+  entonces
+  \begin{align*}
+    i_{\alpha \beta} \left( [f_i] \right) i_{\beta \alpha} \left( [f_i]
+    \right)^{-1} \in N \implies
+    &i_{\alpha \beta} \left( [f_i] \right) \cdot N = i_{\beta \alpha}
+    \left( [f_i] \right) \cdot N \\
+    \iff &[f_i]_{A_\alpha} \cdot N = [f_i]_{A_\beta} \cdot N
+  \end{align*}
+  y por tanto podemos reemplazar a esta cadena en cualquier posicion
+  donde aparezca en \(*_\alpha \pi (A_\alpha) / N\) pues si \([x] , [y] \in
+  *_\alpha \pi(A_\alpha)\) arbitrarios (particion izquierda y derecha de
+  una cadena), se cumple que
+  \begin{align*}
+    \left( [x] [f_i]_{A_\alpha} [y] \right) \cdot N
+    &= \left( [x] \cdot N \right) \cdot \left([f_i]_{A_\alpha} \cdot N
+       \right) \cdot \left( [y] \cdot N \right) \\
+    &= \left( [x] \cdot N \right) \cdot \left(
+      [f_i]_{A_\beta} \cdot N \right) \cdot \left( [y]
+      \cdot N \right) \\
+    &= \left( [x] [f_i]_{A_\beta} [y] \right) \cdot N
+  \end{align*}
+
+  Ahora comenzaremos la demostración de la inyectividad. Supongamos
+  que existan dos factorizaciones de \([f]\) en
   \(*_\alpha \pi (A_a, x_0)\)
   \begin{gather*}
     h := [h_1][h_2]\dotsc [h_k] \\
     g := [g _1][g _2]\dotsc [g _l]
   \end{gather*}
-  cuya imagenes bajo \(\Phi\) sean \([f]\). Se probara que se tiene la
-  igualdad como elemento de \(*_a \pi (A_\alpha) / N\), ie
+  Se probara que se tiene la igualdad como elemento de \(*_a \pi
+  (A_\alpha) / N\), ie
   \[ h \cdot N = g\cdot N\]
-  \[ \iff ([h_1]\cdot N) ([h_2] \cdot N) \dotsc ([h_k] \cdot N) = ([g _1] \cdot
-    N) ([g _2] \cdot N) \dotsc ([g _l] \cdot N) \]
   Para comenzar, notemos que las cadenas \(h,g\) al ser vistas como
   union de caminos (ie como imagen bajo \(\Phi\)) cumplen
   \[ [h_1] * [h_2] * \dotsc * [h_k] = [f] = [g _1] * [g _2] * \dotsc * [g _l] \]
   por lo tanto
   \[ h_1 * h_2 * \dotsc * h_k \, \dot \sim \, g _1 * g _2 * \dotsc *
     g _l \]
-  es decir, existe una homotopia (en \((X,x_0)\)) entre ellas. Denotemos
-  a \(F : I \times I \to X\) como dicha homotopia. El conjunto \(I
-  \times I\) puede sub-dividirse en una serie de intervalos
+  es decir, existe una homotopía en \((X,x_0)\) entre ellas. Denotemos
+  a \(F : I \times I \to X\) como dicha homotopia.
+
+  El conjunto \(I \times I\) puede sub-dividirse en una serie de
+  cuadrilatelos por los puntos
   \[ 0 = s_0 < s_1 < ... < s_m = 1 \]
   \[ 0 = t_0 < t_1 < ... < t_n = 1 \]
-  por el lema \ref{thm:lebesgue-number-lema} del numero de Lebesgue.
-  Este proceso es análogo a lo que se hizo en el caso particular de
-  \vank en el teorema \ref{thm:vank-especifico}. Estos intervalos tiene
-  la propiedad que
+  mediante el lema \ref{thm:lebesgue-number-lema} del numero de Lebesgue
+  (análogo a lo que se hizo en el caso particular de
+  \vank en el teorema \ref{thm:vank-especifico}), los cuales tienen
+  la propiedad de que
   \[ \forall (i,j) \in \{1 \dotsc m-1 \} \times \{1 \dotsc n - 1\},
     \exists ! \alpha \in \tau,\ F \left( [s_i, s_{i+1}] \times [t_j,
     t_{j+1}] \right) \subseteq A_\alpha \]
@@ -322,28 +367,72 @@ declarado, podemos proceder a la demostración.
   \(R_k\) con \(k \in \{1 \dotsc n\cdot m\}\) de izquierda a derecha y
   de abajo hacia arriba. Dada la propiedad anterior, también podemos
   identificar como \( A_k\) a los conjuntos tales que \(F \left( R_k
-  \right) \subseteq A_k \). Mas aun, podemos modificar ligeramente estos
-  valores de \(\{s_i\}, \{t_j\}\) tales que los rectángulos \(R_k\) tengan
-  vértices a lo mas en la intersección de tres conjuntos de
-  \(\{A_\alpha\}\).
+  \right) \subseteq A_k \). Mas aun, podemos modificar ligeramente los
+  lados de estos rectángulos de manera que sus vértices estén a lo mas en
+  la intersección de tres conjuntos de \(\{A_\alpha\}\).
   % dibujo del cuadrilatero
 
-  La curva \(\gamma_0 (t) := (t, 0)\) se mueve por el lado inferior de
-  \(I \times I\) y cumple que \(F \circ \gamma_0 = h \). Análogamente
-  existe una curva \(\gamma_{nm} := (t,1)\) que se mueve por el lado
-  superior de \(I \times I\) y que cumple \(F \circ \gamma_{nm} = g\).
-  Consideremos a las curvas \(\gamma_k\) como aquellas que separen a los
-  rectángulos \(R_1 \dots R_k\) del resto y que vayan del borde
-  izquierdo al borde derecho. Iremos modificando las cadenas que generan
-  \(g\) y \(h\) a través de operaciones con elementos de \(N\) de manera
-  de ir moviéndonos a las cadenas que generen \(F \circ \gamma_{k}\) a
-  \(F \circ \gamma_{k+1}\) hasta eventualmente llegar a \(F \circ
-  \gamma_{nm} = g\). Con esto se habrá probado que \(g\) e \(h\)
-  pertenecen a la misma clase lateral en \(*_\alpha \pi (A_a) / N\).
-  Para esto hacemos el paso inductivo.
+  Definamos la curva \(\gamma_0 (t) := (t, 0)\) que se mueve por el lado
+  inferior de \(I \times I\) y cumple que \(F \circ \gamma_0 = \Phi (h)
+  \). Análogamente se define una curva \(\gamma_{nm} := (t,1)\) que se
+  mueve por el lado superior de \(I \times I\) y que cumple \(F \circ
+  \gamma_{nm} = \Phi (g)\). Consideremos a las curvas \(\gamma_k\) como
+  aquellas que separen a los rectángulos \(R_1 \dots R_k\) del resto y que
+  vayan desde el borde izquierdo al borde derecho. Es claro que
+  \[ \forall k,\ F \circ \gamma_k (0) = x_0 = F \circ \gamma_k (1) \]
+  es decir, estos son arcos cerrados de \(x_0\). También se ve que
+  podemos pasar del arco \(\gamma_k\) al arco \(\gamma_{k+1}\) por la
+  homotopía de la linea recta \(\Gamma_k\) contenida en le rectángulo
+  \(R_k\), pues el espacio \(I \times I\) es convexo. Por tanto \(F \circ
+  \Gamma_k\) es una homotopia entre \(F \circ \gamma_k\) e \(F \circ
+  \gamma_{k+1}\).
+
+  Por otro lado, llamemos a las esquinas de los rectángulos \(R_k\)
+  vértices. Para cada vértice \(v\) tal que \(F (v) \neq x_0\), sea
+  \(g_v\) el arco desde \(x_0\) hasta \(F(v)\). Podemos elegir que
+  \(g_v\) tenga su imagen contenida en la intersección de a lo mas tres
+  conjuntos \(A_\alpha\) pues por hipótesis, estas intersecciones son
+  arco-conexas y contienen a \(x_0\).
+
+  Para todo \(k \in \{1 \dots mn\}\), la curva \(F \circ \gamma_k\)
+  tiene una factorizacion por el siguiente procedimiento: Construimos
+  una sucesión de arcos (no necesariamente cerrados)
+  \[ f_1^{(k)} * f_2^{(k)} * ... * f_l^{(k)} = F \circ \gamma_k \]
+  separando a \(F \circ \gamma_k\) en intervalos de manera que queden
+  alineados a los vértices de los rectángulos. Esto es un
+  procedimiento análogo al utilizado en el teorema
+  \ref{thm:vank-especifico}. Entre cada elemento \(f_i^{(k)}\)
+  introducimos los caminos \(\bar g _v , g_v\) de ser necesario para
+  obligar que \(\bar g _v * f_i^{(k)} * g_v \) sea un elemento \(\pi
+  (A_\alpha, x_0)\). Así obteniendo una factorizacion de \([F \circ
+  \gamma_k]\) para todo \(k\). Esta factorizacion depende de cierto
+  factores, puesto que \(\gamma_k\) tiene su imagen en las aristas de
+  los rectángulos y potencialmente podría darnos varias factorizaciones
+  con elementos en distintos \(\pi (A_\alpha)\). Sin embargo, debemos
+  recordar que estas factorizaciones seria equivalentes bajo el
+  movimiento dos de factorizaciones descrito anteriormente.
+
+  Por ultimo, notamos que las factorizaciones de \([F \circ \gamma_k]\) e
+  \([F \circ \gamma_{k+1}]\) son equivalentes. Esto es por la existencia
+  de la homotopía \(F \circ \Gamma_k\), ya que esta solo cambia las curvas en
+  el segmento contenido en el rectángulo \(R_k\) que denotaremos \([a_k,
+  a_{k+1}] \subseteq I\). Por lo tanto si
+  tomamos la factorizacion de \([F \circ \gamma_{k}]\), mediante el
+  movimiento dos de factorizaciones equivalentes, podemos considerar la
+  factorizacion que tenga solo elementos de \(A_k\) en la sección \([a_k,
+  a_{k+1}]\). Esta sera una factorizacion que sera homotópica a una
+  factorizacion de \(F \circ \gamma_{k+1}\) también con elementos de
+  \(A_k\) en el intervalo \([a_k , a_{k+1}]\). Es decir, tenemos que los
+  elementos de estas factorizaciones son iguales (pertenecen a la misma
+  clase homotópica) y por lo tanto son equivalentes.
+
+
+  Luego, dado que \(h\) y \(g\) son factorizaciones de \([F \circ
+  \gamma_0]\) e \([f \circ \gamma_{nm}]\) respectivamente y que las
+  factorizaciones de \([F \circ \gamma_k]\) son todas equivalentes para
+  todo \(k\), se obtiene \(h\) y \(g\) son equivalentes. Por lo tanto
+  ambas pertenecen a la misma clase lateral de \(*_\alpha \pi (A_\alpha ,
+  x_0)\). Por la arbitrariedad de \([f] \in \pi (X, x_0)\) e \(g,h \in
+  *_\alpha \pi (A_\alpha)\), se tiene que el mapeo inducido por \(\Phi\)
+  en \(*_\alpha \pi (A_\alpha) / N \to \pi (X,x_0)\) es inyectivo.
 \end{proof}
-% En un espacio \((X, x_0) = (U \vee V, x_0)\) se cumple por la unión
-% disjunta que el único punto en común de \(U\) y \(V\) es \(x_0\) (y eso
-% solo por la identificación de la equivalencia). Los espacios singletons
-% son trivialmente arco-conexos, lo cual nos permite aplicar el teorema
-% anterior para calcular grupos fundamentales de estos.
