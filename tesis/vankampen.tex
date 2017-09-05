@@ -16,7 +16,7 @@ estas.
   G_\alpha \) consiste como conjunto en todas las cadenas reducidas
   \[ g_1 g_2 g_3 \dots g_m \]
   para \(m \geq 0\) arbitrario tal que todo \(g_i\) pertenece a
-  \(G_{\alpha_i}\), \(g_i\) sea distinto de la identidad de
+  \(G_{\alpha_i}\), \(g_i\) distinto de la identidad de
   \(G_{\alpha_i}\) y índices sucesivos son distintos, ie \(\alpha_i \neq
   \alpha_{i + 1}\). Tomando la identidad como la cadena vacía y como
   operación de grupo la juxtaposicion de cadenas
@@ -47,7 +47,11 @@ estas.
 \end{acotacion}
 Esta construcción puede considerarse como una alternativa a \(\prod
 G_\alpha\) o \(\oplus G_\alpha\) en donde elementos de distintos grupos
-no conmuten entre si. Algo que no es claro sobre este grupo es si
+no conmuten entre si. Como ejemplo podemos tomar a \(\mathbb Z * \mathbb
+Z\) con cada \(\mathbb Z\) con su propio generador, a los cuales
+denotaremos por \(a\) y \(b\) respectivamente. Este corresponde al grupo
+de la cadenas \(a^{n_1} b^{n_2} a^{n_3} \dots a^{n_m}\) con \(n_i \in
+\mathbb Z \). Algo que no es claro sobre este grupo es si
 su operación es asociativa, esto lo probaremos en el siguiente teorema
 por completitud
 \begin{teorema}
@@ -142,9 +146,9 @@ intuitiva y aparece como paso intermedio de la demostración general.
   Supongamos que \(U \cap V\) es arco-conexo y que \(x_0 \in U \cap V\).
   Sea \(j_1\) y \(j_2\) las inclusiones de \(U\) y \(V\) en \(X\)
   respectivamente. Entonces las imágenes de los homomorfismos inducidos
-  \[ j_{1,*} : \pi (U, x_0) \to \pi (X, x_0) \quad j_{2,*} : \pi
+  \[ j_{1,*} : \pi (U, x_0) \to \pi (X, x_0), \quad j_{2,*} : \pi
   (V, x_0) \to \pi (X, x_0) \]
-  generan a \(\pi (X,x_0)\)
+  generan a \(\pi (X,x_0)\).
 \end{teorema}
 \begin{proof}
   Hemos de probar que para todo arco \(f\) en \(X\) basado en \(x_0\),
@@ -154,7 +158,7 @@ intuitiva y aparece como paso intermedio de la demostración general.
   contenido completamente en \(U\) o en \(V\).
 
   Para esto, mostramos que existe una subdivisión de \(I\) dada por
-  \(a_0 < a_1 < ... < a_n \) tal que \(f(a_i) \in U \cap V\) y que \(
+  \(0 = a_0 < a_1 < ... < a_n = 1 \) tal que \(f(a_i) \in U \cap V\) y que \(
   f([a_i , a_{i+1}]) \) es subconjunto contenido solo en \(U\) o en
   \(V\).
 
@@ -168,7 +172,7 @@ intuitiva y aparece como paso intermedio de la demostración general.
   Tomando s.p.d.g la primera alternativa, implicaría que
   \[ f(b_i) \in U \implies f([b_{i-1}, b_{i}]) \subset U \ \land \ f([b_i,
     b_{i+1}]) \subset U \]
-  Análogamente si \(f(b_i) \in V\). Podemos olvidar entonces el valor
+  análogamente si \(f(b_i) \in V\). Podemos olvidar entonces el valor
   \(b_i\) de la subdivisión y revisar si \(f(b_{i+1}) \in U \cap V\),
   repitiendo este proceso una cantidad finita de veces hasta satisfacer
   la condición.
@@ -186,7 +190,7 @@ intuitiva y aparece como paso intermedio de la demostración general.
   en la arco conexidad de \(U \cap V\), lo que nos permite afirmar que
   para todo \(i \in [1 , n]\) existe
   \[ \alpha_i : I \to U \cap V \]
-  \[ \alpha_i (0) = x_0 \quad \alpha_i (1) = f(a_i) \]
+  \[ \alpha_i (0) = x_0, \quad \alpha_i (1) = f(a_i) \]
   arcos continuos, fijando además \(\alpha_0 \equiv x_0 \equiv \alpha_n
   \). Estos nos permiten construir los arcos
   \[ g_i = \alpha_{i-1} * f_i * \alpha_i^{-1} \]
@@ -198,22 +202,31 @@ intuitiva y aparece como paso intermedio de la demostración general.
   El homomorfismo \(\Phi : \pi (U, x_0) * \pi (V, x_0) \to \pi (X,
   x_0)\) es sobreyectivo.
 \end{corolario}
+\begin{proof}
+  En el final de la demostracion anterior, la cadena \(g_1 g_2 \dots
+  g_n\) tiene como imagen bajo \(\Phi\) a \([f]\) pues
+  \[ \Phi \left( g_1 g_2 ... g_n \right) = [g_1] * [g_2] * ... *
+    [g_n] = [f] \]
+  Dado que este \([f]\) era un elemento arbitrario de \(\pi \left( X,
+    x_0 \right)\), tenemos lo afirmado.
+\end{proof}
 Uno puede generalizar el teorema anterior para una cantidad arbitraria
 de conjuntos \(A_\alpha\) tal que \(X = \bigcup A_\alpha\). La
 demostración es la misma, solo tal vez un poco mas difícil de
 visualizar. Lo importante de este teorema es el corolario, el cual
 utilizaremos en su forma generalizada para probar el teorema general.
 
-\begin{teorema}[Teorema \vank ]
+\begin{teorema}[\vank]
   Sea \((X, x_0)\) un espacio puntuado tal que exista una familia de
-  conjuntos \(\{A_\alpha\}_{\alpha \in \tau}\) tal que \(\forall \alpha
-  \in \tau,\ x_0 \in
-  A_\alpha\) y \( X = \bigcup_{\alpha \in \tau} A_\alpha\). Si para cada
+  conjuntos \(\{A_\alpha\}_{\alpha \in \tau}\) la cual cumpla que todo
+  elemento de esta contiene a \(x_0\) y \( X = \bigcup_{\alpha \in \tau} A_\alpha\). Si para cada
   intersección \(A_\alpha \cap A_\beta\) es arco-conexa, entonces el
   homomorfismo
   \[ \Phi : *_\alpha \pi (A_\alpha, x_0) \to \pi (X, x_0) \]
-  es sobreyectivo. Mas aun, si cada intersección \(A_\alpha \cap A_\beta
-  \cap A_\gamma,\ \alpha, \beta, \gamma \in \tau\) es arco-conexa,
+  es sobreyectivo.
+
+  Mas aun, si cada intersección \(A_\alpha \cap A_\beta
+  \cap A_\gamma\) con \( \alpha, \beta, \gamma \in \tau\) es arco-conexa,
   entonces el kernel de \(\Phi\) es un subgrupo normal \(N\) de la forma
   \[
     N := N \left( \{ i_{\alpha \beta} (\omega) * i_{\beta \alpha} (\omega)^{-1}
@@ -232,14 +245,14 @@ homomorfismos inducidos por la inclusión
   i_{\beta \alpha} : \pi (A_\alpha \cap A_\beta , x_0 ) \longrightarrow \pi (A_\beta, x_0)
 \end{gather*}
 que pierden su notación \(i_*\) por simplicidad. Notar que dado que
-para \(\omega \in \pi (A_\alpha \cap A_\beta , x_0)\) arbitrario
-\[ i_{\alpha \beta} (\omega) * i_{\beta \alpha}^{-1} (\omega) \in N
+para \(\omega \in \pi (A_\alpha \cap A_\beta ,\ x_0)\) arbitrario
+\[ i_{\alpha \beta} (\omega) i_{\beta \alpha}^{-1} (\omega) \in N
   \implies i_{\alpha \beta} (\omega) \cdot N = i_{\beta
 \alpha} (\omega) \cdot N \]
 con \(i_{\beta \alpha} (\omega) \cdot N\) un elemento de \(*_\alpha
 \pi (A_\alpha , x_0) / N\). Tambien vease que dado el producto en los
 grupos cocientes, para \(\omega_1 \omega_2 \) una cadena en \(*_\alpha
-A_\alpha\)
+A_\alpha\) cumple la ecuación
 \[ (\omega_1 \omega_2) N = (\omega_1 N) (\omega_2 N) \]
 como elemento del cociente \(*_\alpha A_\alpha / N\). Esto nos permite
 modificar puntos finales o iniciales de \(\omega_1, \omega_2\) para
@@ -251,7 +264,8 @@ pues \(N\) es el menor subgrupo normal de \(*_\alpha A_\alpha\) y los
 elementos base de este pertenecen al kernel de \(\Phi\) pues estos son
 de la forma
 \[ i_{\alpha \beta} (\omega) \ i_{\beta \alpha}^{-1} (\omega) ,
-  \alpha,\beta \in \tau,\ \omega \in \pi(A_\alpha \cap A_\beta , x_0)\]
+  \ \text{con} \ \alpha,\beta \in \tau,\ \omega \in \pi(A_\alpha \cap
+  A_\beta , x_0)\]
 y sabiendo como es \(\Phi\) como homomorfismo
 \begin{align*}
   \Phi &\left( i_{\alpha \beta} (\omega) \ i_{\beta \alpha}^{-1} (\omega) \right) \\
