@@ -436,8 +436,37 @@ declarado, podemos proceder a la demostración.
   *_\alpha \pi (A_\alpha)\), se tiene que el mapeo inducido por \(\Phi\)
   en \(*_\alpha \pi (A_\alpha) / N \to \pi (X,x_0)\) es inyectivo.
 \end{proof}
-\begin{corolario}
+\begin{corolario} \label{cor:vank-trivial}
   Si \(\bigcap_{\alpha \in \tau} A_\alpha \) tiene grupo fundamental
   trivial, entonces
   \[ *_\alpha \pi (A_\alpha , x_0) \simeq \pi (X, x_0) \]
 \end{corolario}
+
+Este teorema es largo, pero sus consecuencias son poderosas.
+Calcularemos algunos ejemplos que utilizen el teorema de \vank desde
+casos sencillos a mas complicados.
+
+\begin{ejemplo}[Espacio ``figura 8'']
+El espacio ``figura 8'' en el diagrama es homotopicamente equivalente a
+la wedge-sum \(S^1 \vee S^1\).
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/figura8.png}
+    \caption*{Espacio figura 8}
+  \end{figure}
+  Es trivialmente cierto que el conjunto \(\{x_0\}\) es arco-conexo y
+  hay inyecciones dos canonicas de \(S^1\) a \(S^1 \vee S^1\). Por tanto
+  podemos aplicar el corolario \ref{cor:vank-trivial} para decir el el
+  grupo fundamental de \(\left( S^1 \vee S^1 , x_0 \right) \) es \(\pi
+  \left( S^1 , x_0 \right) * \pi \left( S^1 , x_0 \right) \).
+\end{ejemplo}
+
+El producto libre de grupos \(*_\alpha G_\alpha\) es en la categoria
+\(\mathcal{Grp}\) el co-producto categorico. Esto se ve siguiento la
+definicion \ref{def:coproducto} de co-producto, sean \(X,Y,C\) tres grupos
+tales que existan homomorfismo \(\phi_1 : X \to C\) y \(\phi_2 : X \to
+C\). Ya se habia anteriormente como el producto libre \(X * Y\) admite
+una extension (unica) de los homomorfismos \(\phi_1, \phi_2\) a la cual
+denotaremos \(\Phi : X * Y \to C\), la cual debe cumplir con la igualdad
+pedida en \ref{def:coproducto}. Una consecuencia de \vank es que el
+functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\) preserva
+co-productos, como fue visto en el ejemplo anterior.
