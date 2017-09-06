@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg57"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="klein.svg">
+  <defs
+     id="defs51">
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path2077"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path2080"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker1877"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1875" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1699"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path1697"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker1531"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1529" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1369"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path1367"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect328"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker1306"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1304" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1258"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path1256"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker1216"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1214" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path887"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path884"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect71"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path884-6"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1258-7"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1256-5"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1216-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1214-5" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-6"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path887-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path884-9"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1258-2"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1256-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1216-8"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1214-9" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-7"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path887-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-55"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path884-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1258-76"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1256-56"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1216-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1214-3" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-74"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path887-5"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-36"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path884-7"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-59"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path884-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1258-28"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1256-9"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1216-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1214-36" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-1"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path887-29"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="663.29909"
+     inkscape:cy="229.81859"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1430"
+     inkscape:window-height="865"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata54">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 76.973623,72.226317 V 47.102982"
+       id="path1166"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1216)"
+       d="M 76.973623,47.102982 V 23.048725 h 24.321527"
+       id="path1206"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1258)"
+       d="m 101.29515,23.048725 h 25.65787 v 23.786988"
+       id="path1248"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lstart)"
+       d="M 126.95302,46.835713 V 72.226317 H 101.29515"
+       id="path1296"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 76.973623,72.226317 H 101.29515"
+       id="path1362"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1364"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.22844548,45.379299,6.4734353)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1366"><rect
+           id="rect1368"
+           width="66.670067"
+           height="48.487324"
+           x="110.10663"
+           y="149.74275" /></flowRegion><flowPara
+         id="flowPara1370">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1372"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.20435358,46.423604,6.328018)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1374"><rect
+           id="rect1376"
+           width="95.964493"
+           height="54.548237"
+           x="422.24377"
+           y="165.9052" /></flowRegion><flowPara
+         id="flowPara1378">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1380"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20832763,0,0,0.21248612,49.018605,6.9337553)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1382"><rect
+           id="rect1384"
+           width="77.781746"
+           height="45.456863"
+           x="231.32494"
+           y="24.483837" /></flowRegion><flowPara
+         id="flowPara1386">b</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1388"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.22239155,0,0,0.22116899,41.898495,5.3574401)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/klein.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1390"><rect
+           id="rect1392"
+           width="86.873116"
+           height="69.700523"
+           x="248.49753"
+           y="314.39761" /></flowRegion><flowPara
+         id="flowPara1394">b</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-6)"
+       d="M 24.344927,159.57525 V 134.45191"
+       id="path1166-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1216-3)"
+       d="M 24.344927,134.45191 V 110.39766 H 48.666454"
+       id="path1206-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1258-7)"
+       d="m 48.666454,110.39766 h 25.657871 v 23.78698"
+       id="path1248-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lstart-3)"
+       d="m 74.324325,134.18464 v 25.39061 H 48.666454"
+       id="path1296-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 24.344927,159.57525 H 48.666454"
+       id="path1362-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1364-9"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.22844548,-7.2493975,93.822368)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1366-3"><rect
+           id="rect1368-6"
+           width="66.670067"
+           height="48.487324"
+           x="110.10663"
+           y="149.74275" /></flowRegion><flowPara
+         id="flowPara1370-0">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1372-6"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.20435358,-6.2050925,93.676948)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1374-2"><rect
+           id="rect1376-6"
+           width="95.964493"
+           height="54.548237"
+           x="422.24377"
+           y="165.9052" /></flowRegion><flowPara
+         id="flowPara1378-1">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1380-8"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20832763,0,0,0.21248612,-3.6100905,94.282688)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1382-7"><rect
+           id="rect1384-9"
+           width="77.781746"
+           height="45.456863"
+           x="231.32494"
+           y="24.483837" /></flowRegion><flowPara
+         id="flowPara1386-2">b</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1388-0"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.22239155,0,0,0.22116899,-11.264739,93.240907)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1390-2"><rect
+           id="rect1392-3"
+           width="86.873116"
+           height="69.700523"
+           x="248.49753"
+           y="314.39761" /></flowRegion><flowPara
+         id="flowPara1394-7">b</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-7)"
+       d="M 123.50192,158.50617 V 133.38283"
+       id="path1166-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1216-8)"
+       d="m 123.50192,133.38283 v -24.05425 h 24.32153"
+       id="path1206-12"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1258-2)"
+       d="m 147.82345,109.32858 h 25.65787 v 23.78699"
+       id="path1248-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lstart-5)"
+       d="m 173.48132,133.11557 v 25.3906 h -25.65787"
+       id="path1296-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 123.50192,158.50617 h 24.32153"
+       id="path1362-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1364-94"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.22844548,91.9076,92.753288)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1366-7"><rect
+           id="rect1368-8"
+           width="66.670067"
+           height="48.487324"
+           x="110.10663"
+           y="149.74275" /></flowRegion><flowPara
+         id="flowPara1370-4">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1372-5"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.20435358,92.9519,92.607868)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1374-0"><rect
+           id="rect1376-3"
+           width="95.964493"
+           height="54.548237"
+           x="422.24377"
+           y="165.9052" /></flowRegion><flowPara
+         id="flowPara1378-6">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1380-1"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20832763,0,0,0.21248612,95.5469,93.213608)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1382-0"><rect
+           id="rect1384-6"
+           width="77.781746"
+           height="45.456863"
+           x="231.32494"
+           y="24.483837" /></flowRegion><flowPara
+         id="flowPara1386-3">b</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1388-2"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.22239155,0,0,0.22116899,88.42679,91.637288)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1390-0"><rect
+           id="rect1392-6"
+           width="86.873116"
+           height="69.700523"
+           x="248.49753"
+           y="314.39761" /></flowRegion><flowPara
+         id="flowPara1394-1">b</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-74)"
+       d="M 23.275849,246.70511 V 221.58178"
+       id="path1166-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1216-9)"
+       d="M 23.275849,221.58178 V 197.52752 H 47.597372"
+       id="path1206-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1258-76)"
+       d="m 47.597372,197.52752 h 25.65787 v 23.78699"
+       id="path1248-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lstart-55)"
+       d="m 73.255242,221.31451 v 25.3906 h -25.65787"
+       id="path1296-74"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 23.275849,246.70511 H 47.597372"
+       id="path1362-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1364-3"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.22844548,-8.3184761,180.95223)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1366-0"><rect
+           id="rect1368-7"
+           width="66.670067"
+           height="48.487324"
+           x="110.10663"
+           y="149.74275" /></flowRegion><flowPara
+         id="flowPara1370-8">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1372-68"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.20435358,-7.2741711,180.80681)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1374-8"><rect
+           id="rect1376-4"
+           width="95.964493"
+           height="54.548237"
+           x="422.24377"
+           y="165.9052" /></flowRegion><flowPara
+         id="flowPara1378-3">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1380-14"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20832763,0,0,0.21248612,-4.6791691,181.41255)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1382-9"><rect
+           id="rect1384-2"
+           width="77.781746"
+           height="45.456863"
+           x="231.32494"
+           y="24.483837" /></flowRegion><flowPara
+         id="flowPara1386-0">b</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1388-6"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.22239155,0,0,0.22116899,-11.799278,179.83624)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1390-8"><rect
+           id="rect1392-9"
+           width="86.873116"
+           height="69.700523"
+           x="248.49753"
+           y="314.39761" /></flowRegion><flowPara
+         id="flowPara1394-2">b</flowPara></flowRoot>    <rect
+       style="fill:#8b9bc1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2064"
+       width="38.486809"
+       height="36.081387"
+       x="30.735994"
+       y="116.86033"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinU.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2088"
+       width="18.708866"
+       height="16.570711"
+       x="139.51469"
+       y="125.94749"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#800000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.01174331;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 467.68022,557.17388 c 0,-40.49867 0.003,-40.55977 2.02031,-38.73431 2.62209,2.37297 2.62209,1.01129 0,-7.57614 -1.87148,-6.12913 -2.00539,-9.57364 -2.01259,-51.77032 l -0.008,-45.20433 h 39.57203 39.57204 l -2.44893,2.65086 -2.44893,2.65085 2.37561,-0.73124 c 15.36626,-4.72989 13.16777,-4.57047 63.02856,-4.57047 h 47.22784 v 38.03729 c 0,37.97329 -0.003,38.0342 -2.0203,36.20893 -2.62211,-2.37297 -2.62211,-1.01129 0,7.57614 1.87826,6.15136 2.00535,9.58003 2.01258,54.2957 l 0.008,47.72971 -48.73986,-0.008 c -45.72326,-0.007 -49.14624,-0.13144 -55.30585,-2.01223 -8.2014,-2.50423 -8.83229,-2.50423 -6.56599,0 1.82535,2.01699 1.76436,2.02031 -37.21908,2.02031 h -39.04744 z m 131.31983,-49.84599 v -31.8198 h -36.36549 -36.36549 v 31.8198 31.81981 h 36.36549 36.36549 z"
+       id="path2092"
+       inkscape:connector-curvature="0"
+       transform="scale(0.26458333)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2094"
+       width="17.907059"
+       height="14.165285"
+       x="39.28862"
+       y="214.41371"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2096"
+       width="38.219543"
+       height="33.675961"
+       x="29.399641"
+       y="204.52473"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#800080;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.26769042;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 29.661516,221.36037 v -16.70435 h 18.842502 18.842501 v 16.70435 16.70434 H 48.504018 29.661516 Z m 27.796031,0.13363 v -7.21627 H 48.23675 39.015949 v 7.21627 7.21628 h 9.220801 9.220797 z"
+       id="path2098"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/kleinUV.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-1)"
+       d="M 122.43285,247.50692 V 222.38359"
+       id="path1166-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1216-7)"
+       d="m 122.43285,222.38359 v -24.05426 h 24.32152"
+       id="path1206-19"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1258-28)"
+       d="m 146.75437,198.32933 h 25.65788 v 23.78699"
+       id="path1248-47"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lstart-59)"
+       d="m 172.41225,222.11632 v 25.3906 h -25.65788"
+       id="path1296-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 122.43285,247.50692 h 24.32152"
+       id="path1362-45"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1364-0"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.22844548,90.838516,181.75404)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1366-36"><rect
+           id="rect1368-1"
+           width="66.670067"
+           height="48.487324"
+           x="110.10663"
+           y="149.74275" /></flowRegion><flowPara
+         id="flowPara1370-06">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1372-3"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20301213,0,0,0.20435358,91.882826,181.60862)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1374-20"><rect
+           id="rect1376-61"
+           width="95.964493"
+           height="54.548237"
+           x="422.24377"
+           y="165.9052" /></flowRegion><flowPara
+         id="flowPara1378-5">a</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1380-5"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.20832763,0,0,0.21248612,94.477826,182.21436)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1382-4"><rect
+           id="rect1384-7"
+           width="77.781746"
+           height="45.456863"
+           x="231.32494"
+           y="24.483837" /></flowRegion><flowPara
+         id="flowPara1386-6">b</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot1388-5"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.22239155,0,0,0.22116899,87.357716,180.63805)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion1390-6"><rect
+           id="rect1392-93"
+           width="86.873116"
+           height="69.700523"
+           x="248.49753"
+           y="314.39761" /></flowRegion><flowPara
+         id="flowPara1394-74">b</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.29144755px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Mstart)"
+       d="m 133.55937,213.91289 c -1.29045,4.22078 -1.29045,11.59515 1.04217,15.96175 2.33262,4.3666 6.9973,5.72499 12.05913,5.77346 5.06184,0.0485 10.52095,-1.21298 13.49835,-4.41497 2.97739,-3.20198 3.47369,-8.34496 3.57292,-12.61419 0.0992,-4.26924 -0.19854,-7.66554 -1.9352,-9.606 -1.73666,-1.94046 -4.91297,-2.42565 -8.78395,-2.42567 -3.87098,-1e-5 -8.43624,0.4851 -12.00941,1.26134 -3.57317,0.77623 -6.15355,1.8435 -7.44401,6.06428 z"
+       id="path326"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect328"
+       inkscape:original-d="m 132.26892,210.7596 c 3e-4,7.37407 3e-4,14.74844 0,22.12309 4.66534,1.3582 9.33002,2.71659 13.99459,4.07532 5.45895,-1.26165 10.91806,-2.52311 16.37664,-3.78422 0.49654,-5.14261 0.99283,-10.28559 1.48879,-15.42795 -0.29744,-3.39617 -0.59521,-6.79247 -0.89327,-10.18828 -3.17554,-0.4854 -6.35185,-0.97059 -9.52823,-1.45546 -4.56566,0.48491 -9.13092,0.97002 -13.69683,1.45546 -2.58046,1.06714 -5.16084,2.13441 -7.74169,3.20204 z"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.20638636;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1306)"
+       d="M 147.01623,221.11881 128.22724,203.06456"
+       id="path330"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1369)"
+       d="m 147.01623,221.11881 17.08726,-16.3268"
+       id="path1359"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1531)"
+       d="m 147.01623,221.11881 17.35453,17.8837"
+       id="path1521"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1699)"
+       d="m 147.01623,221.11881 -14.45055,15.47827"
+       id="path1689"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/radial.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

@@ -229,7 +229,7 @@ utilizaremos en su forma generalizada para probar el teorema general.
   \cap A_\gamma\) con \( \alpha, \beta, \gamma \in \tau\) es arco-conexa,
   entonces el kernel de \(\Phi\) es un subgrupo normal \(N\) de la forma
   \[
-    N := N \left( \{ i_{\alpha \beta} (\omega) * i_{\beta \alpha} (\omega)^{-1}
+    N := N \left( \{ i_{\alpha \beta} (\omega) i_{\beta \alpha} (\omega)^{-1}
     \mid \omega \in \pi \left( A_\alpha \cap A_\beta, x_0 \right),\
     \forall \alpha ,\beta \in \tau \} \right)
   \]
@@ -470,3 +470,71 @@ denotaremos \(\Phi : X * Y \to C\), la cual debe cumplir con la igualdad
 pedida en \ref{def:coproducto}. Una consecuencia de \vank es que el
 functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\) preserva
 co-productos, como fue visto en el ejemplo anterior.
+
+\begin{ejemplo}[Botella de Klein]
+  La botella de Klein \(K\) puede presentarse como un cociente en el
+  espacio \(I \times I\) representada por el siguiente diagrama.
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/klein.png}
+    \caption*{Conjunto \(K\)}
+  \end{figure}
+  Este espacio puede ser cubierto por los siguientes conjuntos \(U,V\).
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{./imagenes/kleinU.png}
+    \hspace{3mm}
+    \includegraphics[scale=0.5]{./imagenes/kleinV.png}
+    \hspace{3mm}
+    \includegraphics[scale=0.5]{./imagenes/kleinUV.png}
+    \caption*{Conjuntos \(U\), \(V\) y \(U \cap V\) respectivamente}
+  \end{figure}
+  Es claro que \(K = U \cup V\). Elegíamos un punto \(x_0 \in U \cap V\).
+  El grupo fundamental \(\pi \left( U , x_0 \right) \) es trivial porque
+  este conjunto es convexo y todos los caminos son homotopicos a la
+  identidad. El grupo fundamental de \(\pi (V, x_0)\) es isomorfo a
+  \(\pi (V, y_0)\) con \(y_0\) el vertice (identificado es único) de \(I
+  \times I\), esto pues el espacio \(V\) es arco-conexo. Estudiando
+  \(\pi (V, y_0)\), es claro que \(V\) es homotopicamente equivalente al
+  espacio generado por la curvas \(a\) y \(b\) con punto comun \(y_0\),
+  es decir .
+  \[ \pi (V, x_0) \simeq \pi (V, y_0) \simeq \pi (S^1 \vee S^1, y_0) =
+    \mathbb Z * \mathbb Z \]
+  tomando a \(a,b\) como generadores.
+
+  Para aplicar \vank debemos estudiar el espacio \(N\). Notese que el
+  espacio \(U \cap V\) es homotopicamente equivalente a una curva
+  \(\gamma\) contenida en \(U \cap V\) que de una vuelta completa.
+  \(\gamma\) es homeomorfa a \(S^1\) y por tanto el
+  \[\pi (U \cap V, x_0) \simeq \pi (S^1) = \mathbb Z \]
+  con \(\gamma\) el generador de este. Debemos estudiar los
+  homomorfismos inducidos por la inclusion
+  \[ i_{u v} : \pi (U \cap V , x_0) \longrightarrow \pi (U, x_0) \]
+  \[ i_{v u} : \pi (U \cap V , x_0) \longrightarrow \pi (V, x_0) \]
+  y \(  \pi (U \cap V , x_0) = \langle {[\gamma]} \rangle \). Por
+  simple calculo se ve que
+  \begin{gather*}
+    i_{u v} ([\gamma]) = [\gamma]_{U} = e \in \pi \left( U, x_0 \right)
+    \\
+    i_{v u} ([\gamma]) = [\gamma]_{V} \pi \left( V, x_0 \right)
+  \end{gather*}
+  con \(e \in \pi \left( U, x_0 \right)\) la identidad de ese grupo.
+  \([\gamma]_V\) es equivalente homotopicamente a \([a * b * a *
+  b^{-1}]\) por la proyeccion radial desde el centro de \(I \times I\)
+  hacia el borde
+  \begin{figure}[h]
+    \centering \includegraphics[scale=0.5]{./imagenes/radial.png}
+  \end{figure}
+  Luego el conjunto \(N\) corresponde al normalizador
+  \[ N \{ [a] [b] [a] [b^{-1}]\}\]
+  donde este conjunto corresponde simplemente \(\{ [a] [b] [a]
+  [b^-1]\}\) con la yuxtaposicion como operación, es decir no tiene
+  elementos extra de \(\pi (U,x_0) * \pi (V, x_0)\). Luego \vank nos
+  dices que
+  \[ \pi (K, x_0) \simeq \left( \pi (U, x_0) * \pi (V, x_0) \right)
+      /_{\{[a] [b] [a] [b^{-1}]\}} = \langle {a , b} \rangle
+      /_{\{[a] [b] [a] [b^{-1}]\}}\]
+  donde este ultimo puede presentarse en de como un espacio cociente a
+  simplemente las cadenas generadas por \(a,b\) con \(a * b * a * b^{-1}
+  = e\), ie
+  \[ \langle a,b \rangle /_{abab^{-1} = e} \]
+\end{ejemplo}
