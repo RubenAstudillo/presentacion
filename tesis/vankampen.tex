@@ -538,3 +538,55 @@ co-productos, como fue visto en el ejemplo anterior.
   = e\), ie
   \[ \langle a,b \rangle /_{abab^{-1} = e} \]
 \end{ejemplo}
+
+\subsection{Pushout}
+Además del producto y el co-producto existen otras estructuras
+categóricas que también tienen propiedades universales. Una de interés
+en visión de el teorema \vank es la de un pushout. Veremos a
+continuación una definición
+\begin{definicion}[Pushout]
+Sea \(\mathscr{C}\) una categoria. Sean \(X,Y,Z\) objetos en
+\(\mathbf{Obj}(\mathscr{C})\) y \(f : Z \to X , g : Z \to Y\) morfismos
+en \(\mathscr{C}\). El pushout de \(f,g\) corresponde a una tripleta
+\((P, i_1, i_2)\) donde \(P\) es un objeto, \(i_1 : X \to P ,\ i_2 : Y
+\to P\) son morfismos de la categoria \(\mathscr{C}\) tales que sean
+universales. Esto es, que si existe una tripleta \((Q, j_1, j_2)\) con
+\(Q\) un objeto y \(j_1 : X \to Q,\ j_2 : Y \to Q\) entonces existe un
+morfismo \(u : P \to Q\) tal que
+\[ j_2 = u \circ i_2,\quad j_1 = u \circ i_1 \]
+En resumen, el siguiente diagrama conmuta
+\begin{figure}[h]
+    \centering \includegraphics[scale=1]{./imagenes/pushout.png}
+\end{figure}
+\end{definicion}
+
+El teorema \vank nos dice que hay ciertos tipos de pushout que se
+preservan bajo el functor \(\pi : \mathscr{HoTop_*} \mapsto
+\mathscr{Grp}\). Notamos que el marco de trabajo de el teorema en la
+categoria \(\mathscr{Grp}\) luce como el siguiente diagrama.
+\begin{figure}[h]
+  \centering \includegraphics[scale=0.5]{./imagenes/van.png}
+\end{figure}
+(recordando que estos elementos pierden su notación \(i_*\) por
+simplicidad), es decir que el pushout de \(\left( \pi (U \cap V , x_0) ,
+i_1 , i_2 \right)\) corresponde a la tripleta \( \left( H , \phi_1 ,
+\phi_2 \right)\) con \(H = \pi (U, x_0) * \pi (V , x_0)\) el producto
+libre y \(u\) siendo el morfismo \(\Phi\).
+
+Análogamente en \(\mathscr{HoTop}_*\) tenemos los siguiente pushout.
+\begin{figure}[h]
+  \centering \includegraphics[scale=0.5]{./imagenes/pushoutHotop.png}
+\end{figure}
+donde \([i_1],[i_2],[\phi_1],[\phi_2]\) son las clases de equivalencias
+homotópicas de las inclusiones correspondientes. Esto nos dice que para
+la tripleta \(\left( (U \cap V , x_0), [i_1] , [i_2]\right)\) su pushout
+corresponde a \(\left( (U \vee V, x_0), [\phi_1], [\phi_2] \right)\) con
+\(u = \Phi\).
+
+El teorema de \vank nos dice que si \(\left( U \cap V , x_0 \right)\) es
+arco-conexo (hipótesis del teorema) entonces un pushout de \( \left( (U
+  \cap V , x_0) , [i_1] , [i_2] \right)\) es preservado bajo el functor
+\(\pi\) a un pushout de \(\left( \pi (U \cap V , x_0) , i_{1,*}, i_{2,*}
+\right)\). En general no se tiene que se preserven pushouts arbitrarios
+bajo este functor. Para resultado mas generales de preservar pushout a
+traves de este functor se guia a revisar la referencia \cite{brown}.
