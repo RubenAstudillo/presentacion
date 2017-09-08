@@ -438,21 +438,29 @@ declarado, podemos proceder a la demostración.
   segundo movimiento de factorizaciones.
 
   Por ultimo, notamos que las factorizaciones de \([F \circ \gamma_k]\) e
-  \([F \circ \gamma_{k+1}]\) son equivalentes. Esto es por la existencia
-  de la homotopía \(F \circ \Gamma_k\), ya que esta solo cambia las curvas en
-  el segmento contenido en el rectángulo \(R_k\). Denotaremos a \([a_k,
-  a_{k+1}] \subseteq I\) al intervalo tal que \[F \circ \gamma_k [a_k ,
-    a_{k+1}] \subseteq R_k\]
-  Por lo tanto si
-  tomamos la factorizacion de \([F \circ \gamma_{k}]\), mediante el
-  movimiento dos de factorizaciones equivalentes, podemos considerar la
-  factorizacion que tenga solo elementos de \(A^{(k)}\) en la sección \([a_k,
-  a_{k+1}]\). Esta sera una factorizacion que sera homotópica a una
-  factorizacion de \([F \circ \gamma_{k+1}]\) también con elementos de
-  \(A^{(k)}\) en el intervalo \([a_k , a_{k+1}]\). Es decir, tenemos que los
-  elementos de estas factorizaciones son iguales (pertenecen a la misma
-  clase homotópica) y por lo tanto son equivalentes.
-
+  \([F \circ \gamma_{k+1}]\) son equivalentes. Esto es debido a la
+  homotopía \(F \circ \Gamma_k\), ya que esta solo cambia las curvas en el
+  segmento contenido en el rectángulo \(R_k\). Denotaremos a \([a_k,
+  a_{k+1}] \subseteq I\) al intervalo tal que
+  \[F \circ \gamma_k \, ([a_k , a_{k+1}]) \subseteq R_k\]
+  y fijamos un elemento \([f_a^{(k)}]\) de la factorizacion de \([F
+  \circ \gamma_k]\) como aquel que le corresponde la seccion del argumento
+  \([a_k , a_{k+1}]\). La factorizacion de \([F \circ \gamma_k]\) en
+  general correspondera a
+  \[ [f_1^{(k)}] [f_2^{(k)}] ... [f_a^{(k)}] ... [f_m^{(k)}] \]
+  Por otra parte, la factorizacion de \([F \circ \gamma_{k+1}]\) es
+  analoga con su propio elemento \([f_a^{(k+1)}]\) con imagen en
+  \(A^{(k)}\) y misma cantidad de elementos.
+  \[ [f_1^{(k+1)}] [f_2^{(k+1)}] ... [f_a^{(k+1)}] ... [f_m^{(k+1)}] \]
+  Dado que la homotopia \(F \circ \Gamma_k\) solo varia en \(R_k\), se
+  tiene que el unico elemento de las imagenes de las cadenas que varian
+  son aquellos que pertenece a \(\pi (A^{(k)})\) en el intervalo \([a_k,
+  a_{k+1}]\), por lo tanto
+  \[ f_a^{(k)} \dot \simeq f_a^{(k+1)} \]
+  lo que a su implica la igualdad
+  \[ [f_a^{(k)}] = [f_a^{(k+1)}]\]
+  por lo que podemos reemplazar los valores en las cadenas. Probando asi
+  que son iguales y por tanto equivalentes.
 
   Luego, dado que \(h\) y \(g\) son factorizaciones de \([F \circ
   \gamma_0]\) e \([f \circ \gamma_{nm}]\) respectivamente y que las
