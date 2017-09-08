@@ -4,12 +4,11 @@ identificaciones de grupos fundamentales. Su idea se basa en que si
 tenemos un espacio \(X\) y dos subconjuntos \(U,V\) tales que \(X = U
 \cup V\), entonces podemos estudiar el grupo \(\pi (X, x_0)\) como un
 subgrupo del grupo libre generado por \(\pi (U, x_0)\) y \(\pi (V,
-x_0)\) si \(x_0 \in U \cup V\). Para obtener un isomorfismo tomamos un
-cociente adecuado. El caso mas claro de aplicación se vera que son para
-las \emph{wedge sum} en donde este cociente sera trivial. En casos mas
-generales se vera que el cociente es de una forma relacionada con la
-definición de producto libre. Procedemos para iniciar la definición de
-estas.
+x_0)\). Para obtener un isomorfismo tomamos un cociente adecuado. El
+caso mas claro de aplicación se vera que son para las \emph{wedge sum}
+en donde este cociente sera trivial. En casos mas generales se vera que
+el cociente es de una forma relacionada con la definición de producto
+libre. Procedemos para iniciar la definición de estos conceptos.
 
 \begin{definicion}[Producto libre]
   Sea \(G_\alpha\) una colección de grupos. El grupo libre \(*_\alpha
@@ -20,7 +19,7 @@ estas.
   \(G_{\alpha_i}\) y índices sucesivos son distintos, ie \(\alpha_i \neq
   \alpha_{i + 1}\). Tomando la identidad como la cadena vacía y como
   operación de grupo la juxtaposicion de cadenas
-  \[ (g_1 g_2 \dots g_m ) * (h_1 h_2 \dots h_l) = g_1 g_2 \dots g_m
+  \[ (g_1 g_2 \dots g_m ) \cdot (h_1 h_2 \dots h_l) = g_1 g_2 \dots g_m
     h_1 h_2 \dots h_l \]
   en donde se debe reducir la cadena para que términos seguidos no
   pertenezcan al mismo grupo.
@@ -31,9 +30,9 @@ estas.
   g_m\) una cadena arbitraria, su inversa corresponde a \(g_m^{-1} g_{m-1}^{-1}
   \dots g_1^{-1}\) pues
   \begin{gather*}
-    g_1 g_2 \dots \underbrace{g_m g_m^{-1}}_{= e_{\alpha_m}}
-      g_{m-1} \dots g_1^{-1} \\
-    = g_1 g_2 \dots g_{m-1} \dots g_1^{-1}
+    g_1 g_2 \dots g_{m-1} \underbrace{g_m g_m^{-1}}_{= e_{\alpha_m}}
+      g_{m-1}^{-1} \dots g_1^{-1} \\
+    = g_1 g_2 \dots g_{m-1} g_{m-1}^{-1} \dots g_1^{-1}
   \end{gather*}
   donde la identidad fue removida de la cadena por el requisito de ser
   una cadena reducida. Si este proceso continua iterativamente se
@@ -69,13 +68,14 @@ por completitud
   \[ L_g \left( g_1 g_2 \dots g_m \right) = g g_1 g_2 \dots g_m \]
   con \(g g_1\) reducido si \(g_1 \in G_\alpha \) para mantener que sea
   una cadena reducida en \(W\). Una propiedad clara es que podemos
-  reducir antes o después de asociar \(L\) y no afectara el resultado,
-  dicho formalmente sea \(g, g', \hat g \in G_\alpha\) con \(\hat g = g
-  \cdot g'\). La asociación \(L_{g g'} = L_{g} \circ L_{g'}\) pues para
-  una cadena arbitraria
+  simplificar en \(G_\alpha\) antes o después de asociar \(L\) y no
+  afectara el resultado, dicho formalmente sea \(g, g', \hat g \in
+  G_\alpha\) con \(\hat g = g \cdot g'\). La asociación \(L_{g \cdot
+  g'}\) cumple que \(L _{g \cdot g'} = L_{g} \circ L_{g'}\) pues para una
+  cadena arbitraria
   \begin{align*}
-    &L_{g g'} \left( g_1 g_2 \dots g_m \right) \\
-    &= (g g') (g_1 g_2 \dots g_m) \\
+    &L_{g \cdot g'} \left( g_1 g_2 \dots g_m \right) \\
+    &= (g \cdot g') (g_1 g_2 \dots g_m) \\
     &= (\hat g) (g_1 g_2 \dots g_m) \\
     &= (g (g' (g_1 g_2 \dots g_m))) \\
     &= L_g \circ L_{g'} \left( g_1 g_2 \dots g_m \right)
@@ -84,30 +84,41 @@ por completitud
   reducción intermedia. Se ve también de todo \(L_g\) con \(g \in
   G_\alpha\) tiene una asociada inversa \(L_{g^{-1}}\) con \(g^{-1} \in
   G_\alpha\), lo cual en consecuencia nos da un mapeo de identidad a
-  identidad (por regla de reducción). Tenemos en cierto sentido un
-  homomorfismo de grupos, solo que dado que no conocemos la
-  asociatividad de la juxtaposicion, el espacio de partida no seria
-  grupo. Sin embargo ambas operación están relacionadas mediante la
-  formula
+  identidad (por regla de reducción). Por lo anterior tenemos un
+  homomorfismo de grupos entre \(G_\alpha\) y \((W \to W, (\circ))\) y
+  esto para todo \(\alpha\).
   \begin{align*}
-    G_\alpha &\longrightarrow P(W) \\
+    L: G_\alpha &\longrightarrow P(W) \\
     g &\longmapsto L_g
   \end{align*}
-  donde \(\left( W \to W , \circ \right) = P(W)\) el grupo de
-  permutaciones (ie ya no solo viendo \(L_g : W \to W\)). Podemos
-  generalizar esta asociación en su primer argumento a todo \(W\) por
-  \begin{align*}
-    L : W &\longrightarrow P(W) \\
+
+  Podemos de generalizar \(L\) en su primer
+  argumento de \(G_\alpha\) con \(\alpha\) arbitrario a todo \(W\). Esto
+  se hace por la siguiente formula
+  \begin{align}
+    \hat L : W &\longrightarrow P(W) \nonumber \\
     g_1 g_2 \dots g_k &\longmapsto L_{g_1} \circ L_{g_2} \circ \dots
-    \circ L_{g_k}
-  \end{align*}
-  así es claro que una operación juxtaposicion en \(W\) es una
-  composición en \(P(W)\). Esto obliga a que la juxtaposicion sea
-  asociativa pues por contradicción, si tuviéramos un trió de términos
-  \(w_1, w_2, w_3 \in W\) cuya juxtaposicion no fuera asociativa, implicaría
-  que bajo la asociación anterior, la composición de \(L_{w_1}, L_{w_2},
-  L_{w_3}\)tampoco lo seria, lo cual es una contradicción con la
-  asociatividad de la composición en \(P(W)\).
+    \circ L_{g_k} \label{def:hatL}
+  \end{align}
+  Una propiedad de \(\hat L\) es que es inyectiva, esto se ve notando
+  que las únicas cadenas que mapean bajo \(\hat L\) a la identidad de
+  \(P (W)\) corresponden a la cadena vacía o a las identidades de los
+  distintos \(G_\alpha\) que por definición no pertenecen a \(W\).
+
+  Ahora podemos ver la asociatividad de \(W\) con la yuxtaposición. Sea
+  \(w_1, w_2, w_3 \in W\) tres cadenas tales que \(w_1 (w_2 w_3) \neq
+  (w_1 w_2) w_3\). Estudiamos \[\hat L_{w_1 (w_2 w_3)},\ \hat L_{(w_1
+    w_2) w_3}\] que por ecuación \eqref{def:hatL} corresponde a la
+  composición de varias funciones \(L_g\) con \(g\) elementos de las
+  cadenas \(w_1, w_2, w_3\).  No es difícil ver que en ambas expansiones
+  participan las mismas funciones \(L_g\) y en el mismo orden. Mas aun,
+  dado que la composición en \(P(W)\) es asociativa, nos estaría diciendo
+  que
+  \[ \hat L_{w_1 (w_2 w_3)} = \hat L_{(w_1 w_2) w_3}\]
+  Pero dado que \(\hat L\) es inyectiva, esto implica que \(w_1 (w_2
+  w_3) = (w_1 w_2) w_3\). Dada que estas cadenas son arbitrarias,
+  estamos diciendo que \(W\) con la yuxtaposición (ie \(*_\alpha
+  G_\alpha\)) es asociativo.
 \end{proof}
 
 Aquí se utilizo implícitamente un propiedad básica del producto libre
