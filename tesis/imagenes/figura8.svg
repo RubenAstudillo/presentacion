@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="figura8.svg">
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect22"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect18"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect14"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="257.47317"
+     inkscape:cy="881.85124"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-bbox="false"
+     inkscape:object-paths="true"
+     inkscape:window-width="1430"
+     inkscape:window-height="865"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 58.558879,71.994556 c 1.3e-4,-8.606213 8.232032,-17.337017 16.47984,-17.41496 8.247808,-0.07794 16.57236,8.559562 24.960175,17.072102 8.387816,8.512539 16.869166,16.931524 25.194736,16.900209 8.32557,-0.03132 16.49511,-8.512671 16.55747,-16.713128 0.0624,-8.200457 -7.9827,-16.120796 -16.21447,-15.933841 -8.23177,0.186956 -16.65076,8.481219 -25.10107,16.775615 C 91.985259,80.97495 83.504176,89.268952 75.147283,89.175403 66.79039,89.081854 58.558748,80.600768 58.558879,71.994556 Z"
+       id="path20"
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect22"
+       inkscape:original-d="m 50.32685,72.11942 c 8.232167,-8.73107 16.464068,-17.461875 24.695706,-26.192413 8.231909,8.605546 16.588792,17.211892 24.882792,25.818234 8.481622,8.418732 16.962972,16.837716 25.444062,25.256971 8.1698,-8.481615 16.33934,-16.962971 24.50861,-25.444058 -8.04429,-7.920101 -16.08936,-15.84044 -24.13444,-23.76026 -8.41872,8.294002 -16.83771,16.588264 -25.25697,24.882792 C 91.985257,80.974948 83.504174,89.26895 75.022556,97.563478 66.790659,89.081593 58.559017,80.600507 50.32685,72.11942 Z"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot24"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.136338,0,0,0.12190447,51.56416,32.558173)"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion26"><rect
+           id="rect28"
+           width="159.09903"
+           height="96.873627"
+           x="346.48233"
+           y="356.72305" /></flowRegion><flowPara
+         id="flowPara30">X₀</flowPara></flowRoot>  </g>
+</svg>

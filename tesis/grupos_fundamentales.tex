@@ -271,7 +271,7 @@ homomorfismo, al cual mostraremos a continuación
   es denominada el homomorfismo inducido por \(h\) entre \(\pi (X,
   x_0)\) y \(\pi (Y, y_0)\).
 \end{definicion}
-\begin{teorema}
+\begin{teorema} \label{thm:morfismo-homomorfismo}
   Para \(h : (X, x_0) \to (Y, y_0)\) un morfimos entre espacios
   puntuados, \(h_* : \pi (X, x_0) \to \pi (Y, y_0)\) es un homomorfismo
 \end{teorema}
@@ -364,7 +364,9 @@ morfismos en la categoría de llegada. Nosotros hemos ya construido
 nuestro primer functor, donde nuestras categorías inicial y de llegada son
 \[ \mathcal C = \mathscr{Top}_* ,  \quad \mathcal D
   = \mathscr{Grp} \]
-con \(\mathscr{Grp}\) la categoría de grupos y homomorfismo entre
+con \(\mathcal {Top}_*\) la categoria con objetos espacios topologicos
+puntuados con morfismos funciones continuas entre ellos (mapeando punto de
+origines) y \(\mathscr{Grp}\) la categoría de grupos con homomorfismo entre
 grupos con composicion usual. Para especificar formalmente nuestro
 functor \(F\), debemos especificar tanto el mapeo de los elementos como
 el de los morfismos. Estos están dados por las siguientes ecuaciones
@@ -375,8 +377,10 @@ el de los morfismos. Estos están dados por las siguientes ecuaciones
   \forall f \in \mathbf{Mor} \left( \mathscr{Top}_* \right),\ &F(f) \coloneqq
     f_*
 \end{align*}
-Viendo que todos los morfismos de \(\mathscr{Top}_*\) eran homeomorfismos
-y por tanto gracias al teorema \ref{thm:homoemorfismo-isomorfismo} los
-morfismos en la categoría de llegada bajo este functor no son solamente
-homomorfismo de grupos si no isomorfismos de grupos.
+Los morfimos \(f\) de \(\mathscr{Top}_*\) cumplen por teorema
+\ref{thm:morfismo-homomorfismo} que \(f_*\) es un homomorfismo. Viendo
+especificamente los homeomorfismos de \(\mathscr{Top}_*\),
+el teorema \ref{thm:homoemorfismo-isomorfismo} nos dice que en la
+categoria de llegada estos son isomorfismos de grupos. Es decir este
+functor preserva isomorfismos.
 }
