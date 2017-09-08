@@ -168,23 +168,20 @@ intuitiva y aparece como paso intermedio de la demostración general.
   donde cada \(g_i\) es un arco en \(X\) basado en \(x_0\) que esta
   contenido completamente en \(U\) o en \(V\).
 
-  Para esto, mostramos que existe una subdivisión de \(I\) dada por
-  \(0 = a_0 < a_1 < ... < a_n = 1 \) tal que \(f(a_i) \in U \cap V\) y que \(
-  f([a_i , a_{i+1}]) \) es subconjunto contenido solo en \(U\) o en
-  \(V\).
-
-  Por lema \ref{thm:lebesgue-number-lema} (numero de Lebesgue),
-  existe una subdivisión de \(I\) dada por \(b_1 < ... < b_n\) tal que
-  \(f ([b_i , b_{i+1}])\) pertenece completamente a \(U\) o \(V\) para
-  todo \(i \in [1,n]\). Si para para todo \(i\) se cumpliera que
-  \(f(b_i) \in U \cap V\) hemos terminado. En caso contrario, de existir
-  \(i\) tal que \(f(b_i) \not \in U \cap V\) esto implica que
-  \[ f(b_i) \in U \ \veebar \ f(b_i) \in V \]
+  Por el lema \ref{thm:lebesgue-number-lema} (numero de Lebesgue),
+  existe una subdivisión de \(I\) dada por
+  \[ 0 = a_0 < ... < a_n = 1\]
+  tal que
+  \(f ([a_i , a_{i+1}])\) pertenece completamente a \(U\) o \(V\) para
+  todo \(i \in \{1 \dotsc n\}\). Si para para todo \(i\) se cumpliera que
+  \(f(a_i) \in U \cap V\) hemos terminado. En caso contrario, de existir
+  \(i\) tal que \(f(a_i) \not \in U \cap V\) esto implica que
+  \[ f(a_i) \in U \ \veebar \ f(a_i) \in V \]
   Tomando s.p.d.g la primera alternativa, implicaría que
-  \[ f(b_i) \in U \implies f([b_{i-1}, b_{i}]) \subset U \ \land \ f([b_i,
-    b_{i+1}]) \subset U \]
-  análogamente si \(f(b_i) \in V\). Podemos olvidar entonces el valor
-  \(b_i\) de la subdivisión y revisar si \(f(b_{i+1}) \in U \cap V\),
+  \[ f(a_i) \in U \implies f([a_{i-1}, a_{i}]) \subset U \ \land \ f([a_i,
+    a_{i+1}]) \subset U \]
+  análogamente si \(f(a_i) \in V\). Podemos olvidar entonces el valor
+  \(a_i\) de la subdivisión y revisar si \(f(a_{i+1}) \in U \cap V\),
   repitiendo este proceso una cantidad finita de veces hasta satisfacer
   la condición.
 
@@ -192,9 +189,9 @@ intuitiva y aparece como paso intermedio de la demostración general.
   subdivisión anterior, definamos las funciones
   \[ l_i : [0,1] \to [a_{i-1}, a_{i}] \]
   \[ f_i = f \circ l_i \]
-  Es claro que \(\forall i \in [1, n], \ f_i (I) \) esta contenida en
+  Es claro que \(\forall i \in \{1 \dotsc n\}, \ f_i (I) \) esta contenida en
   \(U\) o en \(V\). También es claro por simple calculo que se cumple
-  que
+  la igualdad
   \[ [f] = [f_1] * [f_2] * ... * [f_n] \]
   Pero estos \(\{f_i\}\) no son arcos cerrados basados en \(x_0\) de
   \(\pi (U,x_0)\) o \(\pi (V,x_0)\). Para solucionar esto, nos basamos
