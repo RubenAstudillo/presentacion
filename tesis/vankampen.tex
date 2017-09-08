@@ -242,7 +242,7 @@ utilizaremos en su forma generalizada para probar el teorema general.
     \forall \alpha ,\beta \in \tau \} \right)
   \]
   es decir el subgrupo normal generado por estos elementos y por tanto
-  \(\Phi\) induce un isomorfismo \(\pi (X, x_0) \simeq *_\alpha \pi
+  \(\Phi\) induce un isomorfismo \(\pi (X, x_0) \cong *_\alpha \pi
   (A_\alpha, x_0) / N \)
 \end{teorema}
 Antes de la demostración hablaremos un poco del conjunto \(N\). Las
@@ -252,21 +252,27 @@ homomorfismos inducidos por la inclusión
   i_{\alpha \beta} : \pi (A_\alpha \cap A_\beta , x_0 ) \longrightarrow \pi (A_\alpha, x_0) \\
   i_{\beta \alpha} : \pi (A_\alpha \cap A_\beta , x_0 ) \longrightarrow \pi (A_\beta, x_0)
 \end{gather*}
-que pierden su notación \(i_*\) por simplicidad. Notar que dado que
+que pierden su notación \(i_*\) por simplicidad. Notar que
 para \(\omega \in \pi (A_\alpha \cap A_\beta ,\ x_0)\) arbitrario
 \[ i_{\alpha \beta} (\omega) i_{\beta \alpha}^{-1} (\omega) \in N
   \implies i_{\alpha \beta} (\omega) \cdot N = i_{\beta
 \alpha} (\omega) \cdot N \]
-con \(i_{\beta \alpha} (\omega) \cdot N\) un elemento de \(*_\alpha
-\pi (A_\alpha , x_0) / N\). También véase que dado el producto en los
+con \(i_{\beta \alpha} (\omega) \cdot N\) un elemento de \(*_\alpha \pi
+(A_\alpha , x_0) / N\). Lo que lo anterior nos dice es que en \(*_\alpha
+\pi (A_\alpha) / N\), las cadenas de \(\pi (A_\alpha \cap A_\beta) / N\)
+pueden verse como elementos de \(\pi(A_\alpha) / N\) o \(\pi (A_\beta) /
+N\).
+
+También véase que dado el producto en los
 grupos cocientes, para \(\omega_1 \omega_2 \) una cadena en \(*_\alpha
 A_\alpha\) cumple la ecuación
 \[ (\omega_1 \omega_2) N = (\omega_1 N) (\omega_2 N) \]
 como elemento del cociente \(*_\alpha A_\alpha / N\). Esto nos permite
 modificar puntos finales o iniciales de \(\omega_1, \omega_2\) para
 obligar que estos sean elementos de \(\pi (A_1, x_0), \pi (A_2, x_0)\)
-respectivamente mediantes operaciones con elementos de \(N\). Por otro
-lado, notese que
+respectivamente mediantes operaciones con elementos de \(N\).
+
+Por otro lado, véase que
 \[ N \subseteq \text{kernel} \ \Phi \]
 pues \(N\) es el menor subgrupo normal de \(*_\alpha A_\alpha\) y los
 elementos base de este pertenecen al kernel de \(\Phi\) pues estos son
@@ -295,9 +301,10 @@ declarado, podemos proceder a la demostración.
   isomorfismo sobre \(\Phi\) para obtener el resultado ya que tenemos
   caracterizado su kernel.
 
-  Sea \([f] \in \pi (X, x_0)\) un elemento arbitrario. Definamos una
-  factorizacion de esta como una cadena \([f_1][f_2] ... [f_k] \in
-  *_\alpha \pi (A_\alpha, x_0)\) donde
+  Seguiremos el esquema de demostracion dado en \cite{Bloom}. Sea \([f]
+  \in \pi (X, x_0)\) un elemento arbitrario. Definamos una factorizacion
+  de esta como una cadena \([f_1][f_2] ... [f_k] \in *_\alpha \pi
+  (A_\alpha, x_0)\) donde
   \begin{enumerate}
   \item Cada \(f_i\) es un camino cerrado en \(A_i\) con punto base \(x_0\)
   \item \(f\) es homotópico a \(f_1 * f_2 * ... * f_k\)
@@ -355,7 +362,7 @@ declarado, podemos proceder a la demostración.
   unión de caminos (ie como imagen bajo \(\Phi\)) cumplen
   \[ [h_1] * [h_2] * \dotsc * [h_k] = [f] = [g _1] * [g _2] * \dotsc * [g _l] \]
   por lo tanto
-  \[ h_1 * h_2 * \dotsc * h_k \, \dot \sim \, g _1 * g _2 * \dotsc *
+  \[ h_1 * h_2 * \dotsc * h_k \, \dot \simeq \, g _1 * g _2 * \dotsc *
     g _l \]
   es decir, existe una homotopía en \((X,x_0)\) entre ellas. Denotemos
   a \(F : I \times I \to X\) como dicha homotopía.
@@ -365,17 +372,17 @@ declarado, podemos proceder a la demostración.
   \[ 0 = s_0 < s_1 < ... < s_m = 1 \]
   \[ 0 = t_0 < t_1 < ... < t_n = 1 \]
   mediante el lema \ref{thm:lebesgue-number-lema} del numero de Lebesgue
-  (análogo a lo que se hizo en el caso particular de
-  \vank en el teorema \ref{thm:vank-especifico}), los cuales tienen
-  la propiedad de que
-  \[ \forall (i,j) \in \{1 \dotsc m-1 \} \times \{1 \dotsc n - 1\},
-    \exists ! \alpha \in \tau,\ F \left( [s_i, s_{i+1}] \times [t_j,
+  (análogo a lo que se hizo en el teorema
+  \ref{thm:levantamiento-homotopico}), los cuales tienen la propiedad de
+  que
+  \[ \forall (i,j) \in \{0 \dotsc m-1 \} \times \{0 \dotsc n - 1\},
+    \ \exists ! \alpha \in \tau,\ F \left( [s_i, s_{i+1}] \times [t_j,
     t_{j+1}] \right) \subseteq A_\alpha \]
   Podemos enumerar los rectángulos generados por estos intervalos como
   \(R_k\) con \(k \in \{1 \dotsc n\cdot m\}\) de izquierda a derecha y
   de abajo hacia arriba. Dada la propiedad anterior, también podemos
-  identificar como \( A_k\) a los conjuntos tales que \(F \left( R_k
-  \right) \subseteq A_k \). Mas aun, podemos modificar ligeramente los
+  identificar como \( A^{(k)}\) a los conjuntos tales que \(F \left( R_k
+  \right) \subseteq A^{(k)} \). Mas aun, podemos modificar ligeramente los
   lados de estos rectángulos de manera que sus vértices estén a lo mas en
   la intersección de tres conjuntos de \(\{A_\alpha\}\).
   \begin{figure}[h]
@@ -392,7 +399,7 @@ declarado, podemos proceder a la demostración.
   \[ \forall k,\ F \circ \gamma_k (0) = x_0 = F \circ \gamma_k (1) \]
   es decir, estos son arcos cerrados de \(x_0\). También se ve que
   podemos pasar del arco \(\gamma_k\) al arco \(\gamma_{k+1}\) por la
-  homotopía de la linea recta \(\Gamma_k\) contenida en le rectángulo
+  homotopía de la linea recta \(\Gamma_k\) contenida en el rectángulo
   \(R_k\), pues el espacio \(I \times I\) es convexo. Por tanto \(F \circ
   \Gamma_k\) es una homotopía entre \(F \circ \gamma_k\) e \(F \circ
   \gamma_{k+1}\).
@@ -413,26 +420,36 @@ declarado, podemos proceder a la demostración.
   procedimiento análogo al utilizado en el teorema
   \ref{thm:vank-especifico}. Entre cada elemento \(f_i^{(k)}\)
   introducimos los caminos \(\bar g _v , g_v\) de ser necesario para
-  obligar que \(\bar g _v * f_i^{(k)} * g_v \) sea un elemento \(\pi
-  (A_\alpha, x_0)\). Así obteniendo una factorizacion de \([F \circ
-  \gamma_k]\) para todo \(k\). Esta factorizacion depende de cierto
-  factores, puesto que \(\gamma_k\) tiene su imagen en las aristas de
-  los rectángulos y potencialmente podría darnos varias factorizaciones
-  con elementos en distintos \(\pi (A_\alpha)\). Sin embargo, debemos
-  recordar que estas factorizaciones seria equivalentes bajo el
-  movimiento dos de factorizaciones descrito anteriormente.
+  obligar a que se cumpla
+  \[\bar g _v * f_i^{(k)} * g_v \in \pi (A_\alpha, x_0)\]
+  Así obteniendo una factorizacion de \([F \circ \gamma_k]\) para todo
+  \(k\) tomando las clases de equivalencias (homotópicas) de los
+  elementos anteriores y usándolas para formar las cadenas respectivas
+  en \(*_\alpha \pi (A_\alpha, x_0)\).
+
+  Esta factorizacion depende de cierto parámetros, puesto que \(\gamma_k\)
+  tiene su imagen en las aristas de los rectángulos y potencialmente
+  podría darnos varias factorizaciones con elementos en distintos \(\pi
+  (A_\alpha)\). Sin embargo, debemos recordar que estas factorizaciones
+  seria equivalentes bajo el movimiento dos de factorizaciones descrito
+  anteriormente. Mas aun, dado que \(h\) e \(g\) pueden tener
+  potencialmente distinta cantidad de elementos en sus cadenas, es
+  necesario hacer aparecer elementos extra entre medio mediante el
+  segundo movimiento de factorizaciones.
 
   Por ultimo, notamos que las factorizaciones de \([F \circ \gamma_k]\) e
   \([F \circ \gamma_{k+1}]\) son equivalentes. Esto es por la existencia
   de la homotopía \(F \circ \Gamma_k\), ya que esta solo cambia las curvas en
-  el segmento contenido en el rectángulo \(R_k\) que denotaremos \([a_k,
-  a_{k+1}] \subseteq I\). Por lo tanto si
+  el segmento contenido en el rectángulo \(R_k\). Denotaremos a \([a_k,
+  a_{k+1}] \subseteq I\) al intervalo tal que \[F \circ \gamma_k [a_k ,
+    a_{k+1}] \subseteq R_k\]
+  Por lo tanto si
   tomamos la factorizacion de \([F \circ \gamma_{k}]\), mediante el
   movimiento dos de factorizaciones equivalentes, podemos considerar la
-  factorizacion que tenga solo elementos de \(A_k\) en la sección \([a_k,
+  factorizacion que tenga solo elementos de \(A^{(k)}\) en la sección \([a_k,
   a_{k+1}]\). Esta sera una factorizacion que sera homotópica a una
-  factorizacion de \(F \circ \gamma_{k+1}\) también con elementos de
-  \(A_k\) en el intervalo \([a_k , a_{k+1}]\). Es decir, tenemos que los
+  factorizacion de \([F \circ \gamma_{k+1}]\) también con elementos de
+  \(A^{(k)}\) en el intervalo \([a_k , a_{k+1}]\). Es decir, tenemos que los
   elementos de estas factorizaciones son iguales (pertenecen a la misma
   clase homotópica) y por lo tanto son equivalentes.
 
@@ -474,11 +491,11 @@ El producto libre de grupos \(*_\alpha G_\alpha\) es en la categoría
 \(\mathcal{Grp}\) el co-producto categórico. Esto se ve siguiente la
 definición \ref{def:coproducto} de co-producto, sean \(X,Y,C\) tres grupos
 tales que existan homomorfismo \(\phi_1 : X \to C\) y \(\phi_2 : X \to
-C\). Ya se había anteriormente como el producto libre \(X * Y\) admite
-una extensión (única) de los homomorfismos \(\phi_1, \phi_2\) a la cual
-denotaremos \(\Phi : X * Y \to C\), la cual debe cumplir con la igualdad
-pedida en \ref{def:coproducto}. Una consecuencia de \vank es que el
-functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\) preserva
+C\). Ya se había visto anteriormente como el producto libre \(X * Y\)
+admite una extensión (única) de los homomorfismos \(\phi_1, \phi_2\) a
+la cual denotaremos \(\Phi : X * Y \to C\), la cual debe cumplir con la
+igualdad pedida en \ref{def:coproducto}. Una consecuencia de \vank es
+que el functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\) preserva
 co-productos, como fue visto en el ejemplo anterior.
 
 \begin{ejemplo}[Botella de Klein]
@@ -502,12 +519,12 @@ co-productos, como fue visto en el ejemplo anterior.
   El grupo fundamental \(\pi \left( U , x_0 \right) \) es trivial porque
   este conjunto es convexo y todos los caminos son homotópicas a la
   identidad. El grupo fundamental de \(\pi (V, x_0)\) es isomorfo a
-  \(\pi (V, y_0)\) con \(y_0\) el vértice (identificado es único) de \(I
+  \(\pi (V, y_0)\) con \(y_0\) el vértice (que identificado es único) de \(I
   \times I\), esto pues el espacio \(V\) es arco-conexo. Estudiando
   \(\pi (V, y_0)\), es claro que \(V\) es homotopicamente equivalente al
   espacio generado por la curvas \(a\) y \(b\) con punto común \(y_0\),
   es decir .
-  \[ \pi (V, x_0) \simeq \pi (V, y_0) \simeq \pi (S^1 \vee S^1, y_0) =
+  \[ \pi (V, x_0) \cong \pi (V, y_0) \cong \pi (S^1 \vee S^1, y_0) =
     \mathbb Z * \mathbb Z \]
   tomando a \(a,b\) como generadores.
 
@@ -515,7 +532,7 @@ co-productos, como fue visto en el ejemplo anterior.
   espacio \(U \cap V\) es homotopicamente equivalente a una curva
   \(\gamma\) contenida en \(U \cap V\) que de una vuelta completa.
   \(\gamma\) es homeomorfa a \(S^1\) y por tanto el
-  \[\pi (U \cap V, x_0) \simeq \pi (S^1) = \mathbb Z \]
+  \[\pi (U \cap V, x_0) \cong \pi (S^1) = \mathbb Z \]
   con \(\gamma\) el generador de este. Debemos estudiar los
   homomorfismos inducidos por la inclusión
   \[ i_{u v} : \pi (U \cap V , x_0) \longrightarrow \pi (U, x_0) \]
@@ -525,12 +542,12 @@ co-productos, como fue visto en el ejemplo anterior.
   \begin{gather*}
     i_{u v} ([\gamma]) = [\gamma]_{U} = e \in \pi \left( U, x_0 \right)
     \\
-    i_{v u} ([\gamma]) = [\gamma]_{V} \pi \left( V, x_0 \right)
+    i_{v u} ([\gamma]) = [\gamma]_{V} \in \pi \left( V, x_0 \right)
   \end{gather*}
-  con \(e \in \pi \left( U, x_0 \right)\) la identidad de ese grupo.
-  \([\gamma]_V\) es equivalente homotopicamente a \([a * b * a *
-  b^{-1}]\) por la proyección radial desde el centro de \(I \times I\)
-  hacia el borde
+  con \(e \in \pi \left( U, x_0 \right)\) la identidad de ese grupo y el
+  único elemento posible en el recorrido. Véase que \([\gamma]_V\) es
+  equivalente homotopicamente a \([a * b * a * b^{-1}]\) por la proyección
+  radial desde el centro de \(I \times I\) hacia el borde.
   \begin{figure}[h]
     \centering \includegraphics[scale=0.5]{./imagenes/radial.png}
   \end{figure}
@@ -539,13 +556,13 @@ co-productos, como fue visto en el ejemplo anterior.
   donde este conjunto corresponde simplemente \(\{ [a] [b] [a]
   [b^-1]\}\) con la yuxtaposición como operación, es decir no tiene
   elementos extra de \(\pi (U,x_0) * \pi (V, x_0)\). Luego \vank nos
-  dices que
-  \[ \pi (K, x_0) \simeq \left( \pi (U, x_0) * \pi (V, x_0) \right)
+  dice que se tiene los siguientes isomorfismos
+  \[ \pi (K, x_0) \cong \left( \pi (U, x_0) * \pi (V, x_0) \right)
       /_{\{[a] [b] [a] [b^{-1}]\}} = \langle {a , b} \rangle
       /_{\{[a] [b] [a] [b^{-1}]\}}\]
-  donde este ultimo puede presentarse en de como un espacio cociente a
-  simplemente las cadenas generadas por \(a,b\) con \(a * b * a * b^{-1}
-  = e\), ie
+  donde este ultimo puede presentarse como las cadenas generadas por
+  \(a,b\) con \(a * b * a * b^{-1} \) reducido o removido por ser la
+  identidad, ie
   \[ \langle a,b \rangle /_{abab^{-1} = e} \]
 \end{ejemplo}
 
