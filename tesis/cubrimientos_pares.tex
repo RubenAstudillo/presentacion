@@ -438,7 +438,7 @@ la fibra de \(x_0\). De hecho podemos enfocarnos puramente en el punto
 al que permuta el punto final y podríamos determinar totalmente al arco
 en la base al que corresponde cuando el cubrimiento sea universal. Esto
 se vera en la siguiente teorema.
-\begin{teorema}
+\begin{teorema} \label{thm:phi-bijec}
   Sea \(p : \tilde X \to X\) un cubrimiento tal que \(p (\tilde x _0) =
   x_0\). Si \(\tilde X\) es arco-conexo entonces el correspondiente
   levantamiento \(\phi : \pi (X, x _0) \to p^{-1} (x_0)\) es
@@ -477,7 +477,7 @@ lado, podemos definir un nuevo grupo el cual va a actuar (en sentido de
 grupos) sobre esta fibra al cual denotaremos como grupo de
 transformaciones de \emph{deck}\footnote{En español seria transformaciones de
   cartas, pero asi podemos utilizar un nombre usual}.
-\begin{definicion}[Grupo de transformaciones de \emph{deck}]
+\begin{definicion}[Grupo de transformaciones de \emph{deck}]\label{def:deck}
   Para un cubrimiento \(p : \tilde X \to X\), los isomorfismos \(g : \tilde
   X \to \tilde X\) tales que cumplan
   \[ p \circ g = p \]
@@ -553,7 +553,7 @@ Procedemos a la demostración.
   continua con un homeomorfismo y por tanto continua en \(y\).
 \end{proof}
 
-\begin{teorema}[Unicidad levantamiento]
+\begin{teorema}[Unicidad levantamiento]\label{thm:uniq-general}
   Dado un cubrimiento \(p : \tilde X \to X\) y un mapeo \(f : Y \to X\),
   si dos levantamientos \(\tilde f _1 , \tilde f _2 : Y \to \tilde X\)
   de \(f\) concuerdan en un punto de \(Y\) y \(Y\) es conexo, entonces
@@ -597,7 +597,7 @@ Procedemos a la demostración.
   obligado a que \(K = Y\).
 \end{proof}
 
-\begin{teorema}\label{thm:uniq-general}
+\begin{teorema}\label{thm:exists-isomor}
   Si \(X\) es un espacio arco-conexo, localmente arco-conexo, entonces
   dos cubrimientos \(p_1 : \tilde X _1 \to X\) y \(p_2 : \tilde X _2 \to
   X\) son isomorficos via un isomorfismo \(f : \tilde X_1 \to \tilde
@@ -647,6 +647,48 @@ Procedemos a la demostración.
   (corolario \ref{thm:comp-identidad}).
 \end{proof}
 
+Ahora nos enfocaremos en un caso especifico, cuando nuestro cubrimiento
+es un cubrimiento universal. Sea \(p : \tilde X \to X,\ \tilde X\) un
+cubrimiento universal de \(X\). Sea \(x_0 \in X\) un punto base. Es
+claro que dado que el los grupos fundamentales de \(\tilde X\) son
+triviales independientes del punto base de \(\tilde X\), ie para todo
+\(\tilde x_1, \tilde x_2 \in p^{-1} (x_0)\)
+\begin{equation*}
+  \pi \left( \tilde X , \tilde x_1 \right) = \{[k_{\tilde x_1}]\},\quad
+  \pi \left( \tilde X , \tilde x_2 \right) = \{ [k_{\tilde x_2}]\}
+\end{equation*}
+por tanto
+\begin{equation} \label{hip:lifting}
+  p_* \left( \pi \left( \tilde X , \tilde x_1 \right) \right) =
+  \{k_{x_0}\} = p_* \left( \pi \left( \tilde X , \tilde x_2 \right)
+  \right),\ \forall \tilde x_1 , \tilde x_2 \in \tilde X
+\end{equation}
+Por tanto, para cualquier curva \([\gamma] \in \pi (X , x_0)\), su
+representante \(\gamma\) posee un único levantamiento a \((\tilde X,
+\tilde x_1)\) que denotaremos por \(\tilde \gamma\). Este debe cumplir
+con las ecuaciones
+\[ \tilde \gamma \, (0) = \tilde x_1, \quad \tilde \gamma \, (1) =
+  \tilde x_2 = \phi ([\gamma]) \]
+para algún \(\tilde x_1 \in p^{-1} (x_0)\). La ecuación
+\eqref{hip:lifting} aplicada a estos \(\tilde x_0, \tilde x_1,\) nos
+permite aplicar el teorema \ref{thm:exists-isomor} que nos da un
+isomorfismo de cubrimientos
+\[\varphi : (\tilde X , \tilde x_1) \to (\tilde X , \tilde x_2 ) \]
+el cual cumple la ecuación \(p \circ \varphi = p\) y por tanto es una
+transformación de \emph{deck} en el sentido de la definición
+\ref{def:deck}.
+
+La relación anterior entre \([\gamma]\) y \(\varphi\) es funcional por
+la construcción del teorema \ref{thm:exists-isomor}. Por tanto podemos
+definir una función
+\begin{align*}
+  L : \pi (X, x_0) &\longrightarrow G (\tilde X) \\
+  [\gamma] &\longmapsto \varphi
+\end{align*}
+cuando \(\tilde X\) es universal. Mas aun, podemos notar que dada la
+biyeccion \(\phi\) estudiada en el teorema \ref{thm:phi-bijec} nos basta
+saber a donde se envía un solo punto en \(\tilde X\) para determinar la
+transformación de \emph{deck}.
 
 Ahora podemos plantearnos un ejemplo clásico, ver el grupo fundamental
 de \(S^1\). Utilizaremos el teorema anterior para proponer un
