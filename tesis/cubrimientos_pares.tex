@@ -235,8 +235,10 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
   Luego podemos definir \(\tilde F\) sobre el resto de \([s_i,
     s_{i+1}] \times [t_j , t_{j+1}]\) notando que \(p \mid_{V_0}\) es
   un homeomorfismo entre \(V_0\) y \(U\) y por tanto
-  \[ \forall (a,b) \in [s_i, s_{i+1}] \times [t_j , t_{j+1}],
-    \ \tilde F (a,b) := p^{-1} \mid_{V_0} \left( F(a,b) \right) \]
+  \begin{equation}\label{eq:induc-homotopia}
+  \forall (a,b) \in [s_i, s_{i+1}] \times [t_j , t_{j+1}],
+    \ \tilde F (a,b) := p^{-1} \mid_{V_0} \left( F(a,b) \right)
+  \end{equation}
   Esta cumple la regla \( F = p \circ \tilde F\) y es continua en virtud
   del lema del pegamiento. Notando finalmente que ahora los conjuntos
   \[ L := [s_i , s_{i+1}] \times \{t_{j+1}\}\]
@@ -244,6 +246,13 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
   Están definidos en \(\tilde F\) y pueden ser utilizados para seguir
   definiéndola inductivamente sobre \(I \times I\).
 %fin pagina 24
+\end{proof}
+\begin{corolario}\label{cor:preservar-arco-hom}
+  El levantamiento homotópico de una arco-homotopía sigue siendo una arco-homotopía
+\end{corolario}
+\begin{proof}
+  Esto es consecuencia de la definición inductiva de la ecuación
+  \eqref{eq:induc-homotopia}.
 \end{proof}
 
 Retrocedamos un poco para pensar que es lo que tenemos hasta el momento.
