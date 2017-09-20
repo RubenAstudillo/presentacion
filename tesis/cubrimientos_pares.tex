@@ -553,6 +553,50 @@ Procedemos a la demostración.
   continua con un homeomorfismo y por tanto continua en \(y\).
 \end{proof}
 
+\begin{teorema}[Unicidad levantamiento]
+  Dado un cubrimiento \(p : \tilde X \to X\) y un mapeo \(f : Y \to X\),
+  si dos levantamientos \(\tilde f _1 , \tilde f _2 : Y \to \tilde X\)
+  de \(f\) concuerdan en un punto de \(Y\) y \(Y\) es conexo, entonces
+  \(\tilde f _1 , \tilde f _2\) concuerdan en todo \(Y\).
+\end{teorema}
+\begin{proof}
+  Para un punto arbitrario \(y \in Y\), existe una vecindad \(U \subset
+  X\) la cual es cubierta par-mente por \(p\) de manera que se cumple la
+  ecuación
+  \[ \bigcup_{\alpha} \tilde U_\alpha = p^{-1} \left( U \right)\]
+  Con \(\tilde U _\alpha\) disjuntos y que al restringir \(p\) en ellos
+  se tiene un homeomorfismo. En particular denotemos \(\tilde U
+  _1 , \tilde U _2\) a los conjuntos tales que
+  \[ \tilde f _1 ( y ) \in \tilde U _1,\ \tilde f _2 ( y ) \in \tilde U
+    _2 \]
+  Por continuidad de \(\tilde f_1, \tilde f_2 \), fijamos una vecindad
+  de \(y\) por
+  \[ N := \tilde f _1 ^{-1} (\tilde U _1) \cap \tilde f _2 ^{-1} (\tilde
+    U _2) \]
+  la cual cumple trivialmente que
+  \[ \tilde f_1 (N) \subseteq \tilde U _1,\ \tilde f_2 (N) \subseteq
+    \tilde U _2 \]
+  Tomaremos casos. Si \(\tilde f _1 (y) \neq \tilde f _2 (y)\) implica
+  que \(\tilde U _1 \neq \tilde U _2\) pues de ser el mismo conjunto, se
+  tendría una contracción con la inyectividad de \(p\) al ser
+  restringido a este pues se debe cumplir que \( p \circ \tilde f _1 (y)
+  = p \circ \tilde f _2 (y)\). Dado que \(\tilde U_1 \neq \tilde U _ 2\)
+  son disjuntos, se tiene que \(\tilde f_1 \neq \tilde f_2 \) en la
+  vecindad \(N\). Por otro lado, si \(\tilde f _1 (y) = \tilde f _2
+  (y)\) por el mismo argumento se debe cumplir que \(\tilde U _1 = \tilde
+  U _2\) y por tanto \(\tilde f _1 = \tilde f _2\) en \(N\).
+
+  Definamos un conjunto auxiliar
+  \[ K := \{ y \in Y \mid \tilde f_1 (y) = \tilde f_2 (y) \} \]
+  Por lo mostrado anteriormente, para todo punto \(y \in K\) existe una
+  vecindad \(N\) totalmente contenida en \(K\). De igual manera si
+  consideramos \(K^c\), también existe una vecindad \(N\) totalmente
+  contenida en \(K^c\). Luego \(K\) es abierto y cerrado al mismo tiempo
+  en \(Y\) un espacio conexo, lo cual obliga a que este sea \(Y\) o
+  \(\emptyset\). Pero dado que los levantamientos existen, se esta
+  obligado a que \(K = Y\).
+\end{proof}
+
 Ahora podemos plantearnos un ejemplo clásico, ver el grupo fundamental
 de \(S^1\). Utilizaremos el teorema anterior para proponer un
 cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
