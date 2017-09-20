@@ -427,23 +427,17 @@ comportamiento de una funcion conocida como el levantamiento derivado.
   \[ \phi ([f]) = \phi ([f_1])\]
 \end{acotacion}
 
-Una idea geométrica de lo que sucede en los arcos del espacio base
-\(\left(X, x_o \right)\) al levantarse mediante el teorema
-\ref{thm:lifting-theorem} al espacio cubrimiento \(\left( \tilde X ,
-\tilde x _0 \right)\) es que transforma arcos con el mismo punto inicial
-y final a arcos donde esto no es necesario. Es decir es posible que
-``desenrolle'' los arcos al levantarse. Sin embargo para cumplir la
-propiedad de los levantamiento, el punto final de este tiene que
-pertenecer al conjunto \(p^{-1} \left( \{x_0\} \right)\), es decir la
-fibra de \(x_0\). De hecho podemos enfocarnos puramente en el punto al
-que permuta el punto final y podríamos determinar totalmente al arco en
-la base al que corresponde bajo hipótesis adecuadas. Esto se vera en la
-siguiente definición y teorema.
-\begin{acotacion}
-  Para un espacio simplemente conexo, para cualquier par de arcos
-  existe una homotopía entre ellos (la composición de sus dos homotopías
-  al arco identidad \(k_{x_0}\)).
-\end{acotacion}
+Al estudiar los caminos en el espacio base \(\left(X, x_0 \right)\)
+cuando estos son levantados al espacio cubrimiento \((\tilde X ,
+\tilde x _0 )\), es posible que se transformen caminos con el mismo
+punto inicial y final a caminos donde esto no es necesario. Es decir es
+posible que ``desenrolle'' los caminos al levantarse. Sin embargo para
+cumplir la propiedad de los levantamiento, el punto final de este tiene
+que pertenecer al conjunto \(p^{-1} \left( \{x_0\} \right)\), es decir
+la fibra de \(x_0\). De hecho podemos enfocarnos puramente en el punto
+al que permuta el punto final y podríamos determinar totalmente al arco
+en la base al que corresponde cuando el cubrimiento sea universal. Esto
+se vera en la siguiente teorema.
 \begin{teorema}
   Sea \(p : \tilde X \to X\) un cubrimiento tal que \(p (\tilde x _0) =
   x_0\). Si \(\tilde X\) es arco-conexo entonces el correspondiente
@@ -451,12 +445,6 @@ siguiente definición y teorema.
   sobreyectivo. Mas aun, si \(\tilde X\) es simplemente conexo, este es
   biyectivo.
 \end{teorema}
-% no es cierto creo
-% Usualmente queremos que \(p^{-1} (x)\) no sea simplemente un conjunto,
-% queremos poder dotarle de estructura de grupo. En caso de \(\tilde X\)
-% ser arco-conexo, lo que estamos haciendo realmente es estudiar un
-% subgrupo de \(\pi \left( X, x_0 \right)\) a través de \(p^{-1}(x_0)
-% \subseteq \tilde X\).
 \begin{proof}
   Demostración estándar de sobreyectividad en caso de ser \(\tilde X\)
   arco-conexo. Para \(\tilde x _1 \in p^{-1} (x_0)\) arbitrario, existe
@@ -475,14 +463,33 @@ siguiente definición y teorema.
   \circ \tilde F : I \times I \to X \) es una homotopía entre \(f, g\),
   por tanto \([f] = [g]\)
 \end{proof}
-\begin{acotacion}
-  Esta versión del teorema es la mas útil desde el punto de vista del
-  calculo pero no la mas general. Ese enunciado corresponde a estudiar las
-  acciones del grupo \(\pi (X , x_0)\) sobre la fibra. La biyeccion se
-  obtiene de pedir que el cubrimiento sea \emph{regular}, requerimiento
-  que se cumple con pedir simple-conexidad de \((X, x_0)\). Para ver el
-  teorema completo se dirige \cite{Hatcher}[pag. 69]
-\end{acotacion}
+% \begin{acotacion}
+%   Esta versión del teorema es la mas útil desde el punto de vista del
+%   calculo pero no la mas general. Ese enunciado corresponde a estudiar las
+%   acciones del grupo \(\pi (X , x_0)\) sobre la fibra. La biyeccion se
+%   obtiene de pedir que el cubrimiento sea \emph{regular}, requerimiento
+%   que se cumple con pedir simple-conexidad de \((X, x_0)\). Para ver el
+%   teorema completo se dirige \cite{Hatcher}[pag. 69]
+% \end{acotacion}
+Este teorema nos permitirá enfocarnos puramente en la fibra \(p ^{-1}
+(x_0)\) para estudiar el grupo fundamental de \((X, x_0)\). Por otro
+lado, podemos definir un nuevo grupo el cual va a actuar (en sentido de
+grupos) sobre esta fibra al cual denotaremos como grupo de
+transformaciones de \emph{deck}\footnote{En español seria transformaciones de
+  cartas, pero asi podemos utilizar un nombre usual}.
+\begin{definicion}[Grupo de transformaciones de \emph{deck}]
+  Para un cubrimiento \(p : \tilde X \to X\), los isomorfismos \(g : \tilde
+  X \to \tilde X\) tales que cumplan
+  \[ p \circ g = p \]
+  son transformaciones de \emph{deck}. El grupo \(G (\tilde X)\) formado
+  por estos isomorfismos, la composición como operación forman el grupo
+  de transformaciones de \emph{deck} con la función identidad como
+  identidad de grupo.
+\end{definicion}
+Para ver la relación del grupo \(G(\tilde X)\) con la fibra \(p^{-1}
+(x_0)\) es necesario generalizar algunos resultados de levantamientos de
+caminos (teoremas \ref{thm:lifting-theorem},
+\ref{thm:levantamiento-homotopico})
 
 Ahora podemos plantearnos un ejemplo clásico, ver el grupo fundamental
 de \(S^1\). Utilizaremos el teorema anterior para proponer un
