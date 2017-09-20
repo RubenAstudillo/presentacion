@@ -374,24 +374,54 @@ el de estudiar las acciones del grupo \(\pi \left( X, x_0 \right)\)
 sobre la fibra \(p^{-1} \left( x_0 \right)\), el cual probaremos que
 bajo condiciones sensatas sobre el cubrimiento \(p\) y el espacio
 cubrimiento \(\left( \tilde X, \tilde x _0 \right)\), es isomorfo a \(\pi
-(X, x_0)\). Necesitamos algunas definiciones para esto
+(X, x_0)\). Estas condiciones están intrínsecamente relacionadas con el
+cubrimiento universal
 
+\subsubsection{Cubrimiento universal}
+\begin{definicion}[Simplemente conexo]
+  Un espacio topológico \(X\) es simplemente conexo si su grupo
+  fundamental es trivial.
+\end{definicion}
+Intuitivamente estos espacio son aquellos que no tienen caminos cerrados
+triviales. Ejemplo de estos son los distintos \(\Re^n\) para distintos
+valores de \(n\).
+\begin{definicion}[Cubrimiento universal]
+  Sea \(\left( X, x_0 \right)\) un espacio topológico puntuado. Un
+  cubrimiento \(p : \left( \tilde X , \tilde x _0 \right) \to \left( X ,
+    x _0 \right)\) es llamado cubrimiento universal de \( \left( \tilde
+    X , \tilde x _0 \right)\) si \(\left( \tilde X , \tilde x _0
+  \right)\) es simplemente conexo.
+\end{definicion}
+El estudio de los cubrimientos universales esta relacionado con el
+comportamiento de una funcion conocida como el levantamiento derivado.
 \begin{definicion}[Levantamiento derivado]
   Sea \(p : \tilde X \to X\) un cubrimiento y sea \(x_0 \in X\).
   Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
   x_0\). Dado un elemento \([f] \in \pi (X, x_0)\), sea \(\tilde f\) el
   levantamiento (único) de \(f\) a un camino en \(\tilde X\) que
-  comienza en \(\tilde x _0\). Definamos \(\phi ([f]) = \tilde f (1)\) del
-  \(\tilde f\) asociado a \(f\) anteriormente. Entonces \(\phi\) es bien
-  definido como mapeo de conjunto
-  \[ \phi : \pi (X, x_0) \longrightarrow p^{-1} (x_0)\]
-  llamando a \(\phi\) el \textbf{correspondiente levantamiento
+  comienza en \(\tilde x _0\). Se define una función
+  \begin{align*}
+    \phi : \pi (X, x_0) &\longrightarrow p^{-1} (x_0) \\
+    [f] &\longmapsto \tilde f (1)
+  \end{align*}
+  y denominamos a \(\phi\) como el \textbf{correspondiente levantamiento
   derivado}\footnote{Corresponding lifting path} del cubrimiento \(p\).
 \end{definicion}
 \begin{acotacion}
   Este mapeo no depende del representante de clase \([f] \in \pi \left(
-    X, x_0 \right)\) pues las homotopías tiene fijos los extremos.
+    X, x_0 \right)\). Para ver esto, notar que tomando a \(f_1 \in [f]
+  ,\ f_1 \neq f\) estos están relacionados por una arco-homotopía
+  \(H\). Por el teorema \ref{thm:levantamiento-homotopico} de
+  levantamiento homotópico, existe una homotopía \(\tilde H\) la cual me
+  relaciona los levantamientos \(\tilde f_1 , \tilde f\) de \(f_1 , f\)
+  respectivamente. Pero dado el corolario \ref{cor:preservar-arco-hom},
+  la homotopía \(\tilde H\) es una arco-homotopía y por tanto
+  \[ \tilde f (1) = \tilde H (1, 1) = \tilde H (1, t) = \tilde H (1, 0)
+    = f_1 (1) ,\ \forall t \in \{0 \dotsc 1\} \]
+  lo que implica que
+  \[ \phi ([f]) = \phi ([f_1])\]
 \end{acotacion}
+
 Una idea geométrica de lo que sucede en los arcos del espacio base
 \(\left(X, x_o \right)\) al levantarse mediante el teorema
 \ref{thm:lifting-theorem} al espacio cubrimiento \(\left( \tilde X ,
@@ -404,10 +434,6 @@ fibra de \(x_0\). De hecho podemos enfocarnos puramente en el punto al
 que permuta el punto final y podríamos determinar totalmente al arco en
 la base al que corresponde bajo hipótesis adecuadas. Esto se vera en la
 siguiente definición y teorema.
-\begin{definicion}[Simplemente conexo]
-  Un espacio topológico \(X\) es simplemente conexo si su grupo
-  fundamental es trivial.
-\end{definicion}
 \begin{acotacion}
   Para un espacio simplemente conexo, para cualquier par de arcos
   existe una homotopía entre ellos (la composición de sus dos homotopías
