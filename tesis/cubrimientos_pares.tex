@@ -412,7 +412,7 @@ comportamiento de una funcion conocida como el levantamiento derivado.
   y denominamos a \(\phi\) como el \textbf{correspondiente levantamiento
   derivado}\footnote{Corresponding lifting path} del cubrimiento \(p\).
 \end{definicion}
-\begin{acotacion}
+\begin{acotacion} \label{aco:indep-phi}
   Este mapeo no depende del representante de clase \([f] \in \pi \left(
     X, x_0 \right)\). Para ver esto, notar que tomando a \(f_1 \in [f]
   ,\ f_1 \neq f\) estos están relacionados por una arco-homotopía
@@ -490,6 +490,68 @@ Para ver la relación del grupo \(G(\tilde X)\) con la fibra \(p^{-1}
 (x_0)\) es necesario generalizar algunos resultados de levantamientos de
 caminos (teoremas \ref{thm:lifting-theorem},
 \ref{thm:levantamiento-homotopico})
+
+\begin{teorema}
+  Sea \(p : (\tilde X , \tilde x_0) \to ( X , x _0 )\) un cubrimiento y
+  \(f : (Y , y_0) \to ( X , x _0 )\) una funcion continua con \(Y\)
+  arco-conexo y localmente arco-conexo. Entonces un levantamiento
+  \(\tilde f : (Y , y_0) \to (\tilde X, \tilde x _0)\) de \(f\) existe
+  si y solo si
+  \[ f_* \left( \pi (Y, y_0) \right) \subseteq p_* \left( \pi ( \tilde X
+      , \tilde x_0 ) \right) \]
+\end{teorema}
+Que un espacio \(Y\) sea localmente arco-conexo equivale a pedir que
+para todo punto \(y \in Y\) y cualquier vecindad \(U_y \subset V\) de
+este, posee una sub-vecindad \(V \subseteq U_y\) la cual es arco-conexa.
+Procedemos a la demostración.
+\begin{proof}
+  Se procede en la dirección \((\Rightarrow)\). Por simple definición,
+  es fácil ver que \(f_* = p_* \circ \tilde f _*\) lo cual implica
+  directamente el resultado.
+
+  Para la dirección \((\Leftarrow)\), sea \(y \in Y\) un punto
+  arbitrario. Por arco-conexidad de \(Y\) existe un camino \(\gamma\) en
+  \(Y\) tal que \(\gamma (0) = y_0,\ \gamma (1) = y\). Con este podemos
+  definir un camino \(f \circ \gamma\) en \(X\) el cual cumple con
+  comenzar en \(x_0\). Este ultimo camino tiene un (único) levantamiento
+  \(\widetilde {f \circ \gamma}\). Mediante este, definimos una función
+  \(\tilde f : (Y, y_0) \to (\tilde X , \tilde x_0)\) por
+  \begin{equation} \label{def:f-tilda}
+    \tilde f (y) = \phi ([f \circ \gamma]) = f \circ \gamma \, (1)
+  \end{equation}
+  Esta definición de \(f\) es independiente del camino \(\gamma\)
+  escogido entre \(y_0\) e \(y\) por el argumento de independencia de
+  representante en \(\phi\) dado en la acotación \ref{aco:indep-phi}.
+  Esta acotación depende de la hipótesis \(f_* \left( \pi (Y, y_0) \right)
+  \subseteq p_* \left( \pi ( \tilde X , \tilde x_0 ) \right)\) para
+  poder levantar homotopías.
+
+  Probaremos la continuidad de \(\tilde f\) en \(y\). Sea \(U \subseteq
+  X\) una vecindad de \(f (y)\). Por definición de cubrimiento, existe al
+  menos un conjunto \(\tilde U \subseteq \tilde X\) tal que
+  \[p \mid_{\tilde U} : \tilde U \to U\]
+  es un homeomorfismo. Por otro lado, dada la continuidad de \(f\) y
+  por ser \(Y\) localmente arco-conexo se puede elegir una vecindad \(V
+  \subseteq Y\) arco-conexa de \(y \in Y\) tal que \(f (V) \subset U\).
+  Para todo \(y' \in V\), consideremos los caminos cerrados en \(X\)
+  \[ \gamma * \eta * \eta^{-1} * \gamma^{-1} \]
+  con \(\gamma\) un camino entre \(y_0 \to y\) y \(\eta\) un camino
+  entre \(y \to y'\). Al ver la imagen de este camino bajo \(f\) esta
+  corresponde al camino
+  \[ (f \circ \gamma) * (f \circ \eta) * (f \circ \eta^{-1}) * (f \circ
+    \gamma^{-1}) \]
+  en \(X\). Por hipótesis este camino puede ser levantado a
+  \(\tilde X\) al camino
+  \[ \widetilde{f \circ \gamma} * \widetilde{f \circ \eta} *
+    \widetilde{f \circ \eta^{-1}} * \widetilde{f \circ \gamma^{-1}} \]
+  En particular es claro que por ser \(p\) un homeomorfismo y \(f (V)
+  \subset U\) se tiene que
+  \[ \widetilde{f \circ \eta} = p^{-1} \circ f \circ \eta \]
+  lo que al juntarse con la ecuación \eqref{def:f-tilda} implica que
+  \(\tilde f (V) \subseteq \tilde U\) y en particular \( \tilde f \mid
+  _{V} = p^{-1} \circ f \) lo cual es composición de una función
+  continua con un homeomorfismo y por tanto continua en \(y\).
+\end{proof}
 
 Ahora podemos plantearnos un ejemplo clásico, ver el grupo fundamental
 de \(S^1\). Utilizaremos el teorema anterior para proponer un
