@@ -491,7 +491,7 @@ Para ver la relación del grupo \(G(\tilde X)\) con la fibra \(p^{-1}
 caminos (teoremas \ref{thm:lifting-theorem},
 \ref{thm:levantamiento-homotopico})
 
-\begin{teorema}
+\begin{teorema}\label{thm:lifting-theorem-general}
   Sea \(p : (\tilde X , \tilde x_0) \to ( X , x _0 )\) un cubrimiento y
   \(f : (Y , y_0) \to ( X , x _0 )\) una funcion continua con \(Y\)
   arco-conexo y localmente arco-conexo. Entonces un levantamiento
@@ -596,6 +596,57 @@ Procedemos a la demostración.
   \(\emptyset\). Pero dado que los levantamientos existen, se esta
   obligado a que \(K = Y\).
 \end{proof}
+
+\begin{teorema}\label{thm:uniq-general}
+  Si \(X\) es un espacio arco-conexo, localmente arco-conexo, entonces
+  dos cubrimientos \(p_1 : \tilde X _1 \to X\) y \(p_2 : \tilde X _2 \to
+  X\) son isomorficos via un isomorfismo \(f : \tilde X_1 \to \tilde
+  X_2\) tomando un punto base \(\tilde x_1 \in p_1^{-1} (x_0)\) a un
+  punto base \(\tilde x_2 \in p_2^{-1} (x_0)\) si y solo si
+  \[ p_{1,*} \left( \pi (\tilde X _1, \tilde x _1) \right) = p_{2,*}
+    \left( \pi (\tilde X _2, \tilde x _2) \right) \]
+\end{teorema}
+\begin{proof}
+  Se inicia en la direccion \(\Rightarrow\). Un isomorfismo de cubrimientos
+  \(f : (\tilde X , \tilde x _1) \to (\tilde X _2, \tilde x _2)\) debe
+  cumplir las ecuaciones
+  \[ p_1 = p_2 \circ f,\quad p_2 = p_1 \circ f^{-1} \]
+  siendo estas ecuaciones consecuencia de preservar que el espacio de
+  llegada sea un cubrimiento. De la primera ecuacion se obtiene que
+  \[ p_{1,*} = \left( p_2 \circ f \right)_* \]
+  que por definicion al ser aplicadas a \([\gamma] \in \pi (\tilde X_1,
+  \tilde x_1)\)
+  \begin{equation*}
+      p_{1,*} \left( [\gamma] \right) = [p_1 \circ \gamma] = [p_2 \circ
+      f \circ \gamma ] = p_{2,*} \left( [f \circ \gamma] \right)
+  \end{equation*}
+  lo que junto la bijectividad de \(f\) implican el resultado.
+
+  Para la direccion \(\Leftarrow\), supongamos que \(p_{1,*} (\pi
+  (\tilde X _1 , \tilde x _1)) = p_{2,*} (\pi
+  (\tilde X _2 , \tilde x _2))\). Por el teorema
+  \ref{thm:lifting-theorem-general} de levantamiento, se puede obtener
+  unos levantamientos
+  \begin{gather*}
+    \tilde p _1 : (\tilde X _1 , \tilde x _1) \to (\tilde X_2 , \tilde
+    x_2), \ p_2 \circ \tilde p_1 = p_1 \\
+    \tilde p _2 : (\tilde X _2 , \tilde x _2) \to (\tilde X_1 , \tilde
+    x_1), \ p_1 \circ \tilde p_2 = p_2
+  \end{gather*}
+  De lo cual reemplazando adecuadamente podemos obtener
+  \begin{gather*}
+    p_2 \circ \tilde p _1 \circ \tilde p _2 = p_2 \\
+    p_1 \circ \tilde p _2 \circ \tilde p _1 = p_1
+  \end{gather*}
+  lo cual debido a que estos mapeos fijan los puntos bases respectivos,
+  podemos aplicar el teorema \ref{thm:uniq-general} de unicidad
+  del levantamiento obteniendo asi que
+  \[ \tilde p_1 \circ \tilde p_2 = \text{Id}, \quad \tilde p_2 \circ
+    \tilde p_1 = \text{Id} \]
+  Por tanto \(\tilde p_1 , \tilde p_2\) son isomorfismos inversos
+  (corolario \ref{thm:comp-identidad}).
+\end{proof}
+
 
 Ahora podemos plantearnos un ejemplo clásico, ver el grupo fundamental
 de \(S^1\). Utilizaremos el teorema anterior para proponer un
