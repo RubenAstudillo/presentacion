@@ -399,7 +399,7 @@ valores de \(n\).
 \end{definicion}
 El estudio de los cubrimientos universales esta relacionado con el
 comportamiento de una funcion conocida como el levantamiento derivado.
-\begin{definicion}[Levantamiento derivado]
+\begin{definicion}[Levantamiento derivado] \label{def:levantamiento-derivado}
   Sea \(p : \tilde X \to X\) un cubrimiento y sea \(x_0 \in X\).
   Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
   x_0\). Dado un elemento \([f] \in \pi (X, x_0)\), sea \(\tilde f\) el
@@ -648,7 +648,7 @@ Procedemos a la demostración.
 \end{proof}
 
 Ahora nos enfocaremos en un caso especifico, cuando nuestro cubrimiento
-es un cubrimiento universal. Sea \(p : \tilde X \to X,\ \tilde X\) un
+es universal. Sea \(p : \tilde X \to X,\ \tilde X\) un
 cubrimiento universal de \(X\). Sea \(x_0 \in X\) un punto base. Es
 claro que dado que el los grupos fundamentales de \(\tilde X\) son
 triviales independientes del punto base de \(\tilde X\), ie para todo
@@ -695,21 +695,17 @@ x_0)\) cuando \(\tilde X\) es simplemente conexo.
 
 \begin{teorema}
   Sea \(p : (\tilde X, \tilde x_0) \to (X , x_0) \) un cubrimiento
-  arco-conexo de un espacio \(X\) arco-conexo, localmente arco-conexo.
-  Sea \(H\) el subgrupo
-  \[ H := p_* \left( \pi (\tilde X, \tilde x_0) \right) \subseteq \pi
-    \left( X , x_0 \right) \]
-  Entonces \(G (\tilde X)\) es isomorfo a \(\pi (X, x_0) / H\) con \(N
-  (H)\) el normalizador de \(H\) en \(\pi (X , x_0)\)
+  universal de un espacio \(X\) arco-conexo, localmente arco-conexo.
+  Entonces \(G (\tilde X)\) es isomorfo a \(\pi (X, x_0)\).
 \end{teorema}
 \begin{proof}
   La idea de la demostración sera el primer teorema del isomorfismo para
-  grupos. Sea \(L\) la función definida en la ecuación \eqref{def:L}
-  pero restringida a \(L : N(H) \subseteq \pi (X, x_0) \to G ( \tilde
-  X)\). Hemos de probar que este es un homomorfismo. Sean
-  \([\gamma],[\gamma'] \in \pi (X , x_0)\) dos curvas arbitrarias. Sean
-  \(\tilde \gamma , \tilde{\gamma '}\) los levantamientos respectivos de
-  los representantes de clases, los cuales cumplen las siguientes
+  grupos. Sea \(L\) la función definida en la ecuación \eqref{def:L} por
+  \(L : \pi (X, x_0) \to G ( \tilde X)\), la cual es funcion por la simple
+  conexidad de \(\tilde X\). Hemos de probar que este es un homomorfismo.
+  Sean \([\gamma],[\gamma'] \in \pi (X , x_0)\) dos curvas arbitrarias.
+  Sean \(\tilde \gamma , \tilde{\gamma '}\) los levantamientos respectivos
+  de los representantes de clases, los cuales cumplen las siguientes
   ecuaciones
   \begin{gather*}
     \widetilde \gamma \, (0) = \widetilde x_0,\ \widetilde \gamma \, (1)
@@ -741,20 +737,33 @@ x_0)\) cuando \(\tilde X\) es simplemente conexo.
   \([\gamma * \gamma']\) debe ser de la siguiente forma
   \[ L \left( [\gamma * \gamma'] \right) = \hat \tau : (\tilde X, \tilde
     x _0) \to (\tilde X , \tau \circ \tau' \, (\tilde x_0)) \]
-
-  Dado que la transformación de deck
+  Por otro lado, la siguiente transformación de deck
   \[ \tau \circ \tau : (\tilde X, \tilde x _0) \to (\tilde X , \tau
     \circ \tau' \, (\tilde x_0))
   \]
   también envía al punto \(\tilde x_0\) a \(\tau \circ \tau' \, (\tilde
-  x_0)\) , que las transformaciones de \emph{deck} son levantamientos
-  (demostración teorema \ref{thm:exists-isomor}) y que la composición de
-  levantamientos es un levantamiento podemos aplicar el
+  x_0)\) , puesto que las transformaciones de \emph{deck} son
+  levantamientos (demostración teorema \ref{thm:exists-isomor}) y que la
+  composición de levantamientos es un levantamiento podemos aplicar el
   teorema \ref{thm:uniq-general} de unicidad de los levantamientos para
   concluir que
   \[ L \left( [\gamma * \gamma'] \right) = L \left( [\gamma] \right)
     \circ L \left( [\gamma'] \right)\]
   Mostrando así que es un homomorfismo.
+  % \[ L \left( [p \circ \tilde \gamma] \right) = \tau \]
+
+  Para mostrar la sobreyectividad de \(L\), es claro que cualquier
+  \(\tau \in G (\tilde X)\) es de la forma
+  \[ \tau : (\tilde X, \tilde x_0) \to (\tilde X, \tilde x_1) \]
+  con \(\tilde x_0, \tilde x_1 \in p^{-1} (x_0)\). Como \(\tilde X\) es
+  simplemente conexo, por el teorema \ref{thm:phi-bijec} se tiene que la
+  función \(\phi\) de la definición \ref{def:levantamiento-derivado} es
+  biyectiva. Por tanto \(\phi^{-1} (\tilde x_1) \in \pi (X, x_0)\) y es
+  tal que
+  \[ L \left( \phi^{-1} (\tilde x_1) \right) = \tau \]
+  por construccion de \(L\).
+
+
 \end{proof}
 
 % end of know universe
