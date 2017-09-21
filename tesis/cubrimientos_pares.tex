@@ -681,15 +681,83 @@ transformación de \emph{deck} en el sentido de la definición
 La relación anterior entre \([\gamma]\) y \(\varphi\) es funcional por
 la construcción del teorema \ref{thm:exists-isomor}. Por tanto podemos
 definir una función
-\begin{align*}
-  L : \pi (X, x_0) &\longrightarrow G (\tilde X) \\
-  [\gamma] &\longmapsto \varphi
-\end{align*}
+\begin{align}
+  L : \pi (X, x_0) &\longrightarrow G (\tilde X) \label{def:L} \\
+  [\gamma] &\longmapsto \varphi \nonumber
+\end{align}
 cuando \(\tilde X\) es universal. Mas aun, podemos notar que dada la
 biyeccion \(\phi\) estudiada en el teorema \ref{thm:phi-bijec} nos basta
 saber a donde se envía un solo punto en \(\tilde X\) para determinar la
 transformación de \emph{deck}.
 
+Ahora podemos probar el isomorfismo entre \(G (\tilde X)\) e \(\pi (X,
+x_0)\) cuando \(\tilde X\) es simplemente conexo.
+
+\begin{teorema}
+  Sea \(p : (\tilde X, \tilde x_0) \to (X , x_0) \) un cubrimiento
+  arco-conexo de un espacio \(X\) arco-conexo, localmente arco-conexo.
+  Sea \(H\) el subgrupo
+  \[ H := p_* \left( \pi (\tilde X, \tilde x_0) \right) \subseteq \pi
+    \left( X , x_0 \right) \]
+  Entonces \(G (\tilde X)\) es isomorfo a \(\pi (X, x_0) / H\) con \(N
+  (H)\) el normalizador de \(H\) en \(\pi (X , x_0)\)
+\end{teorema}
+\begin{proof}
+  La idea de la demostración sera el primer teorema del isomorfismo para
+  grupos. Sea \(L\) la función definida en la ecuación \eqref{def:L}
+  pero restringida a \(L : N(H) \subseteq \pi (X, x_0) \to G ( \tilde
+  X)\). Hemos de probar que este es un homomorfismo. Sean
+  \([\gamma],[\gamma'] \in \pi (X , x_0)\) dos curvas arbitrarias. Sean
+  \(\tilde \gamma , \tilde{\gamma '}\) los levantamientos respectivos de
+  los representantes de clases, los cuales cumplen las siguientes
+  ecuaciones
+  \begin{gather*}
+    \widetilde \gamma \, (0) = \widetilde x_0,\ \widetilde \gamma \, (1)
+      = \widetilde x _1 \\
+    \widetilde {\gamma '} \, (0) = \widetilde x_0,\ \widetilde {\gamma
+      '} \, (1) = \widetilde x _2
+  \end{gather*}
+  con \(\tilde x_1 , \tilde x_2 \in p^{-1} (x_0)\). Sean
+  \begin{gather*}
+    L \left( [\gamma] \right) = \tau : (\tilde X , \tilde x_0) \to
+    (\tilde X, \tilde x_1) \\
+    L \left( [\gamma'] \right) = \tau' : (\tilde X , \tilde x_0) \to
+    (\tilde X, \tilde x_2)
+  \end{gather*}
+  Véase que la curva \(\gamma * \gamma '\) posee como levantamiento a
+  \begin{equation} \label{eq:levan-comp}
+    \tilde \gamma * \tau \left( \widetilde{\gamma '} \right)
+  \end{equation}
+  pues \eqref{eq:levan-comp} es igual a \(\gamma * \gamma '\) al ser
+  pre-compuesta por \(p\) y el levantamiento es único por el teorema
+  \ref{thm:uniq-general} de unicidad del levantamiento. El camino
+  \eqref{eq:levan-comp} sigue el la siguiente trayectoria (a grandes
+  rasgos)
+  \[ \tilde \gamma \, (0) = \tilde x_0 \to \tilde \gamma (1) = \tilde x
+      _1 = \tau \left( \tilde x_0 \right) \to \tau \left( \tilde x_2
+      \right) = \tau \left( \tau' ( \tilde x _0 ) \right)
+  \]
+  Por tanto se debe cumplir que la transformación de deck asociada a
+  \([\gamma * \gamma']\) debe ser de la siguiente forma
+  \[ L \left( [\gamma * \gamma'] \right) = \hat \tau : (\tilde X, \tilde
+    x _0) \to (\tilde X , \tau \circ \tau' \, (\tilde x_0)) \]
+
+  Dado que la transformación de deck
+  \[ \tau \circ \tau : (\tilde X, \tilde x _0) \to (\tilde X , \tau
+    \circ \tau' \, (\tilde x_0))
+  \]
+  también envía al punto \(\tilde x_0\) a \(\tau \circ \tau' \, (\tilde
+  x_0)\) , que las transformaciones de \emph{deck} son levantamientos
+  (demostración teorema \ref{thm:exists-isomor}) y que la composición de
+  levantamientos es un levantamiento podemos aplicar el
+  teorema \ref{thm:uniq-general} de unicidad de los levantamientos para
+  concluir que
+  \[ L \left( [\gamma * \gamma'] \right) = L \left( [\gamma] \right)
+    \circ L \left( [\gamma'] \right)\]
+  Mostrando así que es un homomorfismo.
+\end{proof}
+
+% end of know universe
 Ahora podemos plantearnos un ejemplo clásico, ver el grupo fundamental
 de \(S^1\). Utilizaremos el teorema anterior para proponer un
 cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
