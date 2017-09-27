@@ -780,20 +780,20 @@ Con el isomorfismo mostrado podemos empezar a calcular. Usualmente uno
 no plantea el grupo \(G (\tilde X)\) totalmente al encontrar un
 cubrimiento universal de un espacio, si no mas bien estudia directamente
 las acciones sobre la fibra \(p^{-1} (x_0)\) por la función
-\(\phi\) de la definición \ref{def:levantamiento-derivado}. Para ver el
+\(\phi\) de la definición \ref{def:levantamiento-derivado} y utiliza una
+``decision informada'' para dotarle estructura de grupo. Para ver el
 marco de trabajo, estudiaremos el grupo fundamental de \(S^1\) como
 ejemplo . Utilizando los teoremas anteriores para proponer un
 cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
 preservar la estructura de grupo para ser estudiado bajo ese lente.
 \begin{teorema} \label{thm:grupo-S1}
-  \(\forall x_0 \in S^1,\ \big( \pi (S^1,x_0), * \big)\) es isomorfo a
-  \((\mathbb Z, +)\)
+  \(\forall x_0 \in S^1,\ \pi (S^1,x_0)\) es isomorfo a \((\mathbb Z, +)\)
 \end{teorema}
 \begin{proof}
   Dado que \(S^1\) es arco-conexo, basta probar que este teorema es
   cierto para algún \(x_0\) en \(S^1\). Sea \(p : \mathbb R \to S^1,\
   p(t) := (\cos 2 \pi t, \sin 2 \pi t)\) el cual es fue visto anteriormente
-  que es un cubrimiento par. Sea \(\tilde x _0 = 0\) y \( p(\tilde x _0) =
+  que es un cubrimiento . Sea \(\tilde x _0 = 0\) y \( p(\tilde x _0) =
   (1,0) =: x_0 \in S^1\). Por ser \(\mathbb R\) simplemente conexo, se
   tiene que el levantamiento correspondiente \(\phi : \pi (S^1, x_0) \to
   p^{-1} (x_0)\) es biyectivo, donde
@@ -829,6 +829,48 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
   Por lo que \(\phi\) es un homomorfismo de grupos.
 \end{proof}
 
+El ejemplo anterior muestra a lo que nos referíamos con ``decisión
+informada'' pues dotarle de estructura aditiva a \(\mathbb Z\) es algo
+natural de intentar. También puede darse el caso que dada la
+clasificación de grupos finitos, exista un único grupo de determinada
+cardinalidad lo cual guié nuestra elección como en el siguiente ejemplo
+
+\begin{ejemplo}[Grupo fundamental plano proyectivo]
+  \(\mathbb R P^2\) puede verse como un espacio cociente de la esfera
+  \(S^2\)  en \(\Re^3\) mediante la siguiente relación
+  \[ \vec x \sim - \vec x \]
+  Por tanto, para todo \(x_0 \in \mathbb S^2\) existe el mapeo cociente
+  \[ p : (S^2, x_0) \longrightarrow (\mathbb R P^2, [x_0]) \]
+  el cual sera nuestro mapeo cubrimiento.
+
+  Cabe notar que el espacio \((S^2, x_0)\) es simplemente conexo. Esto puede
+  verse tomando un camino cerrado de \(x_0\) contenido en \(S^2\)
+  arbitrario, el cual se expresara en coordenadas esféricas
+  \[ \gamma (t) := (1 , \theta (t) , \psi(t) )\]
+  Se denota al punto \(x_0 = (1, \theta_0, \psi_0)\) en estas
+  coordenadas. Luego existe la homotopía
+  \[ H (t, \lambda) := (1, \lambda \theta_0 + (1-\lambda) \theta(t),
+    \lambda \psi_0 + (1-\lambda) \psi(t))\]
+  entre \(\gamma\) y el camino constante \(k_{x_0}\). Luego \(S^2\) es
+  un cubrimiento universal de \(\mathbb R P^2\).
+
+  Estudiando la fibra \(p^{-1} (\{[x_0]\})\) se ve esta tiene
+  cardinalidad \(2\).
+  \[ p^{-1} (\{[x_0]\}) = \{ x_0 , - x_0 \} \]
+  Dado que \(S^2\) es un cubrimiento universal, la función
+  \[ \phi : \pi ( \mathbb R P^2 , [x_0]) \longrightarrow p^{-1}
+    ([x_0])\]
+  es biyectiva y por tanto la cardinalidad de grupo de \(\pi ( \mathbb R
+  P^2, [x_0])\) es \(2\). Dado que existe un único grupo con \(2\)
+  elementos, obtenemos que \(\pi ( \mathbb R P^2, [x_0])\) es isomorfo a
+  \(\mathbb Z_2\).
+\end{ejemplo}
+
+El ejemplo anterior se puede generalizar notando que \(S^n\) cubre
+universalmente a \(\mathbb R P^n\) aunque la estructura de grupo dada
+para distintas cardinalidades no es única. Sin embargo hay una cantidad
+finitas de alternativas a probar para cada cardinalidad.
+
 % TODO: otro ejemplo cabron de cubrimiento, posiblemente eliminando el
 % resto de esta seccion.
 % TODO: revisar los teoremas de la seccion de cubrimiento universal
@@ -860,7 +902,7 @@ Además bajo el mismo tratamiento utilizado anteriormente en \(\pi (S^1,
 x_0) = \mathbb Z\) para \(\phi\), este es un homo-morfismo. Esto muestra
 que la elección de \(p\) afecta que subgrupo de \(\pi (S^1, x_0)\) estudiaremos.
 \begin{teorema}
-  Sea \(p : \tilde X _1 \to X_1,\ p' : \tilde X _2 \to X_2 \) dos
+  Sea \(p : \tilde X _1 \to X_1,\ p''' : \tilde X _2 \to X_2 \) dos
   cubrimientos pares, entonces
   \[ p_1 \times p_2 : \tilde X _1 \times \tilde X _2 \to X_1 \times X_2 \]
   Es un cubrimiento par.
