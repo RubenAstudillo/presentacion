@@ -928,14 +928,14 @@ trivialmente. Esta categoría no tiene un elemento final. La categoría
 elementos terminales a todos los singletons trivialmente.
 
 Es claro que para \(\mathscr{Cov}(X, x_0)\) el espacio \((X, x_0)\) es
-el elemento inicial por definicion. Lo que no es tan claro es la
-presencia de un elemento terminal. Se afirma que en caso de que \((X,
+el elemento terminal por definicion. Lo que no es tan claro es la
+presencia de un elemento inicial. Se afirma que en caso de que \((X,
 x_0)\) admita un cubrimiento universal \((X_u, x_u)\) este sera el
-elemento terminal.
+elemento inicial.
 
 \begin{teorema}
   Si \((X_u, x_u)\) es un cubrimiento universal de \((X, x_0)\),
-  entonces \((X_u, x_u)\) es un elemento terminal de \(\mathscr{Cov} (X,
+  entonces \((X_u, x_u)\) es un elemento inicial de \(\mathscr{Cov} (X,
   x_0)\)
 \end{teorema}
 \begin{proof}
@@ -996,3 +996,10 @@ elemento terminal.
 
 En vista del teorema anterior, podemos visualizar la categoria
 \(\mathscr{Cov} (X, x_0)\) por el siguiente diagrama.
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.3]{./imagenes/cov.png}
+  \caption{caracterización categoria}
+\end{figure}
+Es claramente un lattice con \((X_u, x_u)\) el cubrimiento universal
+como elemento inicial.
