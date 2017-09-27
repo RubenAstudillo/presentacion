@@ -1,4 +1,9 @@
 \subsection{Cubrimientos}
+El estudio mediante cubrimientos se basa en la idea de estudiar los
+caminos de un espacio base \((X, x_0)\) viendo como lucen estos en
+un espacio de cubrimientos \((\tilde X, \tilde x_0)\) a través de la
+inversa de una función sobreyectiva \(p : \left( \tilde X, \tilde x_0
+\right) \to \left( X, x_0\right)\). Se definirán estos conceptos formalmente
 \begin{definicion} \label{def:cubierta}
 Sea \(p : \tilde{X} \to X\) una función continua sobreyectiva. El
 abierto \(U \subseteq X\) se dice \textbf{cubierto} por \(p\)
@@ -32,7 +37,7 @@ el cubrimiento para \(X\).
 El diagrama anterior da una idea de la forma de general los espacios
 cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
 \(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del diagrama, se
-tiene la siguiente definicion auxiliad
+tiene la siguiente definicion auxiliar
 \begin{definicion}[Fibra]
 El conjunto discreto dado por \(p^{-1} (x_0)\) es conocido como una
 \emph{fibra} de \(x_0\).
@@ -230,8 +235,10 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
   Luego podemos definir \(\tilde F\) sobre el resto de \([s_i,
     s_{i+1}] \times [t_j , t_{j+1}]\) notando que \(p \mid_{V_0}\) es
   un homeomorfismo entre \(V_0\) y \(U\) y por tanto
-  \[ \forall (a,b) \in [s_i, s_{i+1}] \times [t_j , t_{j+1}],
-    \ \tilde F (a,b) := p^{-1} \mid_{V_0} \left( F(a,b) \right) \]
+  \begin{equation}\label{eq:induc-homotopia}
+  \forall (a,b) \in [s_i, s_{i+1}] \times [t_j , t_{j+1}],
+    \ \tilde F (a,b) := p^{-1} \mid_{V_0} \left( F(a,b) \right)
+  \end{equation}
   Esta cumple la regla \( F = p \circ \tilde F\) y es continua en virtud
   del lema del pegamiento. Notando finalmente que ahora los conjuntos
   \[ L := [s_i , s_{i+1}] \times \{t_{j+1}\}\]
@@ -240,17 +247,25 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
   definiéndola inductivamente sobre \(I \times I\).
 %fin pagina 24
 \end{proof}
+\begin{corolario}\label{cor:preservar-arco-hom}
+  El levantamiento homotópico de una arco-homotopía sigue siendo una arco-homotopía
+\end{corolario}
+\begin{proof}
+  Esto es consecuencia de la definición inductiva de la ecuación
+  \eqref{eq:induc-homotopia}.
+\end{proof}
 
 Retrocedamos un poco para pensar que es lo que tenemos hasta el momento.
 Para un cubrimiento \(p : \tilde X \to X\), siempre es valida la
 construcción de la definición \ref{def:homomorfismo-inducido} de un
-homomorfimo inducido \(p_* : \pi \left( \tilde X , \tilde x _0 \right)
+homomorfismo inducido \(p_* : \pi \left( \tilde X , \tilde x _0 \right)
 \to \left( X , x_0 \right)\) con \(p (\tilde x_0) = x_0\). Pero a priori
 esto no nos da ninguna relación entre contención entre los grupos. Pero
 cuando \(p\) es un cubrimiento, tenemos que \(p_*\) es inyectiva por el
 siguiente teorema.
 
 \begin{teorema}[Inyectividad de homomorfimos inducido por cubrimientos]
+  \label{thm:inyec-covering}
   Sea \(\left( \tilde X, \tilde x_0 \right), \left( X, x_0 \right)\)
   dos espacios topológicos puntuados. Si \(p : \left( \tilde X, \tilde x_0
   \right) \to \left( X, x_0 \right)\) un cubrimiento entre estos,
@@ -339,52 +354,97 @@ donde \(p_* \left( (\tilde X, \tilde x_0) \right)\) es un subgrupo de
   \(\mathbb Z\).
 \end{ejemplo}
 
-Una pregunta ha hacerse es si tenemos esta implicación
-en sentido contrario, si todo subgrupo de \(\pi(X, x_0)\) le corresponde
-un cubrimiento el cual cumpla esta relación. La respuesta es afirmativa.
-La demostración no es nuestro enfoque, pero se invita a los interesados
-en revisar el teorema 1.3.6 de Hatcher \cite{Hatcher}.
+Una pregunta ha hacerse sobre el teorema \ref{thm:inyec-covering} es si
+tenemos esta implicación en sentido contrario, esto es, si todo subgrupo
+de \(\pi(X, x_0)\) le corresponde un cubrimiento el cual cumpla esta
+relación. La respuesta es afirmativa. La demostración no es nuestro
+enfoque, pero se invita a los interesados en revisar el teorema 1.3.6 de
+Hatcher \cite{Hatcher}.
 
-% eliminar?
-Ahora es mas clara la forma de calcular grupos fundamentales usando
-cubrimiento. Si tuviéramos de partida un isomorfismo de grupos
-entre los espacios \(\pi (\tilde X)\) y \(\pi (X)\), tendríamos que
-presuponer la estructura del grupo en \(\pi (\tilde X)\). La alternativa
-presentada muestra que los cubrimientos, preservan los arcos y
-homotopías de \(X\) en \(\tilde X\) y si es el espacio \(\tilde X\) es
-suficientemente simple como para admitir un calculo simple de su grupo
-fundamental, entonces podemos saber que el grupo de \(X\) es un subgrupo
-normal del grupo de \(\tilde X\).
+Es mas claro la forma de calcular grupos fundamentales usando
+cubrimientos. Si estudiamos las imágenes de distintos cubrimientos en el
+espacio base, los distintos subgrupos nos darán una idea de
+quien debe ser el grupo fundamental del espacio base, pues este debe de
+ser compatible con todos los distintos subgrupos generados mediante
+cubrimientos. Sin embargo, esta técnica no nos asegura determinar el
+grupo del espacio base \(\pi (X, x_0)\) pues nos falta la
+sobreyectividad. Buscar condiciones para garantizar esta propiedad es
+infructuoso en termino de teoremas. Se adopta otro enfoque en general,
+el de estudiar las acciones del grupo \(\pi \left( X, x_0 \right)\)
+sobre la fibra \(p^{-1} \left( x_0 \right)\), el cual probaremos que
+bajo condiciones sensatas sobre el cubrimiento \(p\) y el espacio
+cubrimiento \(\left( \tilde X, \tilde x _0 \right)\), es isomorfo a \(\pi
+(X, x_0)\). Estas condiciones están intrínsecamente relacionadas con el
+cubrimiento universal
 
-Para un calculo mas explicito necesitamos denotar los puntos finales
-obtenidos en \(\tilde X\).
-\begin{definicion}[Levantamiento derivado]
+\subsubsection{Cubrimiento universal}
+\begin{definicion}[Simplemente conexo]
+  Un espacio topológico \(X\) es simplemente conexo si su grupo
+  fundamental es trivial.
+\end{definicion}
+\begin{acotacion}
+  Para un espacio simplemente conexo, para cualquier par de arcos
+  existe una homotopía entre ellos (la composición de sus dos homotopías
+  al arco identidad \(k_{x_0}\)).
+\end{acotacion}
+Intuitivamente estos espacios son aquellos que todos caminos cerrados
+son triviales. Ejemplo de estos son los distintos \(\Re^n\) para
+distintos valores de \(n\).
+\begin{definicion}[Cubrimiento universal]
+  Sea \(\left( X, x_0 \right)\) un espacio topológico puntuado. Un
+  cubrimiento \(p : \left( \tilde X , \tilde x _0 \right) \to \left( X ,
+    x _0 \right)\) es llamado cubrimiento universal de \( \left(
+    X , x _0 \right)\) si \(\left( \tilde X , \tilde x _0
+  \right)\) es simplemente conexo.
+\end{definicion}
+El estudio de los cubrimientos universales esta relacionado con el
+comportamiento de una funcion conocida como el levantamiento derivado.
+\begin{definicion}[Levantamiento derivado] \label{def:levantamiento-derivado}
   Sea \(p : \tilde X \to X\) un cubrimiento y sea \(x_0 \in X\).
   Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
   x_0\). Dado un elemento \([f] \in \pi (X, x_0)\), sea \(\tilde f\) el
   levantamiento (único) de \(f\) a un camino en \(\tilde X\) que
-  comienza en \(\tilde x _0\). Definamos \(\phi ([f]) = \tilde f (1)\) del
-  \(\tilde f\) asociado a \(f\) anteriormente. Entonces \(\phi\) es bien
-  definido como mapeo de conjunto
-  \[ \phi : \pi (X, x_0) \longrightarrow p^{-1} (x_0)\]
-  llamando a \(\phi\) el \textbf{correspondiente levantamiento
+  comienza en \(\tilde x _0\). Se define una función
+  \begin{align*}
+    \phi : \pi (X, x_0) &\longrightarrow p^{-1} (x_0) \\
+    [f] &\longmapsto \tilde f (1)
+  \end{align*}
+  y denominamos a \(\phi\) como el \textbf{correspondiente levantamiento
   derivado}\footnote{Corresponding lifting path} del cubrimiento \(p\).
 \end{definicion}
-La definición anterior intuitivamente ``desenrolla'' los ciclos del
-grupo fundamental \(\pi (X,x_0)\) y ve donde terminan vistos sobre
-\(\tilde X\).
-\begin{teorema}
+\begin{acotacion} \label{aco:indep-phi}
+  Este mapeo no depende del representante de clase \([f] \in \pi \left(
+    X, x_0 \right)\). Para ver esto, notar que tomando a \(f_1 \in [f]
+  ,\ f_1 \neq f\) estos están relacionados por una arco-homotopía
+  \(H\). Por el teorema \ref{thm:levantamiento-homotopico} de
+  levantamiento homotópico, existe una homotopía \(\tilde H\) la cual me
+  relaciona los levantamientos \(\tilde f_1 , \tilde f\) de \(f_1 , f\)
+  respectivamente. Pero dado el corolario \ref{cor:preservar-arco-hom},
+  la homotopía \(\tilde H\) es una arco-homotopía y por tanto
+  \[ \tilde f (1) = \tilde H (1, 1) = \tilde H (1, t) = \tilde H (1, 0)
+    = f_1 (1) ,\ \forall t \in \{0 \dotsc 1\} \]
+  lo que implica que
+  \[ \phi ([f]) = \phi ([f_1])\]
+\end{acotacion}
+
+Al estudiar los caminos en el espacio base \(\left(X, x_0 \right)\)
+cuando estos son levantados al espacio cubrimiento \((\tilde X ,
+\tilde x _0 )\), es posible que se transformen caminos con el mismo
+punto inicial y final a caminos donde esto no es necesario. Es decir es
+posible que ``desenrolle'' los caminos al levantarse. Sin embargo para
+cumplir la propiedad de los levantamiento, el punto final de este tiene
+que pertenecer al conjunto \(p^{-1} \left( \{x_0\} \right)\), es decir
+la fibra de \(x_0\). De hecho podemos enfocarnos puramente en el punto
+al que permuta el punto final y podríamos determinar totalmente al arco
+en la base al que corresponde cuando el cubrimiento sea universal. Esto
+se vera en la siguiente teorema.
+\begin{teorema} \label{thm:phi-bijec}
   Sea \(p : \tilde X \to X\) un cubrimiento tal que \(p (\tilde x _0) =
   x_0\). Si \(\tilde X\) es arco-conexo entonces el correspondiente
   levantamiento \(\phi : \pi (X, x _0) \to p^{-1} (x_0)\) es
   sobreyectivo. Mas aun, si \(\tilde X\) es simplemente conexo, este es
   biyectivo.
 \end{teorema}
-Usualmente queremos que \(p^{-1} (x)\) no sea simplemente un conjunto,
-queremos poder dotarle de estructura de grupo. En caso de \(\tilde X\)
-ser arco-conexo, lo que estamos haciendo realmente es estudiar un
-subgrupo de \(\pi \left( X, x_0 \right)\) a través de \(p^{-1}(x_0)
-\subseteq \tilde X\).
 \begin{proof}
   Demostración estándar de sobreyectividad en caso de ser \(\tilde X\)
   arco-conexo. Para \(\tilde x _1 \in p^{-1} (x_0)\) arbitrario, existe
@@ -403,19 +463,337 @@ subgrupo de \(\pi \left( X, x_0 \right)\) a través de \(p^{-1}(x_0)
   \circ \tilde F : I \times I \to X \) es una homotopía entre \(f, g\),
   por tanto \([f] = [g]\)
 \end{proof}
-Ahora podemos plantearnos un ejemplo clásico, ver el grupo fundamental
-de \(S^1\). Utilizaremos el teorema anterior para proponer un
+% \begin{acotacion}
+%   Esta versión del teorema es la mas útil desde el punto de vista del
+%   calculo pero no la mas general. Ese enunciado corresponde a estudiar las
+%   acciones del grupo \(\pi (X , x_0)\) sobre la fibra. La biyeccion se
+%   obtiene de pedir que el cubrimiento sea \emph{regular}, requerimiento
+%   que se cumple con pedir simple-conexidad de \((X, x_0)\). Para ver el
+%   teorema completo se dirige \cite{Hatcher}[pag. 69]
+% \end{acotacion}
+Este teorema nos permitirá enfocarnos puramente en la fibra \(p ^{-1}
+(x_0)\) para estudiar el grupo fundamental de \((X, x_0)\). Por otro
+lado, podemos definir un nuevo grupo el cual va a actuar (en sentido de
+grupos) sobre esta fibra al cual denotaremos como grupo de
+transformaciones de \emph{deck}\footnote{En español seria transformaciones de
+  cartas, pero asi podemos utilizar un nombre usual de \cite{Hatcher}}.
+\begin{definicion}[Grupo de transformaciones de \emph{deck}]\label{def:deck}
+  Para un cubrimiento \(p : \tilde X \to X\), los isomorfismos \(g : \tilde
+  X \to \tilde X\) tales que cumplan
+  \[ p \circ g = p \]
+  son transformaciones de \emph{deck}. El grupo \(G (\tilde X)\) formado
+  por estos isomorfismos, la composición como operación forman el grupo
+  de transformaciones de \emph{deck} con la función identidad como
+  identidad de grupo.
+\end{definicion}
+Para ver la relación del grupo \(G(\tilde X)\) con la fibra \(p^{-1}
+(x_0)\) es necesario generalizar algunos resultados de levantamientos de
+caminos (teoremas \ref{thm:lifting-theorem},
+\ref{thm:levantamiento-homotopico})
+
+\begin{teorema}\label{thm:lifting-theorem-general}
+  Sea \(p : (\tilde X , \tilde x_0) \to ( X , x _0 )\) un cubrimiento y
+  \(f : (Y , y_0) \to ( X , x _0 )\) una funcion continua con \(Y\)
+  arco-conexo y localmente arco-conexo. Entonces un levantamiento
+  \(\tilde f : (Y , y_0) \to (\tilde X, \tilde x _0)\) de \(f\) existe
+  si y solo si
+  \[ f_* \left( \pi (Y, y_0) \right) \subseteq p_* \left( \pi ( \tilde X
+      , \tilde x_0 ) \right) \]
+\end{teorema}
+Que un espacio \(Y\) sea localmente arco-conexo equivale a pedir que
+para todo punto \(y \in Y\) y cualquier vecindad \(U_y \subset Y\) de
+este, posee una sub-vecindad \(V \subseteq U_y\) la cual es arco-conexa.
+Procedemos a la demostración.
+\begin{proof}
+  Se procede en la dirección \((\Rightarrow)\). Por simple definición,
+  es fácil ver que \(f_* = p_* \circ \tilde f _*\) lo cual implica
+  directamente el resultado.
+
+  Para la dirección \((\Leftarrow)\), sea \(y \in Y\) un punto
+  arbitrario. Por arco-conexidad de \(Y\) existe un camino \(\gamma\) en
+  \(Y\) tal que \(\gamma (0) = y_0,\ \gamma (1) = y\). Con este podemos
+  definir un camino \(f \circ \gamma\) en \(X\) el cual cumple con
+  comenzar en \(x_0\). Este ultimo camino tiene un (único) levantamiento
+  \(\widetilde {f \circ \gamma}\). Mediante este, definimos una función
+  \(\tilde f : (Y, y_0) \to (\tilde X , \tilde x_0)\) por
+  \begin{equation} \label{def:f-tilda}
+    \tilde f (y) = \phi ([f \circ \gamma]) = f \circ \gamma \, (1)
+  \end{equation}
+  Esta definición de \(f\) es independiente del camino \(\gamma\)
+  escogido entre \(y_0\) e \(y\) por el argumento de independencia de
+  representante en \(\phi\) dado en la acotación \ref{aco:indep-phi}.
+  Esta acotación depende de la hipótesis \(f_* \left( \pi (Y, y_0) \right)
+  \subseteq p_* \left( \pi ( \tilde X , \tilde x_0 ) \right)\) para
+  poder levantar homotopías.
+
+  Probaremos la continuidad de \(\tilde f\) en \(y\). Sea \(U \subseteq
+  X\) una vecindad de \(f (y)\). Por definición de cubrimiento, existe al
+  menos un conjunto \(\tilde U \subseteq \tilde X\) tal que
+  \[p \mid_{\tilde U} : \tilde U \to U\]
+  es un homeomorfismo. Por otro lado, dada la continuidad de \(f\) y
+  por ser \(Y\) localmente arco-conexo se puede elegir una vecindad \(V
+  \subseteq Y\) arco-conexa de \(y \in Y\) tal que \(f (V) \subset U\).
+  Para todo \(y' \in V\), consideremos los caminos cerrados en \(X\)
+  \[ \gamma * \eta * \eta^{-1} * \gamma^{-1} \]
+  con \(\gamma\) un camino entre \(y_0 \to y\) y \(\eta\) un camino
+  entre \(y \to y'\). Al ver la imagen de este camino bajo \(f\) esta
+  corresponde al camino
+  \[ (f \circ \gamma) * (f \circ \eta) * (f \circ \eta^{-1}) * (f \circ
+    \gamma^{-1}) \]
+  en \(X\). Por hipótesis este camino puede ser levantado a
+  \(\tilde X\) al camino
+  \[ \widetilde{f \circ \gamma} * \widetilde{f \circ \eta} *
+    \widetilde{f \circ \eta^{-1}} * \widetilde{f \circ \gamma^{-1}} \]
+  En particular es claro que por ser \(p\) un homeomorfismo y \(f (V)
+  \subset U\) se tiene que
+  \[ \widetilde{f \circ \eta} = p^{-1} \circ f \circ \eta \]
+  lo que al juntarse con la ecuación \eqref{def:f-tilda} implica que
+  \(\tilde f (V) \subseteq \tilde U\) y en particular \( \tilde f \mid
+  _{V} = p^{-1} \circ f \) lo cual es composición de una función
+  continua con un homeomorfismo y por tanto continua en \(y\).
+\end{proof}
+
+\begin{teorema}[Unicidad levantamiento]\label{thm:uniq-general}
+  Dado un cubrimiento \(p : \tilde X \to X\) y un mapeo \(f : Y \to X\),
+  si dos levantamientos \(\tilde f _1 , \tilde f _2 : Y \to \tilde X\)
+  de \(f\) concuerdan en un punto de \(Y\) y \(Y\) es conexo, entonces
+  \(\tilde f _1 , \tilde f _2\) concuerdan en todo \(Y\).
+\end{teorema}
+\begin{proof}
+  Para un punto arbitrario \(y \in Y\), existe una vecindad \(U \subset
+  X\) la cual es cubierta par-mente por \(p\) de manera que se cumple la
+  ecuación
+  \[ \bigcup_{\alpha} \tilde U_\alpha = p^{-1} \left( U \right)\]
+  Con \(\tilde U _\alpha\) disjuntos y que al restringir \(p\) en ellos
+  se tiene un homeomorfismo. En particular denotemos \(\tilde U
+  _1 , \tilde U _2\) a los conjuntos tales que
+  \[ \tilde f _1 ( y ) \in \tilde U _1,\ \tilde f _2 ( y ) \in \tilde U
+    _2 \]
+  Por continuidad de \(\tilde f_1, \tilde f_2 \), fijamos una vecindad
+  de \(y\) por
+  \[ N := \tilde f _1 ^{-1} (\tilde U _1) \cap \tilde f _2 ^{-1} (\tilde
+    U _2) \]
+  la cual cumple trivialmente que
+  \[ \tilde f_1 (N) \subseteq \tilde U _1,\ \tilde f_2 (N) \subseteq
+    \tilde U _2 \]
+  Tomaremos casos. Si \(\tilde f _1 (y) \neq \tilde f _2 (y)\) implica
+  que \(\tilde U _1 \neq \tilde U _2\) pues de ser el mismo conjunto, se
+  tendría una contracción con la inyectividad de \(p\) al ser
+  restringido a este pues se debe cumplir que \( p \circ \tilde f _1 (y)
+  = p \circ \tilde f _2 (y)\). Dado que \(\tilde U_1 \neq \tilde U _ 2\)
+  son disjuntos, se tiene que \(\tilde f_1 \neq \tilde f_2 \) en la
+  vecindad \(N\). Por otro lado, si \(\tilde f _1 (y) = \tilde f _2
+  (y)\) por el mismo argumento se debe cumplir que \(\tilde U _1 = \tilde
+  U _2\) y por tanto \(\tilde f _1 = \tilde f _2\) en \(N\).
+
+  Definamos un conjunto auxiliar
+  \[ K := \{ y \in Y \mid \tilde f_1 (y) = \tilde f_2 (y) \} \]
+  Por lo mostrado anteriormente, para todo punto \(y \in K\) existe una
+  vecindad \(N\) totalmente contenida en \(K\). De igual manera si
+  consideramos \(K^c\), también existe una vecindad \(N\) totalmente
+  contenida en \(K^c\). Luego \(K\) es abierto y cerrado al mismo tiempo
+  en \(Y\) un espacio conexo, lo cual obliga a que este sea \(Y\) o
+  \(\emptyset\). Pero dado que los levantamientos existen, se esta
+  obligado a que \(K = Y\).
+\end{proof}
+
+\begin{teorema}\label{thm:exists-isomor}
+  Si \(X\) es un espacio arco-conexo, localmente arco-conexo, entonces
+  dos cubrimientos \(p_1 : \tilde X _1 \to X\) y \(p_2 : \tilde X _2 \to
+  X\) son isomorficos via un isomorfismo \(f : \tilde X_1 \to \tilde
+  X_2\) tomando un punto base \(\tilde x_1 \in p_1^{-1} (x_0)\) a un
+  punto base \(\tilde x_2 \in p_2^{-1} (x_0)\) si y solo si
+  \[ p_{1,*} \left( \pi (\tilde X _1, \tilde x _1) \right) = p_{2,*}
+    \left( \pi (\tilde X _2, \tilde x _2) \right) \]
+\end{teorema}
+\begin{proof}
+  Se inicia en la direccion \(\Rightarrow\). Un isomorfismo de cubrimientos
+  \(f : (\tilde X , \tilde x _1) \to (\tilde X _2, \tilde x _2)\) debe
+  cumplir las ecuaciones
+  \[ p_1 = p_2 \circ f,\quad p_2 = p_1 \circ f^{-1} \]
+  siendo estas ecuaciones consecuencia de preservar que el espacio de
+  llegada sea un cubrimiento. De la primera ecuacion se obtiene que
+  \[ p_{1,*} = \left( p_2 \circ f \right)_* \]
+  que por definicion al ser aplicadas a \([\gamma] \in \pi (\tilde X_1,
+  \tilde x_1)\)
+  \begin{equation*}
+      p_{1,*} \left( [\gamma] \right) = [p_1 \circ \gamma] = [p_2 \circ
+      f \circ \gamma ] = p_{2,*} \left( [f \circ \gamma] \right)
+  \end{equation*}
+  lo que junto la bijectividad de \(f\) implican el resultado.
+
+  Para la direccion \(\Leftarrow\), supongamos que \(p_{1,*} (\pi
+  (\tilde X _1 , \tilde x _1)) = p_{2,*} (\pi
+  (\tilde X _2 , \tilde x _2))\). Por el teorema
+  \ref{thm:lifting-theorem-general} de levantamiento, se puede obtener
+  unos levantamientos
+  \begin{gather*}
+    \tilde p _1 : (\tilde X _1 , \tilde x _1) \to (\tilde X_2 , \tilde
+    x_2), \ p_2 \circ \tilde p_1 = p_1 \\
+    \tilde p _2 : (\tilde X _2 , \tilde x _2) \to (\tilde X_1 , \tilde
+    x_1), \ p_1 \circ \tilde p_2 = p_2
+  \end{gather*}
+  De lo cual reemplazando adecuadamente podemos obtener
+  \begin{gather*}
+    p_2 \circ \tilde p _1 \circ \tilde p _2 = p_2 \\
+    p_1 \circ \tilde p _2 \circ \tilde p _1 = p_1
+  \end{gather*}
+  lo cual debido a que estos mapeos fijan los puntos bases respectivos,
+  podemos aplicar el teorema \ref{thm:uniq-general} de unicidad
+  del levantamiento obteniendo asi que
+  \[ \tilde p_1 \circ \tilde p_2 = \text{Id}, \quad \tilde p_2 \circ
+    \tilde p_1 = \text{Id} \]
+  Por tanto \(\tilde p_1 , \tilde p_2\) son isomorfismos inversos
+  (corolario \ref{thm:comp-identidad}).
+\end{proof}
+
+Ahora nos enfocaremos en un caso especifico, cuando nuestro cubrimiento
+es universal. Sea \(p : \tilde X \to X,\ \tilde X\) un
+cubrimiento universal de \(X\). Sea \(x_0 \in X\) un punto base. Es
+claro que dado que el los grupos fundamentales de \(\tilde X\) son
+triviales independientes del punto base de \(\tilde X\), ie para todo
+\(\tilde x_1, \tilde x_2 \in p^{-1} (x_0)\)
+\begin{equation*}
+  \pi \left( \tilde X , \tilde x_1 \right) = \{[k_{\tilde x_1}]\},\quad
+  \pi \left( \tilde X , \tilde x_2 \right) = \{ [k_{\tilde x_2}]\}
+\end{equation*}
+por tanto
+\begin{equation} \label{hip:lifting}
+  p_* \left( \pi \left( \tilde X , \tilde x_1 \right) \right) =
+  \{k_{x_0}\} = p_* \left( \pi \left( \tilde X , \tilde x_2 \right)
+  \right),\ \forall \tilde x_1 , \tilde x_2 \in \tilde X
+\end{equation}
+Por tanto, para cualquier curva \([\gamma] \in \pi (X , x_0)\), su
+representante \(\gamma\) posee un único levantamiento a \((\tilde X,
+\tilde x_1)\) que denotaremos por \(\tilde \gamma\). Este debe cumplir
+con las ecuaciones
+\[ \tilde \gamma \, (0) = \tilde x_1, \quad \tilde \gamma \, (1) =
+  \tilde x_3 = \phi ([\gamma]) \]
+para algún \(\tilde x_2 \in p^{-1} (x_0)\). La ecuación
+\eqref{hip:lifting} aplicada a estos \(\tilde x_1, \tilde x_2,\) nos
+permite aplicar el teorema \ref{thm:exists-isomor} que nos da un
+isomorfismo de cubrimientos
+\[\varphi : (\tilde X , \tilde x_1) \to (\tilde X , \tilde x_2 ) \]
+el cual cumple la ecuación \(p \circ \varphi = p\) y por tanto es una
+transformación de \emph{deck} en el sentido de la definición
+\ref{def:deck}.
+
+La relación anterior entre \([\gamma]\) y \(\varphi\) es funcional por
+la construcción del teorema \ref{thm:exists-isomor}. Por tanto podemos
+definir una función
+\begin{align}
+  L : \pi (X, x_0) &\longrightarrow G (\tilde X) \label{def:L} \\
+  [\gamma] &\longmapsto \varphi \nonumber
+\end{align}
+cuando \(\tilde X\) es universal. Mas aun, podemos notar que dada la
+biyeccion \(\phi\) estudiada en el teorema \ref{thm:phi-bijec} nos basta
+saber a donde se envía un solo punto en \(\tilde X\) para determinar la
+transformación de \emph{deck}.
+
+Ahora podemos probar el isomorfismo entre \(G (\tilde X)\) e \(\pi (X,
+x_0)\) cuando \(\tilde X\) es simplemente conexo.
+
+\begin{teorema}
+  Sea \(p : (\tilde X, \tilde x_0) \to (X , x_0) \) un cubrimiento
+  universal de un espacio \(X\) arco-conexo, localmente arco-conexo.
+  Entonces \(G (\tilde X)\) es isomorfo a \(\pi (X, x_0)\).
+\end{teorema}
+\begin{proof}
+  La idea de la demostración sera el primer teorema del isomorfismo para
+  grupos. Sea \(L\) la función definida en la ecuación \eqref{def:L} por
+  \(L : \pi (X, x_0) \to G ( \tilde X)\), la cual es funcion por la simple
+  conexidad de \(\tilde X\). Hemos de probar que este es un homomorfismo.
+  Sean \([\gamma],[\gamma'] \in \pi (X , x_0)\) dos curvas arbitrarias.
+  Sean \(\tilde \gamma , \tilde{\gamma '}\) los levantamientos respectivos
+  de los representantes de clases, los cuales cumplen las siguientes
+  ecuaciones
+  \begin{gather*}
+    \widetilde \gamma \, (0) = \widetilde x_0,\ \widetilde \gamma \, (1)
+      = \widetilde x _1 \\
+    \widetilde {\gamma '} \, (0) = \widetilde x_0,\ \widetilde {\gamma
+      '} \, (1) = \widetilde x _2
+  \end{gather*}
+  con \(\tilde x_1 , \tilde x_2 \in p^{-1} (x_0)\). Sean
+  \begin{gather*}
+    L \left( [\gamma] \right) = \tau : (\tilde X , \tilde x_0) \to
+    (\tilde X, \tilde x_1) \\
+    L \left( [\gamma'] \right) = \tau' : (\tilde X , \tilde x_0) \to
+    (\tilde X, \tilde x_2)
+  \end{gather*}
+  Véase que la curva \(\gamma * \gamma '\) posee como levantamiento a
+  \begin{equation} \label{eq:levan-comp}
+    \tilde \gamma * \tau \left( \widetilde{\gamma '} \right)
+  \end{equation}
+  pues \eqref{eq:levan-comp} es igual a \(\gamma * \gamma '\) al ser
+  pre-compuesta por \(p\) y el levantamiento es único por el teorema
+  \ref{thm:uniq-general} de unicidad del levantamiento. El camino
+  \eqref{eq:levan-comp} sigue el la siguiente trayectoria (a grandes
+  rasgos)
+  \[ \tilde \gamma \, (0) = \tilde x_0 \to \tilde \gamma (1) = \tilde x
+      _1 = \tau \left( \tilde x_0 \right) \to \tau \left( \tilde x_2
+      \right) = \tau \left( \tau' ( \tilde x _0 ) \right)
+  \]
+  Por tanto se debe cumplir que la transformación de deck asociada a
+  \([\gamma * \gamma']\) debe ser de la siguiente forma
+  \[ L \left( [\gamma * \gamma'] \right) = \hat \tau : (\tilde X, \tilde
+    x _0) \to (\tilde X , \tau \circ \tau' \, (\tilde x_0)) \]
+  Por otro lado, la siguiente transformación de deck
+  \[ \tau \circ \tau : (\tilde X, \tilde x _0) \to (\tilde X , \tau
+    \circ \tau' \, (\tilde x_0))
+  \]
+  también envía al punto \(\tilde x_0\) a \(\tau \circ \tau' \, (\tilde
+  x_0)\) , puesto que las transformaciones de \emph{deck} son
+  levantamientos (demostración teorema \ref{thm:exists-isomor}) y que la
+  composición de levantamientos es un levantamiento podemos aplicar el
+  teorema \ref{thm:uniq-general} de unicidad de los levantamientos para
+  concluir que
+  \[ L \left( [\gamma * \gamma'] \right) = L \left( [\gamma] \right)
+    \circ L \left( [\gamma'] \right)\]
+  Mostrando así que es un homomorfismo.
+  % \[ L \left( [p \circ \tilde \gamma] \right) = \tau \]
+
+  Para mostrar la sobreyectividad de \(L\), es claro que cualquier
+  \(\tau \in G (\tilde X)\) es de la forma
+  \[ \tau : (\tilde X, \tilde x_0) \to (\tilde X, \tilde x_1) \]
+  con \(\tilde x_0, \tilde x_1 \in p^{-1} (x_0)\). Como \(\tilde X\) es
+  simplemente conexo, por el teorema \ref{thm:phi-bijec} se tiene que la
+  función \(\phi\) de la definición \ref{def:levantamiento-derivado} es
+  biyectiva. Por tanto \(\phi^{-1} (\tilde x_1) \in \pi (X, x_0)\) y es
+  tal que
+  \[ L \left( \phi^{-1} (\tilde x_1) \right) = \tau \]
+  por construcción de \(L\).
+
+  Mostraremos que \(L\) es inyectiva. Esto equivale a mostrar que su
+  núcleo es trivial. Sea \([\gamma] \in \pi (X , x_0)\) un arco
+  arbitrario tal que
+  \[ L \left( [\gamma] \right) = Id : (\tilde X , \tilde x_0) \to
+    (\tilde X, \tilde x_0) \]
+  Mostraremos que \([\gamma] = [k_{x_0}]\) la identidad. Por un
+  argumento similar al de sobreyectividad, dado que \(\phi\) es
+  biyectiva y que se cumple por simple definición de \(\phi\)
+  \[ \phi \left( [k_{x_0}] \right) = \tilde x _0 \]
+  esto obliga a que \([\k_{x_0}] = [\gamma]\). Mostrando así que \(L\)
+  es un isomorfismo.
+\end{proof}
+
+Con el isomorfismo mostrado podemos empezar a calcular. Usualmente uno
+no plantea el grupo \(G (\tilde X)\) totalmente al encontrar un
+cubrimiento universal de un espacio, si no mas bien estudia directamente
+las acciones sobre la fibra \(p^{-1} (x_0)\) por la función
+\(\phi\) de la definición \ref{def:levantamiento-derivado} y utiliza una
+``decision informada'' para dotarle estructura de grupo. Para ver el
+marco de trabajo, estudiaremos el grupo fundamental de \(S^1\) como
+ejemplo . Utilizando los teoremas anteriores para proponer un
 cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
 preservar la estructura de grupo para ser estudiado bajo ese lente.
 \begin{teorema} \label{thm:grupo-S1}
-  \(\forall x_0 \in S^1,\ \big( \pi (S^1,x_0), * \big)\) es isomorfo a
-  \((\mathbb Z, +)\)
+  \(\forall x_0 \in S^1,\ \pi (S^1,x_0)\) es isomorfo a \((\mathbb Z, +)\)
 \end{teorema}
 \begin{proof}
   Dado que \(S^1\) es arco-conexo, basta probar que este teorema es
   cierto para algún \(x_0\) en \(S^1\). Sea \(p : \mathbb R \to S^1,\
   p(t) := (\cos 2 \pi t, \sin 2 \pi t)\) el cual es fue visto anteriormente
-  que es un cubrimiento par. Sea \(\tilde x _0 = 0\) y \( p(\tilde x _0) =
+  que es un cubrimiento . Sea \(\tilde x _0 = 0\) y \( p(\tilde x _0) =
   (1,0) =: x_0 \in S^1\). Por ser \(\mathbb R\) simplemente conexo, se
   tiene que el levantamiento correspondiente \(\phi : \pi (S^1, x_0) \to
   p^{-1} (x_0)\) es biyectivo, donde
@@ -451,62 +829,189 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
   Por lo que \(\phi\) es un homomorfismo de grupos.
 \end{proof}
 
-\begin{ejemplo}[Cubrimiento \(p_n : S^1 \to S^1\)]
-Para testear la intuición
-de que el espacio cubrimiento refleja en el caso común un subgrupo del
-espacio topológico, tomemos el caso
-\begin{align*}
-  p_n : S^1 &\longrightarrow S^1 \\
-  z &\longmapsto z^n
-\end{align*}
-Para este, nuestro conjunto \(p^{-1} (x_0)\), con \(x_0 = (1,0)\) se
-obtiene mediante la reducción
-\begin{align*}
-  p^{-1} (1,0)
-    &= \{ z \in S^1 \mid z^n = (1,0)\} \\
-    &= \{z \in S^1 \mid (\cos 2 \pi n t, \sin 2 \pi n t) = (1,0) :
-           t \in [0,1] \} \\
-    &= \{(\cos 2 \pi t, \sin 2 \pi t) \in S^1 \mid
-           t \in \{0, \frac 1 n , \dotsc , \frac {n-1} n \} \}
-\end{align*}
-\[ \therefore p^{-1}(1,0) \simeq \mathbb Z / n \mathbb Z \]
-Además bajo el mismo tratamiento utilizado anteriormente en \(\pi (S^1,
-x_0) = \mathbb Z\) para \(\phi\), este es un homo-morfismo. Esto muestra
-que la elección de \(p\) afecta que subgrupo de \(\pi (S^1, x_0)\) estudiaremos.
+El ejemplo anterior muestra a lo que nos referíamos con ``decisión
+informada'' pues dotarle de estructura aditiva a \(\mathbb Z\) es algo
+natural de intentar. También puede darse el caso que dada la
+clasificación de grupos finitos, exista un único grupo de determinada
+cardinalidad lo cual guié nuestra elección como en el siguiente ejemplo
+
+\begin{ejemplo}[Grupo fundamental plano proyectivo]
+  \(\mathbb R P^2\) puede verse como un espacio cociente de la esfera
+  \(S^2\)  en \(\Re^3\) mediante la siguiente relación
+  \[ \vec x \sim - \vec x \]
+  Por tanto, para todo \(x_0 \in \mathbb S^2\) existe el mapeo cociente
+  \[ p : (S^2, x_0) \longrightarrow (\mathbb R P^2, [x_0]) \]
+  el cual sera nuestro mapeo cubrimiento.
+
+  Cabe notar que el espacio \((S^2, x_0)\) es simplemente conexo. Esto puede
+  verse tomando un camino cerrado de \(x_0\) contenido en \(S^2\)
+  arbitrario, el cual se expresara en coordenadas esféricas
+  \[ \gamma (t) := (1 , \theta (t) , \psi(t) )\]
+  Se denota al punto \(x_0 = (1, \theta_0, \psi_0)\) en estas
+  coordenadas. Luego existe la homotopía
+  \[ H (t, \lambda) := (1, \lambda \theta_0 + (1-\lambda) \theta(t),
+    \lambda \psi_0 + (1-\lambda) \psi(t))\]
+  entre \(\gamma\) y el camino constante \(k_{x_0}\). Luego \(S^2\) es
+  un cubrimiento universal de \(\mathbb R P^2\).
+
+  Estudiando la fibra \(p^{-1} (\{[x_0]\})\) se ve esta tiene
+  cardinalidad \(2\).
+  \[ p^{-1} (\{[x_0]\}) = \{ x_0 , - x_0 \} \]
+  Dado que \(S^2\) es un cubrimiento universal, la función
+  \[ \phi : \pi ( \mathbb R P^2 , [x_0]) \longrightarrow p^{-1}
+    ([x_0])\]
+  es biyectiva y por tanto la cardinalidad de grupo de \(\pi ( \mathbb R
+  P^2, [x_0])\) es \(2\). Dado que existe un único grupo con \(2\)
+  elementos, obtenemos que \(\pi ( \mathbb R P^2, [x_0])\) es isomorfo a
+  \(\mathbb Z_2\).
+\end{ejemplo}
+
+El ejemplo anterior se puede generalizar notando que \(S^n\) cubre
+universalmente a \(\mathbb R P^n\) aunque la estructura de grupo dada
+para distintas cardinalidades no es única. Sin embargo hay una cantidad
+finitas de alternativas a probar para cada cardinalidad.
+
+% TODO: otro ejemplo cabron de cubrimiento, posiblemente eliminando el
+% resto de esta seccion.
+% TODO: revisar los teoremas de la seccion de cubrimiento universal
+% (retrabajarlos)
+% TODO: agregar posiblemente diagramas
+% TODO: agregar intuicion categorica (posiblemente definicion la
+% categoria COV)
+% TODO: agregar conclusion
+
+\subsubsection{Categoria de cubrimientos}
+¿En que sentido es universal el cubrimiento universal?. Las propiedades
+universales son propiedades categóricas que predican la existencia de
+morfismos entre objetos a priori no relacionados. Ya hemos estudiado
+algunas al definir el (co)-producto categórico. La teoría de cubrimientos
+nos permite presentar los llamados elementos terminal e inicial de
+una categoría. Estos elementos tienen propiedades universales
+particulares que describen a los cubrimientos universales. Para
+estudiarlos debemos definir adecuadamente un nueva categoría, lo cual
+haremos a continuación.
+\begin{definicion}[Categoria \(\mathscr{Cov}(X,x_0)\)]
+  Para un espacio topológico puntuado arco-conexo \((X,x_0)\), se define
+  la categoría \(\mathscr{Cov}(X)\) como la tripleta \(\left( \mathbf O,
+  \mathbf M, (\circ) \right)\) con
+\[ \mathbf O := \{ (Y, y_0) \in \mathbf{Obj}(\mathscr{Top_*}) \mid
+    \ \text{espacios cubrimiento de } (X, x_0) \}\]
+\[ \mathbf M := \{ p : (Y_1, y_1) \to (Y_2, y_2) \mid (Y_1, y_1), (Y_2,
+  y_2) \in \mathbf O ,\ p \text{ cubrimiento}\}\]
+  con \((\circ)\) la composición de cubrimientos y el cubrimiento
+  identidad el morfismo identidad.
+\end{definicion}
+Es fácil chequear que esta es en efecto un categoría. Solo basta ver
+que la composición de cubrimientos es un cubrimiento, lo cual es
+sencillo de probar. Hemos pedido que el espacio \((X, x_0)\) sea
+arco-conexo no por necesidad si no por conveniencia, así las categorías
+con distintos puntos bases son iguales y nuestra teoría de cubrimientos
+pide esta condición.
+
+\begin{definicion}[Objeto inicial y terminal]
+  Para una categoría \(\mathscr C\), un objeto inicial \(I\) es un
+  elemento de \(\mathbf{Obj} (\mathscr C)\) con la propiedad universal
+  \[ \forall X \in \mathbf{Obj}(\mathscr C),\ \exists ! f \in
+    \mathbf{Mor} (\mathscr C) : f : I \to X \]
+  Análogamente, un objeto terminal \(F\) es un objeto de
+  \(\mathbf{Obj} (\mathscr C)\) con la propiedad
+  \[ \forall X \in \mathbf{Obj}(\mathscr C),\ \exists ! g \in
+    \mathbf{Mor} (\mathscr C) : g : X \to T \]
+\end{definicion}
+\begin{acotacion}
+  Los elementos terminal e inicial son unico modulo isomorfismo.
+\end{acotacion}
+Ejemplo de estos tenemos en \(\mathscr{Grp}\) donde el grupo trivial
+sirve de elemento inicial pues es homomorfo a cualquier otro grupo
+trivialmente. Esta categoría no tiene un elemento final. La categoría
+\(\mathscr {Top}\) de espacios topológicos no puntuados tiene como
+elementos terminales a todos los singletons trivialmente.
+
+Es claro que para \(\mathscr{Cov}(X, x_0)\) el espacio \((X, x_0)\) es
+el elemento terminal por definicion. Lo que no es tan claro es la
+presencia de un elemento inicial. Se afirma que en caso de que \((X,
+x_0)\) admita un cubrimiento universal \((X_u, x_u)\) este sera el
+elemento inicial.
+
 \begin{teorema}
-  Sea \(p : \tilde X _1 \to X_1,\ p' : \tilde X _2 \to X_2 \) dos
-  cubrimientos pares, entonces
-  \[ p_1 \times p_2 : \tilde X _1 \times \tilde X _2 \to X_1 \times X_2 \]
-  Es un cubrimiento par.
+  Si \((X_u, x_u)\) es un cubrimiento universal de \((X, x_0)\),
+  entonces \((X_u, x_u)\) es un elemento inicial de \(\mathscr{Cov} (X,
+  x_0)\)
 \end{teorema}
 \begin{proof}
-  Para todo \(x_1 \in X_1,\ x_2 \in X_2\), existen \(U_1, U_2\)
-  vecindades pares respectivamente tales que son cubiertas por \(p_1,
-  p_2\). Denotemos a \(\{V_\alpha^{(1)}\}, \{V_\beta^{(2)}\}\) familias
-  de conjuntos tales que
-  \[
-    \begin{matrix}
-      \bigcup_{\alpha} V_\alpha^{(1)} = p_1^{-1} (U_1) &
-      \bigcup_{\alpha} V_\alpha^{(2)} = p_2^{-1} (U_2)
-    \end{matrix}
-  \]
-  \[ \bigcup_{\alpha, \beta} V_\alpha^{(1)} \times V_\beta^{(2)} = (p_1
-    \times p_2)^{-1} (U_1 \times U_2)\]
-  Donde la restricción a un \(V_{\bar{\alpha}}^{(1)} \times
-  V_{\bar{\beta}}^{(2)}\) arbitrario en \(p_1 \times p_2\) obtiene un
-  homeomorfismo en virtud de las componentes.
+  Solo debemos probar la propiedad universal. Sea \(p_u : (X_u, x_u) \to
+  (X, x_0)\) el cubrimiento universal. Supongamos que existe un espacio
+  \((Z, z_0)\) que cubre a \((X, x_0)\) mediante la aplicacion
+  \(p_{z}\). Es claro que por ser \(X_u\) simplemente conexo se
+  cumple la relacion
+  \[ \{e\} = p_{u,*} \left( \pi (X_u, x_u) \right) \subseteq p_{z,*}
+    \left( \pi (Z, z_0) \right)\]
+  por lo que aplicando el teorema \ref{thm:lifting-theorem-general} de
+  levantamiento, existe un levantamiento \(f : (X_u, x_u) \to (Z,
+  z_0)\) que cumple la ecuacion
+  \[ p_{z} \circ f = p_u \]
+
+  \begin{lema}
+    \(f\) es un cubrimiento.
+  \end{lema}
+  \begin{proof}
+  Sea \(z \in Z\) arbitrarios. Debemos encontrar una vecindad \(B\) de este
+  tal que existan \(U'_\alpha \subset X_u,\ \alpha \in \Lambda \) que
+  cumplan la ecuación
+  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha = f^{-1} (B) \]
+  Sea \(x = p_z (z)\) en \((X,x_0)\). Este tiene un cubrimiento \(V_u
+  \subset X\) para el cual existe \(U_\alpha \subseteq X_u, \alpha \in
+  \Lambda\) cumpliendo
+  \[ \bigcup_{\alpha \in \Lambda} U_\alpha = p_u^{-1} (V_u)\]
+  que cumple además que tomando \(p_u\) restringido a cualquier \(U_\alpha
+  \in \Lambda\) se tiene un homeomorfismo.
+
+  Por otro lado, también existe una vecindad de \(x\) denotada por
+  \(V_z\) para el cual existe unos conjuntos \(I_\beta \subseteq Y, \beta
+  \in \Omega\) que cumple la ecuación análoga
+  \[ \bigcup_{\beta \in \Omega} I_\beta = p_z^{-1} (V_z) \]
+  En particular, existe un único \(\beta_0 \in \Omega\) tal que \( z \in
+  I_{\beta_0} \) y \( p_{z} \mid_{I_{\beta_0}} \) es homeomorfismo entre
+  \(I_{\beta_0}\) e \(V_z\).
+
+  Consideremos el conjunto
+  \[ V := V_z \cap V_u \]
+  Dado que \(p_u\) es homeomorfo al restringirse a cualquier
+  \(U_\alpha\) con \(\alpha \in \Lambda\), debe de cumplirse la igualdad
+  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha := \bigcup_{\alpha \in
+      \Lambda} \left( p_u \mid_{U_\alpha} \right)^{-1} (V) = p_u^{-1} (V) \]
+  y también debe cumplirse por homeomorfismo de \(p_z\) restringido a
+  \(I_{\beta_0}\) la existencia de una vecindad de \(z\) dada por
+  \[ B := \left( p_z \mid I_{\beta_0} \right) ^{-1} (V) \]
+  Luego se tiene
+  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha = f^{-1} (B) \]
+  con homeomorfismo de \(f\) al restringirse a un \(\alpha\) por
+  composición de de homeomorfismos.
+  \end{proof}
+
+  La unicidad de \(f\) proviene de utilizar le teorema
+  \ref{thm:uniq-general} de unicidad del levantamiento. Obtenemos asi el
+  resultado.
 \end{proof}
-\end{ejemplo}
 
-Esto es una extensión del resultado que ya conocíamos sobre el functor
-entre \(\mathbf{HoTop}_{*}\) y \(\mathbf{Grp}\) en cuanto a preservación
-del producto. Esto no dice que el ``calculo'' de grupos fundamentales
-también puede derivarse del conocimiento del productor de cubrimientos
-pares.
+En vista del teorema anterior, podemos visualizar la categoría
+\(\mathscr{Cov} (X, x_0)\) por el siguiente diagrama.
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.3]{./imagenes/cov.png}
+  \caption{caracterización categoria}
+\end{figure}
+Es claramente un lattice con \((X_u, x_u)\) el cubrimiento universal
+como elemento inicial.
 
-\begin{ejemplo}[Toro en \(R^4\).]
-Dado que podemos caracterizar al
-toro \(T^1\) como \(S^1 \times S^1\), el teorema anterior nos dice que
-\((\pi (T^1, b), *) = (\pi (S^1, b) \times \pi (S^1, b), *) = (\mathbb Z
-\times \mathbb Z, +) \)
-\end{ejemplo}
+Podemos volver a definir un functor
+\[ \pi : \mathscr{Cov} (X, x_0) \to \mathscr{Grp} \]
+reutilizando la notación \(\pi\) para asignar a cada espacio cubrimiento
+su grupo fundamental. Es claro que por ser \((X_u, x_u)\) simplemente
+conexo, se cumple que
+\[ \pi (X_u, x_u) = {e} \]
+Mas aun, por el teorema \ref{thm:inyec-covering} de inyectividad de del
+homomorfismo inducido por un cubrimiento \(p\), el lattice de
+cubrimientos es respetado como estructura en la categoría
+\(\mathscr{Grp}\). Por tanto el functor \(\pi\) preserva elementos
+iniciales entre categorías.
