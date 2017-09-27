@@ -879,62 +879,120 @@ finitas de alternativas a probar para cada cardinalidad.
 % TODO: agregar intuicion categorica (posiblemente definicion la
 % categoria COV)
 % TODO: agregar conclusion
-\begin{ejemplo}[Cubrimiento \(p_n : S^1 \to S^1\)]
-Para testear la intuición
-de que el espacio cubrimiento refleja en el caso común un subgrupo del
-espacio topológico, tomemos el caso
-\begin{align*}
-  p_n : S^1 &\longrightarrow S^1 \\
-  z &\longmapsto z^n
-\end{align*}
-Para este, nuestro conjunto \(p^{-1} (x_0)\), con \(x_0 = (1,0)\) se
-obtiene mediante la reducción
-\begin{align*}
-  p^{-1} (1,0)
-    &= \{ z \in S^1 \mid z^n = (1,0)\} \\
-    &= \{z \in S^1 \mid (\cos 2 \pi n t, \sin 2 \pi n t) = (1,0) :
-           t \in [0,1] \} \\
-    &= \{(\cos 2 \pi t, \sin 2 \pi t) \in S^1 \mid
-           t \in \{0, \frac 1 n , \dotsc , \frac {n-1} n \} \}
-\end{align*}
-\[ \therefore p^{-1}(1,0) \simeq \mathbb Z / n \mathbb Z \]
-Además bajo el mismo tratamiento utilizado anteriormente en \(\pi (S^1,
-x_0) = \mathbb Z\) para \(\phi\), este es un homo-morfismo. Esto muestra
-que la elección de \(p\) afecta que subgrupo de \(\pi (S^1, x_0)\) estudiaremos.
+
+\subsubsection{Categoria de cubrimientos}
+¿En que sentido es universal el cubrimiento universal?. Las propiedades
+universales son propiedades categóricas que predican la existencia de
+morfismos entre objetos a priori no relacionados. Ya hemos estudiado
+algunas al definir el (co)-producto categórico. La teoría de cubrimientos
+nos permite presentar los llamados elementos terminal e inicial de
+una categoría. Estos elementos tienen propiedades universales
+particulares que describen a los cubrimientos universales. Para
+estudiarlos debemos definir adecuadamente un nueva categoría, lo cual
+haremos a continuación.
+\begin{definicion}[Categoria \(\mathscr{Cov}(X,x_0)\)]
+  Para un espacio topológico puntuado arco-conexo \((X,x_0)\), se define
+  la categoría \(\mathscr{Cov}(X)\) como la tripleta \(\left( \mathbf O,
+  \mathbf M, (\circ) \right)\) con
+\[ \mathbf O := \{ (Y, y_0) \in \mathbf{Obj}(\mathscr{Top_*}) \mid
+    \ \text{espacios cubrimiento de } (X, x_0) \}\]
+\[ \mathbf M := \{ p : (Y_1, y_1) \to (Y_2, y_2) \mid (Y_1, y_1), (Y_2,
+  y_2) \in \mathbf O ,\ p \text{ cubrimiento}\}\]
+  con \((\circ)\) la composición de cubrimientos y el cubrimiento
+  identidad el morfismo identidad.
+\end{definicion}
+Es fácil chequear que esta es en efecto un categoría. Solo basta ver
+que la composición de cubrimientos es un cubrimiento, lo cual es
+sencillo de probar. Hemos pedido que el espacio \((X, x_0)\) sea
+arco-conexo no por necesidad si no por conveniencia, así las categorías
+con distintos puntos bases son iguales y nuestra teoría de cubrimientos
+pide esta condición.
+
+\begin{definicion}[Objeto inicial y terminal]
+  Para una categoría \(\mathscr C\), un objeto inicial \(I\) es un
+  elemento de \(\mathbf{Obj} (\mathscr C)\) con la propiedad universal
+  \[ \forall X \in \mathbf{Obj}(\mathscr C),\ \exists ! f \in
+    \mathbf{Mor} (\mathscr C) : f : I \to X \]
+  Análogamente, un objeto terminal \(F\) es un objeto de
+  \(\mathbf{Obj} (\mathscr C)\) con la propiedad
+  \[ \forall X \in \mathbf{Obj}(\mathscr C),\ \exists ! g \in
+    \mathbf{Mor} (\mathscr C) : g : X \to T \]
+\end{definicion}
+\begin{acotacion}
+  Los elementos terminal e inicial son unico modulo isomorfismo.
+\end{acotacion}
+Ejemplo de estos tenemos en \(\mathscr{Grp}\) donde el grupo trivial
+sirve de elemento inicial pues es homomorfo a cualquier otro grupo
+trivialmente. Esta categoría no tiene un elemento final. La categoría
+\(\mathscr {Top}\) de espacios topológicos no puntuados tiene como
+elementos terminales a todos los singletons trivialmente.
+
+Es claro que para \(\mathscr{Cov}(X, x_0)\) el espacio \((X, x_0)\) es
+el elemento inicial por definicion. Lo que no es tan claro es la
+presencia de un elemento terminal. Se afirma que en caso de que \((X,
+x_0)\) admita un cubrimiento universal \((X_u, x_u)\) este sera el
+elemento terminal.
+
 \begin{teorema}
-  Sea \(p : \tilde X _1 \to X_1,\ p''' : \tilde X _2 \to X_2 \) dos
-  cubrimientos pares, entonces
-  \[ p_1 \times p_2 : \tilde X _1 \times \tilde X _2 \to X_1 \times X_2 \]
-  Es un cubrimiento par.
+  Si \((X_u, x_u)\) es un cubrimiento universal de \((X, x_0)\),
+  entonces \((X_u, x_u)\) es un elemento terminal de \(\mathscr{Cov} (X,
+  x_0)\)
 \end{teorema}
 \begin{proof}
-  Para todo \(x_1 \in X_1,\ x_2 \in X_2\), existen \(U_1, U_2\)
-  vecindades pares respectivamente tales que son cubiertas por \(p_1,
-  p_2\). Denotemos a \(\{V_\alpha^{(1)}\}, \{V_\beta^{(2)}\}\) familias
-  de conjuntos tales que
-  \[
-    \begin{matrix}
-      \bigcup_{\alpha} V_\alpha^{(1)} = p_1^{-1} (U_1) &
-      \bigcup_{\alpha} V_\alpha^{(2)} = p_2^{-1} (U_2)
-    \end{matrix}
-  \]
-  \[ \bigcup_{\alpha, \beta} V_\alpha^{(1)} \times V_\beta^{(2)} = (p_1
-    \times p_2)^{-1} (U_1 \times U_2)\]
-  Donde la restricción a un \(V_{\bar{\alpha}}^{(1)} \times
-  V_{\bar{\beta}}^{(2)}\) arbitrario en \(p_1 \times p_2\) obtiene un
-  homeomorfismo en virtud de las componentes.
+  Solo debemos probar la propiedad universal. Sea \(p_u : (X_u, x_u) \to
+  (X, x_0)\) el cubrimiento universal. Supongamos que existe un espacio
+  \((Z, z_0)\) que cubre a \((X, x_0)\) mediante la aplicacion
+  \(p_{z}\). Es claro que por ser \(X_u\) simplemente conexo se
+  cumple la relacion
+  \[ \{e\} = p_{u,*} \left( \pi (X_u, x_u) \right) \subseteq p_{z,*}
+    \left( \pi (Z, z_0) \right)\]
+  por lo que aplicando el teorema \ref{thm:lifting-theorem-general} de
+  levantamiento, existe un levantamiento \(f : (X_u, x_u) \to (Z,
+  z_0)\) que cumple la ecuacion
+  \[ p_{z} \circ f = p_u \]
+
+  \begin{lema}
+    \(f\) es un cubrimiento.
+  \end{lema}
+  \begin{proof}
+  Sea \(z \in Z\) arbitrarios. Debemos encontrar una vecindad \(B\) de este
+  tal que existan \(U'_\alpha \subset X_u,\ \alpha \in \Lambda \) que
+  cumplan la ecuación
+  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha = f^{-1} (B) \]
+  Sea \(x = p_z (z)\) en \((X,x_0)\). Este tiene un cubrimiento \(V_u
+  \subset X\) para el cual existe \(U_\alpha \subseteq X_u, \alpha \in
+  \Lambda\) cumpliendo
+  \[ \bigcup_{\alpha \in \Lambda} U_\alpha = p_u^{-1} (V_u)\]
+  que cumple además que tomando \(p_u\) restringido a cualquier \(U_\alpha
+  \in \Lambda\) se tiene un homeomorfismo.
+
+  Por otro lado, también existe una vecindad de \(x\) denotada por
+  \(V_z\) para el cual existe unos conjuntos \(I_\beta \subseteq Y, \beta
+  \in \Omega\) que cumple la ecuación análoga
+  \[ \bigcup_{\beta \in \Omega} I_\beta = p_z^{-1} (V_z) \]
+  En particular, existe un único \(\beta_0 \in \Omega\) tal que \( z \in
+  I_{\beta_0} \) y \( p_{z} \mid_{I_{\beta_0}} \) es homeomorfismo entre
+  \(I_{\beta_0}\) e \(V_z\).
+
+  Consideremos el conjunto
+  \[ V := V_z \cap V_u \]
+  Dado que \(p_u\) es homeomorfo al restringirse a cualquier
+  \(U_\alpha\) con \(\alpha \in \Lambda\), debe de cumplirse la igualdad
+  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha := \bigcup_{\alpha \in
+      \Lambda} \left( p_u \mid_{U_\alpha} \right)^{-1} (V) = p_u^{-1} (V) \]
+  y también debe cumplirse por homeomorfismo de \(p_z\) restringido a
+  \(I_{\beta_0}\) la existencia de una vecindad de \(z\) dada por
+  \[ B := \left( p_z \mid I_{\beta_0} \right) ^{-1} (V) \]
+  Luego se tiene
+  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha = f^{-1} (B) \]
+  con homeomorfismo de \(f\) al restringirse a un \(\alpha\) por
+  composición de de homeomorfismos.
+  \end{proof}
+
+  La unicidad de \(f\) proviene de utilizar le teorema
+  \ref{thm:uniq-general} de unicidad del levantamiento. Obtenemos asi el
+  resultado.
 \end{proof}
-\end{ejemplo}
 
-Esto es una extensión del resultado que ya conocíamos sobre el functor
-entre \(\mathbf{HoTop}_{*}\) y \(\mathbf{Grp}\) en cuanto a preservación
-del producto. Esto no dice que el ``calculo'' de grupos fundamentales
-también puede derivarse del conocimiento del productor de cubrimientos
-pares.
-
-\begin{ejemplo}[Toro en \(R^4\).]
-Dado que podemos caracterizar al
-toro \(T^1\) como \(S^1 \times S^1\), el teorema anterior nos dice que
-\((\pi (T^1, b), *) = (\pi (S^1, b) \times \pi (S^1, b), *) = (\mathbb Z
-\times \mathbb Z, +) \)
-\end{ejemplo}
+En vista del teorema anterior, podemos visualizar la categoria
+\(\mathscr{Cov} (X, x_0)\) por el siguiente diagrama.
