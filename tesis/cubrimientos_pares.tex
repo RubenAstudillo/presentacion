@@ -37,7 +37,7 @@ el cubrimiento para \(X\).
 El diagrama anterior da una idea de la forma de general los espacios
 cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
 \(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del diagrama, se
-tiene la siguiente definicion auxiliad
+tiene la siguiente definicion auxiliar
 \begin{definicion}[Fibra]
 El conjunto discreto dado por \(p^{-1} (x_0)\) es conocido como una
 \emph{fibra} de \(x_0\).
@@ -258,7 +258,7 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
 Retrocedamos un poco para pensar que es lo que tenemos hasta el momento.
 Para un cubrimiento \(p : \tilde X \to X\), siempre es valida la
 construcción de la definición \ref{def:homomorfismo-inducido} de un
-hilomorfismo inducido \(p_* : \pi \left( \tilde X , \tilde x _0 \right)
+homomorfismo inducido \(p_* : \pi \left( \tilde X , \tilde x _0 \right)
 \to \left( X , x_0 \right)\) con \(p (\tilde x_0) = x_0\). Pero a priori
 esto no nos da ninguna relación entre contención entre los grupos. Pero
 cuando \(p\) es un cubrimiento, tenemos que \(p_*\) es inyectiva por el
@@ -387,14 +387,14 @@ cubrimiento universal
   existe una homotopía entre ellos (la composición de sus dos homotopías
   al arco identidad \(k_{x_0}\)).
 \end{acotacion}
-Intuitivamente estos espacios son aquellos que no tienen caminos cerrados
-triviales. Ejemplo de estos son los distintos \(\Re^n\) para distintos
-valores de \(n\).
+Intuitivamente estos espacios son aquellos que todos caminos cerrados
+son triviales. Ejemplo de estos son los distintos \(\Re^n\) para
+distintos valores de \(n\).
 \begin{definicion}[Cubrimiento universal]
   Sea \(\left( X, x_0 \right)\) un espacio topológico puntuado. Un
   cubrimiento \(p : \left( \tilde X , \tilde x _0 \right) \to \left( X ,
-    x _0 \right)\) es llamado cubrimiento universal de \( \left( \tilde
-    X , \tilde x _0 \right)\) si \(\left( \tilde X , \tilde x _0
+    x _0 \right)\) es llamado cubrimiento universal de \( \left(
+    X , x _0 \right)\) si \(\left( \tilde X , \tilde x _0
   \right)\) es simplemente conexo.
 \end{definicion}
 El estudio de los cubrimientos universales esta relacionado con el
@@ -476,7 +476,7 @@ Este teorema nos permitirá enfocarnos puramente en la fibra \(p ^{-1}
 lado, podemos definir un nuevo grupo el cual va a actuar (en sentido de
 grupos) sobre esta fibra al cual denotaremos como grupo de
 transformaciones de \emph{deck}\footnote{En español seria transformaciones de
-  cartas, pero asi podemos utilizar un nombre usual}.
+  cartas, pero asi podemos utilizar un nombre usual de \cite{Hatcher}}.
 \begin{definicion}[Grupo de transformaciones de \emph{deck}]\label{def:deck}
   Para un cubrimiento \(p : \tilde X \to X\), los isomorfismos \(g : \tilde
   X \to \tilde X\) tales que cumplan
@@ -501,7 +501,7 @@ caminos (teoremas \ref{thm:lifting-theorem},
       , \tilde x_0 ) \right) \]
 \end{teorema}
 Que un espacio \(Y\) sea localmente arco-conexo equivale a pedir que
-para todo punto \(y \in Y\) y cualquier vecindad \(U_y \subset V\) de
+para todo punto \(y \in Y\) y cualquier vecindad \(U_y \subset Y\) de
 este, posee una sub-vecindad \(V \subseteq U_y\) la cual es arco-conexa.
 Procedemos a la demostración.
 \begin{proof}
