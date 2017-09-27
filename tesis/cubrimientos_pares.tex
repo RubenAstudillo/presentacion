@@ -994,7 +994,7 @@ elemento inicial.
   resultado.
 \end{proof}
 
-En vista del teorema anterior, podemos visualizar la categoria
+En vista del teorema anterior, podemos visualizar la categoría
 \(\mathscr{Cov} (X, x_0)\) por el siguiente diagrama.
 \begin{figure}[h]
   \centering
@@ -1003,3 +1003,15 @@ En vista del teorema anterior, podemos visualizar la categoria
 \end{figure}
 Es claramente un lattice con \((X_u, x_u)\) el cubrimiento universal
 como elemento inicial.
+
+Podemos volver a definir un functor
+\[ \pi : \mathscr{Cov} (X, x_0) \to \mathscr{Grp} \]
+reutilizando la notación \(\pi\) para asignar a cada espacio cubrimiento
+su grupo fundamental. Es claro que por ser \((X_u, x_u)\) simplemente
+conexo, se cumple que
+\[ \pi (X_u, x_u) = {e} \]
+Mas aun, por el teorema \ref{thm:inyec-covering} de inyectividad de del
+homomorfismo inducido por un cubrimiento \(p\), el lattice de
+cubrimientos es respetado como estructura en la categoría
+\(\mathscr{Grp}\). Por tanto el functor \(\pi\) preserva elementos
+iniciales entre categorías.
