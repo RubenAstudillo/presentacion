@@ -347,7 +347,7 @@ grupos fundamentales.
   (Y,y_0)\) tal que
   \[ \hat \alpha ([\alpha] * [h] * [\alpha^{-1}]) = [h]\]
 \end{proof}
-Con esto es mente, es fácil ver que se tiene el siguiente corolario
+Con esto en mente, es fácil ver que se tiene el siguiente corolario
 \begin{corolario}
   Sean \(h,k : X \to Y\) dos funciones relacionadas homotopicamente
   tales que \(h (x_0) = y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva
@@ -383,7 +383,7 @@ donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
   los diferentes puntos bases se tienen dos homomorfismos inducidos de
   \(f\) con distintos puntos relativos
   \[(f_{x_0})_* : \pi (X, x_0) \to \pi (Y, y_0)\]
-  \[(f_{x_1})_* : \pi (X, x_1) \to \pi (Y, y_1)\].
+  \[(f_{x_1})_* : \pi (X, x_1) \to \pi (Y, y_1)\]
   Además fijaremos que la identificación de \(g_*\) corresponda a
   \[ g_* : \pi (Y, y_0) \to (X, x_1) \]
 
@@ -434,15 +434,17 @@ Con estos resultados podemos ver el siguiente ejemplo
   : M \to M\). Definamos la homotopía
   \[ F : M \times I \to M \]
   \[ ([(x,y)], t) \mapsto [(x, \frac t 2 + (1-t) y)] \]
-  La cual es claramente continua y cumple que \( F(.,0) = Id,\ F(.,1) =
-  j \circ r\). Luego por teoremas anterior, el grupo fundamental de
+  La cual es claramente continua y cumple que
+  \[ x \to F(x,0) \equiv Id,\quad x \to F(x,1) \equiv j \circ r\]
+  Luego por teoremas anterior, el grupo fundamental de
   \(M\) es igual al de \(D\).
 
   La pregunta ahora es ver quien es el grupo fundamental de \(D\).
   Podemos ver que este conjunto es una recta con los dos extremos
   identificados, lo cual luce similar a \(S^1\). Estos espacios son
-  homeomorfos mediantes la aplicacion \[[(x, 1/2)] \mapsto \exp (2 \pi
-  x)\], mostrando asi el resultado deseado.
+  homeomorfos mediantes la aplicacion
+  \[[(x, 1/2)] \mapsto \exp (2 \pi x)\]
+  mostrando asi el resultado deseado.
 \end{proof}
 
 \subsection{La categoria \(\mathscr{HoTop}_*\)}
@@ -455,13 +457,13 @@ Con estos resultados podemos ver el siguiente ejemplo
   \item \(\mathbf {Mor}\) corresponde a un conjunto
     \[ \mathbf{Mor} = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\
       (X,x_0),(Y,y_0) \in \mathbf {Obj} \}\]
-    de clases equivalencias homotopicas entre funciones continuas
+    de clases equivalencias homotopicas entre funciones continuas.
   \item \((\hat \circ)\) corresponde a la composición de clases de
     equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
     \[ f : (X,x_0) \to (Y, y_0)\]
     \[ g : (Y, y_0) \to (Z, z_0)\]
-    entonces \([g] \hat \circ [f] := [ g \circ f ] \) es una clase de
-    equivalencia de funciones \((X, x_0) \to (Z, z_0)\)
+    entonces \([g] \, \hat \circ \, [f] := [ g \circ f ] \) es una clase
+    de equivalencia de funciones \((X, x_0) \to (Z, z_0)\).
   \end{itemize}
 \end{definicion}
 Esta categoría tiene los mismos objetos que \(\mathscr{Top}_*\), pero es
