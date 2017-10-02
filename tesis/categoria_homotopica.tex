@@ -481,25 +481,26 @@ pues esta preserva la composicion de categoria de origen en la de
 llegada. Ya que por definicion \(\forall f,g \in \mathbf {Mor}
 (\mathscr{Top}_*)\) tal que \(f \circ g \in \mathbf {Mor}
 (\mathscr{Top}_*)\)
-\[ F(f \circ g) = [f \circ g] = [f] * [g] = F(f) * F(g) \]
+\[ F(f \circ g) = [f \circ g] = [f] \, \hat \circ \, [g] = F(f) \, \hat
+\circ \, F(g) \]
 
-En \(\mathscr{Top}_*\), todos los morfismos era homeomorfismos. Esto nos
-daba una categoría donde estaban claramente delimitados los espacios
-topológicos que tendrían el mismo grupo fundamental. Pero era posible
-que hubieran dos familias de objetos disjuntas en \(\mathscr{Top}_*\)
-que tuvieran el mismo grupo fundamental. En \(\mathscr{HoTop}_*\) los
-espacios homeomorfos tienen trivialmente un par de equivalencias
-homotópicas, pero hay estrictamente mas morfismos en esta categoría,
-pues como vimos en el ejemplo \ref{ex:mobius}, a pesar de la banda de
-Mobius y \(S^1\) no son homeomorfos (de hecho la banda de Mobius es
-homeomorfa a un cociente de \(S^1 \times [-1, 1]\)) poseen el mismo
-grupo fundamental. Por tanto las familias de objetos disjuntas con el
-mismo grupo fundamental son mas raras en \(\mathscr{HoTop}_*\).
+En \(\mathscr{Top}_*\) al tomar los morfismos era homeomorfismos,
+estaban claramente delimitados los espacios topológicos que tendrían el
+mismo grupo fundamental. Pero era posible que hubieran dos familias de
+objetos disjuntas en \(\mathscr{Top}_*\) que tuvieran el mismo grupo
+fundamental. En \(\mathscr{HoTop}_*\) los espacios homeomorfos tienen
+trivialmente un par de equivalencias homotópicas, pero hay estrictamente
+menos familias disjuntas en esta categoría, pues como vimos en el
+ejemplo \ref{ex:mobius}, a pesar de la banda de Mobius y \(S^1\) no son
+homeomorfos (de hecho la banda de Mobius es homeomorfa a un cociente de
+\(S^1 \times [-1, 1]\)) poseen el mismo grupo fundamental. Por tanto las
+familias de objetos disjuntas con el mismo grupo fundamental son mas
+raras en \(\mathscr{HoTop}_*\).
 
-La estructura categórica nos ayudara a deducir grupos fundamentales de
-espacios complejos en base a espacios mas simples. Una de las
-herramientas para esto sera el estudio de los productos y co-productos
-categóricos.
+Ahora nos enfocaremos en la estructura categórica, pues esta nos ayudara
+a visualizar grupos fundamentales de espacios complejos en base a
+espacios mas simples. Una de las herramientas para esto sera el estudio
+de los productos y co-productos categóricos.
 
 \begin{definicion}[Producto]
   Sea \(P , X , Y \in \mathbf {Obj}\) objetos arbitrarios de un categoría
