@@ -509,26 +509,60 @@ Procedemos a la demostración.
   es fácil ver que \(f_* = p_* \circ \tilde f _*\) lo cual implica
   directamente el resultado.
 
-  Para la dirección \((\Leftarrow)\), sea \(y \in Y\) un punto
-  arbitrario. Por arco-conexidad de \(Y\) existe un camino \(\gamma\) en
-  \(Y\) tal que \(\gamma (0) = y_0,\ \gamma (1) = y\). Con este podemos
+  Ahora mostraremos la dirección \((\Leftarrow)\). Sea \(y \in Y\) un
+  punto arbitrario para el cual dada la arco-conexidad de \(Y\) existe
+  un camino \(\gamma\) en \(Y\) tal que
+  \[\gamma (0) = y_0,\ \gamma (1) = y\]
+  Con este podemos
   definir un camino \(f \circ \gamma\) en \(X\) el cual cumple con
   comenzar en \(x_0\). Este ultimo camino tiene un (único) levantamiento
-  \(\widetilde {f \circ \gamma}\). Mediante este, definimos una función
+  \(\widetilde {f \circ \gamma}\) gracias al Teorema
+  \ref{thm:lifting-theorem}. Mediante este, definimos una función
   \(\tilde f : (Y, y_0) \to (\tilde X , \tilde x_0)\) por
   \begin{equation} \label{def:f-tilda}
-    \tilde f (y) = \phi ([f \circ \gamma]) = f \circ \gamma \, (1)
+    \tilde f (y) := \widetilde{f \circ \gamma} \, (1)
   \end{equation}
-  Esta definición de \(f\) es independiente del camino \(\gamma\)
-  escogido entre \(y_0\) e \(y\) por el argumento de independencia de
-  representante en \(\phi\) dado en la acotación \ref{aco:indep-phi}.
-  Esta acotación depende de la hipótesis \(f_* \left( \pi (Y, y_0) \right)
-  \subseteq p_* \left( \pi ( \tilde X , \tilde x_0 ) \right)\) para
-  poder levantar homotopías.
 
-  Probaremos la continuidad de \(\tilde f\) en \(y\). Sea \(U \subseteq
-  X\) una vecindad de \(f (y)\). Por definición de cubrimiento, existe al
-  menos un conjunto \(\tilde U \subseteq \tilde X\) tal que
+  Mostraremos que la definición de \(\tilde f\) es independiente del camino
+  \(\gamma\) escogido entre \(y_0\) e \(y\). Sea \(\delta\) otro camino
+  entre \(y_0 \to y\) y fijemos el camino \(h_0\) en \(X\)
+  \[ h_0 = (f \circ \delta) * (f \circ \gamma)^{-1}\]
+  Para el punto fijo \(\tilde x_0\), existe un único levantamiento
+  \(\tilde h_0\) de \(h_0\) tal que este cumpla que \(\tilde h_0 (0) =
+  \tilde x_0\). Por otro lado, es claro que
+  \[ [h_0] \in f_* \left( \pi (Y, y_0) \right) \subseteq p_* \left( \pi
+    ( \tilde X , \tilde x_0 ) \right) \]
+  Sea \(h_1 \in [h_0]\) otro camino arbitrario de \(x_0 \to x_0\) con
+  una homotopía \(H\) entre \(h_0\) y \(h_1\). Fijemos a \(\tilde h_1\)
+  como su levantamiento comenzando en \(\tilde x_0\). La homotopía \(H\)
+  también puede levantarse a \(\tilde H\) mediante el Corolario
+  \ref{thm:levantamiento-homotopico} y en particular debe cumplir por el
+  Corolario \ref{cor:preservar-arco-hom} que siga siendo una
+  arco-homotopía con punto final e inicial en este
+  caso \(\tilde x_0\). Por las ecuaciones de arco-homotopía que cumple
+  \(\tilde H\) se esta obligando a que el levantamiento \(\tilde h_0\)
+  sea un camino cerrado de \(\tilde x_0\). Luego por unicidad del
+  levantamiento respecto al punto \(\tilde x_0\) se debe cumplir
+  \begin{equation} \label{eq:h0}
+  \tilde h_0 = \widetilde{f \circ \delta} * \widetilde{(f \circ
+    \gamma)^{-1}}
+  \end{equation}
+  pues al coincidir el comienzo y final en \(\tilde x_0\) la ecuación
+  que determina los levantamientos (ver teorema \ref{thm:lifting-theorem})
+  obliga a \(\tilde h_0\) a coincidir con \(\widetilde{f \circ \delta}\)
+  en una vecindad del inicio y con \(\widetilde{(f \circ \gamma)^{-1}}\)
+  en una vecindad final para cumplir la ecuación de cubrimientos, después
+  la definición iterativa obliga a que este sea el producto. Por ultimo,
+  dado que \(\tilde h_0\) esta bien definido se esta diciendo que el
+  producto de \eqref{eq:h0} esta bien definido y en particular que
+  \[ \widetilde{f \circ \delta} (1) = \widetilde{(f \circ
+    \gamma)^{-1}} (0) \]
+  \[ \iff \widetilde{f \circ \delta} (1) = \widetilde{(f \circ
+    \gamma)} (1) \]
+
+  Por ultimo probaremos la continuidad de \(\tilde f\) en \(y\). Sea \(U
+  \subseteq X\) una vecindad de \(f (y)\). Por definición de cubrimiento,
+  existe al menos un conjunto \(\tilde U \subseteq \tilde X\) tal que
   \[p \mid_{\tilde U} : \tilde U \to U\]
   es un homeomorfismo. Por otro lado, dada la continuidad de \(f\) y
   por ser \(Y\) localmente arco-conexo se puede elegir una vecindad \(V
