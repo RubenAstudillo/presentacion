@@ -406,11 +406,13 @@ comportamiento de una funcion conocida como el levantamiento derivado.
   levantamiento (único) de \(f\) a un camino en \(\tilde X\) que
   comienza en \(\tilde x _0\). Se define una función
   \begin{align*}
-    \phi : \pi (X, x_0) &\longrightarrow p^{-1} (x_0) \\
+    \phi_{\tilde x_0} : \pi (X, x_0) &\longrightarrow p^{-1} (x_0) \\
     [f] &\longmapsto \tilde f (1)
   \end{align*}
-  y denominamos a \(\phi\) como el \textbf{correspondiente levantamiento
-  derivado}\footnote{Corresponding lifting path} del cubrimiento \(p\).
+  y denominamos a \(\phi_{\tilde x_0}\) como el \textbf{correspondiente
+  levantamiento derivado}\footnote{Corresponding lifting path} del
+  cubrimiento \(p\). Cuando no haya incertidumbre se denotara a este
+  simplemente \(\phi\).
 \end{definicion}
 \begin{acotacion} \label{aco:indep-phi}
   Este mapeo no depende del representante de clase \([f] \in \pi \left(
@@ -680,7 +682,7 @@ Procedemos a la demostración.
   \[ \tilde p_1 \circ \tilde p_2 = \text{Id}, \quad \tilde p_2 \circ
     \tilde p_1 = \text{Id} \]
   Por tanto \(\tilde p_1 , \tilde p_2\) son isomorfismos inversos
-  (corolario \ref{thm:comp-identidad}).
+  (Corolario \ref{thm:comp-identidad}).
 \end{proof}
 
 Ahora nos enfocaremos en un caso especifico, cuando nuestro cubrimiento
@@ -704,7 +706,7 @@ representante \(\gamma\) posee un único levantamiento a \((\tilde X,
 \tilde x_1)\) que denotaremos por \(\tilde \gamma\). Este debe cumplir
 con las ecuaciones
 \[ \tilde \gamma \, (0) = \tilde x_1, \quad \tilde \gamma \, (1) =
-  \tilde x_3 = \phi ([\gamma]) \]
+  \tilde x_2 = \phi ([\gamma]) \]
 para algún \(\tilde x_2 \in p^{-1} (x_0)\). La ecuación
 \eqref{hip:lifting} aplicada a estos \(\tilde x_1, \tilde x_2,\) nos
 permite aplicar el teorema \ref{thm:exists-isomor} que nos da un
@@ -765,8 +767,8 @@ x_0)\) cuando \(\tilde X\) es simplemente conexo.
   \ref{thm:uniq-general} de unicidad del levantamiento. El camino
   \eqref{eq:levan-comp} sigue el la siguiente trayectoria (a grandes
   rasgos)
-  \[ \tilde \gamma \, (0) = \tilde x_0 \to \tilde \gamma (1) = \tilde x
-      _1 = \tau \left( \tilde x_0 \right) \to \tau \left( \tilde x_2
+  \[ \tilde \gamma \, (0) = \tilde x_0 \longrightarrow \tilde \gamma (1) = \tilde x
+      _1 = \tau \left( \tilde x_0 \right) \longrightarrow \tau \left( \tilde x_2
       \right) = \tau \left( \tau' ( \tilde x _0 ) \right)
   \]
   Por tanto se debe cumplir que la transformación de deck asociada a
@@ -793,23 +795,30 @@ x_0)\) cuando \(\tilde X\) es simplemente conexo.
   \[ \tau : (\tilde X, \tilde x_0) \to (\tilde X, \tilde x_1) \]
   con \(\tilde x_0, \tilde x_1 \in p^{-1} (x_0)\). Como \(\tilde X\) es
   simplemente conexo, por el teorema \ref{thm:phi-bijec} se tiene que la
-  función \(\phi\) de la definición \ref{def:levantamiento-derivado} es
-  biyectiva. Por tanto \(\phi^{-1} (\tilde x_1) \in \pi (X, x_0)\) y es
-  tal que
+  función
+  \[\phi_{\tilde x_0} : \pi (X, x_0) \to p^{-1} (x_0) \subseteq \tilde
+    X \]
+  de la definición \ref{def:levantamiento-derivado} es
+  biyectiva. Por tanto \(\phi_{\tilde x_0}^{-1} (\tilde x_1) \in \pi (X,
+  x_0)\) y es tal que
   \[ L \left( \phi^{-1} (\tilde x_1) \right) = \tau \]
-  por construcción de \(L\).
+  por construcción de \(L\) dada por la ecuación \eqref{def:L}.
 
   Mostraremos que \(L\) es inyectiva. Esto equivale a mostrar que su
   núcleo es trivial. Sea \([\gamma] \in \pi (X , x_0)\) un arco
   arbitrario tal que
-  \[ L \left( [\gamma] \right) = Id : (\tilde X , \tilde x_0) \to
-    (\tilde X, \tilde x_0) \]
-  Mostraremos que \([\gamma] = [k_{x_0}]\) la identidad. Por un
-  argumento similar al de sobreyectividad, dado que \(\phi\) es
-  biyectiva y que se cumple por simple definición de \(\phi\)
+  \begin{equation} \label{eq:L-in}
+    L \left( [\gamma] \right) = Id : (\tilde X , \tilde x_0) \to
+      (\tilde X, \tilde x_0)
+  \end{equation}
+  Mostraremos que \([\gamma] = [k_{x_0}]\) la identidad. Es claro por
+  simple calculo que se tiene la ecuación
   \[ \phi \left( [k_{x_0}] \right) = \tilde x _0 \]
-  esto obliga a que \([\k_{x_0}] = [\gamma]\). Mostrando así que \(L\)
-  es un isomorfismo.
+  Dada la ecuación \eqref{eq:L-in}, también se tiene que
+  \[ \phi \left( [\gamma] \right) = \tilde x_0 \]
+  Por la inyectividad de \(\phi\) cuando \(\tilde X\) es
+  simplemente-conexo, esto obliga a que \([k_{x_0}] = [\gamma]\).
+  Mostrando así que \(L\) es un isomorfismo.
 \end{proof}
 
 Con el isomorfismo mostrado podemos empezar a calcular. Usualmente uno
@@ -819,7 +828,7 @@ las acciones sobre la fibra \(p^{-1} (x_0)\) por la función
 \(\phi\) de la definición \ref{def:levantamiento-derivado} y utiliza una
 ``decision informada'' para dotarle estructura de grupo. Para ver el
 marco de trabajo, estudiaremos el grupo fundamental de \(S^1\) como
-ejemplo . Utilizando los teoremas anteriores para proponer un
+ejemplo. Utilizando los teoremas anteriores para proponer un
 cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
 preservar la estructura de grupo para ser estudiado bajo ese lente.
 \begin{teorema} \label{thm:grupo-S1}
