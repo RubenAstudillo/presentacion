@@ -292,7 +292,7 @@ el siguiente lema técnico.
 \begin{proof}
   Hemos de probar que \(\forall [f] \in \pi (X, x_0)\) se cumple que
   \[ k_* ([f]) = \hat \alpha \circ h_* ([f]) \]
-  \[ [k \circ f] = [ \alpha^{-1} ] *  [h \circ f] * [\alpha] \]
+  \[ [k \circ f] = [ \overline{\alpha} ] *  [h \circ f] * [\alpha] \]
   \[ [ \alpha ] * [k \circ f] =  [h \circ f] * [\alpha] \]
   Es decir, hemos de construir una homotopía entre estos dos
   representantes de clase. Sea \(H : X \times I \to Y\) la homotopía
@@ -337,15 +337,16 @@ grupos fundamentales.
   que es inyectiva, supongamos que tomamos \([f],[g] \in \pi (Y, y_0),\
   [f] \neq [g]\) tal que se cumple \(\hat \alpha ([f]) = \hat \alpha
   ([g])\). Esto implicaría por reducción que
-  \[ [\alpha^{-1}] * [f] * [\alpha] = [\alpha^{-1}] * [g] * [\alpha] \]
+  \[ [\overline{\alpha}] * [f] * [\alpha] = [\overline{\alpha}] * [g] *
+    [\alpha] \]
   \[ [f] * [\alpha] = [g] * [\alpha] \]
   \[ [f] = [g] \]
   Lo cual es una contradicción
 
   Para ver la sobreyectividad, para todo elemento \([h]
-  \in \pi (Y,y_0)\) existe \( [\alpha] * [h] * [\alpha^{-1}] \in \pi
-  (Y,y_0)\) tal que
-  \[ \hat \alpha ([\alpha] * [h] * [\alpha^{-1}]) = [h]\]
+  \in \pi (Y,y_0)\) existe \( [\alpha] * [h] * [\overline{\alpha}] \in
+  \pi (Y,y_0)\) tal que
+  \[ \hat \alpha ([\alpha] * [h] * [\overline{\alpha}]) = [h]\]
 \end{proof}
 Con esto en mente, es fácil ver que se tiene el siguiente corolario
 \begin{corolario}

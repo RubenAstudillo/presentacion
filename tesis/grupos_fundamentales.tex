@@ -127,7 +127,7 @@ camino.
   x_0,\ \alpha(1) = x_1\). La función definida por
   \begin{align*}
     \hat \alpha : \pi (X, x_0) &\longrightarrow \pi (X, x_1) \\
-    [g] &\longmapsto [ \alpha^{-1} * g * \alpha ]
+    [g] &\longmapsto [ \overline{\alpha} * g * \alpha ]
   \end{align*}
   es llamada la conjugada de \(\alpha\).
 \end{definicion}
@@ -141,41 +141,42 @@ camino.
   continuo, tal que \(\alpha (0) = x_0,\ \alpha (1) = x_1\). Se define
   la función conjugada de \(\alpha\) por \(\hat \alpha\).
   Esta función, esta bien definida puesto que \(\forall g \in \pi (X,
-  x_0),\ \alpha^{-1} * g * \alpha \) es continua (en virtud de \(*\)).
+  x_0),\ \overline{\alpha} * g * \alpha \) es continua (en virtud de \(*\)).
   Por definición y reducción se tiene
-  \[ \alpha^{-1} (t) = \alpha (1 - t)\]
-  \[\big(\alpha^{-1} * g * \alpha \big) (0) = \alpha (1 - 0) = x_1 = \alpha (1) =
-    \big(\alpha^{-1} * g * \alpha \big) (1)\]
+  \[ \overline{\alpha} (t) = \alpha (1 - t)\]
+  \[\big(\overline{\alpha} * g * \alpha \big) (0) = \alpha (1 - 0) = x_1
+    = \alpha (1) = \big(\overline{\alpha} * g * \alpha \big) (1)\]
 
   \paragraph{\(\hat \alpha\) es homomorfismo:} Se procede por
   definición. Por un lado, al mapear la identidad de \(k_{x_0} \in \pi
   (X, x_0) \), tenemos por simple calculo las siguientes igualdades
   \begin{align*}
     \hat \alpha ([k_{x_0}])
-                 &= [\alpha^{-1} * k_{x_0} * \alpha] \\
-                 &= [\alpha^{-1}] * [k_{x_0} * \alpha] \\
-                 &= [\alpha^{-1}] * [\alpha] \\
-                 &= [\alpha^{-1} * \alpha] \\
+                 &= [\overline{\alpha} * k_{x_0} * \alpha] \\
+                 &= [\overline{\alpha}] * [k_{x_0} * \alpha] \\
+                 &= [\overline{\alpha}] * [\alpha] \\
+                 &= [\overline{\alpha} * \alpha] \\
                  &= [k_{x_1}] \\
   \end{align*}
   Por otro lado, si \(u,v \in \pi (X, x_0) \), tenemos la siguiente
   reducción del producto
   \begin{align*}
-    \hat \alpha ([u] * [v]) &= [\alpha^{-1} * u * v * \alpha] \\
-    &= [\alpha^{-1} * u * k_{x_0} * v * \alpha] \\
-    &= [\alpha^{-1} * u * \alpha * \alpha^{-1} * v * \alpha] \\
-    &= [\alpha^{-1} * u * \alpha ] * [ \alpha^{-1} * v * \alpha] \\
-    &= \hat \alpha (u) * \hat \alpha (v) \\
+    \hat \alpha ([u] * [v]) &= [\overline{\alpha} * u * v * \alpha] \\
+    &= [\overline{\alpha} * u * k_{x_0} * v * \alpha] \\
+    &= [\overline{\alpha} * u * \alpha * \overline{\alpha} * v * \alpha] \\
+    &= [\overline{\alpha} * u * \alpha ] * [ \overline{\alpha} * v * \alpha] \\
+    &= \hat \alpha (u) * \hat \alpha (v)
   \end{align*}
 
   \paragraph{\(\hat \alpha\) es inyectiva y sobreyectiva.} La inyectividad es
   clara, pues si \([u],[v] \in \pi (X, x_0),\ [u] \not \simeq [v]
-  \implies [\alpha^{-1}] * [u] * [\alpha] \not \simeq [\alpha^{-1}] * [v]
+  \implies [\overline{\alpha}] * [u] * [\alpha] \not \simeq
+    [\overline{\alpha}] * [v]
   * [\alpha]\). Para ver la sobreyectividad, notemos que \(\forall [k] \in
-  \pi (X, x_1) \), siempre existe \( [\alpha * k * \alpha^{-1}]\) tal
+  \pi (X, x_1) \), siempre existe \( [\alpha * k * \overline{\alpha}]\) tal
   que
-  \[ \hat \alpha ([\alpha * k * \alpha^{-1}]) = [\alpha^{-1} * \alpha * k *
-    \alpha^{-1} * \alpha] = [k]\]
+  \[ \hat \alpha ([\alpha * k * \overline{\alpha}]) = [\overline{\alpha}
+    * \alpha * k * \overline{\alpha} * \alpha] = [k]\]
   Por tanto \(\hat \alpha\) es un isomorfismo de grupos.
 \end{proof}
 En la prueba anterior, la existencia del camino \(\alpha\)
@@ -201,17 +202,21 @@ la cantidad de estos isomorfismos.
   fijos pero arbitrarios. Para mostrar que \( \hat \alpha = \hat \beta\),
   debemos mostrar que para todo argumento estas funciones coinciden. Sea
   \([f] \in \pi (X, x_0) \) un argumento fijo pero arbitrario. Dado que
-  \(\alpha * \beta^{-1} * \beta \simeq \alpha \), se tiene que
-  \( \hat \alpha = \widehat{(\alpha * \beta^{-1} * \beta)}\), luego por definición
-  se cumplen la siguientes reducciones
-  \[ \hat \alpha ([f]) = \widehat{(\alpha * \beta^{-1} * \beta)} ([f]) =
-    [\beta^{-1}] * [\beta * \alpha^{-1}] * [f] * [\alpha * \beta^{-1}]
-    * [\beta] \]
-  Donde \([\alpha * \beta^{-1}] \in \pi (X, x_0) \), por lo tanto podemos
-  aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la
+  \(\alpha * \overline{\beta} * \beta \simeq \alpha \), se tiene que
+  \[ \hat \alpha = \widehat{(\alpha * \overline{\beta} * \beta)}\]
+  Luego por definición se cumplen la siguientes reducciones
+  \[ \hat \alpha ([f]) = \widehat{(\alpha * \overline{\beta} * \beta)} ([f]) =
+    [\overline{\beta}] * [\beta * \overline{\alpha}] * [f] * [\alpha *
+    \overline{\beta}] * [\beta]
+  \]
+  Donde \([\alpha * \overline{\beta}] \in \pi (X, x_0) \), por lo tanto
+  podemos aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la
   siguiente expresión
-  \[ [\beta^{-1}] * [\beta * \alpha^{-1}] * [\alpha * \beta^{-1}] * [f]
-    * [\beta] = [\beta^{-1}] * [f] * [\beta] = \hat \beta ([f]) \]
+  \[
+    [\overline{\beta}] * [\beta * \overline{\alpha}] * [\alpha *
+    \overline{\beta}] * [f] * [\beta] = [\overline{\beta}] * [f] * [\beta] =
+    \hat \beta ([f])
+  \]
   probando así lo buscado.
 
   En el converso, sean \([f],[g] \in \pi (X, x_0) \) fijos pero
@@ -221,11 +226,13 @@ la cantidad de estos isomorfismos.
   la relación
   \begin{align*}
     \widehat{\left( f * \alpha \right)} ([g]) &= \hat{\alpha} ([g]) \\
-    [(f * \alpha)^{-1} * g * (f * \alpha) ] &= [\alpha^{-1} * g * \alpha] \\
-    [\alpha^{-1} * f^{-1} * g * f * \alpha ] &= [\alpha^{-1} * g * \alpha] \\
-    [\alpha^{-1}] * [f^{-1}] * [g] * [f] * [\alpha] &= [\alpha^{-1}] *
-        [g] * [\alpha] \\
-    [f^{-1}] * [g] * [f] &= [g] \\
+    [\overline{(f * \alpha)} * g * (f * \alpha) ] &= [\overline{\alpha}
+      * g * \alpha] \\
+    [\overline{\alpha} * \overline{f} * g * f * \alpha ] &=
+      [\overline{\alpha} * g * \alpha] \\
+    [\overline{\alpha}] * [\overline{f}] * [g] * [f] * [\alpha] &=
+      [\overline{\alpha}] * [g] * [\alpha] \\
+    [\overline{f}] * [g] * [f] &= [g] \\
     [g] * [f] &= [f] * [g], \qquad \forall [f],[g] \in \pi (X, x_0) \\
   \end{align*}
 
