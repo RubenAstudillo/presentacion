@@ -223,7 +223,7 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
 
   Tomamos el conjunto \(U\) par que contiene a la imagen
   \[ F([s_i , s_{i+1}] \times [t_j , t_{j+1}]) \subseteq U \subset X \]
-  Por su paridad, podemos tomar la pre-imagen de \(p\) en \(U\) como
+  Dado que son cubiertas, podemos tomar la pre-imagen de \(p\) en \(U\) como
   \[ p^{-1}(U) = \bigcup_{\alpha \in \Alpha} V_\alpha\]
   Donde la familia \(\{V_\alpha\}\) es disjunta.
 
@@ -406,11 +406,13 @@ comportamiento de una funcion conocida como el levantamiento derivado.
   levantamiento (único) de \(f\) a un camino en \(\tilde X\) que
   comienza en \(\tilde x _0\). Se define una función
   \begin{align*}
-    \phi : \pi (X, x_0) &\longrightarrow p^{-1} (x_0) \\
+    \phi_{\tilde x_0} : \pi (X, x_0) &\longrightarrow p^{-1} (x_0) \\
     [f] &\longmapsto \tilde f (1)
   \end{align*}
-  y denominamos a \(\phi\) como el \textbf{correspondiente levantamiento
-  derivado}\footnote{Corresponding lifting path} del cubrimiento \(p\).
+  y denominamos a \(\phi_{\tilde x_0}\) como el \textbf{correspondiente
+  levantamiento derivado}\footnote{Corresponding lifting path} del
+  cubrimiento \(p\). Cuando no haya incertidumbre se denotara a este
+  simplemente \(\phi\).
 \end{definicion}
 \begin{acotacion} \label{aco:indep-phi}
   Este mapeo no depende del representante de clase \([f] \in \pi \left(
@@ -441,9 +443,9 @@ se vera en la siguiente teorema.
 \begin{teorema} \label{thm:phi-bijec}
   Sea \(p : \tilde X \to X\) un cubrimiento tal que \(p (\tilde x _0) =
   x_0\). Si \(\tilde X\) es arco-conexo entonces el correspondiente
-  levantamiento \(\phi : \pi (X, x _0) \to p^{-1} (x_0)\) es
-  sobreyectivo. Mas aun, si \(\tilde X\) es simplemente conexo, este es
-  biyectivo.
+  levantamiento \(\phi : \pi (X, x _0) \to p^{-1} (x_0)\) basado en
+  \(\tilde x_0\) es sobreyectivo. Mas aun, si \(\tilde X\) es
+  simplemente conexo, este es biyectivo.
 \end{teorema}
 \begin{proof}
   Demostración estándar de sobreyectividad en caso de ser \(\tilde X\)
@@ -459,9 +461,13 @@ se vera en la siguiente teorema.
   g : I \to \tilde X\) los levantamientos respectivos que comienzan en
   \(\tilde x _0\). Dado que \(\phi([f]) = \tilde f (1) = \tilde g (1) =
   \phi([g])\) y la simple-conexidad de \(\tilde X\), existe \(\tilde F :
-  I \times I \to \tilde X\) homotopía \(\tilde f, \tilde g\). Luego \(p
-  \circ \tilde F : I \times I \to X \) es una homotopía entre \(f, g\),
-  por tanto \([f] = [g]\)
+  I \times I \to \tilde X\) homotopía de \(\tilde f, \tilde g\) que
+  cumple
+  \[ \tilde F (0, t) = \tilde x_0, \quad \tilde F (1 , t) = \tilde f
+    (1) = \tilde g (1)
+  \]
+  Luego \(p \circ \tilde F : I \times I \to X \) es una homotopía entre
+  \(f, g\), por tanto \([f] = [g]\)
 \end{proof}
 % \begin{acotacion}
 %   Esta versión del teorema es la mas útil desde el punto de vista del
@@ -509,48 +515,85 @@ Procedemos a la demostración.
   es fácil ver que \(f_* = p_* \circ \tilde f _*\) lo cual implica
   directamente el resultado.
 
-  Para la dirección \((\Leftarrow)\), sea \(y \in Y\) un punto
-  arbitrario. Por arco-conexidad de \(Y\) existe un camino \(\gamma\) en
-  \(Y\) tal que \(\gamma (0) = y_0,\ \gamma (1) = y\). Con este podemos
-  definir un camino \(f \circ \gamma\) en \(X\) el cual cumple con
-  comenzar en \(x_0\). Este ultimo camino tiene un (único) levantamiento
-  \(\widetilde {f \circ \gamma}\). Mediante este, definimos una función
-  \(\tilde f : (Y, y_0) \to (\tilde X , \tilde x_0)\) por
+  Ahora mostraremos la dirección \((\Leftarrow)\). Sea \(y \in Y\) un
+  punto arbitrario para el cual dada la arco-conexidad de \(Y\) existe
+  un camino \(\gamma\) en \(Y\) tal que
+  \[\gamma (0) = y_0,\ \gamma (1) = y\]
+  Con este podemos definir un camino \(f \circ \gamma\) en \(X\) el cual
+  cumple con comenzar en \(x_0\). Por el teorema
+  \ref{thm:lifting-theorem}, este ultimo camino tiene un (único)
+  levantamiento \(\widetilde {f \circ \gamma}\) tal que \(\widetilde{f
+  \circ \gamma} (0) = y_0 \). Mediante este, definimos una función
+  \(\tilde f : (Y, y_0) \to (\tilde X , \tilde x_0)\) por la ecuación
   \begin{equation} \label{def:f-tilda}
-    \tilde f (y) = \phi ([f \circ \gamma]) = f \circ \gamma \, (1)
+    \tilde f (y) := \widetilde{f \circ \gamma} \, (1)
   \end{equation}
-  Esta definición de \(f\) es independiente del camino \(\gamma\)
-  escogido entre \(y_0\) e \(y\) por el argumento de independencia de
-  representante en \(\phi\) dado en la acotación \ref{aco:indep-phi}.
-  Esta acotación depende de la hipótesis \(f_* \left( \pi (Y, y_0) \right)
-  \subseteq p_* \left( \pi ( \tilde X , \tilde x_0 ) \right)\) para
-  poder levantar homotopías.
+  Si probamos que \(\tilde f\) esta bien definido y es continua
+  obtendremos que es el levantamiento buscado.
 
-  Probaremos la continuidad de \(\tilde f\) en \(y\). Sea \(U \subseteq
-  X\) una vecindad de \(f (y)\). Por definición de cubrimiento, existe al
-  menos un conjunto \(\tilde U \subseteq \tilde X\) tal que
+  % sacado de ../pdf-informacion/cls15--lifting.properties.pdf
+  Mostrar que esta bien definido equivale a mostrar que \(\tilde f\) es
+  independiente del camino \(\gamma\) entre \(y_0 \to y\). Tomemos otro
+  camino \(\delta\) entre \(y_0 \to y\) y fijemos el camino \(g\)
+  \[ g = f \circ \left( \delta * \overline{\gamma} \right)
+    = (f \circ \delta) * \overline{(f \circ \gamma)} \]
+  Es claro que \(g\) es un camino cerrado de \(x_0 \to x_0\) en \(X\)
+  y por construcción e hipótesis cumple la inclusión
+  \[ [g] \in f_* \left( \pi (Y, y_0) \right) \subseteq p_* \left( \pi
+      (\tilde X, \tilde x_0) \right)\]
+  Sea \(\tilde g\) el levantamiento de \(g\) tal que \(\tilde g
+  (0) = \tilde x_0\). Dado que \([g] \in p_* \left( \pi (\tilde X
+    ,\tilde x_0) \right)\) este levantamiento esta obligado ha ser un
+  camino cerrado de \(\tilde x_0 \to \tilde x_0\). Por ultimo, notamos
+  que por construcción
+  \[ \forall t \in [0, \frac 1 2],\ g(t) = f \circ \delta (2 t) \]
+  lo que implica por unicidad del levantamiento en \(\tilde x_0\) que la
+  primera mitad del levantamiento \(\tilde g\) corresponde a
+  \(\widetilde{f \circ \delta}\). De igual manera, considerando el
+  camino inverso \(\overline{g}\) también de \(x_0 \to x_0\), este
+  cumple la ecuación
+  \[ \forall t \in [0, \frac 1 2],\ \overline{g}(t) = f \circ \gamma (2
+    t) \]
+  y otra vez por unicidad del levantamiento en \(x_0\), se cumple que la
+  primera mitad de su levantamiento \(\widetilde{\overline{g}}\)
+  corresponde a \(\widetilde{f \circ \gamma}\). Dado que
+  \[ \forall t \in [\frac 1 2 , 1],\ g(t) = \overline{g} (1 - t) \]
+  se tiene que \(\overline{(\widetilde{f \circ \gamma})}\) corresponde a la
+  segunda mitad de \(\tilde g\). En resumen se cumple que \(g\) cumple
+  la ecuación
+  \[ \tilde g = \widetilde{f \circ \delta} * \overline{(\widetilde{f
+  \circ \gamma})} \] y dado que \(\tilde g\) esta bien definido, se debe
+  cumplir que
+  \[ \widetilde{f \circ \delta} (1) = \widetilde{f \circ \gamma} (1) \]
+  mostrando la independencia de la función \(\tilde f\).
+
+  Por ultimo probaremos la continuidad de \(\tilde f\) en \(y\). Sea \(U
+  \subseteq X\) una vecindad de \(f (y)\). Por definición de cubrimiento,
+  existe al menos un conjunto \(\tilde U \subseteq \tilde X\) tal que
   \[p \mid_{\tilde U} : \tilde U \to U\]
   es un homeomorfismo. Por otro lado, dada la continuidad de \(f\) y
   por ser \(Y\) localmente arco-conexo se puede elegir una vecindad \(V
   \subseteq Y\) arco-conexa de \(y \in Y\) tal que \(f (V) \subset U\).
   Para todo \(y' \in V\), consideremos los caminos cerrados en \(X\)
-  \[ \gamma * \eta * \eta^{-1} * \gamma^{-1} \]
+  \[ \gamma * \eta * \overline{\eta} * \overline{\gamma} \]
   con \(\gamma\) un camino entre \(y_0 \to y\) y \(\eta\) un camino
   entre \(y \to y'\). Al ver la imagen de este camino bajo \(f\) esta
   corresponde al camino
-  \[ (f \circ \gamma) * (f \circ \eta) * (f \circ \eta^{-1}) * (f \circ
-    \gamma^{-1}) \]
+  \[ (f \circ \gamma) * (f \circ \eta) * (f \circ \overline{\eta}) * (f
+    \circ \overline{\gamma}) \]
   en \(X\). Por hipótesis este camino puede ser levantado a
   \(\tilde X\) al camino
   \[ \widetilde{f \circ \gamma} * \widetilde{f \circ \eta} *
-    \widetilde{f \circ \eta^{-1}} * \widetilde{f \circ \gamma^{-1}} \]
-  En particular es claro que por ser \(p\) un homeomorfismo y \(f (V)
-  \subset U\) se tiene que
+    \widetilde{f \circ \overline{\eta}} * \widetilde{f \circ
+    \overline{\gamma}} \]
+  En particular es claro que por ser \(p \mid_U\) un homeomorfismo y \(f
+  (V) \subset U\) se tiene que
   \[ \widetilde{f \circ \eta} = p^{-1} \circ f \circ \eta \]
-  lo que al juntarse con la ecuación \eqref{def:f-tilda} implica que
-  \(\tilde f (V) \subseteq \tilde U\) y en particular \( \tilde f \mid
-  _{V} = p^{-1} \circ f \) lo cual es composición de una función
-  continua con un homeomorfismo y por tanto continua en \(y\).
+  por la ecuación de levantamiento. Lo que al juntarse con la ecuación
+  \eqref{def:f-tilda} implica que \(\tilde f (V) \subseteq \tilde U\) y en
+  particular \( \tilde f \mid _{V} = p^{-1} \circ f \) lo cual es
+  composición de una función continua con un homeomorfismo y por tanto
+  continua en \(y\).
 \end{proof}
 
 \begin{teorema}[Unicidad levantamiento]\label{thm:uniq-general}
@@ -561,7 +604,7 @@ Procedemos a la demostración.
 \end{teorema}
 \begin{proof}
   Para un punto arbitrario \(y \in Y\), existe una vecindad \(U \subset
-  X\) la cual es cubierta par-mente por \(p\) de manera que se cumple la
+  X\) la cual es cubierta por \(p\) de manera que se cumple la
   ecuación
   \[ \bigcup_{\alpha} \tilde U_\alpha = p^{-1} \left( U \right)\]
   Con \(\tilde U _\alpha\) disjuntos y que al restringir \(p\) en ellos
@@ -593,8 +636,9 @@ Procedemos a la demostración.
   consideramos \(K^c\), también existe una vecindad \(N\) totalmente
   contenida en \(K^c\). Luego \(K\) es abierto y cerrado al mismo tiempo
   en \(Y\) un espacio conexo, lo cual obliga a que este sea \(Y\) o
-  \(\emptyset\). Pero dado que los levantamientos existen, se esta
-  obligado a que \(K = Y\).
+  \(\emptyset\). Pero dada la hipotesis de que existe un punto donde los
+  levantamientos coinciden, \(K\) no puede ser vacio y por tanto es el
+  espacio total \(Y\).
 \end{proof}
 
 \begin{teorema}\label{thm:exists-isomor}
@@ -644,7 +688,7 @@ Procedemos a la demostración.
   \[ \tilde p_1 \circ \tilde p_2 = \text{Id}, \quad \tilde p_2 \circ
     \tilde p_1 = \text{Id} \]
   Por tanto \(\tilde p_1 , \tilde p_2\) son isomorfismos inversos
-  (corolario \ref{thm:comp-identidad}).
+  (Corolario \ref{thm:comp-identidad}).
 \end{proof}
 
 Ahora nos enfocaremos en un caso especifico, cuando nuestro cubrimiento
@@ -668,7 +712,7 @@ representante \(\gamma\) posee un único levantamiento a \((\tilde X,
 \tilde x_1)\) que denotaremos por \(\tilde \gamma\). Este debe cumplir
 con las ecuaciones
 \[ \tilde \gamma \, (0) = \tilde x_1, \quad \tilde \gamma \, (1) =
-  \tilde x_3 = \phi ([\gamma]) \]
+  \tilde x_2 = \phi ([\gamma]) \]
 para algún \(\tilde x_2 \in p^{-1} (x_0)\). La ecuación
 \eqref{hip:lifting} aplicada a estos \(\tilde x_1, \tilde x_2,\) nos
 permite aplicar el teorema \ref{thm:exists-isomor} que nos da un
@@ -729,8 +773,8 @@ x_0)\) cuando \(\tilde X\) es simplemente conexo.
   \ref{thm:uniq-general} de unicidad del levantamiento. El camino
   \eqref{eq:levan-comp} sigue el la siguiente trayectoria (a grandes
   rasgos)
-  \[ \tilde \gamma \, (0) = \tilde x_0 \to \tilde \gamma (1) = \tilde x
-      _1 = \tau \left( \tilde x_0 \right) \to \tau \left( \tilde x_2
+  \[ \tilde \gamma \, (0) = \tilde x_0 \longrightarrow \tilde \gamma (1) = \tilde x
+      _1 = \tau \left( \tilde x_0 \right) \longrightarrow \tau \left( \tilde x_2
       \right) = \tau \left( \tau' ( \tilde x _0 ) \right)
   \]
   Por tanto se debe cumplir que la transformación de deck asociada a
@@ -757,23 +801,30 @@ x_0)\) cuando \(\tilde X\) es simplemente conexo.
   \[ \tau : (\tilde X, \tilde x_0) \to (\tilde X, \tilde x_1) \]
   con \(\tilde x_0, \tilde x_1 \in p^{-1} (x_0)\). Como \(\tilde X\) es
   simplemente conexo, por el teorema \ref{thm:phi-bijec} se tiene que la
-  función \(\phi\) de la definición \ref{def:levantamiento-derivado} es
-  biyectiva. Por tanto \(\phi^{-1} (\tilde x_1) \in \pi (X, x_0)\) y es
-  tal que
+  función
+  \[\phi_{\tilde x_0} : \pi (X, x_0) \to p^{-1} (x_0) \subseteq \tilde
+    X \]
+  de la definición \ref{def:levantamiento-derivado} es
+  biyectiva. Por tanto \(\phi_{\tilde x_0}^{-1} (\tilde x_1) \in \pi (X,
+  x_0)\) y es tal que
   \[ L \left( \phi^{-1} (\tilde x_1) \right) = \tau \]
-  por construcción de \(L\).
+  por construcción de \(L\) dada por la ecuación \eqref{def:L}.
 
   Mostraremos que \(L\) es inyectiva. Esto equivale a mostrar que su
   núcleo es trivial. Sea \([\gamma] \in \pi (X , x_0)\) un arco
   arbitrario tal que
-  \[ L \left( [\gamma] \right) = Id : (\tilde X , \tilde x_0) \to
-    (\tilde X, \tilde x_0) \]
-  Mostraremos que \([\gamma] = [k_{x_0}]\) la identidad. Por un
-  argumento similar al de sobreyectividad, dado que \(\phi\) es
-  biyectiva y que se cumple por simple definición de \(\phi\)
+  \begin{equation} \label{eq:L-in}
+    L \left( [\gamma] \right) = Id : (\tilde X , \tilde x_0) \to
+      (\tilde X, \tilde x_0)
+  \end{equation}
+  Mostraremos que \([\gamma] = [k_{x_0}]\) la identidad. Es claro por
+  simple calculo que se tiene la ecuación
   \[ \phi \left( [k_{x_0}] \right) = \tilde x _0 \]
-  esto obliga a que \([\k_{x_0}] = [\gamma]\). Mostrando así que \(L\)
-  es un isomorfismo.
+  Dada la ecuación \eqref{eq:L-in}, también se tiene que
+  \[ \phi \left( [\gamma] \right) = \tilde x_0 \]
+  Por la inyectividad de \(\phi\) cuando \(\tilde X\) es
+  simplemente-conexo, esto obliga a que \([k_{x_0}] = [\gamma]\).
+  Mostrando así que \(L\) es un isomorfismo.
 \end{proof}
 
 Con el isomorfismo mostrado podemos empezar a calcular. Usualmente uno
@@ -783,7 +834,7 @@ las acciones sobre la fibra \(p^{-1} (x_0)\) por la función
 \(\phi\) de la definición \ref{def:levantamiento-derivado} y utiliza una
 ``decision informada'' para dotarle estructura de grupo. Para ver el
 marco de trabajo, estudiaremos el grupo fundamental de \(S^1\) como
-ejemplo . Utilizando los teoremas anteriores para proponer un
+ejemplo. Utilizando los teoremas anteriores para proponer un
 cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
 preservar la estructura de grupo para ser estudiado bajo ese lente.
 \begin{teorema} \label{thm:grupo-S1}
@@ -881,7 +932,7 @@ finitas de alternativas a probar para cada cardinalidad.
 % TODO: agregar conclusion
 
 \subsubsection{Categoria de cubrimientos}
-¿En que sentido es universal el cubrimiento universal?. Las propiedades
+¿En que sentido es universal el cubrimiento universal? Las propiedades
 universales son propiedades categóricas que predican la existencia de
 morfismos entre objetos a priori no relacionados. Ya hemos estudiado
 algunas al definir el (co)-producto categórico. La teoría de cubrimientos

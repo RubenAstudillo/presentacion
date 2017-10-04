@@ -64,14 +64,14 @@ existir elementos \([k_{x_0}], [k_{x_1}]\) tales que
 \]
 \item[3. Inverso:] Para todo \([f]\) clase de arcos con \(x_0, x_1\)
   puntos inicial y final respectivamente debe de existir un elemento
-  \([f^{-1}]\) que cumpla
+  \([\overline f]\) que cumpla
 \[ \begin{matrix}
-    [f] * [f^{-1}] = [k_{x_0}] & & [f^{-1}] * [f] = [k_{x_1}]
+    [f] * [\overline{f}] = [k_{x_0}] & & [\overline{f}] * [f] = [k_{x_1}]
   \end{matrix}
 \]
 \end{description}
 Para probar esto necesitamos primero definir a nuestros candidatos de
-\(k_{x_0}, k_{x_1}, f^{-1}\) ademas de algunas funciones auxiliares.
+\(k_{x_0}, k_{x_1}, \overline{f}\) ademas de algunas funciones auxiliares.
 Iniciando por los mapeos constantes e identidad en \(I \to I\)
 \begin{equation} \label{eq:def-auxiliar-grupoide}
   \begin{matrix}
@@ -88,10 +88,11 @@ Iniciando por los mapeos constantes e identidad en \(I \to I\)
       i(t)   &\coloneqq &1 - t
    \end{matrix}
 \end{equation}
-Ademas, para todo arco \(f : I \to X \), el elemento \(f^{-1} : I \to X \) esta
-definido (en el espiritu de la ecuacion \eqref{eq:homotopy-simetry}) por
-\[ f^{-1} (s) \coloneqq f (1 - s) \]
-El cual, si \(f\) es un arco de \(x_0 \to x_1\) entonces \(f^{-1}\) es
+Ademas, para todo arco \(f : I \to X \), el elemento \(\overline{f} : I
+\to X \) esta definido (en el espiritu de la ecuacion
+\eqref{eq:homotopy-simetry}) por
+\[ \overline{f} (s) \coloneqq f (1 - s) \]
+El cual, si \(f\) es un arco de \(x_0 \to x_1\) entonces \(\overline{f}\) es
 un arco de \(x_1 \to x_0\). Por ultimo, para todo \(x \in X \) se define
 la curva constante
 \begin{align*}
@@ -185,8 +186,9 @@ por la homotopía de linea recta en el espacio \(I\) que es convexo.
 Utilizando el lema \ref{lema:dist-composición-producto} de
 \emph{distributividad del composición sobre el producto}, tenemos las
 siguientes igualdades
-\[ [f * f^{-1}] = [f \circ (i * \bar{i})] = [f \circ e_0] = [k_{x_0}] \]
-\[ \implies [f] * [f^{-1}] = [k_{x_0}] \]
+\[ [f * \overline{f}] = [f \circ (i * \bar{i})] = [f \circ e_0] =
+  [k_{x_0}] \]
+\[ \implies [f] * [\overline{f}] = [k_{x_0}] \]
 De manera análoga se prueba la inversa por la izquierda.
 
 \subparagraph{1. Asociatividad:}

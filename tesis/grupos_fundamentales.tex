@@ -3,7 +3,7 @@ Hemos de caracterizar diferentes espacios topológicos definiendo una
 nueva propiedad llamada ``grupo fundamental''. Esta sera una invariante
 del espacio bajo morfismos adecuados (a discutir mas adelante). Por
 mientras hemos de enfocarnos que esta propiedad dependerá de la noción
-de arcos admisibles en un espacio topológico. A continuacion,
+de arcos admisibles en un espacio topológico. A continuación,
 definiremos estos conceptos a adecuadamente.
 
 {
@@ -108,9 +108,9 @@ espacio \(\forall a,b \in X\), con \(X\) un espacio topológico a
 estudiar, existe un camino \(\alpha : I \to X\) tal que \(\alpha (0) =
 a,\ \alpha (1) = b\). Si nuestro espacio \(X\) no fuera arco-conexo,
 caemos en la disyuntiva de elegir un punto apropiado que represente
-``suficientemente'' al espacio, en la definicion de su grupo
-fundamental. Dada que la motivacion de definir en primer lugar el grupo
-fundamental provenia de establecer una \emph{invariante} topologica,
+``suficientemente'' al espacio, en la definición de su grupo
+fundamental. Dada que la motivación de definir en primer lugar el grupo
+fundamental provenía de establecer una \emph{invariante} topológica,
 hace dudar que la parametrizacion en cuanto a punto base del grupo
 fundamental indique que procedemos por buen camino
 %todo(slack): buscar papers de grupo fundamental de conjuntos conexos y
@@ -120,14 +120,14 @@ Aun en espacios arco-conexos seguimos declarando el punto base con
 respecto al cual derivamos su grupo fundamental. Para ver con mas
 claridad el por que, primero debemos probar que en efecto, en espacios
 arco-conexos el grupo fundamental no depende del punto de partida. En
-este resultado, nos sera muy util el concepto de conjugacion de un
+este resultado, nos sera muy útil el concepto de conjugación de un
 camino.
 \begin{definicion}[Conjugado de un camino] \label{def:conjugada}
   Sea \(\alpha : I \to X\) un camino en \(X\) tal que \(\alpha (0) =
-  x_0,\ \alpha(1) = x_1\). La funcion definida por
+  x_0,\ \alpha(1) = x_1\). La función definida por
   \begin{align*}
     \hat \alpha : \pi (X, x_0) &\longrightarrow \pi (X, x_1) \\
-    [g] &\longmapsto [ \alpha^{-1} * g * \alpha ]
+    [g] &\longmapsto [ \overline{\alpha} * g * \alpha ]
   \end{align*}
   es llamada la conjugada de \(\alpha\).
 \end{definicion}
@@ -139,43 +139,44 @@ camino.
 \begin{proof}
   Por ser \(X\) arco-conexo, existe \(\alpha : I \to X\) camino
   continuo, tal que \(\alpha (0) = x_0,\ \alpha (1) = x_1\). Se define
-  la funcion conjugada de \(\alpha\) por \(\hat \alpha\).
-  Esta funcion, esta bien definida puesto que \(\forall g \in \pi (X,
-  x_0),\ \alpha^{-1} * g * \alpha \) es continua (en virtud de \(*\)).
-  Por definicion y reduccion se tiene
-  \[ \alpha^{-1} (t) = \alpha (1 - t)\]
-  \[\big(\alpha^{-1} * g * \alpha \big) (0) = \alpha (1 - 0) = x_1 = \alpha (1) =
-    \big(\alpha^{-1} * g * \alpha \big) (1)\]
+  la función conjugada de \(\alpha\) por \(\hat \alpha\).
+  Esta función, esta bien definida puesto que \(\forall g \in \pi (X,
+  x_0),\ \overline{\alpha} * g * \alpha \) es continua (en virtud de \(*\)).
+  Por definición y reducción se tiene
+  \[ \overline{\alpha} (t) = \alpha (1 - t)\]
+  \[\big(\overline{\alpha} * g * \alpha \big) (0) = \alpha (1 - 0) = x_1
+    = \alpha (1) = \big(\overline{\alpha} * g * \alpha \big) (1)\]
 
   \paragraph{\(\hat \alpha\) es homomorfismo:} Se procede por
-  definicion. Por un lado, al mapear la identidad de \(k_{x_0} \in \pi
+  definición. Por un lado, al mapear la identidad de \(k_{x_0} \in \pi
   (X, x_0) \), tenemos por simple calculo las siguientes igualdades
   \begin{align*}
     \hat \alpha ([k_{x_0}])
-                 &= [\alpha^{-1} * k_{x_0} * \alpha] \\
-                 &= [\alpha^{-1}] * [k_{x_0} * \alpha] \\
-                 &= [\alpha^{-1}] * [\alpha] \\
-                 &= [\alpha^{-1} * \alpha] \\
+                 &= [\overline{\alpha} * k_{x_0} * \alpha] \\
+                 &= [\overline{\alpha}] * [k_{x_0} * \alpha] \\
+                 &= [\overline{\alpha}] * [\alpha] \\
+                 &= [\overline{\alpha} * \alpha] \\
                  &= [k_{x_1}] \\
   \end{align*}
   Por otro lado, si \(u,v \in \pi (X, x_0) \), tenemos la siguiente
-  reduccion del producto
+  reducción del producto
   \begin{align*}
-    \hat \alpha ([u] * [v]) &= [\alpha^{-1} * u * v * \alpha] \\
-    &= [\alpha^{-1} * u * k_{x_0} * v * \alpha] \\
-    &= [\alpha^{-1} * u * \alpha * \alpha^{-1} * v * \alpha] \\
-    &= [\alpha^{-1} * u * \alpha ] * [ \alpha^{-1} * v * \alpha] \\
-    &= \hat \alpha (u) * \hat \alpha (v) \\
+    \hat \alpha ([u] * [v]) &= [\overline{\alpha} * u * v * \alpha] \\
+    &= [\overline{\alpha} * u * k_{x_0} * v * \alpha] \\
+    &= [\overline{\alpha} * u * \alpha * \overline{\alpha} * v * \alpha] \\
+    &= [\overline{\alpha} * u * \alpha ] * [ \overline{\alpha} * v * \alpha] \\
+    &= \hat \alpha (u) * \hat \alpha (v)
   \end{align*}
 
   \paragraph{\(\hat \alpha\) es inyectiva y sobreyectiva.} La inyectividad es
   clara, pues si \([u],[v] \in \pi (X, x_0),\ [u] \not \simeq [v]
-  \implies [\alpha^{-1}] * [u] * [\alpha] \not \simeq [\alpha^{-1}] * [v]
+  \implies [\overline{\alpha}] * [u] * [\alpha] \not \simeq
+    [\overline{\alpha}] * [v]
   * [\alpha]\). Para ver la sobreyectividad, notemos que \(\forall [k] \in
-  \pi (X, x_1) \), siempre existe \( [\alpha * k * \alpha^{-1}]\) tal
+  \pi (X, x_1) \), siempre existe \( [\alpha * k * \overline{\alpha}]\) tal
   que
-  \[ \hat \alpha ([\alpha * k * \alpha^{-1}]) = [\alpha^{-1} * \alpha * k *
-    \alpha^{-1} * \alpha] = [k]\]
+  \[ \hat \alpha ([\alpha * k * \overline{\alpha}]) = [\overline{\alpha}
+    * \alpha * k * \overline{\alpha} * \alpha] = [k]\]
   Por tanto \(\hat \alpha\) es un isomorfismo de grupos.
 \end{proof}
 En la prueba anterior, la existencia del camino \(\alpha\)
@@ -189,29 +190,33 @@ caracterización de \(\pi (X, x_0) \) como grupo \emph{Abeliano}, que depende de
 la cantidad de estos isomorfismos.
 \begin{teorema}
   Sean \(x_0, x_1 \in X\) puntos en un espacio arco-conexo. El grupo
-  \(\pi (X, x_0) \) es abeliano si y solo si \(\forall \alpha, \beta\)
+  \(\pi (X, x_0) \) es Abeliano si y solo si \(\forall \alpha, \beta\)
   caminos (distintos) entre \(x_0\) y \(x_1\), se cumple que \(\hat \alpha \equiv
   \hat \beta\), con \(\hat \alpha, \hat \beta\) los conjugados de los
   caminos respectivos.
 \end{teorema}
 \begin{proof}
   Primero, dado que \(\pi (X, x_0)\) es
-  abeliano, esto significa que \(\forall [f],[g] \in \pi (X, x_0),\ [f]
+  Abeliano, esto significa que \(\forall [f],[g] \in \pi (X, x_0),\ [f]
   * [g] = [g] * [f]\). Sean \(\alpha, \beta\) caminos entre \(x_0,x_1\)
   fijos pero arbitrarios. Para mostrar que \( \hat \alpha = \hat \beta\),
   debemos mostrar que para todo argumento estas funciones coinciden. Sea
   \([f] \in \pi (X, x_0) \) un argumento fijo pero arbitrario. Dado que
-  \(\alpha * \beta^{-1} * \beta \simeq \alpha \), se tiene que
-  \( \hat \alpha = \widehat{(\alpha * \beta^{-1} * \beta)}\), luego por definición
-  se cumplen la siguientes reducciones
-  \[ \hat \alpha ([f]) = \widehat{(\alpha * \beta^{-1} * \beta)} ([f]) =
-    [\beta^{-1}] * [\beta * \alpha^{-1}] * [f] * [\alpha * \beta^{-1}]
-    * [\beta] \]
-  Donde \([\alpha * \beta^{-1}] \in \pi (X, x_0) \), por lo tanto podemos
-  aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la
+  \(\alpha * \overline{\beta} * \beta \simeq \alpha \), se tiene que
+  \[ \hat \alpha = \widehat{(\alpha * \overline{\beta} * \beta)}\]
+  Luego por definición se cumplen la siguientes reducciones
+  \[ \hat \alpha ([f]) = \widehat{(\alpha * \overline{\beta} * \beta)} ([f]) =
+    [\overline{\beta}] * [\beta * \overline{\alpha}] * [f] * [\alpha *
+    \overline{\beta}] * [\beta]
+  \]
+  Donde \([\alpha * \overline{\beta}] \in \pi (X, x_0) \), por lo tanto
+  podemos aplicar conmutatividad con \([f] \in \pi (X,x_0)\) obteniendo la
   siguiente expresión
-  \[ [\beta^{-1}] * [\beta * \alpha^{-1}] * [\alpha * \beta^{-1}] * [f]
-    * [\beta] = [\beta^{-1}] * [f] * [\beta] = \hat \beta ([f]) \]
+  \[
+    [\overline{\beta}] * [\beta * \overline{\alpha}] * [\alpha *
+    \overline{\beta}] * [f] * [\beta] = [\overline{\beta}] * [f] * [\beta] =
+    \hat \beta ([f])
+  \]
   probando así lo buscado.
 
   En el converso, sean \([f],[g] \in \pi (X, x_0) \) fijos pero
@@ -221,11 +226,13 @@ la cantidad de estos isomorfismos.
   la relación
   \begin{align*}
     \widehat{\left( f * \alpha \right)} ([g]) &= \hat{\alpha} ([g]) \\
-    [(f * \alpha)^{-1} * g * (f * \alpha) ] &= [\alpha^{-1} * g * \alpha] \\
-    [\alpha^{-1} * f^{-1} * g * f * \alpha ] &= [\alpha^{-1} * g * \alpha] \\
-    [\alpha^{-1}] * [f^{-1}] * [g] * [f] * [\alpha] &= [\alpha^{-1}] *
-        [g] * [\alpha] \\
-    [f^{-1}] * [g] * [f] &= [g] \\
+    [\overline{(f * \alpha)} * g * (f * \alpha) ] &= [\overline{\alpha}
+      * g * \alpha] \\
+    [\overline{\alpha} * \overline{f} * g * f * \alpha ] &=
+      [\overline{\alpha} * g * \alpha] \\
+    [\overline{\alpha}] * [\overline{f}] * [g] * [f] * [\alpha] &=
+      [\overline{\alpha}] * [g] * [\alpha] \\
+    [\overline{f}] * [g] * [f] &= [g] \\
     [g] * [f] &= [f] * [g], \qquad \forall [f],[g] \in \pi (X, x_0) \\
   \end{align*}
 
@@ -260,7 +267,7 @@ entre \((X, x_0)\) y \((Y, y_0)\) entonces existirá un isomorfismo de
 grupos
 \[ h_{*} : \pi (X, x_0) \longrightarrow \pi (Y, y_0) \]
 entre \(\pi (X, x_0)\) y \(\pi (Y, y_0)\). Existe una manera natural de
-construir dicho isomoformismo mediante la definición de cierto
+construir dicho isomorfismo mediante la definición de cierto
 homomorfismo, al cual mostraremos a continuación
 \begin{definicion}[Homomorfismo inducido] \label{def:homomorfismo-inducido}
   Sea \(h : (X, x_0) \longrightarrow (Y, y_0)\) un morfismo de
@@ -273,7 +280,7 @@ homomorfismo, al cual mostraremos a continuación
   x_0)\) y \(\pi (Y, y_0)\).
 \end{definicion}
 \begin{teorema} \label{thm:morfismo-homomorfismo}
-  Para \(h : (X, x_0) \to (Y, y_0)\) un morfimos entre espacios
+  Para \(h : (X, x_0) \to (Y, y_0)\) un morfismo entre espacios
   puntuados, \(h_* : \pi (X, x_0) \to \pi (Y, y_0)\) es un homomorfismo
 \end{teorema}
 \begin{proof}
@@ -332,7 +339,7 @@ estas.
       sentido de teoría de conjuntos Neumann–Bernays–Gödel} de objetos.
     \item \(\mathbf {Mor}\) corresponde a una clase de morfismos entre
       elementos de \(\mathbf {Obj}\), tal que para todo \(A \in
-      \mathbf {Obj}\) existe un unico morfismo identidad \( \mathcal i
+      \mathbf {Obj}\) existe un único morfismo identidad \( \mathcal i
       _A : A \to A, \ i_A \in \mathbf{Obj}\).
     \item \((\circ)\) es una operación composición entre morfismos
       asociativa .
@@ -341,7 +348,7 @@ estas.
 \begin{definicion}
   Sean \(\left( \mathscr{C} , (\circ) \right), \left(\mathscr D ,
   (\star) \right) \) dos categorías con sus respectivos operadores
-  composicion. Un functor \(F : \mathscr C \to \mathscr D\) es un mapeo
+  composición. Un functor \(F : \mathscr C \to \mathscr D\) es un mapeo
   tal que cumple las siguientes propiedades
   \begin{itemize}
   \item \(\forall X \in \mathbf{Obj}(\mathscr C),\ F(X) \in \mathbf{Obj} (\mathscr D)\)
@@ -351,7 +358,7 @@ estas.
     \[ F(f) : F(X) \to F(Y),\ F(f) \in \mathbf{Mor}
       (\mathcal D) \]
     Mas aun, el morfismo identidad \(i_A\) para \(A \in
-    \mathbf{Obj} (\mathcal C)\) debe cumplir la ecuacion \(F (i_A) =
+    \mathbf{Obj} (\mathcal C)\) debe cumplir la ecuación \(F (i_A) =
     i_{F(A)}\)
   \item Si \(f,g \in \mathbf{Mor}(\mathcal C)\) son morfismos tales que
     \(f \circ g \in \mathbf{Mor} (\mathcal C)\), entonces
@@ -365,10 +372,10 @@ morfismos en la categoría de llegada. Nosotros hemos ya construido
 nuestro primer functor, donde nuestras categorías inicial y de llegada son
 \[ \mathcal C = \mathscr{Top}_* ,  \quad \mathcal D
   = \mathscr{Grp} \]
-con \(\mathcal {Top}_*\) la categoria con objetos espacios topologicos
+con \(\mathcal {Top}_*\) la categoría con objetos espacios topológicos
 puntuados con morfismos funciones continuas entre ellos (mapeando punto de
-origines) y \(\mathscr{Grp}\) la categoría de grupos con homomorfismo entre
-grupos con composicion usual. Para especificar formalmente nuestro
+orígenes) y \(\mathscr{Grp}\) la categoría de grupos con homomorfismo entre
+grupos con composición usual. Para especificar formalmente nuestro
 functor \(F\), debemos especificar tanto el mapeo de los elementos como
 el de los morfismos. Estos están dados por las siguientes ecuaciones
 \begin{align*}
@@ -378,10 +385,10 @@ el de los morfismos. Estos están dados por las siguientes ecuaciones
   \forall f \in \mathbf{Mor} \left( \mathscr{Top}_* \right),\ &F(f) \coloneqq
     f_*
 \end{align*}
-Los morfimos \(f\) de \(\mathscr{Top}_*\) cumplen por teorema
+Los morfismos \(f\) de \(\mathscr{Top}_*\) cumplen por teorema
 \ref{thm:morfismo-homomorfismo} que \(f_*\) es un homomorfismo. Viendo
-especificamente los homeomorfismos de \(\mathscr{Top}_*\),
+específicamente los homeomorfismos de \(\mathscr{Top}_*\),
 el teorema \ref{thm:homoemorfismo-isomorfismo} nos dice que en la
-categoria de llegada estos son isomorfismos de grupos. Es decir este
+categoría de llegada estos son isomorfismos de grupos. Es decir este
 functor preserva isomorfismos.
 }

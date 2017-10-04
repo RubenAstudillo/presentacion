@@ -292,7 +292,7 @@ el siguiente lema técnico.
 \begin{proof}
   Hemos de probar que \(\forall [f] \in \pi (X, x_0)\) se cumple que
   \[ k_* ([f]) = \hat \alpha \circ h_* ([f]) \]
-  \[ [k \circ f] = [ \alpha^{-1} ] *  [h \circ f] * [\alpha] \]
+  \[ [k \circ f] = [ \overline{\alpha} ] *  [h \circ f] * [\alpha] \]
   \[ [ \alpha ] * [k \circ f] =  [h \circ f] * [\alpha] \]
   Es decir, hemos de construir una homotopía entre estos dos
   representantes de clase. Sea \(H : X \times I \to Y\) la homotopía
@@ -337,17 +337,18 @@ grupos fundamentales.
   que es inyectiva, supongamos que tomamos \([f],[g] \in \pi (Y, y_0),\
   [f] \neq [g]\) tal que se cumple \(\hat \alpha ([f]) = \hat \alpha
   ([g])\). Esto implicaría por reducción que
-  \[ [\alpha^{-1}] * [f] * [\alpha] = [\alpha^{-1}] * [g] * [\alpha] \]
+  \[ [\overline{\alpha}] * [f] * [\alpha] = [\overline{\alpha}] * [g] *
+    [\alpha] \]
   \[ [f] * [\alpha] = [g] * [\alpha] \]
   \[ [f] = [g] \]
   Lo cual es una contradicción
 
   Para ver la sobreyectividad, para todo elemento \([h]
-  \in \pi (Y,y_0)\) existe \( [\alpha] * [h] * [\alpha^{-1}] \in \pi
-  (Y,y_0)\) tal que
-  \[ \hat \alpha ([\alpha] * [h] * [\alpha^{-1}]) = [h]\]
+  \in \pi (Y,y_0)\) existe \( [\alpha] * [h] * [\overline{\alpha}] \in
+  \pi (Y,y_0)\) tal que
+  \[ \hat \alpha ([\alpha] * [h] * [\overline{\alpha}]) = [h]\]
 \end{proof}
-Con esto es mente, es fácil ver que se tiene el siguiente corolario
+Con esto en mente, es fácil ver que se tiene el siguiente corolario
 \begin{corolario}
   Sean \(h,k : X \to Y\) dos funciones relacionadas homotopicamente
   tales que \(h (x_0) = y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva
@@ -383,7 +384,7 @@ donde \(f(x_0) = y_0\). Ahora podemos proceder con la demostracion.
   los diferentes puntos bases se tienen dos homomorfismos inducidos de
   \(f\) con distintos puntos relativos
   \[(f_{x_0})_* : \pi (X, x_0) \to \pi (Y, y_0)\]
-  \[(f_{x_1})_* : \pi (X, x_1) \to \pi (Y, y_1)\].
+  \[(f_{x_1})_* : \pi (X, x_1) \to \pi (Y, y_1)\]
   Además fijaremos que la identificación de \(g_*\) corresponda a
   \[ g_* : \pi (Y, y_0) \to (X, x_1) \]
 
@@ -434,15 +435,17 @@ Con estos resultados podemos ver el siguiente ejemplo
   : M \to M\). Definamos la homotopía
   \[ F : M \times I \to M \]
   \[ ([(x,y)], t) \mapsto [(x, \frac t 2 + (1-t) y)] \]
-  La cual es claramente continua y cumple que \( F(.,0) = Id,\ F(.,1) =
-  j \circ r\). Luego por teoremas anterior, el grupo fundamental de
+  La cual es claramente continua y cumple que
+  \[ x \to F(x,0) \equiv Id,\quad x \to F(x,1) \equiv j \circ r\]
+  Luego por teoremas anterior, el grupo fundamental de
   \(M\) es igual al de \(D\).
 
   La pregunta ahora es ver quien es el grupo fundamental de \(D\).
   Podemos ver que este conjunto es una recta con los dos extremos
   identificados, lo cual luce similar a \(S^1\). Estos espacios son
-  homeomorfos mediantes la aplicacion \[[(x, 1/2)] \mapsto \exp (2 \pi
-  x)\], mostrando asi el resultado deseado.
+  homeomorfos mediantes la aplicacion
+  \[[(x, 1/2)] \mapsto \exp (2 \pi x)\]
+  mostrando asi el resultado deseado.
 \end{proof}
 
 \subsection{La categoria \(\mathscr{HoTop}_*\)}
@@ -455,13 +458,13 @@ Con estos resultados podemos ver el siguiente ejemplo
   \item \(\mathbf {Mor}\) corresponde a un conjunto
     \[ \mathbf{Mor} = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\
       (X,x_0),(Y,y_0) \in \mathbf {Obj} \}\]
-    de clases equivalencias homotopicas entre funciones continuas
+    de clases equivalencias homotopicas entre funciones continuas.
   \item \((\hat \circ)\) corresponde a la composición de clases de
     equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
     \[ f : (X,x_0) \to (Y, y_0)\]
     \[ g : (Y, y_0) \to (Z, z_0)\]
-    entonces \([g] \hat \circ [f] := [ g \circ f ] \) es una clase de
-    equivalencia de funciones \((X, x_0) \to (Z, z_0)\)
+    entonces \([g] \, \hat \circ \, [f] := [ g \circ f ] \) es una clase
+    de equivalencia de funciones \((X, x_0) \to (Z, z_0)\).
   \end{itemize}
 \end{definicion}
 Esta categoría tiene los mismos objetos que \(\mathscr{Top}_*\), pero es
@@ -479,25 +482,26 @@ pues esta preserva la composicion de categoria de origen en la de
 llegada. Ya que por definicion \(\forall f,g \in \mathbf {Mor}
 (\mathscr{Top}_*)\) tal que \(f \circ g \in \mathbf {Mor}
 (\mathscr{Top}_*)\)
-\[ F(f \circ g) = [f \circ g] = [f] * [g] = F(f) * F(g) \]
+\[ F(f \circ g) = [f \circ g] = [f] \, \hat \circ \, [g] = F(f) \, \hat
+\circ \, F(g) \]
 
-En \(\mathscr{Top}_*\), todos los morfismos era homeomorfismos. Esto nos
-daba una categoría donde estaban claramente delimitados los espacios
-topológicos que tendrían el mismo grupo fundamental. Pero era posible
-que hubieran dos familias de objetos disjuntas en \(\mathscr{Top}_*\)
-que tuvieran el mismo grupo fundamental. En \(\mathscr{HoTop}_*\) los
-espacios homeomorfos tienen trivialmente un par de equivalencias
-homotópicas, pero hay estrictamente mas morfismos en esta categoría,
-pues como vimos en el ejemplo \ref{ex:mobius}, a pesar de la banda de
-Mobius y \(S^1\) no son homeomorfos (de hecho la banda de Mobius es
-homeomorfa a un cociente de \(S^1 \times [-1, 1]\)) poseen el mismo
-grupo fundamental. Por tanto las familias de objetos disjuntas con el
-mismo grupo fundamental son mas raras en \(\mathscr{HoTop}_*\).
+En \(\mathscr{Top}_*\) al tomar los morfismos era homeomorfismos,
+estaban claramente delimitados los espacios topológicos que tendrían el
+mismo grupo fundamental. Pero era posible que hubieran dos familias de
+objetos disjuntas en \(\mathscr{Top}_*\) que tuvieran el mismo grupo
+fundamental. En \(\mathscr{HoTop}_*\) los espacios homeomorfos tienen
+trivialmente un par de equivalencias homotópicas, pero hay estrictamente
+menos familias disjuntas en esta categoría, pues como vimos en el
+ejemplo \ref{ex:mobius}, a pesar de la banda de Mobius y \(S^1\) no son
+homeomorfos (de hecho la banda de Mobius es homeomorfa a un cociente de
+\(S^1 \times [-1, 1]\)) poseen el mismo grupo fundamental. Por tanto las
+familias de objetos disjuntas con el mismo grupo fundamental son mas
+raras en \(\mathscr{HoTop}_*\).
 
-La estructura categórica nos ayudara a deducir grupos fundamentales de
-espacios complejos en base a espacios mas simples. Una de las
-herramientas para esto sera el estudio de los productos y co-productos
-categóricos.
+Ahora nos enfocaremos en la estructura categórica, pues esta nos ayudara
+a visualizar grupos fundamentales de espacios complejos en base a
+espacios mas simples. Una de las herramientas para esto sera el estudio
+de los productos y co-productos categóricos.
 
 \begin{definicion}[Producto]
   Sea \(P , X , Y \in \mathbf {Obj}\) objetos arbitrarios de un categoría
@@ -509,6 +513,14 @@ categóricos.
   \[ f = \pi_x \circ \theta, \quad g = \pi_y \circ \theta \]
   entonces \(P\) es un producto de \(X\) e \(Y\).
 \end{definicion}
+\begin{acotacion}
+  La propiedad que debe cumplir el producto \(P\) sobre cualquier otro
+  objeto \(M\) que tenga morfismos \(f,g\) como en la definicion es
+  conocida como una propiedad universal. En general una propiedad
+  universal de un objeto \(X\) es un predicado que cualquier otro objeto
+  con ciertos morfismos debe cumplir respecto de \(X\), usualmente
+  haciendo conmutar algun diagrama.
+\end{acotacion}
 Análogamente, un co-producto es un producto con todas las ``flechas'' en
 sentido opuesto.
 \begin{definicion}[Coproducto] \label{def:coproducto}
@@ -551,8 +563,8 @@ universales.
 
 La presencia de estas operaciones, vuelven a la categoría
 \(\mathscr{HoTop}_*\) cartesiana y co-cartesiana. Mas aun, podemos
-construir equivalencias homotopicas para \(X \times Y,\ X \vee Y\)
-siempre y cuando conozcamos equivalencias para \(X\) e \(Y\) mediante
+construir inclusiones homotópicas para \(X \times Y,\ X \vee Y\)
+siempre y cuando conozcamos las homotopías de \(X\) e \(Y\) mediante
 las propiedades universales del (co)-producto.
 
 \begin{teorema} \label{thm:prop-prod}
@@ -578,7 +590,7 @@ entre \(f_0 , f_1\) y sea \(G : (A,a_0) \times I \to (Y,y_0)\)
 correspondientemente con \(g_0, g_1\), entonces la homotopía
 \begin{align*}
   FG : (A,a_0) \times I &\to \left( X \times Y , (x_0, y_0) \right) \\
-       (a, t) &\mapsto (F(x,t) , G(x,t))
+       (a, t) &\mapsto (F(a,t) , G(a,t))
 \end{align*}
 Es una homotopía entre \((f_0 , g_0)\) y \((f_1 , g_1)\).
 
@@ -604,9 +616,47 @@ propiedades de homotopías
 obteniendo así el resultado deseado.
 \end{proof}
 
-El teorema anterior nos una forma trivial de conocer grupos
-fundamentales si los espacios a estudiar pueden reducirse a una
-estructura producto o co-producto. Un ejemplo sencillo es el siguiente:
+Podemos caracterizar mas aun en el caso del producto cartesiano pues
+tenemos la siguiente propiedad functorial.
+
+\begin{teorema}
+  Sean \((X, x_0), (Y,y_0)\) dos espacios topologicos puntuados. El
+  functor \(\pi\) cumple la siguiente ecuacion
+  \[ \pi (X, x_0) \times \pi (Y, y_0) \cong \pi (X \times Y, (x_0, y_0)) \]
+\end{teorema}
+\begin{proof}
+  Notemos las operaciones de grupos en los distintos casos. En \(\pi(X,
+  x_0) \times \pi (Y, y_0)\) la operación de grupo (\(\star\)) cumple la
+  siguiente ecuación
+  \[ ([a_1],[b_1]) \star ([a_2], [b_2]) = ([a_1] * [a_2] , [b_1] *
+    [b_2]) \]
+  Para \(\pi (X \times Y , (x_0, y_0))\) es una generalización de
+  \((*)\) donde abusando de la notación con \((*)\) esta corresponde a
+  la siguiente
+  \[ [(a_1, b_1)] * [(a_2, b_2)] = [(a_1 * b_1 , a_2 * b_2)] \]
+  Con esto en mente procedemos a la demostración.
+
+  Consideremos la siguiente función
+  \begin{align*}
+    \mathcal L : \pi (X \times Y , (x_0, y_0)) &\longrightarrow \pi (X,
+        x_0) \times \pi (Y, y_0) \\
+    [(\gamma, \delta)] &\longmapsto ([\gamma], [\delta])
+  \end{align*}
+  Este es claramente inyectivo y sobreyectivo. Para probar que es un
+  isomorfismo de grupo solo basta probar que es un homomorfismo. Sea
+  \([(\gamma_1, \delta_1)], [(\gamma_2, \delta_2)] \in \pi (X \times Y ,
+  (x_0, y_0))\) dos elementos arbitrarios. Por simple calculo se tiene
+  las siguiente ecuaciones
+  \begin{align*}
+    \mathcal L &\left( [(\gamma_1, \delta_1)] * [(\gamma_2, \delta_2)] \right) \\
+    &= \mathcal L \left( [(\gamma_1 * \gamma_2 , \delta_1 * \delta_2)] \right) \\
+    &= ([\gamma_1 * \gamma_2] , [\delta_1 * \delta_2]) \\
+    &= ([\gamma_1] , [\delta_1]) \star ([\gamma_2] , [\delta_2]) \\
+    &= \mathcal L [(\gamma_1 , \delta_1)] \star \mathcal L [(\gamma_2 ,
+      \delta_2)]
+  \end{align*}
+  obteniendo así que \(\mathcal L\) es un isomorfismo.
+\end{proof}
 
 \begin{ejemplo}[Toro] \label{ej:toro-presentacion}
   Una presentacion del torus \(T\) es como espacio cuociente de
@@ -628,7 +678,7 @@ estructura producto o co-producto. Un ejemplo sencillo es el siguiente:
   la cual es biyectiva, continua y independiente respecto al
   representante de clase de los elementos identificados del toro. Luego
   pensamos en el toro como el espacio producto \(S^1 \times S^1\). Por
-  el teorema \ref{thm:prop-prod}
+  el Teorema \ref{thm:prop-prod} y el párrafo anterior
   \[
     \pi \left( T \right) = \pi \left( S^1 \times S^1 \right) = \pi (S^1)
     \times \pi (S^1)
@@ -637,7 +687,17 @@ estructura producto o co-producto. Un ejemplo sencillo es el siguiente:
   arco-conexo.
 \end{ejemplo}
 
-Pero aparte de este sencillo ejemplo, nos gustaría conocer teoremas mas
-generales que nos respeten la estructura del (co)-producto para
-simplificar cálculos de grupos fundamentales, esto sera el enfoque de la
-siguiente sección.
+%TODO: caso vank
+Para el caso del co-producto también existe una caracterización respecto
+al functor dado por el grupo fundamental. La demostración no es tan
+sencilla como en el caso del producto. Esta se obtiene como una consecuencia
+del teorema \vank y se formula en el Corolario \ref{cor:vank-trivial} de
+la sección \ref{sec:vank}.
+
+En la siguiente sección estudiaremos teoremas que nos permitan calcular
+distintos grupos fundamentales. Se presentara la idea de que distintos
+resultados para el calculo de grupos fundamentales corresponden a
+caracterizar al functor \(\pi\) respecto a distintas estructuras
+categóricas. Esto resaltara el papel del lenguaje de categorías para
+poder sintetizar los resultados importantes de distintas áreas en un
+marco común.

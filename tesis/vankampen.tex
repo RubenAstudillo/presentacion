@@ -1,4 +1,4 @@
-\subsection{Teorema de \vank}
+\subsection{Teorema de \vank} \label{sec:vank}
 Este teorema es considerado como el mas útil a la hora de hacer
 identificaciones de grupos fundamentales. Su idea se basa en que si
 tenemos un espacio \(X\) y dos subconjuntos \(U,V\) tales que \(X = U
@@ -10,7 +10,7 @@ en donde este cociente sera trivial. En casos mas generales se vera que
 el cociente es de una forma relacionada con la definición de producto
 libre. Procedemos para iniciar la definición de estos conceptos.
 
-\begin{definicion}[Producto libre]
+\begin{definicion}[Producto libre] \label{def:prod-libre}
   Sea \(G_\alpha\) una colección de grupos. El grupo libre \(*_\alpha
   G_\alpha \) consiste como conjunto en todas las cadenas reducidas
   \[ g_1 g_2 g_3 \dots g_m \]
@@ -27,8 +27,8 @@ libre. Procedemos para iniciar la definición de estos conceptos.
 \begin{acotacion}
   Es claro que la cadena vacía es la identidad. Para ver la inversa de
   una cadena nos basamos en el proceso de reducción. Sea \(g_1 g_2 \dots
-  g_m\) una cadena arbitraria, su inversa corresponde a \(g_m^{-1} g_{m-1}^{-1}
-  \dots g_1^{-1}\) pues
+  g_m\) una cadena arbitraria, su inversa corresponde a \(g_m^{-1}
+  g_{m-1}^{-1} \dots g_1^{-1}\) pues
   \begin{gather*}
     g_1 g_2 \dots g_{m-1} \underbrace{g_m g_m^{-1}}_{= e_{\alpha_m}}
       g_{m-1}^{-1} \dots g_1^{-1} \\
@@ -201,7 +201,7 @@ intuitiva y aparece como paso intermedio de la demostración general.
   \[ \alpha_i (0) = x_0, \quad \alpha_i (1) = f(a_i) \]
   arcos continuos, fijando además \(\alpha_0 \equiv x_0 \equiv \alpha_n
   \). Estos nos permiten construir los arcos
-  \[ g_i = \alpha_{i-1} * f_i * \alpha_i^{-1} \]
+  \[ g_i = \alpha_{i-1} * f_i * \overline{\alpha_i} \]
   los cuales si están basados en \(x_0\), y cuya imagen sigue estando
   contenida en \(U\) o en \(V\). Por simple calculo se ve que
   \[ [g_1] * ... * [g_n] = [f_1] * ... * [f_n] = [f] \]
@@ -237,9 +237,9 @@ utilizaremos en su forma generalizada para probar el teorema general.
   \cap A_\gamma\) con \( \alpha, \beta, \gamma \in \tau\) es arco-conexa,
   entonces el kernel de \(\Phi\) es un subgrupo normal \(N\) de la forma
   \[
-    N := N \left( \{ i_{\alpha \beta} (\omega) i_{\beta \alpha} (\omega)^{-1}
-    \mid \omega \in \pi \left( A_\alpha \cap A_\beta, x_0 \right),\
-    \forall \alpha ,\beta \in \tau \} \right)
+    N := N \left( \{ i_{\alpha \beta} (\omega) \overline{i_{\beta
+    \alpha} (\omega)} \mid \omega \in \pi \left( A_\alpha \cap A_\beta, x_0
+    \right),\ \forall \alpha ,\beta \in \tau \} \right)
   \]
   es decir el subgrupo normal generado por estos elementos y por tanto
   \(\Phi\) induce un isomorfismo \(\pi (X, x_0) \cong *_\alpha \pi
@@ -254,7 +254,7 @@ homomorfismos inducidos por la inclusión
 \end{gather*}
 que pierden su notación \(i_*\) por simplicidad. Notar que
 para \(\omega \in \pi (A_\alpha \cap A_\beta ,\ x_0)\) arbitrario
-\[ i_{\alpha \beta} (\omega) i_{\beta \alpha}^{-1} (\omega) \in N
+\[ i_{\alpha \beta} (\omega) \overline{i_{\beta \alpha} (\omega)} \in N
   \implies i_{\alpha \beta} (\omega) \cdot N = i_{\beta
 \alpha} (\omega) \cdot N \]
 con \(i_{\beta \alpha} (\omega) \cdot N\) un elemento de \(*_\alpha \pi
@@ -277,15 +277,18 @@ Por otro lado, véase que
 pues \(N\) es el menor subgrupo normal de \(*_\alpha A_\alpha\) y los
 elementos base de este pertenecen al kernel de \(\Phi\) pues estos son
 de la forma
-\[ i_{\alpha \beta} (\omega) \ i_{\beta \alpha}^{-1} (\omega) ,
+\[ i_{\alpha \beta} (\omega) \ \overline{i_{\beta \alpha} (\omega)} ,
   \ \text{con} \ \alpha,\beta \in \tau,\ \omega \in \pi(A_\alpha \cap
   A_\beta , x_0)\]
 y sabiendo como es \(\Phi\) como homomorfismo
 \begin{align*}
-  \Phi &\left( i_{\alpha \beta} (\omega) \ i_{\beta \alpha}^{-1} (\omega) \right) \\
-       &= j_{\alpha,*} \left(  i_{\alpha \beta} (\omega) \right) * j_{\beta,*} \left( i_{\beta \alpha}^{-1} (\omega) \right) \\
-       &= j_{\alpha,*} \left(  i_{\alpha \beta} (\omega) \right) * j_{\beta,*} \left( i_{\beta \alpha} (\omega) \right)^{-1} \\
-       &= w * w^{-1} = e
+  \Phi &\left( i_{\alpha \beta} (\omega) \ \overline{i_{\beta \alpha}
+          (\omega)} \right) \\
+       &= j_{\alpha,*} \left( i_{\alpha \beta} (\omega) \right) *
+         j_{\beta,*} \left( \overline{i_{\beta \alpha} (\omega)} \right) \\
+       &= j_{\alpha,*} \left( i_{\alpha \beta} (\omega) \right) *
+         \overline{j_{\beta,*} \left( i_{\beta \alpha} (\omega) \right)} \\
+       &= w * \overline{w} = e
 \end{align*}
 Con esto
 declarado, podemos proceder a la demostración.
@@ -328,8 +331,8 @@ declarado, podemos proceder a la demostración.
   (A_\alpha) / N\) pues si \([f_i] \in \pi (A_\alpha \cap A_\beta)\),
   entonces
   \begin{align*}
-    i_{\alpha \beta} \left( [f_i] \right) i_{\beta \alpha} \left( [f_i]
-    \right)^{-1} \in N \implies
+    i_{\alpha \beta} \left( [f_i] \right) \overline{i_{\beta \alpha}
+      \left( [f_i] \right)} \in N \implies
     &i_{\alpha \beta} \left( [f_i] \right) \cdot N = i_{\beta \alpha}
     \left( [f_i] \right) \cdot N \\
     \iff &[f_i]_{A_\alpha} \cdot N = [f_i]_{A_\beta} \cdot N
@@ -475,6 +478,9 @@ declarado, podemos proceder a la demostración.
   Si \(\bigcap_{\alpha \in \tau} A_\alpha \) tiene grupo fundamental
   trivial, entonces
   \[ *_\alpha \pi (A_\alpha , x_0) \simeq \pi (X, x_0) \]
+  En particular para una wedge-sum \((X \vee Y , {x_0 , y_0})\), dado
+  que los singletons tiene grupos fundamentales triviales, se afirma que
+  \[ \pi (X \vee Y , \{x_0, y_0\}) \cong \pi (X, x_0) * \pi (Y , y_0) \]
 \end{corolario}
 
 Este teorema es largo, pero sus consecuencias son poderosas.
@@ -502,9 +508,11 @@ tales que existan homomorfismo \(\phi_1 : X \to C\) y \(\phi_2 : X \to
 C\). Ya se había visto anteriormente como el producto libre \(X * Y\)
 admite una extensión (única) de los homomorfismos \(\phi_1, \phi_2\) a
 la cual denotaremos \(\Phi : X * Y \to C\), la cual debe cumplir con la
-igualdad pedida en \ref{def:coproducto}. Una consecuencia de \vank es
-que el functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\) preserva
-co-productos, como fue visto en el ejemplo anterior.
+igualdad pedida en la Definicion \ref{def:coproducto}. Una consecuencia
+de \vank es que el functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\)
+preserva co-productos, como fue visto en el ejemplo anterior. Esto
+completa la caracterizacion iniciada por el Teorema \ref{thm:prop-prod}
+de la relacion del grupo de wedge-sum con sus sumandos.
 
 \begin{ejemplo}[Botella de Klein]
   La botella de Klein \(K\) puede presentarse como un cociente en el
