@@ -562,8 +562,8 @@ universales.
 
 La presencia de estas operaciones, vuelven a la categoría
 \(\mathscr{HoTop}_*\) cartesiana y co-cartesiana. Mas aun, podemos
-construir equivalencias homotopicas para \(X \times Y,\ X \vee Y\)
-siempre y cuando conozcamos equivalencias para \(X\) e \(Y\) mediante
+construir inclusiones homotópicas para \(X \times Y,\ X \vee Y\)
+siempre y cuando conozcamos las homotopías de \(X\) e \(Y\) mediante
 las propiedades universales del (co)-producto.
 
 \begin{teorema} \label{thm:prop-prod}
@@ -615,9 +615,18 @@ propiedades de homotopías
 obteniendo así el resultado deseado.
 \end{proof}
 
-El teorema anterior nos una forma trivial de conocer grupos
-fundamentales si los espacios a estudiar pueden reducirse a una
-estructura producto o co-producto. Un ejemplo sencillo es el siguiente:
+Al aplicar lo al caso del producto cartesiano, nos esta diciendo que se
+tiene la siguiente relación
+\[ \pi (X, x_0) \times \pi (Y, y_0) < \pi (X \times Y, (x_0, y_0)) \]
+modulo inyección. En particular para el producto cartesiano podemos
+obtener la otra contención notando que en \(X \times Y\) con la
+topología producto, una función \(f\) es continua si y solo si existen
+funciones \(g,h\) continuas en \(X\) e \(Y\) respectivamente tales que
+\[ f(t) = \left( g(t) , h(t) \right) \]
+Tomando el caso particular cuando \(f\) es una homotopía se obtiene la
+existencia de homotopías \(g,h\), mostrando asi biyeccion entre \(\pi
+(X) \times \pi (Y) \) y \(\pi (X \times Y)\). Construir el homomorfismo
+desde lo anterior es trivial.
 
 \begin{ejemplo}[Toro] \label{ej:toro-presentacion}
   Una presentacion del torus \(T\) es como espacio cuociente de
@@ -639,7 +648,7 @@ estructura producto o co-producto. Un ejemplo sencillo es el siguiente:
   la cual es biyectiva, continua y independiente respecto al
   representante de clase de los elementos identificados del toro. Luego
   pensamos en el toro como el espacio producto \(S^1 \times S^1\). Por
-  el teorema \ref{thm:prop-prod}
+  el Teorema \ref{thm:prop-prod} y el párrafo anterior
   \[
     \pi \left( T \right) = \pi \left( S^1 \times S^1 \right) = \pi (S^1)
     \times \pi (S^1)
@@ -648,7 +657,14 @@ estructura producto o co-producto. Un ejemplo sencillo es el siguiente:
   arco-conexo.
 \end{ejemplo}
 
-Pero aparte de este sencillo ejemplo, nos gustaría conocer teoremas mas
-generales que nos respeten la estructura del (co)-producto para
-simplificar cálculos de grupos fundamentales, esto sera el enfoque de la
-siguiente sección.
+Para el caso del co-producto, caracterizar alguna inclusion desde el
+teorema anterior no resulta tan claro como la caracterizacion dada por
+el teorema de \vank el cual se estudiara en la seccion \ref{sec:vank}.
+Sin embargo lo anterior al menos implica las inclusiones
+\[ \pi (X) < \pi (X \vee Y),\ \pi (Y) < \pi (X \vee Y)\]
+diciéndonos que el grupo de \(\pi (X \vee Y)\) debe de ser compatible
+con cualquiera de los grupos que conformen su wedge sum.
+
+Nuestra meta ahora sera conocer teoremas mas generales que nos respeten
+la estructura del (co)-producto para simplificar cálculos de grupos
+fundamentales, lo cual sera el enfoque de la siguiente sección.
