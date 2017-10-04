@@ -616,18 +616,47 @@ propiedades de homotopías
 obteniendo así el resultado deseado.
 \end{proof}
 
-Al aplicar lo al caso del producto cartesiano, nos esta diciendo que se
-tiene la siguiente relación
-\[ \pi (X, x_0) \times \pi (Y, y_0) < \pi (X \times Y, (x_0, y_0)) \]
-modulo inyección. En particular para el producto cartesiano podemos
-obtener la otra contención notando que en \(X \times Y\) con la
-topología producto, una función \(f\) es continua si y solo si existen
-funciones \(g,h\) continuas en \(X\) e \(Y\) respectivamente tales que
-\[ f(t) = \left( g(t) , h(t) \right) \]
-Tomando el caso particular cuando \(f\) es una homotopía se obtiene la
-existencia de homotopías \(g,h\), mostrando asi biyeccion entre \(\pi
-(X) \times \pi (Y) \) y \(\pi (X \times Y)\). Construir el homomorfismo
-desde lo anterior es trivial.
+Podemos caracterizar mas aun en el caso del producto cartesiano pues
+tenemos la siguiente propiedad functorial.
+
+\begin{teorema}
+  Sean \((X, x_0), (Y,y_0)\) dos espacios topologicos puntuados. El
+  functor \(\pi\) cumple la siguiente ecuacion
+  \[ \pi (X, x_0) \times \pi (Y, y_0) \cong \pi (X \times Y, (x_0, y_0)) \]
+\end{teorema}
+\begin{proof}
+  Notemos las operaciones de grupos en los distintos casos. En \(\pi(X,
+  x_0) \times \pi (Y, y_0)\) la operación de grupo (\(\star\)) cumple la
+  siguiente ecuación
+  \[ ([a_1],[b_1]) \star ([a_2], [b_2]) = ([a_1] * [a_2] , [b_1] *
+    [b_2]) \]
+  Para \(\pi (X \times Y , (x_0, y_0))\) es una generalización de
+  \((*)\) donde abusando de la notación con \((*)\) esta corresponde a
+  la siguiente
+  \[ [(a_1, b_1)] * [(a_2, b_2)] = [(a_1 * b_1 , a_2 * b_2)] \]
+  Con esto en mente procedemos a la demostración.
+
+  Consideremos la siguiente función
+  \begin{align*}
+    \mathcal L : \pi (X \times Y , (x_0, y_0)) &\longrightarrow \pi (X,
+        x_0) \times \pi (Y, y_0) \\
+    [(\gamma, \delta)] &\longmapsto ([\gamma], [\delta])
+  \end{align*}
+  Este es claramente inyectivo y sobreyectivo. Para probar que es un
+  isomorfismo de grupo solo basta probar que es un homomorfismo. Sea
+  \([(\gamma_1, \delta_1)], [(\gamma_2, \delta_2)] \in \pi (X \times Y ,
+  (x_0, y_0))\) dos elementos arbitrarios. Por simple calculo se tiene
+  las siguiente ecuaciones
+  \begin{align*}
+    \mathcal L &\left( [(\gamma_1, \delta_1)] * [(\gamma_2, \delta_2)] \right) \\
+    &= \mathcal L \left( [(\gamma_1 * \gamma_2 , \delta_1 * \delta_2)] \right) \\
+    &= ([\gamma_1 * \gamma_2] , [\delta_1 * \delta_2]) \\
+    &= ([\gamma_1] , [\delta_1]) \star ([\gamma_2] , [\delta_2]) \\
+    &= \mathcal L [(\gamma_1 , \delta_1)] \star \mathcal L [(\gamma_2 ,
+      \delta_2)]
+  \end{align*}
+  obteniendo así que \(\mathcal L\) es un isomorfismo.
+\end{proof}
 
 \begin{ejemplo}[Toro] \label{ej:toro-presentacion}
   Una presentacion del torus \(T\) es como espacio cuociente de
@@ -658,14 +687,17 @@ desde lo anterior es trivial.
   arco-conexo.
 \end{ejemplo}
 
-Para el caso del co-producto, caracterizar alguna inclusion desde el
-teorema anterior no resulta tan claro como la caracterizacion dada por
-el teorema de \vank el cual se estudiara en la seccion \ref{sec:vank}.
-Sin embargo lo anterior al menos implica las inclusiones
-\[ \pi (X) < \pi (X \vee Y),\ \pi (Y) < \pi (X \vee Y)\]
-diciéndonos que el grupo de \(\pi (X \vee Y)\) debe de ser compatible
-con cualquiera de los grupos que conformen su wedge sum.
+%TODO: caso vank
+Para el caso del co-producto también existe una caracterización respecto
+al functor dado por el grupo fundamental. La demostración no es tan
+sencilla como en el caso del producto. Esta se obtiene como una consecuencia
+del teorema \vank y se formula en el Corolario \ref{cor:vank-trivial} de
+la sección \ref{sec:vank}.
 
-Nuestra meta ahora sera conocer teoremas mas generales que nos respeten
-la estructura del (co)-producto para simplificar cálculos de grupos
-fundamentales, lo cual sera el enfoque de la siguiente sección.
+En la siguiente sección estudiaremos teoremas que nos permitan calcular
+distintos grupos fundamentales. Se presentara la idea de que distintos
+resultados para el calculo de grupos fundamentales corresponden a
+caracterizar al functor \(\pi\) respecto a distintas estructuras
+categóricas. Esto resaltara el papel del lenguaje de categorías para
+poder sintetizar los resultados importantes de distintas áreas en un
+marco común.
