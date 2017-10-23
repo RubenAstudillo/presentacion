@@ -22,38 +22,139 @@
 
   \begin{frame}
     \frametitle{Motivacion}
-    % \framesubtitle{algo mas de informacion}
 
-    \begin{tikzpicture}
-      \def \a {2.8}
-      \def \b {1.5}
-      \def \PI {3.14159265359}
-      \draw (0,0) ellipse (3.2 and 1);
-      \draw[domain=\PI/4:3*\PI/4] plot ({\a*cos(\x r)},{\b*sin(\x r) -1});
-      \draw[domain=-0.1+5*\PI/4:0.1+7*\PI/4] plot ({\a*cos(\x r)},{\b*sin(\x r) +1.1});
+    \begin{block}{}
+      Definir una invariante para espacios topologicos.
+    \end{block}
 
-      \node[circle,shading=ball,minimum width=3cm] (ball) at (5.5,0) {};
-    \end{tikzpicture}
+    \pause
+
+    \begin{block}{}
+      Idea: Estudiar las curvas y las ``deformaciones'' admisibles entre
+      ellas para un espacio dado.
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Curvas y homotopias}
+    \begin{columns}
+
+      \begin{column}{.5\textwidth}
+        \begin{center}
+          \includegraphics[scale=0.3]{../tesis/imagenes/homotopia.png}
+        \end{center}
+      \end{column}
+
+      \pause
+
+      \begin{column}{.5\textwidth}
+        \begin{block}{Camino}
+          Es una funcion continua \[ f : I \to X \] con \(X\) un espacio
+          topologico
+        \end{block}
+
+        \pause
+
+        \begin{block}{Homotopia entre \(f\) y \(g\)}
+          Es una funcion continua \(H : I \times I \to X\) tal que
+          \[ H(x,0) = f(x),\ H(x,1) = g(x) \]
+          \[ f \sim g \]
+        \end{block}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Producto de caminos y homotopias}
+    Si \(f (1) = g (0) \in X\) entonces el producto de caminos esta
+    definido por
+    \[ f * g (t) :=
+      \begin{cases}
+        f(2t) & t \in [0, \frac 1 2] \\
+        g(2t - 1) & t \in [\frac 1 2 , 1 ]
+      \end{cases}
+    \]
 
     \begin{center}
-    ¿Como puedo decir que estos espacios no son homeomorfos?
+      \begin{tikzpicture}[scale=0.8]
+        \draw [blue, thick]  (0,0) to[bend right] (3,2) to[bend left] (4,3) ;
+        \draw [red, thick] (4,3) to[bend right] (9,1) ;
+      \end{tikzpicture}
     \end{center}
 
     \pause
 
+    \begin{block}{}
+      En general se consideran curvas con el mismo punto inicial y final
+      (caminos cerrados).
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Producto de caminos y homotopias}
+    Analogamente para homotopias \(F\) y \(G\) tal que \(H(1, t) =
+    G(0,s) , \forall s, t \in I\), se define el producto de homotopias
+    \[ F * G (x, t) :=
+      \begin{cases}
+        F(x, 2t) & t \in [0, \frac 1 2] \\
+        G(x, 2t - 1) & t \in [\frac 1 2, 1]
+      \end{cases}
+    \]
+
+    \pause
+
     \begin{center}
-    Fijandonos en la conexidad
+      \begin{tikzpicture}
+        \draw[blue] (0,1) to[out=45, in=135] (3,1) ;
+        \draw[blue] (0,1) to[out=25, in=155] (3,1) ;
+        \draw[blue] (0,1) to[out=5, in=175] (3,1) ;
+        \draw[blue] (0,1) to[out=-5, in=185] (3,1) ;
+        \draw[blue] (0,1) to[out=-25, in=205] (3,1) ;
+        \draw[blue] (0,1) to[out=-45, in=225] (3,1) ;
+
+        \draw[red] (3,1) to[out=45, in=135] (7,2) ;
+        \draw[red] (3,1) to[out=25, in=155] (7,2) ;
+        \draw[red] (3,1) to[out=5, in=175] (7,2) ;
+        \draw[red] (3,1) to[out=-5, in=185] (7,2) ;
+        \draw[red] (3,1) to[out=-25, in=205] (7,2) ;
+        \draw[red] (3,1) to[out=-45, in=225] (7,2) ;
+      \end{tikzpicture}
     \end{center}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Idea}
-    \begin{itemize}
-    \item Fijarnos en la arco-conexidad
-    \item Definir clases de equivalencia entre curvas que se deformen
-      continuamente entre ellas
-    \item Ver estructura algebraica de estas clases
-    \end{itemize}
+    \frametitle{Grupo fundamental}
+    \begin{block}{}
+      Todo camino \(f : I \to X\) tiene un camino inverso \(\overline f (t)
+      := f( 1 - t)\)
+    \end{block}
+    \begin{block}{}
+      Se define el conjunto
+      \[ \pi (X, x_0) := \{ [f] \mid f : I \to X ,\ f(0) = f(1) = x_0
+        \} \]
+      \[ g \in [f] \iff f \simeq g ,\ \text{ie existe una homotopia
+          entre ellos}\]
+    \end{block}
+
+    \begin{block}{}
+      La tupla \(
+      \left(\pi(X, x_0), (*) \right) \) es llamado el grupo fundamental de \(X\).
+    \end{block}
   \end{frame}
 
+  \begin{frame}
+    \frametitle{Importancia punto de origen}
+    \begin{block}{}
+      Esta invariante es util en general solo para espacios arco-conexo
+      pues queremos que la eleccion de punto \(x_0\) no afecte al grupo.
+    \end{block}
+
+    \pause
+
+    \begin{block}{}
+      El punto de origen igual se incluye
+      por la caracterizacion de conmutatividad del grupo fundamental y
+      tratamiento mas explicito con respecto a la teoria de cubrimientos.
+    \end{block}
+  \end{frame}
 \end{document}
