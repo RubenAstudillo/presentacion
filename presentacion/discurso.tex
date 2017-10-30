@@ -113,6 +113,76 @@ aditivo \((\mathbb Z , +)\). Esto es solo un ejemplo intuitivo,
 necesitamos herramientas formales para determinar grupos fundamentales
 
 \subsection*{Pagina 10}
+\texttt{esta claro}
 
+\subsection*{Pagina 11}
+Una retraccion es la siguiente definicion \texttt{ver definicion}. Un
+ejemplo de ella podria sea la funcion
+\[ r(a) := \frac a {\lVert a \rVert} \]
+entre \(R^2 - 0\) a \(S^1\)
+
+De esto se tiene el siguiente teorema
+
+\subsection*{Pagina 12}
+Se tiene el siguiente teorema. \texttt{ver teorema}
+La demostracion se basa en notar que
+\[ r \circ j \equiv Id : A \to A \]
+Luego \(j\) es inyectiva. Por tanto \(j_*\) tambien es inyectiva
+
+¿La pregunta es si tenemos el sentido contrario? Necesitamos el
+siguiente lema
+
+\subsection*{Pagina 13}
+Se necesita el siguiente lema \texttt{ver lema}. La demostracion se basa
+en probar que
+\[ [h \circ f] = [k \circ f ], \quad \forall f \in \pi (X, x_0)\]
+Notar que dado que tenemos una homotopia \(H\) entre \(k , h\), se
+construye la siguiente homotopia entre estos dos
+\[ M(z,t) := H \circ (f(z), t) \]
+(ie precomponer). La hipotesis de punto fijo es para obtener que sea una
+arco homotopia pues
+
+\[ \forall t \in I ,\ M(0,t) = H \left( f (0), t \right) = H (x_0, t)
+    = y_0 = H \left( f(1) , t \right) = M (1, t) \]
+
+\subsection*{Pagina 14}
+generalizada. Ya tenemos la inyectividad de \(j_*\) por
+\[ r \circ j = Id : A \to A \]
+Estudiemos ahora
+\[ j \circ r \simeq Id : X \to X\]
+el cual deja fijo a cualquier punto \(a \in A\). Luego el lema anterior
+nos dice que
+\[ j_* \circ r_* = (j \circ r)_* = Id_* \]
+por lo que \(j_*\) es sobreyectivo.
+
+\subsection*{Pagina 15}
+La generalizacion de esta tecnica lleva a la definicion de equivalencias
+homotopicas \texttt{ver diapositiva}. ¿Como arreglamos el requerimiento
+de un punto fijo para la homotopia de \(g \circ f \simeq Id\) ? Por la
+arco conexidad existe un camino \(\alpha(t)\) entre
+\[ g \circ f (x_0) \quad \text{ y } \quad x_0 \]
+Pre-componemos por la funcion
+\[ \hat \alpha ([f]) := [ \bar \alpha \circ f \circ \alpha ], \quad \forall
+  [f] \pi (X, x_0) \]
+Esto arregla pues uno puede probar que este \(\hat \alpha\) es un
+isomorfismos de grupo (cambia el punto base en espacios arco-conexos).
+
+\subsection*{Pagina 16}
+Estos tres espacios no son homemorfos. El primero con el segundo son dos
+bolas unidas por una linea y el segundo son dos bolas unidas por un
+punto. Si fueran homemorfos, se tendria un homeomofismo entre una linea
+y un punto. Analogamente para la tercera figura
+
+Sin embargo estas son del mismo tipo homotopico pues todas son
+homotopicamente equivalentes al disco \(D^2\) menos dos puntos. De hecho
+las equivalencias homotopicas son las inyecciones y son homotopicas a la
+identidas por el siguiente diagrama \texttt{ver diagrama}.
+
+\subsection*{Pagina 17}
+La banda de mobius se presenta como el cuadrado \(I^2\) con los lados
+identificados en sentido inverso. Tomamo la recta vertical media y
+notamos que siempre podemos hacer una homotipa a esta. Luego notamos que
+esta recta (con los extremos identificados) es homemomorfa a \(S^1\).
+Luego la banda de mobius tiene el mismo grupo fundamental de \(S^1\)
 
 \end{document}

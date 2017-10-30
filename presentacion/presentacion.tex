@@ -207,4 +207,87 @@
     \item Teorema de \vank
     \end{itemize}
   \end{frame}
+
+  \begin{frame}
+    \frametitle{Retracciones y tipos homotopicos}
+    \begin{block}{Retraccion}
+      Sea \(X\) un espacio topológico. El conjunto \(A \subset X\) es una
+      retracción de \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
+      \[ r \mid_{A} (x) = x \]
+      con \(r \mid_{A}\) siendo la restriccion de \(r\) al dominio \(A\). En
+      caso de cumplirse esto, \(r\) es llamada la aplicación retracción de
+      \(X\) en \(A\).
+    \end{block}
+
+    \begin{block}{Inclusion}
+      Para toda retraccion \(A \subset X\), existe una funcion inclusion
+      \[ j : A \to X \]
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Retracciones y tipos homotopicos}
+    \begin{block}{Inyectividad grupos}
+      Si \(A \subset X\) es una retracción, entonces la aplicación
+      inclusión \(j : A \to X\) induce un homomorfismo de grupos
+      fundamentales \(j_{*} : \pi(A, a) \to \pi(X,a)\) inyectivo para
+      todo \(a \in A\).
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Retracciones y tipos homotopicos}
+
+    \begin{block}{Lema}
+      Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuos. Si
+      \(h\) y \(k\) son homotopicos y si la imagen de \(x_0\) bajo esta
+      homotopía permanece fija en \(y_0\), entonces \(h_*\) e \(k_*\) son
+      iguales.
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+     \frametitle{Retracciones y tipos homotopicos}
+     \begin{block}{Inyectividad grupos}
+       Si \(A \subset X\) es una retracción, entonces la aplicación
+       inclusión \(j : A \to X\) induce un homomorfismo de grupos
+       fundamentales \(j_{*} : \pi(A, a) \to \pi(X,a)\) biyectivo para
+       todo \(a \in A\) si \(j \circ r\) homotopico a la identidad de \(X\).
+     \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Tipos homotopicos}
+    \begin{block}{Equivalencias homotopicas}
+      Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
+      que \[ g \circ f \simeq Id : X \to X \]
+      \[ f \circ g \simeq Id : Y \to Y \]
+      Entonces \(f\) y \(g\) son llamadas \emph{equivalencias
+      homotopicas} y la presencia de estas dicen que \(X,Y\) poseen el
+      mismo grupo fundamental.
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Ejemplo de espacios mismo tipo homotopicos}
+    \begin{block}{}
+      \centering
+      \includegraphics{./imag/ThreeNonHomeoButHomotopyEquivGraphs.png}
+    \end{block}
+
+    \begin{block}{}
+      \centering
+      \includegraphics[scale=0.5]{./imag/HomotopyEquivalentsToBiAnnulus.png}
+    \end{block}
+    \begin{center}
+      \emph{imagenes de Hatcher}
+    \end{center}
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Banda de Mobius}
+    \centering
+    \includegraphics[scale=0.3]{./imag/512px-MöbiusStripAsSquare.svg.png}
+  \end{frame}
 \end{document}
