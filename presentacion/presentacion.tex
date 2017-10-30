@@ -4,10 +4,13 @@
 \usepackage[quiet]{fontspec}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{polyglossia}
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes,trees}
+
+\newcommand{\vank}{\emph{Seifert-van Kampen} }
 
 % works for now
 \setbeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
@@ -109,8 +112,6 @@
       \end{cases}
     \]
 
-    \pause
-
     \begin{center}
       \begin{tikzpicture}
         \draw[blue] (0,1) to[out=45, in=135] (3,1) ;
@@ -165,5 +166,45 @@
       conmutatividad del grupo fundamental y tratamiento mas explicito con
       respecto a la teoría de cubrimientos.
     \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{El grupo fundamental es una invariante}
+    Si \(f : (X, x) \to (Y, y) \) es un homeomorfismo, \[¿\pi (X, x)
+    \simeq \pi (Y,y)?\]
+
+    \pause
+
+    Si, se define un isomorfismo por
+    \begin{align*}
+      f_* : \pi (X,x) &\to \pi (Y, y) \\
+      [\gamma] &\longmapsto [ f \circ \gamma ]
+    \end{align*}
+
+    \pause
+
+    Esta construccion es un homomorfismo para cualquier \(f\) continuo.
+    Luego hemos construido realmente un functor entre \(\text{Top}_*
+    \to \text{Grp}\)
+  \end{frame}
+
+  % Seccion ejemplo R^2 sin punto
+  \begin{frame}
+    \frametitle{Ejemplo intuitivo \(R^2\) menos un punto}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.5]{../tesis/imagenes/R2-punto.png}
+      \caption{\(R^2\) sin el punto \((1,1)\) en negro. Origen en rojo. }
+    \end{figure}
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Tres grandes herramientas de calculo}
+    \begin{itemize}
+    \item Retracciones y tipos homotopicos
+    \item Teoria de cubrimientos
+    \item Teorema de \vank
+    \end{itemize}
   \end{frame}
 \end{document}
