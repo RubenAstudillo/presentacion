@@ -215,4 +215,122 @@ Por ahora estudiaremos otros resultados que pueden ser resumidos en
 terminos categoricos. Primero partiendo por cubrimientos y luego por el
 teorema de \vank
 
+\subsection*{Pagina 22}
+Un cubrimiento es la siguiente definicion \texttt{ver defincion}. Se
+puede probar que todo cubrimiento es un mapeo abierto, asi que es es una
+funcion con propiedades bastante fuertes.
+
+Tambien tenemos la fibra de un punto, que tendra relacion con el
+cubrimiento universal mas adelantante
+
+\subsection*{Pagina 23}
+Un cubrimiento es interesante porque nos permite estudiar las curvas de
+\(X\) en un espacio diferencia (idealmente mas simple) pues las curvas
+de \(X\) se pueden levantar a \(\tilde X\). Lo teoremas que nos permiten
+hacer esto son dos:
+
+La demostracion de levantamiento de caminos es la siguiente: Tenemos el
+siguiente diagrama \texttt{escribir diagrama}. El conjunto \(X\) por ser
+cubierto para todo \(x \in X\) tiene una vecindad \(U_x\) que es
+cubierta por \(p\). Esta tambien cubre a \(X\) mediante su union. En
+particular la imagen inversa de esta cumple
+\[ I = f^{-1} (X) \subset f^{-1} (\cup U_x )\]
+Pero \(I\) es un compacto, y para este cubrimiento tiene un numero de
+lebesgue. Consideremos intervalos de \(I\) que lo cubran y tengan
+diametro menor a este numero de lebesgue. Cada uno cumple la propiedad
+de
+\[ f([a_i, a_{i+1}]) \subset U_x \]
+Con esto podemos definir \(\tilde f\) inductivamente. Suponiendo que ya
+esta definido sobre \([0,a_i]\) para definirlo en \([a_i , a_{i+1}]\)
+podemos estudiar el \(U_x\) al que se mapea mediante \(f\). Este
+conjunto es cubierto por \(p\) luego
+\[ p^{-1} (U_x) = \cup_{\alpha \in \Lambda} V_\alpha \]
+y existe algun \(V_0\) en esta familia tal que \(\tilde f (a_i) \in
+V_0\) (es una familia disjunta). Luego tomamo
+\[ p \mid_{V_0} : V_0 \to U_x \]
+el cual es un homeomorfismo y definimos
+\[ \tilde f (x) = (p \mid_{V_0})^{-1} x \]
+y cumplimimos trivialmente la propiedad
+
+Este levantamiento es unico por la biyectividad de los \(p\)
+restringidos. Se utiliza una prueba analoga para levantar homotopias
+pues \(I \times I\) tambien es compacto
+
+Esto nos compra el siguiente teorema
+
+\subsection*{Pagina 24}
+Ya sabemos que esto es un homomorfismo. La inyectividad equivale a
+probar que si \([\gamma] \in \pi (\tilde X, \tilde x_0)\) cumple
+\[ p_* ([\gamma]) = [e]\]
+entonces \([\gamma] = [e] \in \pi (\tilde X, \tilde x_0)\). Esto se ve
+notando que
+\[ p_* ([\gamma]) = [p \circ \gamma] = [e]\]
+dice que hay una homotopia \(H\) entre \(p \circ \gamma\) y \(e\). Esta
+homotopia puede levantarse a \(\tilde X\). Donde sera una homotopia
+entre
+\[ \gamma \simeq k_{\tilde {x_0}} \]
+mostrando asi lo que queremos
+
+El teorema anterior no es tan util pues conocer el grupo fundamental de
+\(\tilde X\) ya es dificil de por si. ¿Que proviene de estudiar
+cubrimientos que tengan grupos fundamentales triviales?
+
+\subsection*{Pagina 25}
+un cubrimiento universal es aquel donde \(\tilde X\) es trivial. Este
+nos permite definir la siguiente funcion biyectiva \(\phi\). Notar que
+\(\phi\) esta bien definida pues dado cualquier representante de clase
+de \([f]\) estos los relaciona una homotopia que fija puntos finales e
+iniciales. Luego el valor de \(\tilde f (1)\) siempre es el mismo como
+numero.
+
+La inyectividad de esta funcion proviende de que si \([f] , [g]\) son
+tales wque
+\[ \phi ([f]) = \tilde f (1) = \tilde g (1) \phi ([g]) \]
+y ademas \(\tilde f (0) = \tilde x_0 = \tilde g (0)\). Luego por ser
+simplemente conexo, existe una homotopia \(\tilde H\) entre \(\tilde f\)
+y \(\tilde g\). Luego
+\[ p \circ \tilde H \]
+es una homotpia entre \([f]\) y \([g]\) y por tanto \([f] = [g] \)
+
+La sobreyectividad proviene de que para todo punto \(\tilde x_1 \in
+\tilde X\) , por arco-conexidad siempre exsite un camino entre
+\(\alpha\) entre \(\tilde x_0\) a \(\tilde x_1\) tal que
+\[ \phi (p \circ \alpha) = \alpha (1) = \tilde x_1\]
+
+Uno formalmente deberia de argumentar que \(\pi (G,p)\), el grupo de
+automorfismos que actuan en la fibra \(p^{-1} (x_0)\) es isomorfo \(\pi
+(X, x_0)\). Para esto uno estudia a \(\phi\) viendo como mueve los
+puntos base de la fibra \(p^{-1} (x_0)\). Esto se hace en la tesis, sin
+embargo podemos estudiar directamente las acciones mediante \(\phi\) y
+proponer grupos fundamentales directamente si es que logramos dotar de
+estructura de grupo a la fibra \(p^{-1} (x_0)\).
+
+\subsection*{Pagina 26}
+Con esto podemos plantearnos algunos ejemplos. Para ver el grupo
+fundamental de \(\pi(S^1)\) notamos que \(R\) es un cubrimiento de \(S^1
+\) mediante la funcion
+\[ p (x) = (\cos 2 \pi x, \sin 2 \pi x) \]
+y que \(R\) tiene grupo fundamental trivial porque es un espacio
+convexo. Luego \(\phi\) es biyectiva. Debemos probar que es un
+homomorfimos.
+Sea \([\beta],[\delta] \in \pi (S^1)\), y sean \(\tilde
+\beta , \tilde \delta\) sus levantamiento respectivos sobre \(\tilde x_0
+\in R\) tales que
+\[ \tilde \beta (1) = n \]
+\[ \tilde \delta (1) = m \]
+
+El levantamiento de \(\beta * \delta \) debe ser \(\tilde \beta
+* \tilde {\tilde \delta}\) pues hay unicidad de levantamiento en la
+primera parte y \(\tilde {\tilde \delta}\) el levantamiento de
+\(\delta\) comenzando en \(n\).
+\[ \tilde \beta * \tilde {\tilde \delta} (1) = n + \tilde \delta (1) =
+  n + m = \tilde \beta (1) + \tilde \delta (1) \]
+Por lo que se tiene que \(\phi \) es un homomorfismo biyectivo y el
+grupo sobre \(R\) que tenemos es \(Z, +\)
+
+Para ver el otro ejemplo, basta notar que \(RP^2\) se presenta como
+\(S^2 \) con los inversos identificados. Luego \(p\) es el mapeo cuociente
+y por tanto para cualquier \(x_0\) se tiene que
+\[ p^{-1} (x_0) = \{x_0 , - x_0\}\]
+tiene cardinalidad 2. El unico grupo de cardinalidad 2 es \(Z/2Z\).
 \end{document}

@@ -390,14 +390,86 @@
   \begin{frame}
     \frametitle{Levantamiento de curvas al cubrimiento}
     \begin{columns}
-      \begin{column}{.5\textwidth}
+      \begin{column}{.4\textwidth}
         \centering
         \includegraphics[scale=0.3]{../tesis/imagenes/lifting-path.png}
+        \[ p \circ \tilde f = f \]
       \end{column}
-    \begin{column}{.5\textwidth}
+    \begin{column}{.6\textwidth}
 
+      \begin{block}{Levantamiento de caminos}
+        Sea \(p : \tilde X \to X\) un cubrimiento y \(x_0 \in X\).
+        Fijemos algún \(\tilde x _0 \in p^{-1} \{x_0\} \subset \tilde
+        X\). Para cualquier camino \(f : [0,1] \to X\) que comience en \(x_0\),
+        existe un único camino levantamiento \(\tilde f : [0,1] \to \tilde X\)
+        tal que \(\tilde f (0) = \tilde x _0\)
+      \end{block}
+
+      \pause
+
+      \begin{block}{Levantamiento de homotopias}
+        Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde
+        x _0) = x_0 \) para algún \(\tilde x _0 \in \tilde X\). Para cualquier
+        función continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\),
+        tiene una única función levantamiento continua \(\tilde F : I \times I
+        \to \tilde X\) que cumpla \(\tilde F (0,0) = \tilde x_0\)
+      \end{block}
     \end{column}
     \end{columns}
   \end{frame}
 
+  \begin{frame}
+    \frametitle{inyectividad cubrimientos}
+    \begin{block}{}
+      Sea \(\left( \tilde X, \tilde x_0 \right), \left( X, x_0 \right)\)
+      dos espacios topológicos puntuados. Si \(p : \left( \tilde X,
+        \tilde x_0 \right) \to \left( X, x_0 \right)\) un cubrimiento
+      entre estos, entonces el homomorfismo inducido
+      \[ p_* : \pi \left( \tilde X, \tilde x_0 \right) \longrightarrow
+        \pi \left( X, x_0 \right)\] es inyectivo.
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Cubrimiento universal}
+    \begin{block}{Cubrimiento universal}
+      Un cubrimiento universal \(p : \tilde X \to X\) es tal que \(\pi
+      (\tilde X, \tilde x_0) = \{e\}\).
+    \end{block}
+
+    \begin{block}{Levantamiento derivado}
+      Si \(p : \tilde X \to X\) es un cubrimiento con \(\tilde X\)
+      universal, entonces para todo \(\tilde x_0 \in p^{-1} (x_0)\) se
+      puede definir una funcion biyectiva
+      \[ \phi : \pi (X, x_0) \to p^{-1} (\{x_0\}) \]
+      \[ \phi \left( [f] \right) = \tilde f (1) \]
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Ejemplos}
+    \begin{block}{\(S^1\)}
+        \(\forall x_0 \in S^1,\ \pi (S^1,x_0)\) es isomorfo a \((\mathbb
+          Z, +)\)
+    \end{block}
+
+    \begin{block}{\(RP^2\)}
+      \(RP^2\) es cubierto por \(S^2\)
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Caracterizacion de functor}
+    \begin{block}{}
+      Se define una nueva categoria de cubrimientos de espacios \(X\)
+      que posean cubrimiento universal. Luego se define un functor
+      \(\pi\) el cual mapea elementos iniciales de \(\mathscr{Cov}\) a
+      el grupo trivial (elemento inicial ) de \(\mathscr{Grp}\) y donde
+      los morfismos pasan a ser inyecciones de grupos
+    \end{block}
+    \begin{block}{}
+        \centering
+        \includegraphics[scale=0.3]{../tesis/imagenes/cov.png}
+      \end{block}
+  \end{frame}
 \end{document}
