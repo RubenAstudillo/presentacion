@@ -333,4 +333,84 @@ Para ver el otro ejemplo, basta notar que \(RP^2\) se presenta como
 y por tanto para cualquier \(x_0\) se tiene que
 \[ p^{-1} (x_0) = \{x_0 , - x_0\}\]
 tiene cardinalidad 2. El unico grupo de cardinalidad 2 es \(Z/2Z\).
+
+\subsection*{Pagina 27}
+Podemos definir una estructura categorica para un espacio \(X\) con
+cubrimiento universa en donde hay presencia de un elemento inicial. Este
+se mapea bajo un functor \(\pi\) al elemento inicial de
+\(\mathscr{Grp}\) y estos cubrimientos pasan a ser inyecciones de grupos.
+
+\subsection*{Pagina 28}
+El teorema de \vank es el mas util a la hora de calcular. Dice que si un
+espacio luce como un co-producto, su grupo fundamental esta relacionado
+con el grupo libre generado por los grupos fundamentales de cada uno de
+los sumandos. Dicho en el enunciado los morfismos \(\phi_1, \phi_2\)
+seria morfismos a \(H\) el grupo libre generado por \(\pi (U,x_0) * \pi
+(V,x_0)\). Recordemos que le grupo libre es el espacio generado por las
+cadenas de estos grupos donde la identidad de grupo es la cadena vacia y
+la yuxtaposicion es la operacion de grupo. Se pide de que los indices no
+sean cosecutivamente iguales ya que se reduciria a la operacion de grupo
+interna del indice.
+
+Para probar este teorema, equivale a mostrar que para toda curva \([f]
+\in \pi (X,x_0)\) se puede descomponer como
+\[ g_1 * g_2 * g_3 \dots * g_n \]
+con \(g_i\) totalmente contenido en \(\pi (U, x_0)\) o \(\pi (V, x_0)\).
+Por el lema del numero de lebesgue existe una subdivision \(\{a_i ,
+a_{i+1}\}\) de \(I\) la cual cumple que
+\[ f \left( [a_i , a_{i+1}] \right) \subset U  \oplus f \left( [a_i ,
+    a_{i+1}] \right) \subset V \]
+y existe homeomorfismo \(l_i : [a_i , a_{i+1}] \to I \). Luego
+\[ f_i = f \circ l_i \]
+Pero estos \(f_i\) no son necesariamente caminos cerrados. Sus extremos
+pertenecen a \(U \cap V\) el cual es arco-conexo, por lo que tomamos
+funciones \(\alpha_i\) tales que
+\[ \alpha_i (0) = x_0 , \alpha_i (1) = f(a_i)\]
+Lueog
+\[ g_i = \alpha_{i-1} * f_i * \overline{\alpha_i} \]
+es un camino cerrado de \(\pi(U, x_0)\) o de \(\pi (V,x_0)\). Solo y se
+cumple que
+\[ [f] = [g_1] * [g_2] * \dots * [g_n] \]
+
+Lo que se ha probado aqui es que \(\phi\) es sobreyectivo cuando \(H\)
+es el grupo fundamental. Para formar un isomorfismo de grupo podriamos
+utilizar el primer teorema de isomorfismos de grupos. La version general
+de \vank caracteriza a este kernel diciendo que es conformoda por el
+normalizador todas las cadenas
+\[ [f]_{\pi (A,x_0)} \simeq [f]_{\pi (B, x_0)} \text{ si } [f] \in \pi
+  (A \cap B, x_0) \]
+
+La caracterizacion es que esta construccion es un push out. Mas
+formalmente un push out de \(i_1, i_2\) son lo mosrifmos \(\phi_1,
+\phi_2\) y \(H\) tal que para cualquier otro elemento con morfismo
+\(j_1, j_2 , \pi (X,x_0)\). \vank se puede pensar como decirnos que los
+push-outs de intersecciones arco-conexas se preservan bajo \(\pi\).
+
+Veremos algunos ejemplos
+
+\subsection*{Pagina 29}
+\(S^1 \vee S^1\) es sencillo de ver pues es una aplicacion directa.
+Tiene grupo fundamental Z * Z.
+
+La botella de Klein la podemos estudiar con el teorema general. En el
+diagrama estan los conjunto \(U\), \(V \) y \(U \cap V\). El grupo
+fundamental de U es trivial. El grupo fundamental de \(V\) podemos
+basarlo en un vertices el cual es unico al ser identificado, luego se ve
+que este espacio esta generado por la curva \(b\) y la curva \(a\), es
+decir
+\[ \langle a,b \rangle \simeq Z * Z \]
+Tenemos que estudiar el normalizador. Notar que \(\pi (U,V)\) es
+homotopicamente equivalente a \(S^1\) luego su grupo fundamental es
+\(Z\). LLamemos \([\gamma]\) a su unico elemento no trivial. Estudiamos
+las inyeciones de
+\[ i_{u,v} : \pi (U \cap V) \to \pi (U )\]
+\[ i_{v,u} : \pi (U \cap V) \to \pi (V) \]
+\[ i_{u,v} ([\gamma]) = e \]
+\[ i_{v,u} ([\gamma]) = [\gamma]_{V} \]
+Pero \([\gamma]\) en \(V\) es homotopicamente equivalente a \([a * b * a *
+b^{-1}]\) por homotopia axial. Luego \(N = N \{[a][b][a][b^{-1}]\}\)
+siendo este normalizador simplemente \(\{[a][b][a][b^{-1}]\}\) (esto
+debe de verse por calculo). Luego \vank nos dice que el grupo
+fundamental de este espacio es
+\[ <a,b> / {abab^{-1} \simeq e}\]
 \end{document}

@@ -448,13 +448,13 @@
 
   \begin{frame}
     \frametitle{Ejemplos}
-    \begin{block}{\(S^1\)}
+    \begin{block}{}
         \(\forall x_0 \in S^1,\ \pi (S^1,x_0)\) es isomorfo a \((\mathbb
           Z, +)\)
     \end{block}
 
-    \begin{block}{\(RP^2\)}
-      \(RP^2\) es cubierto por \(S^2\)
+    \begin{block}{}
+      \(\pi (RP^2, x_0)\) es isomorfo a \(\mathbb Z / 2 \mathbb Z\)
     \end{block}
   \end{frame}
 
@@ -464,12 +464,46 @@
       Se define una nueva categoria de cubrimientos de espacios \(X\)
       que posean cubrimiento universal. Luego se define un functor
       \(\pi\) el cual mapea elementos iniciales de \(\mathscr{Cov}\) a
-      el grupo trivial (elemento inicial ) de \(\mathscr{Grp}\) y donde
+      el grupo trivial (elemento inicial) de \(\mathscr{Grp}\) y donde
       los morfismos pasan a ser inyecciones de grupos
     \end{block}
     \begin{block}{}
         \centering
         \includegraphics[scale=0.3]{../tesis/imagenes/cov.png}
       \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{\vank}
+    \begin{block}{\vank}
+      Sea \(X = U \cup V\), donde \(U,V\) son conjuntos abiertos de \(X\).
+      Supongamos que \(U \cap V\) es arco-conexo y que \(x_0 \in U \cap V\).
+      Sea \(j_1\) y \(j_2\) las inclusiones de \(U\) y \(V\) en \(X\)
+      respectivamente. Entonces las imágenes de los homomorfismos inducidos
+      \[ j_{1,*} : \pi (U, x_0) \to \pi (X, x_0), \quad j_{2,*} : \pi
+      (V, x_0) \to \pi (X, x_0) \]
+      generan a \(\pi (X,x_0)\).
+
+      \begin{center}
+        \includegraphics[scale=.35]{../tesis/imagenes/van.png}
+      \end{center}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Ejemplos}
+    \begin{block}{\(S^1 \vee S^1\)}
+      \centering \includegraphics[scale=0.5]{../tesis/imagenes/figura8.png}
+    \end{block}
+
+    \pause
+    \begin{block}{Botella Klein}
+      \centering
+      \includegraphics[scale=0.3]{../tesis/imagenes/kleinU.png}
+      \hspace{3mm}
+      \includegraphics[scale=0.3]{../tesis/imagenes/kleinV.png}
+      \hspace{3mm}
+      \includegraphics[scale=0.3]{../tesis/imagenes/kleinUV.png}
+    \end{block}
   \end{frame}
 \end{document}
