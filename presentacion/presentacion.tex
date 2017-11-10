@@ -21,14 +21,14 @@
 \begin{document}
 
   \begin{frame}
-    \begin{center}
-      \begin{block}{}
-        Topología Algebraica
-      \end{block}
-      \begin{block}{}
-        Ruben Astudillo
-      \end{block}
-    \end{center}
+    \begin{block}{}
+      \centering
+      Topología Algebraica
+    \end{block}
+    \begin{block}{}
+      \centering
+      Ruben Astudillo Colina
+    \end{block}
 
   \end{frame}
 
@@ -57,15 +57,11 @@
         \end{center}
       \end{column}
 
-      \pause
-
       \begin{column}{.5\textwidth}
         \begin{block}{Camino}
           Es una función continua \[ f : I \to X \] con \(X\) un espacio
           topológico
         \end{block}
-
-        \pause
 
         \begin{block}{Homotopía entre \(f\) y \(g\)}
           Es una función continua \(H : I \times I \to X\) tal que
@@ -157,7 +153,13 @@
     \frametitle{Importancia punto de origen}
     \begin{block}{}
       Esta invariante es útil en general solo para espacios arco-conexo
-      pues queremos que la elección de punto \(x_0\) no afecte al grupo.
+      pues queremos que la elección de punto \(x_0\) no afecte al grupo. \\
+
+      \centering
+      \begin{tikzpicture}
+        \draw [fill=cyan, radius=1.5] (0,0) circle ;
+        \draw [cyan, radius=1] (3,0) circle ;
+      \end{tikzpicture}
     \end{block}
 
     \pause
