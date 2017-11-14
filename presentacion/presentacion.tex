@@ -217,54 +217,6 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Retracciones y tipos homotopicos}
-    \begin{block}{Retraccion}
-      Sea \(X\) un espacio topológico. El conjunto \(A \subset X\) es una
-      retracción de \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
-      \[ r \mid_{A} (x) = x \]
-      con \(r \mid_{A}\) siendo la restriccion de \(r\) al dominio \(A\). En
-      caso de cumplirse esto, \(r\) es llamada la aplicación retracción de
-      \(X\) en \(A\).
-    \end{block}
-
-    \begin{block}{Inclusion}
-      Para toda retraccion \(A \subset X\), existe una funcion inclusion
-      \[ j : A \to X \]
-    \end{block}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Retracciones y tipos homotopicos}
-    \begin{block}{Inyectividad grupos}
-      Si \(A \subset X\) es una retracción, entonces la aplicación
-      inclusión \(j : A \to X\) induce un homomorfismo de grupos
-      fundamentales \(j_{*} : \pi(A, a) \to \pi(X,a)\) inyectivo para
-      todo \(a \in A\).
-    \end{block}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Retracciones y tipos homotopicos}
-
-    \begin{block}{Lema}
-      Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuos. Si
-      \(h\) y \(k\) son homotopicos y si la imagen de \(x_0\) bajo esta
-      homotopía permanece fija en \(y_0\), entonces \(h_*\) e \(k_*\) son
-      iguales.
-    \end{block}
-  \end{frame}
-
-  \begin{frame}
-     \frametitle{Retracciones y tipos homotopicos}
-     \begin{block}{Inyectividad grupos}
-       Si \(A \subset X\) es una retracción, entonces la aplicación
-       inclusión \(j : A \to X\) induce un homomorfismo de grupos
-       fundamentales \(j_{*} : \pi(A, a) \to \pi(X,a)\) biyectivo para
-       todo \(a \in A\) si \(j \circ r\) homotopico a la identidad de \(X\).
-     \end{block}
-  \end{frame}
-
-  \begin{frame}
     \frametitle{Tipos homotopicos}
     \begin{block}{Equivalencias homotopicas}
       Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
@@ -274,6 +226,35 @@
       homotopicas} y la presencia de estas dicen que \(X,Y\) poseen el
       mismo grupo fundamental.
     \end{block}
+
+  \end{frame}
+  \begin{frame}
+    \frametitle{Lemas necesarios}
+    \begin{block}{Lema}
+      Si \(f \circ g = h\) con \(h\) una funcion biyectiva, entonces
+      \(f\) sobreyectivo y \(g\) inyectivo.
+    \end{block}
+    \begin{block}{Lema}
+      Si \(f \circ g \simeq Id\) mediante la homotopia \(H\) y \(f \circ
+      g (x_0) = x_1\) entonces existe una curva \(\alpha : I \to X\)
+      definida por \(\alpha (t) := H (x_0 , t)\) tal que
+      \[ \hat \alpha \left( [m] \right) := [ \overline \alpha] * [m] * [\alpha]\]
+      es un isomofismo de grupo \(\pi(X,x_0) \to \pi (Y,y_0)\) y cumple
+      la igualdad
+      \[ f_* \circ g_* = \hat \alpha \circ Id \]
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Idea de demostracion teorema de tipos}
+    \begin{center}
+      \includegraphics[scale=0.5]{./imag/teo_tipos.png}
+    \end{center}
+    \begin{gather*}
+      f_{*,x_0} : \pi (X, x_0) \to \pi (Y, y_0) \\
+      g_* : \pi (Y, y_0) \to \pi (X, x_1) \\
+      f_{*,x_1} : \pi (X, x_1) \to \pi (Y, y_1)
+    \end{gather*}
   \end{frame}
 
   \begin{frame}
