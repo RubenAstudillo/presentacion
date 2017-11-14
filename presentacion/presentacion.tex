@@ -194,16 +194,19 @@
       f_* : \pi (X,x) &\to \pi (Y, y) \\
       [\gamma] &\longmapsto [ f \circ \gamma ]
     \end{align*}
-
-    \pause
-
-    Esta construccion es un homomorfismo para cualquier \(f\) continuo.
-    Luego hemos construido realmente un functor entre \(\text{Top}_*
-    \to \text{Grp}\)
-
-    %TODO: Debo hacer un dibujo de una categoria
   \end{frame}
 
+  \begin{frame}
+    \frametitle{Functor entre categorias}
+    Lo que hemos hecho realmente con la construccion anterior es definir
+    un functor \(\pi\) entre las categorias \(\mathscr{Top}_*\) y
+    \(\mathscr{Grp}\)
+    \[ \pi : \mathscr{Top}_* \to \mathscr{Grp} \]
+    \[ \pi (f \circ g) = f_* \circ g_* \]
+    \begin{center}
+      \includegraphics[scale=0.4]{./imag/categoria.png}
+    \end{center}
+  \end{frame}
   \begin{frame}
     \frametitle{Tres grandes herramientas de calculo}
     \begin{itemize}
