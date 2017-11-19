@@ -478,14 +478,37 @@ declarado, podemos proceder a la demostración.
   Si \(\bigcap_{\alpha \in \tau} A_\alpha \) tiene grupo fundamental
   trivial, entonces
   \[ *_\alpha \pi (A_\alpha , x_0) \simeq \pi (X, x_0) \]
-  En particular para una wedge-sum \((X \vee Y , {x_0 , y_0})\), dado
-  que los singletons tiene grupos fundamentales triviales, se afirma que
-  \[ \pi (X \vee Y , \{x_0, y_0\}) \cong \pi (X, x_0) * \pi (Y , y_0) \]
 \end{corolario}
 
-Este teorema es largo, pero sus consecuencias son poderosas.
-Calcularemos algunos ejemplos que utilicen el teorema de \vank desde
-casos sencillos a mas complicados.
+\begin{corolario}[Preservación del co-producto bajo \(\pi\)]
+  \label{cor:vank-coproducto}
+  Sea \(x_0 \in X, \ y_0 \in Y\), si existen \(U_x \subset X, \ U_y
+  \subset Y\) vecindades simplemente conexas (contractibles) a \(x_0,
+  y_0\) respectivamente, entonces el wedge-sum \((X \vee Y , \{x_0 ,
+  y_0\})\) tiene grupo fundamental \(\pi (X, x_0) * \pi (Y, y_0)\).
+\end{corolario}
+\begin{proof}
+  Definamos dos nuevos conjuntos:
+  \begin{gather*}
+    A_x := (X \vee U_y / {x_0 \simeq y_0}) \\
+    A_y := (Y \vee U_x / {x_0 \simeq y_0})
+  \end{gather*}
+  Dada que \(U_x, U_y\) son contráctiles, se tiene que \(A_x, A_y\)
+  poseen los mismos tipos homotopicos que \(X, Y\) respectivamente, ie
+  \begin{gather*}
+    \pi (A_x , x_0) = \pi (X, x_0) \\
+    \pi (A_y , y_0) = \pi (Y, y_0)
+  \end{gather*}
+  Además estos conjuntos cumplen las siguiente ecuaciones
+  \begin{gather*}
+    A_x \cup A_y = (X \vee Y / \{ x_0 \sim y_0\}) \\
+    A_x \cap A_y = (U_x \vee U_y / \{ x_0 \sim y_0\})
+  \end{gather*}
+  Otra vez por ser \(U_x, U_y\) contráctiles, el grupo fundamental
+  \(\pi (A_x \cap A_y, x_0)\) es trivial y por tanto podemos aplicar el
+  corolario \ref{cor:vank-trivial} para obtener que
+  \[ \pi (X \vee Y, x_0) = \pi (X, x_0) * \pi (Y, y_0) \]
+\end{proof}
 
 \begin{ejemplo}[Espacio ``figura 8'']
 El espacio ``figura 8'' en el diagrama es homotopicamente equivalente a
@@ -495,24 +518,41 @@ la wedge-sum \(S^1 \vee S^1\).
     \caption*{Espacio figura 8}
   \end{figure}
   Es trivialmente cierto que el conjunto \(\{x_0\}\) es arco-conexo y
-  hay inyecciones dos canónicas de \(S^1\) a \(S^1 \vee S^1\). Por tanto
-  podemos aplicar el corolario \ref{cor:vank-trivial} para decir el el
-  grupo fundamental de \(\left( S^1 \vee S^1 , x_0 \right) \) es \(\pi
-  \left( S^1 , x_0 \right) * \pi \left( S^1 , x_0 \right) \).
+  hay inyecciones dos canónicas de \(S^1\) a \(S^1 \vee S^1\). Además es
+  cierto que \(x_0\) posee vecindades contráctiles en \(S^1\), pues este
+  es homeomorfo a \([0,1]/0 \simeq 1\) y es cosa de tomar un intervalo
+  pequeño de \(x_0\). Por tanto podemos aplicar el corolario
+  \ref{cor:vank-coproducto} para decir que el grupo fundamental de
+  \(\left( S^1 \vee S^1 , x_0 \right) \) es \(\pi \left( S^1 , x_0 \right)
+  * \pi \left( S^1 , x_0 \right) \).
 \end{ejemplo}
 
 El producto libre de grupos \(*_\alpha G_\alpha\) es en la categoría
-\(\mathcal{Grp}\) el co-producto categórico. Esto se ve siguiente la
-definición \ref{def:coproducto} de co-producto, sean \(X,Y,C\) tres grupos
-tales que existan homomorfismo \(\phi_1 : X \to C\) y \(\phi_2 : X \to
-C\). Ya se había visto anteriormente como el producto libre \(X * Y\)
-admite una extensión (única) de los homomorfismos \(\phi_1, \phi_2\) a
-la cual denotaremos \(\Phi : X * Y \to C\), la cual debe cumplir con la
-igualdad pedida en la Definicion \ref{def:coproducto}. Una consecuencia
+\(\mathcal{Grp}\) el co-producto categórico. Una consecuencia
 de \vank es que el functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\)
-preserva co-productos, como fue visto en el ejemplo anterior. Esto
-completa la caracterizacion iniciada por el Teorema \ref{thm:prop-prod}
-de la relacion del grupo de wedge-sum con sus sumandos.
+preserva \emph{algunos} co-productos, en particular aquellos
+co-productos cuyos espacios bases tengan vecindades simplemente conexa en los
+puntos de origen.
+
+seria interesante ver algún ejemplo de un co-producto que no se preserva
+bajo \(\pi\). Para esto solo debemos ver algun espacio que no tenga
+vecindades simplemente conexas para todo punto\footnote{no sea semi localmente
+simplemente conexo}. Para esto consideramos el espacio ``Hawaian earring''
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.3]{./imagenes/480px-Hawaiian_Earrings.svg.png}
+  \caption*{Hawaian earring}
+\end{figure}
+el cual es la unión de \(S^1\) de radio \(1 / n\) centrados en
+\((1/n, 0)\) para todo \(n \in \mathbb N\). Si consideramos a \(x_0\)
+como la intersección de todos los círculos, para cualquier vecindad
+(como vecindad restringida de \(\mathbb R ^2\)) esta siempre contendrá a
+algún \(S^1\) de radio \(1 / {n_0}\) para \(n_0\) suficientemente
+grande. Luego este espacio no sera simplemente conexo, pues \(S^1\) no
+es contractible a un punto un punto. Luego no podemos concluir mediante
+\vank que
+\[ \pi (X \vee X , x_0) = \pi (X, x_0) * \pi (X, x_0)\]
+cuando \(X\) es el ``Hawaian earring''.
 
 \begin{ejemplo}[Botella de Klein]
   La botella de Klein \(K\) puede presentarse como un cociente en el
