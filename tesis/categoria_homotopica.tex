@@ -512,12 +512,17 @@ de los productos y co-productos categóricos.
   siguientes ecuaciones
   \[ f = \pi_x \circ \theta, \quad g = \pi_y \circ \theta \]
   entonces \(P\) es un producto de \(X\) e \(Y\).
+  \begin{figure*}[h]
+    \centering
+    \includegraphics[scale=0.5]{./imagenes/producto.png}
+    \caption{Producto}
+  \end{figure*}
 \end{definicion}
 \begin{acotacion}
   La propiedad que debe cumplir el producto \(P\) sobre cualquier otro
   objeto \(M\) que tenga morfismos \(f,g\) como en la definicion es
   conocida como una propiedad universal. En general una propiedad
-  universal de un objeto \(X\) es un predicado que cualquier otro objeto
+  universal de un objeto \(X\) es una propiedad que cualquier otro objeto
   con ciertos morfismos debe cumplir respecto de \(X\), usualmente
   haciendo conmutar algun diagrama.
 \end{acotacion}
@@ -527,13 +532,17 @@ sentido opuesto.
   Sea \(C , X , Y \in \mathbf {Obj}\) objetos arbitrarios de una categoría
   tal que existen \(\phi_x : X \to C,\ \phi_y : Y \to C\) morfismos en
   \(\mathbf {Mor}\). Si para todo objeto \(M \in \mathbf {Obj}\) tal que posea
-  morfismos \( f : X \to C,\ g : Y \to C\) en \(\mathbf{Mor}\) existe un
+  morfismos \( f : X \to M,\ g : Y \to M\) en \(\mathbf{Mor}\) existe un
   morfismo \(\theta : C \to M\) en \(\mathbf{Mor}\) tal que se cumplan
   las siguientes ecuaciones
   \[ f = \theta \circ \phi_x, \quad g = \theta \circ \phi_y \]
   entonces \(C\) es un co-producto de \(X\) e \(Y\).
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{./imagenes/coproducto.png}
+    \caption{Coproducto}
+  \end{figure}
 \end{definicion}
-% TODO: considerar incluir diagramas conmutativos
 Intuitivamente, pensamos que el producto categórico en
 \(\mathscr{HoTop}_*\) debería ser el producto cartesiano de espacios.
 Esto es correcto notanto que \(\forall (X,x_0) , (Y, y_0) \in \mathbf
