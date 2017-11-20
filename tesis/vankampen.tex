@@ -135,7 +135,10 @@ define para \(g_1 g_2 \dots g_n \in *_\alpha G_\alpha\) arbitrario es la siguien
 Para probar que es única, basta notar reducir la cadena no afecta la
 imagen bajo \(\phi\) y que esta debe seguir siendo un homomorfismo.
 
-El marco de trabajo de \vank sera el siguiente diagrama conmutativo,
+Previo al teorema general, es útil trabajar con una versión reducida del
+teorema de \vank por dos razones: es una versión geométricamente
+intuitiva y aparece como paso intermedio de la demostración general. En
+esta version se trabajara con el siguiente diagrama conmutativo,
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.5]{./imagenes/van.png}
@@ -147,10 +150,6 @@ son las inclusiones en el grupo libre tomando todo \(\gamma \in \pi (U,
 x_0)\) y ver la correspondiente cadena \(\gamma \in H\) y \(\Phi :
 \pi(U, x_0) * \pi (V, x_0) \to \pi (X, x_0)\) la extensión de los
 homomorfismo \(\Phi_1, \Phi_2\) descrita en el párrafo anterior.
-
-Previo al teorema general, es útil trabajar con una versión reducida del
-teorema de \vank por dos razones: es una versión geométricamente
-intuitiva y aparece como paso intermedio de la demostración general.
 
 \begin{teorema} \label{thm:vank-especifico}
   Sea \(X = U \cup V\), donde \(U,V\) son conjuntos abiertos de \(X\).
@@ -226,10 +225,10 @@ utilizaremos en su forma generalizada para probar el teorema general.
 
 \begin{teorema}[\vank]
   Sea \((X, x_0)\) un espacio puntuado tal que exista una familia de
-  conjuntos \(\{A_\alpha\}_{\alpha \in \tau}\) la cual cumpla que todo
-  elemento de esta contiene a \(x_0\) y \( X = \bigcup_{\alpha \in \tau} A_\alpha\). Si para cada
-  intersección \(A_\alpha \cap A_\beta\) es arco-conexa, entonces el
-  homomorfismo
+  conjuntos abiertos \(\{A_\alpha\}_{\alpha \in \tau}\) la cual cumpla
+  que todo elemento de esta contiene a \(x_0\) y \( X = \bigcup_{\alpha
+  \in \tau} A_\alpha\). Si para cada intersección \(A_\alpha \cap
+  A_\beta\) es arco-conexa, entonces el homomorfismo
   \[ \Phi : *_\alpha \pi (A_\alpha, x_0) \to \pi (X, x_0) \]
   es sobreyectivo.
 
@@ -478,14 +477,37 @@ declarado, podemos proceder a la demostración.
   Si \(\bigcap_{\alpha \in \tau} A_\alpha \) tiene grupo fundamental
   trivial, entonces
   \[ *_\alpha \pi (A_\alpha , x_0) \simeq \pi (X, x_0) \]
-  En particular para una wedge-sum \((X \vee Y , {x_0 , y_0})\), dado
-  que los singletons tiene grupos fundamentales triviales, se afirma que
-  \[ \pi (X \vee Y , \{x_0, y_0\}) \cong \pi (X, x_0) * \pi (Y , y_0) \]
 \end{corolario}
 
-Este teorema es largo, pero sus consecuencias son poderosas.
-Calcularemos algunos ejemplos que utilicen el teorema de \vank desde
-casos sencillos a mas complicados.
+\begin{corolario}[Preservación del co-producto bajo \(\pi\)]
+  \label{cor:vank-coproducto}
+  Sea \(x_0 \in X, \ y_0 \in Y\), si existen \(U_x \subset X, \ U_y
+  \subset Y\) vecindades simplemente conexas (contractibles) a \(x_0,
+  y_0\) respectivamente, entonces el wedge-sum \((X \vee Y , \{x_0 ,
+  y_0\})\) tiene grupo fundamental \(\pi (X, x_0) * \pi (Y, y_0)\).
+\end{corolario}
+\begin{proof}
+  Definamos dos nuevos conjuntos:
+  \begin{gather*}
+    A_x := (X \vee U_y / {x_0 \simeq y_0}) \\
+    A_y := (Y \vee U_x / {x_0 \simeq y_0})
+  \end{gather*}
+  Dada que \(U_x, U_y\) son contráctiles, se tiene que \(A_x, A_y\)
+  poseen los mismos tipos homotopicos que \(X, Y\) respectivamente, ie
+  \begin{gather*}
+    \pi (A_x , x_0) = \pi (X, x_0) \\
+    \pi (A_y , y_0) = \pi (Y, y_0)
+  \end{gather*}
+  Además estos conjuntos cumplen las siguiente ecuaciones
+  \begin{gather*}
+    A_x \cup A_y = (X \vee Y / \{ x_0 \sim y_0\}) \\
+    A_x \cap A_y = (U_x \vee U_y / \{ x_0 \sim y_0\})
+  \end{gather*}
+  Otra vez por ser \(U_x, U_y\) contráctiles, el grupo fundamental
+  \(\pi (A_x \cap A_y, x_0)\) es trivial y por tanto podemos aplicar el
+  corolario \ref{cor:vank-trivial} para obtener que
+  \[ \pi (X \vee Y, x_0) = \pi (X, x_0) * \pi (Y, y_0) \]
+\end{proof}
 
 \begin{ejemplo}[Espacio ``figura 8'']
 El espacio ``figura 8'' en el diagrama es homotopicamente equivalente a
@@ -495,24 +517,41 @@ la wedge-sum \(S^1 \vee S^1\).
     \caption*{Espacio figura 8}
   \end{figure}
   Es trivialmente cierto que el conjunto \(\{x_0\}\) es arco-conexo y
-  hay inyecciones dos canónicas de \(S^1\) a \(S^1 \vee S^1\). Por tanto
-  podemos aplicar el corolario \ref{cor:vank-trivial} para decir el el
-  grupo fundamental de \(\left( S^1 \vee S^1 , x_0 \right) \) es \(\pi
-  \left( S^1 , x_0 \right) * \pi \left( S^1 , x_0 \right) \).
+  hay inyecciones dos canónicas de \(S^1\) a \(S^1 \vee S^1\). Además es
+  cierto que \(x_0\) posee vecindades contráctiles en \(S^1\), pues este
+  es homeomorfo a \([0,1]/0 \simeq 1\) y es cosa de tomar un intervalo
+  pequeño de \(x_0\). Por tanto podemos aplicar el corolario
+  \ref{cor:vank-coproducto} para decir que el grupo fundamental de
+  \(\left( S^1 \vee S^1 , x_0 \right) \) es \(\pi \left( S^1 , x_0 \right)
+  * \pi \left( S^1 , x_0 \right) \).
 \end{ejemplo}
 
 El producto libre de grupos \(*_\alpha G_\alpha\) es en la categoría
-\(\mathcal{Grp}\) el co-producto categórico. Esto se ve siguiente la
-definición \ref{def:coproducto} de co-producto, sean \(X,Y,C\) tres grupos
-tales que existan homomorfismo \(\phi_1 : X \to C\) y \(\phi_2 : X \to
-C\). Ya se había visto anteriormente como el producto libre \(X * Y\)
-admite una extensión (única) de los homomorfismos \(\phi_1, \phi_2\) a
-la cual denotaremos \(\Phi : X * Y \to C\), la cual debe cumplir con la
-igualdad pedida en la Definicion \ref{def:coproducto}. Una consecuencia
+\(\mathcal{Grp}\) el co-producto categórico. Una consecuencia
 de \vank es que el functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\)
-preserva co-productos, como fue visto en el ejemplo anterior. Esto
-completa la caracterizacion iniciada por el Teorema \ref{thm:prop-prod}
-de la relacion del grupo de wedge-sum con sus sumandos.
+preserva \emph{algunos} co-productos, en particular aquellos
+co-productos cuyos espacios bases tengan vecindades simplemente conexa en los
+puntos de origen.
+
+seria interesante ver algún ejemplo de un co-producto que no se preserva
+bajo \(\pi\). Para esto solo debemos ver algun espacio que no tenga
+vecindades simplemente conexas para todo punto\footnote{no sea semi localmente
+simplemente conexo}. Para esto consideramos el espacio ``Hawaian earring''
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.3]{./imagenes/480px-Hawaiian_Earrings.svg.png}
+  \caption*{Hawaian earring}
+\end{figure}
+el cual es la unión de \(S^1\) de radio \(1 / n\) centrados en
+\((1/n, 0)\) para todo \(n \in \mathbb N\). Si consideramos a \(x_0\)
+como la intersección de todos los círculos, para cualquier vecindad
+(como vecindad restringida de \(\mathbb R ^2\)) esta siempre contendrá a
+algún \(S^1\) de radio \(1 / {n_0}\) para \(n_0\) suficientemente
+grande. Luego este espacio no sera simplemente conexo, pues \(S^1\) no
+es contractible a un punto un punto. Luego no podemos concluir mediante
+\vank que
+\[ \pi (X \vee X , x_0) = \pi (X, x_0) * \pi (X, x_0)\]
+cuando \(X\) es el ``Hawaian earring''.
 
 \begin{ejemplo}[Botella de Klein]
   La botella de Klein \(K\) puede presentarse como un cociente en el
@@ -592,44 +631,61 @@ Sea \(\mathscr{C}\) una categoría. Sean \(X,Y,Z\) objetos en
 \(\mathbf{Obj}(\mathscr{C})\) y \(f : Z \to X , g : Z \to Y\) morfismos
 en \(\mathscr{C}\). El pushout de \(f,g\) corresponde a una tripleta
 \((P, i_1, i_2)\) donde \(P\) es un objeto, \(i_1 : X \to P ,\ i_2 : Y
-\to P\) son morfismos de la categoría \(\mathscr{C}\) tales que sean
-universales. Esto es, que si existe una tripleta \((Q, j_1, j_2)\) con
-\(Q\) un objeto y \(j_1 : X \to Q,\ j_2 : Y \to Q\) entonces existe un
-morfismo \(u : P \to Q\) tal que
-\[ j_2 = u \circ i_2,\quad j_1 = u \circ i_1 \]
-En resumen, el siguiente diagrama conmuta
+\to P\) son morfismos de la categoría \(\mathscr{C}\) tales que
+\[ i_1 \circ f = i_2 \circ g\]
+y que estos sean universales. Esto es, que si existe una tripleta \((Q,
+j_1, j_2)\) con \(Q\) un objeto y \(j_1 : X \to Q,\ j_2 : Y \to Q\)
+tales que el diagrama conmute, ie
+\begin{gather*}
+  j_1 \circ f = j_2 \circ g
+\end{gather*}
+entonces existe un morfismo \(u : P \to Q\) tal que
+\[ j_2 = u \circ i_2, \quad j_1 = u \circ i_1 \]
+En resumen, el siguiente diagrama conmuta en todo posible camino
 \begin{figure}[h]
     \centering \includegraphics[scale=1]{./imagenes/pushout.png}
 \end{figure}
 \end{definicion}
 
-El teorema \vank nos dice que hay ciertos tipos de pushout que se
-preservan bajo el functor \(\pi : \mathscr{HoTop_*} \mapsto
-\mathscr{Grp}\). Notamos que el marco de trabajo de el teorema en la
-categoría \(\mathscr{Grp}\) luce como el siguiente diagrama.
-\begin{figure}[H]
-  \centering \includegraphics[scale=0.5]{./imagenes/van.png}
-\end{figure}
+En la categoría \(\mathscr{Top}_*\) o \(\mathscr{HoTop}_*\) los espacios
+adjuntos son los pushout de morfismos dado por la inclusión. Formalmente,
+si \(A,B,C\) son espacios topológicos donde \(f : A \to B \) es una
+función inclusión y \( g : A \to C \) es una función continua, el
+espacio
+\[ B \cup_{g} C := B \sqcup C / \{g(A) \sim f(A)\} \]
+junto con las inclusiones correspondientes al co-producto es el pushout
+de \( (A, f , g) \).
+
+En la categoría \(\mathscr{Grp}\), el pushout general es el llamado
+producto libre con amalgamación. Formalmente, si \(F,G,H\) son grupos
+con morfismos \(\psi : F \to G ,\ \phi : F \to H\), su pushout sera el
+grupo
+\[ G * H / \text{Norm}\{ \phi(f) \psi(f)^{-1} = e , \forall f \in F\}\]
+con las respectivas inclusiones al co-producto (modulo clases de
+equivalencia).
+
+Podemos re-interpretar el teorema de \vank mediantes pushouts. El
+teorema general nos dice que el grupo fundamental de un espacio adjunto
+\(A \cup_f B\) con \(i_{a,b} : A \cap B \to A, i_{b,a} : A \cap B \to B
+\) \emph{ambas} inclusiones y \(A \cap B\) un espacio arco-conexo,
+corresponde a el grupo libre con amalgamación
+\[\pi (A, x_0) * \pi (B , x_0) / N \{i_{a,b,*} (f)
+\overline{i_{b,a,*} (f)} = e , \forall f \in \pi (A \cap B)\},\ x_0 \in
+A \cap B \]
+Es decir, el functor \(\pi\) preserva pushouts dados por funciones
+inclusión de \(\mathscr{HoTop}_*\) a pushout de \(\mathscr{Grp}\)
 (recordando que estos elementos pierden su notación \(i_*\) por
-simplicidad), es decir que el pushout de \(\left( \pi (U \cap V , x_0) ,
-i_1 , i_2 \right)\) corresponde a la tripleta \( \left( H , \phi_1 ,
-\phi_2 \right)\) con \(H = \pi (U, x_0) * \pi (V , x_0)\) el producto
-libre y \(u\) siendo el morfismo \(\Phi\).
-
-Análogamente en \(\mathscr{HoTop}_*\) tenemos los siguiente pushout.
+simplicidad).
 \begin{figure}[h]
-  \centering \includegraphics[scale=0.5]{./imagenes/pushoutHotop.png}
+  \centering \includegraphics[scale=0.4]{./imagenes/pushoutHotop.png}
+  \caption*{\(H = (U \cup_{i_1} V, {x_0, y_0})\)}
+  \caption*{\(\pi (H) = U \vee V/ \text{N}\{i_{a,b}(\gamma)\overline{i_{b,a}}
+    (\gamma) \mid \gamma \in \pi(U \cap V)\})\)}
 \end{figure}
-donde \([i_1],[i_2],[\phi_1],[\phi_2]\) son las clases de equivalencias
-homotópicas de las inclusiones correspondientes. Esto nos dice que para
-la tripleta \(\left( (U \cap V , x_0), [i_1] , [i_2]\right)\) su pushout
-corresponde a \(\left( (U \vee V, x_0), [\phi_1], [\phi_2] \right)\) con
-\(u = \Phi\).
 
-El teorema de \vank nos dice que si \(\left( U \cap V , x_0 \right)\) es
-arco-conexo (hipótesis del teorema) entonces un pushout de \( \left( (U
-  \cap V , x_0) , [i_1] , [i_2] \right)\) es preservado bajo el functor
-\(\pi\) a un pushout de \(\left( \pi (U \cap V , x_0) , i_{1,*}, i_{2,*}
-\right)\). En general no se tiene que se preserven pushouts arbitrarios
-bajo este functor. Para resultado mas generales de preservar pushout a
-través de este functor se guía a revisar la referencia \cite{brown}.
+Por ultimo, cabe notar de que existen generalizaciones del teorema
+\vank donde las hipótesis de arco-conexidad (y conexidad) no participen.
+Estos resultados también se presentan como la preservación de alguna
+estructura que preserve una propiedad universal en una categoría
+adecuada. Se guía a revisar la referencia \cite{brown} para los
+interesados en dichas construcciones.
