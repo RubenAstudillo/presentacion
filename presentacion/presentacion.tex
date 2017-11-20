@@ -496,19 +496,42 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Ejemplos}
-    \begin{block}{\(S^1 \vee S^1\)}
-      \centering \includegraphics[scale=0.5]{../tesis/imagenes/figura8.png}
-    \end{block}
-
+    \frametitle{Ejemplos \(S^1 \vee S^1\)}
+    \begin{center}
+      \includegraphics[scale=0.4]{../tesis/imagenes/figura8.png}
+    \end{center}
     \pause
-    \begin{block}{Botella Klein}
-      \centering
+    Notar que para todo \(x_0\) existe una vecindad contractible \(U_x\)
+    se este. Luego
+    \[ A_1 = S^1 \vee U_x , \quad A_2 = U_x \vee S^1 \]
+    \[ \implies A_1 \cup A_2 = (S^1 \vee S^1, x_0) , \quad A_1 \cap A_2 = (U_x , x_0) \]
+    con \(\pi (U_x , x_0)\) trivial. Luego
+    \[ \pi (S^1 \vee S^1) = \pi (S^1) * \pi (S^1) \text{ por \vank}\]
+    \pause
+    Solo se preservan co-productos de espacios semi-localmente
+    simplemente conexos mediante \(\pi\)
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Botella Klein}
+    \begin{center}
       \includegraphics[scale=0.3]{../tesis/imagenes/kleinU.png}
       \hspace{3mm}
       \includegraphics[scale=0.3]{../tesis/imagenes/kleinV.png}
       \hspace{3mm}
-      \includegraphics[scale=0.3]{../tesis/imagenes/kleinUV.png}
-    \end{block}
+      \includegraphics[scale=0.3]{../tesis/imagenes/kleinUV.png} \\
+      \hspace{2mm} \(U\) \hspace{19mm} \(V\) \hspace{16mm} \(U \cap V\)
+    \end{center}
+    \pause
+    \begin{gather*}
+      \pi (U) = \{e\}, \quad \pi (V) = \{[e], [a], [b]\} \\
+      \pi (U \cap V) = \{[\gamma], [e]\} \text{ se retrae a } S^1 \\
+      i_{u,v} ([\gamma]) = [e], \quad i_{v,u} ([\gamma]) = [\gamma]_V
+    \end{gather*}
+    Pero \([\gamma]_{V} = [a]*[b]*[a]*[b^{-1}] \) por homotopia
+    radial. Luego
+    \[ N \left( \{[a]*[b]*[a]*[b^{-1}]\} \right) = \{[a]*[b]*[a]*[b^{-1}]\} \]
+    \[ \pi (U \cup V) = \langle [a], [b] \rangle /
+      \{[a]*[b]*[a]*[b^{-1}] = e\}\]
   \end{frame}
 \end{document}
