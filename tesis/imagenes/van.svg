@@ -19,6 +19,48 @@
   <defs
      id="defs2">
     <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5317"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5315" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5139"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5137" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker4961"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4701"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
        inkscape:stockid="Arrow1Lend"
        orient="auto"
        refY="0.0"
@@ -58,36 +100,6 @@
        inkscape:collect="always">
       <path
          id="path5152"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         transform="scale(0.8) rotate(180) translate(12.5,0)" />
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible;"
-       id="marker5108"
-       refX="0.0"
-       refY="0.0"
-       orient="auto"
-       inkscape:stockid="Arrow1Lend"
-       inkscape:collect="always">
-      <path
-         transform="scale(0.8) rotate(180) translate(12.5,0)"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         id="path5106" />
-    </marker>
-    <marker
-       inkscape:stockid="Arrow1Lend"
-       orient="auto"
-       refY="0.0"
-       refX="0.0"
-       id="marker5068"
-       style="overflow:visible;"
-       inkscape:isstock="true"
-       inkscape:collect="always">
-      <path
-         id="path5066"
          d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
          transform="scale(0.8) rotate(180) translate(12.5,0)" />
@@ -201,8 +213,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="258.86923"
-     inkscape:cy="779.2031"
+     inkscape:cx="334.41769"
+     inkscape:cy="852.94424"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -232,7 +244,7 @@
        xml:space="preserve"
        id="flowRoot4485"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.16784733,0,0,0.16706293,-4.5623747,24.038546)"
+       transform="matrix(0.14952518,0,0,0.16706293,-3.3503934,24.038546)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -247,7 +259,7 @@
        xml:space="preserve"
        id="flowRoot4485-9"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.16784733,0,0,0.16706293,75.611324,23.95732)"
+       transform="matrix(0.16784733,0,0,0.16706293,166.48296,27.966363)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -292,7 +304,7 @@
        xml:space="preserve"
        id="flowRoot4485-93"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.16784733,0,0,0.16706293,157.63215,26.225178)"
+       transform="matrix(0.16784733,0,0,0.16706293,102.04008,24.354291)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -315,12 +327,12 @@
          y="115.53174"
          style="stroke-width:0.26458332" /></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
-       d="m 27.261492,56.190154 c 3.11834,-4.900248 6.236484,-9.800189 10.11179,-14.254523 3.875305,-4.454334 8.508268,-8.463629 12.650854,-11.225312 4.142585,-2.761684 7.795491,-4.276303 11.448006,-5.345313 3.652514,-1.069011 7.305516,-1.692694 10.957899,-2.316272"
+       style="fill:none;stroke:#000000;stroke-width:0.27631557;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 24.579946,57.508195 c 3.448806,-4.817183 6.897391,-9.634056 11.183371,-14.012871 4.285979,-4.378816 9.409913,-8.320141 13.991497,-11.035005 4.581585,-2.714864 8.621601,-4.203806 12.661186,-5.254695 4.039585,-1.05089 8.079708,-1.664 12.119154,-2.277008"
        id="path4639"
        inkscape:connector-curvature="0"
        inkscape:path-effect="#path-effect4641"
-       inkscape:original-d="m 27.261492,56.190154 c 3.118408,-4.900205 6.236554,-9.800145 9.354433,-14.699823 4.632645,-4.009054 9.265608,-8.018349 13.898015,-12.027128 3.652726,-1.5147 7.305632,-3.02932 10.958052,-4.543582 3.652628,-0.623839 7.30563,-1.247523 10.958049,-1.870887"
+       inkscape:original-d="m 24.579946,57.508195 c 3.448876,-4.817133 6.897462,-9.634005 10.345753,-14.450619 5.123581,-3.941089 10.247514,-7.882415 15.370833,-11.823234 4.039817,-1.489022 8.079833,-2.977965 12.119312,-4.466555 4.039709,-0.613264 8.079832,-1.226374 12.11931,-1.839171"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
@@ -335,52 +347,22 @@
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5068)"
-       d="m 95.147952,102.42778 c 1.06922,-2.40574 2.138297,-4.811167 2.850933,-8.240814 0.712636,-3.429646 1.069042,-7.884729 1.202664,-11.314597 0.133621,-3.429867 0.04452,-5.835446 -0.04456,-8.240616"
-       id="path4661"
-       inkscape:connector-curvature="0"
-       inkscape:path-effect="#path-effect4663"
-       inkscape:original-d="m 95.147952,102.42778 c 1.069342,-2.40569 2.13842,-4.811112 3.207234,-7.216275 0.356576,-4.454166 0.712983,-8.909249 1.069078,-13.363475 -0.08882,-2.405538 -0.177917,-4.811117 -0.267272,-7.216277"
-       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5108)"
-       d="m 95.219551,27.616733 c 1.069218,2.405744 2.138295,4.811168 2.85093,8.240815 0.712636,3.429647 1.069043,7.88473 1.202665,11.314596 0.133621,3.429867 0.04453,5.835447 -0.04456,8.240617"
-       id="path4661-6"
-       inkscape:connector-curvature="0"
-       inkscape:path-effect="#path-effect4663-3"
-       inkscape:original-d="m 95.219551,27.616733 c 1.06934,2.40569 2.13842,4.811112 3.20723,7.216275 0.35658,4.454167 0.71299,8.90925 1.06908,13.363476 -0.0888,2.405538 -0.17792,4.811117 -0.26727,7.216277"
-       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5206)"
-       d="m 108.51143,108.84225 c 6.68205,-1.87097 13.36379,-3.74186 20.04537,-6.41451 6.68158,-2.672655 13.36363,-6.14732 18.57528,-9.666332 5.21164,-3.519012 8.95359,-7.082776 11.62622,-9.710871 2.67263,-2.628095 4.27637,-4.320922 5.283,-5.577047 1.00663,-1.256124 1.48778,-2.218428 1.93307,-3.109009"
+       style="fill:none;stroke:#000000;stroke-width:0.29741234px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5206)"
+       d="m 108.48146,108.81371 c 9.01157,-1.75294 18.02276,-3.5058 27.03375,-6.00984 9.01098,-2.50404 18.0226,-5.759511 25.05119,-9.05653 7.0286,-3.297018 12.0751,-6.635964 15.6795,-9.09827 3.60439,-2.462306 5.76723,-4.048336 7.12906,-5.231128 1.36182,-1.182792 2.00223,-2.072608 2.60273,-2.906966"
        id="path4683"
        inkscape:connector-curvature="0"
        inkscape:path-effect="#path-effect4685"
-       inkscape:original-d="m 108.51143,108.84225 c 6.682,-1.87115 13.36374,-3.74204 20.04521,-5.61266 6.68169,-3.474605 13.36374,-6.949272 20.04522,-10.42351 3.74186,-3.563689 7.48381,-7.127452 11.22531,-10.690781 1.60377,-1.692849 3.2075,-3.38568 4.81086,-5.078121 0.44564,-0.801944 0.89116,-1.782062 1.33634,-2.672697"
+       inkscape:original-d="m 108.48146,108.81371 c 9.01154,-1.75311 18.02273,-3.50597 27.03356,-5.25858 9.01113,-3.25541 18.02275,-6.510877 27.03359,-9.765943 5.04638,-3.338874 10.09289,-6.677817 15.13879,-10.016353 2.1629,-1.586057 4.32573,-3.172095 6.48807,-4.757768 0.601,-0.751354 1.20185,-1.669641 1.80222,-2.50409"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5154)"
-       d="m 109.13828,22.949213 c 6.68205,1.870975 13.36379,3.741863 20.04537,6.414515 6.68158,2.672651 13.36363,6.147316 18.57528,9.666328 5.21165,3.519013 8.95359,7.082776 11.62622,9.710872 2.67263,2.628095 4.27637,4.320922 5.283,5.577047 1.00663,1.256124 1.48778,2.218428 1.93307,3.109009"
+       style="fill:none;stroke:#000000;stroke-width:0.31278476px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5154)"
+       d="m 109.11791,22.982609 c 9.00985,1.939206 18.01931,3.878329 27.02855,6.648453 9.00925,2.770124 18.01912,6.371512 25.04636,10.018872 7.02723,3.647361 12.07276,7.3411 15.67646,10.065047 3.60369,2.723946 5.76611,4.478511 7.12636,5.784953 1.36024,1.306442 2.00316,2.294856 2.60356,3.217892"
        id="path4683-0"
        inkscape:connector-curvature="0"
        inkscape:path-effect="#path-effect4685-1"
-       inkscape:original-d="m 109.13828,22.949213 c 6.682,1.871152 13.36374,3.742042 20.04521,5.612662 6.68169,3.474604 13.36374,6.949272 20.04522,10.423509 3.74186,3.56369 7.48381,7.127452 11.22531,10.690782 1.60377,1.692849 3.2075,3.38568 4.81086,5.078121 0.44564,0.801944 0.89116,1.782062 1.33634,2.672697"
-       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:1.06, 0.26500000000000001;stroke-dashoffset:0;marker-end:url(#marker5264)"
-       d="M 161.96533,66.079128 C 147.44394,65.544598 132.9223,65.010059 118.4004,64.47551"
-       id="path4705"
-       inkscape:connector-curvature="0"
-       inkscape:path-effect="#path-effect4707"
-       inkscape:original-d="M 161.96533,66.079128 C 147.44395,65.544323 132.92231,65.009786 118.4004,64.47551"
+       inkscape:original-d="m 109.11791,22.982609 c 9.00981,1.939395 18.01927,3.878519 27.02836,5.817363 9.00939,3.601327 18.01926,7.20272 27.02837,10.803667 5.04541,3.693662 10.09094,7.387398 15.13586,11.080687 2.16248,1.754589 4.3249,3.50916 6.48682,5.263326 0.60089,0.831192 1.20161,1.847056 1.80188,2.770174"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
@@ -388,7 +370,7 @@
        xml:space="preserve"
        id="flowRoot5320"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.20105408,0,0,0.21924138,13.116432,4.7525021)"
+       transform="matrix(0.20105408,0,0,0.21924138,14.987319,7.6924669)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -402,7 +384,7 @@
        xml:space="preserve"
        id="flowRoot5328"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.1871256,0,0,0.23737816,16.66486,8.4769669)"
+       transform="matrix(0.1871256,0,0,0.23737816,18.001208,7.9424278)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -416,7 +398,7 @@
        xml:space="preserve"
        id="flowRoot5328-1"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.17219188,0,0,0.18251916,85.04833,18.526098)"
+       transform="matrix(0.17219188,0,0,0.18251916,140.10586,31.355036)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -430,7 +412,7 @@
        xml:space="preserve"
        id="flowRoot5320-7"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.19619763,0,0,0.2030352,79.29241,17.367521)"
+       transform="matrix(0.19619763,0,0,0.2030352,128.20273,7.2112793)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -444,7 +426,7 @@
        xml:space="preserve"
        id="flowRoot5408"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.16928946,0,0,0.1917466,61.685472,20.991647)"
+       transform="matrix(0.16928946,0,0,0.1917466,67.298132,22.862534)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -458,7 +440,7 @@
        xml:space="preserve"
        id="flowRoot5416"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.16132927,0,0,0.18264201,55.529058,11.131715)"
+       transform="matrix(0.16132927,0,0,0.18264201,27.198487,24.762461)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -472,7 +454,7 @@
        xml:space="preserve"
        id="flowRoot5424"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       transform="matrix(0.19114397,0,0,0.20085119,36.914416,19.227115)"
+       transform="matrix(0.19114397,0,0,0.20085119,12.592889,5.8636385)"
        inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/tesis/imagenes/van.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><flowRegion
@@ -482,5 +464,26 @@
            height="129.29953"
            x="515.1778"
            y="403.29108" /></flowRegion><flowPara
-         id="flowPara5430">Φ₂</flowPara></flowRoot>  </g>
+         id="flowPara5430">Φ₂</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4961)"
+       d="m 94.078874,101.62597 c 0,0 16.570706,-9.888968 19.510676,-18.976133 2.93996,-9.087165 2.67269,-11.225321 2.67269,-11.225321"
+       id="path4696"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5139)"
+       d="m 96.484299,28.126854 c 0,0 12.027131,6.414468 14.967091,17.37252 2.93997,10.958049 3.20724,13.630746 3.20724,13.630746"
+       id="path5129"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5317);stroke-miterlimit:4;stroke-dasharray:1.5874999,1.5874999;stroke-dashoffset:0"
+       d="m 120.53856,65.544588 50.51394,1.603616"
+       id="path5307"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
 </svg>
