@@ -155,7 +155,7 @@ técnicos previos.
 
 \begin{lema} \label{lem:homotopic-inducing}
   Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuos. Si \(h\) y
-  \(k\) son homotopicos y si la imagen de \(x_0\) bajo esta homotopía permanece
+  \(k\) son homotópicos y si la imagen de \(x_0\) bajo esta homotopía permanece
   fija en \(y_0\), entonces \(h_*\) e \(k_*\) son iguales.
 \end{lema}
 % TODO: hay que ser mas preciso porque debemos mantener la homotopía
@@ -248,29 +248,29 @@ retracción \(\Re ^2 \backslash \{0\}\) en \(S^1\).
   un isomorfismo de grupos fundamentales.
 \end{proof}
 
-\subsection{Tipos homotopicos}
+\subsection{Tipos homotópicos}
 Ahora que ya conocemos el esquema de trabajo, podemos generalizar para
 espacios que no necesariamente sean retracciones entre si, pero que
 posean un par de funciones cuyas composiciones sean homotópicas a la
 identidad correspondiente.
-\begin{definicion}[Equivalencias homotopicas] \label{def:equivalencias-hom}
+\begin{definicion}[Equivalencias homotópicas] \label{def:equivalencias-hom}
   Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
   que \( g \circ f : X \to X \) es homotopico al mapeo identidad de
   \(X\) y \( f \circ g : Y \to Y \) es homotopico al mapeo identidad de
   \(Y\). Entonces \(f\) y \(g\) son llamadas \emph{equivalencias
-  homotopicas} y cada una es una \emph{inversa homotopica} de la otra.
-  Si dos espacios poseen un par de equivalencias homotopicas entre ellos,
+  homotópicas} y cada una es una \emph{inversa homotopica} de la otra.
+  Si dos espacios poseen un par de equivalencias homotópicas entre ellos,
   se dicen que ambos espacios son del mismo \emph{tipo homotopico}.
 \end{definicion}
 Podemos ver que en sección anterior, la retracción y la inclusión
-correspondían a par de equivalencias homotopicas. Podría pensarse que la
-existencia de un par de equivalencias homotopicas entre espacios seria
+correspondían a par de equivalencias homotópicas. Podría pensarse que la
+existencia de un par de equivalencias homotópicas entre espacios sería
 suficiente para afirmar que poseen el mismo grupo fundamental, esto es
 cierto en medida que se sea cuidadoso con los puntos de partida. Este
 problema no se manifestaba en retracciones porque el punto de partida se
 mantenía fijo en la inclusión. Para ver el problema mas claro,
 supongamos que tenemos dos espacios \(X, Y\) junto con un par
-equivalencias homotopicas
+equivalencias homotópicas
 \[ f : X \to Y \quad g : Y \to X \]
 Por hipótesis tenemos que \(g \circ f \simeq Id : X \to X\), pero eso
 \textbf{no} nos asegura la existencia de un punto \(x_0 \in X\) que sea
@@ -281,7 +281,7 @@ el siguiente lema técnico.
 
 \begin{lema} \label{lem:equiv-hom-lift}
   Sean \(h,k : X \to Y\) mapeos continuos, sea \(h (x_0) = y_0,\ k(x_0)
-  = y_1\). Si \(h\) y \(k\) son homotopicos mediante \(H : X \times I
+  = y_1\). Si \(h\) y \(k\) son homotópicos mediante \(H : X \times I
   \to Y\), entonces existe un arco \(\alpha\) en \(Y\) de \(y_0\) a
   \(y_1\) tal que
   \[k_* = \hat \alpha \circ h_* \]
@@ -350,7 +350,7 @@ grupos fundamentales.
 \end{proof}
 Con esto en mente, es fácil ver que se tiene el siguiente corolario
 \begin{corolario}
-  Sean \(h,k : X \to Y\) dos funciones relacionadas homotopicamente
+  Sean \(h,k : X \to Y\) dos funciones relacionadas homotópicamente
   tales que \(h (x_0) = y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva
   o sobreyectiva o trivial, entonces \(k_*\) también lo es.
 \end{corolario}
@@ -458,7 +458,7 @@ Con estos resultados podemos ver el siguiente ejemplo
   \item \(\mathbf {Mor}\) corresponde a un conjunto
     \[ \mathbf{Mor} = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\
       (X,x_0),(Y,y_0) \in \mathbf {Obj} \}\]
-    de clases equivalencias homotopicas entre funciones continuas.
+    de clases equivalencias homotópicas entre funciones continuas.
   \item \((\hat \circ)\) corresponde a la composición de clases de
     equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
     \[ f : (X,x_0) \to (Y, y_0)\]
