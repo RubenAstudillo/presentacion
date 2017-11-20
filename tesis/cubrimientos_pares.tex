@@ -45,14 +45,30 @@ El conjunto discreto dado por \(p^{-1} (x_0)\) es conocido como una
 \noindent Una invariante interesante de este es que la cardinalidad de
 cualquier fibra es la misma para todos los puntos.
 
-\begin{ejemplo}[Cubrimiento de toro]
+\begin{ejemplo}[Cubrimiento de toro] \label{ej:cubrimiento-toro}
   En el ejemplo \ref{ej:toro-presentacion} se trabajo con la
   presentación de toro como espacio cociente de \([0,1]^2\). Siguiendo
   la idea del ejemplo anterior, podemos obtener un cubrimiento de esta
   presentación mediante el siguiente diagrama.
   \begin{figure}[h]
     \centering \includegraphics[scale=0.5]{./imagenes/toro-cubrimiento.png}
+    \caption*{Ejemplo \ref{ej:cubrimiento-toro}: Cubrimiento del toro}
   \end{figure}
+  La funcion en este caso corresponderia a
+  \begin{gather*}
+    \tilde X = [0,3] \times [0,2] \, / \, \{
+      (x,0) \sim (x, 1), \ (0,y) \sim (1,y) \} \\
+    X = [0,1] \times [0,1] \, / \, \{
+      (x,0) \sim (x, 1), \ (0,y) \sim (1,y) \}
+  \end{gather*}
+  \begin{align*}
+    p : \tilde X &\longrightarrow X \\
+    (a,b) &\longmapsto \left( a \mod {1}, b \mod {1} \right)
+  \end{align*}
+  Aquí se muestran dos fibras de diferentes puntos iniciales. Notar que
+  el punto con la vecindad rectangular esta en el borde identificado,
+  por tanto su vecindad se refleja mediante esta. Esto se hereda en su
+  cubrimiento que también tiene identificaciones de igual menera.
 \end{ejemplo}
 
 \begin{ejemplo}[Cubrimiento: \(\Re\) sobre \(S^1\)]
