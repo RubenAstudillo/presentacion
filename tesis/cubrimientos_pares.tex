@@ -193,24 +193,27 @@ desarrollar algunos teoremas previos.
 \begin{proof}
   Supongamos que \(X \not \in \mathcal A\), pues si no trivialmente el
   teorema se cumple \(\forall \delta > 0\). Por compacidad de \(X\)
-  existe una colección \(\{A_1,\dotsc,A_n\} \subset \mathcal A\) que
+  existe una colección \(\{A_1 \dotsc A_n\} \subset \mathcal A\) que
   cubre a \(X\), definamos a los conjuntos \(C_i = X - A_i,\ \forall i
-  \in [1,n]\) y a la función \(f : X \to \Re\) definida por
+  \in \{1 \dotsc n\}\) y a la función \(f : X \to \Re\) definida por
   \[ f(x) := \frac 1 n \sum_{i=1}^{n} d(x, C_i) \]
-  i.e. la distancia promedio de \(x\) a \(C_i\). Notemos que \(\forall x
+  i.e. un promedio de distancias. Notemos que \(\forall x
   \in X,\ f(x) > 0\), pues para \(x \in A_i \subseteq X\), por ser
   \(A_i\) un abierto, existe \(\epsilon > 0\) tal que \(B(x,\epsilon)
   \subset A_i\) y por tanto \(d(x, C_i) \geq \epsilon\) que implica \(
   f(x) \geq \frac \epsilon n > 0\).
 
-  Por otro lado \(f\) es una función continua sobre \(X\) un espacio
-  compacto, por lo tanto alcanza un mínimo; a este le denotaremos como
-  nuestro \(\min_X f \coloneqq \delta \).
+  Por otro lado \(f\) es una función continua. Esto por ser suma y
+  ponderación sobre funciones \(d(x,C_i)\) las cuales son continuas en
+  \(x\). Dado que \(f\) esta definida sobre \(X\) un espacio
+  compacto, esta alcanza un mínimo; a este valor le denotaremos como
+  \(\min_X f \coloneqq \delta \).
 
   Probaremos que este \(\delta\) cumple el requerimiento. Sea \(B
   \subset X\) subconjunto abierto de diámetro menor que \(\delta\), sea
-  \(x \in B\) arbitrario. Escojamos el conjunto \(C_m\) como
-  \[ C_m := \max_{i \in [1,n]} d(x, C_i) \]
+  \(x \in B\) arbitrario. Escojamos el conjunto \(C_m\) como aquel con
+  la distancia mayor a \(x\)
+  \[ \forall i \in \{1 \dots n\}, \ d(x, C_m) \geq d(x, C_i) \]
   Dado que
   \[\delta \leq f(x) \leq d(x, C_m) \]
   Esto nos dice que dado \(\delta \leq d(x, C_m)\), existe una vecindad
@@ -269,27 +272,34 @@ y las homotopías en el espacio cubrimiento de \(X\).
   Para ver la unicidad, se probara inductivamente. Supongamos que existe
   otro \(\hat{f}\) levantamiento par de \(f\) que también
   comienza en \(x_0\), ie \(\hat{f} (0) = \tilde x _0 = \tilde f
-  (0)\). Supongamos que que \(\forall s \in [0, s_i],\ \hat{f}
-  (s) = \tilde f (s)\), dado que \(\tilde f\) esta definida por
+  (0)\). Supongamos que
+  \begin{equation}
+    \label{eq:tilde-f-def-si}
+    \forall s \in [0, s_i],\ \hat{f} (s) = \tilde f (s)
+  \end{equation}
+  Dado que \(\tilde f\) esta definida por
   \eqref{eq:tilde-f-inductiva}, \(\hat f\) debe ser
   eventualmente diferente a la definición \eqref{eq:tilde-f-inductiva},
-  pero
-  \[\hat f (s_i) = \tilde f (s_i) \in V_0\]
-  con \([s_i, s_{i+1}]\) conexo y la familia \(\{V_\alpha\}\)
+  pero por \eqref{eq:tilde-f-def-si}
+  \[\hat f (s_i) = \tilde f (s_i) \in V_0,\ \text{para algún conjunto } V_0 \]
+  Como \([s_i, s_{i+1}]\) conexo y la familia \(\{V_\alpha\}\)
   es disjunta, obliga\footnote{Funciones continuas mapean conjuntos
-    conexos a conexos} a que
+    conexos a conexos.} a que
   \[ \hat f \left( [s_i, s_{i+1}] \right) \subset V_0 \]
-  Dado que es un levantamiento, debe de cumplirse que
-  \[\forall s \in [s_i, s_{i+1}],\ p \circ \hat f \, (s) =
-    f(s) = p \circ \tilde f \, (s) \]
-  \[ \iff p \left( \hat f (s) \right) = p \left( \left( p \mid_{V_0}
-      \right) ^{-1} \left( f (s) \right) \right)\]
-  \[ \implies \hat f (s) = (p \mid_{V_0})^{-1} (f (s)), \quad \forall s
-      \in [s_i, s_{i+1}]\]
+  Por ser \(\hat f\) un levantamiento, este debe de cumplir la ecuación
+  \begin{align*}
+    \forall s \in [s_i, s_{i+1}],\quad
+        &p \circ \hat f \, (s) = f(s) = p \circ \tilde f \, (s) \\
+    \iff \forall s \in [s_i, s_{i+1}],\quad
+        &p \left( \hat f (s) \right) =
+        p \left( \left( p \mid_{V_0} \right) ^{-1} \left( f (s) \right) \right) \\
+    \implies \forall s \in [s_i, s_{i+1}],\quad
+        &\hat f (s) = (p \mid_{V_0})^{-1} (f (s))
+  \end{align*}
   siendo esta la única posible definición, pues de haber otra,
   se tendria una contradiccion en decir que \((p \mid_{V_0})\) es un
-  homeomorfismo (mapeo único), por tanto se obliga a que \( \hat f =
-  \tilde f\)
+  homeomorfismo (biyectivo). Por tanto se obliga a que \( \hat f =
+  \tilde f\).
 \end{proof}
 Mas aun, podemos no solo levantar las curvas sobre \(X\) a \(\tilde X\),
 si no también preservar las homotopías de \(X\) en \(\tilde X\).
@@ -300,9 +310,8 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
   única función levantamiento continua \(\tilde F : I \times I \to
   \tilde X\) que cumpla \(\tilde F (0,0) = \tilde x_0\)
 \end{corolario}
-% Pagina 24 quitar referencias a la palabra par
 \begin{proof}
-  Lo único diferente con el teorema \ref{thm:lifting-theorem} es que
+  Lo único diferente con el lema \ref{thm:lifting-theorem} es que
   tomamos \(I \times I\) que sigue siendo compacto. Podemos aplicar el
   teorema anterior primero definiendo \(\tilde F\) en \(0 \times I\),
   luego en \(I \times 0\) y escogiendo subdivisiones de \(I \times I\)
