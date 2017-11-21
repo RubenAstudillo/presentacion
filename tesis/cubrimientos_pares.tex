@@ -63,14 +63,14 @@ el cubrimiento para \(X\).
   sin identificar los bordes y la misma función \(p\), entonces este no
   seria un cubrimiento. Esto se ve a pensar cual vecindad de \(0 \in
   [0,2\pi] / \{0 \sim 2\pi\}\) es cubierta con las propiedades. Tomando
-  cualquier vecindad \(U_0\), se cumple que la preimagen bajo \(p\) es de
+  cualquier vecindad \(U_0\), se cumple que la pre-imagen bajo \(p\) es de
   la siguiente forma
   \[
     [0,b) \cup
     \bigcup_{k \in \{2,4,6,8\}} (k\pi - a, k\pi + b)
     \cup (10\pi - a, 10\pi]
   \]
-  con los dos conjunto extremos no cumpliendo que la restriccion de
+  con los dos conjunto extremos no cumpliendo que la restricción de
   \(p\) a ellos sea un homeomorfismo local.
 \end{ejemplo}
 El diagrama anterior da una idea de la forma de general los espacios
@@ -78,11 +78,53 @@ cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
 \(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del diagrama, se
 tiene la siguiente definicion auxiliar
 \begin{definicion}[Fibra]
-El conjunto discreto dado por \(p^{-1} (x_0)\) es conocido como una
+El conjunto dado por \(p^{-1} (x_0)\) es conocido como una
 \emph{fibra} de \(x_0\).
 \end{definicion}
-\noindent Una invariante interesante de este es que la cardinalidad de
-cualquier fibra es la misma para todos los puntos.
+\noindent Una invariante interesante es que para espacio conexos, la
+cardinalidad de la fibra es la misma para todos los puntos.
+
+\begin{teorema}
+  Si \(X\) es un espacio conexo y \(p : \tilde X \to X\) es un
+  cubrimiento. Si existe \(\b_1 \in X\) tal que
+  \[ \text{card} \left( p^{-1} (b_1) \right) = k \]
+  para alguna cantidad \(k\), entonces para todo \(b \in X\) se cumple
+  que
+  \[ \text{card} \left( p^{-1} (b) \right) = k \]
+\end{teorema}
+\begin{proof}
+  Se definen dos conjuntos
+  \begin{gather*}
+    A := \{ b \in X \mid \text{card} \left( p^{-1} (b) \right) = k
+      \} \\
+    A^c := \{ b \in X \mid \text{card} \left( p^{-1} (b) \right) \neq
+      k \}
+  \end{gather*}
+  Probaremos que ambos son abiertos. Sea \(b_1 \in A\) un elemento
+  arbitrario, queremos encontrar una vecindad de este contenida en
+  \(A\). Por ser \(X\) un espacio cubierto, \(b_1\) tiene una vecindad
+  \(U_1\) tal que
+  \[ \bigcup_{\alpha \in \Lambda} V_\alpha = p^{-1} (U_1) \]
+  tal que
+  \[\forall \alpha \in \Lambda, \ p \mid_{V_\alpha} : V_\alpha \to
+    U_1 \text{ es un homeomorfismo} \]
+  lo cual nos dice que para todo \(\alpha \in \Lambda\) existe un único
+  elemento en \(V_\alpha\) que es pre-imagen de \(b_1\). Dado que la
+  cardinalidad de \(p^{-1} (b_1) = k\), la cardinalidad de \(\Lambda\)
+  debe de ser \(k\). Por tanto todo elemento en la pre-imagen de \(U_1\)
+  tiene cardinalidad \(k\). Luego \(U_1\) es una vecindad abierta de
+  \(b_1\) contenida en \(A\).
+
+  El argumento anterior se puede hacer de igual manera para el conjunto
+  \(A^c\). Por tanto, este también es un conjunto abierto. Obtenemos asi
+  que \(A\) es abierto y cerrado en un espacio conexo, lo cual implica que
+  este es \(X\) o \(\emptyset\). Pero como \(b_0 \in A\), se tiene que
+  \(A = X\), diciendo así que todo elemento tiene la misma cardinalidad.
+\end{proof}
+
+Dado que siempre estaremos trabajando sobre espacios arco-conexos esta
+propiedad siempre se tiene. Estudiemos algunos ejemplos de cubrimientos
+para desarrollar intuición.
 
 \begin{ejemplo}[Cubrimiento de toro] \label{ej:cubrimiento-toro}
   En el ejemplo \ref{ej:toro-presentacion} se trabajo con la
