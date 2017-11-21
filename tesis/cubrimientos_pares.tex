@@ -18,6 +18,31 @@ homeomorfa sobre \(U\). Si para todo \(x \in X\) existe una vecindad
 el cubrimiento para \(X\).
 \end{definicion}
 
+\begin{ejemplo}[Cubrimiento de \(\Re\) sobre \(\Re_+\)]
+  Como ejemplo intuitivo, consideremos el siguiente cubrimiento de
+  \(\Re\) sobre \(\Re_+\)
+  \begin{align*}
+    p : \Re &\longrightarrow \Re_+ \\
+    x &\longmapsto x^2
+  \end{align*}
+  Esta es claramente una función sobreyectiva sobre \(\Re_+\). Para
+  cualquier punto \(x \in \Re_+\), cualquier vecindad abierta \(U_x =
+  (a, b)\) es un conjunto cubierto pues
+  \[ \left( - \sqrt b , - \sqrt a \right) \cup \left( \sqrt b , \sqrt a
+    \right) = p^{-1} \left( a , b \right) \]
+  con la restricción de \(p\) a cada uno de estos conjunto siendo un
+  homeomorfismo local.
+
+  De haber considerado a \(p\) como una función de \(\Re \to \Re_+^0\)
+  entonces este no seria un cubrimiento. Pues para cualquier vecindad
+  \(U_0 = [0, b]\) (topología sub-espacio) de \(0 \in \Re_+^0\), se
+  cumple que su pre-imagen por \(p\) corresponde a
+  \[ (- \sqrt b, \sqrt b) = p^{-1} \left( [0, b) \right) \]
+  donde este conjunto, al ser una restricción sobre \(p\) no resulta
+  inyectivo.
+
+\end{ejemplo}
+
 \begin{ejemplo}[Cubrimiento de \(S^1\) por \( \begin{bmatrix} 0, 10
 \pi \end{bmatrix} \) con \( 0 \sim 10 \pi \)] \label{ej:10pi}
   Pensamos en \(S^1\) como el intervalo \([0, 2 \pi]\) enrollado sobre
