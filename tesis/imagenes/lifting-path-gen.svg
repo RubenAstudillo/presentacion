@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="lifting-path.svg"
+   sodipodi:docname="lifting-path-gen.svg"
    inkscape:export-filename="/home/slack/UTFSM/actual/tesilla/tesis/imagenes/lifting-path.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
@@ -125,7 +125,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -165,7 +165,7 @@
            height="59.598999"
            x="138.3909"
            y="394.19971" /></flowRegion><flowPara
-         id="flowPara5972">I</flowPara></flowRoot>    <flowRoot
+         id="flowPara5972">Y</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5974"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
