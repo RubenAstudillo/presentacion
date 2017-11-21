@@ -184,7 +184,7 @@ f\) sera nuestro representante en el espacio cubrimiento de este
 camino. Veremos también que bajo ciertas hipótesis, este \(\tilde f\)
 es único y refleja información homotópica. Para esto necesitamos
 desarrollar algunos teoremas previos.
-\begin{lema}[Número de Lebesgue] \label{thm:lebesgue-number-lema}
+\begin{lema}[Número de Lebesgue] \label{lem:lebesgue-number-lema}
   Sea \(\mathcal A\) un cubrimiento del espacio métrico \((X,d)\). Si
   \(X\) es compacto, entonces existe \(\delta > 0\) tal que para todo
   subconjunto de \(X\) teniendo diámetro menor que \(\delta\), existe un
@@ -243,7 +243,7 @@ y las homotopías en el espacio cubrimiento de \(X\).
   anterior, se obtiene la siguiente inclusion
   \[ [0,1] = f^{-1} \left( X \right) \subseteq f^{-1} \left( \bigcup_{x
     \in X} U_x \right) \]
-  Por el Teorema \ref{thm:lebesgue-number-lema}, podemos elegir
+  Por el Teorema \ref{lem:lebesgue-number-lema}, podemos elegir
   \(s_0,\dotsc,s_n \in [0,1]\) tal que para todo \(i \in \{0,1 \dotsc,
   n-1\}\), exista \(U_x\) tal que
   \[f \left( [s_i, s_{i+1}] \right) \subset U_x \]
@@ -311,10 +311,11 @@ si no también preservar las homotopías de \(X\) en \(\tilde X\).
   \tilde X\) que cumpla \(\tilde F (0,0) = \tilde x_0\)
 \end{corolario}
 \begin{proof}
-  Lo único diferente con el lema \ref{thm:lifting-theorem} es que
-  tomamos \(I \times I\) que sigue siendo compacto. Podemos aplicar el
-  teorema anterior primero definiendo \(\tilde F\) en \(0 \times I\),
-  luego en \(I \times 0\) y escogiendo subdivisiones de \(I \times I\)
+  Lo único diferente con el lema \ref{thm:lifting-theorem} es que en
+  lugar de tomar \(I\) tomamos \(I \times I\) que sigue siendo compacto.
+  Podemos aplicar el lema \ref{lem:lebesgue-number-lema} anterior, primero
+  definiendo \(\tilde F\) en \(0 \times I\), luego en \(I \times 0\) y
+  escogiendo subdivisiones de \(I \times I\)
   \[ s_0 < s_1 < \dotsc < s_m \]
   \[ t_0 < t_1 < \dotsc < t_n \]
   tales que \(F ([s_i , s_{i+1}] \times [t_j \times t_{j+1}])\) este
