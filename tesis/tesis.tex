@@ -19,13 +19,16 @@
 \newcommand{\vank}{\emph{Seifert-van Kampen} }
 
 \theoremstyle{definition}
-\newtheorem{definicion}{Definicion}
+\newtheorem{definicion}{Definición}
 
 \theoremstyle{plain}
 \newtheorem{teorema}{Teorema}
 
 \theoremstyle{plain}
 \newtheorem{corolario}{Corolario}
+
+\theoremstyle{plain}
+\newtheorem*{observacion}{Observacion}
 
 \theoremstyle{plain}
 \newtheorem{lema}{Lema}
@@ -61,25 +64,27 @@ Nuestras dos grandes herramientas para esto son el estudio de los
 calcular \(\pi (X, x_0)\) para espacios que localmente luzcan como
 productos, el segundo nos permite tratar con espacios que a grandes
 rasgos correspondan a una \emph{wedge sum} de espacio topológicos.
-Además los enfoques que utilizan para encontrar soluciones son realmente
-distintos; para cubrimientos, la intuición geométrica nos hace
-proponer el candidato a solución, mientras que en \vank el tratamiento
-es realmente analítico.
 
 \input{./cubrimientos_pares.tex}
 \input{./vankampen.tex}
 
-\section*{Conclusion}
-Se ha presentado a grande rasgos los principales metodos de como
+\section{Conclusion}
+Se ha presentado a grandes rasgos los principales metodos de como
 calcular grupos fundamentales. Se espera que la intuicion categorica
 detras de estos teoremas sea de ayuda para la sintesis de las ideas del
-area como para la introduccion al lenguaje categorico en general. Como
-direcciones futuras despues de este apunte esta el estudio de
-CW-complexes que llevan la idea combinatorial de generar espacios para
-deducir grupos fundamentales a una mayor cantidad de estos que lo que
-permite \vank . Despues de esto uno puede pasar directamente al mundo de
-homologia donde el lenguaje categorico tiene mas importancia, pero que
-al mismo tiempo es mas dificil de motivar sin este estilo de trabajo previo.
+area, como tambien para la introduccion al lenguaje categorico en
+general.
+
+Como direcciones futuras en el calculo de grupos fundamentales esta el
+estudio de CW-complexes. Estas son estructuras celulares que se le puede
+dotar a un espacio, las cuales permiten describir su grupo fundamental
+conbinatorialmente (como fue hecho con \vank), notando de que en general
+la derivacion de estas estructuras es dificil. Si el interes esta en el
+estudio de teoria de categorias, la teoria de homologias o la teoria de
+grupos homotopicos de orden superior estan ambas fuertemente ligadas a
+nociones categoricas y proveen buenos ejemplos de construcciones mas
+avanzadas.
+
 \begin{thebibliography}{9}
 
 \bibitem{munkres}

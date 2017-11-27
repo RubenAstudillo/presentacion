@@ -17,9 +17,9 @@ pegamiento}.
 \end{definicion}
 
 Esta construccion se puede reutilizar para clases
-\emph{arco}-homotopicas \([f],[g]\) que compartan punto final e inicial
+\emph{arco}-homotópicas \([f],[g]\) que compartan punto final e inicial
 respectivamente.
-\begin{definicion}[Producto de clases Arco-homotopicas]
+\begin{definicion}[Producto de clases Arco-homotópicas]
   Sean \([f],[g]\) dos clases arco-homotópicas tales que \( f(1) =
   g(0)\). Se define el producto de clases \([f] * [g]\) por la ecuación
   \[ [f] * [g] \coloneqq [f * g] \]
@@ -27,7 +27,7 @@ respectivamente.
   definición \ref{def:prod-arcos}.
 \end{definicion}
 \begin{acotacion}
-  Este producto esta bien definido como clase homotopica. Esto se ve
+  Este producto esta bien definido como clase homotópica. Esto se ve
   porque la única manera en que este no lo estuviera es si existieran las
   relaciones \(\hat f \simeq f\) y \(\hat g \simeq g\) con \(f(1) = g(0)\)
   que cumplieran que \(\hat f * \hat g \not \in [f * g]\). Esto no ocurre,
@@ -91,7 +91,9 @@ Iniciando por los mapeos constantes e identidad en \(I \to I\)
 Ademas, para todo arco \(f : I \to X \), el elemento \(\overline{f} : I
 \to X \) esta definido (en el espiritu de la ecuacion
 \eqref{eq:homotopy-simetry}) por
-\[ \overline{f} (s) \coloneqq f (1 - s) \]
+\begin{equation}
+  \overline{f} (s) \coloneqq f (1 - s) \label{def:camino-inverso}
+\end{equation}
 El cual, si \(f\) es un arco de \(x_0 \to x_1\) entonces \(\overline{f}\) es
 un arco de \(x_1 \to x_0\). Por ultimo, para todo \(x \in X \) se define
 la curva constante
@@ -110,7 +112,7 @@ intermedios en cada item de ser necesario. Sea \(f : I
 puntos inicial y final de \(f\) respectivamente.
 
 \subparagraph{2. Identidades izquierda y derechas:} Sea \([f]\) una clase
-homotopica con \(x_0, x_1\) puntos inicial y final de \(f\)
+homotópica con \(x_0, x_1\) puntos inicial y final de \(f\)
 respectivamente. Probaremos primero que \([k_{x_1}]\) es la identidad
 por la derecha. Esto equivale a mostrar que la ecuacion
 \[ [f] = [f] * [k_{x_1}]\]

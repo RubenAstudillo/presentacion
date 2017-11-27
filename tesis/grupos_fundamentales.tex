@@ -42,9 +42,9 @@ grupos es un homomorfismo, inyectivo y sobreyectivo.
 \end{definicion}
 % Mariela me dijo que esto es un corolario, no se si si quiera es
 % necesario.
-\begin{corolario}
+\begin{observacion}
   \[ e \text{ es identidad de } G \implies F(e) \text { es identidad de } G' \]
-\end{corolario}
+\end{observacion}
 
 \begin{ejemplo}[Grupo fundamental: \(\mathbb{R}^2 \backslash
   \{(1,1)\}\). ] \label{ex:R2-11}
@@ -67,6 +67,7 @@ tres grandes alternativas para de su clasificación.
   \ref{def:homotopia-linea} bajo la función
   \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) k_{x_0} (t)\]
   Por lo tanto en este caso, \(f \in [k_{x_0}]\).
+  %% TODO: mariela pide que cambie convexo, no entiendo bien
 \item La curva \(f\) no puede ser contenida en un subconjunto convexo de
   \(R^2 - \{ (1,1)\}\). Esto solo puede suceder si la curva \(f\)
   encerrara al punto \((1,1)\), de manera que la relación \(\lambda x +
@@ -79,7 +80,7 @@ tres grandes alternativas para de su clasificación.
   \( f \in [\mathtt F ^1] * [\mathtt F ^1] =: [\mathtt F ^2]\). Este
   procedimiento puede generalizar para todos los naturales.
 % \item La curva \(f\) encierra a \(x_0\) \(2\) veces. Dado que cada vez
-%   que lo encierra, esa curva (hasta ese momento) es homotopica a
+%   que lo encierra, esa curva (hasta ese momento) es homotópica a
 %   \([\mathtt F ^1]\), tenemos que \(f\) es isometrica a \( [\mathtt F
 %   ^1] * [\mathtt F ^1] =: [\mathtt F ^2]\). Esto se puede generalizar
 %   para todos los naturales.
@@ -130,7 +131,8 @@ camino.
     \hat \alpha : \pi (X, x_0) &\longrightarrow \pi (X, x_1) \\
     [g] &\longmapsto [ \overline{\alpha} * g * \alpha ]
   \end{align*}
-  es llamada la conjugada de \(\alpha\).
+  con \(\overline \alpha\) el camino inverso de \(\alpha\) (ver ecuacion
+  \eqref{def:camino-inverso}) es llamada la conjugada de \(\alpha\).
 \end{definicion}
 \begin{teorema} \label{not:alpha-hat}
   Sea \(x_0 , x_1 \in X\) puntos de un espacio arco conexo, sean \(\pi
@@ -186,15 +188,15 @@ La elección de punto bases
 \(x_0, x_1\) nos permite hablar de la existencia de único o múltiples
 isomorfismos entre grupos fundamentales \(\pi (X, x_0), \pi (X, x_1) \)
 dependientes de la cantidad de caminos entre \(x_0\) y \(x_1\) que
-existan. Esto es un tema importante a considerar, puesto que existe un
+existan. Esto es un tema importante a considerar, puesto que existe una
 caracterización de \(\pi (X, x_0) \) como grupo \emph{Abeliano}, que depende de
 la cantidad de estos isomorfismos.
 \begin{teorema}
   Sean \(x_0, x_1 \in X\) puntos en un espacio arco-conexo. El grupo
   \(\pi (X, x_0) \) es Abeliano si y solo si \(\forall \alpha, \beta\)
-  caminos (distintos) entre \(x_0\) y \(x_1\), se cumple que \(\hat \alpha \equiv
-  \hat \beta\), con \(\hat \alpha, \hat \beta\) los conjugados de los
-  caminos respectivos.
+  caminos (distintos) entre \(x_0\) y \(x_1\), se cumple que \(\hat
+  \alpha \equiv \hat \beta\), con \(\hat \alpha, \hat \beta\) los
+  conjugados de los caminos respectivos.
 \end{teorema}
 \begin{proof}
   Primero, dado que \(\pi (X, x_0)\) es
@@ -285,17 +287,31 @@ homomorfismo, al cual mostraremos a continuación
   puntuados, \(h_* : \pi (X, x_0) \to \pi (Y, y_0)\) es un homomorfismo
 \end{teorema}
 \begin{proof}
-  Este homomorfismo esta claramente bien definido, pues sabiendo que \(h
-  (x_0) = y_0\) y que \([f] \in \pi (X, x_0)\) se tiene que \(h_* ([f]) =
-  [h \circ f] \in \pi (Y, y_0)\). Nos falta probar de que cumple la
+  Primero mostraremos que este homomorfismo esta bien definido. Esto
+  equivale a mostrar que esta basado en \(y_0\) y que es
+  independiente de representante de clase de \([f]\). Lo primero lo
+  vemos pues por hipótesis se sabe que \(h
+  (x_0) = y_0\) y que \([f] \in \pi (X, x_0)\) lo que implica que \(h_* ([f]) =
+  [h \circ f] \in \pi (Y, y_0)\) esta basado correctamente. Para la
+  independencia de representante de clase, tomemos \(f_1, f_2 \in [f]
+  \in \pi (X, x_0)\), por definición existe una homotopía \(H\) entre
+  \(f_1, f_2\) por pertenecer a la misma clase de equivalencia. Luego la
+  función \(h \circ H\) es una homotopía entre \(h \circ f_1\) y \(h \circ
+  f_2\) y  por tanto
+  \[ h_* \left( [f_1] \right) = h_* \left( [ f_2 ] \right)\]
+
+  Nos falta probar de que cumple la
   ecuación de un homomorfismo dadas por la definición
-  \ref{def:homomorfismo}. Esto se ve por definición, puesto que se cumplen
-  las siguientes ecuaciones
-  \[ h_{*} ([e_{x_0}]) = [h \circ e_{x_0}] = [e_{y_0}]\]
-  Además, por el lema \ref{lema:dist-composición-producto} de composición
-  sobre el producto, obtenemos las siguientes igualdades
-  \[ h_{*} ([f * g]) = [h \circ (f * g)] = [(h \circ f) * (h \circ g)]
-    = h_{*} ([f]) * h_{*} ([g])\]
+  \ref{def:homomorfismo}. Esto se ve por definición
+  \ref{def:homomorfismo-inducido} de \(h_*\) y por el
+  lema \ref{lema:dist-composición-producto} de composición sobre el
+  producto, obtenemos las siguientes igualdades
+  \[
+    h_{*} ([f * g])
+    = [h \circ (f * g)]
+    = [(h \circ f) * (h \circ g)]
+    = h_{*} ([f]) * h_{*} ([g])
+  \]
   obteniendo así lo buscado.
 \end{proof}
 Si sabemos que \(h\) es además un homeomorfismo, tenemos el siguiente
@@ -329,7 +345,7 @@ Saber que el grupo fundamental es una invariante sin duda es útil
 desde un punto de vista topológico, pero la idea de poder reflejar
 estructura algebraica entre dos representaciones de un objeto y que esta
 se preserve bajo morfismos es útil en su propia ley. En efecto, la
-teoría que estudia este fenómenos es llamada teoría de categorías y
+teoría que estudia este fenómenos es llamada teoría de categorías e
 históricamente los grupos fundamentales dieron inicio al estudio de
 estas.
 \begin{definicion}

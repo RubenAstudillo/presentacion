@@ -1,6 +1,6 @@
 \section{Categoría de homotopías}
 En la sección anterior, se termino dando una definición de categoría con
-\(\mathscr{Top}_*\) y el functor \(F : \mathscr{Top} \to
+\(\mathscr{Top}_*\) y el functor \(F : \mathscr{Top}_* \to
 \mathscr{Grp}\). Los morfismos en \(\mathscr{Top}_*\) correspondían a
 funciones continuas entre espacios topológicos. En particular los
 homeomorfismos inducían bajo \(F\) isomorfismos de grupos. Pero hay
@@ -21,7 +21,7 @@ retracciones, el cual iniciaremos ahora e iremos generalizando
 debidamente.
 
 \subsection{Retracciones}
-Previo al estudio tal de las retracción, iniciaremos estudiando un
+Previo al estudio tal de las retracciones, iniciaremos estudiando un
 pequeño lema técnico con respecto a la composición y la función
 identidad, ya que este aparecerá repetidamente a lo largo de esta
 subseccion.
@@ -52,7 +52,7 @@ subseccion.
 \end{corolario}
 \noindent Ahora procederemos directamente a la definición
 de retracción.
-\begin{definicion}[Retraccion]
+\begin{definicion}[Retracción]
   Sea \(X\) un espacio topológico. El conjunto \(A \subset X\) es una
   retracción de \(X\) si existe un mapeo continuo \(r : X \to A\) tal que
   \[ r \mid_{A} (x) = x \]
@@ -63,8 +63,8 @@ de retracción.
 \noindent El nombre de aplicación retracción es intuitivo al ver que es
 un mapeo a un subconjunto de un espacio. Toda aplicación retracción
 tiene un \emph{dual} que identifica los elementos de un subconjunto con
-ellos mismos en el espacio ambiente. Dicha función es llamada aplicación
-inclusión; definida formalmente:
+ellos mismos en el espacio ambiente. Dicha función es llamada
+\emph{aplicación inclusión}; definida formalmente:
 \begin{definicion}[Aplicación inclusión]
   Sea \(X\) un espacio topológico y \(A \subset X\) un subconjunto
   arbitrario. La función
@@ -74,7 +74,7 @@ inclusión; definida formalmente:
   \end{align*}
   es llamada la aplicación inclusión de \(A\) en \(X\).
 \end{definicion}
-\noindent Las aplicaciones retracción y la inclusión para algún cierta
+\noindent Las aplicaciones retracción y la inclusión para alguna cierta
 retracción \(A \subset X\) relacionan los grupos fundamentales de un
 espacio \(X\) con el de \(A\) mediante el siguiente teorema.
 \begin{teorema} \label{thm:retraccion-inclusion}
@@ -155,7 +155,7 @@ técnicos previos.
 
 \begin{lema} \label{lem:homotopic-inducing}
   Sean \(h,k : (X, x_0) \to (Y, y_0)\) dos mapeos continuos. Si \(h\) y
-  \(k\) son homotopicos y si la imagen de \(x_0\) bajo esta homotopía permanece
+  \(k\) son homotópicos y si la imagen de \(x_0\) bajo esta homotopía permanece
   fija en \(y_0\), entonces \(h_*\) e \(k_*\) son iguales.
 \end{lema}
 % TODO: hay que ser mas preciso porque debemos mantener la homotopía
@@ -184,7 +184,7 @@ técnicos previos.
 \end{proof}
 \begin{teorema} \label{thm:comp-identidad-homotopia}
   Sea \(f : X \to Y\) y \(g : Y \to X\) funciones continuas. Si \(f
-  \circ g\) es homotopico a la identidad \( \mathrm{Id} : Y \to Y\) y
+  \circ g\) es homotópico a la identidad \( \mathrm{Id} : Y \to Y\) y
   existe \(y_0 \in Y\) tal que \( (f \circ g ) (y_0) = y_0 \) entonces
   \(f_*\) es sobreyectiva y \(g_*\) es inyectivo.
 \end{teorema}
@@ -230,7 +230,7 @@ retracción \(\Re ^2 \backslash \{0\}\) en \(S^1\).
   \[
     H(x,t) := t \cdot x + (1 - t) \cdot \frac x {\lVert x \rVert}
   \]
-  Debemos de mostrar que es una homotopía valida en cuanto no cae fuera
+  Debemos demostrar que es una homotopía valida en cuanto no cae fuera
   del recorrido. En esta ocasión, no tenemos la hipótesis de recorrido
   convexo sobre la identidad y \(j \circ r\) pues estos son \(\Re ^2
   \backslash \{\vec 0\}\) y \(B[0,1] \backslash \{\vec 0\}\)
@@ -248,29 +248,29 @@ retracción \(\Re ^2 \backslash \{0\}\) en \(S^1\).
   un isomorfismo de grupos fundamentales.
 \end{proof}
 
-\subsection{Tipos homotopicos}
+\subsection{Tipos homotópicos}
 Ahora que ya conocemos el esquema de trabajo, podemos generalizar para
 espacios que no necesariamente sean retracciones entre si, pero que
 posean un par de funciones cuyas composiciones sean homotópicas a la
 identidad correspondiente.
-\begin{definicion}[Equivalencias homotopicas] \label{def:equivalencias-hom}
+\begin{definicion}[Equivalencias homotópicas] \label{def:equivalencias-hom}
   Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
-  que \( g \circ f : X \to X \) es homotopico al mapeo identidad de
-  \(X\) y \( f \circ g : Y \to Y \) es homotopico al mapeo identidad de
+  que \( g \circ f : X \to X \) es homotópico al mapeo identidad de
+  \(X\) y \( f \circ g : Y \to Y \) es homotópico al mapeo identidad de
   \(Y\). Entonces \(f\) y \(g\) son llamadas \emph{equivalencias
-  homotopicas} y cada una es una \emph{inversa homotopica} de la otra.
-  Si dos espacios poseen un par de equivalencias homotopicas entre ellos,
-  se dicen que ambos espacios son del mismo \emph{tipo homotopico}.
+  homotópicas} y cada una es una \emph{inversa homotópica} de la otra.
+  Si dos espacios poseen un par de equivalencias homotópicas entre ellos,
+  se dicen que ambos espacios son del mismo \emph{tipo homotópico}.
 \end{definicion}
 Podemos ver que en sección anterior, la retracción y la inclusión
-correspondían a par de equivalencias homotopicas. Podría pensarse que la
-existencia de un par de equivalencias homotopicas entre espacios seria
+correspondían a par de equivalencias homotópicas. Podría pensarse que la
+existencia de un par de equivalencias homotópicas entre espacios sería
 suficiente para afirmar que poseen el mismo grupo fundamental, esto es
 cierto en medida que se sea cuidadoso con los puntos de partida. Este
 problema no se manifestaba en retracciones porque el punto de partida se
 mantenía fijo en la inclusión. Para ver el problema mas claro,
 supongamos que tenemos dos espacios \(X, Y\) junto con un par
-equivalencias homotopicas
+equivalencias homotópicas
 \[ f : X \to Y \quad g : Y \to X \]
 Por hipótesis tenemos que \(g \circ f \simeq Id : X \to X\), pero eso
 \textbf{no} nos asegura la existencia de un punto \(x_0 \in X\) que sea
@@ -281,12 +281,12 @@ el siguiente lema técnico.
 
 \begin{lema} \label{lem:equiv-hom-lift}
   Sean \(h,k : X \to Y\) mapeos continuos, sea \(h (x_0) = y_0,\ k(x_0)
-  = y_1\). Si \(h\) y \(k\) son homotopicos mediante \(H : X \times I
+  = y_1\). Si \(h\) y \(k\) son homotópicos mediante \(H : X \times I
   \to Y\), entonces existe un arco \(\alpha\) en \(Y\) de \(y_0\) a
   \(y_1\) tal que
   \[k_* = \hat \alpha \circ h_* \]
   con \(\hat \alpha\) el conjugado de \(\alpha\) dado por la definicion
-  \ref{def:conjugada}. Mas aun, este arco esta dado por la ecuación
+  \ref{def:conjugada}. Más aún, este arco esta dado por la ecuación
   \(\alpha (t) = H (x_0, t)\).
 \end{lema}
 \begin{proof}
@@ -350,7 +350,7 @@ grupos fundamentales.
 \end{proof}
 Con esto en mente, es fácil ver que se tiene el siguiente corolario
 \begin{corolario}
-  Sean \(h,k : X \to Y\) dos funciones relacionadas homotopicamente
+  Sean \(h,k : X \to Y\) dos funciones relacionadas homotópicamente
   tales que \(h (x_0) = y_0\) y \(k(x_0) = y_1\). Si \(h_*\) es inyectiva
   o sobreyectiva o trivial, entonces \(k_*\) también lo es.
 \end{corolario}
@@ -364,13 +364,13 @@ Con esto en mente, es fácil ver que se tiene el siguiente corolario
   sobreyectividad.
 \end{proof}
 Con esto podemos al fin plantear que todo par de espacios en el mismo
-tipo homotopico poseen el mismo grupo fundamental. Esto gracias a que
+tipo homotópico poseen el mismo grupo fundamental. Esto gracias a que
 podemos evitar la condición de punto fijo en el lema
 \ref{lem:homotopic-inducing} gracias a la biyeccion de \(\hat \alpha\).
 
 \begin{teorema}
   Sean \(f : X \to Y\) continua y \(f (x_0) = y_0\). Si existe \(g : Y
-  \to X\) tal que \(f\) y \(g\) son una equivalencia homotopica, entonces
+  \to X\) tal que \(f\) y \(g\) son una equivalencia homotópica, entonces
   \[ f_* : \pi (X, x_0) \to \pi (Y, y_0)\]
   es un isomorfismo de grupos fundamentales.
 \end{teorema}
@@ -431,7 +431,7 @@ Con estos resultados podemos ver el siguiente ejemplo
       [(x,y)] \mapsto [(x, 1/2)] & x \mapsto x
     \end{matrix}
   \]
-  Hemos de probar que \(j \circ r\) es homotopico a la identidad \(Id
+  Hemos de probar que \(j \circ r\) es homotópico a la identidad \(Id
   : M \to M\). Definamos la homotopía
   \[ F : M \times I \to M \]
   \[ ([(x,y)], t) \mapsto [(x, \frac t 2 + (1-t) y)] \]
@@ -458,7 +458,7 @@ Con estos resultados podemos ver el siguiente ejemplo
   \item \(\mathbf {Mor}\) corresponde a un conjunto
     \[ \mathbf{Mor} = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\
       (X,x_0),(Y,y_0) \in \mathbf {Obj} \}\]
-    de clases equivalencias homotopicas entre funciones continuas.
+    de clases equivalencias homotópicas entre funciones continuas.
   \item \((\hat \circ)\) corresponde a la composición de clases de
     equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
     \[ f : (X,x_0) \to (Y, y_0)\]
@@ -512,12 +512,18 @@ de los productos y co-productos categóricos.
   siguientes ecuaciones
   \[ f = \pi_x \circ \theta, \quad g = \pi_y \circ \theta \]
   entonces \(P\) es un producto de \(X\) e \(Y\).
+  \begin{figure*}[h]
+    \centering
+    \includegraphics[scale=0.5]{./imagenes/producto.png}
+    \caption{Producto}
+  \end{figure*}
 \end{definicion}
 \begin{acotacion}
+  %% TODO: mariela tiene otra definicion de propiedad universal
   La propiedad que debe cumplir el producto \(P\) sobre cualquier otro
   objeto \(M\) que tenga morfismos \(f,g\) como en la definicion es
   conocida como una propiedad universal. En general una propiedad
-  universal de un objeto \(X\) es un predicado que cualquier otro objeto
+  universal de un objeto \(X\) es una propiedad que cualquier otro objeto
   con ciertos morfismos debe cumplir respecto de \(X\), usualmente
   haciendo conmutar algun diagrama.
 \end{acotacion}
@@ -527,13 +533,17 @@ sentido opuesto.
   Sea \(C , X , Y \in \mathbf {Obj}\) objetos arbitrarios de una categoría
   tal que existen \(\phi_x : X \to C,\ \phi_y : Y \to C\) morfismos en
   \(\mathbf {Mor}\). Si para todo objeto \(M \in \mathbf {Obj}\) tal que posea
-  morfismos \( f : X \to C,\ g : Y \to C\) en \(\mathbf{Mor}\) existe un
+  morfismos \( f : X \to M,\ g : Y \to M\) en \(\mathbf{Mor}\) existe un
   morfismo \(\theta : C \to M\) en \(\mathbf{Mor}\) tal que se cumplan
   las siguientes ecuaciones
   \[ f = \theta \circ \phi_x, \quad g = \theta \circ \phi_y \]
   entonces \(C\) es un co-producto de \(X\) e \(Y\).
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{./imagenes/coproducto.png}
+    \caption{Coproducto}
+  \end{figure}
 \end{definicion}
-% TODO: considerar incluir diagramas conmutativos
 Intuitivamente, pensamos que el producto categórico en
 \(\mathscr{HoTop}_*\) debería ser el producto cartesiano de espacios.
 Esto es correcto notanto que \(\forall (X,x_0) , (Y, y_0) \in \mathbf
@@ -606,9 +616,23 @@ correspondientes a \(f_0 , f_1\) y \(g_0
                   G(a,t), & i = 1 \\
                 \end{cases}
 \end{align*}
-la cual es claramente continua en \(\phi_x(X), \phi_y(Y) \subset X \vee
-Y\). Ademas de estar bien definida en \(x_0 \sim y_0\) pues por
-propiedades de homotopías
+La continuidad se vera explicitamente. Sea \(U \subset B\), por definicion
+se tiene que
+\begin{gather*}
+  FG^{-1} \left( U \right) = U_x \cup U_y \, / \, \{(x_0,0) \sim (y_0, 1)\} \\
+  U_x = \{ \left( (x,0), t \right) \mid (x,t) \in F^{-1} \left( U \right)\} \\
+  U_y = \{ \left( (y,1), t \right) \mid (y,t) \in G^{-1} \left(U \right)\}
+\end{gather*}
+Dado que \(X \cong X \times \{0\}\) y \(Y \cong Y \times \{1\}\), modulo
+homeomorfismos entre estos espacios los conjuntos \(U_x, U_y\) son
+abiertos en \(X \times \{x_0\}, Y \times \{y_0\}\) respectivamente.
+Luego dado que
+\[ X \vee Y / \{ x_0 , y_0\} = \left( X \times \{0\} \right) \cup \left(
+    Y \times \{1\} \right) / \{(x_0 , 0 ) \sim (y_0 , 1)\} \]
+se tiene que \(U_x \cup U_y \, / \, \{ (x_0 , 0) \sim (y_0, 1)\}\) es
+abierto en el espacio que queremos.
+
+Por ultimo notamos que esta homotopía esta bien definida en \(x_0 \sim y_0\) pues por propiedades de \(F, G\)
 \[
   \forall t \in I,\ FG \left( (x_0,0) , t \right) = F (x_0, t) = b_0 =
   G(y_0, t) = FG \left( (y_0,1), t \right)
@@ -616,7 +640,7 @@ propiedades de homotopías
 obteniendo así el resultado deseado.
 \end{proof}
 
-Podemos caracterizar mas aun en el caso del producto cartesiano pues
+Podemos caracterizar más aún en el caso del producto cartesiano pues
 tenemos la siguiente propiedad functorial.
 
 \begin{teorema}
@@ -659,7 +683,7 @@ tenemos la siguiente propiedad functorial.
 \end{proof}
 
 \begin{ejemplo}[Toro] \label{ej:toro-presentacion}
-  Una presentacion del torus \(T\) es como espacio cuociente de
+  Una presentacion del toro \(T\) es como espacio cuociente de
   \([0,1]^2\).
   \begin{figure}[h]
     \centering \includegraphics[scale=0.5]{./imagenes/toro.png}
@@ -669,7 +693,7 @@ tenemos la siguiente propiedad functorial.
     (0,t) \sim (1,t), \quad t \in [0,1] \\
     (t,0) \sim (t,1), \quad t \in [0,1]
   \end{gather*}
-  Existe un homeomorfismos entre el toro y el espacio \(S^1 \times S^1\)
+  Existe un homeomorfismo entre el toro y el espacio \(S^1 \times S^1\)
   dado por la siguiente función \(f\):
   \begin{align*}
     f : T &\longrightarrow S^1 \times S^1 \\
@@ -699,6 +723,6 @@ En la siguiente sección estudiaremos teoremas que nos permitan calcular
 distintos grupos fundamentales. Se presentara la idea de que distintos
 resultados para el calculo de grupos fundamentales corresponden a
 caracterizar al functor \(\pi\) respecto a distintas estructuras
-categóricas. Esto resaltara el papel del lenguaje de categorías para
+categóricas. Esto resaltará el papel del lenguaje de categorías para
 poder sintetizar los resultados importantes de distintas áreas en un
 marco común.
