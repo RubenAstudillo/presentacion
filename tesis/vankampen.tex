@@ -138,7 +138,7 @@ imagen bajo \(\phi\) y que esta debe seguir siendo un homomorfismo.
 Previo al teorema general, es útil trabajar con una versión reducida del
 teorema de \vank por dos razones: es una versión geométricamente
 intuitiva y aparece como paso intermedio de la demostración general. En
-esta version se trabajara con el diagrama conmutativo de la figura
+esta versión se trabajara con el diagrama conmutativo de la figura
 \ref{fig:digrama-vank},
 \begin{figure}[h]
   \centering
@@ -194,7 +194,7 @@ donde
   la condición.
 
   Ahora se prueba el teorema en si, dado \(f\) y \(a_0 < \dotsc < a_n\)
-  subdivisión anterior, definamos las funciones expansion
+  subdivisión anterior, definamos las funciones expansión
   \[ l_i : [0,1] \to [a_{i-1}, a_{i}] \]
   \[ f_i := f \circ l_i \]
   Es claro que \(\forall i \in \{1 \dotsc n\}, \ f_i (I) \) esta contenida en
@@ -289,7 +289,7 @@ de la forma
   \ \text{con} \ \alpha,\beta \in \tau,\ \omega \in \pi(A_\alpha \cap
   A_\beta , x_0)\]
 y sabiendo como es \(\Phi\) como homomorfismo por
-la ecuacion \eqref{def:induced-morfism-free}
+la ecuación \eqref{def:induced-morfism-free}
 \begin{align*}
   \Phi &\left( i_{\alpha \beta} (\omega) \ \overline{i_{\beta \alpha}
           (\omega)} \right) \\
@@ -313,7 +313,7 @@ declarado, podemos proceder a la demostración.
   isomorfismo sobre \(\Phi\) para obtener el resultado ya que tenemos
   caracterizado su kernel.
 
-  Seguiremos el esquema de demostracion dado en \cite{Bloom}. Sea \([f]
+  Seguiremos el esquema de demostración dado en \cite{Bloom}. Sea \([f]
   \in \pi (X, x_0)\) un elemento arbitrario. Definamos una factorizacion
   de esta como una cadena \([f_1][f_2] ... [f_k] \in *_\alpha \pi
   (A_\alpha, x_0)\) donde
@@ -456,22 +456,22 @@ declarado, podemos proceder a la demostración.
   a_{k+1}] \subseteq I\) al intervalo tal que
   \[F \circ \gamma_k \, ([a_k , a_{k+1}]) \subseteq R_k\]
   y fijamos un elemento \([f_a^{(k)}]\) de la factorizacion de \([F
-  \circ \gamma_k]\) como aquel que le corresponde la seccion del argumento
+  \circ \gamma_k]\) como aquel que le corresponde la sección del argumento
   \([a_k , a_{k+1}]\). La factorizacion de \([F \circ \gamma_k]\) en
-  general correspondera a
+  general corresponderá a
   \[ [f_1^{(k)}] [f_2^{(k)}] ... [f_a^{(k)}] ... [f_m^{(k)}] \]
   Por otra parte, la factorizacion de \([F \circ \gamma_{k+1}]\) es
-  analoga con su propio elemento \([f_a^{(k+1)}]\) con imagen en
+  análoga con su propio elemento \([f_a^{(k+1)}]\) con imagen en
   \(A^{(k)}\) y misma cantidad de elementos.
   \[ [f_1^{(k+1)}] [f_2^{(k+1)}] ... [f_a^{(k+1)}] ... [f_m^{(k+1)}] \]
   Dado que la homotopía \(F \circ \Gamma_k\) solo varia en \(R_k\), se
-  tiene que el unico elemento de las imagenes de las cadenas que varian
+  tiene que el único elemento de las imágenes de las cadenas que varían
   son aquellos que pertenece a \(\pi (A^{(k)})\) en el intervalo \([a_k,
   a_{k+1}]\), por lo tanto
   \[ f_a^{(k)} \dot \simeq f_a^{(k+1)} \]
   lo que a su implica la igualdad
   \[ [f_a^{(k)}] = [f_a^{(k+1)}]\]
-  por lo que podemos reemplazar los valores en las cadenas. Probando asi
+  por lo que podemos reemplazar los valores en las cadenas. Probando así
   que son iguales y por tanto equivalentes.
 
   Luego, dado que \(h\) y \(g\) son factorizaciones de \([F \circ
@@ -544,7 +544,7 @@ co-productos cuyos espacios bases tengan vecindades simplemente conexas
 en los puntos de origen.
 
 Seria interesante ver algún ejemplo de un co-producto que no se preserva
-bajo \(\pi\). Para esto solo debemos ver algun espacio que no tenga
+bajo \(\pi\). Para esto solo debemos ver algún espacio que no tenga
 vecindades simplemente conexas para todo punto\footnote{No sea semi localmente
 simplemente conexo.}. Para esto consideramos el espacio ``Hawaian earring''
 \begin{figure}[h]
@@ -562,6 +562,28 @@ es contractible a un punto un punto. Luego no podemos concluir mediante
 \vank que
 \[ \pi (X \vee X , x_0) = \pi (X, x_0) * \pi (X, x_0)\]
 cuando \(X\) es el ``Hawaian earring''.
+
+\begin{ejemplo} [\(S^2\) es simplemente conexo] \label{ej:S2-simpleconexo}
+  Esto puede verse tomando dos puntos anti-pódales \(a = (0,0,1),\ b =
+  (0,0,-1)\) y definiendo los conjuntos
+  \begin{gather*}
+    U := S^2 - \{a\} \\
+    V := S^2 - \{b\} \\
+    \implies S^2 = U \cup V, \quad S^2 - \{a,b\} = U \cap V
+  \end{gather*}
+  Notar que \(U,V\) son abiertos pues \(S^2\) es una variedad y por tanto
+  los complemente de singletons son abiertos. Por otro lado, dada la
+  proyección estereográfica, \(U,V\) son homeomorfos a \(R^2\), el cual
+  tiene un grupo fundamental trivial. Finalmente notamos que \(U \cap
+  V\) es arco-conexo. Así el teorema de \vank nos dice que el
+  homomorfismo inducido
+  \begin{gather*}
+    \pi (U, x_0) * \pi (V, x_0) = \{e\} \\
+    \Phi : \pi (U, x_0) * \pi (V, x_0) \longrightarrow \pi (S^2)
+  \end{gather*}
+  es sobreyectivo, lo cual implica que \(\pi (S^2) \subset \pi (U, x_0)
+  * \pi (V, x_0) = \{e\}\), obligando a que este sea trivial.
+\end{ejemplo}
 
 \begin{ejemplo}[Botella de Klein]
   La botella de Klein \(K\) puede presentarse como un cociente en el
