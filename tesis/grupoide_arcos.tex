@@ -12,11 +12,11 @@ Para dos arcos \(f,g : I \to X\) tales que
     g(2s - 1) & s \in [\frac{1}{2} , 1]
   \end{cases}
 \]
-la cual sigue siendo una funcion continua en virtud del \emph{lema del
+la cual sigue siendo una función continua en virtud del \emph{lema del
 pegamiento}.
 \end{definicion}
 
-Esta construccion se puede reutilizar para clases
+Esta construcción se puede reutilizar para clases
 \emph{arco}-homotópicas \([f],[g]\) que compartan punto final e inicial
 respectivamente.
 \begin{definicion}[Producto de clases Arco-homotópicas]
@@ -54,7 +54,7 @@ sobre un espacio topológico \(X\), tiene estructura de grupoide. Esto
 equivale a cumplir las siguientes 3 propiedades
 \begin{description}
 \item[1. Asociatividad:] Si \([f] * ([g] * [h])\) esta definido entonces
-  tambien lo debe estar \(([f] * [g]) * [h]\) y ademas deben coincidir.
+  también lo debe estar \(([f] * [g]) * [h]\) y además deben coincidir.
 \item[2. Identidades izquierda y derecha:] Para todo \([f]\) con
   \(x_0, x_1\) puntos inicial y final respectivamente, debe de
 existir elementos \([k_{x_0}], [k_{x_1}]\) tales que
@@ -71,7 +71,7 @@ existir elementos \([k_{x_0}], [k_{x_1}]\) tales que
 \]
 \end{description}
 Para probar esto necesitamos primero definir a nuestros candidatos de
-\(k_{x_0}, k_{x_1}, \overline{f}\) ademas de algunas funciones auxiliares.
+\(k_{x_0}, k_{x_1}, \overline{f}\) además de algunas funciones auxiliares.
 Iniciando por los mapeos constantes e identidad en \(I \to I\)
 \begin{equation} \label{eq:def-auxiliar-grupoide}
   \begin{matrix}
@@ -88,8 +88,8 @@ Iniciando por los mapeos constantes e identidad en \(I \to I\)
       i(t)   &\coloneqq &1 - t
    \end{matrix}
 \end{equation}
-Ademas, para todo arco \(f : I \to X \), el elemento \(\overline{f} : I
-\to X \) esta definido (en el espiritu de la ecuacion
+Además, para todo arco \(f : I \to X \), el elemento \(\overline{f} : I
+\to X \) esta definido (en el espíritu de la ecuación
 \eqref{eq:homotopy-simetry}) por
 \begin{equation}
   \overline{f} (s) \coloneqq f (1 - s) \label{def:camino-inverso}
@@ -104,22 +104,22 @@ la curva constante
 Con esto podemos afrontar la demostración
 
 \begin{proof}
-En el orden de las demostraciones, se procedera en mostrando las
+En el orden de las demostraciones, se procederá en mostrando las
 identidades izquierdas y derechas (2), luego la existencia del inverso
-(3) y se finaliza con la asociatividad (1). Ademas se probaran lemas
-intermedios en cada item de ser necesario. Sea \(f : I
+(3) y se finaliza con la asociatividad (1). Además se probaran lemas
+intermedios en cada ítem de ser necesario. Sea \(f : I
 \to X\) el representante de la clase \([f]\). sean \(x_0, x_1\) los
 puntos inicial y final de \(f\) respectivamente.
 
 \subparagraph{2. Identidades izquierda y derechas:} Sea \([f]\) una clase
 homotópica con \(x_0, x_1\) puntos inicial y final de \(f\)
 respectivamente. Probaremos primero que \([k_{x_1}]\) es la identidad
-por la derecha. Esto equivale a mostrar que la ecuacion
+por la derecha. Esto equivale a mostrar que la ecuación
 \[ [f] = [f] * [k_{x_1}]\]
 es valida.
 
 Dados \(i,e_1\) arcos en \(I\) definidos en la
-ecuacion \eqref{eq:def-auxiliar-grupoide},
+ecuación \eqref{eq:def-auxiliar-grupoide},
 es claro que \(i * e_1\) es también un arco (continuo) en \(I\); mas aun,
 ya que \(I = [0,1]\) es convexo, se tiene
 \begin{equation}
@@ -130,7 +130,7 @@ con la homotopía de la linea recta entre estos.
 También conocemos que la composición de funciones continuas es
 continua, de lo cual podemos decir que dada una homotopía \(H : I \times
 I \to I\) la composición \( f \circ H : I \times I \to X\) es una
-homotopía. Por tanto, por la ecuacion \eqref{eq:ident-homotopy} se
+homotopía. Por tanto, por la ecuación \eqref{eq:ident-homotopy} se
 afirma que
 \begin{equation}\label{eq:f-homotopy}
 i \simeq i * e_1 \implies f \circ i \simeq f \circ \left( i * e_1 \right)

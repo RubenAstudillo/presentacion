@@ -46,7 +46,7 @@ el cubrimiento para \(X\).
 \begin{ejemplo}[Cubrimiento de \(S^1\) por \( \begin{bmatrix} 0, 10
 \pi \end{bmatrix} \) con \( 0 \sim 10 \pi \)] \label{ej:10pi}
   Pensamos en \(S^1\) como el intervalo \([0, 2 \pi]\) enrollado sobre
-  si mismo mediante la identificacion \(0 \sim 2 \pi\). Podemos imaginar
+  si mismo mediante la identificación \(0 \sim 2 \pi\). Podemos imaginar
   un cubrimiento de este como cualquier intervalo con los extremos
   identificados que de al menos una vuelta completa a \([0, 2 \pi]\).
   \begin{figure}[h]
@@ -59,7 +59,7 @@ el cubrimiento para \(X\).
     t &\longmapsto \mathrm t \mod 2 \pi
   \end{align*}
 
-  Como acotacion, notar que si nuestro cubrimiento fuera \([0, 10 \pi]\)
+  Como acotación, notar que si nuestro cubrimiento fuera \([0, 10 \pi]\)
   sin identificar los bordes y la misma función \(p\), entonces este no
   seria un cubrimiento. Esto se ve a pensar cual vecindad de \(0 \in
   [0,2\pi] / \{0 \sim 2\pi\}\) es cubierta con las propiedades. Tomando
@@ -76,7 +76,7 @@ el cubrimiento para \(X\).
 El diagrama anterior da una idea de la forma de general los espacios
 cubrimientos \(\tilde X\), estos lucen como iteraciones del espacio base
 \(X\). Por otro lado, sea \(x_0 \in S^1\) el punto rojo del diagrama, se
-tiene la siguiente definicion auxiliar
+tiene la siguiente definición auxiliar
 \begin{definicion}[Fibra]
 El conjunto dado por \(p^{-1} (x_0)\) es conocido como una
 \emph{fibra} de \(x_0\).
@@ -116,7 +116,7 @@ cardinalidad de la fibra es la misma para todos los puntos.
   \(b_1\) contenida en \(A\).
 
   El argumento anterior se puede hacer de igual manera para el conjunto
-  \(A^c\). Por tanto, este también es un conjunto abierto. Obtenemos asi
+  \(A^c\). Por tanto, este también es un conjunto abierto. Obtenemos así
   que \(A\) es abierto y cerrado en un espacio conexo, lo cual implica que
   este es \(X\) o \(\emptyset\). Pero como \(b_0 \in A\), se tiene que
   \(A = X\), diciendo así que todo elemento tiene la misma cardinalidad.
@@ -135,7 +135,7 @@ para desarrollar intuición.
     \centering \includegraphics[scale=0.5]{./imagenes/toro-cubrimiento.png}
     \caption*{Ejemplo \ref{ej:cubrimiento-toro}: Cubrimiento del toro}
   \end{figure}
-  La funcion en este caso corresponderia a
+  La función en este caso correspondería a
   \begin{gather*}
     \tilde X = [0,3] \times [0,2] \, / \, \{
       (x,0) \sim (x, 1), \ (0,y) \sim (1,y) \} \\
@@ -150,7 +150,7 @@ para desarrollar intuición.
   Aquí se muestran dos fibras de diferentes puntos iniciales. Notar que
   el punto con la vecindad rectangular esta en el borde identificado,
   por tanto su vecindad se refleja mediante esta. Esto se hereda en su
-  cubrimiento que también tiene identificaciones de igual menera.
+  cubrimiento que también tiene identificaciones de igual manera.
 \end{ejemplo}
 
 \begin{ejemplo}[Cubrimiento: \(\Re\) sobre \(S^1\)]
@@ -237,10 +237,10 @@ y las homotopías en el espacio cubrimiento de \(X\).
 \end{teorema}
 \begin{proof}
   Para todo punto de \(x \in X\), existe una vecindad de este \(U_x\)
-  que es cubierta (definicion \ref{def:cubierta}). Por tanto
+  que es cubierta (definición \ref{def:cubierta}). Por tanto
   \[ X \subseteq \bigcup_{x \in X} U_x\]
   con \(U_x\) siendo las vecindades cubiertas para cada \(x\). De lo
-  anterior, se obtiene la siguiente inclusion
+  anterior, se obtiene la siguiente inclusión
   \[ [0,1] = f^{-1} \left( X \right) \subseteq f^{-1} \left( \bigcup_{x
     \in X} U_x \right) \]
   Por el Teorema \ref{lem:lebesgue-number-lema}, podemos elegir
@@ -297,7 +297,7 @@ y las homotopías en el espacio cubrimiento de \(X\).
         &\hat f (s) = (p \mid_{V_0})^{-1} (f (s))
   \end{align*}
   siendo esta la única posible definición, pues de haber otra,
-  se tendria una contradicción en decir que \((p \mid_{V_0})\) es un
+  se tendría una contradicción en decir que \((p \mid_{V_0})\) es un
   homeomorfismo (biyectivo). Por tanto se obliga a que \( \hat f =
   \tilde f\).
 \end{proof}
@@ -427,7 +427,7 @@ donde \(p_* \left( (\tilde X, \tilde x_0) \right)\) es un subgrupo de
     \centering \includegraphics[scale=0.5]{./imagenes/spring.png}
   \end{figure}
   Consideremos a \(x_0 \in [0, 2\pi] /_{0 \sim 2\pi}\) un punto base. El
-  homomorfimos inducido para \(p\) corresponde a la función
+  homomorfismo inducido para \(p\) corresponde a la función
   \begin{align*}
     p_* : \pi \left( [0, 2\pi] /_{0 \sim 2\pi} , x_0 \right) &\longrightarrow \left( [0, 10\pi] /_{0 \sim 10\pi}, x_0 \right) \\
     [f] &\longmapsto [p \circ f]
@@ -458,7 +458,7 @@ donde \(p_* \left( (\tilde X, \tilde x_0) \right)\) es un subgrupo de
   [\gamma]^n \right) = [\alpha]^{5n}\). Conociendo que \(\pi \left(
   [0,2\pi] /_{0 \sim 2\pi} , x_0 \right)\) es \((\mathbb Z, +)\) es claro
   ver que \(p_* \left( \pi \left( [0, 10\pi] , x_0 \right) \right)\) es
-  \(5 \mathbb Z \) que es isomorfo (ambos tienen un unico generador) a
+  \(5 \mathbb Z \) que es isomorfo (ambos tienen un único generador) a
   \(\mathbb Z\).
 \end{ejemplo}
 
@@ -506,7 +506,7 @@ distintos \(\Re^n\) para distintos valores de \(n\).
   \right)\) es simplemente conexo.
 \end{definicion}
 El estudio de los cubrimientos universales esta relacionado con el
-comportamiento de una funcion conocida como el levantamiento derivado.
+comportamiento de una función conocida como el levantamiento derivado.
 \begin{definicion}[Levantamiento derivado] \label{def:levantamiento-derivado}
   Sea \(p : \tilde X \to X\) un cubrimiento y sea \(x_0 \in X\).
   Escojamos \(\tilde x _0 \in \tilde X\) tal que \(p(\tilde x _0) =
@@ -591,7 +591,7 @@ Este teorema nos permitirá enfocarnos puramente en la fibra \(p ^{-1}
 lado, podemos definir un nuevo grupo el cual va a actuar (en sentido de
 grupos) sobre esta fibra al cual denotaremos como grupo de
 transformaciones de \emph{deck}\footnote{En español seria transformaciones de
-  cartas, pero asi podemos utilizar un nombre usual de \cite{Hatcher}}.
+  cartas, pero así podemos utilizar un nombre usual de \cite{Hatcher}}.
 \begin{definicion}[Grupo de transformaciones de \emph{deck}]\label{def:deck}
   Para un cubrimiento \(p : \tilde X \to X\), los isomorfismos \(g : \tilde
   X \to \tilde X\) tales que cumplan
@@ -608,7 +608,7 @@ caminos (teoremas \ref{thm:lifting-theorem},
 
 \begin{teorema}\label{thm:lifting-theorem-general}
   Sea \(p : (\tilde X , \tilde x_0) \to ( X , x _0 )\) un cubrimiento y
-  \(f : (Y , y_0) \to ( X , x _0 )\) una funcion continua con \(Y\)
+  \(f : (Y , y_0) \to ( X , x _0 )\) una función continua con \(Y\)
   arco-conexo y localmente arco-conexo. Entonces un levantamiento
   \(\tilde f : (Y , y_0) \to (\tilde X, \tilde x _0)\) de \(f\) existe
   si y solo si
@@ -750,37 +750,37 @@ Procedemos a la demostración.
   consideramos \(K^c\), también existe una vecindad \(N\) totalmente
   contenida en \(K^c\). Luego \(K\) es abierto y cerrado al mismo tiempo
   en \(Y\) un espacio conexo, lo cual obliga a que este sea \(Y\) o
-  \(\emptyset\). Pero dada la hipotesis de que existe un punto donde los
-  levantamientos coinciden, \(K\) no puede ser vacio y por tanto es el
+  \(\emptyset\). Pero dada la hipótesis de que existe un punto donde los
+  levantamientos coinciden, \(K\) no puede ser vació y por tanto es el
   espacio total \(Y\).
 \end{proof}
 
 \begin{teorema}\label{thm:exists-isomor}
   Si \(X\) es un espacio arco-conexo, localmente arco-conexo, entonces
   dos cubrimientos \(p_1 : \tilde X _1 \to X\) y \(p_2 : \tilde X _2 \to
-  X\) son isomorficos via un isomorfismo \(f : \tilde X_1 \to \tilde
+  X\) son isomorficos vía un isomorfismo \(f : \tilde X_1 \to \tilde
   X_2\) tomando un punto base \(\tilde x_1 \in p_1^{-1} (x_0)\) a un
   punto base \(\tilde x_2 \in p_2^{-1} (x_0)\) si y solo si
   \[ p_{1,*} \left( \pi (\tilde X _1, \tilde x _1) \right) = p_{2,*}
     \left( \pi (\tilde X _2, \tilde x _2) \right) \]
 \end{teorema}
 \begin{proof}
-  Se inicia en la direccion \(\Rightarrow\). Un isomorfismo de cubrimientos
+  Se inicia en la dirección \(\Rightarrow\). Un isomorfismo de cubrimientos
   \(f : (\tilde X , \tilde x _1) \to (\tilde X _2, \tilde x _2)\) debe
   cumplir las ecuaciones
   \[ p_1 = p_2 \circ f,\quad p_2 = p_1 \circ f^{-1} \]
   siendo estas ecuaciones consecuencia de preservar que el espacio de
-  llegada sea un cubrimiento. De la primera ecuacion se obtiene que
+  llegada sea un cubrimiento. De la primera ecuación se obtiene que
   \[ p_{1,*} = \left( p_2 \circ f \right)_* \]
-  que por definicion al ser aplicadas a \([\gamma] \in \pi (\tilde X_1,
+  que por definición al ser aplicadas a \([\gamma] \in \pi (\tilde X_1,
   \tilde x_1)\)
   \begin{equation*}
       p_{1,*} \left( [\gamma] \right) = [p_1 \circ \gamma] = [p_2 \circ
       f \circ \gamma ] = p_{2,*} \left( [f \circ \gamma] \right)
   \end{equation*}
-  lo que junto la bijectividad de \(f\) implican el resultado.
+  lo que junto la biyectividad de \(f\) implican el resultado.
 
-  Para la direccion \(\Leftarrow\), supongamos que \(p_{1,*} (\pi
+  Para la dirección \(\Leftarrow\), supongamos que \(p_{1,*} (\pi
   (\tilde X _1 , \tilde x _1)) = p_{2,*} (\pi
   (\tilde X _2 , \tilde x _2))\). Por el teorema
   \ref{thm:lifting-theorem-general} de levantamiento, se puede obtener
@@ -798,7 +798,7 @@ Procedemos a la demostración.
   \end{gather*}
   lo cual debido a que estos mapeos fijan los puntos bases respectivos,
   podemos aplicar el teorema \ref{thm:uniq-general} de unicidad
-  del levantamiento obteniendo asi que
+  del levantamiento obteniendo así que
   \[ \tilde p_1 \circ \tilde p_2 = \text{Id}, \quad \tilde p_2 \circ
     \tilde p_1 = \text{Id} \]
   Por tanto \(\tilde p_1 , \tilde p_2\) son isomorfismos inversos
@@ -834,13 +834,13 @@ isomorfismo de cubrimientos
 \[\varphi : (\tilde X , \tilde x_1) \to (\tilde X , \tilde x_2 ) \]
 el cual cumple la ecuación \(p \circ \varphi = p\) y por tanto es una
 transformación de \emph{deck} en el sentido de la definición
-\ref{def:deck}. Mas aun, \(\varphi\) es el unico isomorfismo posible
+\ref{def:deck}. Mas aun, \(\varphi\) es el único isomorfismo posible
 entre \((\tilde X , \tilde x_1) \to (\tilde X , \tilde x_2 )\) pues de
-haber otro, tendria que compartir el punto \(\tilde x_2\) con
-\(\varphi\) y iria en contra el Teorema \ref{thm:uniq-general} de
+haber otro, tendría que compartir el punto \(\tilde x_2\) con
+\(\varphi\) y iría en contra el Teorema \ref{thm:uniq-general} de
 unicidad del levantamiento.
 
-La relación anterior entre \([\gamma]\) y \(\varphi\) es asi funcional.
+La relación anterior entre \([\gamma]\) y \(\varphi\) es así funcional.
 Por tanto podemos definir una función
 \begin{align}
   L : \pi (X, x_0) &\longrightarrow G (\tilde X) \label{def:L} \\
@@ -862,7 +862,7 @@ x_0)\) cuando \(\tilde X\) es simplemente conexo.
 \begin{proof}
   La idea de la demostración sera el primer teorema del isomorfismo para
   grupos. Sea \(L\) la función definida en la ecuación \eqref{def:L} por
-  \(L : \pi (X, x_0) \to G ( \tilde X)\), la cual es funcion por la simple
+  \(L : \pi (X, x_0) \to G ( \tilde X)\), la cual es función por la simple
   conexidad de \(\tilde X\). Hemos de probar que este es un homomorfismo.
   Sean \([\gamma],[\gamma'] \in \pi (X , x_0)\) dos curvas arbitrarias.
   Sean \(\tilde \gamma , \tilde{\gamma '}\) los levantamientos respectivos
@@ -949,7 +949,7 @@ no plantea el grupo \(G (\tilde X)\) totalmente al encontrar un
 cubrimiento universal de un espacio, si no mas bien estudia directamente
 las acciones sobre la fibra \(p^{-1} (x_0)\) por la función
 \(\phi\) de la definición \ref{def:levantamiento-derivado} y utiliza una
-``decision informada'' para dotarle estructura de grupo. Para ver el
+``decisión informada'' para dotarle estructura de grupo. Para ver el
 marco de trabajo, estudiaremos el grupo fundamental de \(S^1\) como
 ejemplo. Utilizando los teoremas anteriores para proponer un
 cubrimiento tal que \(\tilde X\) sea simplemente conexo y que pueda
@@ -1046,7 +1046,7 @@ universalmente a \(\mathbb R P^n\) aunque la estructura de grupo dada
 para distintas cardinalidades no es única. Sin embargo hay una cantidad
 finita de alternativas a probar para cada cardinalidad.
 
-\subsubsection{Categoria de cubrimientos}
+\subsubsection{Categoría de cubrimientos}
 Los cubrimientos universales utilizan el adjetivo universal. Ya se había
 dicho que las propiedades universales de un objeto \(A\), son objetos
 y/o morfismos \((B,\phi)\) tal que para cualquier objeto \(C\) relacionado
@@ -1087,7 +1087,7 @@ pide esta condición.
     \mathbf{Mor} (\mathscr C) : g : X \to F \]
 \end{definicion}
 \begin{acotacion}
-  Los elementos terminal e inicial son unico modulo isomorfismo.
+  Los elementos terminal e inicial son único modulo isomorfismo.
 \end{acotacion}
 Ejemplo de estos tenemos en \(\mathscr{Grp}\) donde el grupo trivial
 sirve de elemento inicial pues es homomorfo a cualquier otro grupo
@@ -1096,7 +1096,7 @@ trivialmente. Esta categoría no tiene un elemento final. La categoría
 elementos terminales a todos los singletons trivialmente.
 
 Es claro que para \(\mathscr{Cov}(X, x_0)\) el espacio \((X, x_0)\) es
-el elemento terminal por definicion. Lo que no es tan claro es la
+el elemento terminal por definición. Lo que no es tan claro es la
 presencia de un elemento inicial. Se afirma que en caso de que \((X,
 x_0)\) admita un cubrimiento universal \((X_u, x_u)\) este sera el
 elemento inicial.
@@ -1109,14 +1109,14 @@ elemento inicial.
 \begin{proof}
   Solo debemos probar la propiedad universal. Sea \(p_u : (X_u, x_u) \to
   (X, x_0)\) el cubrimiento universal. Supongamos que existe un espacio
-  \((Z, z_0)\) que cubre a \((X, x_0)\) mediante la aplicacion
+  \((Z, z_0)\) que cubre a \((X, x_0)\) mediante la aplicación
   \(p_{z}\). Es claro que por ser \(X_u\) simplemente conexo se
-  cumple la relacion
+  cumple la relación
   \[ \{e\} = p_{u,*} \left( \pi (X_u, x_u) \right) \subseteq p_{z,*}
     \left( \pi (Z, z_0) \right)\]
   por lo que aplicando el teorema \ref{thm:lifting-theorem-general} de
   levantamiento, existe un levantamiento \(p_{uz} : (X_u, x_u) \to (Z,
-  z_0)\) que cumple la ecuacion
+  z_0)\) que cumple la ecuación
   \[ p_{z} \circ p_{uz} = p_u \]
   \begin{center}
     \includegraphics[scale=0.25]{./imagenes/lifting-path-cat-covering.png}
@@ -1176,7 +1176,7 @@ elemento inicial.
   \end{proof}
 
   La unicidad de \(p_{uz}\) proviene de utilizar le teorema
-  \ref{thm:uniq-general} de unicidad del levantamiento. Obtenemos asi el
+  \ref{thm:uniq-general} de unicidad del levantamiento. Obtenemos así el
   resultado.
 \end{proof}
 
@@ -1185,7 +1185,7 @@ En vista del teorema anterior, podemos visualizar la categoría
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.3]{./imagenes/cov.png}
-  \caption{caracterización categoria}
+  \caption{caracterización categoría}
 \end{figure}
 Es claramente un lattice con \((X_u, x_u)\) el cubrimiento universal
 como elemento inicial en vista del teorema \ref{thm:universal-initial}.
