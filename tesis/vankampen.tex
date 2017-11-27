@@ -85,7 +85,7 @@ por completitud
   G_\alpha\) tiene una asociada inversa \(L_{g^{-1}}\) con \(g^{-1} \in
   G_\alpha\), lo cual en consecuencia nos da un mapeo de identidad a
   identidad (por regla de reducción). Por lo anterior tenemos un
-  homomorfismo de grupos entre \(G_\alpha\) y \((W \to W, (\circ))\) y
+  homomorfismo de grupos entre \(G_\alpha\) y \(P(W) := (W \to W, (\circ))\) y
   esto para todo \(\alpha\).
   \begin{align*}
     L: G_\alpha &\longrightarrow P(W) \\
@@ -122,42 +122,51 @@ por completitud
 \end{proof}
 
 Aquí se utilizo implícitamente un propiedad básica del producto libre
-\(*_\alpha G_\alpha\), que si tengo una colección de homomorfismos
+\(*_\alpha G_\alpha\), que si tenemos una colección de homomorfismos
 \[ \phi_\alpha : G_\alpha \to H \]
 con \(H\) un grupo, existe una extensión única
 \[ \phi : *_\alpha G_\alpha \to H \]
 tal que sigue siendo homomorfismo. En particular, la ecuación que la
 define para \(g_1 g_2 \dots g_n \in *_\alpha G_\alpha\) arbitrario es la siguiente
-\[
+\begin{equation} \label{def:induced-morfism-free}
   \phi \left( g_1 g_2 \dots g_n \right) := \phi_{\alpha_1} (g_1)
   \phi_{\alpha_2} (g_2) \dots \phi_{\alpha_n} (g_n)
-\]
+\end{equation}
 Para probar que es única, basta notar reducir la cadena no afecta la
 imagen bajo \(\phi\) y que esta debe seguir siendo un homomorfismo.
 
 Previo al teorema general, es útil trabajar con una versión reducida del
 teorema de \vank por dos razones: es una versión geométricamente
 intuitiva y aparece como paso intermedio de la demostración general. En
-esta version se trabajara con el siguiente diagrama conmutativo,
+esta version se trabajara con el diagrama conmutativo de la figura
+\ref{fig:digrama-vank},
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.5]{./imagenes/van.png}
+  \caption{Diagrama de trabajo \vank}
+  \label{fig:digrama-vank}
 \end{figure}
-donde \( H = \pi (U, x_0) * \pi (V, x_0)\) el producto libre, \(i_1,
-i_2, j_1, j_2\) son los homomorfismos inducidos (sin la notación \(i_*\)
-por simplicidad) de las inclusiones correspondientes, \(\Phi_1, \Phi_2\)
-son las inclusiones en el grupo libre tomando todo \(\gamma \in \pi (U,
-x_0)\) y ver la correspondiente cadena \(\gamma \in H\) y \(\Phi :
-\pi(U, x_0) * \pi (V, x_0) \to \pi (X, x_0)\) la extensión de los
-homomorfismo \(\Phi_1, \Phi_2\) descrita en el párrafo anterior.
-
+donde
+\begin{itemize}
+  \item \( H = \pi (U, x_0) * \pi (V, x_0)\) el producto libre.
+  \item \(i_1, i_2, j_1, j_2\) son los homomorfismos inducidos (sin la notación
+    \(i_*\) por simplicidad) de las inclusiones correspondientes
+  \item \(\Phi_1, \Phi_2\) son las inclusiones en el grupo libre tomando todo
+  \(\gamma \in \pi (U, x_0)\) y ver la correspondiente cadena \(\gamma
+  \in H\)
+  \item \(\Phi : \pi(U, x_0) * \pi (V, x_0) \to \pi (X, x_0)\) es la
+  extensión de los homomorfismo \(\Phi_1, \Phi_2\) descrita en el
+  párrafo anterior.
+\end{itemize}
 \begin{teorema} \label{thm:vank-especifico}
   Sea \(X = U \cup V\), donde \(U,V\) son conjuntos abiertos de \(X\).
   Supongamos que \(U \cap V\) es arco-conexo y que \(x_0 \in U \cap V\).
   Sea \(j_1\) y \(j_2\) las inclusiones de \(U\) y \(V\) en \(X\)
   respectivamente. Entonces las imágenes de los homomorfismos inducidos
-  \[ j_{1,*} : \pi (U, x_0) \to \pi (X, x_0), \quad j_{2,*} : \pi
-  (V, x_0) \to \pi (X, x_0) \]
+  \begin{gather*}
+    j_{1,*} : \pi (U, x_0) \to \pi (X, x_0) \\
+    j_{2,*} : \pi (V, x_0) \to \pi (X, x_0)
+  \end{gather*}
   generan a \(\pi (X,x_0)\).
 \end{teorema}
 \begin{proof}
@@ -184,18 +193,18 @@ homomorfismo \(\Phi_1, \Phi_2\) descrita en el párrafo anterior.
   repitiendo este proceso una cantidad finita de veces hasta satisfacer
   la condición.
 
-  Ahora se prueba el teorema en si. Dado \(f\) y \(a_0 < ... < a_n\)
-  subdivisión anterior, definamos las funciones
+  Ahora se prueba el teorema en si, dado \(f\) y \(a_0 < \dotsc < a_n\)
+  subdivisión anterior, definamos las funciones expansion
   \[ l_i : [0,1] \to [a_{i-1}, a_{i}] \]
-  \[ f_i = f \circ l_i \]
+  \[ f_i := f \circ l_i \]
   Es claro que \(\forall i \in \{1 \dotsc n\}, \ f_i (I) \) esta contenida en
   \(U\) o en \(V\). También es claro por simple calculo que se cumple
   la igualdad
-  \[ [f] = [f_1] * [f_2] * ... * [f_n] \]
+  \[ f = f_1 * f_2 * ... * f_n \]
   Pero estos \(\{f_i\}\) no son arcos cerrados basados en \(x_0\) de
   \(\pi (U,x_0)\) o \(\pi (V,x_0)\). Para solucionar esto, nos basamos
   en la arco conexidad de \(U \cap V\), lo que nos permite afirmar que
-  para todo \(i \in [1 , n]\) existe
+  para todo \(i \in \{1 \dotsc n\}\) existe
   \[ \alpha_i : I \to U \cap V \]
   \[ \alpha_i (0) = x_0, \quad \alpha_i (1) = f(a_i) \]
   arcos continuos, fijando además \(\alpha_0 \equiv x_0 \equiv \alpha_n
@@ -245,7 +254,7 @@ utilizaremos en su forma generalizada para probar el teorema general.
   (A_\alpha, x_0) / N \)
 \end{teorema}
 Antes de la demostración hablaremos un poco del conjunto \(N\). Las
-funciones \(i_{\alpha \beta}, i_{\beta, \alpha}\) corresponden a los
+funciones \(i_{\alpha \beta}, i_{\beta \alpha}\) corresponden a los
 homomorfismos inducidos por la inclusión
 \begin{gather*}
   i_{\alpha \beta} : \pi (A_\alpha \cap A_\beta , x_0 ) \longrightarrow \pi (A_\alpha, x_0) \\
@@ -279,7 +288,8 @@ de la forma
 \[ i_{\alpha \beta} (\omega) \ \overline{i_{\beta \alpha} (\omega)} ,
   \ \text{con} \ \alpha,\beta \in \tau,\ \omega \in \pi(A_\alpha \cap
   A_\beta , x_0)\]
-y sabiendo como es \(\Phi\) como homomorfismo
+y sabiendo como es \(\Phi\) como homomorfismo por
+la ecuacion \eqref{def:induced-morfism-free}
 \begin{align*}
   \Phi &\left( i_{\alpha \beta} (\omega) \ \overline{i_{\beta \alpha}
           (\omega)} \right) \\
@@ -469,7 +479,7 @@ declarado, podemos proceder a la demostración.
   factorizaciones de \([F \circ \gamma_k]\) son todas equivalentes para
   todo \(k\), se obtiene \(h\) y \(g\) son equivalentes. Por lo tanto
   ambas pertenecen a la misma clase lateral de \(*_\alpha \pi (A_\alpha ,
-  x_0)\). Por la arbitrariedad de \([f] \in \pi (X, x_0)\) e \(g,h \in
+  x_0) / N\). Por la arbitrariedad de \([f] \in \pi (X, x_0)\) e \(g,h \in
   *_\alpha \pi (A_\alpha)\), se tiene que el mapeo inducido por \(\Phi\)
   en \(*_\alpha \pi (A_\alpha) / N \to \pi (X,x_0)\) es inyectivo.
 \end{proof}
@@ -490,7 +500,7 @@ declarado, podemos proceder a la demostración.
   Definamos dos nuevos conjuntos:
   \begin{gather*}
     A_x := (X \vee U_y / {x_0 \simeq y_0}) \\
-    A_y := (Y \vee U_x / {x_0 \simeq y_0})
+    A_y := (U_x \vee Y / {x_0 \simeq y_0})
   \end{gather*}
   Dada que \(U_x, U_y\) son contráctiles, se tiene que \(A_x, A_y\)
   poseen los mismos tipos homotópicos que \(X, Y\) respectivamente, ie
@@ -517,9 +527,9 @@ la wedge-sum \(S^1 \vee S^1\).
     \caption*{Espacio figura 8}
   \end{figure}
   Es trivialmente cierto que el conjunto \(\{x_0\}\) es arco-conexo y
-  hay inyecciones dos canónicas de \(S^1\) a \(S^1 \vee S^1\). Además es
-  cierto que \(x_0\) posee vecindades contráctiles en \(S^1\), pues este
-  es homeomorfo a \([0,1]/0 \simeq 1\) y es cosa de tomar un intervalo
+  hay inyecciones dos canónicas de \(S^1\) a \(S^1 \vee S^1\). Además
+  \(x_0\) posee vecindades contractibles en \(S^1\), pues este es
+  homeomorfo a \([0,1]/ \{0 \simeq 1\}\) y es cosa de tomar un intervalo
   pequeño de \(x_0\). Por tanto podemos aplicar el corolario
   \ref{cor:vank-coproducto} para decir que el grupo fundamental de
   \(\left( S^1 \vee S^1 , x_0 \right) \) es \(\pi \left( S^1 , x_0 \right)
@@ -530,13 +540,13 @@ El producto libre de grupos \(*_\alpha G_\alpha\) es en la categoría
 \(\mathcal{Grp}\) el co-producto categórico. Una consecuencia
 de \vank es que el functor \(\pi : \mathscr{HoTop}_* \to \mathscr{Grp}\)
 preserva \emph{algunos} co-productos, en particular aquellos
-co-productos cuyos espacios bases tengan vecindades simplemente conexa en los
-puntos de origen.
+co-productos cuyos espacios bases tengan vecindades simplemente conexas
+en los puntos de origen.
 
-seria interesante ver algún ejemplo de un co-producto que no se preserva
+Seria interesante ver algún ejemplo de un co-producto que no se preserva
 bajo \(\pi\). Para esto solo debemos ver algun espacio que no tenga
-vecindades simplemente conexas para todo punto\footnote{no sea semi localmente
-simplemente conexo}. Para esto consideramos el espacio ``Hawaian earring''
+vecindades simplemente conexas para todo punto\footnote{No sea semi localmente
+simplemente conexo.}. Para esto consideramos el espacio ``Hawaian earring''
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.3]{./imagenes/480px-Hawaiian_Earrings.svg.png}
@@ -586,7 +596,7 @@ cuando \(X\) es el ``Hawaian earring''.
   Para aplicar \vank debemos estudiar el espacio \(N\). Notese que el
   espacio \(U \cap V\) es homotópicamente equivalente a una curva
   \(\gamma\) contenida en \(U \cap V\) que de una vuelta completa.
-  \(\gamma\) es homeomorfa a \(S^1\) y por tanto el
+  \(\gamma\) es homeomorfa a \(S^1\) y por tanto
   \[\pi (U \cap V, x_0) \cong \pi (S^1) = \mathbb Z \]
   con \(\gamma\) el generador de este. Debemos estudiar los
   homomorfismos inducidos por la inclusión
@@ -609,12 +619,14 @@ cuando \(X\) es el ``Hawaian earring''.
   Luego el conjunto \(N\) corresponde al normalizador
   \[ N \{ [a] [b] [a] [b^{-1}]\}\]
   donde este conjunto corresponde simplemente \(\{ [a] [b] [a]
-  [b^-1]\}\) con la yuxtaposición como operación, es decir no tiene
+  [b^{-1}]\}\) con la yuxtaposición como operación, es decir no tiene
   elementos extra de \(\pi (U,x_0) * \pi (V, x_0)\). Luego \vank nos
-  dice que se tiene los siguientes isomorfismos
-  \[ \pi (K, x_0) \cong \left( \pi (U, x_0) * \pi (V, x_0) \right)
-      /_{\{[a] [b] [a] [b^{-1}]\}} = \langle {a , b} \rangle
-      /_{\{[a] [b] [a] [b^{-1}]\}}\]
+  dice que se tiene el siguiente isomorfismo
+  \[
+    \pi (K, x_0) \cong \left( \pi (U, x_0) * \pi (V, x_0) \right)
+    /_{\{[a] [b] [a] [b^{-1}]\}} = \langle {a , b} \rangle
+    /_{\{[a] [b] [a] [b^{-1}]\}}
+  \]
   donde este ultimo puede presentarse como las cadenas generadas por
   \(a,b\) con \(a * b * a * b^{-1} \) reducido o removido por ser la
   identidad, ie
@@ -653,7 +665,7 @@ si \(A,B,C\) son espacios topológicos donde \(f : A \to B \) es una
 función inclusión y \( g : A \to C \) es una función continua, el
 espacio
 \[ B \cup_{g} C := B \sqcup C / \{g(A) \sim f(A)\} \]
-junto con las inclusiones correspondientes al co-producto es el pushout
+junto con los morfismos inclusiones correspondientes es el pushout
 de \( (A, f , g) \).
 
 En la categoría \(\mathscr{Grp}\), el pushout general es el llamado
@@ -683,8 +695,8 @@ simplicidad).
     (\gamma) \mid \gamma \in \pi(U \cap V)\})\)}
 \end{figure}
 
-Por ultimo, cabe notar de que existen generalizaciones del teorema
-\vank donde las hipótesis de arco-conexidad (y conexidad) no participen.
+Por ultimo, cabe notar de que existen generalizaciones del teorema \vank
+donde las hipótesis de arco-conexidad (y conexidad) sean debilitadas.
 Estos resultados también se presentan como la preservación de alguna
 estructura que conserve una propiedad universal en una categoría
 adecuada. Se guía a revisar la referencia \cite{brown} para los
