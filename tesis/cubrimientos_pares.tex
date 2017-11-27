@@ -807,7 +807,7 @@ Procedemos a la demostración.
 
 Ahora nos enfocaremos en un caso especifico, cuando nuestro cubrimiento
 es universal. Sea \(p : \tilde X \to X,\ \tilde X\) un
-cubrimiento universal de \(X\). Sea \(x_0 \in X\) un punto base. Es
+cubrimiento universal de \(X\) y \(x_0 \in X\) un punto base. Es
 claro que dado que el los grupos fundamentales de \(\tilde X\) son
 triviales independientes del punto base de \(\tilde X\), ie para todo
 \(\tilde x_1, \tilde x_2 \in p^{-1} (x_0)\)
@@ -899,7 +899,7 @@ x_0)\) cuando \(\tilde X\) es simplemente conexo.
   \[ L \left( [\gamma * \gamma'] \right) = \hat \tau : (\tilde X, \tilde
     x _0) \to (\tilde X , \tau \circ \tau' \, (\tilde x_0)) \]
   Por otro lado, la siguiente transformación de deck
-  \[ \tau \circ \tau : (\tilde X, \tilde x _0) \to (\tilde X , \tau
+  \[ \tau \circ \tau' : (\tilde X, \tilde x _0) \to (\tilde X , \tau
     \circ \tau' \, (\tilde x_0))
   \]
   también envía al punto \(\tilde x_0\) a \(\tau \circ \tau' \, (\tilde
@@ -959,24 +959,33 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
 \end{teorema}
 \begin{proof}
   Dado que \(S^1\) es arco-conexo, basta probar que este teorema es
-  cierto para algún \(x_0\) en \(S^1\). Sea \(p : \mathbb R \to S^1,\
-  p(t) := (\cos 2 \pi t, \sin 2 \pi t)\) el cual es fue visto anteriormente
-  que es un cubrimiento . Sea \(\tilde x _0 = 0\) y \( p(\tilde x _0) =
-  (1,0) =: x_0 \in S^1\). Por ser \(\mathbb R\) simplemente conexo, se
+  cierto para algún \(x_0\) en \(S^1\). Sea
+  \begin{align*}
+    p : \Re &\longrightarrow S^1 \\
+    t &\longmapsto \left( \cos 2 \pi t, \sin 2 \pi t \right)
+  \end{align*}
+  el cual es fue visto anteriormente
+  que es un cubrimiento. Sea \(\tilde x _0 = 0\) y
+  \[ p(\tilde x _0) = (1,0) =: x_0 \in S^1\]
+  nuestro punto base. Por ser \(\mathbb R\) simplemente conexo, se
   tiene que el levantamiento correspondiente \(\phi : \pi (S^1, x_0) \to
   p^{-1} (x_0)\) es biyectivo, donde
-  \[ p^{-1} (1,0) = \{t \in \mathbb R \mid (\cos 2 \pi t, \sin 2 \pi t)
+  \[ p^{-1} (1,0) = \{t \in \Re \mid (\cos 2 \pi t, \sin 2 \pi t)
     = (1, 0) \} = \mathbb Z \]
   Notamos además que de sobre todo \(\mathbb Z\) existe únicamente el
-  grupo bajo la adición, este sera nuestro grupo de partida.
+  grupo bajo la adición, este sera nuestro candidato de grupo.
 
-  Para probar que es homomorfismo, se toman \([f], [g] \in \pi
+  Para probar que \(\phi\) es homomorfismo, se toman \([f], [g] \in \pi
   (S^1, x_0)\) arbitrarios y \(\tilde f, \tilde g\) sus correspondientes
-  levantamientos tales que \(n := \tilde f (1) = \phi ([f]),\ m :=
-  \tilde g (1) = \phi ([g])\). Ahora queremos encontrar quien es el
-  levantamiento de \([f] * [g]\), para esto se define el camino
+  levantamientos tales que
+  \begin{gather*}
+    n := \tilde f (1) = \phi ([f]) \\
+    m := \tilde g (1) = \phi ([g])
+  \end{gather*}
+  Ahora queremos encontrar quien es el levantamiento de \([f] * [g]\),
+  para esto se define el camino
   \begin{align*}
-    \tilde{\tilde g} : I &\longrightarrow \mathbb R \\
+    \tilde{\tilde g} : I &\longrightarrow \Re \\
     s &\longmapsto n + \tilde g (s)
   \end{align*}
   Puesto que \(p(n + x) = p(x)\) por periodicidad, se cumple que
@@ -991,6 +1000,7 @@ preservar la estructura de grupo para ser estudiado bajo ese lente.
      ((p \circ \tilde f) * (p \circ \tilde{\tilde g})) =
      (f * g)
   \]
+
   Por ultimo calculamos
   \[ \phi ([f] * [g]) = \tilde{\tilde g} (1) = n + m = \phi ([f]) + \phi
   ([g]) \]
