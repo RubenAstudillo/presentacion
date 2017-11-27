@@ -1050,15 +1050,17 @@ para distintas cardinalidades no es única. Sin embargo hay una cantidad
 finita de alternativas a probar para cada cardinalidad.
 
 \subsubsection{Categoria de cubrimientos}
-¿En que sentido es universal el cubrimiento universal? Las propiedades
-universales son propiedades categóricas que predican la existencia de
-morfismos entre objetos a priori no relacionados. Ya hemos estudiado
-algunas al definir el (co)-producto categórico. La teoría de cubrimientos
-nos permite presentar los llamados elementos terminal e inicial de
-una categoría. Estos elementos tienen propiedades universales
-particulares que describen a los cubrimientos universales. Para
-estudiarlos debemos definir adecuadamente un nueva categoría, lo cual
-haremos a continuación.
+Los cubrimientos universales utilizan el adjetivo universal. Ya se había
+dicho que las propiedades universales de un objeto \(A\), son objetos
+y/o morfismos \((B,\phi)\) tal que para cualquier objeto \(C\) relacionado
+con \(A\) existen morfismos de \(B\) a \(C\) haciendo posiblemente
+conmutar algún diagrama. Ya hemos estudiado algunas al definir el
+(co)-producto categórico. La teoría de cubrimientos nos permite
+presentar los llamados elementos terminal e inicial de una categoría.
+Estos elementos tienen propiedades universales particulares que
+describen a los cubrimientos universales. Para estudiarlos debemos
+definir adecuadamente un nueva categoría, lo cual haremos a
+continuación.
 \begin{definicion}[Categoria \(\mathscr{Cov}(X,x_0)\)]
   Para un espacio topológico puntuado arco-conexo \((X,x_0)\), se define
   la categoría \(\mathscr{Cov}(X)\) como la tripleta \(\left( \mathbf O,
@@ -1085,7 +1087,7 @@ pide esta condición.
   Análogamente, un objeto terminal \(F\) es un objeto de
   \(\mathbf{Obj} (\mathscr C)\) con la propiedad
   \[ \forall X \in \mathbf{Obj}(\mathscr C),\ \exists ! g \in
-    \mathbf{Mor} (\mathscr C) : g : X \to T \]
+    \mathbf{Mor} (\mathscr C) : g : X \to F \]
 \end{definicion}
 \begin{acotacion}
   Los elementos terminal e inicial son unico modulo isomorfismo.
@@ -1102,7 +1104,7 @@ presencia de un elemento inicial. Se afirma que en caso de que \((X,
 x_0)\) admita un cubrimiento universal \((X_u, x_u)\) este sera el
 elemento inicial.
 
-\begin{teorema}
+\begin{teorema} \label{thm:universal-initial}
   Si \((X_u, x_u)\) es un cubrimiento universal de \((X, x_0)\),
   entonces \((X_u, x_u)\) es un elemento inicial de \(\mathscr{Cov} (X,
   x_0)\)
@@ -1116,28 +1118,35 @@ elemento inicial.
   \[ \{e\} = p_{u,*} \left( \pi (X_u, x_u) \right) \subseteq p_{z,*}
     \left( \pi (Z, z_0) \right)\]
   por lo que aplicando el teorema \ref{thm:lifting-theorem-general} de
-  levantamiento, existe un levantamiento \(f : (X_u, x_u) \to (Z,
+  levantamiento, existe un levantamiento \(p_{uz} : (X_u, x_u) \to (Z,
   z_0)\) que cumple la ecuacion
-  \[ p_{z} \circ f = p_u \]
+  \[ p_{z} \circ p_{uz} = p_u \]
+  \begin{center}
+    \includegraphics[scale=0.25]{./imagenes/lifting-path-cat-covering.png}
+  \end{center}
 
   \begin{lema}
-    \(f\) es un cubrimiento.
+    \(p_{uz}\) es un cubrimiento.
   \end{lema}
   \begin{proof}
-  Sea \(z \in Z\) arbitrarios. Debemos encontrar una vecindad \(B\) de este
+  Sea \(z \in Z\) arbitrario. Debemos encontrar una vecindad \(B\) de este
   tal que existan \(U'_\alpha \subset X_u,\ \alpha \in \Lambda \) que
   cumplan la ecuación
-  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha = f^{-1} (B) \]
-  Sea \(x = p_z (z)\) en \((X,x_0)\). Este tiene un cubrimiento \(V_u
-  \subset X\) para el cual existe \(U_\alpha \subseteq X_u, \alpha \in
-  \Lambda\) cumpliendo
+  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha = p_{uz}^{-1} (B) \]
+  y que al restringir \(p_z\) a alguno de estos conjuntos, sea un
+  homeomorfismo.
+
+  Sea \(x = p_z (z)\) en \((X,x_0)\). Por ser \(p_u\) un cubrimiento,
+  \(x\) tiene una vecindad \(V_u \subset X\) para el cual existe
+  \(U_\alpha \subseteq X_u, \alpha \in \Lambda\) cumpliendo
   \[ \bigcup_{\alpha \in \Lambda} U_\alpha = p_u^{-1} (V_u)\]
   que cumple además que tomando \(p_u\) restringido a cualquier \(U_\alpha
   \in \Lambda\) se tiene un homeomorfismo.
 
-  Por otro lado, también existe una vecindad de \(x\) denotada por
-  \(V_z\) para el cual existe unos conjuntos \(I_\beta \subseteq Y, \beta
-  \in \Omega\) que cumple la ecuación análoga
+  Por otro lado, dado que \(p_z\) también es un cubrimiento, existe una
+  vecindad de \(x\) denotada por \(V_z\) para el cual existe unos
+  conjuntos \(I_\beta \subseteq Z, \beta \in \Omega\) que cumple la
+  ecuación análoga
   \[ \bigcup_{\beta \in \Omega} I_\beta = p_z^{-1} (V_z) \]
   En particular, existe un único \(\beta_0 \in \Omega\) tal que \( z \in
   I_{\beta_0} \) y \( p_{z} \mid_{I_{\beta_0}} \) es homeomorfismo entre
@@ -1147,18 +1156,29 @@ elemento inicial.
   \[ V := V_z \cap V_u \]
   Dado que \(p_u\) es homeomorfo al restringirse a cualquier
   \(U_\alpha\) con \(\alpha \in \Lambda\), debe de cumplirse la igualdad
-  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha := \bigcup_{\alpha \in
+  \[ \bigcup_{\alpha \in
       \Lambda} \left( p_u \mid_{U_\alpha} \right)^{-1} (V) = p_u^{-1} (V) \]
-  y también debe cumplirse por homeomorfismo de \(p_z\) restringido a
-  \(I_{\beta_0}\) la existencia de una vecindad de \(z\) dada por
+  con lo cual definimos a nuestros \(U_\alpha ',\ \alpha \in \Lambda\) por
+  \begin{gather*}
+    U_\alpha ' := \left( p_u \mid_{U_\alpha} \right)^{-1} (V) \\
+    \bigcup_{\alpha \in \Lambda} U'_\alpha := \bigcup_{\alpha \in
+        \Lambda} \left( p_u \mid_{U_\alpha} \right)^{-1} (V) = p_u^{-1}
+        (V)
+  \end{gather*}
+  Por otro lado, también debe cumplirse por homeomorfismo de \(p_z\)
+  restringido a \(I_{\beta_0}\), la existencia de una vecindad de \(z\)
+  dada por
   \[ B := \left( p_z \mid I_{\beta_0} \right) ^{-1} (V) \]
   Luego se tiene
-  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha = f^{-1} (B) \]
-  con homeomorfismo de \(f\) al restringirse a un \(\alpha\) por
-  composición de de homeomorfismos.
+  \[ \bigcup_{\alpha \in \Lambda} U'_\alpha = p_{uz}^{-1} (B) \]
+  con la restricción de \(p_{uz}\) a \(U_\alpha '\) un homeomorfismo
+  pues por construcción
+  \[ p_{uz}\mid_{U' _\alpha} = \left( p_z \mid_{I_{\beta _0}}
+     \right)^{-1} \circ p_u \mid_{U_\alpha} \]
+  que es una composición de homeomorfismos y por tanto un homeomorfismo.
   \end{proof}
 
-  La unicidad de \(f\) proviene de utilizar le teorema
+  La unicidad de \(p_{uz}\) proviene de utilizar le teorema
   \ref{thm:uniq-general} de unicidad del levantamiento. Obtenemos asi el
   resultado.
 \end{proof}
@@ -1171,16 +1191,18 @@ En vista del teorema anterior, podemos visualizar la categoría
   \caption{caracterización categoria}
 \end{figure}
 Es claramente un lattice con \((X_u, x_u)\) el cubrimiento universal
-como elemento inicial.
+como elemento inicial en vista del teorema \ref{thm:universal-initial}.
 
 Podemos volver a definir un functor
 \[ \pi : \mathscr{Cov} (X, x_0) \to \mathscr{Grp} \]
 reutilizando la notación \(\pi\) para asignar a cada espacio cubrimiento
-su grupo fundamental. Es claro que por ser \((X_u, x_u)\) simplemente
+su grupo fundamental. Dado que los morfismos de \(\mathscr{Cov}\) son
+cubrimientos, en vista del teorema \ref{thm:inyec-covering} al ser estos
+mapeados mediante \(\pi\) estos pasaran a ser morfismos inyectivos en
+\(\mathscr{Grp}\). Por otro lado, dado que \((X_u, x_u)\) es simplemente
 conexo, se cumple que
 \[ \pi (X_u, x_u) = {e} \]
-Mas aun, por el teorema \ref{thm:inyec-covering} de inyectividad de del
-homomorfismo inducido por un cubrimiento \(p\), el lattice de
-cubrimientos es respetado como estructura en la categoría
-\(\mathscr{Grp}\). Por tanto el functor \(\pi\) preserva elementos
-iniciales entre categorías.
+siendo este ultimo el grupo trivial. Es fácil de ver que el grupo
+trivial es el elemento inicial de la categoría de \(\mathscr{Grp}\) y
+que trivialmente este functor esta preservando los elementos iniciales
+(y sus propiedades universales) entre las dos categorías.
