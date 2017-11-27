@@ -563,6 +563,28 @@ es contractible a un punto un punto. Luego no podemos concluir mediante
 \[ \pi (X \vee X , x_0) = \pi (X, x_0) * \pi (X, x_0)\]
 cuando \(X\) es el ``Hawaian earring''.
 
+\begin{ejemplo} [\(S^2\) es simplemente conexo] \label{ej:S2-simpleconexo}
+  Esto puede verse tomando dos puntos anti-podales \(a = (0,0,1),\ b =
+  (0,0,-1)\) y definiendo los conjuntos
+  \begin{gather*}
+    U := S^2 - \{a\} \\
+    V := S^2 - \{b\} \\
+    \implies S^2 = U \cup V, \quad S^2 - \{a,b\} = U \cap V
+  \end{gather*}
+  Notar que \(U,V\) son abiertos pues \(S^2\) es una variedad y por tanto
+  los complemente de singletons son abiertos. Por otro lado, dada la
+  proyeccion estereografica, \(U,V\) son homeomorfos a \(R^2\), el cual
+  tiene un grupo fundamental trivial. Finalmente notamos que \(U \cap
+  V\) es arco-conexo. Asi el teorema de \vank nos dice que el
+  homomorfismo inducido
+  \begin{gather*}
+    \pi (U, x_0) * \pi (V, x_0) = \{e\} \\
+    \Phi : \pi (U, x_0) * \pi (V, x_0) \longrightarrow \pi (S^2)
+  \end{gather*}
+  es sobreyectivo, lo cual implica que \(\pi (S^2) \subset \pi (U, x_0)
+  * \pi (V, x_0) = \{e\}\), obligando a que este sea trivial.
+\end{ejemplo}
+
 \begin{ejemplo}[Botella de Klein]
   La botella de Klein \(K\) puede presentarse como un cociente en el
   espacio \(I \times I\) representada por el siguiente diagrama.
