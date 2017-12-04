@@ -465,8 +465,20 @@
       Si \(p : \tilde X \to X\) es un cubrimiento con \(\tilde X\)
       universal, entonces para todo \(\tilde x_0 \in p^{-1} (x_0)\) se
       puede definir una función biyectiva
-      \[ \phi : \pi (X, x_0) \to p^{-1} (\{x_0\}) \]
-      \[ \phi \left( [f] \right) = \tilde f (1) \]
+      \begin{gather*}
+         \phi : \pi (X, x_0) \to p^{-1} (\{x_0\}) \\
+         \phi \left( [f] \right) = \tilde f (1)
+      \end{gather*}
+
+      \pause
+      Para inyectividad, tomar \([\alpha],[\beta] \in \pi (X, x_0)\) y
+      \([\tilde \alpha], [\tilde \beta]\) sus levantamientos en \(\tilde
+      X\) tal que \(\tilde \alpha (1) = \tilde \beta (1)\). Utilizar la
+      homotopia entre \(\tilde \alpha, \tilde \beta\) y su proyeccion
+      por \(p\).
+
+      Para sobreyectividad tomemos \(\tilde x_1 \in p^{-1} (x_0)\) y
+      utilizar la arco-conexidad.
     \end{block}
   \end{frame}
 
