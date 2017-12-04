@@ -27,7 +27,7 @@
     \end{block}
     \begin{block}{}
       \centering
-      Ruben Astudillo Colina
+      Rubén Astudillo Colina
     \end{block}
 
   \end{frame}
@@ -198,7 +198,7 @@
 
   \begin{frame}
     \frametitle{Functor entre categorías}
-    Lo que hemos hecho realmente con la construccion anterior es definir
+    Lo que hemos hecho realmente con la construcción anterior es definir
     un functor \(\pi\) entre las categorías \(\mathscr{Top}_*\) y
     \(\mathscr{Grp}\)
     \[ \pi : \mathscr{Top}_* \to \mathscr{Grp} \]
@@ -210,20 +210,20 @@
   \begin{frame}
     \frametitle{Tres grandes herramientas de calculo}
     \begin{itemize}
-    \item Retracciones y tipos homotopicos
-    \item Teoria de cubrimientos
+    \item Retracciones y tipos homotópicos
+    \item Teoría de cubrimientos
     \item Teorema de \vank
     \end{itemize}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Tipos homotopicos}
-    \begin{block}{Equivalencias homotopicas}
+    \frametitle{Tipos homotópicos}
+    \begin{block}{Equivalencias homotópicas}
       Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
       que \[ g \circ f \simeq Id : X \to X \]
       \[ f \circ g \simeq Id : Y \to Y \]
       Entonces \(f\) y \(g\) son llamadas \emph{equivalencias
-      homotopicas} y la presencia de estas dicen que \(X,Y\) poseen el
+      homotópicas} y la presencia de estas dicen que \(X,Y\) poseen el
       mismo grupo fundamental.
     \end{block}
 
@@ -231,22 +231,22 @@
   \begin{frame}
     \frametitle{Lemas necesarios}
     \begin{block}{Lema}
-      Si \(f \circ g = h\) con \(h\) una funcion biyectiva, entonces
+      Si \(f \circ g = h\) con \(h\) una función biyectiva, entonces
       \(f\) sobreyectivo y \(g\) inyectivo.
     \end{block}
     \begin{block}{Lema}
-      Si \(f \circ g \simeq Id\) mediante la homotopia \(H\) y \(f \circ
+      Si \(f \circ g \simeq Id\) mediante la homotopía \(H\) y \(f \circ
       g (x_0) = x_1\) entonces existe una curva \(\alpha : I \to X\)
       definida por \(\alpha (t) := H (x_0 , t)\) tal que
       \[ \hat \alpha \left( [m] \right) := [ \overline \alpha] * [m] * [\alpha]\]
-      es un isomofismo de grupo \(\pi(X,x_0) \to \pi (Y,y_0)\) y cumple
+      es un isomorfismo de grupo \(\pi(X,x_0) \to \pi (Y,y_0)\) y cumple
       la igualdad
       \[ f_* \circ g_* = \hat \alpha \circ Id \]
     \end{block}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Idea de demostracion teorema de tipos}
+    \frametitle{Idea de demostración teorema de tipos}
     \begin{center}
       \includegraphics[scale=0.5]{./imag/teo_tipos.png}
     \end{center}
@@ -258,7 +258,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Ejemplo de espacios mismo tipo homotopicos}
+    \frametitle{Ejemplo de espacios mismo tipo homotópicos}
     \begin{block}{}
       \centering
       \includegraphics{./imag/ThreeNonHomeoButHomotopyEquivGraphs.png}
@@ -269,7 +269,7 @@
       \includegraphics[scale=0.5]{./imag/HomotopyEquivalentsToBiAnnulus.png}
     \end{block}
     \begin{center}
-      \emph{imagenes de Hatcher}
+      \emph{imágenes de Hatcher}
     \end{center}
 
   \end{frame}
@@ -283,10 +283,10 @@
         \end{center}
       \end{column}
       \begin{column}{0.7\textwidth}
-        Presentacion de Banda de Mobius
+        Presentación de Banda de Mobius
         \[ M := I \times I / \{(x,1) \sim (1 - x, 0)\}\]
         \pause
-        Homotopicamente equivalente a
+        Homotópicamente equivalente a
         \begin{gather*}
           L := \{ (\frac 1 2, y) \mid y \in I \} / \{ (\frac 1 2 , 1)
           \sim (\frac 1 2, 0)\}
@@ -311,12 +311,12 @@
     a la tripleta \(\left( \mathbf{Obj}, \mathbf{Mor}, (\circ) \right)\)
     con
     \begin{itemize}
-    \item \(\mathbf {Obj}\) conjunto de espacio topologicos puntuados.
+    \item \(\mathbf {Obj}\) conjunto de espacio topológicos puntuados.
     \item \(\mathbf{Mor}\) dada por el conjunto
       \begin{align*}
         \{ [f] \mid f : (X,x_0) \to (Y,y_0) \text{ continua} ,(X,x_0),(Y,y_0) \in \mathbf {Obj}\}
       \end{align*}
-      de clases equivalencias homotopicas entre funciones continuas.
+      de clases equivalencias homotópicas entre funciones continuas.
     \item \((\hat \circ)\) composición de clases de
       equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
       dominio y recorridos compatibles
@@ -329,18 +329,18 @@
       La categoría \(\mathscr{Top}_*\) se puede ver como una
       sub-categoría de \(\mathscr{HoTop}\) mediante el functor
       \[ i : \mathscr{Top}_* \to \mathscr{HoTop}_*\]
-      mapeando los objetos a si mismos y tomando toda funcion continua
-      \(f\) entre espacios vectoriales y asignandole \([f]\) en
+      mapeando los objetos a si mismos y tomando toda función continua
+      \(f\) entre espacios vectoriales y asignándole \([f]\) en
       \(\mathscr{HoTop}_*\).
 
-      Espacios topologicos homeomorfos tiene claramente un par de
-      equivalencias homotopicas.
+      Espacios topológicos homeomorfos tiene claramente un par de
+      equivalencias homotópicas.
 
       Se puede extender el functor \(\pi\) que asigna el grupo
-      fundamental a un espacio topologico a trabajar desde
+      fundamental a un espacio topológico a trabajar desde
       \(\mathscr{HoTop}_* \to \mathscr{Grp}\)
 
-      Muestra que la nocion de homeomorfismos era muy fuerte si la meta
+      Muestra que la noción de homeomorfismos era muy fuerte si la meta
       es clasificar espacios mediante el grupo fundamental.
     \end{block}
   \end{frame}
@@ -351,13 +351,13 @@
       \begin{column}{0.6\textwidth}
         \begin{block}{Productos}
           Es una categoría cartesiana. El producto de espacios puntuados
-          sera el producto catesiano usual \((X \times Y, (x_0, y_0))\).
+          sera el producto cartesiano usual \((X \times Y, (x_0, y_0))\).
           Mas aun, el functor \(\pi\) respetara la estructura del
           producto
           \[ \pi (X \times Y , (x_0, y_0)) = \pi (X, x_0) \times \pi (Y,
             y_0)\]
           siendo en la llegada el producto cartesiano de
-          grupos. Este resultado se obtiene por la caracterizacion de
+          grupos. Este resultado se obtiene por la caracterización de
           curvas es un espacio producto.
         \end{block}
       \end{column}
@@ -373,7 +373,7 @@
     \begin{columns}
       \begin{column}{0.6\textwidth}
         \begin{block}{Co-productos}
-          Tambien tiene un co-producto por ser los objetos espacios
+          También tiene un co-producto por ser los objetos espacios
           puntuados. Para \((X, x_0) , (Y, y_0)\) se define el
           co-producto como
           \[ X \vee Y , \{x_0, y_0\} = X \sqcup Y / x_0 \simeq y_0 \]
@@ -404,7 +404,7 @@
           \[ p^{-1} (U) = \bigcup_{\alpha \in \Lambda} V_\alpha \]
           Donde \(\{V_\alpha\}\) es una familia disjunta de abiertos de
           \(\tilde X\), tal que
-          la restriccion a cada \(V_\alpha\) de \(p\) es
+          la restricción a cada \(V_\alpha\) de \(p\) es
           homeomorfa sobre \(U\).
         \end{block}
         \begin{block}{Fibra}
@@ -468,7 +468,7 @@
     \begin{block}{Levantamiento derivado}
       Si \(p : \tilde X \to X\) es un cubrimiento con \(\tilde X\)
       universal, entonces para todo \(\tilde x_0 \in p^{-1} (x_0)\) se
-      puede definir una funcion biyectiva
+      puede definir una función biyectiva
       \[ \phi : \pi (X, x_0) \to p^{-1} (\{x_0\}) \]
       \[ \phi \left( [f] \right) = \tilde f (1) \]
     \end{block}
@@ -494,7 +494,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Caracterizacion de functor}
+    \frametitle{Caracterización de functor}
     \begin{block}{}
       Se define una nueva categoría de cubrimientos de espacios \(X\)
       que posean cubrimiento universal. Luego se define un functor
@@ -558,7 +558,7 @@
       \pi (U \cap V) = \{[\gamma], [e]\} \text{ se retrae a } S^1 \\
       i_{u,v} ([\gamma]) = [e], \quad i_{v,u} ([\gamma]) = [\gamma]_V
     \end{gather*}
-    Pero \([\gamma]_{V} = [a]*[b]*[a]*[b^{-1}] \) por homotopia
+    Pero \([\gamma]_{V} = [a]*[b]*[a]*[b^{-1}] \) por homotopía
     radial. Luego
     \[ N \left( \{[a]*[b]*[a]*[b^{-1}]\} \right) = \{[a]*[b]*[a]*[b^{-1}]\} \]
     \[ \pi (U \cup V) = \langle [a], [b] \rangle /
