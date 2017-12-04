@@ -248,7 +248,7 @@
   \begin{frame}
     \frametitle{Idea de demostracion teorema de tipos}
     \begin{center}
-      \includegraphics[scale=0.6]{./imag/teo_tipos.png}
+      \includegraphics[scale=0.5]{./imag/teo_tipos.png}
     \end{center}
     \begin{gather*}
       f_{*,x_0} : \pi (X, x_0) \to \pi (Y, y_0) \\
@@ -276,8 +276,33 @@
 
   \begin{frame}
     \frametitle{Banda de Mobius}
-    \centering
-    \includegraphics[scale=0.3]{./imag/512px-MöbiusStripAsSquare.svg.png}
+    \begin{columns}
+      \begin{column}{0.3\textwidth}
+        \begin{center}
+          \includegraphics[scale=0.2]{./imag/512px-MöbiusStripAsSquare.svg.png}
+        \end{center}
+      \end{column}
+      \begin{column}{0.7\textwidth}
+        Presentacion de Banda de Mobius
+        \[ M := I \times I / \{(x,1) \sim (1 - x, 0)\}\]
+        \pause
+        Homotopicamente equivalente a
+        \begin{gather*}
+          L := \{ (\frac 1 2, y) \mid y \in I \} / \{ (\frac 1 2 , 1)
+          \sim (\frac 1 2, 0)\}
+        \end{gather*}
+        por las funciones
+        \begin{gather*}
+          \begin{matrix}
+            r : M \to L & j : L \to M \\
+            [(a,b)] \mapsto [(\frac 1 2 , b)] & [(a,b)] \mapsto [(a,b)]
+          \end{matrix} \\
+          r \circ j \equiv Id : L \to L, \quad j \circ r \simeq Id : M \to M
+        \end{gather*}
+      y \(L\) homeomorfo a \(S^1\). Luego
+      \[ \pi (M) \simeq \pi (L) \simeq \pi (S^1) \]
+      \end{column}
+    \end{columns}
   \end{frame}
 
   \begin{frame}
