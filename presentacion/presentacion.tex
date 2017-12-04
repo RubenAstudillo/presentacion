@@ -435,13 +435,22 @@
 
   \begin{frame}
     \frametitle{Inyectividad cubrimientos}
-    \begin{block}{}
+    \begin{block}{Teorema}
       Sea \(\left( \tilde X, \tilde x_0 \right), \left( X, x_0 \right)\)
       dos espacios topológicos puntuados. Si \(p : \left( \tilde X,
         \tilde x_0 \right) \to \left( X, x_0 \right)\) un cubrimiento
       entre estos, entonces el homomorfismo inducido
       \[ p_* : \pi \left( \tilde X, \tilde x_0 \right) \longrightarrow
         \pi \left( X, x_0 \right)\] es inyectivo.
+    \end{block}
+    \pause
+    \begin{block}{}
+      Tomamos \([\gamma] \in \pi(\tilde X, \tilde x_0)\) tal que \(p_*
+      [\gamma] = [p \circ \gamma] = [k_{x_0}]\). Existe una homotopia
+      \(H\) entre \(p \circ \gamma\) y \(k_{x_0}\). A esta homotopía la
+      podemos levantar a una homotopía \(\tilde H\) entre \(\gamma\) y
+      \([k_{\tilde {x_0}}]\), asi
+      \[ [\gamma]= [k_{\tilde {x_0}}]\]
     \end{block}
   \end{frame}
 
