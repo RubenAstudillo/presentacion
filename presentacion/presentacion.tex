@@ -579,6 +579,27 @@
   \end{frame}
 
   \begin{frame}
+    \frametitle{Idea de demostracion}
+    \begin{itemize}
+    \item Tomar \([f] \in \pi (X, x_0)\) arbitrario con \(f : I \to X\).
+    \item \(I = f^{-1} (U) \cup f^{-1} (V) \) cubre a \(I\). Utilizamos
+      el lema de numero de \emph{Lebesgue} para subdividir \(I\) en
+      \[ 0 =  a_0 \leq a_1 \leq \dots \leq a_n = 1 \]
+      tal que \( f ([a_i, a_{i+1}]) \subset U\) o \( f ([a_i, a_{i+1}])
+      \subset V \)
+    \item Sea \(l_i : [0,1] \to [a_{i-1}, a_i]\) homeomorfismos y se
+      define
+      \[ f_i = f \circ l_i \]
+    \item Por la arco-conexidad de \(U \cap V\) se existe una familia de
+      funcion \(\alpha_i : I \to U \cap V\) tal que
+      \[ \alpha_i (0) = x_0 , \quad \alpha_i (1) = f_i (1)\]
+    \item Se definen \(g_i = \overline{\alpha_{i-1}} * f_i * \alpha_{i}
+      \) el cual pertence a \(\pi (U, x_0)\) o \(\pi(V, x_0)\) tal que
+      \[ [f] = [g_1] * [g_2] * \dotsc * [g_n] \]
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
     \frametitle{Ejemplos \(S^1 \vee S^1 / \{x_0 \sim y_0\}\)}
     \begin{center}
       \includegraphics[scale=0.4]{../tesis/imagenes/figura8.png}
