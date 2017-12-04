@@ -48,7 +48,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Curvas y homotopias}
+    \frametitle{Curvas y homotopías}
     \begin{columns}
 
       \begin{column}{.5\textwidth}
@@ -73,7 +73,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Producto de caminos y homotopias}
+    \frametitle{Producto de caminos y homotopías}
     Si \(f (1) = g (0) \in X\) entonces el producto de caminos esta
     definido por
     \[ f * g (t) :=
@@ -99,9 +99,9 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Producto de caminos y homotopias}
-    Análogamente para homotopias \(F\) y \(G\) tal que \(H(1, t) =
-    G(0,s) , \forall s, t \in I\), se define el producto de homotopias
+    \frametitle{Producto de caminos y homotopías}
+    Análogamente para homotopías \(F\) y \(G\) tal que \(H(1, t) =
+    G(0,s) , \forall s, t \in I\), se define el producto de homotopías
     \[ F * G (x, t) :=
       \begin{cases}
         F(x, 2t) & t \in [0, \frac 1 2] \\
@@ -306,37 +306,35 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Categoria de homotopias}
-    Se define una nueva categoria \(\mathscr{HoTop}_*\) correspondiente
+    \frametitle{Categoria de homotopías}
+    Se define una categoria \(\mathscr{HoTop}_*\) correspondiente
     a la tripleta \(\left( \mathbf{Obj}, \mathbf{Mor}, (\circ) \right)\)
     con
     \begin{itemize}
-    \item \(\mathbf {Obj}\) corresponde a espacio topologicos puntuados de la
-      forma \((X, x_0)\).
-    \item \(\mathbf {Mor}\) corresponde a un conjunto
-      \[ \mathbf{Mor} = \{ [f] \mid f : (X,x_0) \to (Y,y_0),\
-        (X,x_0),(Y,y_0) \in \mathbf {Obj} \}\]
+    \item \(\mathbf {Obj}\) conjunto de espacio topologicos puntuados.
+    \item \(\mathbf{Mor}\) dada por el conjunto
+      \begin{align*}
+        \{ [f] \mid f : (X,x_0) \to (Y,y_0) \text{ continua} ,(X,x_0),(Y,y_0) \in \mathbf {Obj}\}
+      \end{align*}
       de clases equivalencias homotopicas entre funciones continuas.
-    \item \((\hat \circ)\) corresponde a la composición de clases de
+    \item \((\hat \circ)\) composición de clases de
       equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
-      \[ f : (X,x_0) \to (Y, y_0)\]
-      \[ g : (Y, y_0) \to (Z, z_0)\]
-      entonces \([g] \, \hat \circ \, [f] := [ g \circ f ] \) es una clase
-      de equivalencia de funciones \((X, x_0) \to (Z, z_0)\).
+      dominio y recorridos compatibles
+      \[ [f] \hat \circ [g] = [f \circ g]\]
     \end{itemize}
   \end{frame}
   \begin{frame}
-    \frametitle{Categoria de homotopias}
+    \frametitle{Categoria de homotopías}
     \begin{block}{Subcategoria Top}
       La categoria \(\mathscr{Top}_*\) se puede ver como una
       sub-categoria de \(\mathscr{HoTop}\) mediante el functor
       \[ i : \mathscr{Top}_* \to \mathscr{HoTop}_*\]
       mapeando los objetos a si mismos y tomando toda funcion continua
       \(f\) entre espacios vectoriales y asignandole \([f]\) en
-      \(\mathscr{HoTop}\).
+      \(\mathscr{HoTop}_*\).
 
-      Espacios topologicos biyectivos tiene claramente un par de
-      equivalencias homotopicas!
+      Espacios topologicos homeomorfos tiene claramente un par de
+      equivalencias homotopicas.
 
       Se puede extender el functor \(\pi\) que asigna el grupo
       fundamental a un espacio topologico a trabajar desde
@@ -348,7 +346,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Pequeños resultados de esta categoria}
+    \frametitle{Pequeñas propiedades de esta categoria}
     \begin{columns}
       \begin{column}{0.6\textwidth}
         \begin{block}{Productos}
@@ -430,7 +428,7 @@
 
       \pause
 
-      \begin{block}{Levantamiento de homotopias}
+      \begin{block}{Levantamiento de homotopías}
         Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde
         x _0) = x_0 \) para algún \(\tilde x _0 \in \tilde X\). Para cualquier
         función continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\),
