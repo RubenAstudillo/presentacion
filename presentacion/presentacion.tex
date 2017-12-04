@@ -197,9 +197,9 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Functor entre categorias}
+    \frametitle{Functor entre categorías}
     Lo que hemos hecho realmente con la construccion anterior es definir
-    un functor \(\pi\) entre las categorias \(\mathscr{Top}_*\) y
+    un functor \(\pi\) entre las categorías \(\mathscr{Top}_*\) y
     \(\mathscr{Grp}\)
     \[ \pi : \mathscr{Top}_* \to \mathscr{Grp} \]
     \[ \pi (f \circ g) = f_* \circ g_* \]
@@ -306,8 +306,8 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Categoria de homotopías}
-    Se define una categoria \(\mathscr{HoTop}_*\) correspondiente
+    \frametitle{Categoría de homotopías}
+    Se define una categoría \(\mathscr{HoTop}_*\) correspondiente
     a la tripleta \(\left( \mathbf{Obj}, \mathbf{Mor}, (\circ) \right)\)
     con
     \begin{itemize}
@@ -324,10 +324,10 @@
     \end{itemize}
   \end{frame}
   \begin{frame}
-    \frametitle{Categoria de homotopías}
-    \begin{block}{Subcategoria Top}
-      La categoria \(\mathscr{Top}_*\) se puede ver como una
-      sub-categoria de \(\mathscr{HoTop}\) mediante el functor
+    \frametitle{Categoría de homotopías}
+    \begin{block}{Subcategoría Top}
+      La categoría \(\mathscr{Top}_*\) se puede ver como una
+      sub-categoría de \(\mathscr{HoTop}\) mediante el functor
       \[ i : \mathscr{Top}_* \to \mathscr{HoTop}_*\]
       mapeando los objetos a si mismos y tomando toda funcion continua
       \(f\) entre espacios vectoriales y asignandole \([f]\) en
@@ -346,11 +346,11 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Pequeñas propiedades de esta categoria}
+    \frametitle{Pequeñas propiedades de esta categoría}
     \begin{columns}
       \begin{column}{0.6\textwidth}
         \begin{block}{Productos}
-          Es una categoria cartesiana. El producto de espacios puntuados
+          Es una categoría cartesiana. El producto de espacios puntuados
           sera el producto catesiano usual \((X \times Y, (x_0, y_0))\).
           Mas aun, el functor \(\pi\) respetara la estructura del
           producto
@@ -363,22 +363,29 @@
       \end{column}
       \begin{column}{0.4\textwidth}
         \begin{center}
-          \includegraphics[scale=0.3]{../tesis/imagenes/producto.png}
+          \includegraphics[scale=0.32]{../tesis/imagenes/producto.png}
         \end{center}
       \end{column}
     \end{columns}
   \end{frame}
   \begin{frame}
-    \frametitle{Pequeñas propiedades de esta categoria}
-    \begin{block}{Co-productos}
-      Tambien tiene un co-producto por ser los objetos espacios
-      puntuados. Para \((X, x_0) , (Y, y_0)\) se define el co-producto
-      como
-      \[ X \vee Y , \{x_0, y_0\} = X \sqcup Y / x_0 \simeq y_0 \]
-    \end{block}
-    \begin{block}{}
-      ¿Preservara \(\pi\) la estructura del co-producto?
-    \end{block}
+    \frametitle{Pequeñas propiedades de esta categoría}
+    \begin{columns}
+      \begin{column}{0.6\textwidth}
+        \begin{block}{Co-productos}
+          Tambien tiene un co-producto por ser los objetos espacios
+          puntuados. Para \((X, x_0) , (Y, y_0)\) se define el
+          co-producto como
+          \[ X \vee Y , \{x_0, y_0\} = X \sqcup Y / x_0 \simeq y_0 \]
+          ¿Preservara \(\pi\) la estructura del co-producto?
+        \end{block}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \begin{center}
+          \includegraphics[scale=0.32]{../tesis/imagenes/coproducto.png}
+        \end{center}
+      \end{column}
+    \end{columns}
   \end{frame}
 
   \begin{frame}
@@ -489,7 +496,7 @@
   \begin{frame}
     \frametitle{Caracterizacion de functor}
     \begin{block}{}
-      Se define una nueva categoria de cubrimientos de espacios \(X\)
+      Se define una nueva categoría de cubrimientos de espacios \(X\)
       que posean cubrimiento universal. Luego se define un functor
       \(\pi\) el cual mapea elementos iniciales de \(\mathscr{Cov}\) a
       el grupo trivial (elemento inicial) de \(\mathscr{Grp}\) y donde
