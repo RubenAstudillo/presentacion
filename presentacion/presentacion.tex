@@ -484,21 +484,47 @@
 
   \begin{frame}
     \frametitle{Ejemplos}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      \(\pi (S^1,x_0)\) es isomorfo a \((\mathbb Z, +)\) \\
-      \centering
-      \begin{tikzpicture}
-        \draw (0,0) circle [radius=1.5];
-      \end{tikzpicture}
-    \end{column}
+    \begin{columns}
+      \begin{column}{0.4\textwidth}
+        \(\pi (S^1,x_0)\) es isomorfo a \((\mathbb Z, +)\) \\
+        \centering
+        \begin{tikzpicture}
+          \draw (0,0) circle [radius=1.5];
+        \end{tikzpicture}
+        \begin{align*}
+          p : &\Re \to S^1 \\
+              &t \mapsto \left( \text{cos} 2\pi t , \text{sin} 2 \pi t \right)
+        \end{align*}
+        Considerando \(x_0 = (1,0)\)
+        \[ p^{-1} (\{(1,0)\}) = \mathbb Z \]
+      \end{column}
 
-    \begin{column}{0.5\textwidth}
+      \begin{column}{0.6\textwidth}
+        La funcion \(\phi : \pi (S^1 , x_0) \to p^{-1} (x_0)\) es
+        biyectiva. Para ver que es un homomorfismo tomemos
+        \[ [\alpha], [\beta] ,[\alpha * \beta] \in \pi (S^1 , x_0)\]
+        Sean sus levantamiento a \(\tilde x_0 = 0\) \(\tilde \alpha,
+        \tilde \beta\) tales que
+        \( \tilde \alpha (1) = n , \quad \tilde \beta (1) = m \)
+        se define un levantamiento de \(\alpha * \beta\) por
+        \[ \tilde g (t) =
+          \begin{cases}
+            \tilde \alpha (2t), & t \leq \frac 1 2 \\
+            n + \tilde \beta (2t - 1), & t \geq \frac 1 2
+          \end{cases}
+        \]
+        El cual cumple \(p \circ \tilde g = \alpha * \beta\) y
+        \[ \phi (\tilde g) = n + \tilde \beta (1) = n + m =
+          \phi([\alpha]) + \phi ([\beta]) \]
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Ejemplos}
       \(\pi (RP^2, x_0)\) es isomorfo a \(\mathbb Z / 2 \mathbb Z\) \\
       \centering
       \includegraphics[scale=0.45]{./imag/rpsphere.jpg}
-    \end{column}
-  \end{columns}
   \end{frame}
 
   \begin{frame}
