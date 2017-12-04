@@ -73,28 +73,28 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Producto de caminos y homotopías}
-    Si \(f (1) = g (0) \in X\) entonces el producto de caminos esta
-    definido por
-    \[ f * g (t) :=
-      \begin{cases}
-        f(2t) & t \in [0, \frac 1 2] \\
-        g(2t - 1) & t \in [\frac 1 2 , 1 ]
-      \end{cases}
-    \]
-
-    \begin{center}
-      \begin{tikzpicture}[scale=0.8]
-        \draw [blue, thick]  (0,0) to[bend right] (3,2) to[bend left] (4,3) ;
-        \draw [red, thick] (4,3) to[bend right] (9,1) ;
-      \end{tikzpicture}
-    \end{center}
-
-    \pause
-
-    \begin{block}{}
+    \frametitle{Producto de caminos y inversas}
+    \begin{block}{Producto}
+      Si \(f (1) = g (0) \in X\) entonces el producto de caminos esta
+      definido por
+      \[ f * g (t) :=
+        \begin{cases}
+          f(2t) & t \in [0, \frac 1 2] \\
+          g(2t - 1) & t \in [\frac 1 2 , 1 ]
+        \end{cases}
+      \]
+      \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+          \draw [blue, thick] (0,0) to[bend right] (3,2) to[bend left]
+          (4,3) ; \draw [red, thick] (4,3) to[bend right] (9,1) ;
+        \end{tikzpicture}
+      \end{center}
       En general se consideran curvas con el mismo punto inicial y final
       (caminos cerrados).
+    \end{block}
+    \begin{block}{Inversa}
+      Todo camino \(f : I \to X\) tiene un camino inverso \(\overline f
+      (t) := f( 1 - t)\)
     \end{block}
   \end{frame}
 
@@ -130,10 +130,6 @@
 
   \begin{frame}
     \frametitle{Grupo fundamental}
-    \begin{block}{}
-      Todo camino \(f : I \to X\) tiene un camino inverso \(\overline f (t)
-      := f( 1 - t)\)
-    \end{block}
     \begin{block}{}
       Se define el conjunto
       \[ \pi (X, x_0) := \{ [f] \mid f : I \to X ,\ f(0) = f(1) = x_0
