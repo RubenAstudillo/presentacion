@@ -242,9 +242,17 @@
       \includegraphics[scale=0.5]{./imag/teo_tipos.png}
     \end{center}
     \begin{gather*}
-      f_{*,x_0} : \pi (X, x_0) \to \pi (Y, y_0) \\
+      f_{*,x_0} : \pi (X, x_0) \to \pi (Y, y_0) ;\quad
       g_* : \pi (Y, y_0) \to \pi (X, x_1) \\
-      f_{*,x_1} : \pi (X, x_1) \to \pi (Y, y_1)
+      f_{*,x_1} : \pi (X, x_1) \to \pi (Y, y_1) \\
+      (g \circ f) \simeq Id : X \to X
+      \implies \exists \hat \alpha \text{ isomorfismo}, g_* \circ
+      f_{x_0, *} = \hat \alpha \\
+      (f \circ g) \simeq Id : Y \to Y
+      \implies \exists \hat \beta \text{ isomorfismo}, f_{x_1, *} \circ
+      g_* = \hat \beta \\
+      \implies g_* \text{ biyectivo } \\
+      f_{x_0, *} = \left( g_* \right)^{-1} \circ \hat \alpha
     \end{gather*}
   \end{frame}
 
