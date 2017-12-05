@@ -663,9 +663,50 @@
   \end{frame}
 
   \begin{frame}
+    \frametitle{Pushouts}
+    \begin{columns}
+      \begin{column}{0.35\textwidth}
+        \begin{flushleft}
+          \includegraphics[scale=0.9]{../tesis/imagenes/pushout.png}
+        \end{flushleft}
+      \end{column}
+      \begin{column}{0.65\textwidth}
+        Un pushout en general esta representado por el siguiente
+        diagrama conmutativo.
+        Siendo \((P, i_1, i_2)\) el pushout de \((Z, f, g) \) tal que
+        para cualquier otro objeto \(Q\) con morfismos \(j_1, j_2\)
+        tales que \( j_1 \circ f = j_2 \circ g \)
+        existe \(u : P \to Q\) tal que
+        \[ j_1 = u \circ i_1,\quad j_2 = u \circ u \]
+        es decir, el diagrama conmuta en morfismos. \\
+
+        Como ejemplo, notamos que para \(U,V\) abiertos, el pushout de \((U \cap V,
+        i_1, i_2)\) es \((U \cup V, \phi_i , \phi_2)\) con \(\phi_1, \phi_2\)
+        inclusiones.
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
     \frametitle{Pushout por \vank}
-    \begin{center}
-      \includegraphics[scale=0.33]{../tesis/imagenes/pushoutHotop.png}
-    \end{center}
+    \begin{columns}
+      \begin{column}{0.5\textwidth}
+        \begin{flushleft}
+          \includegraphics[scale=0.3]{../tesis/imagenes/pushoutHotop.png}
+        \end{flushleft}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \begin{block}{}
+          \vank nos dice que si \(U \cap V\) es arco-conexa, el functor
+          \(\pi\) preserva estos pushouts entre \(\mathscr{HoTop}_*\) a
+          \(\mathscr{Grp}\) pues
+          \[ \pi (H) = \pi (X,x_0) * \pi(Y,x_0) / \bar N \]
+          \[ \bar N := \text{N}\{i_{1}(\gamma) \overline{i_2(\gamma)} \mid
+            \gamma \in \pi (U \cap V)\}\] el producto
+          libre con \emph{amalgamacion} es el pushout de
+          \(\mathscr{Grp}\).
+        \end{block}
+      \end{column}
+    \end{columns}
   \end{frame}
 \end{document}
