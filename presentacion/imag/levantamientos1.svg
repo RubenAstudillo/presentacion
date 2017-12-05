@@ -15,8 +15,8 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="levantamientos.svg"
-   inkscape:export-filename="/home/slack/UTFSM/actual/tesilla/presentacion/imag/levantamientos.png"
+   sodipodi:docname="levantamientos1.svg"
+   inkscape:export-filename="/home/slack/UTFSM/actual/tesilla/presentacion/imag/levantamientos1.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
@@ -73,7 +73,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.75058594"
-     inkscape:cx="355.07524"
+     inkscape:cx="399.04089"
      inkscape:cy="826.4585"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -91,7 +91,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -207,7 +207,7 @@
          id="flowPara909">~</flowPara><flowPara
          id="flowPara911" /></flowRoot>    <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1199)"
-       d="m 69.090468,124.62633 c 0,0 27.142683,-13.04259 47.235322,-3.17252"
+       d="m 72.967994,117.57628 c 0,0 27.142686,-13.04259 47.235326,-3.17252"
        id="path1195"
        inkscape:connector-curvature="0" />
     <flowRoot
@@ -376,5 +376,19 @@
            height="111.91257"
            x="97.257355"
            y="99.319061" /></flowRegion><flowPara
-         id="flowPara1411">~</flowPara></flowRoot>  </g>
+         id="flowPara1411">~</flowPara></flowRoot>    <ellipse
+       style="fill:#3430ec;fill-opacity:1;stroke:#087d00;stroke-width:0.02260427;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path381"
+       cx="168.14363"
+       cy="43.727036"
+       rx="1.8837098"
+       ry="2.0599618" />
+    <ellipse
+       style="fill:#a12a0a;fill-opacity:1;stroke:#087d00;stroke-width:0.26499999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1206"
+       cx="168.67239"
+       cy="128.15135"
+       rx="1.938763"
+       ry="2.1150143" />
+  </g>
 </svg>
