@@ -215,34 +215,19 @@ Un cubrimiento es interesante porque nos permite estudiar las curvas de
 de \(X\) se pueden levantar a \(\tilde X\). Lo teoremas que nos permiten
 hacer esto son dos:
 
-La demostracion de levantamiento de caminos es la siguiente: Tenemos el
-siguiente diagrama \texttt{escribir diagrama}. El conjunto \(X\) por ser
-cubierto para todo \(x \in X\) tiene una vecindad \(U_x\) que es
-cubierta por \(p\). Esta tambien cubre a \(X\) mediante su union. En
-particular la imagen inversa de esta cumple
-\[ I = f^{-1} (X) \subset f^{-1} (\cup U_x )\]
-Pero \(I\) es un compacto, y para este cubrimiento tiene un numero de
-lebesgue. Consideremos intervalos de \(I\) que lo cubran y tengan
-diametro menor a este numero de lebesgue. Cada uno cumple la propiedad
-de
-\[ f([a_i, a_{i+1}]) \subset U_x \]
-Con esto podemos definir \(\tilde f\) inductivamente. Suponiendo que ya
-esta definido sobre \([0,a_i]\) para definirlo en \([a_i , a_{i+1}]\)
-podemos estudiar el \(U_x\) al que se mapea mediante \(f\). Este
-conjunto es cubierto por \(p\) luego
-\[ p^{-1} (U_x) = \cup_{\alpha \in \Lambda} V_\alpha \]
-y existe algun \(V_0\) en esta familia tal que \(\tilde f (a_i) \in
-V_0\) (es una familia disjunta). Luego tomamo
-\[ p \mid_{V_0} : V_0 \to U_x \]
-el cual es un homeomorfismo y definimos
-\[ \tilde f (x) = (p \mid_{V_0})^{-1} x \]
-y cumplimimos trivialmente la propiedad
+El levantamiento de curvas nos dice que para toda curva cerrada en
+\(x_0\) existe un levantamiento en \(\tilde X\) que comienza en en
+\(\tilde x_0\) donde este ultimo lo elegimos nosotros. No hay
+requerimiento de que este termine en \(\tilde x_0\) (es decir se puede
+desenrrollar). La eleccion de \(\tilde x_0\) es nuestra mientras
+pertenesca a la fibra \(p^{-1} (x_0)\). Mas aun, una vez fijado este
+punto de inicio en \(\tilde X\), este levantamiento es unico.
 
-Este levantamiento es unico por la biyectividad de los \(p\)
-restringidos. Se utiliza una prueba analoga para levantar homotopias
-pues \(I \times I\) tambien es compacto
+Existe tambien un teorema de levantamiento de homotopias con las mismas
+semanticas.
 
-Esto nos compra el siguiente teorema
+\subsection*{Pagina 23}
+La idea de la demostracion es la siguiente \texttt{mostrar esquema}
 
 \subsection*{Pagina 24}
 Ya sabemos que esto es un homomorfismo. La inyectividad equivale a
