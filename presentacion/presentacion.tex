@@ -714,16 +714,53 @@
         diagrama conmutativo.
         Siendo \((P, i_1, i_2)\) el pushout de \((Z, f, g) \) tal que
         para cualquier otro objeto \(Q\) con morfismos \(j_1, j_2\)
-        tales que \( j_1 \circ f = j_2 \circ g \)
+        tales que \[ j_1 \circ f = j_2 \circ g \]
         existe \(u : P \to Q\) tal que
         \[ j_1 = u \circ i_1,\quad j_2 = u \circ u \]
-        es decir, el diagrama conmuta en morfismos. \\
-
-        Como ejemplo, notamos que para \(U,V\) abiertos, el pushout de \((U \cap V,
-        i_1, i_2)\) es \((U \cup V, \phi_i , \phi_2)\) con \(\phi_1, \phi_2\)
-        inclusiones.
+        es decir, el diagrama conmuta en morfismos.
       \end{column}
     \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout inclusiones}
+    \begin{center}
+       \includegraphics[scale=0.5]{./imag/push-inc-1.png}
+    \end{center}
+    El pushout de la tripleta \(\left( U \cap V, i_1, i_2 \right)\)
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout inclusiones}
+    \begin{center}
+       \includegraphics[scale=0.5]{./imag/push-inc-2.png}
+    \end{center}
+    El pushout de la tripleta \(\left( U \cap V, i_1, i_2 \right)\) , es
+    la tripleta \(\left( U \cup V, \phi_1, \phi_2 \right)\)
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout inclusiones}
+    \begin{center}
+       \includegraphics[scale=0.5]{./imag/push-inc-3.png}
+    \end{center}
+    El pushout de la tripleta \(\left( U \cap V, i_1, i_2 \right)\) , es
+    la tripleta \(\left( U \cup V, \phi_1, \phi_2 \right)\) tal que para
+    todo \((X, j_1, j_2)\) con
+    \[ j_1 \circ i_1 = j_2 \circ i_2 \]
+    existe \(\Phi\) tal que
+    \[ j_1 = \Phi \circ \phi_1,\quad j_2 = \Phi \circ \phi_2 \]
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout grupos}
+    \begin{center}
+       \includegraphics[scale=0.5]{../tesis/imagenes/van.png}
+    \end{center}
+    Donde
+    \[ H := \pi (U, x_0) * \pi (V, x_0) / \text{Norm} \{i_1 (\gamma)
+      \overline{i_2 (\gamma)} \mid \gamma \in \pi (U \cap V, x_0)\}\]
+    es el \emph{producto libre con amalgamacion}.
   \end{frame}
 
   \begin{frame}
