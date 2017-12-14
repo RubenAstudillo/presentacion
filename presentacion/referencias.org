@@ -1,2 +1,5 @@
 * \(S^2\) y \(\{*\}) no pertenecen al mismo tipo homotopico
 Para eso ver pdf-informacion/40681.pdf
+
+* Para el complemento del toro
+https://math.stackexchange.com/questions/1774198/fundamental-group-of-mathbbr3-minus-trefoil-knot
