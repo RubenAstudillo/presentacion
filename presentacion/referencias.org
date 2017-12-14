@@ -1,0 +1,2 @@
+* \(S^2\) y \(\{*\}) no pertenecen al mismo tipo homotopico
+Para eso ver pdf-informacion/40681.pdf
