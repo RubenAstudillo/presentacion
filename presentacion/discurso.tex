@@ -1,0 +1,447 @@
+\documentclass[letterpaper]{article}
+
+\usepackage[letterpaper]{geometry}
+\usepackage[log-declarations=false]{xparse}
+\usepackage[quiet]{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{polyglossia}
+\usepackage{unicode-math}
+
+\newcommand{\vank}{\emph{Seifert-van Kampen} }
+
+\setdefaultlanguage{spanish}
+
+\begin{document}
+\title{Discusión}
+%Esto ira acompañando a la presentacion. Cada secciones sera una nueva
+%pagina de la presentacion.
+
+\subsection*{Pagina 2}
+La motivación principal es definir una invariante topológica que
+denominaremos grupos fundamental de un espacio topológico \(X\). Esta
+tendrá una estructura algebraica (de grupo) y podrá reutilizar mucho del
+trabajo de clasificación de grupos para clasificar espacio topológicos.
+
+\paragraph{pausa 2}
+La definición de esta invariante ocurre al estudiar los caminos
+admisibles en un espacio \(X\) y las deformaciones que sean admisibles
+entre estos dado el espacio \(X\).
+
+\subsection*{Pagina 3}
+Solo para afirmar el lenguaje, un camino sobre un espacio topológico
+\(X\) es una función continua
+\[ f : [0,1] \to X \]
+
+\paragraph{}
+Una homotopía es la formalización de las deformaciones admisible entre
+dos funciones. Dicho formalmente \texttt{Mostrar definición en
+  diapositiva} es dicha función continua donde el primer parámetro
+evalúa en la curvas y el segundo corresponde a un grado de deformación
+
+\subsection*{Pagina 4}
+Si dos caminos son compatibles (ie tienen el mismo punto final e
+inicial), entonces se puede definir el producto de ellos de la siguiente
+forma \texttt{mostrar le definición de producto} \\
+
+Es de mayor interés los caminos cerrados (con mismo punto final e
+inicial) pues el operación anterior esta bien definida siempre.
+
+Ademas tenemos para todo camino podemos definir su inversa moviendo el
+parametro en sentido inverso en \(I\).
+
+\subsection*{Pagina 5}
+Para una homotopía se puede hacer un proceso análogo. Se utiliza la
+misma notación.
+
+\subsection*{Pagina 6}
+Con esto definimos el siguiente conjunto
+\texttt{mostrar \(\pi\)} el cual junto a la operación de producto
+\texttt{mostrar \((*)\)} forman el grupo fundamental de \(X,x_0\). Notar
+que esta operación sobre clases de equivalencias esta bien definida por
+la definición de producto de homotopias.
+
+\subsection*{Pagina 7}
+Si queremos clasificar espacios topológicos, que el punto de origen
+afecte al grupo fundamental es insatisfactorio. Esto lo pedimos ver en
+el ejemplo de \(D^2\) union con \(S^1\) con diferentes origines, un
+espacio no conexo. Si tomamos \(x_0\) en \(D^2\) de un grupo fundamnetal
+trivial mientras que si lo tomamo para \(S^1\) este no es trivial. Por
+esto es que en general esta invariante se usa principalmente para
+espacio arco-conexos. De manera que siempre estamos a una conjugación de
+grupo de cualquier otro punto base.
+
+\paragraph{Pausa}
+Aun en espacio arco-conexos vale la pena mantener la información del
+punto de origen, pues existe una caracterización de grupo fundamental
+Abeliano enumerando los posibles isomorfismos de grupo del grupo
+fundamental con distintos puntos bases.
+
+\subsection*{Pagina 8}
+Un ejemplo intuitivo seria estudiar el espacio \(R^2\) menos un punto.
+En este caso tomaremos \((1,1)\) pero puede ser cualquier otro. Se nos
+ocurren tres grandes clases de caminos
+\begin{itemize}
+\item Aquellos que son homomorficos a \(k_0\). Estos son aquellos que no
+  encierran a \((1,1)\) pues estan contenidos en un subespacio convexo y
+  podemos utilizar la siguiente homotopia
+  \[ L (t,\lambda) = \lambda f (t) - (1 - \lambda) k_{x_0} (t)\]
+\item Aquellos que encierren a \((1,1)\) una vez. Los cuales pertenecen
+  a su propia clase que denotaremos \(\mathbb F ^1\)
+\item Aquellos que encienrren a \((1,1)\) mas veces. Siempre se pueden
+  ver como homomorficos a \(\mathbb F * \dots * \mathbb F \)
+\end{itemize}
+Notamos el producto entre estas distintas clases equivale a levantar la
+pontencia de la clase \(\mathbb F\), luego este grupo es isomorfo al
+aditivo \((\mathbb Z , +)\). Esto es solo un ejemplo intuitivo,
+necesitamos herramientas formales para determinar grupos fundamentales
+
+\subsection*{Pagina 9}
+Es acaso el grupo fundamental una invariante? Esto equivale a mostrar
+que si tenemos un homeomorfismo entre espacios, tambien tenemos un
+isomorfismo entre grupos
+
+\paragraph{Pausa 1}
+Esto es cierto utilizando la siguiente construccion \texttt{mostrar}.
+Este es un homorfismo de grupos pues por defininicion \(f_*\) se
+distribuye sobre productos \(*\). La biyectividad es consecuencia de la
+biyectividad de \(f\).
+
+\subsection*{Pagina 10}
+Esta construccion es general, esto es un functor entre categorias
+\(\mathscr{Top}_* \to \mathscr{Grp}\). Lo que hace el functor es refleja
+la estructura de la categoria de partida en la categoria de llegada
+preservando la relacion dada por los operadores composicion respectivos.
+
+Se nota que uno puede pensar en una categoria como un grafo
+(posiblemente disconexo) con morfismos entre los objetos, donde existe
+una composicion de morfismos y para todo objetos tiene un unico morfismo
+identidada si mismo.
+
+\subsection*{Pagina 11}
+Ahora nuestra meta sera obtener formas de calcular explicitamente el
+grupo fundamental. En general esto es dificil pero hay algunos enfoques
+que nos dan respuestas en gran cantidad de casos. Estos son (decir)
+
+\subsection*{Pagina 12}
+Un par de equivalencias homotopicas son dos funcinoes entre espacios que
+cumplan la relacion de la definicion. La presencia de un par de ellas
+nos dice que estos espacios tiene mismo grupo fundamental. ¿como
+probamos esto? Necesitamos algunos lemas tecnicos.
+
+\subsection*{Pagina 13}
+El primer lema es trivial, uno lo puede probar por contradiccion. El
+segundo nos relaciona funciones que estan homotopicamente relacionadas
+con una igualdad en sus levantamientos respectivos. Con estos en mente
+procedemos a la demostracion del teorema anterior.
+
+\subsection*{Pagina 14}
+\texttt{Notar que esto esta todo en la diapositiva, puededes mostrarlo directamente}.
+Notemos primero que
+\[ g \circ f \simeq Id : X \to X \implies g_* \circ f_{*,x_0} = \hat
+  \alpha \circ Id_* \]
+lo cual implica que \(g_*\) es sobreyectivo. Analogamente se tiene que
+\[ f \circ g \simeq Id : Y \to Y \implies f_{*,x_1} \circ g_* = \hat
+  \beta \circ Id_* \]
+Lo que implica que \(g_*\) es inyectivo. Luego \(g_*\) es biyectivo y
+por tanto en la ecuacion anterior, se puede despejar \(f_{*,x_0}\)
+\[ f_{*,x_0} = \hat \alpha \circ \left( g_{*} \right)^{-1}\]
+por lo que dado que es una composicion de funciones biyectivas,
+\(f_{x_0,*}\) es biyectivo ademas de ser un homomorfismo de grupos.
+
+\subsection*{Pagina 15}
+Estos tres espacios no son homemorfos. El primero con el segundo son dos
+bolas unidas por una linea y el segundo son dos bolas unidas por un
+punto. Si fueran homemorfos, se tendria un homeomofismo entre una linea
+y un punto. Analogamente para la tercera figura
+
+Sin embargo estas son del mismo tipo homotopico pues todas son
+homotopicamente equivalentes al disco \(D^2\) menos dos puntos. De hecho
+las equivalencias homotopicas son las inyecciones y son homotopicas a la
+identidas por el siguiente diagrama \texttt{ver diagrama}.
+
+\subsection*{Pagina 16}
+La banda de mobius se presenta como el cuadrado \(I^2\) con los lados
+identificados en sentido inverso. Tomamo la recta vertical media y
+notamos que siempre podemos hacer una homotipa a esta. Luego notamos que
+esta recta (con los extremos identificados) es homemomorfa a \(S^1\).
+Luego la banda de mobius tiene el mismo grupo fundamental de \(S^1\)
+
+\subsection*{Pagina 17}
+Con la nocion de equivalencias homotopicas podemos enfocarnos en las
+familia de funciones continuas homotopicamente equivalentes que entre
+dos espacios topologicos. Esto nos lleva a definir la categoria HoTop
+que formaliza nuestros resultados \texttt{mostrar definicion en
+  diapositiva}
+
+\subsection*{Pagina 18}
+En particular podemos ver a \(Top_*\) como una subcategoria mediante un
+functor inyeccion adecuado. Notar que todo par de espacios topologicos
+homeomorfos tienen un par de equivalencias en HoTop.
+
+Se extiende el functor \(\pi\) a trabajar desde \(HoTop\). Todo par de
+espacios homotopicos que tengan un par de equivalencias homotopicas,
+cualquiera de estas equivalencias al ser levantas de \(f_*\) mediante
+\(\pi\) se convierte en un isomorfismo de grupos.
+
+\subsection*{Pagina 19}
+Se tiene productos en esta categoria y el functor \(\pi\) preserva esta
+estructura. Esto es por la caracterizacion de como son las funciones
+continuas en un espacio producto.
+
+\subsection*{Pagina 20}
+Tambien se tiene un co-producto dado por la siguiente construccion
+\texttt{ver definicion}. La pregunta es si el functor preserva esta
+estructura ? La respuesta es afirmativa, se vera mas adelante con \vank
+
+Por ahora estudiaremos otros resultados que pueden ser resumidos en
+terminos categoricos. Primero partiendo por cubrimientos y luego por el
+teorema de \vank
+
+\subsection*{Pagina 21}
+Un cubrimiento es la siguiente definicion \texttt{ver defincion}. Se
+puede probar que todo cubrimiento es un mapeo abierto, asi que es es una
+funcion con propiedades bastante fuertes.
+
+Tambien tenemos la fibra de un punto, que tendra relacion con el
+cubrimiento universal mas adelantante
+
+\subsection*{Pagina 22}
+Un cubrimiento es interesante porque nos permite estudiar las curvas de
+\(X\) en un espacio diferencia (idealmente mas simple) pues las curvas
+de \(X\) se pueden levantar a \(\tilde X\). Lo teoremas que nos permiten
+hacer esto son dos:
+
+El levantamiento de curvas nos dice que para toda curva cerrada en
+\(x_0\) existe un levantamiento en \(\tilde X\) que comienza en en
+\(\tilde x_0\) donde este ultimo lo elegimos nosotros. No hay
+requerimiento de que este termine en \(\tilde x_0\) (es decir se puede
+desenrrollar). La eleccion de \(\tilde x_0\) es nuestra mientras
+pertenesca a la fibra \(p^{-1} (x_0)\). Mas aun, una vez fijado este
+punto de inicio en \(\tilde X\), este levantamiento es unico.
+
+Existe tambien un teorema de levantamiento de homotopias con las mismas
+semanticas.
+
+\subsection*{Pagina 23}
+La idea de la demostracion es la siguiente \texttt{mostrar esquema}
+
+\subsection*{Pagina 24}
+Cuando se tiene dividido ya el intervalo \(I\), tomamos el conjunto que
+es cubierto por \(p\) en \(x_0\). Este tiene una familia de conjuntos
+disconexos en la pre-imagen, pero hay uno solo que contiene a \(\tilde
+x_0\). Luego al hacer el homeomorfismo restringido de \(p\) con ese
+conjunto, podemos utilizar la inversa para definir a \(\tilde f\) en el
+intervalo inicial.
+
+\subsection*{Pagina 25}
+Para el punto final en \(\tilde X\), al hace su imagen bajo \(p\) le
+corresponde otro punto en \(X\) sobre la curva \(f\) que tiene otro
+conjunto que lo cubre por \(p\) y por tanto otra familia disconexa en
+\(\tilde X\). Solo un conjunto de esta familia contiene al punto azul,
+eligiendo esta podemos aprovechar otra vez el homeomorfismo restringido
+de \(p\) para seguir definiendo a \(\tilde f\).
+
+\subsection*{Pagina 26}
+Ahora veremos un resultado que es habilitado por los teoremas
+anteriores. Nos dice lo siguiente \texttt{ver enunciado}.
+Ya sabemos que esto es un homomorfismo. La inyectividad \texttt{ver la
+  pauso}
+equivale a
+probar que si \([\gamma] \in \pi (\tilde X, \tilde x_0)\) cumple
+\[ p_* ([\gamma]) = [e]\]
+entonces \([\gamma] = [e] \in \pi (\tilde X, \tilde x_0)\). Esto se ve
+notando que
+\[ p_* ([\gamma]) = [p \circ \gamma] = [e]\]
+dice que hay una homotopia \(H\) entre \(p \circ \gamma\) y \(e\). Esta
+homotopia puede levantarse a \(\tilde X\). Donde sera una homotopia
+entre
+\[ \gamma \simeq k_{\tilde {x_0}} \]
+mostrando asi lo que queremos
+
+El teorema anterior no es tan util pues conocer el grupo fundamental de
+\(\tilde X\) ya es dificil de por si. ¿Que proviene de estudiar
+cubrimientos que tengan grupos fundamentales triviales?
+
+\subsection*{Pagina 27}
+Un cubrimiento universal es aquel donde \(\tilde X\) es trivial. Este
+nos permite definir la siguiente funcion biyectiva \(\phi\). Notar que
+\(\phi\) esta bien definida pues dado cualquier representante de clase
+de \([f]\) estos los relaciona una homotopia que fija puntos finales e
+iniciales. Luego el valor de \(\tilde f (1)\) siempre es el mismo como
+numero.
+
+La inyectividad de esta funcion proviende de que si \([f] , [g]\) son
+tales wque
+\[ \phi ([f]) = \tilde f (1) = \tilde g (1) \phi ([g]) \]
+y ademas \(\tilde f (0) = \tilde x_0 = \tilde g (0)\). Luego por ser
+simplemente conexo, existe una homotopia \(\tilde H\) entre \(\tilde f\)
+y \(\tilde g\). Luego
+\[ p \circ \tilde H \]
+es una homotpia entre \([f]\) y \([g]\) y por tanto \([f] = [g] \)
+
+La sobreyectividad proviene de que para todo punto \(\tilde x_1 \in
+\tilde X\) , por arco-conexidad siempre exsite un camino entre
+\(\alpha\) entre \(\tilde x_0\) a \(\tilde x_1\) tal que
+\[ \phi (p \circ \alpha) = \alpha (1) = \tilde x_1\]
+
+Uno formalmente deberia de argumentar que \(\text{Aut} (\tilde X,p)\),
+el grupo de automorfismos que actuan en la fibra \(p^{-1} (x_0)\) es
+isomorfo \(\pi (X, x_0)\). Para esto uno estudia a \(\phi\) viendo como
+mueve los puntos base de la fibra \(p^{-1} (x_0)\). Esto se hace en la
+tesis, sin embargo podemos estudiar directamente las acciones mediante
+\(\phi\) y proponer grupos fundamentales directamente si es que logramos
+dotar de estructura de grupo a la fibra \(p^{-1} (x_0)\).
+
+\subsection*{Pagina 28}
+Con esto podemos plantearnos algunos ejemplos. Para ver el grupo
+fundamental de \(\pi(S^1)\) notamos que \(R\) es un cubrimiento de \(S^1
+\) mediante la funcion
+\[ p (x) = (\cos 2 \pi x, \sin 2 \pi x) \]
+y que \(R\) tiene grupo fundamental trivial porque es un espacio
+convexo. Luego \(\phi\) es biyectiva. Debemos probar que es un
+homomorfimos.
+Sea \([\beta],[\delta] \in \pi (S^1)\), y sean \(\tilde
+\beta , \tilde \delta\) sus levantamiento respectivos sobre \(\tilde x_0
+\in R\) tales que
+\[ \tilde \beta (1) = n \]
+\[ \tilde \delta (1) = m \]
+
+El levantamiento de \(\beta * \delta \) debe ser \(\tilde \beta
+* \tilde {\tilde \delta}\) pues hay unicidad de levantamiento en la
+primera parte y \(\tilde {\tilde \delta}\) el levantamiento de
+\(\delta\) comenzando en \(n\).
+\[ \tilde \beta * \tilde {\tilde \delta} (1) = n + \tilde \delta (1) =
+  n + m = \tilde \beta (1) + \tilde \delta (1) \]
+Por lo que se tiene que \(\phi \) es un homomorfismo biyectivo y el
+grupo sobre \(R\) que tenemos es \(Z, +\)
+
+\subsection*{Pagina 29}
+Para ver el otro ejemplo, basta notar que \(RP^2\) se presenta como
+\(S^2 \) con los inversos identificados. Luego \(p\) es el mapeo cuociente
+y por tanto para cualquier \(x_0\) se tiene que
+\[ p^{-1} (x_0) = \{x_0 , - x_0\}\]
+tiene cardinalidad 2. El unico grupo de cardinalidad 2 es \(Z/2Z\).
+
+\subsection*{Pagina 30}
+Podemos definir una estructura categorica para un espacio \(X\) con
+cubrimiento universa en donde hay presencia de un elemento inicial. Este
+se mapea bajo un functor \(\pi\) al elemento inicial de
+\(\mathscr{Grp}\) y estos cubrimientos pasan a ser inyecciones de grupos.
+
+\subsection*{Pagina 31}
+El teorema de \vank es el mas util a la hora de calcular. Dice que si un
+espacio luce como un co-producto, su grupo fundamental esta relacionado
+con el grupo libre generado por los grupos fundamentales de cada uno de
+los sumandos. Dicho en el enunciado los morfismos \(\phi_1, \phi_2\)
+seria morfismos a \(H\) el grupo libre generado por \(\pi (U,x_0) * \pi
+(V,x_0)\). Recordemos que le grupo libre es el espacio generado por las
+cadenas de estos grupos donde la identidad de grupo es la cadena vacia y
+la yuxtaposicion es la operacion de grupo. Se pide de que los indices no
+sean cosecutivamente iguales ya que se reduciria a la operacion de grupo
+interna del indice.
+
+\subsection*{Pagina 32}
+Para probar este teorema, equivale a mostrar que para toda curva \([f]
+\in \pi (X,x_0)\) se puede descomponer como
+\[ g_1 * g_2 * g_3 \dots * g_n \]
+con \(g_i\) totalmente contenido en \(\pi (U, x_0)\) o \(\pi (V, x_0)\).
+Por el lema del numero de lebesgue existe una subdivision \(\{a_i ,
+a_{i+1}\}\) de \(I\) la cual cumple que
+\[ f \left( [a_i , a_{i+1}] \right) \subset U  \oplus f \left( [a_i ,
+    a_{i+1}] \right) \subset V \]
+y existe homeomorfismo \(l_i : [a_i , a_{i+1}] \to I \). Luego
+\[ f_i = f \circ l_i \]
+Pero estos \(f_i\) no son necesariamente caminos cerrados. Sus extremos
+pertenecen a \(U \cap V\) el cual es arco-conexo, por lo que tomamos
+funciones \(\alpha_i\) tales que
+\[ \alpha_i (0) = x_0 , \alpha_i (1) = f(a_i)\]
+Lueog
+\[ g_i = \alpha_{i-1} * f_i * \overline{\alpha_i} \]
+es un camino cerrado de \(\pi(U, x_0)\) o de \(\pi (V,x_0)\). Solo y se
+cumple que
+\[ [f] = [g_1] * [g_2] * \dots * [g_n] \]
+
+Lo que se ha probado aqui es que \(\phi\) es sobreyectivo cuando \(H\)
+es el grupo fundamental. Para formar un isomorfismo de grupo podriamos
+utilizar el primer teorema de isomorfismos de grupos. La version general
+de \vank caracteriza a este kernel diciendo que es conformoda por el
+normalizador todas las cadenas
+\[ [f]_{\pi (A,x_0)} \simeq [f]_{\pi (B, x_0)} \text{ si } [f] \in \pi
+  (A \cap B, x_0) \]
+
+La caracterizacion es que esta construccion es un push out. Mas
+formalmente un push out de \(i_1, i_2\) son lo mosrifmos \(\phi_1,
+\phi_2\) y \(H\) tal que para cualquier otro elemento con morfismo
+\(j_1, j_2 , \pi (X,x_0)\). \vank se puede pensar como decirnos que los
+push-outs de intersecciones arco-conexas se preservan bajo \(\pi\).
+
+Veremos algunos ejemplos
+
+\subsection*{Pagina 33}
+\(S^1 \vee S^1\) es sencillo de ver pues es una aplicacion directa. Este
+espacio es semi-localmente simplemente conexo. Tomando vecindades
+\(U_x\), \(U_y\) de \(x_0\) e \(y_0\) respectivamente armamos los
+conjuntos \(A_1,A_2\) tales que cumples las siguientes relaciones
+\texttt{ver diagrama}.
+
+El grupo de la interseccion es trivial pues se reduce homotopicamente a
+la union de dos singletons que estan identificados el uno con el otro.
+El grupo fundametal de \(\pi(A_i) = Z\) luego tiene grupo fundamental
+\(Z * Z\).
+
+\subsection*{Pagina 34}
+La version general de \vank nos permite caracterizar el kernel de
+\(\phi\) para poder utilizar el 1rd teorema de isormorfismos de grupos.
+Nos dice que los caminos de la interseccions de los conjuntos deben
+podeer representante como caminios de \(\pi (U)\) o \(\pi (V)\).
+
+
+\subsection*{Pagina 35}
+Con el teorema anterior general podemos plantear el siguiente ejemplo.
+La botella de Klein en  el
+diagrama estan los conjunto \(U\), \(V \) y \(U \cap V\). El grupo
+fundamental de U es trivial. El grupo fundamental de \(V\) podemos
+basarlo en un vertices el cual es unico al ser identificado, luego se ve
+que este espacio esta generado por la curva \(b\) y la curva \(a\), es
+decir
+\[ \langle a,b \rangle \simeq Z * Z \]
+Tenemos que estudiar el normalizador. Notar que \(\pi (U,V)\) es
+homotopicamente equivalente a \(S^1\) luego su grupo fundamental es
+\(Z\). LLamemos \([\gamma]\) a su unico elemento no trivial. Estudiamos
+las inyeciones de
+\[ i_{u,v} : \pi (U \cap V) \to \pi (U )\]
+\[ i_{v,u} : \pi (U \cap V) \to \pi (V) \]
+\[ i_{u,v} ([\gamma]) = e \]
+\[ i_{v,u} ([\gamma]) = [\gamma]_{V} \]
+Pero \([\gamma]\) en \(V\) es homotopicamente equivalente a \([a * b * a *
+b^{-1}]\) por homotopia axial. Luego \(N = N \{[a][b][a][b^{-1}]\}\)
+siendo este normalizador simplemente \(\{[a][b][a][b^{-1}]\}\) (esto
+debe de verse por calculo). Luego \vank nos dice que el grupo
+fundamental de este espacio es
+\[ <a,b> / {abab^{-1} \simeq e}\]
+
+\subsection*{Pagina 36}
+Para caracterizar a \vank , vale la pena tener una idea de estudiar los
+pushout categoricos. Un pushout es el siguiente diagrama \texttt{Mostrar
+  dipositiva}
+
+Un caso particular de espacios topologicos es considerar el caso cuando
+\(U,V\) son abiertos o cerrrados. Se ve que el pushout de \(U \cap V,
+f, g\) con \(f,g\) inclusiones es \(U \cup V, i_1, i_2\) estas
+tambien inclusiones. Pues para cualquier otro elemento \((Q, j_1, j_2)\)
+tal que se tenga
+\[ j_2 \circ g = j_1 \circ f\]
+podemos armas la funcion continua \(u\) haciendo un analisis por casos
+de elementos, la cual sera continua en pues la restriccion a cada
+conjuto de \(u\) calzara con \(j_2, j_1\).
+
+\subsection*{Pagina 37}
+En \(\mathscr{Grp}\) tambien tenemos un pushout, para dos grupos
+\(A,i_1,i_2\) con dos morfismos, el grupo libre con amalgamacion es su
+push out. Podemos caracterizar a \vank diciendo que nos permite
+preservar pushout de interescciones en \(\mathscr{HoTop}\) a pushout en \(mathscr{Grp}\)
+\end{document}

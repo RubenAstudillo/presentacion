@@ -1,7 +1,13 @@
-.PHONY: clean
+.PHONY: clean tesis presentacion
 
-all:
+all: tesis presentacion
+
+tesis:
 	make -C tesis
 
+presentacion:
+	make -C presentacion
+
 clean:
-	zsh -c 'rm tesis/*.(aux|fdb_latexmk|fls|log|toc)'
+	make -C presentacion clean
+	make -C tesis clean

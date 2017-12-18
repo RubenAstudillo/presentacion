@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="teo_tipos.svg"
+   inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5010"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path5008"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker4962"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path4960" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4600"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path4603"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4606"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="356.25984"
+     inkscape:cy="920.35886"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1430"
+     inkscape:window-height="865"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       id="path3699"
+       cx="42.749298"
+       cy="47.591068"
+       rx="22.013449"
+       ry="13.958051"
+       style="fill:none;stroke:#0000e8;stroke-width:0.26173714;stroke-opacity:1"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       id="path3699-3"
+       cx="157.07991"
+       cy="47.346729"
+       rx="21.092934"
+       ry="11.433916"
+       style="fill:none;stroke:#0000e8;stroke-width:0.23188616;stroke-opacity:1"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#010101;fill-opacity:0.98636365;stroke:#0000e8;stroke-width:0.26458332;stroke-opacity:1"
+       id="path4539"
+       cx="159.42627"
+       cy="44.831203"
+       rx="1.4699824"
+       ry="1.2027128"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#010101;fill-opacity:0.98636367;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+       id="path4541"
+       cx="47.039436"
+       cy="53.918365"
+       rx="1.3363476"
+       ry="1.4699824"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#010101;fill-opacity:0.98636367;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+       id="path4541-7"
+       cx="44.366741"
+       cy="40.153984"
+       rx="1.3363476"
+       ry="1.4699824"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4564"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="scale(0.26458333)"><flowRegion
+         id="flowRegion4566"><rect
+           id="rect4568"
+           width="75.761444"
+           height="52.527931"
+           x="193.9493"
+           y="37.615852" /></flowRegion><flowPara
+         id="flowPara4570" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4572"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.13512791,0,0,0.17851918,7.5100804,26.027702)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion4574"><rect
+           id="rect4576"
+           width="173.74623"
+           height="101.01525"
+           x="212.13203"
+           y="63.879818" /></flowRegion><flowPara
+         id="flowPara4578">x₀</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4580"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.14240297,0,0,0.14409352,110.1642,35.997972)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion4582"><rect
+           id="rect4584"
+           width="90.913727"
+           height="72.73098"
+           x="365.67523"
+           y="26.504173" /></flowRegion><flowPara
+         id="flowPara4586">y₀</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4588"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.13989814,0,0,0.1648806,-5.9844018,14.67755)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion4590"><rect
+           id="rect4592"
+           width="103.03556"
+           height="73.741135"
+           x="324.25897"
+           y="207.32147" /></flowRegion><flowPara
+         id="flowPara4594">x₁</flowPara></flowRoot>    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
+       d="m 44.634012,38.550365 c 0,0 37.952272,-15.7689 66.817378,-14.699822 28.86511,1.069078 45.43582,16.036172 45.43582,16.036172"
+       id="path4598"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4962)"
+       d="m 156.61994,45.766643 c 0,0 -48.37578,8.552624 -63.877416,8.819896 -15.50163,0.267269 -40.357697,-1.33635 -40.357697,-1.33635"
+       id="path4908"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5010)"
+       d="m 48.643053,57.259233 c 0,0 38.219543,16.03617 63.877417,15.501633 25.65788,-0.534541 43.03039,-17.63979 43.03039,-17.63979"
+       id="path5000"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#010101;fill-opacity:0.98636367;stroke:#0000e8;stroke-width:0.26458332;stroke-opacity:1"
+       id="path4539-5"
+       cx="159.02538"
+       cy="54.052002"
+       rx="1.4699824"
+       ry="1.2027128"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5069"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.14735718,0,0,0.14409353,74.383277,13.427818)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5071"><rect
+           id="rect5073"
+           width="91.923882"
+           height="60.609154"
+           x="598.01031"
+           y="251.76819" /></flowRegion><flowPara
+         id="flowPara5075">y₁</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5077"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.18684806,0,0,0.23454211,35.536418,6.5524525)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5079"><rect
+           id="rect5081"
+           width="159.6041"
+           height="61.619305"
+           x="312.13715"
+           y="25.49402" /></flowRegion><flowPara
+         id="flowPara5083">f</flowPara><flowPara
+         id="flowPara5085" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5087"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.12769325,0,0,0.16914872,50.39976,13.104197)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5089"><rect
+           id="rect5091"
+           width="127.27922"
+           height="63.63961"
+           x="390.92905"
+           y="16.402647" /></flowRegion><flowPara
+         id="flowPara5093">x₀</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5105"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="scale(0.26458333)"><flowRegion
+         id="flowRegion5107"><rect
+           id="rect5109"
+           width="72.73098"
+           height="43.436558"
+           x="428.30469"
+           y="37.615852" /></flowRegion><flowPara
+         id="flowPara5111">* </flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5113"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.15110054,0,0,0.18990376,15.257985,12.990413)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5115"><rect
+           id="rect5117"
+           width="178.797"
+           height="112.12693"
+           x="529.31995"
+           y="21.453411" /></flowRegion><flowPara
+         id="flowPara5119">*-</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5121"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.19623029,0,0,0.1735441,63.496332,-8.2658187)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5123"><rect
+           id="rect5125"
+           width="219.20311"
+           height="127.27922"
+           x="152.53304"
+           y="285.10321" /></flowRegion><flowPara
+         id="flowPara5127">g</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5129"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.20725845,0,0,0.21498042,12.170883,-25.894637)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5131"><rect
+           id="rect5133"
+           width="132.32999"
+           height="73.741135"
+           x="411.13208"
+           y="337.63116" /></flowRegion><flowPara
+         id="flowPara5135">*</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5077-3"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.20919276,0,0,0.21952149,36.15746,66.79827)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5079-5"><rect
+           id="rect5081-6"
+           width="159.6041"
+           height="61.619305"
+           x="312.13715"
+           y="25.49402" /></flowRegion><flowPara
+         id="flowPara5083-2">f</flowPara><flowPara
+         id="flowPara5085-9" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5087-1"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.14296377,0,0,0.15831604,53.065545,72.930424)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5089-2"><rect
+           id="rect5091-7"
+           width="127.27922"
+           height="63.63961"
+           x="390.92905"
+           y="16.402647" /></flowRegion><flowPara
+         id="flowPara5093-0">x₁</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5113-9"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.16917028,0,0,0.17774188,13.453975,72.823926)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5115-3"><rect
+           id="rect5117-6"
+           width="178.797"
+           height="112.12693"
+           x="529.31995"
+           y="21.453411" /></flowRegion><flowPara
+         id="flowPara5119-0">*-</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5207"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.26458333,0,0,0.26458333,0.80180878,11.49259)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5209"><rect
+           id="rect5211"
+           width="92.934036"
+           height="73.741135"
+           x="98.994949"
+           y="41.65646" /></flowRegion><flowPara
+         id="flowPara5213">X</flowPara><flowPara
+         id="flowPara5215" /><flowPara
+         id="flowPara5217" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5219"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="matrix(0.26458333,0,0,0.26458333,17.63979,14.967094)"
+       inkscape:export-filename="/home/slack/UTFSM/2017-2/tesilla/presentacion/imag/teo_tipos.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><flowRegion
+         id="flowRegion5221"><rect
+           id="rect5223"
+           width="153.54318"
+           height="69.700523"
+           x="544.47223"
+           y="38.626003" /></flowRegion><flowPara
+         id="flowPara5225">Y</flowPara></flowRoot>  </g>
+</svg>

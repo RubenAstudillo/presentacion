@@ -4,56 +4,786 @@
 \usepackage[quiet]{fontspec}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{polyglossia}
 \usepackage{tikz}
+\usepackage{unicode-math}
 \usetikzlibrary{arrows,shapes,trees}
+
+\newcommand{\vank}{\emph{Seifert-van Kampen} }
+
+% works for now
+\setbeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
 
 \setdefaultlanguage{spanish}
 
 \begin{document}
 
   \begin{frame}
-    \begin{center}
-      Topologia Algebraica \\
-      Ruben Astudillo
-    \end{center}
+    \begin{block}{}
+      \centering
+      Topología Algebraica
+    \end{block}
+    \begin{block}{}
+      \centering
+      Rubén Astudillo Colina
+    \end{block}
+
   \end{frame}
 
   \begin{frame}
-    \frametitle{Motivacion}
-    % \framesubtitle{algo mas de informacion}
+    \frametitle{Motivación}
 
-    \begin{tikzpicture}
-      \def \a {2.8}
-      \def \b {1.5}
-      \def \PI {3.14159265359}
-      \draw (0,0) ellipse (3.2 and 1);
-      \draw[domain=\PI/4:3*\PI/4] plot ({\a*cos(\x r)},{\b*sin(\x r) -1});
-      \draw[domain=-0.1+5*\PI/4:0.1+7*\PI/4] plot ({\a*cos(\x r)},{\b*sin(\x r) +1.1});
-
-      \node[circle,shading=ball,minimum width=3cm] (ball) at (5.5,0) {};
-    \end{tikzpicture}
-
-    \begin{center}
-    ¿Como puedo decir que estos espacios no son homeomorfos?
-    \end{center}
+    \begin{block}{}
+      Definir una invariante para espacios topológicos.
+    \end{block}
 
     \pause
 
+    \begin{block}{}
+      Idea: Estudiar las curvas y las ``deformaciones'' admisibles entre
+      ellas para un espacio dado.
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Curvas y homotopías}
+    \begin{columns}
+
+      \begin{column}{.5\textwidth}
+        \begin{center}
+          \includegraphics[scale=0.3]{../tesis/imagenes/homotopia.png}
+        \end{center}
+      \end{column}
+
+      \begin{column}{.5\textwidth}
+        \begin{block}{Camino}
+          Es una función continua \[ f : I \to X \] con \(X\) un espacio
+          topológico
+        \end{block}
+
+        \begin{block}{Homotopía entre \(f\) y \(g\)}
+          Es una función continua \(H : I \times I \to X\) tal que
+          \[ H(x,0) = f(x),\ H(x,1) = g(x) \]
+          \[ f \sim g \]
+        \end{block}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Producto de caminos y inversas}
+    \begin{block}{Producto}
+      Si \(f (1) = g (0) \in X\) entonces el producto de caminos esta
+      definido por
+      \[ f * g (t) :=
+        \begin{cases}
+          f(2t) & t \in [0, \frac 1 2] \\
+          g(2t - 1) & t \in [\frac 1 2 , 1 ]
+        \end{cases}
+      \]
+      \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+          \draw [blue, thick] (0,0) to[bend right] (3,2) to[bend left]
+          (4,3) ; \draw [red, thick] (4,3) to[bend right] (9,1) ;
+        \end{tikzpicture}
+      \end{center}
+      En general se consideran curvas con el mismo punto inicial y final
+      (caminos cerrados).
+    \end{block}
+    \begin{block}{Inversa}
+      Todo camino \(f : I \to X\) tiene un camino inverso \(\overline f
+      (t) := f( 1 - t)\)
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Producto de homotopías}
+    Análogamente para homotopías \(F\) y \(G\) tal que \(F(1, t) =
+    G(0,s) , \forall s, t \in I\), se define el producto de homotopías
+    \[ F * G (x, t) :=
+      \begin{cases}
+        F(x, 2t) & t \in [0, \frac 1 2] \\
+        G(x, 2t - 1) & t \in [\frac 1 2, 1]
+      \end{cases}
+    \]
+
     \begin{center}
-    Fijandonos en la conexidad
+      \begin{tikzpicture}
+        \draw[blue] (0,1) to[out=45, in=135] (3,1) ;
+        \draw[blue] (0,1) to[out=25, in=155] (3,1) ;
+        \draw[blue] (0,1) to[out=5, in=175] (3,1) ;
+        \draw[blue] (0,1) to[out=-5, in=185] (3,1) ;
+        \draw[blue] (0,1) to[out=-25, in=205] (3,1) ;
+        \draw[blue] (0,1) to[out=-45, in=225] (3,1) ;
+
+        \draw[red] (3,1) to[out=45, in=135] (7,2) ;
+        \draw[red] (3,1) to[out=25, in=155] (7,2) ;
+        \draw[red] (3,1) to[out=5, in=175] (7,2) ;
+        \draw[red] (3,1) to[out=-5, in=185] (7,2) ;
+        \draw[red] (3,1) to[out=-25, in=205] (7,2) ;
+        \draw[red] (3,1) to[out=-45, in=225] (7,2) ;
+      \end{tikzpicture}
     \end{center}
   \end{frame}
 
   \begin{frame}
-    \frametitle{Idea}
+    \frametitle{Grupo fundamental}
+      Se define el conjunto
+      \[ \pi (X, x_0) := \{ [f] \mid f : I \to X ,\ f(0) = f(1) = x_0
+        \} \]
+      \[ [f] * [g] := [f * g]\]
+      \[ g \in [f] \iff f \simeq g ,\ \text{ie existe una homotopía
+          entre ellos}\]
+      La tupla \(\left(\pi(X, x_0), (*) \right) \) es llamado el grupo
+      fundamental de \(X\).
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Importancia punto de origen}
+    \begin{block}{}
+      Esta invariante es útil en general solo para espacios arco-conexo
+      pues queremos que la elección de punto \(x_0\) no afecte al grupo. \\
+
+      \centering
+      \begin{tikzpicture}
+        \draw [fill=cyan, radius=1.5] (0,0) circle ;
+        \draw [cyan, radius=1] (3,0) circle ;
+      \end{tikzpicture}
+    \end{block}
+
+    \pause
+
+    \begin{block}{}
+      El punto de origen igual se incluye por la caracterización de
+      conmutatividad del grupo fundamental y tratamiento mas explicito con
+      respecto a la teoría de cubrimientos.
+    \end{block}
+  \end{frame}
+
+  % Seccion ejemplo R^2 sin punto
+  \begin{frame}
+    \frametitle{Ejemplo intuitivo \(R^2\) menos un punto}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.5]{../tesis/imagenes/R2-punto.png}
+      \caption{\(R^2\) sin el punto \((1,1)\) en negro. Origen en rojo. }
+    \end{figure}
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{El grupo fundamental es una invariante}
+    Si \(f : (X, x) \to (Y, y) \) es un homeomorfismo, \[¿\pi (X, x)
+    \simeq \pi (Y,y)?\]
+
+    \pause
+
+    Si, se define un isomorfismo por
+    \begin{align*}
+      f_* : \pi (X,x) &\to \pi (Y, y) \\
+      [\gamma] &\longmapsto [ f \circ \gamma ]
+    \end{align*}
+    el cual es un homomorfismo pues
+    \[
+      f_* \left( \alpha * \beta \right) =
+      \begin{cases}
+        f \circ \left( \alpha (2t) \right), & t \in [0, \frac 1 2] \\
+        f \circ \left( \beta (2t - 1) \right), & t \in [\frac 1 2, 1]
+      \end{cases}
+      = \left( f \circ \alpha \right) * \left( f \circ \beta \right)
+    \]
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Functor entre categorías}
+    Lo que hemos hecho realmente con la construcción anterior es definir
+    un functor \(\pi\) entre las categorías \(\mathscr{Top}_*\) y
+    \(\mathscr{Grp}\)
+    \[ \pi : \mathscr{Top}_* \to \mathscr{Grp} \]
+    \[ \pi (f \circ g) = f_* \circ g_* \]
+    \begin{center}
+      \includegraphics[scale=0.4]{./imag/categoria.png}
+    \end{center}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Tres grandes herramientas de calculo}
     \begin{itemize}
-    \item Fijarnos en la arco-conexidad
-    \item Definir clases de equivalencia entre curvas que se deformen
-      continuamente entre ellas
-    \item Ver estructura algebraica de estas clases
+    \item Retracciones y tipos homotópicos
+    \item Teoría de cubrimientos
+    \item Teorema de \vank
     \end{itemize}
   \end{frame}
 
+  \begin{frame}
+    \frametitle{Tipos homotópicos}
+    \begin{block}{Equivalencias homotópicas}
+      Sean \(f : X \to Y\) e \(g : Y \to X\) mapeos continuos. Supongamos
+      que \[ g \circ f \simeq Id : X \to X \]
+      \[ f \circ g \simeq Id : Y \to Y \]
+      Entonces \(f\) y \(g\) son llamadas \emph{equivalencias
+      homotópicas} y la presencia de estas dicen que \(X,Y\) poseen el
+      mismo grupo fundamental.
+    \end{block}
+
+  \end{frame}
+  \begin{frame}
+    \frametitle{Lemas necesarios}
+    \begin{block}{Lema}
+      Si \(f \circ g = h\) con \(h\) una función biyectiva, entonces
+      \(f\) sobreyectivo y \(g\) inyectivo.
+    \end{block}
+    \begin{block}{Lema}
+      Si \(f \circ g \simeq Id\) mediante la homotopía \(H\) y \(f \circ
+      g (x_0) = x_1\) entonces existe una curva \(\alpha : I \to X\)
+      definida por \(\alpha (t) := H (x_0 , t)\) tal que
+      \[ \hat \alpha \left( [m] \right) := [ \overline \alpha] * [m] * [\alpha]\]
+      es un isomorfismo de grupo \(\pi(X,x_0) \to \pi (X,x_1)\) y cumple
+      la igualdad
+      \[ f_* \circ g_* = \hat \alpha \circ Id \]
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Idea de demostración teorema de tipos}
+    \begin{center}
+      \includegraphics[scale=0.5]{./imag/teo_tipos.png}
+    \end{center}
+    \begin{gather*}
+      f_{*,x_0} : \pi (X, x_0) \to \pi (Y, y_0) ;\quad
+      g_* : \pi (Y, y_0) \to \pi (X, x_1) \\
+      f_{*,x_1} : \pi (X, x_1) \to \pi (Y, y_1) \\
+      (g \circ f) \simeq Id : X \to X
+      \implies \exists \hat \alpha \text{ isomorfismo}, g_* \circ
+      f_{x_0, *} = \hat \alpha \\
+      (f \circ g) \simeq Id : Y \to Y
+      \implies \exists \hat \beta \text{ isomorfismo}, f_{x_1, *} \circ
+      g_* = \hat \beta \\
+      \implies g_* \text{ biyectivo } \\
+      f_{x_0, *} = \left( g_* \right)^{-1} \circ \hat \alpha
+    \end{gather*}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Ejemplo de espacios mismo tipo homotópicos}
+    \begin{block}{}
+      \centering
+      \includegraphics{./imag/ThreeNonHomeoButHomotopyEquivGraphs.png}
+    \end{block}
+
+    \begin{block}{}
+      \centering
+      \includegraphics[scale=0.5]{./imag/HomotopyEquivalentsToBiAnnulus.png}
+    \end{block}
+    \begin{center}
+      \emph{Imágenes de Hatcher}
+    \end{center}
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Banda de Mobius}
+    \begin{columns}
+      \begin{column}{0.3\textwidth}
+        \begin{center}
+          \includegraphics[scale=0.2]{./imag/512px-MöbiusStripAsSquare.svg.png}
+        \end{center}
+      \end{column}
+      \begin{column}{0.7\textwidth}
+        Presentación de Banda de Mobius
+        \[ M := I \times I / \{(x,1) \sim (1 - x, 0)\}\]
+        \pause
+        Homotópicamente equivalente a
+        \begin{gather*}
+          L := \{ \left(\frac 1 2, y \right) \mid y \in I \} / \{ \left(
+                \frac 1 2 , 1 \right) \sim \left( \frac 1 2, 0 \right)\}
+        \end{gather*}
+        por las funciones
+        \begin{gather*}
+          \begin{matrix}
+            r : M \to L & j : L \to M \\
+            [(a,b)] \mapsto [(\frac 1 2 , b)] & [(a,b)] \mapsto [(a,b)]
+          \end{matrix} \\
+          r \circ j \equiv Id : L \to L, \quad j \circ r \simeq Id : M \to M
+        \end{gather*}
+      y \(L\) homeomorfo a \(S^1\). Luego
+      \[ \pi (M) \simeq \pi (L) \simeq \pi (S^1) \]
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Categoría de homotopías}
+    Se define una categoría \(\mathscr{HoTop}_*\) correspondiente
+    a la tripleta \(\left( \mathbf{Obj}, \mathbf{Mor}, (\circ) \right)\)
+    con
+    \begin{itemize}
+    \item \(\mathbf {Obj}\) conjunto de espacio topológicos puntuados.
+    \item \(\mathbf{Mor}\) dada por el conjunto
+      \begin{align*}
+        \{ [f] \mid f : (X,x_0) \to (Y,y_0) \text{ continua} ,(X,x_0),(Y,y_0) \in \mathbf {Obj}\}
+      \end{align*}
+      de clases equivalencias homotópicas entre funciones continuas.
+    \item \((\hat \circ)\) composición de clases de
+      equivalencias tal que si \([f] , [g] \in \mathbf {Mor} \) con
+      dominio y recorridos compatibles
+      \[ [f] \hat \circ [g] = [f \circ g]\]
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Categoría de homotopías}
+    \begin{block}{Subcategoría \(\mathscr{Top}_*\)}
+      La categoría \(\mathscr{Top}_*\) se puede ver como una
+      sub-categoría de \(\mathscr{HoTop}_*\) mediante el functor
+      \[ i : \mathscr{Top}_* \to \mathscr{HoTop}_*\]
+      mapeando los objetos a si mismos y para toda función continua
+      \(f\) asignándole \([f]\) en \(\mathscr{HoTop}_*\).
+      Notar que espacios topológicos homeomorfos tiene claramente un par
+      de equivalencias homotópicas.
+
+      Se puede extender el functor \(\pi\) a
+      \[ \pi : \mathscr{HoTop}_* \to \mathscr{Grp} \]
+      Muestra que la noción de homeomorfismos era muy fuerte si la meta
+      es clasificar espacios mediante el grupo fundamental.
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pequeñas propiedades de esta categoría}
+    \begin{columns}
+      \begin{column}{0.6\textwidth}
+        \begin{block}{Productos}
+          Es una categoría cartesiana. El producto de espacios puntuados
+          sera el producto cartesiano usual \((X \times Y, (x_0, y_0))\).
+          Mas aun, el functor \(\pi\) respetara la estructura del
+          producto
+          \[ \pi (X \times Y , (x_0, y_0)) = \pi (X, x_0) \times \pi (Y,
+            y_0)\]
+          siendo en la llegada el producto cartesiano de
+          grupos. Este resultado se obtiene por la caracterización de
+          curvas es un espacio producto.
+        \end{block}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \begin{center}
+          \includegraphics[scale=0.32]{../tesis/imagenes/producto.png}
+        \end{center}
+      \end{column}
+    \end{columns}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Pequeñas propiedades de esta categoría}
+    \begin{columns}
+      \begin{column}{0.6\textwidth}
+        \begin{block}{Co-productos}
+          También tiene un co-producto por ser los objetos espacios
+          puntuados. Para \((X, x_0) , (Y, y_0)\) se define el
+          co-producto como
+          \[ X \vee Y , \{x_0, y_0\} = X \sqcup Y / x_0 \simeq y_0 \]
+          ¿Preservara \(\pi\) la estructura del co-producto?
+        \end{block}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \begin{center}
+          \includegraphics[scale=0.32]{../tesis/imagenes/coproducto.png}
+        \end{center}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Cubrimientos}
+    \begin{columns}
+      \begin{column}{0.3\textwidth}
+        \centering
+        \includegraphics[scale=.8]{../tesis/imagenes/spring.png}
+      \end{column}
+      \begin{column}{0.7\textwidth}
+        \begin{block}{Cubrimiento}
+          \(p : \tilde{X} \to X\) una función continua sobreyectiva tal
+          que para todo \(x \in X\) existe un abierto U y una familia
+          \(\{V_\alpha\}_{\alpha \in \Lambda},\ \Lambda \subseteq \mathbb N\) tal
+          que
+          \[ p^{-1} (U) = \bigcup_{\alpha \in \Lambda} V_\alpha \]
+          Donde \(\{V_\alpha\}\) es una familia disjunta de abiertos de
+          \(\tilde X\), tal que
+          la restricción a cada \(V_\alpha\) de \(p\) es
+          homeomorfa sobre \(U\).
+        \end{block}
+        \begin{block}{Fibra}
+          Corresponde al conjunto de puntos en rojo.
+          \[ p^{-1} \left( \{x_0\} \right) \]
+        \end{block}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Levantamiento de curvas al cubrimiento}
+    \begin{columns}
+      \begin{column}{.4\textwidth}
+        \centering
+        \includegraphics[scale=0.3]{../tesis/imagenes/lifting-path.png}
+        \[ p \circ \tilde f = f \]
+      \end{column}
+    \begin{column}{.6\textwidth}
+
+      \begin{block}{Levantamiento de caminos}
+        Sea \(p : \tilde X \to X\) un cubrimiento y \(x_0 \in X\).
+        Fijemos algún \(\tilde x _0 \in p^{-1} \{x_0\} \subset \tilde
+        X\). Para cualquier camino \(f : [0,1] \to X\) que comience en \(x_0\),
+        existe un único camino levantamiento \(\tilde f : [0,1] \to \tilde X\)
+        tal que \(\tilde f (0) = \tilde x _0\)
+      \end{block}
+
+      \begin{block}{Levantamiento de homotopías}
+        Sea \(p : \tilde X \to X\) un cubrimiento par tal que \(p(\tilde
+        x _0) = x_0 \) para algún \(\tilde x _0 \in \tilde X\). Para cualquier
+        función continua \(F : I \times I \to X\) tal que \(F(0,0) = x_0\),
+        tiene una única función levantamiento continua \(\tilde F : I \times I
+        \to \tilde X\) que cumpla \(\tilde F (0,0) = \tilde x_0\)
+      \end{block}
+    \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Idea de demostracion}
+    \begin{itemize}
+    \item Cubrir \(X\) con conjuntos cubiertos \(U_x\) tal que su
+      preimagen por \(p\) sea una familia disjunta cuya restriccion sea
+      homeomorfa.
+    \item Mediante preimagen de \(f\), cubrir mediante \(U_x\) a \(I\).
+      Por compacidad de este se puede aplicar el lema del \emph{numero
+        de Lebesgue} de manera que podemos subdividir a \(I\) en
+      intervalos que se mapeen mediante \(f\) a un unico \(U_x\)
+    \item Utilizar los homeomorfismos locales mediante \(p\) para
+      definir mediante la inversa \(p^{-1}\) a \(\tilde f\) en los
+      abiertos \(U_x\), partiendo por el homeomorfismo que mapea
+      \(U_{x_0}\) a una vecindad \(\tilde U _{\tilde x_0}\) de \(\tilde
+      x_0\)
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Idea de demostracion}
+    \begin{center}
+        \includegraphics[scale=0.4]{./imag/levantamientos1.png}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Idea de demostracion}
+    \begin{center}
+        \includegraphics[scale=0.4]{./imag/levantamientos2.png}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Inyectividad cubrimientos}
+    \begin{block}{Teorema}
+      Sea \(\left( \tilde X, \tilde x_0 \right), \left( X, x_0 \right)\)
+      dos espacios topológicos puntuados. Si \(p : \left( \tilde X,
+        \tilde x_0 \right) \to \left( X, x_0 \right)\) un cubrimiento
+      entre estos, entonces el homomorfismo inducido
+      \[ p_* : \pi \left( \tilde X, \tilde x_0 \right) \longrightarrow
+        \pi \left( X, x_0 \right)\] es inyectivo.
+    \end{block}
+    \pause
+    \begin{block}{}
+      Tomamos \([\gamma] \in \pi(\tilde X, \tilde x_0)\) tal que \(p_*
+      [\gamma] = [p \circ \gamma] = [k_{x_0}]\). Existe una homotopia
+      \(H\) entre \(p \circ \gamma\) y \(k_{x_0}\). A esta homotopía la
+      podemos levantar a una homotopía \(\tilde H\) entre \(\gamma\) y
+      \([k_{\tilde {x_0}}]\), asi
+      \[ [\gamma]= [k_{\tilde {x_0}}]\]
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Cubrimiento universal}
+    \begin{block}{Cubrimiento universal}
+      Un cubrimiento universal \(p : \tilde X \to X\) es tal que \(\pi
+      (\tilde X, \tilde x_0) = \{e\}\).
+    \end{block}
+
+    \begin{block}{Levantamiento derivado}
+      Si \(p : \tilde X \to X\) es un cubrimiento con \(\tilde X\)
+      universal, entonces para todo \(\tilde x_0 \in p^{-1} (x_0)\) se
+      puede definir una función biyectiva
+      \begin{gather*}
+         \phi : \pi (X, x_0) \to p^{-1} (\{x_0\}) \\
+         \phi \left( [f] \right) = \tilde f (1)
+      \end{gather*}
+
+      \pause
+      Para inyectividad, tomar \([\alpha],[\beta] \in \pi (X, x_0)\) y
+      \([\tilde \alpha], [\tilde \beta]\) sus levantamientos en \(\tilde
+      X\) tal que \(\tilde \alpha (1) = \tilde \beta (1)\). Utilizar la
+      homotopia entre \(\tilde \alpha, \tilde \beta\) y su proyeccion
+      por \(p\).
+
+      Para sobreyectividad tomemos \(\tilde x_1 \in p^{-1} (x_0)\) y
+      utilizar la arco-conexidad.
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Ejemplos}
+    \begin{columns}
+      \begin{column}{0.4\textwidth}
+        \(\pi (S^1,x_0)\) es isomorfo a \((\mathbb Z, +)\) \\
+        \begin{center}
+          \begin{tikzpicture}
+            \draw (0,0) circle [radius=1.5];
+          \end{tikzpicture}
+        \end{center}
+        \begin{align*}
+          p : &\Re \to S^1 \\
+              &t \mapsto \left( \text{cos} 2\pi t , \text{sin} 2 \pi t \right)
+        \end{align*}
+        Considerando \(x_0 = (1,0)\)
+        \[ p^{-1} (\{(1,0)\}) = \mathbb Z \]
+      \end{column}
+
+      \begin{column}{0.6\textwidth}
+        La funcion \(\phi : \pi (S^1 , x_0) \to p^{-1} (x_0)\) es
+        biyectiva. Para ver que es un homomorfismo tomemos
+        \[ [\alpha], [\beta] ,[\alpha * \beta] \in \pi (S^1 , x_0)\]
+        Sean sus levantamiento a \(\tilde x_0 = 0\) \(\tilde \alpha,
+        \tilde \beta\) tales que
+        \( \tilde \alpha (1) = n , \quad \tilde \beta (1) = m \)
+        se define un levantamiento de \(\alpha * \beta\) por
+        \[ \tilde g (t) =
+          \begin{cases}
+            \tilde \alpha (2t), & t \leq \frac 1 2 \\
+            n + \tilde \beta (2t - 1), & t \geq \frac 1 2
+          \end{cases}
+        \]
+        El cual cumple \(p \circ \tilde g = \alpha * \beta\) y
+        \[ \phi (\tilde g) = n + \tilde \beta (1) = n + m =
+          \phi([\alpha]) + \phi ([\beta]) \]
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Ejemplos}
+    \begin{columns}
+      \begin{column}{0.4\textwidth}
+        \(\pi (RP^2, x_0)\) es isomorfo a \(\mathbb Z / 2 \mathbb Z\) \\
+        \begin{center}
+          \includegraphics[scale=0.3]{./imag/rpsphere.jpg}
+        \end{center}
+        \begin{align*}
+          p : &S^2 \to RP^2 \\
+          &a \to [a]
+        \end{align*}
+      \end{column}
+      \begin{column}{0.6\textwidth}
+        Para \([x_0] \in RP^2\) se tiene que
+        \[ p^{-1} \{[x_0]\} = \{ x_0 , - x_0\} \]
+        Luego \(\pi (RP^2, x_0)\) es un grupo de dimension 2, el cual es
+        unico (modulo isomorfismo) a \(\mathbb Z / 2 \mathbb Z\).
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Caracterización de functor}
+    \begin{block}{}
+      Se define una nueva categoría de cubrimientos de espacios \(X\)
+      que posean cubrimiento universal. Luego se define un functor
+      \(\pi\) el cual mapea elementos iniciales de \(\mathscr{Cov}\) a
+      el grupo trivial (elemento inicial) de \(\mathscr{Grp}\) y donde
+      los morfismos pasan a ser inyecciones de grupos
+    \end{block}
+    \begin{block}{}
+        \centering
+        \includegraphics[scale=0.3]{../tesis/imagenes/cov.png}
+      \end{block}
+  \end{frame}
+
+  \begin{frame}
+    %% Todo, como presentar el teorema general (lo utilizas en klein).
+    %% Tal vez agregar parte de la demostracion (bien intuitiva) y decir
+    %% que el teorema general tambien caracteriza el kernel.
+    \frametitle{\vank}
+    \begin{block}{\vank}
+      Sea \(X = U \cup V\), donde \(U,V\) son conjuntos abiertos de \(X\).
+      Supongamos que \(U \cap V\) es arco-conexo y que \(x_0 \in U \cap V\).
+      Sea \(j_1\) y \(j_2\) las inclusiones de \(U\) y \(V\) en \(X\)
+      respectivamente. Entonces las imágenes de los homomorfismos inducidos
+      \[ j_{1,*} : \pi (U, x_0) \to \pi (X, x_0), \quad j_{2,*} : \pi
+      (V, x_0) \to \pi (X, x_0) \]
+      generan a \(\pi (X,x_0)\).
+
+      \begin{center}
+        \includegraphics[scale=.35]{../tesis/imagenes/van.png}
+      \end{center}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Idea de demostracion}
+    \begin{itemize}
+    \item Tomar \([f] \in \pi (X, x_0)\) arbitrario con \(f : I \to X\).
+    \item \(I = f^{-1} (U) \cup f^{-1} (V) \) cubre a \(I\). Utilizamos
+      el lema de numero de \emph{Lebesgue} para subdividir \(I\) en
+      \[ 0 =  a_0 \leq a_1 \leq \dots \leq a_n = 1 \]
+      tal que \( f ([a_i, a_{i+1}]) \subset U\) o \( f ([a_i, a_{i+1}])
+      \subset V \)
+    \item Sea \(l_i : [0,1] \to [a_{i-1}, a_i]\) homeomorfismos y se
+      define
+      \[ f_i = f \circ l_i \]
+    \item Por la arco-conexidad de \(U \cap V\) se existe una familia de
+      funcion \(\alpha_i : I \to U \cap V\) tal que
+      \[ \alpha_i (0) = x_0 , \quad \alpha_i (1) = f_i (1)\]
+    \item Se definen \(g_i = \alpha_{i-1} * f_i * \overline{\alpha_{i}}
+      \) el cual pertence a \(\pi (U, x_0)\) o \(\pi(V, x_0)\) tal que
+      \[ [f] = [g_1] * [g_2] * \dotsc * [g_n] \]
+    \end{itemize}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Idea de demostracion}
+    \begin{center}
+       \includegraphics[scale=0.5]{./imag/paso-vank.png}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Ejemplos \(S^1 \vee S^1 / \{x_0 \sim y_0\}\)}
+    \begin{center}
+      \includegraphics[scale=0.4]{../tesis/imagenes/figura8.png}
+    \end{center}
+    \pause
+    Notar que para todo \(x_0, y_0\) existe una vecindad contractible
+    \(U_x, U_y\) de este. Luego
+    \[ A_1 = S^1 \vee U_y , \quad A_2 = U_x \vee S^1 \]
+    \[ \implies A_1 \cup A_2 = (S^1 \vee S^1, x_0 \sim y_0) , \quad A_1 \cap A_2
+      = (U_x \vee U_y, x_0 \sim y_0) \]
+    con \(\pi (U_x \vee U_y, {x_0 \sim y_0})\) trivial. Luego
+    \[ \pi (S^1 \vee S^1) = \pi (S^1) * \pi (S^1) \text{ por \vank}\]
+    \pause
+    Solo se preservan co-productos de espacios semi-localmente
+    simplemente conexos mediante \(\pi\)
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{\vank general}
+    El teorema particular de \vank nos dice que \(\phi\) es
+    sobreyectivo. La version general nos caracteriza el kernel de esta
+    para tener un isomorfismo por primer teorema del isomorfismos de
+    grupos
+    \begin{center}
+        \includegraphics[scale=.35]{../tesis/imagenes/van.png}
+    \end{center}
+    Este corresponde a
+    \[ \text{Kern}(\phi) = \text{Norm}\{ i_{1,*} (\omega) \overline{i_{2,*}
+        (\omega)} \mid \omega \in \pi (U \cap V , x_0)\}\]
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Botella Klein}
+    \begin{center}
+      \includegraphics[scale=0.3]{../tesis/imagenes/kleinU.png}
+      \hspace{3mm}
+      \includegraphics[scale=0.3]{../tesis/imagenes/kleinV.png}
+      \hspace{3mm}
+      \includegraphics[scale=0.3]{../tesis/imagenes/kleinUV.png} \\
+      \hspace{2mm} \(U\) \hspace{19mm} \(V\) \hspace{16mm} \(U \cap V\)
+    \end{center}
+    \pause
+    \begin{gather*}
+      \pi (U) = \{e\}, \quad \pi (V) = \{[e], [a], [b]\} \\
+      \pi (U \cap V) = \{[\gamma], [e]\} \text{ se retrae a } S^1 \\
+      i_{u,v} ([\gamma]) = [e], \quad i_{v,u} ([\gamma]) = [\gamma]_V
+    \end{gather*}
+    Pero \([\gamma]_{V} = [a]*[b]*[a]*[b^{-1}] \) por homotopía
+    radial. Luego
+    \[ N \left( \{[a]*[b]*[a]*[b^{-1}]\} \right) = \{[a]*[b]*[a]*[b^{-1}]\} \]
+    \[ \pi (U \cup V) = \langle [a], [b] \rangle /
+      \{[a]*[b]*[a]*[b^{-1}] = e\}\]
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushouts}
+    \begin{columns}
+      \begin{column}{0.35\textwidth}
+        \begin{flushleft}
+          \includegraphics[scale=0.9]{../tesis/imagenes/pushout.png}
+        \end{flushleft}
+      \end{column}
+      \begin{column}{0.65\textwidth}
+        Un pushout en general esta representado por el siguiente
+        diagrama conmutativo.
+        Siendo \((P, i_1, i_2)\) el pushout de \((Z, f, g) \) tal que
+        para cualquier otro objeto \(Q\) con morfismos \(j_1, j_2\)
+        tales que \[ j_1 \circ f = j_2 \circ g \]
+        existe \(u : P \to Q\) tal que
+        \[ j_1 = u \circ i_1,\quad j_2 = u \circ u \]
+        es decir, el diagrama conmuta en morfismos.
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout inclusiones}
+    \begin{center}
+       \includegraphics[scale=0.5]{./imag/push-inc-1.png}
+    \end{center}
+    El pushout de la tripleta \(\left( U \cap V, i_1, i_2 \right)\)
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout inclusiones}
+    \begin{center}
+       \includegraphics[scale=0.5]{./imag/push-inc-2.png}
+    \end{center}
+    El pushout de la tripleta \(\left( U \cap V, i_1, i_2 \right)\) , es
+    la tripleta \(\left( U \cup V, \phi_1, \phi_2 \right)\)
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout inclusiones}
+    \begin{center}
+       \includegraphics[scale=0.5]{./imag/push-inc-3.png}
+    \end{center}
+    El pushout de la tripleta \(\left( U \cap V, i_1, i_2 \right)\) , es
+    la tripleta \(\left( U \cup V, \phi_1, \phi_2 \right)\) tal que para
+    todo \((X, j_1, j_2)\) con
+    \[ j_1 \circ i_1 = j_2 \circ i_2 \]
+    existe \(\Phi\) tal que
+    \[ j_1 = \Phi \circ \phi_1,\quad j_2 = \Phi \circ \phi_2 \]
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout grupos}
+    \begin{center}
+       \includegraphics[scale=0.5]{../tesis/imagenes/van.png}
+    \end{center}
+    Donde
+    \[ H := \pi (U, x_0) * \pi (V, x_0) / \text{Norm} \{i_1 (\gamma)
+      \overline{i_2 (\gamma)} \mid \gamma \in \pi (U \cap V, x_0)\}\]
+    es el \emph{producto libre con amalgamacion}.
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Pushout por \vank}
+    \begin{columns}
+      \begin{column}{0.6\textwidth}
+        \begin{flushleft}
+          \includegraphics[scale=0.33]{../tesis/imagenes/pushoutHotop.png}
+        \end{flushleft}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+        \begin{block}{}
+          \vank nos dice que si \(U \cap V\) es arco-conexa, el functor
+          \(\pi\) preserva estos pushouts de inclusiones entre
+          \(\mathscr{HoTop}_*\) a \(\mathscr{Grp}\).
+        \end{block}
+      \end{column}
+    \end{columns}
+  \end{frame}
 \end{document}
